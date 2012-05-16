@@ -1,0 +1,60 @@
+{
+    "resources" : [
+	    {
+	        "id" : 1,
+	        "name" : "Get list of annotations",
+	        "httpMethod" : "GET",
+	        "path" : "/ant/{userId}/files/{fileId}/annotations",
+	        "suggestedMethodName" : "ListAnnotations"
+	    },
+	    {
+	        "id" : 2,
+	        "name" : "Create annotation",
+	        "httpMethod" : "POST",
+	        "path" : "/ant/{userId}/files/{fileId}/annotations",
+	        "suggestedMethodName" : "CreateAnnotation"
+	    }
+	],
+    "testSuites" : [
+        	{
+    	        "id" : 1,
+    	        "name" : "Test Annotation service related APIs",
+    	        "testCases" : [
+                    {
+                        "name" : "List file annotations",
+                        "id" : 1,
+                        "resourceId" : 1,
+                        "input" : {
+                            "userId":"<REPLACE>",
+                            "fileId":"<REPLACE>"
+                        },
+		                "assertions" : [
+                            {
+                                "actualOutput" : "${output(1.1).status}",
+                                "condition" : "==",
+                                "expectedOutput" : "Ok"
+                            }
+		                ]
+                    },
+                    {
+                        "name" : "Create file annotation",
+                        "id" : 2,
+                        "resourceId" : 2,
+                        "input" : {
+                            "userId":"<REPLACE>",
+                            "fileId":"<REPLACE>",
+							"postData" : "${input.annotationInfoList[0]}"
+                        },
+		                "assertions" : [
+                            {
+                                "actualOutput" : "${output(1.2).status}",
+                                "condition" : "==",
+                                "expectedOutput" : "Ok"
+                            }
+		                ]
+                    }
+    	        ]
+    	    }
+    ]
+}
+
