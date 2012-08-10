@@ -42,22 +42,7 @@ public class SharedDocumentInfo extends Object {
     /**
      * 
      */
-	 private Integer folder_count ;
-
-    /**
-     * 
-     */
-	 private Long modified_on ;
-
-    /**
-     * 
-     */
 	 private String status ;
-
-    /**
-     * 
-     */
-	 private Long created_on ;
 
     /**
      * 
@@ -67,27 +52,17 @@ public class SharedDocumentInfo extends Object {
     /**
      * 
      */
-	 private String access ;
-
-    /**
-     * 
-     */
 	 private String type ;
 
     /**
      * 
      */
-	 private List<String> supported_types  =  new ArrayList<String>();
+	 private String access ;
 
     /**
      * 
      */
 	 private String url ;
-
-    /**
-     * 
-     */
-	 private String file_type ;
 
     /**
      * 
@@ -102,7 +77,7 @@ public class SharedDocumentInfo extends Object {
     /**
      * 
      */
-	 private String guid ;
+	 private String file_type ;
 
     /**
      * 
@@ -112,12 +87,7 @@ public class SharedDocumentInfo extends Object {
     /**
      * 
      */
-	 private List<Integer> thumbnail  =  new ArrayList<Integer>();
-
-    /**
-     * 
-     */
-	 private Boolean dir ;
+	 private String guid ;
 
     /**
      * 
@@ -128,16 +98,6 @@ public class SharedDocumentInfo extends Object {
      * 
      */
 	 private UserInfo owner ;
-
-    /**
-     * 
-     */
-	 private Integer file_count ;
-
-    /**
-     * 
-     */
-	 private Boolean known ;
 
 
 	/**
@@ -158,51 +118,12 @@ public class SharedDocumentInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public Integer getFolder_count() {
-	 	return folder_count;
-	 }  
-	 
-	 public void setFolder_count(Integer  folder_count) {
-	 	this.folder_count = folder_count;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Long getModified_on() {
-	 	return modified_on;
-	 }  
-	 
-	 public void setModified_on(Long  modified_on) {
-	 	this.modified_on = modified_on;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public String getStatus() {
 	 	return status;
 	 }  
 	 
 	 public void setStatus(String  status) {
 	 	this.status = status;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Long getCreated_on() {
-	 	return created_on;
-	 }  
-	 
-	 public void setCreated_on(Long  created_on) {
-	 	this.created_on = created_on;
 	 }
 
 	/**
@@ -223,19 +144,6 @@ public class SharedDocumentInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public String getAccess() {
-	 	return access;
-	 }  
-	 
-	 public void setAccess(String  access) {
-	 	this.access = access;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public String getType() {
 	 	return type;
 	 }  
@@ -249,12 +157,12 @@ public class SharedDocumentInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public List<String> getSupported_types() {
-	 	return supported_types;
+	 public String getAccess() {
+	 	return access;
 	 }  
 	 
-	 public void setSupported_types(List<String>  supported_types) {
-	 	this.supported_types = supported_types;
+	 public void setAccess(String  access) {
+	 	this.access = access;
 	 }
 
 	/**
@@ -268,19 +176,6 @@ public class SharedDocumentInfo extends Object {
 	 
 	 public void setUrl(String  url) {
 	 	this.url = url;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getFile_type() {
-	 	return file_type;
-	 }  
-	 
-	 public void setFile_type(String  file_type) {
-	 	this.file_type = file_type;
 	 }
 
 	/**
@@ -314,12 +209,12 @@ public class SharedDocumentInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public String getGuid() {
-	 	return guid;
+	 public String getFile_type() {
+	 	return file_type;
 	 }  
 	 
-	 public void setGuid(String  guid) {
-	 	this.guid = guid;
+	 public void setFile_type(String  file_type) {
+	 	this.file_type = file_type;
 	 }
 
 	/**
@@ -340,25 +235,12 @@ public class SharedDocumentInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public List<Integer> getThumbnail() {
-	 	return thumbnail;
+	 public String getGuid() {
+	 	return guid;
 	 }  
 	 
-	 public void setThumbnail(List<Integer>  thumbnail) {
-	 	this.thumbnail = thumbnail;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Boolean getDir() {
-	 	return dir;
-	 }  
-	 
-	 public void setDir(Boolean  dir) {
-	 	this.dir = dir;
+	 public void setGuid(String  guid) {
+	 	this.guid = guid;
 	 }
 
 	/**
@@ -385,32 +267,6 @@ public class SharedDocumentInfo extends Object {
 	 
 	 public void setOwner(UserInfo  owner) {
 	 	this.owner = owner;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Integer getFile_count() {
-	 	return file_count;
-	 }  
-	 
-	 public void setFile_count(Integer  file_count) {
-	 	this.file_count = file_count;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Boolean getKnown() {
-	 	return known;
-	 }  
-	 
-	 public void setKnown(Boolean  known) {
-	 	this.known = known;
 	 }
 
 

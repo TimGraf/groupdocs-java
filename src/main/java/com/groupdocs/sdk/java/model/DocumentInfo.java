@@ -69,6 +69,11 @@ public class DocumentInfo extends Object {
     /**
      * 
      */
+	 private Long size ;
+
+    /**
+     * 
+     */
 	 private Integer version ;
 
 
@@ -161,6 +166,19 @@ public class DocumentInfo extends Object {
 	 
 	 public void setFile_type(String  file_type) {
 	 	this.file_type = file_type;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Long getSize() {
+	 	return size;
+	 }  
+	 
+	 public void setSize(Long  size) {
+	 	this.size = size;
 	 }
 
 	/**

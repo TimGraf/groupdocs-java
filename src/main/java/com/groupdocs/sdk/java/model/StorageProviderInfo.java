@@ -19,6 +19,9 @@ package com.groupdocs.sdk.java.model;
 import com.wordnik.swagger.runtime.annotations.*;
 import java.util.List;
 
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * 
@@ -28,23 +31,23 @@ import java.util.List;
  * @author ramesh
  *
  */
-public class AddDocumentQuestionnaireResult extends Object {
+public class StorageProviderInfo extends Object {
 
 
     /**
      * 
      */
-	 private Double document_id ;
+	 private Double id ;
 
     /**
      * 
      */
-	 private Double questionnaire_id ;
+	 private List<Integer> token  =  new ArrayList<Integer>();
 
     /**
      * 
      */
-	 private String adjusted_name ;
+	 private String provider ;
 
 
 	/**
@@ -52,12 +55,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getDocument_id() {
-	 	return document_id;
+	 public Double getId() {
+	 	return id;
 	 }  
 	 
-	 public void setDocument_id(Double  document_id) {
-	 	this.document_id = document_id;
+	 public void setId(Double  id) {
+	 	this.id = id;
 	 }
 
 	/**
@@ -65,12 +68,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getQuestionnaire_id() {
-	 	return questionnaire_id;
+	 public List<Integer> getToken() {
+	 	return token;
 	 }  
 	 
-	 public void setQuestionnaire_id(Double  questionnaire_id) {
-	 	this.questionnaire_id = questionnaire_id;
+	 public void setToken(List<Integer>  token) {
+	 	this.token = token;
 	 }
 
 	/**
@@ -78,12 +81,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public String getAdjusted_name() {
-	 	return adjusted_name;
+	 public String getProvider() {
+	 	return provider;
 	 }  
 	 
-	 public void setAdjusted_name(String  adjusted_name) {
-	 	this.adjusted_name = adjusted_name;
+	 public void setProvider(String  provider) {
+	 	this.provider = provider;
 	 }
 
 

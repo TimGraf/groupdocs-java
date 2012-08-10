@@ -34,12 +34,17 @@ public class SignatureTemplateFieldLocationInfo extends Object {
     /**
      * 
      */
-	 private String id ;
+	 private Double locationHeight ;
 
     /**
      * 
      */
-	 private Integer page ;
+	 private String fontName ;
+
+    /**
+     * 
+     */
+	 private String fontColor ;
 
     /**
      * 
@@ -49,12 +54,47 @@ public class SignatureTemplateFieldLocationInfo extends Object {
     /**
      * 
      */
+	 private Boolean fontBold ;
+
+    /**
+     * 
+     */
 	 private String fieldId ;
 
     /**
      * 
      */
+	 private Double fontSize ;
+
+    /**
+     * 
+     */
 	 private Double locationY ;
+
+    /**
+     * 
+     */
+	 private String id ;
+
+    /**
+     * 
+     */
+	 private Boolean fontItalic ;
+
+    /**
+     * 
+     */
+	 private Boolean fontUnderline ;
+
+    /**
+     * 
+     */
+	 private Integer page ;
+
+    /**
+     * 
+     */
+	 private Double locationWidth ;
 
     /**
      * 
@@ -67,12 +107,12 @@ public class SignatureTemplateFieldLocationInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public String getId() {
-	 	return id;
+	 public Double getLocationHeight() {
+	 	return locationHeight;
 	 }  
 	 
-	 public void setId(String  id) {
-	 	this.id = id;
+	 public void setLocationHeight(Double  locationHeight) {
+	 	this.locationHeight = locationHeight;
 	 }
 
 	/**
@@ -80,12 +120,25 @@ public class SignatureTemplateFieldLocationInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public Integer getPage() {
-	 	return page;
+	 public String getFontName() {
+	 	return fontName;
 	 }  
 	 
-	 public void setPage(Integer  page) {
-	 	this.page = page;
+	 public void setFontName(String  fontName) {
+	 	this.fontName = fontName;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontColor() {
+	 	return fontColor;
+	 }  
+	 
+	 public void setFontColor(String  fontColor) {
+	 	this.fontColor = fontColor;
 	 }
 
 	/**
@@ -106,6 +159,19 @@ public class SignatureTemplateFieldLocationInfo extends Object {
 	 * 
 	 * 
 	 */
+	 public Boolean getFontBold() {
+	 	return fontBold;
+	 }  
+	 
+	 public void setFontBold(Boolean  fontBold) {
+	 	this.fontBold = fontBold;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public String getFieldId() {
 	 	return fieldId;
 	 }  
@@ -119,12 +185,90 @@ public class SignatureTemplateFieldLocationInfo extends Object {
 	 * 
 	 * 
 	 */
+	 public Double getFontSize() {
+	 	return fontSize;
+	 }  
+	 
+	 public void setFontSize(Double  fontSize) {
+	 	this.fontSize = fontSize;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public Double getLocationY() {
 	 	return locationY;
 	 }  
 	 
 	 public void setLocationY(Double  locationY) {
 	 	this.locationY = locationY;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getId() {
+	 	return id;
+	 }  
+	 
+	 public void setId(String  id) {
+	 	this.id = id;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontItalic() {
+	 	return fontItalic;
+	 }  
+	 
+	 public void setFontItalic(Boolean  fontItalic) {
+	 	this.fontItalic = fontItalic;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontUnderline() {
+	 	return fontUnderline;
+	 }  
+	 
+	 public void setFontUnderline(Boolean  fontUnderline) {
+	 	this.fontUnderline = fontUnderline;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Integer getPage() {
+	 	return page;
+	 }  
+	 
+	 public void setPage(Integer  page) {
+	 	this.page = page;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getLocationWidth() {
+	 	return locationWidth;
+	 }  
+	 
+	 public void setLocationWidth(Double  locationWidth) {
+	 	this.locationWidth = locationWidth;
 	 }
 
 	/**

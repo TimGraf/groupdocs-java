@@ -19,17 +19,23 @@ package com.wordnik.swagger.runtime.common;
 import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.lang.String;
 import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
 
+import com.wordnik.swagger.runtime.exception.APIException;
+import com.wordnik.swagger.runtime.exception.APIExceptionCodes;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.DeserializationConfig.Feature;
 import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.type.TypeReference;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -37,8 +43,6 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.sun.jersey.multipart.file.DefaultMediaTypePredictor;
-import com.wordnik.swagger.runtime.exception.APIException;
-import com.wordnik.swagger.runtime.exception.APIExceptionCodes;
 
 
 /**
@@ -186,7 +190,7 @@ public class APIInvoker {
         if(securityHandler != null){
             securityHandler.populateSecurityInfo(resourceURLBuilder, headerMap);
         }
-        WebResource aResource = apiClient.resource(resourceURLBuilder.toString());
+        WebResource aResource = apiClient.resource(encodeURI(resourceURLBuilder.toString()));
 
 
         //set the required HTTP headers
@@ -292,7 +296,7 @@ public class APIInvoker {
      */
     public static String toPathValue(String value) {
         value = (value == null) ? "" : value;
-        return encode(value);
+        return encodeURIComponent(value);
     }
 
     /**
@@ -311,16 +315,29 @@ public class APIInvoker {
         if(out.indexOf(",") != -1) {
             output = out.substring(0, out.lastIndexOf(",") );
         }
-        return encode(output);
+        return encodeURIComponent(output);
     }
 
-    private static String encode(String value){
-        try{
-            return URLEncoder.encode(value, "utf-8").replaceAll("\\+", "%20").replaceAll("%2F", "/");
-        }catch(UnsupportedEncodingException uee){
-            throw new RuntimeException(uee.getMessage());
-        }
-    }
+	public static String encodeURI(String uri) {
+		return encodeURIComponent(uri).replaceAll("\\%3B", ";")
+				.replaceAll("\\%2C", ",").replaceAll("\\%2F", "/")
+				.replaceAll("\\%3F", "?").replaceAll("\\%3A", ":")
+				.replaceAll("\\%40", "@").replaceAll("\\%26", "&")
+				.replaceAll("\\%3D", "=")
+				//.replaceAll("\\%2B", "+")
+				.replaceAll("\\%24", "$");
+	}
+
+	public static String encodeURIComponent(String str) {
+		try {
+			return URLEncoder.encode(str, "UTF-8").replaceAll("\\+", "%20")
+					.replaceAll("\\%21", "!").replaceAll("\\%27", "'")
+					.replaceAll("\\%28", "(").replaceAll("\\%29", ")")
+					.replaceAll("\\%7E", "~");
+		} catch (UnsupportedEncodingException e) {
+			return str;
+		}
+	}
 
     public boolean isLoggingEnable() {
         return loggingEnabled;

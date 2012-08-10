@@ -19,6 +19,9 @@ package com.groupdocs.sdk.java.model;
 import com.wordnik.swagger.runtime.annotations.*;
 import java.util.List;
 
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * 
@@ -28,8 +31,13 @@ import java.util.List;
  * @author ramesh
  *
  */
-public class JobOutputDocument extends Object {
+public class FileSystemFolder extends Object {
 
+
+    /**
+     * 
+     */
+	 private List<UserInfo> sharers  =  new ArrayList<UserInfo>();
 
     /**
      * 
@@ -44,7 +52,22 @@ public class JobOutputDocument extends Object {
     /**
      * 
      */
-	 private String error ;
+	 private Integer folder_count ;
+
+    /**
+     * 
+     */
+	 private Long modified_on ;
+
+    /**
+     * 
+     */
+	 private Boolean dir ;
+
+    /**
+     * 
+     */
+	 private Long created_on ;
 
     /**
      * 
@@ -54,33 +77,31 @@ public class JobOutputDocument extends Object {
     /**
      * 
      */
+	 private UserInfo owner ;
+
+    /**
+     * 
+     */
+	 private Integer file_count ;
+
+    /**
+     * 
+     */
 	 private String access ;
 
-    /**
-     * 
-     */
-	 private String type ;
 
-    /**
-     * 
-     */
-	 private String ftype ;
-
-    /**
-     * 
-     */
-	 private String url ;
-
-    /**
-     * 
-     */
-	 private Long size ;
-
-    /**
-     * 
-     */
-	 private Integer version ;
-
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<UserInfo> getSharers() {
+	 	return sharers;
+	 }  
+	 
+	 public void setSharers(List<UserInfo>  sharers) {
+	 	this.sharers = sharers;
+	 }
 
 	/**
 	 * 
@@ -113,12 +134,51 @@ public class JobOutputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public String getError() {
-	 	return error;
+	 public Integer getFolder_count() {
+	 	return folder_count;
 	 }  
 	 
-	 public void setError(String  error) {
-	 	this.error = error;
+	 public void setFolder_count(Integer  folder_count) {
+	 	this.folder_count = folder_count;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Long getModified_on() {
+	 	return modified_on;
+	 }  
+	 
+	 public void setModified_on(Long  modified_on) {
+	 	this.modified_on = modified_on;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getDir() {
+	 	return dir;
+	 }  
+	 
+	 public void setDir(Boolean  dir) {
+	 	this.dir = dir;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Long getCreated_on() {
+	 	return created_on;
+	 }  
+	 
+	 public void setCreated_on(Long  created_on) {
+	 	this.created_on = created_on;
 	 }
 
 	/**
@@ -139,77 +199,38 @@ public class JobOutputDocument extends Object {
 	 * 
 	 * 
 	 */
+	 public UserInfo getOwner() {
+	 	return owner;
+	 }  
+	 
+	 public void setOwner(UserInfo  owner) {
+	 	this.owner = owner;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Integer getFile_count() {
+	 	return file_count;
+	 }  
+	 
+	 public void setFile_count(Integer  file_count) {
+	 	this.file_count = file_count;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public String getAccess() {
 	 	return access;
 	 }  
 	 
 	 public void setAccess(String  access) {
 	 	this.access = access;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getType() {
-	 	return type;
-	 }  
-	 
-	 public void setType(String  type) {
-	 	this.type = type;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getFtype() {
-	 	return ftype;
-	 }  
-	 
-	 public void setFtype(String  ftype) {
-	 	this.ftype = ftype;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getUrl() {
-	 	return url;
-	 }  
-	 
-	 public void setUrl(String  url) {
-	 	this.url = url;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Long getSize() {
-	 	return size;
-	 }  
-	 
-	 public void setSize(Long  size) {
-	 	this.size = size;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Integer getVersion() {
-	 	return version;
-	 }  
-	 
-	 public void setVersion(Integer  version) {
-	 	this.version = version;
 	 }
 
 

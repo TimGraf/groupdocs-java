@@ -51,7 +51,7 @@ public class DocAPI extends Object {
 	 * @return ViewDocumentResponse {@link ViewDocumentResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="docDocInputFilesInput") 
+	 @MethodArgumentNames(value="docDocInputFilesInput")
 	 public static ViewDocumentResponse ViewDocument(DocDocInputFilesInput docDocInputFilesInput) throws APIException {
 
 		//parse inputs
@@ -60,28 +60,26 @@ public class DocAPI extends Object {
 		String method = "POST";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(docDocInputFilesInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", docDocInputFilesInput.getUserId());
 		}
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getFileId() != null) {
-		 	resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(docDocInputFilesInput.getFileId()));
+		 	resourcePath = resourcePath.replace("{fileId}", docDocInputFilesInput.getFileId());
 		}
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getPageNumber() != null) {
-		 	resourcePath = resourcePath.replace("{pageNumber}", APIInvoker.toPathValue(docDocInputFilesInput.getPageNumber()));
+		 	resourcePath = resourcePath.replace("{pageNumber}", docDocInputFilesInput.getPageNumber());
 		}
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getPageCount() != null) {
-		 	resourcePath = resourcePath.replace("{pageCount}", APIInvoker.toPathValue(docDocInputFilesInput.getPageCount()));
+		 	resourcePath = resourcePath.replace("{pageCount}", docDocInputFilesInput.getPageCount());
 		}
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getQuality() != null) {
-		 	resourcePath = resourcePath.replace("{quality}", APIInvoker.toPathValue(docDocInputFilesInput.getQuality()));
+		 	resourcePath = resourcePath.replace("{quality}", docDocInputFilesInput.getQuality());
 		}
 		if( docDocInputFilesInput != null && docDocInputFilesInput.getUsePdf() != null) {
-		 	resourcePath = resourcePath.replace("{usePdf}", APIInvoker.toPathValue(docDocInputFilesInput.getUsePdf()));
+		 	resourcePath = resourcePath.replace("{usePdf}", docDocInputFilesInput.getUsePdf());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -89,9 +87,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ViewDocumentResponse responseObject = (ViewDocumentResponse) getApiInvoker().deserialize(response, ViewDocumentResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get Document Views
@@ -105,7 +102,7 @@ public class DocAPI extends Object {
 	 * @return DocumentViewsResponse {@link DocumentViewsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, startIndex, pageSize") 
+	 @MethodArgumentNames(value="userId, startIndex, pageSize")
 	 public static DocumentViewsResponse GetDocumentViews(String userId, String startIndex, String pageSize) throws APIException {
 
 		//parse inputs
@@ -115,17 +112,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( startIndex != null) {
-			resourcePath = resourcePath.replace("{startIndex}", APIInvoker.toPathValue(startIndex));
+			resourcePath = resourcePath.replace("{startIndex}", startIndex);
 		}
 		if( pageSize != null) {
-			resourcePath = resourcePath.replace("{pageSize}", APIInvoker.toPathValue(pageSize));
+			resourcePath = resourcePath.replace("{pageSize}", pageSize);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -133,9 +129,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DocumentViewsResponse responseObject = (DocumentViewsResponse) getApiInvoker().deserialize(response, DocumentViewsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Share document
@@ -149,7 +144,7 @@ public class DocAPI extends Object {
 	 * @return SharedUsersResponse {@link SharedUsersResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, sharers") 
+	 @MethodArgumentNames(value="userId, fileId, sharers")
 	 public static SharedUsersResponse ShareDocument(String userId, String fileId, String sharers) throws APIException {
 
 		//parse inputs
@@ -159,17 +154,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( sharers != null) {
-			resourcePath = resourcePath.replace("{sharers}", APIInvoker.toPathValue(sharers));
+			resourcePath = resourcePath.replace("{sharers}", sharers);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -177,9 +171,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedUsersResponse responseObject = (SharedUsersResponse) getApiInvoker().deserialize(response, SharedUsersResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Unshare document
@@ -192,7 +185,7 @@ public class DocAPI extends Object {
 	 * @return SharedUsersResponse {@link SharedUsersResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static SharedUsersResponse UnshareDocument(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -202,14 +195,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -217,9 +209,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedUsersResponse responseObject = (SharedUsersResponse) getApiInvoker().deserialize(response, SharedUsersResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get folder sharers
@@ -232,7 +223,7 @@ public class DocAPI extends Object {
 	 * @return SharedUsersResponse {@link SharedUsersResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, folderId") 
+	 @MethodArgumentNames(value="userId, folderId")
 	 public static SharedUsersResponse GetFolderSharers(String userId, String folderId) throws APIException {
 
 		//parse inputs
@@ -242,14 +233,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( folderId != null) {
-			resourcePath = resourcePath.replace("{folderId}", APIInvoker.toPathValue(folderId));
+			resourcePath = resourcePath.replace("{folderId}", folderId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -257,9 +247,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedUsersResponse responseObject = (SharedUsersResponse) getApiInvoker().deserialize(response, SharedUsersResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Share folder
@@ -273,7 +262,7 @@ public class DocAPI extends Object {
 	 * @return SharedUsersResponse {@link SharedUsersResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, folderId, sharers") 
+	 @MethodArgumentNames(value="userId, folderId, sharers")
 	 public static SharedUsersResponse ShareFolder(String userId, String folderId, String sharers) throws APIException {
 
 		//parse inputs
@@ -283,17 +272,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( folderId != null) {
-			resourcePath = resourcePath.replace("{folderId}", APIInvoker.toPathValue(folderId));
+			resourcePath = resourcePath.replace("{folderId}", folderId);
 		}
 		if( sharers != null) {
-			resourcePath = resourcePath.replace("{sharers}", APIInvoker.toPathValue(sharers));
+			resourcePath = resourcePath.replace("{sharers}", sharers);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -301,9 +289,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedUsersResponse responseObject = (SharedUsersResponse) getApiInvoker().deserialize(response, SharedUsersResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Unshare folder
@@ -316,7 +303,7 @@ public class DocAPI extends Object {
 	 * @return SharedUsersResponse {@link SharedUsersResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, folderId") 
+	 @MethodArgumentNames(value="userId, folderId")
 	 public static SharedUsersResponse UnshareFolder(String userId, String folderId) throws APIException {
 
 		//parse inputs
@@ -326,14 +313,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( folderId != null) {
-			resourcePath = resourcePath.replace("{folderId}", APIInvoker.toPathValue(folderId));
+			resourcePath = resourcePath.replace("{folderId}", folderId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -341,9 +327,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedUsersResponse responseObject = (SharedUsersResponse) getApiInvoker().deserialize(response, SharedUsersResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Set document access mode
@@ -357,7 +342,7 @@ public class DocAPI extends Object {
 	 * @return DocumentAccessInfoResponse {@link DocumentAccessInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, mode") 
+	 @MethodArgumentNames(value="userId, fileId, mode")
 	 public static DocumentAccessInfoResponse SetDocumentAccessMode(String userId, String fileId, String mode) throws APIException {
 
 		//parse inputs
@@ -367,17 +352,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( mode != null) {
-			resourcePath = resourcePath.replace("{mode}", APIInvoker.toPathValue(mode));
+			resourcePath = resourcePath.replace("{mode}", mode);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -385,9 +369,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DocumentAccessInfoResponse responseObject = (DocumentAccessInfoResponse) getApiInvoker().deserialize(response, DocumentAccessInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get document access info
@@ -400,7 +383,7 @@ public class DocAPI extends Object {
 	 * @return DocumentAccessInfoResponse {@link DocumentAccessInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static DocumentAccessInfoResponse GetDocumentAccessInfo(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -410,14 +393,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -425,9 +407,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DocumentAccessInfoResponse responseObject = (DocumentAccessInfoResponse) getApiInvoker().deserialize(response, DocumentAccessInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get document metadata
@@ -440,7 +421,7 @@ public class DocAPI extends Object {
 	 * @return GetDocumentInfoResponse {@link GetDocumentInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static GetDocumentInfoResponse GetDocumentMetadata(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -450,14 +431,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -465,9 +445,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetDocumentInfoResponse responseObject = (GetDocumentInfoResponse) getApiInvoker().deserialize(response, GetDocumentInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Set document user status
@@ -481,7 +460,7 @@ public class DocAPI extends Object {
 	 * @return DocumentUserStatusResponse {@link DocumentUserStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, status") 
+	 @MethodArgumentNames(value="userId, fileId, status")
 	 public static DocumentUserStatusResponse SetDocumentUserStatus(String userId, String fileId, String status) throws APIException {
 
 		//parse inputs
@@ -491,17 +470,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( status != null) {
-			resourcePath = resourcePath.replace("{status}", APIInvoker.toPathValue(status));
+			resourcePath = resourcePath.replace("{status}", status);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -509,9 +487,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DocumentUserStatusResponse responseObject = (DocumentUserStatusResponse) getApiInvoker().deserialize(response, DocumentUserStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get shared documents
@@ -523,7 +500,7 @@ public class DocAPI extends Object {
 	 * @return SharedDocumentsResponse {@link SharedDocumentsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="docDocInputSharesInput") 
+	 @MethodArgumentNames(value="docDocInputSharesInput")
 	 public static SharedDocumentsResponse GetSharedDocuments(DocDocInputSharesInput docDocInputSharesInput) throws APIException {
 
 		//parse inputs
@@ -532,28 +509,26 @@ public class DocAPI extends Object {
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(docDocInputSharesInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", docDocInputSharesInput.getUserId());
 		}
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getSharesTypes() != null) {
-		 	resourcePath = resourcePath.replace("{sharesTypes}", APIInvoker.toPathValue(docDocInputSharesInput.getSharesTypes()));
+		 	resourcePath = resourcePath.replace("{sharesTypes}", docDocInputSharesInput.getSharesTypes());
 		}
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getPageIndex() != null) {
-		 	resourcePath = resourcePath.replace("{pageIndex}", APIInvoker.toPathValue(docDocInputSharesInput.getPageIndex()));
+		 	resourcePath = resourcePath.replace("{pageIndex}", docDocInputSharesInput.getPageIndex());
 		}
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getPageSize() != null) {
-		 	resourcePath = resourcePath.replace("{pageSize}", APIInvoker.toPathValue(docDocInputSharesInput.getPageSize()));
+		 	resourcePath = resourcePath.replace("{pageSize}", docDocInputSharesInput.getPageSize());
 		}
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getOrderBy() != null) {
-		 	resourcePath = resourcePath.replace("{orderBy}", APIInvoker.toPathValue(docDocInputSharesInput.getOrderBy()));
+		 	resourcePath = resourcePath.replace("{orderBy}", docDocInputSharesInput.getOrderBy());
 		}
 		if( docDocInputSharesInput != null && docDocInputSharesInput.getOrderAsc() != null) {
-		 	resourcePath = resourcePath.replace("{orderAsc}", APIInvoker.toPathValue(docDocInputSharesInput.getOrderAsc()));
+		 	resourcePath = resourcePath.replace("{orderAsc}", docDocInputSharesInput.getOrderAsc());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -561,9 +536,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SharedDocumentsResponse responseObject = (SharedDocumentsResponse) getApiInvoker().deserialize(response, SharedDocumentsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get template fields
@@ -577,7 +551,7 @@ public class DocAPI extends Object {
 	 * @return TemplateFieldsResponse {@link TemplateFieldsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, includeGeometry") 
+	 @MethodArgumentNames(value="userId, fileId, includeGeometry")
 	 public static TemplateFieldsResponse GetTemplateFields(String userId, String fileId, String includeGeometry) throws APIException {
 
 		//parse inputs
@@ -587,17 +561,16 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( includeGeometry != null) {
-			resourcePath = resourcePath.replace("{includeGeometry}", APIInvoker.toPathValue(includeGeometry));
+			resourcePath = resourcePath.replace("{includeGeometry}", includeGeometry);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -605,9 +578,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		TemplateFieldsResponse responseObject = (TemplateFieldsResponse) getApiInvoker().deserialize(response, TemplateFieldsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get document formats
@@ -620,7 +592,7 @@ public class DocAPI extends Object {
 	 * @return GetDocumentForeignTypesResponse {@link GetDocumentForeignTypesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static GetDocumentForeignTypesResponse GetDocumentFormats(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -630,14 +602,13 @@ public class DocAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -645,9 +616,8 @@ public class DocAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetDocumentForeignTypesResponse responseObject = (GetDocumentForeignTypesResponse) getApiInvoker().deserialize(response, GetDocumentForeignTypesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

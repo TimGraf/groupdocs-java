@@ -39,7 +39,17 @@ public class SignatureSignatureSettings extends Object {
     /**
      * 
      */
+	 private String initialsData ;
+
+    /**
+     * 
+     */
 	 private String lastName ;
+
+    /**
+     * 
+     */
+	 private String signatureData ;
 
     /**
      * 
@@ -80,12 +90,38 @@ public class SignatureSignatureSettings extends Object {
 	 * 
 	 * 
 	 */
+	 public String getInitialsData() {
+	 	return initialsData;
+	 }  
+	 
+	 public void setInitialsData(String  initialsData) {
+	 	this.initialsData = initialsData;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public String getLastName() {
 	 	return lastName;
 	 }  
 	 
 	 public void setLastName(String  lastName) {
 	 	this.lastName = lastName;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getSignatureData() {
+	 	return signatureData;
+	 }  
+	 
+	 public void setSignatureData(String  signatureData) {
+	 	this.signatureData = signatureData;
 	 }
 
 	/**

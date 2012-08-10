@@ -51,7 +51,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static UserInfoResponse GetUserProfile(String userId) throws APIException {
 
 		//parse inputs
@@ -61,11 +61,10 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -73,9 +72,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update user profile
@@ -88,7 +86,7 @@ public class MgmtAPI extends Object {
 	 * @return UpdateUserResponse {@link UpdateUserResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static UpdateUserResponse UpdateUserProfile(String userId, UserInfo postData) throws APIException {
 
 		//parse inputs
@@ -98,11 +96,10 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -110,9 +107,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateUserResponse responseObject = (UpdateUserResponse) getApiInvoker().deserialize(response, UpdateUserResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Change user password
@@ -125,7 +121,7 @@ public class MgmtAPI extends Object {
 	 * @return ChangePasswordResponse {@link ChangePasswordResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static ChangePasswordResponse ChangeUserPassword(String userId, UserPasswordInfo postData) throws APIException {
 
 		//parse inputs
@@ -135,11 +131,10 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -147,9 +142,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ChangePasswordResponse responseObject = (ChangePasswordResponse) getApiInvoker().deserialize(response, ChangePasswordResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get user profile by reset token
@@ -162,7 +156,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, token") 
+	 @MethodArgumentNames(value="callerId, token")
 	 public static UserInfoResponse GetUserProfileByResetToken(String callerId, String token) throws APIException {
 
 		//parse inputs
@@ -172,14 +166,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( token != null) {
-			resourcePath = resourcePath.replace("{token}", APIInvoker.toPathValue(token));
+			resourcePath = resourcePath.replace("{token}", token);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -187,9 +180,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get user profile by verif token
@@ -202,7 +194,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, token") 
+	 @MethodArgumentNames(value="callerId, token")
 	 public static UserInfoResponse GetUserProfileByVerifToken(String callerId, String token) throws APIException {
 
 		//parse inputs
@@ -212,14 +204,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( token != null) {
-			resourcePath = resourcePath.replace("{token}", APIInvoker.toPathValue(token));
+			resourcePath = resourcePath.replace("{token}", token);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -227,9 +218,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get user profile by claimed token
@@ -242,7 +232,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, token") 
+	 @MethodArgumentNames(value="callerId, token")
 	 public static UserInfoResponse GetUserProfileByClaimedToken(String callerId, String token) throws APIException {
 
 		//parse inputs
@@ -252,14 +242,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( token != null) {
-			resourcePath = resourcePath.replace("{token}", APIInvoker.toPathValue(token));
+			resourcePath = resourcePath.replace("{token}", token);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -267,9 +256,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get alien user profile
@@ -282,7 +270,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, userId") 
+	 @MethodArgumentNames(value="callerId, userId")
 	 public static UserInfoResponse GetAlienUserProfile(String callerId, String userId) throws APIException {
 
 		//parse inputs
@@ -292,14 +280,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -307,9 +294,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update alien user profile
@@ -323,7 +309,7 @@ public class MgmtAPI extends Object {
 	 * @return UpdateUserResponse {@link UpdateUserResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, userId, postData") 
+	 @MethodArgumentNames(value="callerId, userId, postData")
 	 public static UpdateUserResponse UpdateAlienUserProfile(String callerId, String userId, UserInfo postData) throws APIException {
 
 		//parse inputs
@@ -333,14 +319,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -348,9 +333,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateUserResponse responseObject = (UpdateUserResponse) getApiInvoker().deserialize(response, UpdateUserResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create user
@@ -363,7 +347,7 @@ public class MgmtAPI extends Object {
 	 * @return CreateUserResponse {@link CreateUserResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, postData") 
+	 @MethodArgumentNames(value="callerId, postData")
 	 public static CreateUserResponse CreateUser(String callerId, UserInfo postData) throws APIException {
 
 		//parse inputs
@@ -373,11 +357,10 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -385,9 +368,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreateUserResponse responseObject = (CreateUserResponse) getApiInvoker().deserialize(response, CreateUserResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create user login
@@ -401,7 +383,7 @@ public class MgmtAPI extends Object {
 	 * @return UserInfoResponse {@link UserInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, userId, password") 
+	 @MethodArgumentNames(value="callerId, userId, password")
 	 public static UserInfoResponse CreateUserLogin(String callerId, String userId, String password) throws APIException {
 
 		//parse inputs
@@ -411,17 +393,16 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( password != null) {
-			resourcePath = resourcePath.replace("{password}", APIInvoker.toPathValue(password));
+			resourcePath = resourcePath.replace("{password}", password);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -429,9 +410,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UserInfoResponse responseObject = (UserInfoResponse) getApiInvoker().deserialize(response, UserInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Change alien user password
@@ -445,7 +425,7 @@ public class MgmtAPI extends Object {
 	 * @return ChangePasswordResponse {@link ChangePasswordResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, userId, postData") 
+	 @MethodArgumentNames(value="callerId, userId, postData")
 	 public static ChangePasswordResponse ChangeAlienUserPassword(String callerId, String userId, UserPasswordInfo postData) throws APIException {
 
 		//parse inputs
@@ -455,14 +435,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -470,9 +449,8 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ChangePasswordResponse responseObject = (ChangePasswordResponse) getApiInvoker().deserialize(response, ChangePasswordResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Reset user password
@@ -485,7 +463,7 @@ public class MgmtAPI extends Object {
 	 * @return ResetPasswordResponse {@link ResetPasswordResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="callerId, userId") 
+	 @MethodArgumentNames(value="callerId, userId")
 	 public static ResetPasswordResponse ResetUserPassword(String callerId, String userId) throws APIException {
 
 		//parse inputs
@@ -495,14 +473,13 @@ public class MgmtAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( callerId != null) {
-			resourcePath = resourcePath.replace("{callerId}", APIInvoker.toPathValue(callerId));
+			resourcePath = resourcePath.replace("{callerId}", callerId);
 		}
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -510,9 +487,120 @@ public class MgmtAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ResetPasswordResponse responseObject = (ResetPasswordResponse) getApiInvoker().deserialize(response, ResetPasswordResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
+
+	/**
+	 * Returns user's storage providers.
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  
+	 * @return GetStorageProvidersResponse {@link GetStorageProvidersResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId")
+	 public static GetStorageProvidersResponse GetStorageProviders(String userId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/mgmt/{userId}/storages";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		GetStorageProvidersResponse responseObject = (GetStorageProvidersResponse) getApiInvoker().deserialize(response, GetStorageProvidersResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Adds a new storage provider configuration.
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param provider  Storage provider name
+     *  @param postData  Storage provider configuration details
+     *  
+	 * @return AddStorageProviderResponse {@link AddStorageProviderResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, provider, postData")
+	 public static AddStorageProviderResponse AddStorageProvider(String userId, String provider, StorageProviderInfo postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/mgmt/{userId}/storages/{provider}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( provider != null) {
+			resourcePath = resourcePath.replace("{provider}", provider);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		AddStorageProviderResponse responseObject = (AddStorageProviderResponse) getApiInvoker().deserialize(response, AddStorageProviderResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Updates user's storage provider configuration.
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param provider  Storage provider name
+     *  @param postData  Storage provider configuration details
+     *  
+	 * @return UpdateStorageProviderResponse {@link UpdateStorageProviderResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, provider, postData")
+	 public static UpdateStorageProviderResponse UpdateStorageProvider(String userId, String provider, StorageProviderInfo postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/mgmt/{userId}/storages/{provider}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( provider != null) {
+			resourcePath = resourcePath.replace("{provider}", provider);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		UpdateStorageProviderResponse responseObject = (UpdateStorageProviderResponse) getApiInvoker().deserialize(response, UpdateStorageProviderResponse.class);
+		return responseObject;
+	}
 
 
 

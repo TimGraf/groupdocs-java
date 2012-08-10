@@ -42,128 +42,42 @@ public class ComparisonAPI extends Object {
     private static APIInvoker apiInvoker = null;
 
 	/**
-	 * Compare
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param sourceFileId  Source File GUID
-     *  @param targetFileId  Target File GUID
-     *  
-	 * @return CompareResponse {@link CompareResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, sourceFileId, targetFileId") 
-	 public static CompareResponse Compare(String userId, String sourceFileId, String targetFileId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/comparison/{userId}/comparison/compare?source={sourceFileId}&target={targetFileId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( sourceFileId != null) {
-			resourcePath = resourcePath.replace("{sourceFileId}", APIInvoker.toPathValue(sourceFileId));
-		}
-		if( targetFileId != null) {
-			resourcePath = resourcePath.replace("{targetFileId}", APIInvoker.toPathValue(targetFileId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		CompareResponse responseObject = (CompareResponse) getApiInvoker().deserialize(response, CompareResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get changes
+	 * Download comparison result file
 	 *
 	 * 
 	 * 
      * @param userId  User GUID
      *  @param resultFileId  Comparison result file GUID
      *  
-	 * @return ChangesResponse {@link ChangesResponse} 
+	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, resultFileId") 
-	 public static ChangesResponse GetChanges(String userId, String resultFileId) throws APIException {
+	 @MethodArgumentNames(value="userId, resultFileId")
+	 public static String DownloadResult(String userId, String resultFileId) throws APIException {
 
 		//parse inputs
-		String  resourcePath = "/comparison/{userId}/comparison/changes?resultFileId={resultFileId}";
+		String  resourcePath = "/comparison/{userId}/comparison/download?resultFileId={resultFileId}&format={format}";
 		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( resultFileId != null) {
-			resourcePath = resourcePath.replace("{resultFileId}", APIInvoker.toPathValue(resultFileId));
+			resourcePath = resourcePath.replace("{resultFileId}", resultFileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
             return null;
         }
 		//create output objects if the response has more than one object
-		ChangesResponse responseObject = (ChangesResponse) getApiInvoker().deserialize(response, ChangesResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get document details
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param guid  Document GUID
-     *  
-	 * @return DocumentDetailsResponse {@link DocumentDetailsResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, guid") 
-	 public static DocumentDetailsResponse GetDocumentDetails(String userId, String guid) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/comparison/{userId}/comparison/document?guid={guid}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( guid != null) {
-			resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(guid));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		DocumentDetailsResponse responseObject = (DocumentDetailsResponse) getApiInvoker().deserialize(response, DocumentDetailsResponse.class);
-		return responseObject;		
-				
-	 }
+		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
+		return responseObject;
+	}
 
 
 

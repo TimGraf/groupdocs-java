@@ -37,7 +37,7 @@ public class SignatureEnvelopeFieldInfo extends Object {
     /**
      * 
      */
-	 private String check ;
+	 private String regularExpression ;
 
     /**
      * 
@@ -57,22 +57,7 @@ public class SignatureEnvelopeFieldInfo extends Object {
     /**
      * 
      */
-	 private Double textRows ;
-
-    /**
-     * 
-     */
 	 private String id ;
-
-    /**
-     * 
-     */
-	 private Double input ;
-
-    /**
-     * 
-     */
-	 private Double textColumns ;
 
     /**
      * 
@@ -125,12 +110,12 @@ public class SignatureEnvelopeFieldInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public String getCheck() {
-	 	return check;
+	 public String getRegularExpression() {
+	 	return regularExpression;
 	 }  
 	 
-	 public void setCheck(String  check) {
-	 	this.check = check;
+	 public void setRegularExpression(String  regularExpression) {
+	 	this.regularExpression = regularExpression;
 	 }
 
 	/**
@@ -177,51 +162,12 @@ public class SignatureEnvelopeFieldInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getTextRows() {
-	 	return textRows;
-	 }  
-	 
-	 public void setTextRows(Double  textRows) {
-	 	this.textRows = textRows;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public String getId() {
 	 	return id;
 	 }  
 	 
 	 public void setId(String  id) {
 	 	this.id = id;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getInput() {
-	 	return input;
-	 }  
-	 
-	 public void setInput(Double  input) {
-	 	this.input = input;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getTextColumns() {
-	 	return textColumns;
-	 }  
-	 
-	 public void setTextColumns(Double  textColumns) {
-	 	this.textColumns = textColumns;
 	 }
 
 	/**

@@ -42,6 +42,957 @@ public class SignatureAPI extends Object {
     private static APIInvoker apiInvoker = null;
 
 	/**
+	 * Delegate envelope recipient
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param envelopeId  Envelope GUID
+     *  @param recipientId  Recipient GUID
+     *  
+	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, envelopeId, recipientId")
+	 public static SignatureStatusResponse DelegateEnvelopeRecipient(String userId, String envelopeId, String recipientId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}/delegate?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( envelopeId != null) {
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
+		}
+		if( recipientId != null) {
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Add contact
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param postData  Contact data
+     *  
+	 * @return SignatureContactResponse {@link SignatureContactResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, postData")
+	 public static SignatureContactResponse AddContact(String userId, SignatureContactSettings postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/contact";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Update contact
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param contactId  Contact GUID
+     *  @param postData  Contact data
+     *  
+	 * @return SignatureContactResponse {@link SignatureContactResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, contactId, postData")
+	 public static SignatureContactResponse ModifyContact(String userId, String contactId, SignatureContactSettings postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/contacts/{contactId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( contactId != null) {
+			resourcePath = resourcePath.replace("{contactId}", contactId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get contacts
+	 *
+	 * 
+	 * 
+     * @param signatureSignatureInput  
+     *  
+	 * @return SignatureContactsResponse {@link SignatureContactsResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="signatureSignatureInput")
+	 public static SignatureContactsResponse GetContacts(SignatureSignatureInput signatureSignatureInput) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/contacts?firstName={firstName}&lastName={lastName}&email={email}&records={count}&page={page}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( signatureSignatureInput != null && signatureSignatureInput.getPage() != null) {
+		 	queryParams.put("page", signatureSignatureInput.getPage());
+		}
+		if( signatureSignatureInput != null && signatureSignatureInput.getFirstName() != null) {
+		 	queryParams.put("firstName", signatureSignatureInput.getFirstName());
+		}
+		if( signatureSignatureInput != null && signatureSignatureInput.getLastName() != null) {
+		 	queryParams.put("lastName", signatureSignatureInput.getLastName());
+		}
+		if( signatureSignatureInput != null && signatureSignatureInput.getEmail() != null) {
+		 	queryParams.put("email", signatureSignatureInput.getEmail());
+		}
+
+		if( signatureSignatureInput != null && signatureSignatureInput.getUserId() != null) {
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInput.getUserId());
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureContactsResponse responseObject = (SignatureContactsResponse) getApiInvoker().deserialize(response, SignatureContactsResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Delete contact
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param contactId  Contact GUID
+     *  
+	 * @return SignatureContactResponse {@link SignatureContactResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, contactId")
+	 public static SignatureContactResponse DeleteContact(String userId, String contactId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/contacts/{contactId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "DELETE";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( contactId != null) {
+			resourcePath = resourcePath.replace("{contactId}", contactId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Import contacts
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  
+	 * @return SignatureContactsImportResponse {@link SignatureContactsImportResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId")
+	 public static SignatureContactsImportResponse ImportContacts(String userId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/contacts";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureContactsImportResponse responseObject = (SignatureContactsImportResponse) getApiInvoker().deserialize(response, SignatureContactsImportResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get envelope recources
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  
+	 * @return SignatureEnvelopeResourcesResponse {@link SignatureEnvelopeResourcesResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId")
+	 public static SignatureEnvelopeResourcesResponse GetSignatureEnvelopeResources(String userId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/envelopes/resources";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureEnvelopeResourcesResponse responseObject = (SignatureEnvelopeResourcesResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResourcesResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Modify signature envelope field location
+	 *
+	 * 
+	 * 
+     * @param postData  Settings of the field location
+     *  @param signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput  
+     *  
+	 * @return SignatureEnvelopeFieldResponse {@link SignatureEnvelopeFieldResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="postData, signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput")
+	 public static SignatureEnvelopeFieldResponse ModifySignatureEnvelopeFieldLocation(SignatureEnvelopeFieldLocationSettings postData, SignatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/recipient/{recipientId}/fields/{fieldId}/locations/{locationId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId() != null) {
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getEnvelopeId() != null) {
+		 	resourcePath = resourcePath.replace("{envelopeId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getEnvelopeId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId() != null) {
+		 	resourcePath = resourcePath.replace("{documentId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId() != null) {
+		 	resourcePath = resourcePath.replace("{recipientId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId() != null) {
+		 	resourcePath = resourcePath.replace("{fieldId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId() != null) {
+		 	resourcePath = resourcePath.replace("{locationId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId());
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureEnvelopeFieldResponse responseObject = (SignatureEnvelopeFieldResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get templates
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param page  Page number
+     *  
+	 * @return SignatureTemplatesResponse {@link SignatureTemplatesResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, page")
+	 public static SignatureTemplatesResponse GetSignatureTemplates(String userId, String page) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates?records={count}&page={page}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( page != null) {
+		 	queryParams.put("page", page);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplatesResponse responseObject = (SignatureTemplatesResponse) getApiInvoker().deserialize(response, SignatureTemplatesResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId")
+	 public static SignatureTemplateResponse GetSignatureTemplate(String userId, String templateId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Create template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param name  Template name
+     *  @param templateId  Template GUID of the template that will be used to create the new template
+     *  @param postData  Settings of the template
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, name, templateId, postData")
+	 public static SignatureTemplateResponse CreateSignatureTemplate(String userId, String name, String templateId, SignatureTemplateSettings postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/template?name={name}&templateId={templateId}&envelopeId={envelopeId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( name != null) {
+		 	queryParams.put("name", name);
+		}
+		if( templateId != null) {
+		 	queryParams.put("templateId", templateId);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Modify template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param postData  Settings of the template
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, postData")
+	 public static SignatureTemplateResponse ModifySignatureTemplate(String userId, String templateId, SignatureTemplateSettings postData) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Rename template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param name  New template name
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, name")
+	 public static SignatureTemplateResponse RenameSignatureTemplate(String userId, String templateId, String name) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/tempalates/{templateId}?name={name}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( name != null) {
+		 	queryParams.put("name", name);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Delete template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  
+	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId")
+	 public static SignatureStatusResponse DeleteSignatureTemplate(String userId, String templateId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "DELETE";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Add recipient to the template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param nickname  Nickname of the recipient
+     *  @param order  Display order of the recipient
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, nickname, order")
+	 public static SignatureTemplateResponse AddSignatureTemplateRecipient(String userId, String templateId, String nickname, String order) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipient?nickname={nickname}&role={roleId}&order={order}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( nickname != null) {
+		 	queryParams.put("nickname", nickname);
+		}
+		if( order != null) {
+		 	queryParams.put("order", order);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get template recipients
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  
+	 * @return SignatureTemplateRecipientsResponse {@link SignatureTemplateRecipientsResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId")
+	 public static SignatureTemplateRecipientsResponse GetSignatureTemplateRecipients(String userId, String templateId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipients";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateRecipientsResponse responseObject = (SignatureTemplateRecipientsResponse) getApiInvoker().deserialize(response, SignatureTemplateRecipientsResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Remove recipient from template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param recipientId  Recipient GUID
+     *  
+	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, recipientId")
+	 public static SignatureStatusResponse DeleteSignatureTemplateRecipient(String userId, String templateId, String recipientId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipients/{recipientId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "DELETE";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+		if( recipientId != null) {
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Update template recipient
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param nickname  Nickname of the recipient
+     *  @param order  Display order of the recipient
+     *  
+	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, nickname, order")
+	 public static SignatureTemplateResponse ModifySignatureTemplateRecipient(String userId, String templateId, String nickname, String order) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipient/{recipientId}?nickname={nickname}&role={roleId}&order={order}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( nickname != null) {
+		 	queryParams.put("nickname", nickname);
+		}
+		if( order != null) {
+		 	queryParams.put("order", order);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Add document to template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param documentId  Document GUID
+     *  @param order  Display order of the document
+     *  
+	 * @return SignatureTemplateDocumentResponse {@link SignatureTemplateDocumentResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, documentId, order")
+	 public static SignatureTemplateDocumentResponse AddSignatureTemplateDocument(String userId, String templateId, String documentId, String order) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/document/{documentId}?order={order}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( order != null) {
+		 	queryParams.put("order", order);
+		}
+
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+		if( documentId != null) {
+			resourcePath = resourcePath.replace("{documentId}", documentId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateDocumentResponse responseObject = (SignatureTemplateDocumentResponse) getApiInvoker().deserialize(response, SignatureTemplateDocumentResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Get documents in template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  
+	 * @return SignatureTemplateDocumentsResponse {@link SignatureTemplateDocumentsResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId")
+	 public static SignatureTemplateDocumentsResponse GetSignatureTemplateDocuments(String userId, String templateId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "GET";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateDocumentsResponse responseObject = (SignatureTemplateDocumentsResponse) getApiInvoker().deserialize(response, SignatureTemplateDocumentsResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Remove document from template
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param documentId  Document GUID
+     *  
+	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, documentId")
+	 public static SignatureStatusResponse DeleteSignatureTemplateDocument(String userId, String templateId, String documentId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "DELETE";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+		if( documentId != null) {
+			resourcePath = resourcePath.replace("{documentId}", documentId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Add signature template field
+	 *
+	 * 
+	 * 
+     * @param postData  Settings of the field
+     *  @param signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput  
+     *  
+	 * @return SignatureTemplateFieldResponse {@link SignatureTemplateFieldResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="postData, signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput")
+	 public static SignatureTemplateFieldResponse AddSignatureTemplateField(SignatureTemplateFieldSettings postData, SignatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}/recipient/{recipientId}/field/{fieldId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "POST";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getUserId() != null) {
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getUserId());
+		}
+		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getTemplateId() != null) {
+		 	resourcePath = resourcePath.replace("{templateId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getTemplateId());
+		}
+		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getDocumentId() != null) {
+		 	resourcePath = resourcePath.replace("{documentId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getDocumentId());
+		}
+		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getRecipientId() != null) {
+		 	resourcePath = resourcePath.replace("{recipientId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getRecipientId());
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateFieldResponse responseObject = (SignatureTemplateFieldResponse) getApiInvoker().deserialize(response, SignatureTemplateFieldResponse.class);
+		return responseObject;
+	}
+
+	/**
+	 * Modify signature template field
+	 *
+	 * 
+	 * 
+     * @param userId  User GUID
+     *  @param templateId  Template GUID
+     *  @param documentId  Document GUID
+     *  @param fieldId  Field GUID
+     *  
+	 * @return SignatureTemplateFieldResponse {@link SignatureTemplateFieldResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="userId, templateId, documentId, fieldId")
+	 public static SignatureTemplateFieldResponse ModifySignatureTemplateField(String userId, String templateId, String documentId, String fieldId) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}/field/{fieldId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( userId != null) {
+			resourcePath = resourcePath.replace("{userId}", userId);
+		}
+		if( templateId != null) {
+			resourcePath = resourcePath.replace("{templateId}", templateId);
+		}
+		if( documentId != null) {
+			resourcePath = resourcePath.replace("{documentId}", documentId);
+		}
+		if( fieldId != null) {
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureTemplateFieldResponse responseObject = (SignatureTemplateFieldResponse) getApiInvoker().deserialize(response, SignatureTemplateFieldResponse.class);
+		return responseObject;
+	}
+
+	/**
 	 * Delete signature template field location
 	 *
 	 * 
@@ -54,7 +1005,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, templateId, fieldId, locationId") 
+	 @MethodArgumentNames(value="userId, templateId, fieldId, locationId")
 	 public static SignatureStatusResponse DeleteSignatureTemplateFieldLocation(String userId, String templateId, String fieldId, String locationId) throws APIException {
 
 		//parse inputs
@@ -64,20 +1015,19 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
+			resourcePath = resourcePath.replace("{templateId}", templateId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 		if( locationId != null) {
-			resourcePath = resourcePath.replace("{locationId}", APIInvoker.toPathValue(locationId));
+			resourcePath = resourcePath.replace("{locationId}", locationId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -85,12 +1035,11 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
-	 * Move signature template field location
+	 * Modify signature template field location
 	 *
 	 * 
 	 * 
@@ -100,8 +1049,8 @@ public class SignatureAPI extends Object {
 	 * @return SignatureTemplateFieldResponse {@link SignatureTemplateFieldResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="postData, signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput") 
-	 public static SignatureTemplateFieldResponse MoveSignatureTemplateFieldLocation(SignatureTemplateFieldLocationSettings postData, SignatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput) throws APIException {
+	 @MethodArgumentNames(value="postData, signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput")
+	 public static SignatureTemplateFieldResponse ModifySignatureTemplateFieldLocation(SignatureTemplateFieldLocationSettings postData, SignatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput) throws APIException {
 
 		//parse inputs
 		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}/recipient/{recipientId}/fields/{fieldId}/locations/{locationId}";
@@ -109,28 +1058,26 @@ public class SignatureAPI extends Object {
 		String method = "PUT";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId());
 		}
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getTemplateId() != null) {
-		 	resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getTemplateId()));
+		 	resourcePath = resourcePath.replace("{templateId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getTemplateId());
 		}
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId() != null) {
-		 	resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId()));
+		 	resourcePath = resourcePath.replace("{documentId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId());
 		}
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId() != null) {
-		 	resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId()));
+		 	resourcePath = resourcePath.replace("{recipientId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId());
 		}
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId() != null) {
-		 	resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId()));
+		 	resourcePath = resourcePath.replace("{fieldId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId());
 		}
 		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId() != null) {
-		 	resourcePath = resourcePath.replace("{locationId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId()));
+		 	resourcePath = resourcePath.replace("{locationId}", signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -138,9 +1085,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureTemplateFieldResponse responseObject = (SignatureTemplateFieldResponse) getApiInvoker().deserialize(response, SignatureTemplateFieldResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get template fields
@@ -155,7 +1101,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureTemplateFieldsResponse {@link SignatureTemplateFieldsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, templateId, documentId, recipientId") 
+	 @MethodArgumentNames(value="userId, templateId, documentId, recipientId")
 	 public static SignatureTemplateFieldsResponse GetSignatureTemplateFields(String userId, String templateId, String documentId, String recipientId) throws APIException {
 
 		//parse inputs
@@ -165,20 +1111,19 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
+			resourcePath = resourcePath.replace("{templateId}", templateId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -186,9 +1131,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureTemplateFieldsResponse responseObject = (SignatureTemplateFieldsResponse) getApiInvoker().deserialize(response, SignatureTemplateFieldsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete signature template field
@@ -202,7 +1146,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, templateId, fieldId") 
+	 @MethodArgumentNames(value="userId, templateId, fieldId")
 	 public static SignatureTemplateResponse DeleteSignatureTemplateField(String userId, String templateId, String fieldId) throws APIException {
 
 		//parse inputs
@@ -212,17 +1156,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
+			resourcePath = resourcePath.replace("{templateId}", templateId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -230,9 +1173,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get user signatures
@@ -244,7 +1186,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureSignaturesResponse {@link SignatureSignaturesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static SignatureSignaturesResponse GetSignatures(String userId) throws APIException {
 
 		//parse inputs
@@ -254,11 +1196,10 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -266,9 +1207,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureSignaturesResponse responseObject = (SignatureSignaturesResponse) getApiInvoker().deserialize(response, SignatureSignaturesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete user signature
@@ -281,7 +1221,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, signatureId") 
+	 @MethodArgumentNames(value="userId, signatureId")
 	 public static SignatureStatusResponse DeleteSignature(String userId, String signatureId) throws APIException {
 
 		//parse inputs
@@ -291,14 +1231,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( signatureId != null) {
-			resourcePath = resourcePath.replace("{signatureId}", APIInvoker.toPathValue(signatureId));
+			resourcePath = resourcePath.replace("{signatureId}", signatureId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -306,9 +1245,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create user signature
@@ -322,7 +1260,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureSignatureResponse {@link SignatureSignatureResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, name, postData") 
+	 @MethodArgumentNames(value="userId, name, postData")
 	 public static SignatureSignatureResponse CreateSignature(String userId, String name, SignatureSignatureSettings postData) throws APIException {
 
 		//parse inputs
@@ -332,15 +1270,14 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( name != null) {
-		 	queryParams.put("name", APIInvoker.toPathValue(name));
+		 	queryParams.put("name", name);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -348,9 +1285,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureSignatureResponse responseObject = (SignatureSignatureResponse) getApiInvoker().deserialize(response, SignatureSignatureResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add signature image
@@ -365,7 +1301,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureSignatureResponse {@link SignatureSignatureResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, signatureId, type, dataFrom") 
+	 @MethodArgumentNames(value="userId, signatureId, type, dataFrom")
 	 public static SignatureSignatureResponse AddSignatureImage(String userId, String signatureId, String type, String dataFrom) throws APIException {
 
 		//parse inputs
@@ -375,21 +1311,20 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( type != null) {
-		 	queryParams.put("type", APIInvoker.toPathValue(type));
+		 	queryParams.put("type", type);
 		}
 		if( dataFrom != null) {
-		 	queryParams.put("dataFrom", APIInvoker.toPathValue(dataFrom));
+		 	queryParams.put("dataFrom", dataFrom);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( signatureId != null) {
-			resourcePath = resourcePath.replace("{signatureId}", APIInvoker.toPathValue(signatureId));
+			resourcePath = resourcePath.replace("{signatureId}", signatureId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -397,9 +1332,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureSignatureResponse responseObject = (SignatureSignatureResponse) getApiInvoker().deserialize(response, SignatureSignatureResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Fill envelope field
@@ -412,7 +1346,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeFieldResponse {@link SignatureEnvelopeFieldResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="postData, signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput") 
+	 @MethodArgumentNames(value="postData, signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput")
 	 public static SignatureEnvelopeFieldResponse FillEnvelopeField(String postData, SignatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput) throws APIException {
 
 		//parse inputs
@@ -421,25 +1355,23 @@ public class SignatureAPI extends Object {
 		String method = "PUT";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getUserId());
 		}
 		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getEnvelopeId() != null) {
-		 	resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getEnvelopeId()));
+		 	resourcePath = resourcePath.replace("{envelopeId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getEnvelopeId());
 		}
 		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getDocumentId() != null) {
-		 	resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getDocumentId()));
+		 	resourcePath = resourcePath.replace("{documentId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getDocumentId());
 		}
 		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getRecipientId() != null) {
-		 	resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getRecipientId()));
+		 	resourcePath = resourcePath.replace("{recipientId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getRecipientId());
 		}
 		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getFieldId() != null) {
-		 	resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getFieldId()));
+		 	resourcePath = resourcePath.replace("{fieldId}", signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldInput.getFieldId());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -447,9 +1379,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeFieldResponse responseObject = (SignatureEnvelopeFieldResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Sign envelope
@@ -463,7 +1394,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, recipientId") 
+	 @MethodArgumentNames(value="userId, envelopeId, recipientId")
 	 public static SignatureStatusResponse SignEnvelope(String userId, String envelopeId, String recipientId) throws APIException {
 
 		//parse inputs
@@ -473,17 +1404,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -491,9 +1421,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Decline envelope
@@ -507,7 +1436,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, recipientId") 
+	 @MethodArgumentNames(value="userId, envelopeId, recipientId")
 	 public static SignatureStatusResponse DeclineEnvelope(String userId, String envelopeId, String recipientId) throws APIException {
 
 		//parse inputs
@@ -517,17 +1446,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -535,293 +1463,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Delegate envelope recipient
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param envelopeId  Envelope GUID
-     *  @param recipientId  Recipient GUID
-     *  
-	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, envelopeId, recipientId") 
-	 public static SignatureStatusResponse DelegateEnvelopeRecipient(String userId, String envelopeId, String recipientId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/envelopes/{envelopeId}/recipient/{recipientId}/delegate?email={recipientEmail}&firstname={recipientFirstName}&lastname={recipientLastName}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
-		}
-		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Add contact
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param postData  Contact data
-     *  
-	 * @return SignatureContactResponse {@link SignatureContactResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, postData") 
-	 public static SignatureContactResponse AddContact(String userId, SignatureContactSettings postData) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/contact";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Update contact
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param contactId  Contact GUID
-     *  @param postData  Contact data
-     *  
-	 * @return SignatureContactResponse {@link SignatureContactResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, contactId, postData") 
-	 public static SignatureContactResponse ModifyContact(String userId, String contactId, SignatureContactSettings postData) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/contacts/{contactId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( contactId != null) {
-			resourcePath = resourcePath.replace("{contactId}", APIInvoker.toPathValue(contactId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get contacts
-	 *
-	 * 
-	 * 
-     * @param signatureSignatureInput  
-     *  
-	 * @return SignatureContactsResponse {@link SignatureContactsResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="signatureSignatureInput") 
-	 public static SignatureContactsResponse GetContacts(SignatureSignatureInput signatureSignatureInput) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/contacts?firstName={firstName}&lastName={lastName}&email={email}&records={count}&page={page}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
-		if( signatureSignatureInput != null && signatureSignatureInput.getPage() != null) {
-		 	queryParams.put("page", APIInvoker.toPathValue(signatureSignatureInput.getPage()));
-		}
-		if( signatureSignatureInput != null && signatureSignatureInput.getFirstName() != null) {
-		 	queryParams.put("firstName", APIInvoker.toPathValue(signatureSignatureInput.getFirstName()));
-		}
-		if( signatureSignatureInput != null && signatureSignatureInput.getLastName() != null) {
-		 	queryParams.put("lastName", APIInvoker.toPathValue(signatureSignatureInput.getLastName()));
-		}
-		if( signatureSignatureInput != null && signatureSignatureInput.getEmail() != null) {
-		 	queryParams.put("email", APIInvoker.toPathValue(signatureSignatureInput.getEmail()));
-		}
-
-		if( signatureSignatureInput != null && signatureSignatureInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(signatureSignatureInput.getUserId()));
-		}
-
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureContactsResponse responseObject = (SignatureContactsResponse) getApiInvoker().deserialize(response, SignatureContactsResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Delete contact
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param contactId  Contact GUID
-     *  
-	 * @return SignatureContactResponse {@link SignatureContactResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, contactId") 
-	 public static SignatureContactResponse DeleteContact(String userId, String contactId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/contacts/{contactId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "DELETE";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( contactId != null) {
-			resourcePath = resourcePath.replace("{contactId}", APIInvoker.toPathValue(contactId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureContactResponse responseObject = (SignatureContactResponse) getApiInvoker().deserialize(response, SignatureContactResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Import contacts
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  
-	 * @return SignatureContactsImportResponse {@link SignatureContactsImportResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId") 
-	 public static SignatureContactsImportResponse ImportContacts(String userId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/contacts";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureContactsImportResponse responseObject = (SignatureContactsImportResponse) getApiInvoker().deserialize(response, SignatureContactsImportResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get envelope recources
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  
-	 * @return SignatureEnvelopeResourcesResponse {@link SignatureEnvelopeResourcesResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId") 
-	 public static SignatureEnvelopeResourcesResponse GetSignatureEnvelopeResources(String userId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/envelopes/resources";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureEnvelopeResourcesResponse responseObject = (SignatureEnvelopeResourcesResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResourcesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature envelopes
@@ -833,38 +1476,41 @@ public class SignatureAPI extends Object {
      *  @param page  Show records for page number
      *  @param recipientEmail  Filter envelopes by recipient email
      *  @param date  Filter envelopes by date
+     *  @param name  Filter envelopes by name
      *  
 	 * @return SignatureEnvelopesResponse {@link SignatureEnvelopesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, statusId, page, recipientEmail, date") 
-	 public static SignatureEnvelopesResponse GetSignatureEnvelopes(String userId, String statusId, String page, String recipientEmail, String date) throws APIException {
+	 @MethodArgumentNames(value="userId, statusId, page, recipientEmail, date, name")
+	 public static SignatureEnvelopesResponse GetSignatureEnvelopes(String userId, String statusId, String page, String recipientEmail, String date, String name) throws APIException {
 
 		//parse inputs
-		String  resourcePath = "/signature/{userId}/envelopes?statusId={statusId}&records={count}&page={page}&document={originalDocumentMD5}&recipient={recipientEmail}&date={date}";
+		String  resourcePath = "/signature/{userId}/envelopes?statusId={statusId}&records={count}&page={page}&document={originalDocumentMD5}&recipient={recipientEmail}&date={date}&name={name}";
 		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( statusId != null) {
-		 	queryParams.put("statusId", APIInvoker.toPathValue(statusId));
+		 	queryParams.put("statusId", statusId);
 		}
 		if( page != null) {
-		 	queryParams.put("page", APIInvoker.toPathValue(page));
+		 	queryParams.put("page", page);
 		}
 		if( recipientEmail != null) {
-		 	queryParams.put("recipientEmail", APIInvoker.toPathValue(recipientEmail));
+		 	queryParams.put("recipientEmail", recipientEmail);
 		}
 		if( date != null) {
-		 	queryParams.put("date", APIInvoker.toPathValue(date));
+		 	queryParams.put("date", date);
+		}
+		if( name != null) {
+		 	queryParams.put("name", name);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -872,9 +1518,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopesResponse responseObject = (SignatureEnvelopesResponse) getApiInvoker().deserialize(response, SignatureEnvelopesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature envelopes where the user is recipient
@@ -888,7 +1533,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopesResponse {@link SignatureEnvelopesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, statusId, page") 
+	 @MethodArgumentNames(value="userId, statusId, page")
 	 public static SignatureEnvelopesResponse GetRecipientSignatureEnvelopes(String userId, String statusId, String page) throws APIException {
 
 		//parse inputs
@@ -898,18 +1543,17 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( statusId != null) {
-		 	queryParams.put("statusId", APIInvoker.toPathValue(statusId));
+		 	queryParams.put("statusId", statusId);
 		}
 		if( page != null) {
-		 	queryParams.put("page", APIInvoker.toPathValue(page));
+		 	queryParams.put("page", page);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -917,9 +1561,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopesResponse responseObject = (SignatureEnvelopesResponse) getApiInvoker().deserialize(response, SignatureEnvelopesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature envelope
@@ -932,7 +1575,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeResponse {@link SignatureEnvelopeResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureEnvelopeResponse GetSignatureEnvelope(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -942,14 +1585,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -957,9 +1599,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeResponse responseObject = (SignatureEnvelopeResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create signature envelope
@@ -973,7 +1614,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeResponse {@link SignatureEnvelopeResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, name, postData") 
+	 @MethodArgumentNames(value="userId, name, postData")
 	 public static SignatureEnvelopeResponse CreateSignatureEnvelope(String userId, String name, SignatureEnvelopeSettings postData) throws APIException {
 
 		//parse inputs
@@ -983,15 +1624,14 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( name != null) {
-		 	queryParams.put("name", APIInvoker.toPathValue(name));
+		 	queryParams.put("name", name);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -999,9 +1639,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeResponse responseObject = (SignatureEnvelopeResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Modify signature envelope
@@ -1015,7 +1654,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeResponse {@link SignatureEnvelopeResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, postData") 
+	 @MethodArgumentNames(value="userId, envelopeId, postData")
 	 public static SignatureEnvelopeResponse ModifySignatureEnvelope(String userId, String envelopeId, SignatureEnvelopeSettings postData) throws APIException {
 
 		//parse inputs
@@ -1025,14 +1664,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -1040,9 +1678,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeResponse responseObject = (SignatureEnvelopeResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Rename signature envelope
@@ -1056,7 +1693,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeResponse {@link SignatureEnvelopeResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, name") 
+	 @MethodArgumentNames(value="userId, envelopeId, name")
 	 public static SignatureEnvelopeResponse RenameSignatureEnvelope(String userId, String envelopeId, String name) throws APIException {
 
 		//parse inputs
@@ -1066,18 +1703,17 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( name != null) {
-		 	queryParams.put("name", APIInvoker.toPathValue(name));
+		 	queryParams.put("name", name);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1085,9 +1721,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeResponse responseObject = (SignatureEnvelopeResponse) getApiInvoker().deserialize(response, SignatureEnvelopeResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete signature envelope
@@ -1100,7 +1735,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureStatusResponse DeleteSignatureEnvelope(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1110,14 +1745,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1125,9 +1759,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature roles
@@ -1139,7 +1772,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureRolesResponse {@link SignatureRolesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static SignatureRolesResponse GetRolesList(String userId) throws APIException {
 
 		//parse inputs
@@ -1149,11 +1782,10 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1161,9 +1793,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureRolesResponse responseObject = (SignatureRolesResponse) getApiInvoker().deserialize(response, SignatureRolesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature fields
@@ -1175,7 +1806,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureFieldsResponse {@link SignatureFieldsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static SignatureFieldsResponse GetFieldsList(String userId) throws APIException {
 
 		//parse inputs
@@ -1185,11 +1816,10 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1197,9 +1827,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureFieldsResponse responseObject = (SignatureFieldsResponse) getApiInvoker().deserialize(response, SignatureFieldsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create signature field
@@ -1212,7 +1841,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureFieldResponse {@link SignatureFieldResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static SignatureFieldResponse CreateSignatureField(String userId, SignatureFieldSettings postData) throws APIException {
 
 		//parse inputs
@@ -1222,11 +1851,10 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -1234,9 +1862,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureFieldResponse responseObject = (SignatureFieldResponse) getApiInvoker().deserialize(response, SignatureFieldResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Modify signature field
@@ -1250,7 +1877,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureFieldResponse {@link SignatureFieldResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fieldId, postData") 
+	 @MethodArgumentNames(value="userId, fieldId, postData")
 	 public static SignatureFieldResponse ModifySignatureField(String userId, String fieldId, SignatureFieldSettings postData) throws APIException {
 
 		//parse inputs
@@ -1260,14 +1887,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -1275,9 +1901,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureFieldResponse responseObject = (SignatureFieldResponse) getApiInvoker().deserialize(response, SignatureFieldResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete signature field
@@ -1290,7 +1915,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fieldId") 
+	 @MethodArgumentNames(value="userId, fieldId")
 	 public static SignatureStatusResponse DeleteSignatureField(String userId, String fieldId) throws APIException {
 
 		//parse inputs
@@ -1300,14 +1925,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1315,9 +1939,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add signature envelope recipient
@@ -1330,7 +1953,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeRecipientResponse {@link SignatureEnvelopeRecipientResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, order") 
+	 @MethodArgumentNames(value="userId, order")
 	 public static SignatureEnvelopeRecipientResponse AddSignatureEnvelopeRecipient(String userId, String order) throws APIException {
 
 		//parse inputs
@@ -1340,15 +1963,14 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
+		 	queryParams.put("order", order);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1356,9 +1978,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeRecipientResponse responseObject = (SignatureEnvelopeRecipientResponse) getApiInvoker().deserialize(response, SignatureEnvelopeRecipientResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature envelope recipients
@@ -1371,7 +1992,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeRecipientsResponse {@link SignatureEnvelopeRecipientsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureEnvelopeRecipientsResponse GetSignatureEnvelopeRecipients(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1381,14 +2002,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1396,9 +2016,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeRecipientsResponse responseObject = (SignatureEnvelopeRecipientsResponse) getApiInvoker().deserialize(response, SignatureEnvelopeRecipientsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete signature envelope recipient
@@ -1412,7 +2031,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, recipientId") 
+	 @MethodArgumentNames(value="userId, envelopeId, recipientId")
 	 public static SignatureStatusResponse DeleteSignatureEnvelopeRecipient(String userId, String envelopeId, String recipientId) throws APIException {
 
 		//parse inputs
@@ -1422,17 +2041,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1440,9 +2058,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Modify signature envelope recipient
@@ -1455,7 +2072,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeRecipientResponse {@link SignatureEnvelopeRecipientResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, order") 
+	 @MethodArgumentNames(value="userId, order")
 	 public static SignatureEnvelopeRecipientResponse ModifySignatureEnvelopeRecipient(String userId, String order) throws APIException {
 
 		//parse inputs
@@ -1465,15 +2082,14 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
+		 	queryParams.put("order", order);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1481,9 +2097,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeRecipientResponse responseObject = (SignatureEnvelopeRecipientResponse) getApiInvoker().deserialize(response, SignatureEnvelopeRecipientResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add document in envelope
@@ -1498,7 +2113,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeDocumentResponse {@link SignatureEnvelopeDocumentResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, documentId, order") 
+	 @MethodArgumentNames(value="userId, envelopeId, documentId, order")
 	 public static SignatureEnvelopeDocumentResponse AddSignatureEnvelopeDocument(String userId, String envelopeId, String documentId, String order) throws APIException {
 
 		//parse inputs
@@ -1508,21 +2123,20 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
+		 	queryParams.put("order", order);
 		}
 
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1530,9 +2144,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeDocumentResponse responseObject = (SignatureEnvelopeDocumentResponse) getApiInvoker().deserialize(response, SignatureEnvelopeDocumentResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get documents in envelope
@@ -1545,7 +2158,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeDocumentsResponse {@link SignatureEnvelopeDocumentsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureEnvelopeDocumentsResponse GetSignatureEnvelopeDocuments(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1555,14 +2168,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1570,9 +2182,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeDocumentsResponse responseObject = (SignatureEnvelopeDocumentsResponse) getApiInvoker().deserialize(response, SignatureEnvelopeDocumentsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signed envelope document
@@ -1586,7 +2197,7 @@ public class SignatureAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, documentId") 
+	 @MethodArgumentNames(value="userId, envelopeId, documentId")
 	 public static String GetSignedEnvelopeDocument(String userId, String envelopeId, String documentId) throws APIException {
 
 		//parse inputs
@@ -1596,17 +2207,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1614,9 +2224,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signed envelope documents
@@ -1629,7 +2238,7 @@ public class SignatureAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static String GetSignedEnvelopeDocuments(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1639,14 +2248,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1654,9 +2262,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete document from envelope
@@ -1670,7 +2277,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, documentId") 
+	 @MethodArgumentNames(value="userId, envelopeId, documentId")
 	 public static SignatureStatusResponse DeleteSignatureEnvelopeDocument(String userId, String envelopeId, String documentId) throws APIException {
 
 		//parse inputs
@@ -1680,17 +2287,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1698,9 +2304,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add signature field for document in envelope
@@ -1717,7 +2322,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeFieldsResponse {@link SignatureEnvelopeFieldsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, documentId, recipientId, fieldId, postData") 
+	 @MethodArgumentNames(value="userId, envelopeId, documentId, recipientId, fieldId, postData")
 	 public static SignatureEnvelopeFieldsResponse AddSignatureEnvelopeField(String userId, String envelopeId, String documentId, String recipientId, String fieldId, SignatureEnvelopeFieldSettings postData) throws APIException {
 
 		//parse inputs
@@ -1727,23 +2332,22 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -1751,9 +2355,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeFieldsResponse responseObject = (SignatureEnvelopeFieldsResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get signature field for document in envelope per recipient
@@ -1768,7 +2371,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureEnvelopeFieldsResponse {@link SignatureEnvelopeFieldsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, documentId, recipientId") 
+	 @MethodArgumentNames(value="userId, envelopeId, documentId, recipientId")
 	 public static SignatureEnvelopeFieldsResponse GetSignatureEnvelopeFields(String userId, String envelopeId, String documentId, String recipientId) throws APIException {
 
 		//parse inputs
@@ -1778,20 +2381,19 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
+			resourcePath = resourcePath.replace("{documentId}", documentId);
 		}
 		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
+			resourcePath = resourcePath.replace("{recipientId}", recipientId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1799,9 +2401,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureEnvelopeFieldsResponse responseObject = (SignatureEnvelopeFieldsResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete signature envelope field
@@ -1815,7 +2416,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, fieldId") 
+	 @MethodArgumentNames(value="userId, envelopeId, fieldId")
 	 public static SignatureStatusResponse DeleteSignatureEnvelopeField(String userId, String envelopeId, String fieldId) throws APIException {
 
 		//parse inputs
@@ -1825,17 +2426,16 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1843,9 +2443,52 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
+
+	/**
+	 * Modify signature envelope field
+	 *
+	 * 
+	 * 
+     * @param postData  Settings of the field
+     *  @param signatureSignatureInputEnvelopesInputDocumentsInputFieldInput  
+     *  
+	 * @return SignatureEnvelopeFieldResponse {@link SignatureEnvelopeFieldResponse} 
+	 * @throws APIException 
+	 */
+	 @MethodArgumentNames(value="postData, signatureSignatureInputEnvelopesInputDocumentsInputFieldInput")
+	 public static SignatureEnvelopeFieldResponse ModifySignatureEnvelopeField(SignatureEnvelopeFieldSettings postData, SignatureSignatureInputEnvelopesInputDocumentsInputFieldInput signatureSignatureInputEnvelopesInputDocumentsInputFieldInput) throws APIException {
+
+		//parse inputs
+		String  resourcePath = "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/field/{fieldId}";
+		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
+		String method = "PUT";
+		Map<String, String> queryParams = new HashMap<String, String>();
+		Map<String, String> headerParams = new HashMap<String, String>();
+		if( signatureSignatureInputEnvelopesInputDocumentsInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getUserId() != null) {
+		 	resourcePath = resourcePath.replace("{userId}", signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getUserId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getEnvelopeId() != null) {
+		 	resourcePath = resourcePath.replace("{envelopeId}", signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getEnvelopeId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getDocumentId() != null) {
+		 	resourcePath = resourcePath.replace("{documentId}", signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getDocumentId());
+		}
+		if( signatureSignatureInputEnvelopesInputDocumentsInputFieldInput != null && signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getFieldId() != null) {
+		 	resourcePath = resourcePath.replace("{fieldId}", signatureSignatureInputEnvelopesInputDocumentsInputFieldInput.getFieldId());
+		}
+
+
+		//make the API Call
+		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
+        if(response == null || response.length() == 0){
+            return null;
+        }
+		//create output objects if the response has more than one object
+		SignatureEnvelopeFieldResponse responseObject = (SignatureEnvelopeFieldResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldResponse.class);
+		return responseObject;
+	}
 
 	/**
 	 * Archive envelope
@@ -1858,7 +2501,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureStatusResponse ArchiveSignatureEnvelope(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1868,14 +2511,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1883,9 +2525,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Send envelope
@@ -1898,7 +2539,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId") 
+	 @MethodArgumentNames(value="userId, envelopeId")
 	 public static SignatureStatusResponse SignatureEnvelopeSend(String userId, String envelopeId) throws APIException {
 
 		//parse inputs
@@ -1908,14 +2549,13 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1923,9 +2563,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Remove signature envelope field location
@@ -1940,7 +2579,7 @@ public class SignatureAPI extends Object {
 	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, envelopeId, fieldId, locationId") 
+	 @MethodArgumentNames(value="userId, envelopeId, fieldId, locationId")
 	 public static SignatureStatusResponse DeleteSignatureEnvelopeFieldLocation(String userId, String envelopeId, String fieldId, String locationId) throws APIException {
 
 		//parse inputs
@@ -1950,20 +2589,19 @@ public class SignatureAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( envelopeId != null) {
-			resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(envelopeId));
+			resourcePath = resourcePath.replace("{envelopeId}", envelopeId);
 		}
 		if( fieldId != null) {
-			resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(fieldId));
+			resourcePath = resourcePath.replace("{fieldId}", fieldId);
 		}
 		if( locationId != null) {
-			resourcePath = resourcePath.replace("{locationId}", APIInvoker.toPathValue(locationId));
+			resourcePath = resourcePath.replace("{locationId}", locationId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -1971,677 +2609,8 @@ public class SignatureAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Move signature envelope field location
-	 *
-	 * 
-	 * 
-     * @param postData  Settings of the field location
-     *  @param signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput  
-     *  
-	 * @return SignatureEnvelopeFieldResponse {@link SignatureEnvelopeFieldResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="postData, signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput") 
-	 public static SignatureEnvelopeFieldResponse MoveSignatureEnvelopeFieldLocation(SignatureEnvelopeFieldLocationSettings postData, SignatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/envelopes/{envelopeId}/documents/{documentId}/recipient/{recipientId}/fields/{fieldId}/locations/{locationId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "PUT";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getUserId()));
-		}
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getEnvelopeId() != null) {
-		 	resourcePath = resourcePath.replace("{envelopeId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getEnvelopeId()));
-		}
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId() != null) {
-		 	resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getDocumentId()));
-		}
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId() != null) {
-		 	resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getRecipientId()));
-		}
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId() != null) {
-		 	resourcePath = resourcePath.replace("{fieldId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getFieldId()));
-		}
-		if( signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput != null && signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId() != null) {
-		 	resourcePath = resourcePath.replace("{locationId}", APIInvoker.toPathValue(signatureSignatureInputEnvelopesInputDocumentsInputRecipientInputFieldsInputLocationsInput.getLocationId()));
-		}
-
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureEnvelopeFieldResponse responseObject = (SignatureEnvelopeFieldResponse) getApiInvoker().deserialize(response, SignatureEnvelopeFieldResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get templates
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param page  Page number
-     *  
-	 * @return SignatureTemplatesResponse {@link SignatureTemplatesResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, page") 
-	 public static SignatureTemplatesResponse GetSignatureTemplates(String userId, String page) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates?records={count}&page={page}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( page != null) {
-		 	queryParams.put("page", APIInvoker.toPathValue(page));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplatesResponse responseObject = (SignatureTemplatesResponse) getApiInvoker().deserialize(response, SignatureTemplatesResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId") 
-	 public static SignatureTemplateResponse GetSignatureTemplate(String userId, String templateId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Create template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param name  Template name
-     *  @param templateId  Template GUID of the template that will be used to create the new template
-     *  @param postData  Settings of the template
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, name, templateId, postData") 
-	 public static SignatureTemplateResponse CreateSignatureTemplate(String userId, String name, String templateId, SignatureTemplateSettings postData) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/template?name={name}&templateId={templateId}&envelopeId={envelopeId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( name != null) {
-		 	queryParams.put("name", APIInvoker.toPathValue(name));
-		}
-		if( templateId != null) {
-		 	queryParams.put("templateId", APIInvoker.toPathValue(templateId));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Modify template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param postData  Settings of the template
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, postData") 
-	 public static SignatureTemplateResponse ModifySignatureTemplate(String userId, String templateId, SignatureTemplateSettings postData) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Rename template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param name  New template name
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, name") 
-	 public static SignatureTemplateResponse RenameSignatureTemplate(String userId, String templateId, String name) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/tempalates/{templateId}?name={name}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "PUT";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( name != null) {
-		 	queryParams.put("name", APIInvoker.toPathValue(name));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Delete template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  
-	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId") 
-	 public static SignatureStatusResponse DeleteSignatureTemplate(String userId, String templateId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "DELETE";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Add recipient to the template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param nickname  Nickname of the recipient
-     *  @param order  Display order of the recipient
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, nickname, order") 
-	 public static SignatureTemplateResponse AddSignatureTemplateRecipient(String userId, String templateId, String nickname, String order) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipient?nickname={nickname}&role={roleId}&order={order}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( nickname != null) {
-		 	queryParams.put("nickname", APIInvoker.toPathValue(nickname));
-		}
-		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get template recipients
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  
-	 * @return SignatureTemplateRecipientsResponse {@link SignatureTemplateRecipientsResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId") 
-	 public static SignatureTemplateRecipientsResponse GetSignatureTemplateRecipients(String userId, String templateId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipients";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateRecipientsResponse responseObject = (SignatureTemplateRecipientsResponse) getApiInvoker().deserialize(response, SignatureTemplateRecipientsResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Remove recipient from template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param recipientId  Recipient GUID
-     *  
-	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, recipientId") 
-	 public static SignatureStatusResponse DeleteSignatureTemplateRecipient(String userId, String templateId, String recipientId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipients/{recipientId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "DELETE";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-		if( recipientId != null) {
-			resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(recipientId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Update template recipient
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param nickname  Nickname of the recipient
-     *  @param order  Display order of the recipient
-     *  
-	 * @return SignatureTemplateResponse {@link SignatureTemplateResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, nickname, order") 
-	 public static SignatureTemplateResponse ModifySignatureTemplateRecipient(String userId, String templateId, String nickname, String order) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/recipient/{recipientId}?nickname={nickname}&role={roleId}&order={order}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "PUT";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( nickname != null) {
-		 	queryParams.put("nickname", APIInvoker.toPathValue(nickname));
-		}
-		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateResponse responseObject = (SignatureTemplateResponse) getApiInvoker().deserialize(response, SignatureTemplateResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Add document to template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param documentId  Document GUID
-     *  @param order  Display order of the document
-     *  
-	 * @return SignatureTemplateDocumentResponse {@link SignatureTemplateDocumentResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, documentId, order") 
-	 public static SignatureTemplateDocumentResponse AddSignatureTemplateDocument(String userId, String templateId, String documentId, String order) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/document/{documentId}?order={order}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( order != null) {
-		 	queryParams.put("order", APIInvoker.toPathValue(order));
-		}
-
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateDocumentResponse responseObject = (SignatureTemplateDocumentResponse) getApiInvoker().deserialize(response, SignatureTemplateDocumentResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Get documents in template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  
-	 * @return SignatureTemplateDocumentsResponse {@link SignatureTemplateDocumentsResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId") 
-	 public static SignatureTemplateDocumentsResponse GetSignatureTemplateDocuments(String userId, String templateId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "GET";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateDocumentsResponse responseObject = (SignatureTemplateDocumentsResponse) getApiInvoker().deserialize(response, SignatureTemplateDocumentsResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Remove document from template
-	 *
-	 * 
-	 * 
-     * @param userId  User GUID
-     *  @param templateId  Template GUID
-     *  @param documentId  Document GUID
-     *  
-	 * @return SignatureStatusResponse {@link SignatureStatusResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="userId, templateId, documentId") 
-	 public static SignatureStatusResponse DeleteSignatureTemplateDocument(String userId, String templateId, String documentId) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "DELETE";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
-		}
-		if( templateId != null) {
-			resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(templateId));
-		}
-		if( documentId != null) {
-			resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(documentId));
-		}
-
-		
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureStatusResponse responseObject = (SignatureStatusResponse) getApiInvoker().deserialize(response, SignatureStatusResponse.class);
-		return responseObject;		
-				
-	 }
-
-	/**
-	 * Add signature template field
-	 *
-	 * 
-	 * 
-     * @param postData  Settings of the field
-     *  @param signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput  
-     *  
-	 * @return SignatureTemplateFieldResponse {@link SignatureTemplateFieldResponse} 
-	 * @throws APIException 
-	 */
-	 @MethodArgumentNames(value="postData, signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput") 
-	 public static SignatureTemplateFieldResponse AddSignatureTemplateField(SignatureTemplateFieldSettings postData, SignatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput) throws APIException {
-
-		//parse inputs
-		String  resourcePath = "/signature/{userId}/templates/{templateId}/documents/{documentId}/recipient/{recipientId}/field/{fieldId}";
-		resourcePath = resourcePath.replace("{format}","json").replaceAll("\\*", "");
-		String method = "POST";
-		Map<String, String> queryParams = new HashMap<String, String>();
-		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
-		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getUserId()));
-		}
-		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getTemplateId() != null) {
-		 	resourcePath = resourcePath.replace("{templateId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getTemplateId()));
-		}
-		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getDocumentId() != null) {
-		 	resourcePath = resourcePath.replace("{documentId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getDocumentId()));
-		}
-		if( signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput != null && signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getRecipientId() != null) {
-		 	resourcePath = resourcePath.replace("{recipientId}", APIInvoker.toPathValue(signatureSignatureInputTemplatesInputDocumentsInputRecipientInputFieldInput.getRecipientId()));
-		}
-
-	
-		//make the API Call
-		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
-        if(response == null || response.length() == 0){
-            return null;
-        }
-		//create output objects if the response has more than one object
-		SignatureTemplateFieldResponse responseObject = (SignatureTemplateFieldResponse) getApiInvoker().deserialize(response, SignatureTemplateFieldResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

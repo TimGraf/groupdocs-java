@@ -47,7 +47,7 @@ public class UploadRequestResult extends Object {
     /**
      * 
      */
-	 private List<Integer> thumbnail  =  new ArrayList<Integer>();
+	 private String thumbnail;
 
     /**
      * 
@@ -111,11 +111,11 @@ public class UploadRequestResult extends Object {
 	 * 
 	 * 
 	 */
-	 public List<Integer> getThumbnail() {
+	 public String getThumbnail() {
 	 	return thumbnail;
 	 }  
 	 
-	 public void setThumbnail(List<Integer>  thumbnail) {
+	 public void setThumbnail(String  thumbnail) {
 	 	this.thumbnail = thumbnail;
 	 }
 

@@ -39,6 +39,11 @@ public class SignatureTemplateDocumentInfo extends Object {
     /**
      * 
      */
+	 private Integer fieldsCount ;
+
+    /**
+     * 
+     */
 	 private Integer order ;
 
     /**
@@ -73,6 +78,19 @@ public class SignatureTemplateDocumentInfo extends Object {
 	 
 	 public void setTemplateId(String  templateId) {
 	 	this.templateId = templateId;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Integer getFieldsCount() {
+	 	return fieldsCount;
+	 }  
+	 
+	 public void setFieldsCount(Integer  fieldsCount) {
+	 	this.fieldsCount = fieldsCount;
 	 }
 
 	/**

@@ -37,6 +37,11 @@ public class ListEntitiesResult extends Object {
     /**
      * 
      */
+	 private List<FileSystemDocument> files  =  new ArrayList<FileSystemDocument>();
+
+    /**
+     * 
+     */
 	 private Integer count ;
 
     /**
@@ -47,8 +52,21 @@ public class ListEntitiesResult extends Object {
     /**
      * 
      */
-	 private List<SharedDocumentInfo> entities  =  new ArrayList<SharedDocumentInfo>();
+	 private List<FileSystemFolder> folders  =  new ArrayList<FileSystemFolder>();
 
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FileSystemDocument> getFiles() {
+	 	return files;
+	 }  
+	 
+	 public void setFiles(List<FileSystemDocument>  files) {
+	 	this.files = files;
+	 }
 
 	/**
 	 * 
@@ -81,12 +99,12 @@ public class ListEntitiesResult extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SharedDocumentInfo> getEntities() {
-	 	return entities;
+	 public List<FileSystemFolder> getFolders() {
+	 	return folders;
 	 }  
 	 
-	 public void setEntities(List<SharedDocumentInfo>  entities) {
-	 	this.entities = entities;
+	 public void setFolders(List<FileSystemFolder>  folders) {
+	 	this.folders = folders;
 	 }
 
 

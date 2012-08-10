@@ -31,18 +31,23 @@ import java.util.ArrayList;
  * @author ramesh
  *
  */
-public class JobInputDocument extends Object {
+public class FileSystemDocument extends Object {
 
 
     /**
      * 
      */
-	 private String status ;
+	 private List<UserInfo> sharers  =  new ArrayList<UserInfo>();
 
     /**
      * 
      */
-	 private String output_formats ;
+	 private Long modified_on ;
+
+    /**
+     * 
+     */
+	 private Long created_on ;
 
     /**
      * 
@@ -57,6 +62,11 @@ public class JobInputDocument extends Object {
     /**
      * 
      */
+	 private List<String> supported_types  =  new ArrayList<String>();
+
+    /**
+     * 
+     */
 	 private String url ;
 
     /**
@@ -67,17 +77,12 @@ public class JobInputDocument extends Object {
     /**
      * 
      */
-	 private Long size ;
-
-    /**
-     * 
-     */
 	 private String file_type ;
 
     /**
      * 
      */
-	 private String guid ;
+	 private Long size ;
 
     /**
      * 
@@ -87,7 +92,17 @@ public class JobInputDocument extends Object {
     /**
      * 
      */
-	 private Long proc_date ;
+	 private String guid ;
+
+    /**
+     * 
+     */
+	 private String thumbnail;
+
+    /**
+     * 
+     */
+	 private Boolean dir ;
 
     /**
      * 
@@ -97,12 +112,7 @@ public class JobInputDocument extends Object {
     /**
      * 
      */
-	 private List<JobOutputDocument> outputs  =  new ArrayList<JobOutputDocument>();
-
-    /**
-     * 
-     */
-	 private String actions ;
+	 private UserInfo owner ;
 
 
 	/**
@@ -110,12 +120,12 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public String getStatus() {
-	 	return status;
+	 public List<UserInfo> getSharers() {
+	 	return sharers;
 	 }  
 	 
-	 public void setStatus(String  status) {
-	 	this.status = status;
+	 public void setSharers(List<UserInfo>  sharers) {
+	 	this.sharers = sharers;
 	 }
 
 	/**
@@ -123,12 +133,25 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public String getOutput_formats() {
-	 	return output_formats;
+	 public Long getModified_on() {
+	 	return modified_on;
 	 }  
 	 
-	 public void setOutput_formats(String  output_formats) {
-	 	this.output_formats = output_formats;
+	 public void setModified_on(Long  modified_on) {
+	 	this.modified_on = modified_on;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Long getCreated_on() {
+	 	return created_on;
+	 }  
+	 
+	 public void setCreated_on(Long  created_on) {
+	 	this.created_on = created_on;
 	 }
 
 	/**
@@ -162,6 +185,19 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
+	 public List<String> getSupported_types() {
+	 	return supported_types;
+	 }  
+	 
+	 public void setSupported_types(List<String>  supported_types) {
+	 	this.supported_types = supported_types;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public String getUrl() {
 	 	return url;
 	 }  
@@ -188,19 +224,6 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public Long getSize() {
-	 	return size;
-	 }  
-	 
-	 public void setSize(Long  size) {
-	 	this.size = size;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public String getFile_type() {
 	 	return file_type;
 	 }  
@@ -214,12 +237,12 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public String getGuid() {
-	 	return guid;
+	 public Long getSize() {
+	 	return size;
 	 }  
 	 
-	 public void setGuid(String  guid) {
-	 	this.guid = guid;
+	 public void setSize(Long  size) {
+	 	this.size = size;
 	 }
 
 	/**
@@ -240,12 +263,38 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public Long getProc_date() {
-	 	return proc_date;
+	 public String getGuid() {
+	 	return guid;
 	 }  
 	 
-	 public void setProc_date(Long  proc_date) {
-	 	this.proc_date = proc_date;
+	 public void setGuid(String  guid) {
+	 	this.guid = guid;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getThumbnail() {
+	 	return thumbnail;
+	 }  
+	 
+	 public void setThumbnail(String  thumbnail) {
+	 	this.thumbnail = thumbnail;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getDir() {
+	 	return dir;
+	 }  
+	 
+	 public void setDir(Boolean  dir) {
+	 	this.dir = dir;
 	 }
 
 	/**
@@ -266,25 +315,12 @@ public class JobInputDocument extends Object {
 	 * 
 	 * 
 	 */
-	 public List<JobOutputDocument> getOutputs() {
-	 	return outputs;
+	 public UserInfo getOwner() {
+	 	return owner;
 	 }  
 	 
-	 public void setOutputs(List<JobOutputDocument>  outputs) {
-	 	this.outputs = outputs;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getActions() {
-	 	return actions;
-	 }  
-	 
-	 public void setActions(String  actions) {
-	 	this.actions = actions;
+	 public void setOwner(UserInfo  owner) {
+	 	this.owner = owner;
 	 }
 
 

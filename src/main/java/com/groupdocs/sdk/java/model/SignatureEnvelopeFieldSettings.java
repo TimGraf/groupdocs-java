@@ -34,7 +34,62 @@ public class SignatureEnvelopeFieldSettings extends Object {
     /**
      * 
      */
-	 private Double textColumns ;
+	 private Double locationHeight ;
+
+    /**
+     * 
+     */
+	 private String fontName ;
+
+    /**
+     * 
+     */
+	 private String fontColor ;
+
+    /**
+     * 
+     */
+	 private Boolean forceNewField ;
+
+    /**
+     * 
+     */
+	 private String regularExpression ;
+
+    /**
+     * 
+     */
+	 private Boolean mandatory ;
+
+    /**
+     * 
+     */
+	 private Double locationX ;
+
+    /**
+     * 
+     */
+	 private Boolean fontBold ;
+
+    /**
+     * 
+     */
+	 private Double fontSize ;
+
+    /**
+     * 
+     */
+	 private Double locationY ;
+
+    /**
+     * 
+     */
+	 private Boolean fontItalic ;
+
+    /**
+     * 
+     */
+	 private Boolean fontUnderline ;
 
     /**
      * 
@@ -49,42 +104,12 @@ public class SignatureEnvelopeFieldSettings extends Object {
     /**
      * 
      */
-	 private String regex ;
-
-    /**
-     * 
-     */
-	 private Boolean mandatory ;
-
-    /**
-     * 
-     */
 	 private String name ;
 
     /**
      * 
      */
-	 private Double locationX ;
-
-    /**
-     * 
-     */
-	 private Double graphSizeH ;
-
-    /**
-     * 
-     */
-	 private Double graphSizeW ;
-
-    /**
-     * 
-     */
-	 private Double locationY ;
-
-    /**
-     * 
-     */
-	 private Double textRows ;
+	 private Double locationWidth ;
 
 
 	/**
@@ -92,12 +117,155 @@ public class SignatureEnvelopeFieldSettings extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getTextColumns() {
-	 	return textColumns;
+	 public Double getLocationHeight() {
+	 	return locationHeight;
 	 }  
 	 
-	 public void setTextColumns(Double  textColumns) {
-	 	this.textColumns = textColumns;
+	 public void setLocationHeight(Double  locationHeight) {
+	 	this.locationHeight = locationHeight;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontName() {
+	 	return fontName;
+	 }  
+	 
+	 public void setFontName(String  fontName) {
+	 	this.fontName = fontName;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontColor() {
+	 	return fontColor;
+	 }  
+	 
+	 public void setFontColor(String  fontColor) {
+	 	this.fontColor = fontColor;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getForceNewField() {
+	 	return forceNewField;
+	 }  
+	 
+	 public void setForceNewField(Boolean  forceNewField) {
+	 	this.forceNewField = forceNewField;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getRegularExpression() {
+	 	return regularExpression;
+	 }  
+	 
+	 public void setRegularExpression(String  regularExpression) {
+	 	this.regularExpression = regularExpression;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getMandatory() {
+	 	return mandatory;
+	 }  
+	 
+	 public void setMandatory(Boolean  mandatory) {
+	 	this.mandatory = mandatory;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getLocationX() {
+	 	return locationX;
+	 }  
+	 
+	 public void setLocationX(Double  locationX) {
+	 	this.locationX = locationX;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontBold() {
+	 	return fontBold;
+	 }  
+	 
+	 public void setFontBold(Boolean  fontBold) {
+	 	this.fontBold = fontBold;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getFontSize() {
+	 	return fontSize;
+	 }  
+	 
+	 public void setFontSize(Double  fontSize) {
+	 	this.fontSize = fontSize;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getLocationY() {
+	 	return locationY;
+	 }  
+	 
+	 public void setLocationY(Double  locationY) {
+	 	this.locationY = locationY;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontItalic() {
+	 	return fontItalic;
+	 }  
+	 
+	 public void setFontItalic(Boolean  fontItalic) {
+	 	this.fontItalic = fontItalic;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontUnderline() {
+	 	return fontUnderline;
+	 }  
+	 
+	 public void setFontUnderline(Boolean  fontUnderline) {
+	 	this.fontUnderline = fontUnderline;
 	 }
 
 	/**
@@ -131,32 +299,6 @@ public class SignatureEnvelopeFieldSettings extends Object {
 	 * 
 	 * 
 	 */
-	 public String getRegex() {
-	 	return regex;
-	 }  
-	 
-	 public void setRegex(String  regex) {
-	 	this.regex = regex;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Boolean getMandatory() {
-	 	return mandatory;
-	 }  
-	 
-	 public void setMandatory(Boolean  mandatory) {
-	 	this.mandatory = mandatory;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public String getName() {
 	 	return name;
 	 }  
@@ -170,64 +312,12 @@ public class SignatureEnvelopeFieldSettings extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getLocationX() {
-	 	return locationX;
+	 public Double getLocationWidth() {
+	 	return locationWidth;
 	 }  
 	 
-	 public void setLocationX(Double  locationX) {
-	 	this.locationX = locationX;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getGraphSizeH() {
-	 	return graphSizeH;
-	 }  
-	 
-	 public void setGraphSizeH(Double  graphSizeH) {
-	 	this.graphSizeH = graphSizeH;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getGraphSizeW() {
-	 	return graphSizeW;
-	 }  
-	 
-	 public void setGraphSizeW(Double  graphSizeW) {
-	 	this.graphSizeW = graphSizeW;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getLocationY() {
-	 	return locationY;
-	 }  
-	 
-	 public void setLocationY(Double  locationY) {
-	 	this.locationY = locationY;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getTextRows() {
-	 	return textRows;
-	 }  
-	 
-	 public void setTextRows(Double  textRows) {
-	 	this.textRows = textRows;
+	 public void setLocationWidth(Double  locationWidth) {
+	 	this.locationWidth = locationWidth;
 	 }
 
 

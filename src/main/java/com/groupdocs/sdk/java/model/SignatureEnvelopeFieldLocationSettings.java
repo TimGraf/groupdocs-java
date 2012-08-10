@@ -34,7 +34,42 @@ public class SignatureEnvelopeFieldLocationSettings extends Object {
     /**
      * 
      */
+	 private Double locationHeight ;
+
+    /**
+     * 
+     */
+	 private Boolean fontItalic ;
+
+    /**
+     * 
+     */
+	 private String fontColor ;
+
+    /**
+     * 
+     */
+	 private String fontName ;
+
+    /**
+     * 
+     */
+	 private Boolean forceNewField ;
+
+    /**
+     * 
+     */
+	 private Boolean fontUnderline ;
+
+    /**
+     * 
+     */
 	 private Integer page ;
+
+    /**
+     * 
+     */
+	 private Double locationWidth ;
 
     /**
      * 
@@ -44,8 +79,96 @@ public class SignatureEnvelopeFieldLocationSettings extends Object {
     /**
      * 
      */
+	 private Boolean fontBold ;
+
+    /**
+     * 
+     */
+	 private Double fontSize ;
+
+    /**
+     * 
+     */
 	 private Double locationY ;
 
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getLocationHeight() {
+	 	return locationHeight;
+	 }  
+	 
+	 public void setLocationHeight(Double  locationHeight) {
+	 	this.locationHeight = locationHeight;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontItalic() {
+	 	return fontItalic;
+	 }  
+	 
+	 public void setFontItalic(Boolean  fontItalic) {
+	 	this.fontItalic = fontItalic;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontColor() {
+	 	return fontColor;
+	 }  
+	 
+	 public void setFontColor(String  fontColor) {
+	 	this.fontColor = fontColor;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontName() {
+	 	return fontName;
+	 }  
+	 
+	 public void setFontName(String  fontName) {
+	 	this.fontName = fontName;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getForceNewField() {
+	 	return forceNewField;
+	 }  
+	 
+	 public void setForceNewField(Boolean  forceNewField) {
+	 	this.forceNewField = forceNewField;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontUnderline() {
+	 	return fontUnderline;
+	 }  
+	 
+	 public void setFontUnderline(Boolean  fontUnderline) {
+	 	this.fontUnderline = fontUnderline;
+	 }
 
 	/**
 	 * 
@@ -65,12 +188,51 @@ public class SignatureEnvelopeFieldLocationSettings extends Object {
 	 * 
 	 * 
 	 */
+	 public Double getLocationWidth() {
+	 	return locationWidth;
+	 }  
+	 
+	 public void setLocationWidth(Double  locationWidth) {
+	 	this.locationWidth = locationWidth;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public Double getLocationX() {
 	 	return locationX;
 	 }  
 	 
 	 public void setLocationX(Double  locationX) {
 	 	this.locationX = locationX;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontBold() {
+	 	return fontBold;
+	 }  
+	 
+	 public void setFontBold(Boolean  fontBold) {
+	 	this.fontBold = fontBold;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getFontSize() {
+	 	return fontSize;
+	 }  
+	 
+	 public void setFontSize(Double  fontSize) {
+	 	this.fontSize = fontSize;
 	 }
 
 	/**

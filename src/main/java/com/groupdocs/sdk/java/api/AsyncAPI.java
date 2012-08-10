@@ -52,7 +52,7 @@ public class AsyncAPI extends Object {
 	 * @return GetJobResponse {@link GetJobResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId") 
+	 @MethodArgumentNames(value="userId, jobId")
 	 public static GetJobResponse GetJob(String userId, String jobId) throws APIException {
 
 		//parse inputs
@@ -62,14 +62,13 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -77,9 +76,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetJobResponse responseObject = (GetJobResponse) getApiInvoker().deserialize(response, GetJobResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get job json
@@ -92,7 +90,7 @@ public class AsyncAPI extends Object {
 	 * @return GetJobResponse {@link GetJobResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId") 
+	 @MethodArgumentNames(value="userId, jobId")
 	 public static GetJobResponse GetJobJson(String userId, String jobId) throws APIException {
 
 		//parse inputs
@@ -102,14 +100,13 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -117,9 +114,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetJobResponse responseObject = (GetJobResponse) getApiInvoker().deserialize(response, GetJobResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get job documents
@@ -132,7 +128,7 @@ public class AsyncAPI extends Object {
 	 * @return GetJobDocumentsResponse {@link GetJobDocumentsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId") 
+	 @MethodArgumentNames(value="userId, jobId")
 	 public static GetJobDocumentsResponse GetJobDocuments(String userId, String jobId) throws APIException {
 
 		//parse inputs
@@ -142,14 +138,13 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -157,9 +152,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetJobDocumentsResponse responseObject = (GetJobDocumentsResponse) getApiInvoker().deserialize(response, GetJobDocumentsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create job
@@ -172,7 +166,7 @@ public class AsyncAPI extends Object {
 	 * @return CreateJobResponse {@link CreateJobResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static CreateJobResponse CreateJob(String userId, JobInfo postData) throws APIException {
 
 		//parse inputs
@@ -182,11 +176,10 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -194,9 +187,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreateJobResponse responseObject = (CreateJobResponse) getApiInvoker().deserialize(response, CreateJobResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add job document
@@ -211,7 +203,7 @@ public class AsyncAPI extends Object {
 	 * @return AddJobDocumentResponse {@link AddJobDocumentResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId, fileId, formats") 
+	 @MethodArgumentNames(value="userId, jobId, fileId, formats")
 	 public static AddJobDocumentResponse AddJobDocument(String userId, String jobId, String fileId, String formats) throws APIException {
 
 		//parse inputs
@@ -221,20 +213,19 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( formats != null) {
-			resourcePath = resourcePath.replace("{formats}", APIInvoker.toPathValue(formats));
+			resourcePath = resourcePath.replace("{formats}", formats);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -242,9 +233,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddJobDocumentResponse responseObject = (AddJobDocumentResponse) getApiInvoker().deserialize(response, AddJobDocumentResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add job document url
@@ -259,7 +249,7 @@ public class AsyncAPI extends Object {
 	 * @return AddJobDocumentResponse {@link AddJobDocumentResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId, absoluteUrl, formats") 
+	 @MethodArgumentNames(value="userId, jobId, absoluteUrl, formats")
 	 public static AddJobDocumentResponse AddJobDocumentUrl(String userId, String jobId, String absoluteUrl, String formats) throws APIException {
 
 		//parse inputs
@@ -269,20 +259,19 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 		if( absoluteUrl != null) {
-			resourcePath = resourcePath.replace("{absoluteUrl}", APIInvoker.toPathValue(absoluteUrl));
+			resourcePath = resourcePath.replace("{absoluteUrl}", absoluteUrl);
 		}
 		if( formats != null) {
-			resourcePath = resourcePath.replace("{formats}", APIInvoker.toPathValue(formats));
+			resourcePath = resourcePath.replace("{formats}", formats);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -290,9 +279,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddJobDocumentResponse responseObject = (AddJobDocumentResponse) getApiInvoker().deserialize(response, AddJobDocumentResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update job
@@ -306,7 +294,7 @@ public class AsyncAPI extends Object {
 	 * @return UpdateJobResponse {@link UpdateJobResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId, postData") 
+	 @MethodArgumentNames(value="userId, jobId, postData")
 	 public static UpdateJobResponse UpdateJob(String userId, String jobId, JobInfo postData) throws APIException {
 
 		//parse inputs
@@ -316,14 +304,13 @@ public class AsyncAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -331,9 +318,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateJobResponse responseObject = (UpdateJobResponse) getApiInvoker().deserialize(response, UpdateJobResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get jobs
@@ -345,7 +331,7 @@ public class AsyncAPI extends Object {
 	 * @return GetJobsResponse {@link GetJobsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="asyncAsyncInput") 
+	 @MethodArgumentNames(value="asyncAsyncInput")
 	 public static GetJobsResponse GetJobs(AsyncAsyncInput asyncAsyncInput) throws APIException {
 
 		//parse inputs
@@ -354,25 +340,23 @@ public class AsyncAPI extends Object {
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( asyncAsyncInput != null && asyncAsyncInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(asyncAsyncInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", asyncAsyncInput.getUserId());
 		}
 		if( asyncAsyncInput != null && asyncAsyncInput.getPageIndex() != null) {
-		 	resourcePath = resourcePath.replace("{pageIndex}", APIInvoker.toPathValue(asyncAsyncInput.getPageIndex()));
+		 	resourcePath = resourcePath.replace("{pageIndex}", asyncAsyncInput.getPageIndex());
 		}
 		if( asyncAsyncInput != null && asyncAsyncInput.getPageSize() != null) {
-		 	resourcePath = resourcePath.replace("{pageSize}", APIInvoker.toPathValue(asyncAsyncInput.getPageSize()));
+		 	resourcePath = resourcePath.replace("{pageSize}", asyncAsyncInput.getPageSize());
 		}
 		if( asyncAsyncInput != null && asyncAsyncInput.getActions() != null) {
-		 	resourcePath = resourcePath.replace("{actions}", APIInvoker.toPathValue(asyncAsyncInput.getActions()));
+		 	resourcePath = resourcePath.replace("{actions}", asyncAsyncInput.getActions());
 		}
 		if( asyncAsyncInput != null && asyncAsyncInput.getExcludedActions() != null) {
-		 	resourcePath = resourcePath.replace("{excludedActions}", APIInvoker.toPathValue(asyncAsyncInput.getExcludedActions()));
+		 	resourcePath = resourcePath.replace("{excludedActions}", asyncAsyncInput.getExcludedActions());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -380,9 +364,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetJobsResponse responseObject = (GetJobsResponse) getApiInvoker().deserialize(response, GetJobsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get job documents
@@ -394,7 +377,7 @@ public class AsyncAPI extends Object {
 	 * @return GetJobsDocumentsResponse {@link GetJobsDocumentsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="asyncAsyncInputJobsInput") 
+	 @MethodArgumentNames(value="asyncAsyncInputJobsInput")
 	 public static GetJobsDocumentsResponse GetJobsDocuments(AsyncAsyncInputJobsInput asyncAsyncInputJobsInput) throws APIException {
 
 		//parse inputs
@@ -403,31 +386,29 @@ public class AsyncAPI extends Object {
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", asyncAsyncInputJobsInput.getUserId());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getPageIndex() != null) {
-		 	resourcePath = resourcePath.replace("{pageIndex}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getPageIndex()));
+		 	resourcePath = resourcePath.replace("{pageIndex}", asyncAsyncInputJobsInput.getPageIndex());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getPageSize() != null) {
-		 	resourcePath = resourcePath.replace("{pageSize}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getPageSize()));
+		 	resourcePath = resourcePath.replace("{pageSize}", asyncAsyncInputJobsInput.getPageSize());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getActions() != null) {
-		 	resourcePath = resourcePath.replace("{actions}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getActions()));
+		 	resourcePath = resourcePath.replace("{actions}", asyncAsyncInputJobsInput.getActions());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getExcludedActions() != null) {
-		 	resourcePath = resourcePath.replace("{excludedActions}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getExcludedActions()));
+		 	resourcePath = resourcePath.replace("{excludedActions}", asyncAsyncInputJobsInput.getExcludedActions());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getOrderBy() != null) {
-		 	resourcePath = resourcePath.replace("{orderBy}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getOrderBy()));
+		 	resourcePath = resourcePath.replace("{orderBy}", asyncAsyncInputJobsInput.getOrderBy());
 		}
 		if( asyncAsyncInputJobsInput != null && asyncAsyncInputJobsInput.getOrderAsc() != null) {
-		 	resourcePath = resourcePath.replace("{orderAsc}", APIInvoker.toPathValue(asyncAsyncInputJobsInput.getOrderAsc()));
+		 	resourcePath = resourcePath.replace("{orderAsc}", asyncAsyncInputJobsInput.getOrderAsc());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -435,9 +416,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetJobsDocumentsResponse responseObject = (GetJobsDocumentsResponse) getApiInvoker().deserialize(response, GetJobsDocumentsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Convert
@@ -449,7 +429,7 @@ public class AsyncAPI extends Object {
 	 * @return ConvertResponse {@link ConvertResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="asyncAsyncInputFilesInput") 
+	 @MethodArgumentNames(value="asyncAsyncInputFilesInput")
 	 public static ConvertResponse Convert(AsyncAsyncInputFilesInput asyncAsyncInputFilesInput) throws APIException {
 
 		//parse inputs
@@ -458,28 +438,26 @@ public class AsyncAPI extends Object {
 		String method = "POST";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", asyncAsyncInputFilesInput.getUserId());
 		}
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getFileId() != null) {
-		 	resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getFileId()));
+		 	resourcePath = resourcePath.replace("{fileId}", asyncAsyncInputFilesInput.getFileId());
 		}
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getTargetType() != null) {
-		 	resourcePath = resourcePath.replace("{targetType}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getTargetType()));
+		 	resourcePath = resourcePath.replace("{targetType}", asyncAsyncInputFilesInput.getTargetType());
 		}
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getEmailResults() != null) {
-		 	resourcePath = resourcePath.replace("{emailResults}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getEmailResults()));
+		 	resourcePath = resourcePath.replace("{emailResults}", asyncAsyncInputFilesInput.getEmailResults());
 		}
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getDescription() != null) {
-		 	resourcePath = resourcePath.replace("{description}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getDescription()));
+		 	resourcePath = resourcePath.replace("{description}", asyncAsyncInputFilesInput.getDescription());
 		}
 		if( asyncAsyncInputFilesInput != null && asyncAsyncInputFilesInput.getPrintScript() != null) {
-		 	resourcePath = resourcePath.replace("{printScript}", APIInvoker.toPathValue(asyncAsyncInputFilesInput.getPrintScript()));
+		 	resourcePath = resourcePath.replace("{printScript}", asyncAsyncInputFilesInput.getPrintScript());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -487,9 +465,8 @@ public class AsyncAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ConvertResponse responseObject = (ConvertResponse) getApiInvoker().deserialize(response, ConvertResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

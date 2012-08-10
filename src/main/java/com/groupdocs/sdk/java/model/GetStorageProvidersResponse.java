@@ -28,23 +28,23 @@ import java.util.List;
  * @author ramesh
  *
  */
-public class AddDocumentQuestionnaireResult extends Object {
+public class GetStorageProvidersResponse extends Object {
 
 
     /**
      * 
      */
-	 private Double document_id ;
+	 private GetStorageProvidersResult result ;
 
     /**
      * 
      */
-	 private Double questionnaire_id ;
+	 private String status ;
 
     /**
      * 
      */
-	 private String adjusted_name ;
+	 private String error_message ;
 
 
 	/**
@@ -52,12 +52,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getDocument_id() {
-	 	return document_id;
+	 public GetStorageProvidersResult getResult() {
+	 	return result;
 	 }  
 	 
-	 public void setDocument_id(Double  document_id) {
-	 	this.document_id = document_id;
+	 public void setResult(GetStorageProvidersResult  result) {
+	 	this.result = result;
 	 }
 
 	/**
@@ -65,12 +65,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getQuestionnaire_id() {
-	 	return questionnaire_id;
+	 public String getStatus() {
+	 	return status;
 	 }  
 	 
-	 public void setQuestionnaire_id(Double  questionnaire_id) {
-	 	this.questionnaire_id = questionnaire_id;
+	 public void setStatus(String  status) {
+	 	this.status = status;
 	 }
 
 	/**
@@ -78,12 +78,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public String getAdjusted_name() {
-	 	return adjusted_name;
+	 public String getError_message() {
+	 	return error_message;
 	 }  
 	 
-	 public void setAdjusted_name(String  adjusted_name) {
-	 	this.adjusted_name = adjusted_name;
+	 public void setError_message(String  error_message) {
+	 	this.error_message = error_message;
 	 }
 
 

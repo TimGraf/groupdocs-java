@@ -54,7 +54,7 @@ public class MergeAPI extends Object {
 	 * @return AddDocumentDataSourceResponse {@link AddDocumentDataSourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId, fileId, datasourceId") 
+	 @MethodArgumentNames(value="userId, jobId, fileId, datasourceId")
 	 public static AddDocumentDataSourceResponse AddJobDocumentDataSource(String userId, String jobId, String fileId, String datasourceId) throws APIException {
 
 		//parse inputs
@@ -64,20 +64,19 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( datasourceId != null) {
-			resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(datasourceId));
+			resourcePath = resourcePath.replace("{datasourceId}", datasourceId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -85,9 +84,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDocumentDataSourceResponse responseObject = (AddDocumentDataSourceResponse) getApiInvoker().deserialize(response, AddDocumentDataSourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add job document datasource fields
@@ -102,7 +100,7 @@ public class MergeAPI extends Object {
 	 * @return AddDocumentDataSourceResponse {@link AddDocumentDataSourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, jobId, fileId, postData") 
+	 @MethodArgumentNames(value="userId, jobId, fileId, postData")
 	 public static AddDocumentDataSourceResponse AddJobDocumentDataSourceFields(String userId, String jobId, String fileId, List<DatasourceField> postData) throws APIException {
 
 		//parse inputs
@@ -112,17 +110,16 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( jobId != null) {
-			resourcePath = resourcePath.replace("{jobId}", APIInvoker.toPathValue(jobId));
+			resourcePath = resourcePath.replace("{jobId}", jobId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -130,9 +127,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDocumentDataSourceResponse responseObject = (AddDocumentDataSourceResponse) getApiInvoker().deserialize(response, AddDocumentDataSourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Merge datasource
@@ -144,7 +140,7 @@ public class MergeAPI extends Object {
 	 * @return MergeTemplateResponse {@link MergeTemplateResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="mergeMergeInputFilesInputDatasourcesInput") 
+	 @MethodArgumentNames(value="mergeMergeInputFilesInputDatasourcesInput")
 	 public static MergeTemplateResponse MergeDatasource(MergeMergeInputFilesInputDatasourcesInput mergeMergeInputFilesInputDatasourcesInput) throws APIException {
 
 		//parse inputs
@@ -153,25 +149,23 @@ public class MergeAPI extends Object {
 		String method = "POST";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( mergeMergeInputFilesInputDatasourcesInput != null && mergeMergeInputFilesInputDatasourcesInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(mergeMergeInputFilesInputDatasourcesInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", mergeMergeInputFilesInputDatasourcesInput.getUserId());
 		}
 		if( mergeMergeInputFilesInputDatasourcesInput != null && mergeMergeInputFilesInputDatasourcesInput.getFileId() != null) {
-		 	resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(mergeMergeInputFilesInputDatasourcesInput.getFileId()));
+		 	resourcePath = resourcePath.replace("{fileId}", mergeMergeInputFilesInputDatasourcesInput.getFileId());
 		}
 		if( mergeMergeInputFilesInputDatasourcesInput != null && mergeMergeInputFilesInputDatasourcesInput.getDatasourceId() != null) {
-		 	resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(mergeMergeInputFilesInputDatasourcesInput.getDatasourceId()));
+		 	resourcePath = resourcePath.replace("{datasourceId}", mergeMergeInputFilesInputDatasourcesInput.getDatasourceId());
 		}
 		if( mergeMergeInputFilesInputDatasourcesInput != null && mergeMergeInputFilesInputDatasourcesInput.getTargetType() != null) {
-		 	resourcePath = resourcePath.replace("{targetType}", APIInvoker.toPathValue(mergeMergeInputFilesInputDatasourcesInput.getTargetType()));
+		 	resourcePath = resourcePath.replace("{targetType}", mergeMergeInputFilesInputDatasourcesInput.getTargetType());
 		}
 		if( mergeMergeInputFilesInputDatasourcesInput != null && mergeMergeInputFilesInputDatasourcesInput.getEmailResults() != null) {
-		 	resourcePath = resourcePath.replace("{emailResults}", APIInvoker.toPathValue(mergeMergeInputFilesInputDatasourcesInput.getEmailResults()));
+		 	resourcePath = resourcePath.replace("{emailResults}", mergeMergeInputFilesInputDatasourcesInput.getEmailResults());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -179,9 +173,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		MergeTemplateResponse responseObject = (MergeTemplateResponse) getApiInvoker().deserialize(response, MergeTemplateResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Merge datasource fields
@@ -194,7 +187,7 @@ public class MergeAPI extends Object {
 	 * @return MergeTemplateResponse {@link MergeTemplateResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="postData, mergeMergeInputFilesInput") 
+	 @MethodArgumentNames(value="postData, mergeMergeInputFilesInput")
 	 public static MergeTemplateResponse MergeDatasourceFields(List<DatasourceField> postData, MergeMergeInputFilesInput mergeMergeInputFilesInput) throws APIException {
 
 		//parse inputs
@@ -203,25 +196,23 @@ public class MergeAPI extends Object {
 		String method = "POST";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( mergeMergeInputFilesInput != null && mergeMergeInputFilesInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(mergeMergeInputFilesInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", mergeMergeInputFilesInput.getUserId());
 		}
 		if( mergeMergeInputFilesInput != null && mergeMergeInputFilesInput.getFileId() != null) {
-		 	resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(mergeMergeInputFilesInput.getFileId()));
+		 	resourcePath = resourcePath.replace("{fileId}", mergeMergeInputFilesInput.getFileId());
 		}
 		if( mergeMergeInputFilesInput != null && mergeMergeInputFilesInput.getTargetType() != null) {
-		 	resourcePath = resourcePath.replace("{targetType}", APIInvoker.toPathValue(mergeMergeInputFilesInput.getTargetType()));
+		 	resourcePath = resourcePath.replace("{targetType}", mergeMergeInputFilesInput.getTargetType());
 		}
 		if( mergeMergeInputFilesInput != null && mergeMergeInputFilesInput.getEmailResults() != null) {
-		 	resourcePath = resourcePath.replace("{emailResults}", APIInvoker.toPathValue(mergeMergeInputFilesInput.getEmailResults()));
+		 	resourcePath = resourcePath.replace("{emailResults}", mergeMergeInputFilesInput.getEmailResults());
 		}
 		if( mergeMergeInputFilesInput != null && mergeMergeInputFilesInput.getAssemblyName() != null) {
-		 	resourcePath = resourcePath.replace("{assemblyName}", APIInvoker.toPathValue(mergeMergeInputFilesInput.getAssemblyName()));
+		 	resourcePath = resourcePath.replace("{assemblyName}", mergeMergeInputFilesInput.getAssemblyName());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -229,9 +220,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		MergeTemplateResponse responseObject = (MergeTemplateResponse) getApiInvoker().deserialize(response, MergeTemplateResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get questionnaire
@@ -244,7 +234,7 @@ public class MergeAPI extends Object {
 	 * @return GetQuestionnaireResponse {@link GetQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, questionnaireId") 
+	 @MethodArgumentNames(value="userId, questionnaireId")
 	 public static GetQuestionnaireResponse GetQuestionnaire(String userId, String questionnaireId) throws APIException {
 
 		//parse inputs
@@ -254,14 +244,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -269,9 +258,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetQuestionnaireResponse responseObject = (GetQuestionnaireResponse) getApiInvoker().deserialize(response, GetQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get questionnaires
@@ -283,7 +271,7 @@ public class MergeAPI extends Object {
 	 * @return GetQuestionnairesResponse {@link GetQuestionnairesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static GetQuestionnairesResponse GetQuestionnaires(String userId) throws APIException {
 
 		//parse inputs
@@ -293,11 +281,10 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -305,9 +292,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetQuestionnairesResponse responseObject = (GetQuestionnairesResponse) getApiInvoker().deserialize(response, GetQuestionnairesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create questionnaire
@@ -320,7 +306,7 @@ public class MergeAPI extends Object {
 	 * @return CreateQuestionnaireResponse {@link CreateQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static CreateQuestionnaireResponse CreateQuestionnaire(String userId, QuestionnaireInfo postData) throws APIException {
 
 		//parse inputs
@@ -330,11 +316,10 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -342,9 +327,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreateQuestionnaireResponse responseObject = (CreateQuestionnaireResponse) getApiInvoker().deserialize(response, CreateQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update questionnaire
@@ -358,7 +342,7 @@ public class MergeAPI extends Object {
 	 * @return UpdateQuestionnaireResponse {@link UpdateQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, questionnaireId, postData") 
+	 @MethodArgumentNames(value="userId, questionnaireId, postData")
 	 public static UpdateQuestionnaireResponse UpdateQuestionnaire(String userId, String questionnaireId, QuestionnaireInfo postData) throws APIException {
 
 		//parse inputs
@@ -368,14 +352,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -383,9 +366,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateQuestionnaireResponse responseObject = (UpdateQuestionnaireResponse) getApiInvoker().deserialize(response, UpdateQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete questionnaire
@@ -398,7 +380,7 @@ public class MergeAPI extends Object {
 	 * @return DeleteQuestionnaireResponse {@link DeleteQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, questionnaireId") 
+	 @MethodArgumentNames(value="userId, questionnaireId")
 	 public static DeleteQuestionnaireResponse DeleteQuestionnaire(String userId, String questionnaireId) throws APIException {
 
 		//parse inputs
@@ -408,14 +390,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -423,9 +404,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteQuestionnaireResponse responseObject = (DeleteQuestionnaireResponse) getApiInvoker().deserialize(response, DeleteQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get document questionnaires
@@ -438,7 +418,7 @@ public class MergeAPI extends Object {
 	 * @return GetDocumentQuestionnairesResponse {@link GetDocumentQuestionnairesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static GetDocumentQuestionnairesResponse GetDocumentQuestionnaires(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -448,14 +428,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -463,9 +442,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetDocumentQuestionnairesResponse responseObject = (GetDocumentQuestionnairesResponse) getApiInvoker().deserialize(response, GetDocumentQuestionnairesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create document questionnaire
@@ -479,7 +457,7 @@ public class MergeAPI extends Object {
 	 * @return AddDocumentQuestionnaireResponse {@link AddDocumentQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, postData") 
+	 @MethodArgumentNames(value="userId, fileId, postData")
 	 public static AddDocumentQuestionnaireResponse CreateDocumentQuestionnaire(String userId, String fileId, QuestionnaireInfo postData) throws APIException {
 
 		//parse inputs
@@ -489,14 +467,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -504,9 +481,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDocumentQuestionnaireResponse responseObject = (AddDocumentQuestionnaireResponse) getApiInvoker().deserialize(response, AddDocumentQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add document questionnaire
@@ -520,7 +496,7 @@ public class MergeAPI extends Object {
 	 * @return AddDocumentQuestionnaireResponse {@link AddDocumentQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, questionnaireId") 
+	 @MethodArgumentNames(value="userId, fileId, questionnaireId")
 	 public static AddDocumentQuestionnaireResponse AddDocumentQuestionnaire(String userId, String fileId, String questionnaireId) throws APIException {
 
 		//parse inputs
@@ -530,17 +506,16 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -548,9 +523,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDocumentQuestionnaireResponse responseObject = (AddDocumentQuestionnaireResponse) getApiInvoker().deserialize(response, AddDocumentQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete document questionnaire
@@ -564,7 +538,7 @@ public class MergeAPI extends Object {
 	 * @return DeleteDocumentQuestionnaireResponse {@link DeleteDocumentQuestionnaireResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, questionnaireId") 
+	 @MethodArgumentNames(value="userId, fileId, questionnaireId")
 	 public static DeleteDocumentQuestionnaireResponse DeleteDocumentQuestionnaire(String userId, String fileId, String questionnaireId) throws APIException {
 
 		//parse inputs
@@ -574,17 +548,16 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -592,9 +565,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteDocumentQuestionnaireResponse responseObject = (DeleteDocumentQuestionnaireResponse) getApiInvoker().deserialize(response, DeleteDocumentQuestionnaireResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add datasource
@@ -607,7 +579,7 @@ public class MergeAPI extends Object {
 	 * @return AddDatasourceResponse {@link AddDatasourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, postData") 
+	 @MethodArgumentNames(value="userId, postData")
 	 public static AddDatasourceResponse AddDataSource(String userId, Datasource postData) throws APIException {
 
 		//parse inputs
@@ -617,11 +589,10 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -629,9 +600,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDatasourceResponse responseObject = (AddDatasourceResponse) getApiInvoker().deserialize(response, AddDatasourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update datasource
@@ -645,7 +615,7 @@ public class MergeAPI extends Object {
 	 * @return AddDatasourceResponse {@link AddDatasourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, datasourceId, postData") 
+	 @MethodArgumentNames(value="userId, datasourceId, postData")
 	 public static AddDatasourceResponse UpdateDataSource(String userId, String datasourceId, Datasource postData) throws APIException {
 
 		//parse inputs
@@ -655,14 +625,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( datasourceId != null) {
-			resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(datasourceId));
+			resourcePath = resourcePath.replace("{datasourceId}", datasourceId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -670,9 +639,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDatasourceResponse responseObject = (AddDatasourceResponse) getApiInvoker().deserialize(response, AddDatasourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update datasource fields
@@ -686,7 +654,7 @@ public class MergeAPI extends Object {
 	 * @return AddDatasourceResponse {@link AddDatasourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, datasourceId, postData") 
+	 @MethodArgumentNames(value="userId, datasourceId, postData")
 	 public static AddDatasourceResponse UpdateDataSourceFields(String userId, String datasourceId, Datasource postData) throws APIException {
 
 		//parse inputs
@@ -696,14 +664,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( datasourceId != null) {
-			resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(datasourceId));
+			resourcePath = resourcePath.replace("{datasourceId}", datasourceId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -711,9 +678,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddDatasourceResponse responseObject = (AddDatasourceResponse) getApiInvoker().deserialize(response, AddDatasourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete datasource fields
@@ -726,7 +692,7 @@ public class MergeAPI extends Object {
 	 * @return DeleteDatasourceResponse {@link DeleteDatasourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, datasourceId") 
+	 @MethodArgumentNames(value="userId, datasourceId")
 	 public static DeleteDatasourceResponse DeleteDataSource(String userId, String datasourceId) throws APIException {
 
 		//parse inputs
@@ -736,14 +702,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( datasourceId != null) {
-			resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(datasourceId));
+			resourcePath = resourcePath.replace("{datasourceId}", datasourceId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -751,9 +716,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteDatasourceResponse responseObject = (DeleteDatasourceResponse) getApiInvoker().deserialize(response, DeleteDatasourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get datasource
@@ -767,7 +731,7 @@ public class MergeAPI extends Object {
 	 * @return GetDatasourceResponse {@link GetDatasourceResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, datasourceId, fields") 
+	 @MethodArgumentNames(value="userId, datasourceId, fields")
 	 public static GetDatasourceResponse GetDataSource(String userId, String datasourceId, String fields) throws APIException {
 
 		//parse inputs
@@ -777,17 +741,16 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( datasourceId != null) {
-			resourcePath = resourcePath.replace("{datasourceId}", APIInvoker.toPathValue(datasourceId));
+			resourcePath = resourcePath.replace("{datasourceId}", datasourceId);
 		}
 		if( fields != null) {
-			resourcePath = resourcePath.replace("{fields}", APIInvoker.toPathValue(fields));
+			resourcePath = resourcePath.replace("{fields}", fields);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -795,9 +758,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetDatasourceResponse responseObject = (GetDatasourceResponse) getApiInvoker().deserialize(response, GetDatasourceResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get questionnaire datasources
@@ -811,7 +773,7 @@ public class MergeAPI extends Object {
 	 * @return GetDatasourcesResponse {@link GetDatasourcesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, questionnaireId, includeFields") 
+	 @MethodArgumentNames(value="userId, questionnaireId, includeFields")
 	 public static GetDatasourcesResponse GetQuestionnaireDataSources(String userId, String questionnaireId, String includeFields) throws APIException {
 
 		//parse inputs
@@ -821,17 +783,16 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 		if( includeFields != null) {
-			resourcePath = resourcePath.replace("{includeFields}", APIInvoker.toPathValue(includeFields));
+			resourcePath = resourcePath.replace("{includeFields}", includeFields);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -839,9 +800,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetDatasourcesResponse responseObject = (GetDatasourcesResponse) getApiInvoker().deserialize(response, GetDatasourcesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Add questionnaire execution
@@ -855,7 +815,7 @@ public class MergeAPI extends Object {
 	 * @return AddQuestionnaireExecutionResponse {@link AddQuestionnaireExecutionResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, questionnaireId, postData") 
+	 @MethodArgumentNames(value="userId, questionnaireId, postData")
 	 public static AddQuestionnaireExecutionResponse AddQuestionnaireExecution(String userId, String questionnaireId, QuestionnaireExecutionInfo postData) throws APIException {
 
 		//parse inputs
@@ -865,14 +825,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( questionnaireId != null) {
-			resourcePath = resourcePath.replace("{questionnaireId}", APIInvoker.toPathValue(questionnaireId));
+			resourcePath = resourcePath.replace("{questionnaireId}", questionnaireId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -880,9 +839,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddQuestionnaireExecutionResponse responseObject = (AddQuestionnaireExecutionResponse) getApiInvoker().deserialize(response, AddQuestionnaireExecutionResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get questionnaire executions
@@ -894,7 +852,7 @@ public class MergeAPI extends Object {
 	 * @return GetQuestionnaireExecutionsResponse {@link GetQuestionnaireExecutionsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static GetQuestionnaireExecutionsResponse GetQuestionnaireExecutions(String userId) throws APIException {
 
 		//parse inputs
@@ -904,11 +862,10 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -916,9 +873,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetQuestionnaireExecutionsResponse responseObject = (GetQuestionnaireExecutionsResponse) getApiInvoker().deserialize(response, GetQuestionnaireExecutionsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update questionnaire execution
@@ -932,7 +888,7 @@ public class MergeAPI extends Object {
 	 * @return UpdateQuestionnaireExecutionResponse {@link UpdateQuestionnaireExecutionResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, executionId, postData") 
+	 @MethodArgumentNames(value="userId, executionId, postData")
 	 public static UpdateQuestionnaireExecutionResponse UpdateQuestionnaireExecution(String userId, String executionId, QuestionnaireExecutionInfo postData) throws APIException {
 
 		//parse inputs
@@ -942,14 +898,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( executionId != null) {
-			resourcePath = resourcePath.replace("{executionId}", APIInvoker.toPathValue(executionId));
+			resourcePath = resourcePath.replace("{executionId}", executionId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -957,9 +912,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateQuestionnaireExecutionResponse responseObject = (UpdateQuestionnaireExecutionResponse) getApiInvoker().deserialize(response, UpdateQuestionnaireExecutionResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Update questionnaire execution status
@@ -973,7 +927,7 @@ public class MergeAPI extends Object {
 	 * @return UpdateQuestionnaireExecutionResponse {@link UpdateQuestionnaireExecutionResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, executionId, postData") 
+	 @MethodArgumentNames(value="userId, executionId, postData")
 	 public static UpdateQuestionnaireExecutionResponse UpdateQuestionnaireExecutionStatus(String userId, String executionId, String postData) throws APIException {
 
 		//parse inputs
@@ -983,14 +937,13 @@ public class MergeAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( executionId != null) {
-			resourcePath = resourcePath.replace("{executionId}", APIInvoker.toPathValue(executionId));
+			resourcePath = resourcePath.replace("{executionId}", executionId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -998,9 +951,8 @@ public class MergeAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UpdateQuestionnaireExecutionResponse responseObject = (UpdateQuestionnaireExecutionResponse) getApiInvoker().deserialize(response, UpdateQuestionnaireExecutionResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

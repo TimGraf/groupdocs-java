@@ -37,7 +37,7 @@ public class SignatureTemplateFieldInfo extends Object {
     /**
      * 
      */
-	 private String check ;
+	 private String regularExpression ;
 
     /**
      * 
@@ -110,12 +110,12 @@ public class SignatureTemplateFieldInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public String getCheck() {
-	 	return check;
+	 public String getRegularExpression() {
+	 	return regularExpression;
 	 }  
 	 
-	 public void setCheck(String  check) {
-	 	this.check = check;
+	 public void setRegularExpression(String  regularExpression) {
+	 	this.regularExpression = regularExpression;
 	 }
 
 	/**

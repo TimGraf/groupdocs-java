@@ -53,7 +53,7 @@ public class AntAPI extends Object {
 	 * @return CreateAnnotationResponse {@link CreateAnnotationResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, postData") 
+	 @MethodArgumentNames(value="userId, fileId, postData")
 	 public static CreateAnnotationResponse CreateAnnotation(String userId, String fileId, AnnotationInfo postData) throws APIException {
 
 		//parse inputs
@@ -63,14 +63,13 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -78,9 +77,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreateAnnotationResponse responseObject = (CreateAnnotationResponse) getApiInvoker().deserialize(response, CreateAnnotationResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get list of annotations
@@ -93,7 +91,7 @@ public class AntAPI extends Object {
 	 * @return ListAnnotationsResponse {@link ListAnnotationsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static ListAnnotationsResponse ListAnnotations(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -103,14 +101,13 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -118,9 +115,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ListAnnotationsResponse responseObject = (ListAnnotationsResponse) getApiInvoker().deserialize(response, ListAnnotationsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete annotation
@@ -133,7 +129,7 @@ public class AntAPI extends Object {
 	 * @return DeleteAnnotationResponse {@link DeleteAnnotationResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, annotationId") 
+	 @MethodArgumentNames(value="userId, annotationId")
 	 public static DeleteAnnotationResponse DeleteAnnotation(String userId, String annotationId) throws APIException {
 
 		//parse inputs
@@ -143,14 +139,13 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( annotationId != null) {
-			resourcePath = resourcePath.replace("{annotationId}", APIInvoker.toPathValue(annotationId));
+			resourcePath = resourcePath.replace("{annotationId}", annotationId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -158,9 +153,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteAnnotationResponse responseObject = (DeleteAnnotationResponse) getApiInvoker().deserialize(response, DeleteAnnotationResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create annotation reply
@@ -174,7 +168,7 @@ public class AntAPI extends Object {
 	 * @return AddReplyResponse {@link AddReplyResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, annotationId, message") 
+	 @MethodArgumentNames(value="userId, annotationId, message")
 	 public static AddReplyResponse CreateAnnotationReply(String userId, String annotationId, String message) throws APIException {
 
 		//parse inputs
@@ -184,17 +178,16 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( annotationId != null) {
-			resourcePath = resourcePath.replace("{annotationId}", APIInvoker.toPathValue(annotationId));
+			resourcePath = resourcePath.replace("{annotationId}", annotationId);
 		}
 		if( message != null) {
-			resourcePath = resourcePath.replace("{message}", APIInvoker.toPathValue(message));
+			resourcePath = resourcePath.replace("{message}", message);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -202,9 +195,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		AddReplyResponse responseObject = (AddReplyResponse) getApiInvoker().deserialize(response, AddReplyResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Edit annotation reply
@@ -218,7 +210,7 @@ public class AntAPI extends Object {
 	 * @return EditReplyResponse {@link EditReplyResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, replyGuid, message") 
+	 @MethodArgumentNames(value="userId, replyGuid, message")
 	 public static EditReplyResponse EditAnnotationReply(String userId, String replyGuid, String message) throws APIException {
 
 		//parse inputs
@@ -228,17 +220,16 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( replyGuid != null) {
-			resourcePath = resourcePath.replace("{replyGuid}", APIInvoker.toPathValue(replyGuid));
+			resourcePath = resourcePath.replace("{replyGuid}", replyGuid);
 		}
 		if( message != null) {
-			resourcePath = resourcePath.replace("{message}", APIInvoker.toPathValue(message));
+			resourcePath = resourcePath.replace("{message}", message);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -246,9 +237,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		EditReplyResponse responseObject = (EditReplyResponse) getApiInvoker().deserialize(response, EditReplyResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get list of annotation replies
@@ -262,7 +252,7 @@ public class AntAPI extends Object {
 	 * @return ListRepliesResponse {@link ListRepliesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, annotationId, after") 
+	 @MethodArgumentNames(value="userId, annotationId, after")
 	 public static ListRepliesResponse ListAnnotationReplies(String userId, String annotationId, String after) throws APIException {
 
 		//parse inputs
@@ -272,17 +262,16 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( annotationId != null) {
-			resourcePath = resourcePath.replace("{annotationId}", APIInvoker.toPathValue(annotationId));
+			resourcePath = resourcePath.replace("{annotationId}", annotationId);
 		}
 		if( after != null) {
-			resourcePath = resourcePath.replace("{after}", APIInvoker.toPathValue(after));
+			resourcePath = resourcePath.replace("{after}", after);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -290,9 +279,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ListRepliesResponse responseObject = (ListRepliesResponse) getApiInvoker().deserialize(response, ListRepliesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Set annotation collaborators
@@ -306,7 +294,7 @@ public class AntAPI extends Object {
 	 * @return SetCollaboratorsResponse {@link SetCollaboratorsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, collaborators") 
+	 @MethodArgumentNames(value="userId, fileId, collaborators")
 	 public static SetCollaboratorsResponse SetAnnotationCollaborators(String userId, String fileId, String collaborators) throws APIException {
 
 		//parse inputs
@@ -316,17 +304,16 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( collaborators != null) {
-			resourcePath = resourcePath.replace("{collaborators}", APIInvoker.toPathValue(collaborators));
+			resourcePath = resourcePath.replace("{collaborators}", collaborators);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -334,9 +321,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		SetCollaboratorsResponse responseObject = (SetCollaboratorsResponse) getApiInvoker().deserialize(response, SetCollaboratorsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get list of annotation collaborators
@@ -349,7 +335,7 @@ public class AntAPI extends Object {
 	 * @return GetCollaboratorsResponse {@link GetCollaboratorsResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static GetCollaboratorsResponse GetAnnotationCollaborators(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -359,14 +345,13 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -374,9 +359,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		GetCollaboratorsResponse responseObject = (GetCollaboratorsResponse) getApiInvoker().deserialize(response, GetCollaboratorsResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Move annotation
@@ -390,7 +374,7 @@ public class AntAPI extends Object {
 	 * @return MoveAnnotationResponse {@link MoveAnnotationResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, annotationId, postData") 
+	 @MethodArgumentNames(value="userId, annotationId, postData")
 	 public static MoveAnnotationResponse MoveAnnotation(String userId, String annotationId, Point postData) throws APIException {
 
 		//parse inputs
@@ -400,14 +384,13 @@ public class AntAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( annotationId != null) {
-			resourcePath = resourcePath.replace("{annotationId}", APIInvoker.toPathValue(annotationId));
+			resourcePath = resourcePath.replace("{annotationId}", annotationId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -415,9 +398,8 @@ public class AntAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		MoveAnnotationResponse responseObject = (MoveAnnotationResponse) getApiInvoker().deserialize(response, MoveAnnotationResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

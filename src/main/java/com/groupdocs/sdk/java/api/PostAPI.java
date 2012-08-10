@@ -53,7 +53,7 @@ public class PostAPI extends Object {
 	 * @return RenameResponse {@link RenameResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, newName") 
+	 @MethodArgumentNames(value="userId, fileId, newName")
 	 public static RenameResponse RenameByPost(String userId, String fileId, String newName) throws APIException {
 
 		//parse inputs
@@ -63,17 +63,16 @@ public class PostAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( newName != null) {
-			resourcePath = resourcePath.replace("{newName}", APIInvoker.toPathValue(newName));
+			resourcePath = resourcePath.replace("{newName}", newName);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -81,9 +80,8 @@ public class PostAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		RenameResponse responseObject = (RenameResponse) getApiInvoker().deserialize(response, RenameResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete by post
@@ -96,7 +94,7 @@ public class PostAPI extends Object {
 	 * @return DeleteResponse {@link DeleteResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static DeleteResponse DeleteByPost(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -106,14 +104,13 @@ public class PostAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -121,9 +118,8 @@ public class PostAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteResponse responseObject = (DeleteResponse) getApiInvoker().deserialize(response, DeleteResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete from folder by post
@@ -136,7 +132,7 @@ public class PostAPI extends Object {
 	 * @return DeleteResponse {@link DeleteResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path") 
+	 @MethodArgumentNames(value="userId, path")
 	 public static DeleteResponse DeleteFromFolderByPost(String userId, String path) throws APIException {
 
 		//parse inputs
@@ -146,14 +142,13 @@ public class PostAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -161,9 +156,8 @@ public class PostAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteResponse responseObject = (DeleteResponse) getApiInvoker().deserialize(response, DeleteResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Compress by post
@@ -177,7 +171,7 @@ public class PostAPI extends Object {
 	 * @return CompressResponse {@link CompressResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId, archiveType") 
+	 @MethodArgumentNames(value="userId, fileId, archiveType")
 	 public static CompressResponse CompressByPost(String userId, String fileId, String archiveType) throws APIException {
 
 		//parse inputs
@@ -187,17 +181,16 @@ public class PostAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 		if( archiveType != null) {
-			resourcePath = resourcePath.replace("{archiveType}", APIInvoker.toPathValue(archiveType));
+			resourcePath = resourcePath.replace("{archiveType}", archiveType);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -205,9 +198,8 @@ public class PostAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CompressResponse responseObject = (CompressResponse) getApiInvoker().deserialize(response, CompressResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

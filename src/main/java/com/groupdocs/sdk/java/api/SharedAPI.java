@@ -53,7 +53,7 @@ public class SharedAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="guid, fileName, render") 
+	 @MethodArgumentNames(value="guid, fileName, render")
 	 public static String Download(String guid, String fileName, String render) throws APIException {
 
 		//parse inputs
@@ -63,17 +63,16 @@ public class SharedAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( guid != null) {
-			resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(guid));
+			resourcePath = resourcePath.replace("{guid}", guid);
 		}
 		if( fileName != null) {
-			resourcePath = resourcePath.replace("{fileName}", APIInvoker.toPathValue(fileName));
+			resourcePath = resourcePath.replace("{fileName}", fileName);
 		}
 		if( render != null) {
-			resourcePath = resourcePath.replace("{render}", APIInvoker.toPathValue(render));
+			resourcePath = resourcePath.replace("{render}", render);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -81,9 +80,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get image
@@ -95,7 +93,7 @@ public class SharedAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="sharedSharedInputFilesInputPagesInput") 
+	 @MethodArgumentNames(value="sharedSharedInputFilesInputPagesInput")
 	 public static String GetImage(SharedSharedInputFilesInputPagesInput sharedSharedInputFilesInputPagesInput) throws APIException {
 
 		//parse inputs
@@ -104,25 +102,23 @@ public class SharedAPI extends Object {
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( sharedSharedInputFilesInputPagesInput != null && sharedSharedInputFilesInputPagesInput.getGuid() != null) {
-		 	resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(sharedSharedInputFilesInputPagesInput.getGuid()));
+		 	resourcePath = resourcePath.replace("{guid}", sharedSharedInputFilesInputPagesInput.getGuid());
 		}
 		if( sharedSharedInputFilesInputPagesInput != null && sharedSharedInputFilesInputPagesInput.getFolio() != null) {
-		 	resourcePath = resourcePath.replace("{folio}", APIInvoker.toPathValue(sharedSharedInputFilesInputPagesInput.getFolio()));
+		 	resourcePath = resourcePath.replace("{folio}", sharedSharedInputFilesInputPagesInput.getFolio());
 		}
 		if( sharedSharedInputFilesInputPagesInput != null && sharedSharedInputFilesInputPagesInput.getDimension() != null) {
-		 	resourcePath = resourcePath.replace("{dimension}", APIInvoker.toPathValue(sharedSharedInputFilesInputPagesInput.getDimension()));
+		 	resourcePath = resourcePath.replace("{dimension}", sharedSharedInputFilesInputPagesInput.getDimension());
 		}
 		if( sharedSharedInputFilesInputPagesInput != null && sharedSharedInputFilesInputPagesInput.getQuality() != null) {
-		 	resourcePath = resourcePath.replace("{quality}", APIInvoker.toPathValue(sharedSharedInputFilesInputPagesInput.getQuality()));
+		 	resourcePath = resourcePath.replace("{quality}", sharedSharedInputFilesInputPagesInput.getQuality());
 		}
 		if( sharedSharedInputFilesInputPagesInput != null && sharedSharedInputFilesInputPagesInput.getUsePdf() != null) {
-		 	resourcePath = resourcePath.replace("{usePdf}", APIInvoker.toPathValue(sharedSharedInputFilesInputPagesInput.getUsePdf()));
+		 	resourcePath = resourcePath.replace("{usePdf}", sharedSharedInputFilesInputPagesInput.getUsePdf());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -130,9 +126,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get image url
@@ -148,7 +143,7 @@ public class SharedAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="guid, folio, dimension, quality, usePdf") 
+	 @MethodArgumentNames(value="guid, folio, dimension, quality, usePdf")
 	 public static String GetImageUrl(String guid, String folio, String dimension, String quality, String usePdf) throws APIException {
 
 		//parse inputs
@@ -158,23 +153,22 @@ public class SharedAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( guid != null) {
-			resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(guid));
+			resourcePath = resourcePath.replace("{guid}", guid);
 		}
 		if( folio != null) {
-			resourcePath = resourcePath.replace("{folio}", APIInvoker.toPathValue(folio));
+			resourcePath = resourcePath.replace("{folio}", folio);
 		}
 		if( dimension != null) {
-			resourcePath = resourcePath.replace("{dimension}", APIInvoker.toPathValue(dimension));
+			resourcePath = resourcePath.replace("{dimension}", dimension);
 		}
 		if( quality != null) {
-			resourcePath = resourcePath.replace("{quality}", APIInvoker.toPathValue(quality));
+			resourcePath = resourcePath.replace("{quality}", quality);
 		}
 		if( usePdf != null) {
-			resourcePath = resourcePath.replace("{usePdf}", APIInvoker.toPathValue(usePdf));
+			resourcePath = resourcePath.replace("{usePdf}", usePdf);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -182,9 +176,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get xml
@@ -196,7 +189,7 @@ public class SharedAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="guid") 
+	 @MethodArgumentNames(value="guid")
 	 public static String GetXml(String guid) throws APIException {
 
 		//parse inputs
@@ -206,11 +199,10 @@ public class SharedAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( guid != null) {
-			resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(guid));
+			resourcePath = resourcePath.replace("{guid}", guid);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -218,9 +210,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get package
@@ -232,7 +223,7 @@ public class SharedAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="path") 
+	 @MethodArgumentNames(value="path")
 	 public static String GetPackage(String path) throws APIException {
 
 		//parse inputs
@@ -242,11 +233,10 @@ public class SharedAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -254,9 +244,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * View document
@@ -268,7 +257,7 @@ public class SharedAPI extends Object {
 	 * @return ViewDocumentResponse {@link ViewDocumentResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="sharedSharedInputFilesInput") 
+	 @MethodArgumentNames(value="sharedSharedInputFilesInput")
 	 public static ViewDocumentResponse ViewDocument(SharedSharedInputFilesInput sharedSharedInputFilesInput) throws APIException {
 
 		//parse inputs
@@ -277,25 +266,23 @@ public class SharedAPI extends Object {
 		String method = "POST";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( sharedSharedInputFilesInput != null && sharedSharedInputFilesInput.getGuid() != null) {
-		 	resourcePath = resourcePath.replace("{guid}", APIInvoker.toPathValue(sharedSharedInputFilesInput.getGuid()));
+		 	resourcePath = resourcePath.replace("{guid}", sharedSharedInputFilesInput.getGuid());
 		}
 		if( sharedSharedInputFilesInput != null && sharedSharedInputFilesInput.getPageNumber() != null) {
-		 	resourcePath = resourcePath.replace("{pageNumber}", APIInvoker.toPathValue(sharedSharedInputFilesInput.getPageNumber()));
+		 	resourcePath = resourcePath.replace("{pageNumber}", sharedSharedInputFilesInput.getPageNumber());
 		}
 		if( sharedSharedInputFilesInput != null && sharedSharedInputFilesInput.getPageCount() != null) {
-		 	resourcePath = resourcePath.replace("{pageCount}", APIInvoker.toPathValue(sharedSharedInputFilesInput.getPageCount()));
+		 	resourcePath = resourcePath.replace("{pageCount}", sharedSharedInputFilesInput.getPageCount());
 		}
 		if( sharedSharedInputFilesInput != null && sharedSharedInputFilesInput.getQuality() != null) {
-		 	resourcePath = resourcePath.replace("{quality}", APIInvoker.toPathValue(sharedSharedInputFilesInput.getQuality()));
+		 	resourcePath = resourcePath.replace("{quality}", sharedSharedInputFilesInput.getQuality());
 		}
 		if( sharedSharedInputFilesInput != null && sharedSharedInputFilesInput.getUsePdf() != null) {
-		 	resourcePath = resourcePath.replace("{usePdf}", APIInvoker.toPathValue(sharedSharedInputFilesInput.getUsePdf()));
+		 	resourcePath = resourcePath.replace("{usePdf}", sharedSharedInputFilesInput.getUsePdf());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -303,9 +290,8 @@ public class SharedAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ViewDocumentResponse responseObject = (ViewDocumentResponse) getApiInvoker().deserialize(response, ViewDocumentResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

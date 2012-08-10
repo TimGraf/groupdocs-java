@@ -83,82 +83,67 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<CreatePackageResult> createPackageResultList ;
+	 private List<ResetPasswordResult> resetPasswordResultList ;
 
     /**
      * 
      */
-	 private List<UploadResponse> uploadResponseList ;
+	 private List<CreateUserResult> createUserResultList ;
 
     /**
      * 
      */
-	 private List<CompressResponse> compressResponseList ;
+	 private List<UserPasswordInfo> userPasswordInfoList ;
 
     /**
      * 
      */
-	 private List<DeleteResult> deleteResultList ;
+	 private List<UpdateStorageProviderResponse> updateStorageProviderResponseList ;
 
     /**
      * 
      */
-	 private List<CreateFolderResult> createFolderResultList ;
+	 private List<CreateUserResponse> createUserResponseList ;
 
     /**
      * 
      */
-	 private List<FolderMoveResult> folderMoveResultList ;
+	 private List<ChangePasswordResult> changePasswordResultList ;
 
     /**
      * 
      */
-	 private List<FileMoveResult> fileMoveResultList ;
+	 private List<UpdateUserResponse> updateUserResponseList ;
 
     /**
      * 
      */
-	 private List<ListEntitiesResult> listEntitiesResultList ;
+	 private List<AddStorageProviderResponse> addStorageProviderResponseList ;
 
     /**
      * 
      */
-	 private List<CreateFolderResponse> createFolderResponseList ;
+	 private List<UpdateUserResult> updateUserResultList ;
 
     /**
      * 
      */
-	 private List<DocumentInfo> documentInfoList ;
+	 private List<UserInfoResponse> userInfoResponseList ;
 
     /**
      * 
      */
-	 private List<CompressRequestResult> compressRequestResultList ;
+	 private List<GetStorageProvidersResult> getStorageProvidersResultList ;
 
     /**
      * 
      */
-	 private List<UploadRequestResult> uploadRequestResultList ;
+	 private List<ResetPasswordResponse> resetPasswordResponseList ;
 
     /**
      * 
      */
-	 private List<StorageInfoResult> storageInfoResultList ;
-
-    /**
-     * 
-     */
-	 private List<CreatePackageResponse> createPackageResponseList ;
-
-    /**
-     * 
-     */
-	 private List<FolderMoveResponse> folderMoveResponseList ;
-
-    /**
-     * 
-     */
-	 private List<StorageInfoResponse> storageInfoResponseList ;
+	 private List<UpdateStorageProviderResult> updateStorageProviderResultList ;
 
     /**
      * 
@@ -168,22 +153,27 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<DeleteResponse> deleteResponseList ;
+	 private List<AddStorageProviderResult> addStorageProviderResultList ;
 
     /**
      * 
      */
-	 private List<ListEntitiesResponse> listEntitiesResponseList ;
+	 private List<GetStorageProvidersResponse> getStorageProvidersResponseList ;
 
     /**
      * 
      */
-	 private List<FileMoveResponse> fileMoveResponseList ;
+	 private List<UserInfoResult> userInfoResultList ;
 
     /**
      * 
      */
-	 private List<SharedDocumentInfo> sharedDocumentInfoList ;
+	 private List<StorageProviderInfo> storageProviderInfoList ;
+
+    /**
+     * 
+     */
+	 private List<ChangePasswordResponse> changePasswordResponseList ;
 
     /**
      * 
@@ -299,6 +289,321 @@ public class TestData extends Object {
      * 
      */
 	 private List<GetCollaboratorsResult> getCollaboratorsResultList ;
+
+    /**
+     * 
+     */
+	 private List<Result> resultList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobsDocumentsResult> getJobsDocumentsResultList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobDocumentsResult> getJobDocumentsResultList ;
+
+    /**
+     * 
+     */
+	 private List<CreateJobResponse> createJobResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobDocumentsResponse> getJobDocumentsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<CreateJobResult> createJobResultList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobsResponse> getJobsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<JobInputDocument> jobInputDocumentList ;
+
+    /**
+     * 
+     */
+	 private List<ConvertResponse> convertResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobResponse> getJobResponseList ;
+
+    /**
+     * 
+     */
+	 private List<AddJobDocumentResponse> addJobDocumentResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobsDocumentsResponse> getJobsDocumentsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobsResult> getJobsResultList ;
+
+    /**
+     * 
+     */
+	 private List<UpdateJobResponse> updateJobResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetJobResult> getJobResultList ;
+
+    /**
+     * 
+     */
+	 private List<JobOutputDocument> jobOutputDocumentList ;
+
+    /**
+     * 
+     */
+	 private List<ConvertRequestResult> convertRequestResultList ;
+
+    /**
+     * 
+     */
+	 private List<JobDocumentsEntry> jobDocumentsEntryList ;
+
+    /**
+     * 
+     */
+	 private List<JobInfo> jobInfoList ;
+
+    /**
+     * 
+     */
+	 private List<AddJobDocumentResult> addJobDocumentResultList ;
+
+    /**
+     * 
+     */
+	 private List<ViewDocumentResult> viewDocumentResultList ;
+
+    /**
+     * 
+     */
+	 private List<ViewDocumentResponse> viewDocumentResponseList ;
+
+    /**
+     * 
+     */
+	 private List<Dimension> dimensionList ;
+
+    /**
+     * 
+     */
+	 private List<CreatePackageResult> createPackageResultList ;
+
+    /**
+     * 
+     */
+	 private List<UploadResponse> uploadResponseList ;
+
+    /**
+     * 
+     */
+	 private List<CompressResponse> compressResponseList ;
+
+    /**
+     * 
+     */
+	 private List<DeleteResult> deleteResultList ;
+
+    /**
+     * 
+     */
+	 private List<CreateFolderResult> createFolderResultList ;
+
+    /**
+     * 
+     */
+	 private List<FolderMoveResult> folderMoveResultList ;
+
+    /**
+     * 
+     */
+	 private List<FileMoveResult> fileMoveResultList ;
+
+    /**
+     * 
+     */
+	 private List<ListEntitiesResult> listEntitiesResultList ;
+
+    /**
+     * 
+     */
+	 private List<FileSystemDocument> fileSystemDocumentList ;
+
+    /**
+     * 
+     */
+	 private List<CreateFolderResponse> createFolderResponseList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentInfo> documentInfoList ;
+
+    /**
+     * 
+     */
+	 private List<CompressRequestResult> compressRequestResultList ;
+
+    /**
+     * 
+     */
+	 private List<UploadRequestResult> uploadRequestResultList ;
+
+    /**
+     * 
+     */
+	 private List<StorageInfoResult> storageInfoResultList ;
+
+    /**
+     * 
+     */
+	 private List<CreatePackageResponse> createPackageResponseList ;
+
+    /**
+     * 
+     */
+	 private List<FolderMoveResponse> folderMoveResponseList ;
+
+    /**
+     * 
+     */
+	 private List<StorageInfoResponse> storageInfoResponseList ;
+
+    /**
+     * 
+     */
+	 private List<FileSystemFolder> fileSystemFolderList ;
+
+    /**
+     * 
+     */
+	 private List<DeleteResponse> deleteResponseList ;
+
+    /**
+     * 
+     */
+	 private List<ListEntitiesResponse> listEntitiesResponseList ;
+
+    /**
+     * 
+     */
+	 private List<FileMoveResponse> fileMoveResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetDocumentInfoResult> getDocumentInfoResultList ;
+
+    /**
+     * 
+     */
+	 private List<TemplateField> templateFieldList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentViewsResult> documentViewsResultList ;
+
+    /**
+     * 
+     */
+	 private List<SharedDocumentsResponse> sharedDocumentsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<TemplateFieldsResponse> templateFieldsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentAccessInfoResult> documentAccessInfoResultList ;
+
+    /**
+     * 
+     */
+	 private List<SharedUsersResult> sharedUsersResultList ;
+
+    /**
+     * 
+     */
+	 private List<SharedDocumentsResult> sharedDocumentsResultList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentViewsResponse> documentViewsResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetDocumentForeignTypesResponse> getDocumentForeignTypesResponseList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentViewInfo> documentViewInfoList ;
+
+    /**
+     * 
+     */
+	 private List<SharedUsersResponse> sharedUsersResponseList ;
+
+    /**
+     * 
+     */
+	 private List<GetDocumentInfoResponse> getDocumentInfoResponseList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentUserStatusResult> documentUserStatusResultList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentUserStatusResponse> documentUserStatusResponseList ;
+
+    /**
+     * 
+     */
+	 private List<TemplateFieldsResult> templateFieldsResultList ;
+
+    /**
+     * 
+     */
+	 private List<GetDocumentForeignTypesResult> getDocumentForeignTypesResultList ;
+
+    /**
+     * 
+     */
+	 private List<DocumentAccessInfoResponse> documentAccessInfoResponseList ;
+
+    /**
+     * 
+     */
+	 private List<SharedDocumentInfo> sharedDocumentInfoList ;
 
     /**
      * 
@@ -508,266 +813,6 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<GetDocumentInfoResult> getDocumentInfoResultList ;
-
-    /**
-     * 
-     */
-	 private List<TemplateField> templateFieldList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentViewsResult> documentViewsResultList ;
-
-    /**
-     * 
-     */
-	 private List<SharedDocumentsResponse> sharedDocumentsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<TemplateFieldsResponse> templateFieldsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentAccessInfoResult> documentAccessInfoResultList ;
-
-    /**
-     * 
-     */
-	 private List<SharedUsersResult> sharedUsersResultList ;
-
-    /**
-     * 
-     */
-	 private List<SharedDocumentsResult> sharedDocumentsResultList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentViewsResponse> documentViewsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetDocumentForeignTypesResponse> getDocumentForeignTypesResponseList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentViewInfo> documentViewInfoList ;
-
-    /**
-     * 
-     */
-	 private List<ViewDocumentResult> viewDocumentResultList ;
-
-    /**
-     * 
-     */
-	 private List<SharedUsersResponse> sharedUsersResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetDocumentInfoResponse> getDocumentInfoResponseList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentUserStatusResult> documentUserStatusResultList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentUserStatusResponse> documentUserStatusResponseList ;
-
-    /**
-     * 
-     */
-	 private List<TemplateFieldsResult> templateFieldsResultList ;
-
-    /**
-     * 
-     */
-	 private List<Dimension> dimensionList ;
-
-    /**
-     * 
-     */
-	 private List<GetDocumentForeignTypesResult> getDocumentForeignTypesResultList ;
-
-    /**
-     * 
-     */
-	 private List<DocumentAccessInfoResponse> documentAccessInfoResponseList ;
-
-    /**
-     * 
-     */
-	 private List<ViewDocumentResponse> viewDocumentResponseList ;
-
-    /**
-     * 
-     */
-	 private List<Result> resultList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobsDocumentsResult> getJobsDocumentsResultList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobDocumentsResult> getJobDocumentsResultList ;
-
-    /**
-     * 
-     */
-	 private List<CreateJobResponse> createJobResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobDocumentsResponse> getJobDocumentsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<CreateJobResult> createJobResultList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobsResponse> getJobsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<JobInputDocument> jobInputDocumentList ;
-
-    /**
-     * 
-     */
-	 private List<ConvertResponse> convertResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobResponse> getJobResponseList ;
-
-    /**
-     * 
-     */
-	 private List<AddJobDocumentResponse> addJobDocumentResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobsDocumentsResponse> getJobsDocumentsResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobsResult> getJobsResultList ;
-
-    /**
-     * 
-     */
-	 private List<UpdateJobResponse> updateJobResponseList ;
-
-    /**
-     * 
-     */
-	 private List<GetJobResult> getJobResultList ;
-
-    /**
-     * 
-     */
-	 private List<JobOutputDocument> jobOutputDocumentList ;
-
-    /**
-     * 
-     */
-	 private List<ConvertRequestResult> convertRequestResultList ;
-
-    /**
-     * 
-     */
-	 private List<JobDocumentsEntry> jobDocumentsEntryList ;
-
-    /**
-     * 
-     */
-	 private List<JobInfo> jobInfoList ;
-
-    /**
-     * 
-     */
-	 private List<AddJobDocumentResult> addJobDocumentResultList ;
-
-    /**
-     * 
-     */
-	 private List<ResetPasswordResult> resetPasswordResultList ;
-
-    /**
-     * 
-     */
-	 private List<UpdateUserResult> updateUserResultList ;
-
-    /**
-     * 
-     */
-	 private List<UserInfoResponse> userInfoResponseList ;
-
-    /**
-     * 
-     */
-	 private List<ResetPasswordResponse> resetPasswordResponseList ;
-
-    /**
-     * 
-     */
-	 private List<CreateUserResult> createUserResultList ;
-
-    /**
-     * 
-     */
-	 private List<UserPasswordInfo> userPasswordInfoList ;
-
-    /**
-     * 
-     */
-	 private List<CreateUserResponse> createUserResponseList ;
-
-    /**
-     * 
-     */
-	 private List<ChangePasswordResult> changePasswordResultList ;
-
-    /**
-     * 
-     */
-	 private List<UpdateUserResponse> updateUserResponseList ;
-
-    /**
-     * 
-     */
-	 private List<UserInfoResult> userInfoResultList ;
-
-    /**
-     * 
-     */
-	 private List<ChangePasswordResponse> changePasswordResponseList ;
-
-    /**
-     * 
-     */
 	 private List<RenameResponse> renameResponseList ;
 
     /**
@@ -853,12 +898,12 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureEnvelopeFieldInfo> signatureEnvelopeFieldInfoList ;
+	 private List<SignatureEnvelopesResponse> signatureEnvelopesResponseList ;
 
     /**
      * 
      */
-	 private List<SignatureEnvelopesResponse> signatureEnvelopesResponseList ;
+	 private List<SignatureEnvelopeFieldInfo> signatureEnvelopeFieldInfoList ;
 
     /**
      * 
@@ -903,12 +948,12 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureTemplateResult> signatureTemplateResultList ;
+	 private List<SignatureRolesResult> signatureRolesResultList ;
 
     /**
      * 
      */
-	 private List<SignatureRolesResult> signatureRolesResultList ;
+	 private List<SignatureTemplateResult> signatureTemplateResultList ;
 
     /**
      * 
@@ -963,12 +1008,12 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureTemplateDocumentResponse> signatureTemplateDocumentResponseList ;
+	 private List<SignatureEnvelopeResult> signatureEnvelopeResultList ;
 
     /**
      * 
      */
-	 private List<SignatureEnvelopeResult> signatureEnvelopeResultList ;
+	 private List<SignatureTemplateDocumentResponse> signatureTemplateDocumentResponseList ;
 
     /**
      * 
@@ -983,22 +1028,22 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureTemplateRecipientsResponse> signatureTemplateRecipientsResponseList ;
-
-    /**
-     * 
-     */
 	 private List<SignatureEnvelopeRecipientResponse> signatureEnvelopeRecipientResponseList ;
 
     /**
      * 
      */
-	 private List<SignatureTemplateDocumentsResult> signatureTemplateDocumentsResultList ;
+	 private List<SignatureTemplateRecipientsResponse> signatureTemplateRecipientsResponseList ;
 
     /**
      * 
      */
 	 private List<SignatureEnvelopeFieldResult> signatureEnvelopeFieldResultList ;
+
+    /**
+     * 
+     */
+	 private List<SignatureTemplateDocumentsResult> signatureTemplateDocumentsResultList ;
 
     /**
      * 
@@ -1023,12 +1068,12 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureFieldsResponse> signatureFieldsResponseList ;
+	 private List<SignatureFieldResponse> signatureFieldResponseList ;
 
     /**
      * 
      */
-	 private List<SignatureFieldResponse> signatureFieldResponseList ;
+	 private List<SignatureFieldsResponse> signatureFieldsResponseList ;
 
     /**
      * 
@@ -1053,17 +1098,17 @@ public class TestData extends Object {
     /**
      * 
      */
+	 private List<SignatureTemplateRecipientInfo> signatureTemplateRecipientInfoList ;
+
+    /**
+     * 
+     */
 	 private List<SignatureTemplateDocumentsResponse> signatureTemplateDocumentsResponseList ;
 
     /**
      * 
      */
 	 private List<SignatureSignatureResponse> signatureSignatureResponseList ;
-
-    /**
-     * 
-     */
-	 private List<SignatureTemplateRecipientInfo> signatureTemplateRecipientInfoList ;
 
     /**
      * 
@@ -1078,12 +1123,12 @@ public class TestData extends Object {
     /**
      * 
      */
-	 private List<SignatureSignatureResult> signatureSignatureResultList ;
+	 private List<SignatureTemplateInfo> signatureTemplateInfoList ;
 
     /**
      * 
      */
-	 private List<SignatureTemplateInfo> signatureTemplateInfoList ;
+	 private List<SignatureSignatureResult> signatureSignatureResultList ;
 
     /**
      * 
@@ -1258,12 +1303,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<CreatePackageResult> getCreatePackageResultList() {
-	 	return createPackageResultList;
+	 public List<ResetPasswordResult> getResetPasswordResultList() {
+	 	return resetPasswordResultList;
 	 }  
 	 
-	 public void setCreatePackageResultList(List<CreatePackageResult>  createPackageResultList) {
-	 	this.createPackageResultList = createPackageResultList;
+	 public void setResetPasswordResultList(List<ResetPasswordResult>  resetPasswordResultList) {
+	 	this.resetPasswordResultList = resetPasswordResultList;
 	 }
 
 	/**
@@ -1271,12 +1316,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<UploadResponse> getUploadResponseList() {
-	 	return uploadResponseList;
+	 public List<CreateUserResult> getCreateUserResultList() {
+	 	return createUserResultList;
 	 }  
 	 
-	 public void setUploadResponseList(List<UploadResponse>  uploadResponseList) {
-	 	this.uploadResponseList = uploadResponseList;
+	 public void setCreateUserResultList(List<CreateUserResult>  createUserResultList) {
+	 	this.createUserResultList = createUserResultList;
 	 }
 
 	/**
@@ -1284,12 +1329,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<CompressResponse> getCompressResponseList() {
-	 	return compressResponseList;
+	 public List<UserPasswordInfo> getUserPasswordInfoList() {
+	 	return userPasswordInfoList;
 	 }  
 	 
-	 public void setCompressResponseList(List<CompressResponse>  compressResponseList) {
-	 	this.compressResponseList = compressResponseList;
+	 public void setUserPasswordInfoList(List<UserPasswordInfo>  userPasswordInfoList) {
+	 	this.userPasswordInfoList = userPasswordInfoList;
 	 }
 
 	/**
@@ -1297,12 +1342,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<DeleteResult> getDeleteResultList() {
-	 	return deleteResultList;
+	 public List<UpdateStorageProviderResponse> getUpdateStorageProviderResponseList() {
+	 	return updateStorageProviderResponseList;
 	 }  
 	 
-	 public void setDeleteResultList(List<DeleteResult>  deleteResultList) {
-	 	this.deleteResultList = deleteResultList;
+	 public void setUpdateStorageProviderResponseList(List<UpdateStorageProviderResponse>  updateStorageProviderResponseList) {
+	 	this.updateStorageProviderResponseList = updateStorageProviderResponseList;
 	 }
 
 	/**
@@ -1310,12 +1355,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<CreateFolderResult> getCreateFolderResultList() {
-	 	return createFolderResultList;
+	 public List<CreateUserResponse> getCreateUserResponseList() {
+	 	return createUserResponseList;
 	 }  
 	 
-	 public void setCreateFolderResultList(List<CreateFolderResult>  createFolderResultList) {
-	 	this.createFolderResultList = createFolderResultList;
+	 public void setCreateUserResponseList(List<CreateUserResponse>  createUserResponseList) {
+	 	this.createUserResponseList = createUserResponseList;
 	 }
 
 	/**
@@ -1323,12 +1368,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<FolderMoveResult> getFolderMoveResultList() {
-	 	return folderMoveResultList;
+	 public List<ChangePasswordResult> getChangePasswordResultList() {
+	 	return changePasswordResultList;
 	 }  
 	 
-	 public void setFolderMoveResultList(List<FolderMoveResult>  folderMoveResultList) {
-	 	this.folderMoveResultList = folderMoveResultList;
+	 public void setChangePasswordResultList(List<ChangePasswordResult>  changePasswordResultList) {
+	 	this.changePasswordResultList = changePasswordResultList;
 	 }
 
 	/**
@@ -1336,12 +1381,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<FileMoveResult> getFileMoveResultList() {
-	 	return fileMoveResultList;
+	 public List<UpdateUserResponse> getUpdateUserResponseList() {
+	 	return updateUserResponseList;
 	 }  
 	 
-	 public void setFileMoveResultList(List<FileMoveResult>  fileMoveResultList) {
-	 	this.fileMoveResultList = fileMoveResultList;
+	 public void setUpdateUserResponseList(List<UpdateUserResponse>  updateUserResponseList) {
+	 	this.updateUserResponseList = updateUserResponseList;
 	 }
 
 	/**
@@ -1349,12 +1394,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<ListEntitiesResult> getListEntitiesResultList() {
-	 	return listEntitiesResultList;
+	 public List<AddStorageProviderResponse> getAddStorageProviderResponseList() {
+	 	return addStorageProviderResponseList;
 	 }  
 	 
-	 public void setListEntitiesResultList(List<ListEntitiesResult>  listEntitiesResultList) {
-	 	this.listEntitiesResultList = listEntitiesResultList;
+	 public void setAddStorageProviderResponseList(List<AddStorageProviderResponse>  addStorageProviderResponseList) {
+	 	this.addStorageProviderResponseList = addStorageProviderResponseList;
 	 }
 
 	/**
@@ -1362,12 +1407,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<CreateFolderResponse> getCreateFolderResponseList() {
-	 	return createFolderResponseList;
+	 public List<UpdateUserResult> getUpdateUserResultList() {
+	 	return updateUserResultList;
 	 }  
 	 
-	 public void setCreateFolderResponseList(List<CreateFolderResponse>  createFolderResponseList) {
-	 	this.createFolderResponseList = createFolderResponseList;
+	 public void setUpdateUserResultList(List<UpdateUserResult>  updateUserResultList) {
+	 	this.updateUserResultList = updateUserResultList;
 	 }
 
 	/**
@@ -1375,12 +1420,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<DocumentInfo> getDocumentInfoList() {
-	 	return documentInfoList;
+	 public List<UserInfoResponse> getUserInfoResponseList() {
+	 	return userInfoResponseList;
 	 }  
 	 
-	 public void setDocumentInfoList(List<DocumentInfo>  documentInfoList) {
-	 	this.documentInfoList = documentInfoList;
+	 public void setUserInfoResponseList(List<UserInfoResponse>  userInfoResponseList) {
+	 	this.userInfoResponseList = userInfoResponseList;
 	 }
 
 	/**
@@ -1388,12 +1433,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<CompressRequestResult> getCompressRequestResultList() {
-	 	return compressRequestResultList;
+	 public List<GetStorageProvidersResult> getGetStorageProvidersResultList() {
+	 	return getStorageProvidersResultList;
 	 }  
 	 
-	 public void setCompressRequestResultList(List<CompressRequestResult>  compressRequestResultList) {
-	 	this.compressRequestResultList = compressRequestResultList;
+	 public void setGetStorageProvidersResultList(List<GetStorageProvidersResult>  getStorageProvidersResultList) {
+	 	this.getStorageProvidersResultList = getStorageProvidersResultList;
 	 }
 
 	/**
@@ -1401,12 +1446,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<UploadRequestResult> getUploadRequestResultList() {
-	 	return uploadRequestResultList;
+	 public List<ResetPasswordResponse> getResetPasswordResponseList() {
+	 	return resetPasswordResponseList;
 	 }  
 	 
-	 public void setUploadRequestResultList(List<UploadRequestResult>  uploadRequestResultList) {
-	 	this.uploadRequestResultList = uploadRequestResultList;
+	 public void setResetPasswordResponseList(List<ResetPasswordResponse>  resetPasswordResponseList) {
+	 	this.resetPasswordResponseList = resetPasswordResponseList;
 	 }
 
 	/**
@@ -1414,51 +1459,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<StorageInfoResult> getStorageInfoResultList() {
-	 	return storageInfoResultList;
+	 public List<UpdateStorageProviderResult> getUpdateStorageProviderResultList() {
+	 	return updateStorageProviderResultList;
 	 }  
 	 
-	 public void setStorageInfoResultList(List<StorageInfoResult>  storageInfoResultList) {
-	 	this.storageInfoResultList = storageInfoResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<CreatePackageResponse> getCreatePackageResponseList() {
-	 	return createPackageResponseList;
-	 }  
-	 
-	 public void setCreatePackageResponseList(List<CreatePackageResponse>  createPackageResponseList) {
-	 	this.createPackageResponseList = createPackageResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<FolderMoveResponse> getFolderMoveResponseList() {
-	 	return folderMoveResponseList;
-	 }  
-	 
-	 public void setFolderMoveResponseList(List<FolderMoveResponse>  folderMoveResponseList) {
-	 	this.folderMoveResponseList = folderMoveResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<StorageInfoResponse> getStorageInfoResponseList() {
-	 	return storageInfoResponseList;
-	 }  
-	 
-	 public void setStorageInfoResponseList(List<StorageInfoResponse>  storageInfoResponseList) {
-	 	this.storageInfoResponseList = storageInfoResponseList;
+	 public void setUpdateStorageProviderResultList(List<UpdateStorageProviderResult>  updateStorageProviderResultList) {
+	 	this.updateStorageProviderResultList = updateStorageProviderResultList;
 	 }
 
 	/**
@@ -1479,12 +1485,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<DeleteResponse> getDeleteResponseList() {
-	 	return deleteResponseList;
+	 public List<AddStorageProviderResult> getAddStorageProviderResultList() {
+	 	return addStorageProviderResultList;
 	 }  
 	 
-	 public void setDeleteResponseList(List<DeleteResponse>  deleteResponseList) {
-	 	this.deleteResponseList = deleteResponseList;
+	 public void setAddStorageProviderResultList(List<AddStorageProviderResult>  addStorageProviderResultList) {
+	 	this.addStorageProviderResultList = addStorageProviderResultList;
 	 }
 
 	/**
@@ -1492,12 +1498,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<ListEntitiesResponse> getListEntitiesResponseList() {
-	 	return listEntitiesResponseList;
+	 public List<GetStorageProvidersResponse> getGetStorageProvidersResponseList() {
+	 	return getStorageProvidersResponseList;
 	 }  
 	 
-	 public void setListEntitiesResponseList(List<ListEntitiesResponse>  listEntitiesResponseList) {
-	 	this.listEntitiesResponseList = listEntitiesResponseList;
+	 public void setGetStorageProvidersResponseList(List<GetStorageProvidersResponse>  getStorageProvidersResponseList) {
+	 	this.getStorageProvidersResponseList = getStorageProvidersResponseList;
 	 }
 
 	/**
@@ -1505,12 +1511,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<FileMoveResponse> getFileMoveResponseList() {
-	 	return fileMoveResponseList;
+	 public List<UserInfoResult> getUserInfoResultList() {
+	 	return userInfoResultList;
 	 }  
 	 
-	 public void setFileMoveResponseList(List<FileMoveResponse>  fileMoveResponseList) {
-	 	this.fileMoveResponseList = fileMoveResponseList;
+	 public void setUserInfoResultList(List<UserInfoResult>  userInfoResultList) {
+	 	this.userInfoResultList = userInfoResultList;
 	 }
 
 	/**
@@ -1518,12 +1524,25 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SharedDocumentInfo> getSharedDocumentInfoList() {
-	 	return sharedDocumentInfoList;
+	 public List<StorageProviderInfo> getStorageProviderInfoList() {
+	 	return storageProviderInfoList;
 	 }  
 	 
-	 public void setSharedDocumentInfoList(List<SharedDocumentInfo>  sharedDocumentInfoList) {
-	 	this.sharedDocumentInfoList = sharedDocumentInfoList;
+	 public void setStorageProviderInfoList(List<StorageProviderInfo>  storageProviderInfoList) {
+	 	this.storageProviderInfoList = storageProviderInfoList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ChangePasswordResponse> getChangePasswordResponseList() {
+	 	return changePasswordResponseList;
+	 }  
+	 
+	 public void setChangePasswordResponseList(List<ChangePasswordResponse>  changePasswordResponseList) {
+	 	this.changePasswordResponseList = changePasswordResponseList;
 	 }
 
 	/**
@@ -1823,6 +1842,825 @@ public class TestData extends Object {
 	 
 	 public void setGetCollaboratorsResultList(List<GetCollaboratorsResult>  getCollaboratorsResultList) {
 	 	this.getCollaboratorsResultList = getCollaboratorsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<Result> getResultList() {
+	 	return resultList;
+	 }  
+	 
+	 public void setResultList(List<Result>  resultList) {
+	 	this.resultList = resultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobsDocumentsResult> getGetJobsDocumentsResultList() {
+	 	return getJobsDocumentsResultList;
+	 }  
+	 
+	 public void setGetJobsDocumentsResultList(List<GetJobsDocumentsResult>  getJobsDocumentsResultList) {
+	 	this.getJobsDocumentsResultList = getJobsDocumentsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobDocumentsResult> getGetJobDocumentsResultList() {
+	 	return getJobDocumentsResultList;
+	 }  
+	 
+	 public void setGetJobDocumentsResultList(List<GetJobDocumentsResult>  getJobDocumentsResultList) {
+	 	this.getJobDocumentsResultList = getJobDocumentsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreateJobResponse> getCreateJobResponseList() {
+	 	return createJobResponseList;
+	 }  
+	 
+	 public void setCreateJobResponseList(List<CreateJobResponse>  createJobResponseList) {
+	 	this.createJobResponseList = createJobResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobDocumentsResponse> getGetJobDocumentsResponseList() {
+	 	return getJobDocumentsResponseList;
+	 }  
+	 
+	 public void setGetJobDocumentsResponseList(List<GetJobDocumentsResponse>  getJobDocumentsResponseList) {
+	 	this.getJobDocumentsResponseList = getJobDocumentsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreateJobResult> getCreateJobResultList() {
+	 	return createJobResultList;
+	 }  
+	 
+	 public void setCreateJobResultList(List<CreateJobResult>  createJobResultList) {
+	 	this.createJobResultList = createJobResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobsResponse> getGetJobsResponseList() {
+	 	return getJobsResponseList;
+	 }  
+	 
+	 public void setGetJobsResponseList(List<GetJobsResponse>  getJobsResponseList) {
+	 	this.getJobsResponseList = getJobsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<JobInputDocument> getJobInputDocumentList() {
+	 	return jobInputDocumentList;
+	 }  
+	 
+	 public void setJobInputDocumentList(List<JobInputDocument>  jobInputDocumentList) {
+	 	this.jobInputDocumentList = jobInputDocumentList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ConvertResponse> getConvertResponseList() {
+	 	return convertResponseList;
+	 }  
+	 
+	 public void setConvertResponseList(List<ConvertResponse>  convertResponseList) {
+	 	this.convertResponseList = convertResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobResponse> getGetJobResponseList() {
+	 	return getJobResponseList;
+	 }  
+	 
+	 public void setGetJobResponseList(List<GetJobResponse>  getJobResponseList) {
+	 	this.getJobResponseList = getJobResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<AddJobDocumentResponse> getAddJobDocumentResponseList() {
+	 	return addJobDocumentResponseList;
+	 }  
+	 
+	 public void setAddJobDocumentResponseList(List<AddJobDocumentResponse>  addJobDocumentResponseList) {
+	 	this.addJobDocumentResponseList = addJobDocumentResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobsDocumentsResponse> getGetJobsDocumentsResponseList() {
+	 	return getJobsDocumentsResponseList;
+	 }  
+	 
+	 public void setGetJobsDocumentsResponseList(List<GetJobsDocumentsResponse>  getJobsDocumentsResponseList) {
+	 	this.getJobsDocumentsResponseList = getJobsDocumentsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobsResult> getGetJobsResultList() {
+	 	return getJobsResultList;
+	 }  
+	 
+	 public void setGetJobsResultList(List<GetJobsResult>  getJobsResultList) {
+	 	this.getJobsResultList = getJobsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<UpdateJobResponse> getUpdateJobResponseList() {
+	 	return updateJobResponseList;
+	 }  
+	 
+	 public void setUpdateJobResponseList(List<UpdateJobResponse>  updateJobResponseList) {
+	 	this.updateJobResponseList = updateJobResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetJobResult> getGetJobResultList() {
+	 	return getJobResultList;
+	 }  
+	 
+	 public void setGetJobResultList(List<GetJobResult>  getJobResultList) {
+	 	this.getJobResultList = getJobResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<JobOutputDocument> getJobOutputDocumentList() {
+	 	return jobOutputDocumentList;
+	 }  
+	 
+	 public void setJobOutputDocumentList(List<JobOutputDocument>  jobOutputDocumentList) {
+	 	this.jobOutputDocumentList = jobOutputDocumentList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ConvertRequestResult> getConvertRequestResultList() {
+	 	return convertRequestResultList;
+	 }  
+	 
+	 public void setConvertRequestResultList(List<ConvertRequestResult>  convertRequestResultList) {
+	 	this.convertRequestResultList = convertRequestResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<JobDocumentsEntry> getJobDocumentsEntryList() {
+	 	return jobDocumentsEntryList;
+	 }  
+	 
+	 public void setJobDocumentsEntryList(List<JobDocumentsEntry>  jobDocumentsEntryList) {
+	 	this.jobDocumentsEntryList = jobDocumentsEntryList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<JobInfo> getJobInfoList() {
+	 	return jobInfoList;
+	 }  
+	 
+	 public void setJobInfoList(List<JobInfo>  jobInfoList) {
+	 	this.jobInfoList = jobInfoList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<AddJobDocumentResult> getAddJobDocumentResultList() {
+	 	return addJobDocumentResultList;
+	 }  
+	 
+	 public void setAddJobDocumentResultList(List<AddJobDocumentResult>  addJobDocumentResultList) {
+	 	this.addJobDocumentResultList = addJobDocumentResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ViewDocumentResult> getViewDocumentResultList() {
+	 	return viewDocumentResultList;
+	 }  
+	 
+	 public void setViewDocumentResultList(List<ViewDocumentResult>  viewDocumentResultList) {
+	 	this.viewDocumentResultList = viewDocumentResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ViewDocumentResponse> getViewDocumentResponseList() {
+	 	return viewDocumentResponseList;
+	 }  
+	 
+	 public void setViewDocumentResponseList(List<ViewDocumentResponse>  viewDocumentResponseList) {
+	 	this.viewDocumentResponseList = viewDocumentResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<Dimension> getDimensionList() {
+	 	return dimensionList;
+	 }  
+	 
+	 public void setDimensionList(List<Dimension>  dimensionList) {
+	 	this.dimensionList = dimensionList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreatePackageResult> getCreatePackageResultList() {
+	 	return createPackageResultList;
+	 }  
+	 
+	 public void setCreatePackageResultList(List<CreatePackageResult>  createPackageResultList) {
+	 	this.createPackageResultList = createPackageResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<UploadResponse> getUploadResponseList() {
+	 	return uploadResponseList;
+	 }  
+	 
+	 public void setUploadResponseList(List<UploadResponse>  uploadResponseList) {
+	 	this.uploadResponseList = uploadResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CompressResponse> getCompressResponseList() {
+	 	return compressResponseList;
+	 }  
+	 
+	 public void setCompressResponseList(List<CompressResponse>  compressResponseList) {
+	 	this.compressResponseList = compressResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DeleteResult> getDeleteResultList() {
+	 	return deleteResultList;
+	 }  
+	 
+	 public void setDeleteResultList(List<DeleteResult>  deleteResultList) {
+	 	this.deleteResultList = deleteResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreateFolderResult> getCreateFolderResultList() {
+	 	return createFolderResultList;
+	 }  
+	 
+	 public void setCreateFolderResultList(List<CreateFolderResult>  createFolderResultList) {
+	 	this.createFolderResultList = createFolderResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FolderMoveResult> getFolderMoveResultList() {
+	 	return folderMoveResultList;
+	 }  
+	 
+	 public void setFolderMoveResultList(List<FolderMoveResult>  folderMoveResultList) {
+	 	this.folderMoveResultList = folderMoveResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FileMoveResult> getFileMoveResultList() {
+	 	return fileMoveResultList;
+	 }  
+	 
+	 public void setFileMoveResultList(List<FileMoveResult>  fileMoveResultList) {
+	 	this.fileMoveResultList = fileMoveResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ListEntitiesResult> getListEntitiesResultList() {
+	 	return listEntitiesResultList;
+	 }  
+	 
+	 public void setListEntitiesResultList(List<ListEntitiesResult>  listEntitiesResultList) {
+	 	this.listEntitiesResultList = listEntitiesResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FileSystemDocument> getFileSystemDocumentList() {
+	 	return fileSystemDocumentList;
+	 }  
+	 
+	 public void setFileSystemDocumentList(List<FileSystemDocument>  fileSystemDocumentList) {
+	 	this.fileSystemDocumentList = fileSystemDocumentList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreateFolderResponse> getCreateFolderResponseList() {
+	 	return createFolderResponseList;
+	 }  
+	 
+	 public void setCreateFolderResponseList(List<CreateFolderResponse>  createFolderResponseList) {
+	 	this.createFolderResponseList = createFolderResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentInfo> getDocumentInfoList() {
+	 	return documentInfoList;
+	 }  
+	 
+	 public void setDocumentInfoList(List<DocumentInfo>  documentInfoList) {
+	 	this.documentInfoList = documentInfoList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CompressRequestResult> getCompressRequestResultList() {
+	 	return compressRequestResultList;
+	 }  
+	 
+	 public void setCompressRequestResultList(List<CompressRequestResult>  compressRequestResultList) {
+	 	this.compressRequestResultList = compressRequestResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<UploadRequestResult> getUploadRequestResultList() {
+	 	return uploadRequestResultList;
+	 }  
+	 
+	 public void setUploadRequestResultList(List<UploadRequestResult>  uploadRequestResultList) {
+	 	this.uploadRequestResultList = uploadRequestResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<StorageInfoResult> getStorageInfoResultList() {
+	 	return storageInfoResultList;
+	 }  
+	 
+	 public void setStorageInfoResultList(List<StorageInfoResult>  storageInfoResultList) {
+	 	this.storageInfoResultList = storageInfoResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<CreatePackageResponse> getCreatePackageResponseList() {
+	 	return createPackageResponseList;
+	 }  
+	 
+	 public void setCreatePackageResponseList(List<CreatePackageResponse>  createPackageResponseList) {
+	 	this.createPackageResponseList = createPackageResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FolderMoveResponse> getFolderMoveResponseList() {
+	 	return folderMoveResponseList;
+	 }  
+	 
+	 public void setFolderMoveResponseList(List<FolderMoveResponse>  folderMoveResponseList) {
+	 	this.folderMoveResponseList = folderMoveResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<StorageInfoResponse> getStorageInfoResponseList() {
+	 	return storageInfoResponseList;
+	 }  
+	 
+	 public void setStorageInfoResponseList(List<StorageInfoResponse>  storageInfoResponseList) {
+	 	this.storageInfoResponseList = storageInfoResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FileSystemFolder> getFileSystemFolderList() {
+	 	return fileSystemFolderList;
+	 }  
+	 
+	 public void setFileSystemFolderList(List<FileSystemFolder>  fileSystemFolderList) {
+	 	this.fileSystemFolderList = fileSystemFolderList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DeleteResponse> getDeleteResponseList() {
+	 	return deleteResponseList;
+	 }  
+	 
+	 public void setDeleteResponseList(List<DeleteResponse>  deleteResponseList) {
+	 	this.deleteResponseList = deleteResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<ListEntitiesResponse> getListEntitiesResponseList() {
+	 	return listEntitiesResponseList;
+	 }  
+	 
+	 public void setListEntitiesResponseList(List<ListEntitiesResponse>  listEntitiesResponseList) {
+	 	this.listEntitiesResponseList = listEntitiesResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<FileMoveResponse> getFileMoveResponseList() {
+	 	return fileMoveResponseList;
+	 }  
+	 
+	 public void setFileMoveResponseList(List<FileMoveResponse>  fileMoveResponseList) {
+	 	this.fileMoveResponseList = fileMoveResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetDocumentInfoResult> getGetDocumentInfoResultList() {
+	 	return getDocumentInfoResultList;
+	 }  
+	 
+	 public void setGetDocumentInfoResultList(List<GetDocumentInfoResult>  getDocumentInfoResultList) {
+	 	this.getDocumentInfoResultList = getDocumentInfoResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<TemplateField> getTemplateFieldList() {
+	 	return templateFieldList;
+	 }  
+	 
+	 public void setTemplateFieldList(List<TemplateField>  templateFieldList) {
+	 	this.templateFieldList = templateFieldList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentViewsResult> getDocumentViewsResultList() {
+	 	return documentViewsResultList;
+	 }  
+	 
+	 public void setDocumentViewsResultList(List<DocumentViewsResult>  documentViewsResultList) {
+	 	this.documentViewsResultList = documentViewsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SharedDocumentsResponse> getSharedDocumentsResponseList() {
+	 	return sharedDocumentsResponseList;
+	 }  
+	 
+	 public void setSharedDocumentsResponseList(List<SharedDocumentsResponse>  sharedDocumentsResponseList) {
+	 	this.sharedDocumentsResponseList = sharedDocumentsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<TemplateFieldsResponse> getTemplateFieldsResponseList() {
+	 	return templateFieldsResponseList;
+	 }  
+	 
+	 public void setTemplateFieldsResponseList(List<TemplateFieldsResponse>  templateFieldsResponseList) {
+	 	this.templateFieldsResponseList = templateFieldsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentAccessInfoResult> getDocumentAccessInfoResultList() {
+	 	return documentAccessInfoResultList;
+	 }  
+	 
+	 public void setDocumentAccessInfoResultList(List<DocumentAccessInfoResult>  documentAccessInfoResultList) {
+	 	this.documentAccessInfoResultList = documentAccessInfoResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SharedUsersResult> getSharedUsersResultList() {
+	 	return sharedUsersResultList;
+	 }  
+	 
+	 public void setSharedUsersResultList(List<SharedUsersResult>  sharedUsersResultList) {
+	 	this.sharedUsersResultList = sharedUsersResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SharedDocumentsResult> getSharedDocumentsResultList() {
+	 	return sharedDocumentsResultList;
+	 }  
+	 
+	 public void setSharedDocumentsResultList(List<SharedDocumentsResult>  sharedDocumentsResultList) {
+	 	this.sharedDocumentsResultList = sharedDocumentsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentViewsResponse> getDocumentViewsResponseList() {
+	 	return documentViewsResponseList;
+	 }  
+	 
+	 public void setDocumentViewsResponseList(List<DocumentViewsResponse>  documentViewsResponseList) {
+	 	this.documentViewsResponseList = documentViewsResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetDocumentForeignTypesResponse> getGetDocumentForeignTypesResponseList() {
+	 	return getDocumentForeignTypesResponseList;
+	 }  
+	 
+	 public void setGetDocumentForeignTypesResponseList(List<GetDocumentForeignTypesResponse>  getDocumentForeignTypesResponseList) {
+	 	this.getDocumentForeignTypesResponseList = getDocumentForeignTypesResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentViewInfo> getDocumentViewInfoList() {
+	 	return documentViewInfoList;
+	 }  
+	 
+	 public void setDocumentViewInfoList(List<DocumentViewInfo>  documentViewInfoList) {
+	 	this.documentViewInfoList = documentViewInfoList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SharedUsersResponse> getSharedUsersResponseList() {
+	 	return sharedUsersResponseList;
+	 }  
+	 
+	 public void setSharedUsersResponseList(List<SharedUsersResponse>  sharedUsersResponseList) {
+	 	this.sharedUsersResponseList = sharedUsersResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetDocumentInfoResponse> getGetDocumentInfoResponseList() {
+	 	return getDocumentInfoResponseList;
+	 }  
+	 
+	 public void setGetDocumentInfoResponseList(List<GetDocumentInfoResponse>  getDocumentInfoResponseList) {
+	 	this.getDocumentInfoResponseList = getDocumentInfoResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentUserStatusResult> getDocumentUserStatusResultList() {
+	 	return documentUserStatusResultList;
+	 }  
+	 
+	 public void setDocumentUserStatusResultList(List<DocumentUserStatusResult>  documentUserStatusResultList) {
+	 	this.documentUserStatusResultList = documentUserStatusResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentUserStatusResponse> getDocumentUserStatusResponseList() {
+	 	return documentUserStatusResponseList;
+	 }  
+	 
+	 public void setDocumentUserStatusResponseList(List<DocumentUserStatusResponse>  documentUserStatusResponseList) {
+	 	this.documentUserStatusResponseList = documentUserStatusResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<TemplateFieldsResult> getTemplateFieldsResultList() {
+	 	return templateFieldsResultList;
+	 }  
+	 
+	 public void setTemplateFieldsResultList(List<TemplateFieldsResult>  templateFieldsResultList) {
+	 	this.templateFieldsResultList = templateFieldsResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<GetDocumentForeignTypesResult> getGetDocumentForeignTypesResultList() {
+	 	return getDocumentForeignTypesResultList;
+	 }  
+	 
+	 public void setGetDocumentForeignTypesResultList(List<GetDocumentForeignTypesResult>  getDocumentForeignTypesResultList) {
+	 	this.getDocumentForeignTypesResultList = getDocumentForeignTypesResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<DocumentAccessInfoResponse> getDocumentAccessInfoResponseList() {
+	 	return documentAccessInfoResponseList;
+	 }  
+	 
+	 public void setDocumentAccessInfoResponseList(List<DocumentAccessInfoResponse>  documentAccessInfoResponseList) {
+	 	this.documentAccessInfoResponseList = documentAccessInfoResponseList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SharedDocumentInfo> getSharedDocumentInfoList() {
+	 	return sharedDocumentInfoList;
+	 }  
+	 
+	 public void setSharedDocumentInfoList(List<SharedDocumentInfo>  sharedDocumentInfoList) {
+	 	this.sharedDocumentInfoList = sharedDocumentInfoList;
 	 }
 
 	/**
@@ -2363,682 +3201,6 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<GetDocumentInfoResult> getGetDocumentInfoResultList() {
-	 	return getDocumentInfoResultList;
-	 }  
-	 
-	 public void setGetDocumentInfoResultList(List<GetDocumentInfoResult>  getDocumentInfoResultList) {
-	 	this.getDocumentInfoResultList = getDocumentInfoResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<TemplateField> getTemplateFieldList() {
-	 	return templateFieldList;
-	 }  
-	 
-	 public void setTemplateFieldList(List<TemplateField>  templateFieldList) {
-	 	this.templateFieldList = templateFieldList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentViewsResult> getDocumentViewsResultList() {
-	 	return documentViewsResultList;
-	 }  
-	 
-	 public void setDocumentViewsResultList(List<DocumentViewsResult>  documentViewsResultList) {
-	 	this.documentViewsResultList = documentViewsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<SharedDocumentsResponse> getSharedDocumentsResponseList() {
-	 	return sharedDocumentsResponseList;
-	 }  
-	 
-	 public void setSharedDocumentsResponseList(List<SharedDocumentsResponse>  sharedDocumentsResponseList) {
-	 	this.sharedDocumentsResponseList = sharedDocumentsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<TemplateFieldsResponse> getTemplateFieldsResponseList() {
-	 	return templateFieldsResponseList;
-	 }  
-	 
-	 public void setTemplateFieldsResponseList(List<TemplateFieldsResponse>  templateFieldsResponseList) {
-	 	this.templateFieldsResponseList = templateFieldsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentAccessInfoResult> getDocumentAccessInfoResultList() {
-	 	return documentAccessInfoResultList;
-	 }  
-	 
-	 public void setDocumentAccessInfoResultList(List<DocumentAccessInfoResult>  documentAccessInfoResultList) {
-	 	this.documentAccessInfoResultList = documentAccessInfoResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<SharedUsersResult> getSharedUsersResultList() {
-	 	return sharedUsersResultList;
-	 }  
-	 
-	 public void setSharedUsersResultList(List<SharedUsersResult>  sharedUsersResultList) {
-	 	this.sharedUsersResultList = sharedUsersResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<SharedDocumentsResult> getSharedDocumentsResultList() {
-	 	return sharedDocumentsResultList;
-	 }  
-	 
-	 public void setSharedDocumentsResultList(List<SharedDocumentsResult>  sharedDocumentsResultList) {
-	 	this.sharedDocumentsResultList = sharedDocumentsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentViewsResponse> getDocumentViewsResponseList() {
-	 	return documentViewsResponseList;
-	 }  
-	 
-	 public void setDocumentViewsResponseList(List<DocumentViewsResponse>  documentViewsResponseList) {
-	 	this.documentViewsResponseList = documentViewsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetDocumentForeignTypesResponse> getGetDocumentForeignTypesResponseList() {
-	 	return getDocumentForeignTypesResponseList;
-	 }  
-	 
-	 public void setGetDocumentForeignTypesResponseList(List<GetDocumentForeignTypesResponse>  getDocumentForeignTypesResponseList) {
-	 	this.getDocumentForeignTypesResponseList = getDocumentForeignTypesResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentViewInfo> getDocumentViewInfoList() {
-	 	return documentViewInfoList;
-	 }  
-	 
-	 public void setDocumentViewInfoList(List<DocumentViewInfo>  documentViewInfoList) {
-	 	this.documentViewInfoList = documentViewInfoList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ViewDocumentResult> getViewDocumentResultList() {
-	 	return viewDocumentResultList;
-	 }  
-	 
-	 public void setViewDocumentResultList(List<ViewDocumentResult>  viewDocumentResultList) {
-	 	this.viewDocumentResultList = viewDocumentResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<SharedUsersResponse> getSharedUsersResponseList() {
-	 	return sharedUsersResponseList;
-	 }  
-	 
-	 public void setSharedUsersResponseList(List<SharedUsersResponse>  sharedUsersResponseList) {
-	 	this.sharedUsersResponseList = sharedUsersResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetDocumentInfoResponse> getGetDocumentInfoResponseList() {
-	 	return getDocumentInfoResponseList;
-	 }  
-	 
-	 public void setGetDocumentInfoResponseList(List<GetDocumentInfoResponse>  getDocumentInfoResponseList) {
-	 	this.getDocumentInfoResponseList = getDocumentInfoResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentUserStatusResult> getDocumentUserStatusResultList() {
-	 	return documentUserStatusResultList;
-	 }  
-	 
-	 public void setDocumentUserStatusResultList(List<DocumentUserStatusResult>  documentUserStatusResultList) {
-	 	this.documentUserStatusResultList = documentUserStatusResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentUserStatusResponse> getDocumentUserStatusResponseList() {
-	 	return documentUserStatusResponseList;
-	 }  
-	 
-	 public void setDocumentUserStatusResponseList(List<DocumentUserStatusResponse>  documentUserStatusResponseList) {
-	 	this.documentUserStatusResponseList = documentUserStatusResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<TemplateFieldsResult> getTemplateFieldsResultList() {
-	 	return templateFieldsResultList;
-	 }  
-	 
-	 public void setTemplateFieldsResultList(List<TemplateFieldsResult>  templateFieldsResultList) {
-	 	this.templateFieldsResultList = templateFieldsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<Dimension> getDimensionList() {
-	 	return dimensionList;
-	 }  
-	 
-	 public void setDimensionList(List<Dimension>  dimensionList) {
-	 	this.dimensionList = dimensionList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetDocumentForeignTypesResult> getGetDocumentForeignTypesResultList() {
-	 	return getDocumentForeignTypesResultList;
-	 }  
-	 
-	 public void setGetDocumentForeignTypesResultList(List<GetDocumentForeignTypesResult>  getDocumentForeignTypesResultList) {
-	 	this.getDocumentForeignTypesResultList = getDocumentForeignTypesResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<DocumentAccessInfoResponse> getDocumentAccessInfoResponseList() {
-	 	return documentAccessInfoResponseList;
-	 }  
-	 
-	 public void setDocumentAccessInfoResponseList(List<DocumentAccessInfoResponse>  documentAccessInfoResponseList) {
-	 	this.documentAccessInfoResponseList = documentAccessInfoResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ViewDocumentResponse> getViewDocumentResponseList() {
-	 	return viewDocumentResponseList;
-	 }  
-	 
-	 public void setViewDocumentResponseList(List<ViewDocumentResponse>  viewDocumentResponseList) {
-	 	this.viewDocumentResponseList = viewDocumentResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<Result> getResultList() {
-	 	return resultList;
-	 }  
-	 
-	 public void setResultList(List<Result>  resultList) {
-	 	this.resultList = resultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobsDocumentsResult> getGetJobsDocumentsResultList() {
-	 	return getJobsDocumentsResultList;
-	 }  
-	 
-	 public void setGetJobsDocumentsResultList(List<GetJobsDocumentsResult>  getJobsDocumentsResultList) {
-	 	this.getJobsDocumentsResultList = getJobsDocumentsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobDocumentsResult> getGetJobDocumentsResultList() {
-	 	return getJobDocumentsResultList;
-	 }  
-	 
-	 public void setGetJobDocumentsResultList(List<GetJobDocumentsResult>  getJobDocumentsResultList) {
-	 	this.getJobDocumentsResultList = getJobDocumentsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<CreateJobResponse> getCreateJobResponseList() {
-	 	return createJobResponseList;
-	 }  
-	 
-	 public void setCreateJobResponseList(List<CreateJobResponse>  createJobResponseList) {
-	 	this.createJobResponseList = createJobResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobDocumentsResponse> getGetJobDocumentsResponseList() {
-	 	return getJobDocumentsResponseList;
-	 }  
-	 
-	 public void setGetJobDocumentsResponseList(List<GetJobDocumentsResponse>  getJobDocumentsResponseList) {
-	 	this.getJobDocumentsResponseList = getJobDocumentsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<CreateJobResult> getCreateJobResultList() {
-	 	return createJobResultList;
-	 }  
-	 
-	 public void setCreateJobResultList(List<CreateJobResult>  createJobResultList) {
-	 	this.createJobResultList = createJobResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobsResponse> getGetJobsResponseList() {
-	 	return getJobsResponseList;
-	 }  
-	 
-	 public void setGetJobsResponseList(List<GetJobsResponse>  getJobsResponseList) {
-	 	this.getJobsResponseList = getJobsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<JobInputDocument> getJobInputDocumentList() {
-	 	return jobInputDocumentList;
-	 }  
-	 
-	 public void setJobInputDocumentList(List<JobInputDocument>  jobInputDocumentList) {
-	 	this.jobInputDocumentList = jobInputDocumentList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ConvertResponse> getConvertResponseList() {
-	 	return convertResponseList;
-	 }  
-	 
-	 public void setConvertResponseList(List<ConvertResponse>  convertResponseList) {
-	 	this.convertResponseList = convertResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobResponse> getGetJobResponseList() {
-	 	return getJobResponseList;
-	 }  
-	 
-	 public void setGetJobResponseList(List<GetJobResponse>  getJobResponseList) {
-	 	this.getJobResponseList = getJobResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<AddJobDocumentResponse> getAddJobDocumentResponseList() {
-	 	return addJobDocumentResponseList;
-	 }  
-	 
-	 public void setAddJobDocumentResponseList(List<AddJobDocumentResponse>  addJobDocumentResponseList) {
-	 	this.addJobDocumentResponseList = addJobDocumentResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobsDocumentsResponse> getGetJobsDocumentsResponseList() {
-	 	return getJobsDocumentsResponseList;
-	 }  
-	 
-	 public void setGetJobsDocumentsResponseList(List<GetJobsDocumentsResponse>  getJobsDocumentsResponseList) {
-	 	this.getJobsDocumentsResponseList = getJobsDocumentsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobsResult> getGetJobsResultList() {
-	 	return getJobsResultList;
-	 }  
-	 
-	 public void setGetJobsResultList(List<GetJobsResult>  getJobsResultList) {
-	 	this.getJobsResultList = getJobsResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UpdateJobResponse> getUpdateJobResponseList() {
-	 	return updateJobResponseList;
-	 }  
-	 
-	 public void setUpdateJobResponseList(List<UpdateJobResponse>  updateJobResponseList) {
-	 	this.updateJobResponseList = updateJobResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<GetJobResult> getGetJobResultList() {
-	 	return getJobResultList;
-	 }  
-	 
-	 public void setGetJobResultList(List<GetJobResult>  getJobResultList) {
-	 	this.getJobResultList = getJobResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<JobOutputDocument> getJobOutputDocumentList() {
-	 	return jobOutputDocumentList;
-	 }  
-	 
-	 public void setJobOutputDocumentList(List<JobOutputDocument>  jobOutputDocumentList) {
-	 	this.jobOutputDocumentList = jobOutputDocumentList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ConvertRequestResult> getConvertRequestResultList() {
-	 	return convertRequestResultList;
-	 }  
-	 
-	 public void setConvertRequestResultList(List<ConvertRequestResult>  convertRequestResultList) {
-	 	this.convertRequestResultList = convertRequestResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<JobDocumentsEntry> getJobDocumentsEntryList() {
-	 	return jobDocumentsEntryList;
-	 }  
-	 
-	 public void setJobDocumentsEntryList(List<JobDocumentsEntry>  jobDocumentsEntryList) {
-	 	this.jobDocumentsEntryList = jobDocumentsEntryList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<JobInfo> getJobInfoList() {
-	 	return jobInfoList;
-	 }  
-	 
-	 public void setJobInfoList(List<JobInfo>  jobInfoList) {
-	 	this.jobInfoList = jobInfoList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<AddJobDocumentResult> getAddJobDocumentResultList() {
-	 	return addJobDocumentResultList;
-	 }  
-	 
-	 public void setAddJobDocumentResultList(List<AddJobDocumentResult>  addJobDocumentResultList) {
-	 	this.addJobDocumentResultList = addJobDocumentResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ResetPasswordResult> getResetPasswordResultList() {
-	 	return resetPasswordResultList;
-	 }  
-	 
-	 public void setResetPasswordResultList(List<ResetPasswordResult>  resetPasswordResultList) {
-	 	this.resetPasswordResultList = resetPasswordResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UpdateUserResult> getUpdateUserResultList() {
-	 	return updateUserResultList;
-	 }  
-	 
-	 public void setUpdateUserResultList(List<UpdateUserResult>  updateUserResultList) {
-	 	this.updateUserResultList = updateUserResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UserInfoResponse> getUserInfoResponseList() {
-	 	return userInfoResponseList;
-	 }  
-	 
-	 public void setUserInfoResponseList(List<UserInfoResponse>  userInfoResponseList) {
-	 	this.userInfoResponseList = userInfoResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ResetPasswordResponse> getResetPasswordResponseList() {
-	 	return resetPasswordResponseList;
-	 }  
-	 
-	 public void setResetPasswordResponseList(List<ResetPasswordResponse>  resetPasswordResponseList) {
-	 	this.resetPasswordResponseList = resetPasswordResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<CreateUserResult> getCreateUserResultList() {
-	 	return createUserResultList;
-	 }  
-	 
-	 public void setCreateUserResultList(List<CreateUserResult>  createUserResultList) {
-	 	this.createUserResultList = createUserResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UserPasswordInfo> getUserPasswordInfoList() {
-	 	return userPasswordInfoList;
-	 }  
-	 
-	 public void setUserPasswordInfoList(List<UserPasswordInfo>  userPasswordInfoList) {
-	 	this.userPasswordInfoList = userPasswordInfoList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<CreateUserResponse> getCreateUserResponseList() {
-	 	return createUserResponseList;
-	 }  
-	 
-	 public void setCreateUserResponseList(List<CreateUserResponse>  createUserResponseList) {
-	 	this.createUserResponseList = createUserResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ChangePasswordResult> getChangePasswordResultList() {
-	 	return changePasswordResultList;
-	 }  
-	 
-	 public void setChangePasswordResultList(List<ChangePasswordResult>  changePasswordResultList) {
-	 	this.changePasswordResultList = changePasswordResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UpdateUserResponse> getUpdateUserResponseList() {
-	 	return updateUserResponseList;
-	 }  
-	 
-	 public void setUpdateUserResponseList(List<UpdateUserResponse>  updateUserResponseList) {
-	 	this.updateUserResponseList = updateUserResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<UserInfoResult> getUserInfoResultList() {
-	 	return userInfoResultList;
-	 }  
-	 
-	 public void setUserInfoResultList(List<UserInfoResult>  userInfoResultList) {
-	 	this.userInfoResultList = userInfoResultList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<ChangePasswordResponse> getChangePasswordResponseList() {
-	 	return changePasswordResponseList;
-	 }  
-	 
-	 public void setChangePasswordResponseList(List<ChangePasswordResponse>  changePasswordResponseList) {
-	 	this.changePasswordResponseList = changePasswordResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public List<RenameResponse> getRenameResponseList() {
 	 	return renameResponseList;
 	 }  
@@ -3260,12 +3422,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureEnvelopeFieldInfo> getSignatureEnvelopeFieldInfoList() {
-	 	return signatureEnvelopeFieldInfoList;
+	 public List<SignatureEnvelopesResponse> getSignatureEnvelopesResponseList() {
+	 	return signatureEnvelopesResponseList;
 	 }  
 	 
-	 public void setSignatureEnvelopeFieldInfoList(List<SignatureEnvelopeFieldInfo>  signatureEnvelopeFieldInfoList) {
-	 	this.signatureEnvelopeFieldInfoList = signatureEnvelopeFieldInfoList;
+	 public void setSignatureEnvelopesResponseList(List<SignatureEnvelopesResponse>  signatureEnvelopesResponseList) {
+	 	this.signatureEnvelopesResponseList = signatureEnvelopesResponseList;
 	 }
 
 	/**
@@ -3273,12 +3435,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureEnvelopesResponse> getSignatureEnvelopesResponseList() {
-	 	return signatureEnvelopesResponseList;
+	 public List<SignatureEnvelopeFieldInfo> getSignatureEnvelopeFieldInfoList() {
+	 	return signatureEnvelopeFieldInfoList;
 	 }  
 	 
-	 public void setSignatureEnvelopesResponseList(List<SignatureEnvelopesResponse>  signatureEnvelopesResponseList) {
-	 	this.signatureEnvelopesResponseList = signatureEnvelopesResponseList;
+	 public void setSignatureEnvelopeFieldInfoList(List<SignatureEnvelopeFieldInfo>  signatureEnvelopeFieldInfoList) {
+	 	this.signatureEnvelopeFieldInfoList = signatureEnvelopeFieldInfoList;
 	 }
 
 	/**
@@ -3390,12 +3552,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureTemplateResult> getSignatureTemplateResultList() {
-	 	return signatureTemplateResultList;
+	 public List<SignatureRolesResult> getSignatureRolesResultList() {
+	 	return signatureRolesResultList;
 	 }  
 	 
-	 public void setSignatureTemplateResultList(List<SignatureTemplateResult>  signatureTemplateResultList) {
-	 	this.signatureTemplateResultList = signatureTemplateResultList;
+	 public void setSignatureRolesResultList(List<SignatureRolesResult>  signatureRolesResultList) {
+	 	this.signatureRolesResultList = signatureRolesResultList;
 	 }
 
 	/**
@@ -3403,12 +3565,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureRolesResult> getSignatureRolesResultList() {
-	 	return signatureRolesResultList;
+	 public List<SignatureTemplateResult> getSignatureTemplateResultList() {
+	 	return signatureTemplateResultList;
 	 }  
 	 
-	 public void setSignatureRolesResultList(List<SignatureRolesResult>  signatureRolesResultList) {
-	 	this.signatureRolesResultList = signatureRolesResultList;
+	 public void setSignatureTemplateResultList(List<SignatureTemplateResult>  signatureTemplateResultList) {
+	 	this.signatureTemplateResultList = signatureTemplateResultList;
 	 }
 
 	/**
@@ -3546,12 +3708,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureTemplateDocumentResponse> getSignatureTemplateDocumentResponseList() {
-	 	return signatureTemplateDocumentResponseList;
+	 public List<SignatureEnvelopeResult> getSignatureEnvelopeResultList() {
+	 	return signatureEnvelopeResultList;
 	 }  
 	 
-	 public void setSignatureTemplateDocumentResponseList(List<SignatureTemplateDocumentResponse>  signatureTemplateDocumentResponseList) {
-	 	this.signatureTemplateDocumentResponseList = signatureTemplateDocumentResponseList;
+	 public void setSignatureEnvelopeResultList(List<SignatureEnvelopeResult>  signatureEnvelopeResultList) {
+	 	this.signatureEnvelopeResultList = signatureEnvelopeResultList;
 	 }
 
 	/**
@@ -3559,12 +3721,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureEnvelopeResult> getSignatureEnvelopeResultList() {
-	 	return signatureEnvelopeResultList;
+	 public List<SignatureTemplateDocumentResponse> getSignatureTemplateDocumentResponseList() {
+	 	return signatureTemplateDocumentResponseList;
 	 }  
 	 
-	 public void setSignatureEnvelopeResultList(List<SignatureEnvelopeResult>  signatureEnvelopeResultList) {
-	 	this.signatureEnvelopeResultList = signatureEnvelopeResultList;
+	 public void setSignatureTemplateDocumentResponseList(List<SignatureTemplateDocumentResponse>  signatureTemplateDocumentResponseList) {
+	 	this.signatureTemplateDocumentResponseList = signatureTemplateDocumentResponseList;
 	 }
 
 	/**
@@ -3598,19 +3760,6 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureTemplateRecipientsResponse> getSignatureTemplateRecipientsResponseList() {
-	 	return signatureTemplateRecipientsResponseList;
-	 }  
-	 
-	 public void setSignatureTemplateRecipientsResponseList(List<SignatureTemplateRecipientsResponse>  signatureTemplateRecipientsResponseList) {
-	 	this.signatureTemplateRecipientsResponseList = signatureTemplateRecipientsResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
 	 public List<SignatureEnvelopeRecipientResponse> getSignatureEnvelopeRecipientResponseList() {
 	 	return signatureEnvelopeRecipientResponseList;
 	 }  
@@ -3624,12 +3773,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureTemplateDocumentsResult> getSignatureTemplateDocumentsResultList() {
-	 	return signatureTemplateDocumentsResultList;
+	 public List<SignatureTemplateRecipientsResponse> getSignatureTemplateRecipientsResponseList() {
+	 	return signatureTemplateRecipientsResponseList;
 	 }  
 	 
-	 public void setSignatureTemplateDocumentsResultList(List<SignatureTemplateDocumentsResult>  signatureTemplateDocumentsResultList) {
-	 	this.signatureTemplateDocumentsResultList = signatureTemplateDocumentsResultList;
+	 public void setSignatureTemplateRecipientsResponseList(List<SignatureTemplateRecipientsResponse>  signatureTemplateRecipientsResponseList) {
+	 	this.signatureTemplateRecipientsResponseList = signatureTemplateRecipientsResponseList;
 	 }
 
 	/**
@@ -3643,6 +3792,19 @@ public class TestData extends Object {
 	 
 	 public void setSignatureEnvelopeFieldResultList(List<SignatureEnvelopeFieldResult>  signatureEnvelopeFieldResultList) {
 	 	this.signatureEnvelopeFieldResultList = signatureEnvelopeFieldResultList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public List<SignatureTemplateDocumentsResult> getSignatureTemplateDocumentsResultList() {
+	 	return signatureTemplateDocumentsResultList;
+	 }  
+	 
+	 public void setSignatureTemplateDocumentsResultList(List<SignatureTemplateDocumentsResult>  signatureTemplateDocumentsResultList) {
+	 	this.signatureTemplateDocumentsResultList = signatureTemplateDocumentsResultList;
 	 }
 
 	/**
@@ -3702,12 +3864,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureFieldsResponse> getSignatureFieldsResponseList() {
-	 	return signatureFieldsResponseList;
+	 public List<SignatureFieldResponse> getSignatureFieldResponseList() {
+	 	return signatureFieldResponseList;
 	 }  
 	 
-	 public void setSignatureFieldsResponseList(List<SignatureFieldsResponse>  signatureFieldsResponseList) {
-	 	this.signatureFieldsResponseList = signatureFieldsResponseList;
+	 public void setSignatureFieldResponseList(List<SignatureFieldResponse>  signatureFieldResponseList) {
+	 	this.signatureFieldResponseList = signatureFieldResponseList;
 	 }
 
 	/**
@@ -3715,12 +3877,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureFieldResponse> getSignatureFieldResponseList() {
-	 	return signatureFieldResponseList;
+	 public List<SignatureFieldsResponse> getSignatureFieldsResponseList() {
+	 	return signatureFieldsResponseList;
 	 }  
 	 
-	 public void setSignatureFieldResponseList(List<SignatureFieldResponse>  signatureFieldResponseList) {
-	 	this.signatureFieldResponseList = signatureFieldResponseList;
+	 public void setSignatureFieldsResponseList(List<SignatureFieldsResponse>  signatureFieldsResponseList) {
+	 	this.signatureFieldsResponseList = signatureFieldsResponseList;
 	 }
 
 	/**
@@ -3780,6 +3942,19 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
+	 public List<SignatureTemplateRecipientInfo> getSignatureTemplateRecipientInfoList() {
+	 	return signatureTemplateRecipientInfoList;
+	 }  
+	 
+	 public void setSignatureTemplateRecipientInfoList(List<SignatureTemplateRecipientInfo>  signatureTemplateRecipientInfoList) {
+	 	this.signatureTemplateRecipientInfoList = signatureTemplateRecipientInfoList;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
 	 public List<SignatureTemplateDocumentsResponse> getSignatureTemplateDocumentsResponseList() {
 	 	return signatureTemplateDocumentsResponseList;
 	 }  
@@ -3799,19 +3974,6 @@ public class TestData extends Object {
 	 
 	 public void setSignatureSignatureResponseList(List<SignatureSignatureResponse>  signatureSignatureResponseList) {
 	 	this.signatureSignatureResponseList = signatureSignatureResponseList;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public List<SignatureTemplateRecipientInfo> getSignatureTemplateRecipientInfoList() {
-	 	return signatureTemplateRecipientInfoList;
-	 }  
-	 
-	 public void setSignatureTemplateRecipientInfoList(List<SignatureTemplateRecipientInfo>  signatureTemplateRecipientInfoList) {
-	 	this.signatureTemplateRecipientInfoList = signatureTemplateRecipientInfoList;
 	 }
 
 	/**
@@ -3845,12 +4007,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureSignatureResult> getSignatureSignatureResultList() {
-	 	return signatureSignatureResultList;
+	 public List<SignatureTemplateInfo> getSignatureTemplateInfoList() {
+	 	return signatureTemplateInfoList;
 	 }  
 	 
-	 public void setSignatureSignatureResultList(List<SignatureSignatureResult>  signatureSignatureResultList) {
-	 	this.signatureSignatureResultList = signatureSignatureResultList;
+	 public void setSignatureTemplateInfoList(List<SignatureTemplateInfo>  signatureTemplateInfoList) {
+	 	this.signatureTemplateInfoList = signatureTemplateInfoList;
 	 }
 
 	/**
@@ -3858,12 +4020,12 @@ public class TestData extends Object {
 	 * 
 	 * 
 	 */
-	 public List<SignatureTemplateInfo> getSignatureTemplateInfoList() {
-	 	return signatureTemplateInfoList;
+	 public List<SignatureSignatureResult> getSignatureSignatureResultList() {
+	 	return signatureSignatureResultList;
 	 }  
 	 
-	 public void setSignatureTemplateInfoList(List<SignatureTemplateInfo>  signatureTemplateInfoList) {
-	 	this.signatureTemplateInfoList = signatureTemplateInfoList;
+	 public void setSignatureSignatureResultList(List<SignatureSignatureResult>  signatureSignatureResultList) {
+	 	this.signatureSignatureResultList = signatureSignatureResultList;
 	 }
 
 	/**

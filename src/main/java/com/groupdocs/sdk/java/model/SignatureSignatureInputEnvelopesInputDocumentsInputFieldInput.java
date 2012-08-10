@@ -28,62 +28,80 @@ import java.util.List;
  * @author ramesh
  *
  */
-public class AddDocumentQuestionnaireResult extends Object {
+public class SignatureSignatureInputEnvelopesInputDocumentsInputFieldInput extends Object {
 
 
     /**
-     * 
+     * User GUID
      */
-	 private Double document_id ;
+	 private String userId ;
 
     /**
-     * 
+     * Envelope GUID
      */
-	 private Double questionnaire_id ;
+	 private String envelopeId ;
 
     /**
-     * 
+     * Document GUID
      */
-	 private String adjusted_name ;
+	 private String documentId ;
+
+    /**
+     * Field GUID
+     */
+	 private String fieldId ;
 
 
 	/**
-	 * 
+	 * User GUID
 	 * 
 	 * 
 	 */
-	 public Double getDocument_id() {
-	 	return document_id;
+	 public String getUserId() {
+	 	return userId;
 	 }  
 	 
-	 public void setDocument_id(Double  document_id) {
-	 	this.document_id = document_id;
+	 public void setUserId(String  userId) {
+	 	this.userId = userId;
 	 }
 
 	/**
-	 * 
+	 * Envelope GUID
 	 * 
 	 * 
 	 */
-	 public Double getQuestionnaire_id() {
-	 	return questionnaire_id;
+	 public String getEnvelopeId() {
+	 	return envelopeId;
 	 }  
 	 
-	 public void setQuestionnaire_id(Double  questionnaire_id) {
-	 	this.questionnaire_id = questionnaire_id;
+	 public void setEnvelopeId(String  envelopeId) {
+	 	this.envelopeId = envelopeId;
 	 }
 
 	/**
-	 * 
+	 * Document GUID
 	 * 
 	 * 
 	 */
-	 public String getAdjusted_name() {
-	 	return adjusted_name;
+	 public String getDocumentId() {
+	 	return documentId;
 	 }  
 	 
-	 public void setAdjusted_name(String  adjusted_name) {
-	 	this.adjusted_name = adjusted_name;
+	 public void setDocumentId(String  documentId) {
+	 	this.documentId = documentId;
+	 }
+
+	/**
+	 * Field GUID
+	 * 
+	 * 
+	 */
+	 public String getFieldId() {
+	 	return fieldId;
+	 }  
+	 
+	 public void setFieldId(String  fieldId) {
+	 	this.fieldId = fieldId;
 	 }
 
 

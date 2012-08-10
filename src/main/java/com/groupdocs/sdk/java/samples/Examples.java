@@ -18,6 +18,7 @@ import com.groupdocs.sdk.java.model.CreateAnnotationResponse;
 import com.groupdocs.sdk.java.model.ListAnnotationsResponse;
 import com.groupdocs.sdk.java.model.Rectangle;
 import com.groupdocs.sdk.java.model.UploadResponse;
+import com.groupdocs.sdk.java.samples.Examples;
 import com.sun.jersey.multipart.FormDataMultiPart;
 import com.sun.jersey.multipart.file.FileDataBodyPart;
 import com.wordnik.swagger.runtime.common.APIInvoker;
@@ -55,7 +56,7 @@ public class Examples {
 	private static void uploadFile() throws Exception {
 		StorageAPI.setApiInvoker(apiInvoker);
 		File postData = new File(Examples.class.getClassLoader().getResource("com/groupdocs/sdk/java/samples/test.docx").toURI());
-		UploadResponse response = StorageAPI.Upload(userId, "test.docx", "test", postData);
+		UploadResponse response = StorageAPI.Upload(userId, "test.docx", "test DOC file ", postData);
 		System.out.println(mapper.writeValueAsString(response));
 	}
 
@@ -90,4 +91,3 @@ public class Examples {
 		System.out.println(mapper.writeValueAsString(response));
 	}
 }
-

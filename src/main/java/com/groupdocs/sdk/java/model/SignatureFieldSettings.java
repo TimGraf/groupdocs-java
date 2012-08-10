@@ -34,17 +34,7 @@ public class SignatureFieldSettings extends Object {
     /**
      * 
      */
-	 private Integer textColumns ;
-
-    /**
-     * 
-     */
-	 private Integer input ;
-
-    /**
-     * 
-     */
-	 private String check ;
+	 private String regularExpression ;
 
     /**
      * 
@@ -66,49 +56,18 @@ public class SignatureFieldSettings extends Object {
      */
 	 private Integer graphSizeW ;
 
-    /**
-     * 
-     */
-	 private Integer textRows ;
-
 
 	/**
 	 * 
 	 * 
 	 * 
 	 */
-	 public Integer getTextColumns() {
-	 	return textColumns;
+	 public String getRegularExpression() {
+	 	return regularExpression;
 	 }  
 	 
-	 public void setTextColumns(Integer  textColumns) {
-	 	this.textColumns = textColumns;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Integer getInput() {
-	 	return input;
-	 }  
-	 
-	 public void setInput(Integer  input) {
-	 	this.input = input;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getCheck() {
-	 	return check;
-	 }  
-	 
-	 public void setCheck(String  check) {
-	 	this.check = check;
+	 public void setRegularExpression(String  regularExpression) {
+	 	this.regularExpression = regularExpression;
 	 }
 
 	/**
@@ -161,19 +120,6 @@ public class SignatureFieldSettings extends Object {
 	 
 	 public void setGraphSizeW(Integer  graphSizeW) {
 	 	this.graphSizeW = graphSizeW;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Integer getTextRows() {
-	 	return textRows;
-	 }  
-	 
-	 public void setTextRows(Integer  textRows) {
-	 	this.textRows = textRows;
 	 }
 
 

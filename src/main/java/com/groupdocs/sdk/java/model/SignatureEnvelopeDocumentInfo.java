@@ -34,6 +34,11 @@ public class SignatureEnvelopeDocumentInfo extends Object {
     /**
      * 
      */
+	 private Integer fieldsCount ;
+
+    /**
+     * 
+     */
 	 private Integer order ;
 
     /**
@@ -61,6 +66,19 @@ public class SignatureEnvelopeDocumentInfo extends Object {
      */
 	 private String documentId ;
 
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Integer getFieldsCount() {
+	 	return fieldsCount;
+	 }  
+	 
+	 public void setFieldsCount(Integer  fieldsCount) {
+	 	this.fieldsCount = fieldsCount;
+	 }
 
 	/**
 	 * 

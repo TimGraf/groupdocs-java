@@ -51,7 +51,7 @@ public class StorageAPI extends Object {
 	 * @return StorageInfoResponse {@link StorageInfoResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId") 
+	 @MethodArgumentNames(value="userId")
 	 public static StorageInfoResponse GetStorageInfo(String userId) throws APIException {
 
 		//parse inputs
@@ -61,11 +61,10 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -73,9 +72,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		StorageInfoResponse responseObject = (StorageInfoResponse) getApiInvoker().deserialize(response, StorageInfoResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * List entities
@@ -87,7 +85,7 @@ public class StorageAPI extends Object {
 	 * @return ListEntitiesResponse {@link ListEntitiesResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="storageStorageInputFoldersInput") 
+	 @MethodArgumentNames(value="storageStorageInputFoldersInput")
 	 public static ListEntitiesResponse ListEntities(StorageStorageInputFoldersInput storageStorageInputFoldersInput) throws APIException {
 
 		//parse inputs
@@ -96,37 +94,35 @@ public class StorageAPI extends Object {
 		String method = "GET";
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
-		
-		
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getUserId() != null) {
-		 	resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getUserId()));
+		 	resourcePath = resourcePath.replace("{userId}", storageStorageInputFoldersInput.getUserId());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getPath() != null) {
-		 	resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getPath()));
+		 	resourcePath = resourcePath.replace("{path}", storageStorageInputFoldersInput.getPath());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getPageIndex() != null) {
-		 	resourcePath = resourcePath.replace("{pageIndex}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getPageIndex()));
+		 	resourcePath = resourcePath.replace("{pageIndex}", storageStorageInputFoldersInput.getPageIndex());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getPageSize() != null) {
-		 	resourcePath = resourcePath.replace("{pageSize}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getPageSize()));
+		 	resourcePath = resourcePath.replace("{pageSize}", storageStorageInputFoldersInput.getPageSize());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getOrderBy() != null) {
-		 	resourcePath = resourcePath.replace("{orderBy}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getOrderBy()));
+		 	resourcePath = resourcePath.replace("{orderBy}", storageStorageInputFoldersInput.getOrderBy());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getOrderAsc() != null) {
-		 	resourcePath = resourcePath.replace("{orderAsc}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getOrderAsc()));
+		 	resourcePath = resourcePath.replace("{orderAsc}", storageStorageInputFoldersInput.getOrderAsc());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getFilter() != null) {
-		 	resourcePath = resourcePath.replace("{filter}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getFilter()));
+		 	resourcePath = resourcePath.replace("{filter}", storageStorageInputFoldersInput.getFilter());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getFileTypes() != null) {
-		 	resourcePath = resourcePath.replace("{fileTypes}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getFileTypes()));
+		 	resourcePath = resourcePath.replace("{fileTypes}", storageStorageInputFoldersInput.getFileTypes());
 		}
 		if( storageStorageInputFoldersInput != null && storageStorageInputFoldersInput.getExtended() != null) {
-		 	resourcePath = resourcePath.replace("{extended}", APIInvoker.toPathValue(storageStorageInputFoldersInput.getExtended()));
+		 	resourcePath = resourcePath.replace("{extended}", storageStorageInputFoldersInput.getExtended());
 		}
 
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -134,9 +130,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		ListEntitiesResponse responseObject = (ListEntitiesResponse) getApiInvoker().deserialize(response, ListEntitiesResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get file
@@ -149,7 +144,7 @@ public class StorageAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static String GetFile(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -159,14 +154,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -174,9 +168,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Get shared file
@@ -189,7 +182,7 @@ public class StorageAPI extends Object {
 	 * @return String {@link String} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userEmail, filePath") 
+	 @MethodArgumentNames(value="userEmail, filePath")
 	 public static String GetSharedFile(String userEmail, String filePath) throws APIException {
 
 		//parse inputs
@@ -199,14 +192,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userEmail != null) {
-			resourcePath = resourcePath.replace("{userEmail}", APIInvoker.toPathValue(userEmail));
+			resourcePath = resourcePath.replace("{userEmail}", userEmail);
 		}
 		if( filePath != null) {
-			resourcePath = resourcePath.replace("{filePath}", APIInvoker.toPathValue(filePath));
+			resourcePath = resourcePath.replace("{filePath}", filePath);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -214,9 +206,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		String responseObject = (String) getApiInvoker().deserialize(response, String.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Upload
@@ -231,7 +222,7 @@ public class StorageAPI extends Object {
 	 * @return UploadResponse {@link UploadResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path, description, postData") 
+	 @MethodArgumentNames(value="userId, path, description, postData")
 	 public static UploadResponse Upload(String userId, String path, String description, java.io.File postData) throws APIException {
 
 		//parse inputs
@@ -241,17 +232,16 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 		if( description != null) {
-			resourcePath = resourcePath.replace("{description}", APIInvoker.toPathValue(description));
+			resourcePath = resourcePath.replace("{description}", description);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, postData, headerParams);
         if(response == null || response.length() == 0){
@@ -259,9 +249,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UploadResponse responseObject = (UploadResponse) getApiInvoker().deserialize(response, UploadResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Upload Web
@@ -274,7 +263,7 @@ public class StorageAPI extends Object {
 	 * @return UploadResponse {@link UploadResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, url") 
+	 @MethodArgumentNames(value="userId, url")
 	 public static UploadResponse UploadWeb(String userId, String url) throws APIException {
 
 		//parse inputs
@@ -284,14 +273,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( url != null) {
-			resourcePath = resourcePath.replace("{url}", APIInvoker.toPathValue(url));
+			resourcePath = resourcePath.replace("{url}", url);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -299,9 +287,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		UploadResponse responseObject = (UploadResponse) getApiInvoker().deserialize(response, UploadResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete
@@ -314,7 +301,7 @@ public class StorageAPI extends Object {
 	 * @return DeleteResponse {@link DeleteResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, fileId") 
+	 @MethodArgumentNames(value="userId, fileId")
 	 public static DeleteResponse Delete(String userId, String fileId) throws APIException {
 
 		//parse inputs
@@ -324,14 +311,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( fileId != null) {
-			resourcePath = resourcePath.replace("{fileId}", APIInvoker.toPathValue(fileId));
+			resourcePath = resourcePath.replace("{fileId}", fileId);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -339,9 +325,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteResponse responseObject = (DeleteResponse) getApiInvoker().deserialize(response, DeleteResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Delete from folder
@@ -354,7 +339,7 @@ public class StorageAPI extends Object {
 	 * @return DeleteResponse {@link DeleteResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path") 
+	 @MethodArgumentNames(value="userId, path")
 	 public static DeleteResponse DeleteFromFolder(String userId, String path) throws APIException {
 
 		//parse inputs
@@ -364,14 +349,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -379,9 +363,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteResponse responseObject = (DeleteResponse) getApiInvoker().deserialize(response, DeleteResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Move file
@@ -395,7 +378,7 @@ public class StorageAPI extends Object {
 	 * @return FileMoveResponse {@link FileMoveResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path, mode") 
+	 @MethodArgumentNames(value="userId, path, mode")
 	 public static FileMoveResponse MoveFile(String userId, String path, String mode) throws APIException {
 
 		//parse inputs
@@ -405,17 +388,16 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 		if( mode != null) {
-			resourcePath = resourcePath.replace("{mode}", APIInvoker.toPathValue(mode));
+			resourcePath = resourcePath.replace("{mode}", mode);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -423,9 +405,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		FileMoveResponse responseObject = (FileMoveResponse) getApiInvoker().deserialize(response, FileMoveResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Move folder
@@ -439,7 +420,7 @@ public class StorageAPI extends Object {
 	 * @return FolderMoveResponse {@link FolderMoveResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path, mode") 
+	 @MethodArgumentNames(value="userId, path, mode")
 	 public static FolderMoveResponse MoveFolder(String userId, String path, String mode) throws APIException {
 
 		//parse inputs
@@ -449,17 +430,16 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 		if( mode != null) {
-			resourcePath = resourcePath.replace("{mode}", APIInvoker.toPathValue(mode));
+			resourcePath = resourcePath.replace("{mode}", mode);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -467,9 +447,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		FolderMoveResponse responseObject = (FolderMoveResponse) getApiInvoker().deserialize(response, FolderMoveResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create
@@ -482,7 +461,7 @@ public class StorageAPI extends Object {
 	 * @return CreateFolderResponse {@link CreateFolderResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path") 
+	 @MethodArgumentNames(value="userId, path")
 	 public static CreateFolderResponse Create(String userId, String path) throws APIException {
 
 		//parse inputs
@@ -492,14 +471,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -507,9 +485,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreateFolderResponse responseObject = (CreateFolderResponse) getApiInvoker().deserialize(response, CreateFolderResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Compress
@@ -522,7 +499,7 @@ public class StorageAPI extends Object {
 	 * @return CompressResponse {@link CompressResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, archiveType") 
+	 @MethodArgumentNames(value="userId, archiveType")
 	 public static CompressResponse Compress(String userId, String archiveType) throws APIException {
 
 		//parse inputs
@@ -532,14 +509,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( archiveType != null) {
-			resourcePath = resourcePath.replace("{archiveType}", APIInvoker.toPathValue(archiveType));
+			resourcePath = resourcePath.replace("{archiveType}", archiveType);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -547,9 +523,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CompressResponse responseObject = (CompressResponse) getApiInvoker().deserialize(response, CompressResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Create Package
@@ -563,7 +538,7 @@ public class StorageAPI extends Object {
 	 * @return CreatePackageResponse {@link CreatePackageResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, packageName, paths") 
+	 @MethodArgumentNames(value="userId, packageName, paths")
 	 public static CreatePackageResponse CreatePackage(String userId, String packageName, String paths) throws APIException {
 
 		//parse inputs
@@ -573,17 +548,16 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( packageName != null) {
-			resourcePath = resourcePath.replace("{packageName}", APIInvoker.toPathValue(packageName));
+			resourcePath = resourcePath.replace("{packageName}", packageName);
 		}
 		if( paths != null) {
-			resourcePath = resourcePath.replace("{paths}", APIInvoker.toPathValue(paths));
+			resourcePath = resourcePath.replace("{paths}", paths);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -591,9 +565,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		CreatePackageResponse responseObject = (CreatePackageResponse) getApiInvoker().deserialize(response, CreatePackageResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Move to trash
@@ -606,7 +579,7 @@ public class StorageAPI extends Object {
 	 * @return FolderMoveResponse {@link FolderMoveResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path") 
+	 @MethodArgumentNames(value="userId, path")
 	 public static FolderMoveResponse MoveToTrash(String userId, String path) throws APIException {
 
 		//parse inputs
@@ -616,14 +589,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -631,9 +603,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		FolderMoveResponse responseObject = (FolderMoveResponse) getApiInvoker().deserialize(response, FolderMoveResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 	/**
 	 * Restore from trash
@@ -646,7 +617,7 @@ public class StorageAPI extends Object {
 	 * @return DeleteResponse {@link DeleteResponse} 
 	 * @throws APIException 
 	 */
-	 @MethodArgumentNames(value="userId, path") 
+	 @MethodArgumentNames(value="userId, path")
 	 public static DeleteResponse RestoreFromTrash(String userId, String path) throws APIException {
 
 		//parse inputs
@@ -656,14 +627,13 @@ public class StorageAPI extends Object {
 		Map<String, String> queryParams = new HashMap<String, String>();
 		Map<String, String> headerParams = new HashMap<String, String>();
 		if( userId != null) {
-			resourcePath = resourcePath.replace("{userId}", APIInvoker.toPathValue(userId));
+			resourcePath = resourcePath.replace("{userId}", userId);
 		}
 		if( path != null) {
-			resourcePath = resourcePath.replace("{path}", APIInvoker.toPathValue(path));
+			resourcePath = resourcePath.replace("{path}", path);
 		}
 
-		
-	
+
 		//make the API Call
 		String response = getApiInvoker().invokeAPI(resourcePath, method, queryParams, null, headerParams);
         if(response == null || response.length() == 0){
@@ -671,9 +641,8 @@ public class StorageAPI extends Object {
         }
 		//create output objects if the response has more than one object
 		DeleteResponse responseObject = (DeleteResponse) getApiInvoker().deserialize(response, DeleteResponse.class);
-		return responseObject;		
-				
-	 }
+		return responseObject;
+	}
 
 
 

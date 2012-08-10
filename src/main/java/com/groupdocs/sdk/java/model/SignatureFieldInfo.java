@@ -34,32 +34,57 @@ public class SignatureFieldInfo extends Object {
     /**
      * 
      */
-	 private String id ;
+	 private String fontName ;
 
     /**
      * 
      */
-	 private Double textColumns ;
+	 private String fontColor ;
 
     /**
      * 
      */
-	 private Double input ;
-
-    /**
-     * 
-     */
-	 private String check ;
-
-    /**
-     * 
-     */
-	 private String name ;
+	 private String regularExpression ;
 
     /**
      * 
      */
 	 private Integer graphSizeH ;
+
+    /**
+     * 
+     */
+	 private Boolean fontBold ;
+
+    /**
+     * 
+     */
+	 private Double fontSize ;
+
+    /**
+     * 
+     */
+	 private Boolean isSystem ;
+
+    /**
+     * 
+     */
+	 private String id ;
+
+    /**
+     * 
+     */
+	 private Boolean fontItalic ;
+
+    /**
+     * 
+     */
+	 private Boolean fontUnderline ;
+
+    /**
+     * 
+     */
+	 private String name ;
 
     /**
      * 
@@ -71,16 +96,97 @@ public class SignatureFieldInfo extends Object {
      */
 	 private Integer graphSizeW ;
 
-    /**
-     * 
-     */
-	 private Boolean isSystem ;
 
-    /**
-     * 
-     */
-	 private Double textRows ;
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontName() {
+	 	return fontName;
+	 }  
+	 
+	 public void setFontName(String  fontName) {
+	 	this.fontName = fontName;
+	 }
 
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getFontColor() {
+	 	return fontColor;
+	 }  
+	 
+	 public void setFontColor(String  fontColor) {
+	 	this.fontColor = fontColor;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public String getRegularExpression() {
+	 	return regularExpression;
+	 }  
+	 
+	 public void setRegularExpression(String  regularExpression) {
+	 	this.regularExpression = regularExpression;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Integer getGraphSizeH() {
+	 	return graphSizeH;
+	 }  
+	 
+	 public void setGraphSizeH(Integer  graphSizeH) {
+	 	this.graphSizeH = graphSizeH;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getFontBold() {
+	 	return fontBold;
+	 }  
+	 
+	 public void setFontBold(Boolean  fontBold) {
+	 	this.fontBold = fontBold;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Double getFontSize() {
+	 	return fontSize;
+	 }  
+	 
+	 public void setFontSize(Double  fontSize) {
+	 	this.fontSize = fontSize;
+	 }
+
+	/**
+	 * 
+	 * 
+	 * 
+	 */
+	 public Boolean getIsSystem() {
+	 	return isSystem;
+	 }  
+	 
+	 public void setIsSystem(Boolean  isSystem) {
+	 	this.isSystem = isSystem;
+	 }
 
 	/**
 	 * 
@@ -100,12 +206,12 @@ public class SignatureFieldInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getTextColumns() {
-	 	return textColumns;
+	 public Boolean getFontItalic() {
+	 	return fontItalic;
 	 }  
 	 
-	 public void setTextColumns(Double  textColumns) {
-	 	this.textColumns = textColumns;
+	 public void setFontItalic(Boolean  fontItalic) {
+	 	this.fontItalic = fontItalic;
 	 }
 
 	/**
@@ -113,25 +219,12 @@ public class SignatureFieldInfo extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getInput() {
-	 	return input;
+	 public Boolean getFontUnderline() {
+	 	return fontUnderline;
 	 }  
 	 
-	 public void setInput(Double  input) {
-	 	this.input = input;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getCheck() {
-	 	return check;
-	 }  
-	 
-	 public void setCheck(String  check) {
-	 	this.check = check;
+	 public void setFontUnderline(Boolean  fontUnderline) {
+	 	this.fontUnderline = fontUnderline;
 	 }
 
 	/**
@@ -145,19 +238,6 @@ public class SignatureFieldInfo extends Object {
 	 
 	 public void setName(String  name) {
 	 	this.name = name;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Integer getGraphSizeH() {
-	 	return graphSizeH;
-	 }  
-	 
-	 public void setGraphSizeH(Integer  graphSizeH) {
-	 	this.graphSizeH = graphSizeH;
 	 }
 
 	/**
@@ -184,32 +264,6 @@ public class SignatureFieldInfo extends Object {
 	 
 	 public void setGraphSizeW(Integer  graphSizeW) {
 	 	this.graphSizeW = graphSizeW;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Boolean getIsSystem() {
-	 	return isSystem;
-	 }  
-	 
-	 public void setIsSystem(Boolean  isSystem) {
-	 	this.isSystem = isSystem;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getTextRows() {
-	 	return textRows;
-	 }  
-	 
-	 public void setTextRows(Double  textRows) {
-	 	this.textRows = textRows;
 	 }
 
 

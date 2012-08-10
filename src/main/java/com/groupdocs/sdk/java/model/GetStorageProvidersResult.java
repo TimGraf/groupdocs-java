@@ -19,6 +19,9 @@ package com.groupdocs.sdk.java.model;
 import com.wordnik.swagger.runtime.annotations.*;
 import java.util.List;
 
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * 
@@ -28,23 +31,13 @@ import java.util.List;
  * @author ramesh
  *
  */
-public class AddDocumentQuestionnaireResult extends Object {
+public class GetStorageProvidersResult extends Object {
 
 
     /**
      * 
      */
-	 private Double document_id ;
-
-    /**
-     * 
-     */
-	 private Double questionnaire_id ;
-
-    /**
-     * 
-     */
-	 private String adjusted_name ;
+	 private List<StorageProviderInfo> providers  =  new ArrayList<StorageProviderInfo>();
 
 
 	/**
@@ -52,38 +45,12 @@ public class AddDocumentQuestionnaireResult extends Object {
 	 * 
 	 * 
 	 */
-	 public Double getDocument_id() {
-	 	return document_id;
+	 public List<StorageProviderInfo> getProviders() {
+	 	return providers;
 	 }  
 	 
-	 public void setDocument_id(Double  document_id) {
-	 	this.document_id = document_id;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public Double getQuestionnaire_id() {
-	 	return questionnaire_id;
-	 }  
-	 
-	 public void setQuestionnaire_id(Double  questionnaire_id) {
-	 	this.questionnaire_id = questionnaire_id;
-	 }
-
-	/**
-	 * 
-	 * 
-	 * 
-	 */
-	 public String getAdjusted_name() {
-	 	return adjusted_name;
-	 }  
-	 
-	 public void setAdjusted_name(String  adjusted_name) {
-	 	this.adjusted_name = adjusted_name;
+	 public void setProviders(List<StorageProviderInfo>  providers) {
+	 	this.providers = providers;
 	 }
 
 
