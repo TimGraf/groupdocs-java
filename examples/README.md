@@ -1,15 +1,11 @@
 ## Examples
 
-### Annotations
+### GroupDocs Java SDK Annotations Sample App
 
-Grab the copy of examples
+Uploads file using Java SDK. Shows uploaded file in an [embedded annotation app](http://groupdocs.com/apps/annotation). 
+Annotate the document and click `List Annotations` button.
+
 
 ##CHANGE ME ##
-    gem install bundler # unless it's already installed
-    git clone git@github.com:groupdocs/groupdocs-ruby.git
-    cd groupdocs-ruby/examples/annotations
-    bundle install --path vendor/bundle
-    bundle exec ruby app.rb
 
-Now open `http://localhost:4567` and try it!
 ##CHANGE ME ##
