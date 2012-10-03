@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>GroupDocs Java SDK Annotations Sample App</title>
+    <title>${project.name}</title>
     <script src='right.js'></script>
     <script type='text/javascript'>
       //<![CDATA[

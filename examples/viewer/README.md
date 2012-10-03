@@ -1,7 +1,6 @@
-## GroupDocs Java SDK Annotations Sample App
+## GroupDocs Java SDK Viewer Sample App
 
-Uploads file using Java SDK. Shows uploaded file in an [embedded annotation app](http://groupdocs.com/apps/annotation). 
-Annotate the document and click `List Annotations` button.
+Uploads file using Java SDK. Shows uploaded file in an [embedded viewer app](http://groupdocs.com/apps/viewer). 
 
 ### Installation Guide
 
@@ -10,7 +9,7 @@ Please register at [http://groupdocs.com/](http://groupdocs.com/) and copy your 
 	git clone https://github.com/groupdocs/groupdocs-java
 	cd groupdocs-java
 	mvn clean install
-    cd groupdocs-java/examples/annotations
+    cd groupdocs-java/examples/viewer
     mvn clean jetty:run
 
 Now open `http://localhost:8080` and try it!
