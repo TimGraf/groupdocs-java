@@ -5,6 +5,7 @@
 	<artifactId>groupdocs-java-client</artifactId>
 	<packaging>jar</packaging>
 	<name>GroupDocsJavaClient</name>
+	<description>GroupDocsJavaClient</description>
 	<version>1.0</version>
 
 	<pluginRepositories>
@@ -38,20 +39,6 @@
 					<parallel>methods</parallel>
 					<forkMode>pertest</forkMode>
 				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 
 			<!-- attach test jar -->
@@ -138,36 +125,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	    <pluginManagement>
-	      <plugins>
-		    <!-- Ignore/Execute plugin execution -->
-		    <plugin>
-		        <groupId>org.eclipse.m2e</groupId>
-		        <artifactId>lifecycle-mapping</artifactId>
-		        <version>1.0.0</version>
-		        <configuration>
-		            <lifecycleMappingMetadata>
-		                <pluginExecutions>
-		                    <!-- copy-dependency plugin -->
-		                    <pluginExecution>
-		                        <pluginExecutionFilter>
-		                            <groupId>org.apache.maven.plugins</groupId>
-		                            <artifactId>maven-dependency-plugin</artifactId>
-		                            <versionRange>[1.0.0,)</versionRange>
-		                            <goals>
-		                                <goal>copy-dependencies</goal>
-		                            </goals>
-		                        </pluginExecutionFilter>
-		                        <action>
-		                            <ignore />
-		                        </action>
-		                    </pluginExecution>
-		                </pluginExecutions>
-		            </lifecycleMappingMetadata>
-		        </configuration>
-		    </plugin>
-	      </plugins>
-	    </pluginManagement>
 	</build>
 	<reporting>
 		<plugins>
