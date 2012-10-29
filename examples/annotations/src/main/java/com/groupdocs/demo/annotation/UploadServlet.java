@@ -2,6 +2,7 @@ package com.groupdocs.demo.annotation;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,16 +19,14 @@ import javax.servlet.http.Part;
 
 import org.apache.commons.io.IOUtils;
 
-import com.groupdocs.sdk.java.api.StorageAPI;
-import com.groupdocs.sdk.java.model.UploadResponse;
-import com.wordnik.swagger.runtime.common.APIInvoker;
-import com.wordnik.swagger.runtime.common.GroupDocsUrlSigningSecurityHandler;
+import com.groupdocs.sdk.api.StorageApi;
+import com.groupdocs.sdk.common.ApiInvoker;
+import com.groupdocs.sdk.common.GroupDocsRequestSigner;
+import com.groupdocs.sdk.model.UploadResponse;
 
 @WebServlet("/upload")
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
-
-	public static String apiServer = "https://api.groupdocs.com/v2.0/";
 
 	@Override
 	protected void doGet(HttpServletRequest request,
@@ -76,9 +75,8 @@ public class UploadServlet extends HttpServlet {
 			
 			log("params received: clientId=" + clientId + ", privateKey: " + privateKey + ", file_name=" + fileName);
 			
-			APIInvoker apiInvoker = APIInvoker.initialize(new GroupDocsUrlSigningSecurityHandler(privateKey),apiServer, true);
-			StorageAPI.setApiInvoker(apiInvoker);
-			UploadResponse gdResponse = StorageAPI.Upload(clientId, fileName, "", file);
+			ApiInvoker.getInstance().setRequestSigner(new GroupDocsRequestSigner(privateKey));
+			UploadResponse gdResponse = new StorageApi().Upload(clientId, fileName, "", new FileInputStream(file));
 			String fileGuid = gdResponse.getResult().getGuid();
 			
 			session.setAttribute("fileGuid", fileGuid);
