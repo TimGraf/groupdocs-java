@@ -9,7 +9,7 @@
 	<groupId>com.groupdocs</groupId>
 	<artifactId>groupdocs-java-client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1</version>
+	<version>1.1-SNAPSHOT</version>
 	
 	<name>GroupDocsJava</name>
 	<description>GroupDocs API library for Java</description>
@@ -24,8 +24,8 @@
     </licenses>
 	
 	<scm>
-	    <connection>scm:git:git@github.com:groupdocs/groupdocs-java.git</connection>
-	    <developerConnection>scm:git:git@github.com:groupdocs/groupdocs-java.git</developerConnection>
+	    <connection>scm:git:https://github.com/groupdocs/groupdocs-java</connection>
+	    <developerConnection>scm:git:https://github.com/groupdocs/groupdocs-java</developerConnection>
 	    <url>https://github.com/groupdocs/groupdocs-java</url>
   	</scm>
   	
