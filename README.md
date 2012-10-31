@@ -1,7 +1,21 @@
-groupdocs-java
-==============
+GroupDocs Java SDK [![Build Status](https://secure.travis-ci.org/groupdocs/groupdocs-java.png)](http://travis-ci.org/groupdocs/groupdocs-java)
+=============
 
-GroupDocs Java SDK
+## Requirements
+
+* SDK requires Maven 2.2.0 (or later).
+
+## Installation
+
+You can use [Maven](http://maven.apache.org/) to download and use SDK as well as its dependencies.
+GroupDocs Java SDK is now in Maven Central. To use SDK in your own project just add the following to your `pom.xml`
+
+	<dependency>
+		<groupId>com.groupdocs</groupId>
+		<artifactId>groupdocs-java-client</artifactId>
+		<version>1.1</version>
+	</dependency>
+
 
 ###[Sign, Manage, Annotate, Assemble, Compare and Convert Documents with GroupDocs](http://groupdocs.com)
 1. [Sign documents online with GroupDocs Signature](http://groupdocs.com/apps/signature)
