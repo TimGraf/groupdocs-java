@@ -16,6 +16,11 @@ GroupDocs Java SDK is now in Maven Central. To use SDK in your own project just 
 		<version>1.1</version>
 	</dependency>
 
+### Usage Example
+	ApiInvoker.getInstance().setRequestSigner(new GroupDocsRequestSigner(privateKey));
+	AntApi api = new AntApi();
+	ListAnnotationsResponse response = api.ListAnnotations(userId, fileId);
+
 
 ###[Sign, Manage, Annotate, Assemble, Compare and Convert Documents with GroupDocs](http://groupdocs.com)
 1. [Sign documents online with GroupDocs Signature](http://groupdocs.com/apps/signature)
