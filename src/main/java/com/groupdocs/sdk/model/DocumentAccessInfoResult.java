@@ -28,12 +28,12 @@ public class DocumentAccessInfoResult {
   private String status = null;
   private String type_str = null;
   private Long shared_on = null;
-  private String access = null;
   private String type = null;
+  private String access = null;
   private String url = null;
+  private String file_type = null;
   private Integer version = null;
   private Long size = null;
-  private String file_type = null;
   private String guid = null;
   private Double id = null;
   private String document_path = null;
@@ -68,13 +68,6 @@ public class DocumentAccessInfoResult {
     this.shared_on = shared_on;
   }
 
-  public String getAccess() {
-    return access;
-  }
-  public void setAccess(String access) {
-    this.access = access;
-  }
-
   public String getType() {
     return type;
   }
@@ -82,11 +75,25 @@ public class DocumentAccessInfoResult {
     this.type = type;
   }
 
+  public String getAccess() {
+    return access;
+  }
+  public void setAccess(String access) {
+    this.access = access;
+  }
+
   public String getUrl() {
     return url;
   }
   public void setUrl(String url) {
     this.url = url;
+  }
+
+  public String getFile_type() {
+    return file_type;
+  }
+  public void setFile_type(String file_type) {
+    this.file_type = file_type;
   }
 
   public Integer getVersion() {
@@ -101,13 +108,6 @@ public class DocumentAccessInfoResult {
   }
   public void setSize(Long size) {
     this.size = size;
-  }
-
-  public String getFile_type() {
-    return file_type;
-  }
-  public void setFile_type(String file_type) {
-    this.file_type = file_type;
   }
 
   public String getGuid() {
@@ -160,12 +160,12 @@ public class DocumentAccessInfoResult {
     sb.append("  status: ").append(status).append("\n");
     sb.append("  type_str: ").append(type_str).append("\n");
     sb.append("  shared_on: ").append(shared_on).append("\n");
-    sb.append("  access: ").append(access).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  access: ").append(access).append("\n");
     sb.append("  url: ").append(url).append("\n");
+    sb.append("  file_type: ").append(file_type).append("\n");
     sb.append("  version: ").append(version).append("\n");
     sb.append("  size: ").append(size).append("\n");
-    sb.append("  file_type: ").append(file_type).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  document_path: ").append(document_path).append("\n");

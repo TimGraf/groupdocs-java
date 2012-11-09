@@ -26,7 +26,6 @@ import com.groupdocs.sdk.model.SignatureTemplateRecipientInfo;
 public class SignatureTemplateInfo {
   private Boolean ownerShouldSign = null;
   private List<SignatureTemplateRecipientInfo> recipients = new ArrayList<SignatureTemplateRecipientInfo>();
-  private Double ownerId = null;
   private Double reminderTime = null;
   private String emailSubject = null;
   private String id = null;
@@ -50,13 +49,6 @@ public class SignatureTemplateInfo {
   }
   public void setRecipients(List<SignatureTemplateRecipientInfo> recipients) {
     this.recipients = recipients;
-  }
-
-  public Double getOwnerId() {
-    return ownerId;
-  }
-  public void setOwnerId(Double ownerId) {
-    this.ownerId = ownerId;
   }
 
   public Double getReminderTime() {
@@ -142,7 +134,6 @@ public class SignatureTemplateInfo {
     sb.append("class SignatureTemplateInfo {\n");
     sb.append("  ownerShouldSign: ").append(ownerShouldSign).append("\n");
     sb.append("  recipients: ").append(recipients).append("\n");
-    sb.append("  ownerId: ").append(ownerId).append("\n");
     sb.append("  reminderTime: ").append(reminderTime).append("\n");
     sb.append("  emailSubject: ").append(emailSubject).append("\n");
     sb.append("  id: ").append(id).append("\n");

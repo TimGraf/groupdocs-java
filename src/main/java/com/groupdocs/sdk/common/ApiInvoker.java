@@ -15,7 +15,6 @@
  */
 package com.groupdocs.sdk.common;
 
-import java.io.InputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -108,14 +107,14 @@ public class ApiInvoker {
   public static String serialize(Object obj) throws ApiException {
     try {
       if (obj != null) return JsonUtil.getJsonMapper().writeValueAsString(obj);
-      else return "{}";
+      else return "";
     }
     catch (Exception e) {
       throw new ApiException(500, e.getMessage());
     }
   }
 
-  public String invokeAPI(String host, String path, String method, Map<String, String> queryParams, Object body, Map<String, String> headerParams) throws ApiException {
+  public <T> T invokeAPI(String host, String path, String method, Map<String, String> queryParams, Object body, Map<String, String> headerParams, Class<T> returnType) throws ApiException {
     Client client = getClient(host);
 
     StringBuilder b = new StringBuilder();
@@ -136,7 +135,7 @@ public class ApiInvoker {
     	contentType = MediaType.TEXT_HTML_TYPE;
     } else {
     	contentType = MediaType.APPLICATION_JSON_TYPE;
-    	if(body instanceof InputStream){
+    	if(body instanceof FileStream){
     		isFileUpload = true;
     		contentType = MediaType.APPLICATION_OCTET_STREAM_TYPE;
     	}
@@ -160,7 +159,7 @@ public class ApiInvoker {
     else if ("POST".equals(method)) {
     	Object requestBody;
     	if(isFileUpload){
-    		requestBody = body;
+    		requestBody = ((FileStream)body).getInputStream();
     	} else {
     		requestBody = signer.signContent(serialize(body), builder);
     	}
@@ -169,7 +168,7 @@ public class ApiInvoker {
     else if ("PUT".equals(method)) {
     	Object requestBody;
     	if(isFileUpload){
-    		requestBody = body;
+    		requestBody = ((FileStream)body).getInputStream();
     	} else {
     		requestBody = signer.signContent(serialize(body), builder);
     	}
@@ -185,7 +184,13 @@ public class ApiInvoker {
     	|| response.getClientResponseStatus() == ClientResponse.Status.CREATED
         || response.getClientResponseStatus() == ClientResponse.Status.ACCEPTED
         || response.getClientResponseStatus() == ClientResponse.Status.NOT_FOUND) {
-    	return (String) response.getEntity(String.class);
+    	T toReturn;
+    	if(FileStream.class.equals(returnType)){
+    		toReturn = (T) new FileStream(response.getEntityInputStream(), response.getHeaders());
+    	} else {
+    		toReturn = (T) response.getEntity(returnType.getClass());
+    	}
+    	return toReturn;
     }
     else {
     	throw new ApiException(
@@ -193,7 +198,7 @@ public class ApiInvoker {
     	          response.getEntity(String.class));    	
     }
   }
-
+  
   private Client getClient(String host) {
 	if(!hostMap.containsKey(host)) {
 		Client client = Client.create();
@@ -204,4 +209,3 @@ public class ApiInvoker {
   }
   
 }
-

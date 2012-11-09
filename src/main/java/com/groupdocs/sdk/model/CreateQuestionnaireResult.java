@@ -22,8 +22,16 @@ package com.groupdocs.sdk.model;
  *
  */
 public class CreateQuestionnaireResult {
+  private String questionnaire_guid = null;
   private Double questionnaire_id = null;
   private String adjusted_name = null;
+  public String getQuestionnaire_guid() {
+    return questionnaire_guid;
+  }
+  public void setQuestionnaire_guid(String questionnaire_guid) {
+    this.questionnaire_guid = questionnaire_guid;
+  }
+
   public Double getQuestionnaire_id() {
     return questionnaire_id;
   }
@@ -42,6 +50,7 @@ public class CreateQuestionnaireResult {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateQuestionnaireResult {\n");
+    sb.append("  questionnaire_guid: ").append(questionnaire_guid).append("\n");
     sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
     sb.append("  adjusted_name: ").append(adjusted_name).append("\n");
     sb.append("}\n");

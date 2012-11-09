@@ -17,7 +17,7 @@ package com.groupdocs.sdk.api;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
-import java.io.InputStream;
+import com.groupdocs.sdk.common.FileStream;
 import com.groupdocs.sdk.model.SharedUsersResponse;
 import com.groupdocs.sdk.model.GetDocumentForeignTypesResponse;
 import com.groupdocs.sdk.model.GetDocumentInfoResponse;
@@ -49,8 +49,8 @@ public class DocApi {
   }
 
   public ViewDocumentResponse ViewDocument (String userId, String fileId, String pageNumber, String pageCount, String width, String quality, String usePdf) throws ApiException {
-  	String resourcePath = "/doc/{userId}/files/{fileId}/thumbnails?page_number={pageNumber}&amp;page_count={pageCount}&amp;width={width}&amp;quality={quality}&amp;use_pdf={usePdf}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/doc/{userId}/files/{fileId}/thumbnails?page_number={pageNumber}&page_count={pageCount}&width={width}&quality={quality}&use_pdf={usePdf}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber)).replace("{" + "pageCount" + "}", String.valueOf(pageCount)).replace("{" + "width" + "}", String.valueOf(width)).replace("{" + "quality" + "}", String.valueOf(quality)).replace("{" + "usePdf" + "}", String.valueOf(usePdf));
 
     // query params
@@ -62,14 +62,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (ViewDocumentResponse) ApiInvoker.deserialize(response, "", ViewDocumentResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -79,8 +79,8 @@ public class DocApi {
     }
   }
   public DocumentViewsResponse GetDocumentViews (String userId, String startIndex, String pageSize) throws ApiException {
-  	String resourcePath = "/doc/{userId}/views?page_index={startIndex}&amp;page_size={pageSize}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/doc/{userId}/views?page_index={startIndex}&page_size={pageSize}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "startIndex" + "}", String.valueOf(startIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize));
 
     // query params
@@ -92,14 +92,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DocumentViewsResponse) ApiInvoker.deserialize(response, "", DocumentViewsResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -110,7 +110,7 @@ public class DocApi {
   }
   public SharedUsersResponse ShareDocument (String userId, String fileId, List<String> body) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/sharers".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -122,14 +122,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -140,7 +140,7 @@ public class DocApi {
   }
   public SharedUsersResponse UnshareDocument (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/sharers".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -152,14 +152,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -170,7 +170,7 @@ public class DocApi {
   }
   public SharedUsersResponse GetFolderSharers (String userId, String folderId) throws ApiException {
   	String resourcePath = "/doc/{userId}/folders/{folderId}/sharers".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "folderId" + "}", String.valueOf(folderId));
 
     // query params
@@ -182,14 +182,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -200,7 +200,7 @@ public class DocApi {
   }
   public SharedUsersResponse ShareFolder (String userId, String folderId, List<String> body) throws ApiException {
   	String resourcePath = "/doc/{userId}/folders/{folderId}/sharers".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "folderId" + "}", String.valueOf(folderId));
 
     // query params
@@ -212,14 +212,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -230,7 +230,7 @@ public class DocApi {
   }
   public SharedUsersResponse UnshareFolder (String userId, String folderId) throws ApiException {
   	String resourcePath = "/doc/{userId}/folders/{folderId}/sharers".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "folderId" + "}", String.valueOf(folderId));
 
     // query params
@@ -242,14 +242,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -260,7 +260,7 @@ public class DocApi {
   }
   public DocumentAccessInfoResponse SetDocumentAccessMode (String userId, String fileId, String mode) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/accessinfo?mode={mode}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "mode" + "}", String.valueOf(mode));
 
     // query params
@@ -272,14 +272,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DocumentAccessInfoResponse) ApiInvoker.deserialize(response, "", DocumentAccessInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -290,7 +290,7 @@ public class DocApi {
   }
   public DocumentAccessInfoResponse GetDocumentAccessInfo (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/accessinfo".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -302,14 +302,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DocumentAccessInfoResponse) ApiInvoker.deserialize(response, "", DocumentAccessInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -320,7 +320,7 @@ public class DocApi {
   }
   public GetDocumentInfoResponse GetDocumentMetadata (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/metadata".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -332,14 +332,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetDocumentInfoResponse) ApiInvoker.deserialize(response, "", GetDocumentInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -350,7 +350,7 @@ public class DocApi {
   }
   public GetDocumentInfoResponse GetDocumentMetadataByPath (String userId, String path) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -362,14 +362,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetDocumentInfoResponse) ApiInvoker.deserialize(response, "", GetDocumentInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -380,7 +380,7 @@ public class DocApi {
   }
   public DocumentUserStatusResponse SetDocumentUserStatus (String userId, String fileId, String status) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/sharer".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "status" + "}", String.valueOf(status));
 
     // query params
@@ -392,14 +392,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DocumentUserStatusResponse) ApiInvoker.deserialize(response, "", DocumentUserStatusResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -409,8 +409,8 @@ public class DocApi {
     }
   }
   public SharedDocumentsResponse GetSharedDocuments (String userId, String sharesTypes, String pageIndex, String pageSize, String orderBy, Boolean orderAsc) throws ApiException {
-  	String resourcePath = "/doc/{userId}/shares/{sharesTypes}?page_index={pageIndex}&amp;page_size={pageSize}&amp;order_by={orderBy}&amp;order_asc={orderAsc}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/doc/{userId}/shares/{sharesTypes}?page_index={pageIndex}&page_size={pageSize}&order_by={orderBy}&order_asc={orderAsc}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "sharesTypes" + "}", String.valueOf(sharesTypes)).replace("{" + "pageIndex" + "}", String.valueOf(pageIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize)).replace("{" + "orderBy" + "}", String.valueOf(orderBy)).replace("{" + "orderAsc" + "}", String.valueOf(orderAsc));
 
     // query params
@@ -422,14 +422,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SharedDocumentsResponse) ApiInvoker.deserialize(response, "", SharedDocumentsResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -440,7 +440,7 @@ public class DocApi {
   }
   public TemplateFieldsResponse GetTemplateFields (String userId, String fileId, Boolean includeGeometry) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/fields?include_geometry={includeGeometry}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "includeGeometry" + "}", String.valueOf(includeGeometry));
 
     // query params
@@ -452,14 +452,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (TemplateFieldsResponse) ApiInvoker.deserialize(response, "", TemplateFieldsResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -470,7 +470,7 @@ public class DocApi {
   }
   public GetDocumentForeignTypesResponse GetDocumentFormats (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/formats".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -482,14 +482,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetDocumentForeignTypesResponse) ApiInvoker.deserialize(response, "", GetDocumentForeignTypesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -498,9 +498,9 @@ public class DocApi {
       }
     }
   }
-  public InputStream GetDocumentPageImage (String userId, String fileId, Integer pageNumber, String dimension, Integer quality, Boolean usePdf, Boolean expiresOn) throws ApiException {
-  	String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/images/{dimension}?quality={quality}&amp;use_pdf={usePdf}&amp;expires={expiresOn}".replace("*", "");
-    // create path and map variables
+  public FileStream GetDocumentPageImage (String userId, String fileId, Integer pageNumber, String dimension, Integer quality, Boolean usePdf, Boolean expiresOn) throws ApiException {
+  	String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/images/{dimension}?quality={quality}&use_pdf={usePdf}&expires={expiresOn}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber)).replace("{" + "dimension" + "}", String.valueOf(dimension)).replace("{" + "quality" + "}", String.valueOf(quality)).replace("{" + "usePdf" + "}", String.valueOf(usePdf)).replace("{" + "expiresOn" + "}", String.valueOf(expiresOn));
 
     // query params
@@ -512,14 +512,8 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
-      if(response != null){
-        return (InputStream) ApiInvoker.deserialize(response, "", InputStream.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -529,8 +523,8 @@ public class DocApi {
     }
   }
   public GetImageUrlsResponse GetDocumentPagesImageUrls (String userId, String fileId, Integer firstPage, Integer pageCount, String dimension, Integer quality, Boolean usePdf, String token) throws ApiException {
-  	String resourcePath = "/doc/{userId}/files/{fileId}/pages/images/{dimension}/urls?first_page={firstPage}&amp;page_count={pageCount}&amp;quality={quality}&amp;use_pdf={usePdf}&amp;token={token}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/doc/{userId}/files/{fileId}/pages/images/{dimension}/urls?first_page={firstPage}&page_count={pageCount}&quality={quality}&use_pdf={usePdf}&token={token}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "firstPage" + "}", String.valueOf(firstPage)).replace("{" + "pageCount" + "}", String.valueOf(pageCount)).replace("{" + "dimension" + "}", String.valueOf(dimension)).replace("{" + "quality" + "}", String.valueOf(quality)).replace("{" + "usePdf" + "}", String.valueOf(usePdf)).replace("{" + "token" + "}", String.valueOf(token));
 
     // query params
@@ -542,14 +536,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetImageUrlsResponse) ApiInvoker.deserialize(response, "", GetImageUrlsResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -560,7 +554,7 @@ public class DocApi {
   }
   public GetEditLockResponse GetEditLock (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/editlock".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -572,14 +566,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetEditLockResponse) ApiInvoker.deserialize(response, "", GetEditLockResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -590,7 +584,7 @@ public class DocApi {
   }
   public RemoveEditLockResponse RemoveEditLock (String userId, String fileId) throws ApiException {
   	String resourcePath = "/doc/{userId}/files/{fileId}/editlock".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -602,14 +596,14 @@ public class DocApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (RemoveEditLockResponse) ApiInvoker.deserialize(response, "", RemoveEditLockResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }

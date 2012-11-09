@@ -44,7 +44,7 @@ public class SystemApi {
 
   public GetPlanResponse GetUserPlan (String callerId) throws ApiException {
   	String resourcePath = "/system/{callerId}/plan".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId));
 
     // query params
@@ -56,14 +56,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetPlanResponse) ApiInvoker.deserialize(response, "", GetPlanResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -74,7 +74,7 @@ public class SystemApi {
   }
   public GetUserSubscriptionPlanResponse GetUserSubscriptionPlan (String callerId) throws ApiException {
   	String resourcePath = "/system/{callerId}/subscription".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId));
 
     // query params
@@ -86,14 +86,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetUserSubscriptionPlanResponse) ApiInvoker.deserialize(response, "", GetUserSubscriptionPlanResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -104,7 +104,7 @@ public class SystemApi {
   }
   public GetSubscriptionPlansResponse GetSubscriptionPlans (String callerId, String family) throws ApiException {
   	String resourcePath = "/system/{callerId}/plans/{family}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "family" + "}", String.valueOf(family));
 
     // query params
@@ -116,14 +116,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetSubscriptionPlansResponse) ApiInvoker.deserialize(response, "", GetSubscriptionPlansResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -134,7 +134,7 @@ public class SystemApi {
   }
   public SetUserSubscriptionPlanResponse SetSubscriptionPlan (String userId, String productId, SubscriptionPlanInfo body) throws ApiException {
   	String resourcePath = "/system/{userId}/subscriptions/{productId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId));
 
     // query params
@@ -146,14 +146,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SetUserSubscriptionPlanResponse) ApiInvoker.deserialize(response, "", SetUserSubscriptionPlanResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -164,7 +164,7 @@ public class SystemApi {
   }
   public GetCountriesResponse GetCountries (String callerId) throws ApiException {
   	String resourcePath = "/system/{callerId}/countries".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId));
 
     // query params
@@ -176,14 +176,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetCountriesResponse) ApiInvoker.deserialize(response, "", GetCountriesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -194,7 +194,7 @@ public class SystemApi {
   }
   public GetStatesResponse GetStates (String callerId, String countryName) throws ApiException {
   	String resourcePath = "/system/{callerId}/countries/{countryName}/states".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "countryName" + "}", String.valueOf(countryName));
 
     // query params
@@ -206,14 +206,14 @@ public class SystemApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetStatesResponse) ApiInvoker.deserialize(response, "", GetStatesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }

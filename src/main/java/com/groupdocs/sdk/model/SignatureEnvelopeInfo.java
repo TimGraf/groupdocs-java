@@ -29,7 +29,6 @@ public class SignatureEnvelopeInfo {
   private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   private Integer status = null;
   private Double envelopeExpireTime = null;
-  private Double ownerId = null;
   private Double reminderTime = null;
   private String emailSubject = null;
   private String statusDateTime = null;
@@ -74,13 +73,6 @@ public class SignatureEnvelopeInfo {
   }
   public void setEnvelopeExpireTime(Double envelopeExpireTime) {
     this.envelopeExpireTime = envelopeExpireTime;
-  }
-
-  public Double getOwnerId() {
-    return ownerId;
-  }
-  public void setOwnerId(Double ownerId) {
-    this.ownerId = ownerId;
   }
 
   public Double getReminderTime() {
@@ -169,7 +161,6 @@ public class SignatureEnvelopeInfo {
     sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  status: ").append(status).append("\n");
     sb.append("  envelopeExpireTime: ").append(envelopeExpireTime).append("\n");
-    sb.append("  ownerId: ").append(ownerId).append("\n");
     sb.append("  reminderTime: ").append(reminderTime).append("\n");
     sb.append("  emailSubject: ").append(emailSubject).append("\n");
     sb.append("  statusDateTime: ").append(statusDateTime).append("\n");

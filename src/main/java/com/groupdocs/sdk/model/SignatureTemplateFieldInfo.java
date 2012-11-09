@@ -27,20 +27,15 @@ public class SignatureTemplateFieldInfo {
   private String regularExpression = null;
   private Integer fieldType = null;
   private Boolean mandatory = null;
-  private Integer graphSizeH = null;
-  private Double textRows = null;
   private String id = null;
   private String templateId = null;
   private String acceptableValues = null;
-  private Double input = null;
-  private Double textColumns = null;
   private String recipientId = null;
   private Double order = null;
-  private List<SignatureTemplateFieldLocationInfo> locations = new ArrayList<SignatureTemplateFieldLocationInfo>();
   private Double signatureFieldId = null;
+  private List<SignatureTemplateFieldLocationInfo> locations = new ArrayList<SignatureTemplateFieldLocationInfo>();
   private String name = null;
   private String defaultValue = null;
-  private Integer graphSizeW = null;
   private String tooltip = null;
   public String getRegularExpression() {
     return regularExpression;
@@ -61,20 +56,6 @@ public class SignatureTemplateFieldInfo {
   }
   public void setMandatory(Boolean mandatory) {
     this.mandatory = mandatory;
-  }
-
-  public Integer getGraphSizeH() {
-    return graphSizeH;
-  }
-  public void setGraphSizeH(Integer graphSizeH) {
-    this.graphSizeH = graphSizeH;
-  }
-
-  public Double getTextRows() {
-    return textRows;
-  }
-  public void setTextRows(Double textRows) {
-    this.textRows = textRows;
   }
 
   public String getId() {
@@ -98,20 +79,6 @@ public class SignatureTemplateFieldInfo {
     this.acceptableValues = acceptableValues;
   }
 
-  public Double getInput() {
-    return input;
-  }
-  public void setInput(Double input) {
-    this.input = input;
-  }
-
-  public Double getTextColumns() {
-    return textColumns;
-  }
-  public void setTextColumns(Double textColumns) {
-    this.textColumns = textColumns;
-  }
-
   public String getRecipientId() {
     return recipientId;
   }
@@ -126,18 +93,18 @@ public class SignatureTemplateFieldInfo {
     this.order = order;
   }
 
-  public List<SignatureTemplateFieldLocationInfo> getLocations() {
-    return locations;
-  }
-  public void setLocations(List<SignatureTemplateFieldLocationInfo> locations) {
-    this.locations = locations;
-  }
-
   public Double getSignatureFieldId() {
     return signatureFieldId;
   }
   public void setSignatureFieldId(Double signatureFieldId) {
     this.signatureFieldId = signatureFieldId;
+  }
+
+  public List<SignatureTemplateFieldLocationInfo> getLocations() {
+    return locations;
+  }
+  public void setLocations(List<SignatureTemplateFieldLocationInfo> locations) {
+    this.locations = locations;
   }
 
   public String getName() {
@@ -154,13 +121,6 @@ public class SignatureTemplateFieldInfo {
     this.defaultValue = defaultValue;
   }
 
-  public Integer getGraphSizeW() {
-    return graphSizeW;
-  }
-  public void setGraphSizeW(Integer graphSizeW) {
-    this.graphSizeW = graphSizeW;
-  }
-
   public String getTooltip() {
     return tooltip;
   }
@@ -175,20 +135,15 @@ public class SignatureTemplateFieldInfo {
     sb.append("  regularExpression: ").append(regularExpression).append("\n");
     sb.append("  fieldType: ").append(fieldType).append("\n");
     sb.append("  mandatory: ").append(mandatory).append("\n");
-    sb.append("  graphSizeH: ").append(graphSizeH).append("\n");
-    sb.append("  textRows: ").append(textRows).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  templateId: ").append(templateId).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
-    sb.append("  input: ").append(input).append("\n");
-    sb.append("  textColumns: ").append(textColumns).append("\n");
     sb.append("  recipientId: ").append(recipientId).append("\n");
     sb.append("  order: ").append(order).append("\n");
-    sb.append("  locations: ").append(locations).append("\n");
     sb.append("  signatureFieldId: ").append(signatureFieldId).append("\n");
+    sb.append("  locations: ").append(locations).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
-    sb.append("  graphSizeW: ").append(graphSizeW).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("}\n");
     return sb.toString();

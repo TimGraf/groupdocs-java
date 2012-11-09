@@ -24,6 +24,7 @@ package com.groupdocs.sdk.model;
 public class ReviewerInfo {
   private String guid = null;
   private Double id = null;
+  private String customEmailMessage = null;
   private Integer color = null;
   private String primary_email = null;
   private Integer access_rights = null;
@@ -40,6 +41,13 @@ public class ReviewerInfo {
   }
   public void setId(Double id) {
     this.id = id;
+  }
+
+  public String getCustomEmailMessage() {
+    return customEmailMessage;
+  }
+  public void setCustomEmailMessage(String customEmailMessage) {
+    this.customEmailMessage = customEmailMessage;
   }
 
   public Integer getColor() {
@@ -76,6 +84,7 @@ public class ReviewerInfo {
     sb.append("class ReviewerInfo {\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  customEmailMessage: ").append(customEmailMessage).append("\n");
     sb.append("  color: ").append(color).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");
     sb.append("  access_rights: ").append(access_rights).append("\n");

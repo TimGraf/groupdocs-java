@@ -15,7 +15,7 @@
  */
 package com.groupdocs.sdk.model;
 
-import com.groupdocs.sdk.model.AddCollaboratorResult;
+import com.groupdocs.sdk.model.SetCollaboratorsResult;
 /**
  * 
  * <p>
@@ -23,13 +23,13 @@ import com.groupdocs.sdk.model.AddCollaboratorResult;
  *
  */
 public class AddCollaboratorResponse {
-  private AddCollaboratorResult result = null;
+  private SetCollaboratorsResult result = null;
   private String status = null;
   private String error_message = null;
-  public AddCollaboratorResult getResult() {
+  public SetCollaboratorsResult getResult() {
     return result;
   }
-  public void setResult(AddCollaboratorResult result) {
+  public void setResult(SetCollaboratorsResult result) {
     this.result = result;
   }
 

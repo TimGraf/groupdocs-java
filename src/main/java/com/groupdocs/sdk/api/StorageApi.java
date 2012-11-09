@@ -17,7 +17,7 @@ package com.groupdocs.sdk.api;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
-import java.io.InputStream;
+import com.groupdocs.sdk.common.FileStream;
 import com.groupdocs.sdk.model.CreateFolderResponse;
 import com.groupdocs.sdk.model.FileMoveResponse;
 import com.groupdocs.sdk.model.ListEntitiesResponse;
@@ -47,7 +47,7 @@ public class StorageApi {
 
   public StorageInfoResponse GetStorageInfo (String userId) throws ApiException {
   	String resourcePath = "/storage/{userId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -59,14 +59,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (StorageInfoResponse) ApiInvoker.deserialize(response, "", StorageInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -76,8 +76,8 @@ public class StorageApi {
     }
   }
   public ListEntitiesResponse ListEntities (String userId, String path, Integer pageIndex, Integer pageSize, String orderBy, Boolean orderAsc, String filter, String fileTypes, Boolean extended) throws ApiException {
-  	String resourcePath = "/storage/{userId}/folders/{*path}?page={pageIndex}&amp;count={pageSize}&amp;order_by={orderBy}&amp;order_asc={orderAsc}&amp;filter={filter}&amp;file_types={fileTypes}&amp;extended={extended}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/storage/{userId}/folders/{*path}?page={pageIndex}&count={pageSize}&order_by={orderBy}&order_asc={orderAsc}&filter={filter}&file_types={fileTypes}&extended={extended}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "pageIndex" + "}", String.valueOf(pageIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize)).replace("{" + "orderBy" + "}", String.valueOf(orderBy)).replace("{" + "orderAsc" + "}", String.valueOf(orderAsc)).replace("{" + "filter" + "}", String.valueOf(filter)).replace("{" + "fileTypes" + "}", String.valueOf(fileTypes)).replace("{" + "extended" + "}", String.valueOf(extended));
 
     // query params
@@ -89,14 +89,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (ListEntitiesResponse) ApiInvoker.deserialize(response, "", ListEntitiesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -105,9 +105,9 @@ public class StorageApi {
       }
     }
   }
-  public String GetFile (String userId, String fileId) throws ApiException {
+  public FileStream GetFile (String userId, String fileId) throws ApiException {
   	String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -119,14 +119,8 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
-      if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -135,9 +129,9 @@ public class StorageApi {
       }
     }
   }
-  public String GetSharedFile (String userEmail, String filePath) throws ApiException {
+  public FileStream GetSharedFile (String userEmail, String filePath) throws ApiException {
   	String resourcePath = "/storage/shared/{userEmail}/{*filePath}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userEmail" + "}", String.valueOf(userEmail)).replace("{" + "filePath" + "}", String.valueOf(filePath));
 
     // query params
@@ -149,14 +143,8 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
-      if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -165,9 +153,9 @@ public class StorageApi {
       }
     }
   }
-  public UploadResponse Upload (String userId, String path, String description, InputStream body) throws ApiException {
+  public UploadResponse Upload (String userId, String path, String description, FileStream body) throws ApiException {
   	String resourcePath = "/storage/{userId}/folders/{*path}?description={description}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "description" + "}", String.valueOf(description));
 
     // query params
@@ -179,14 +167,44 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UploadResponse) ApiInvoker.deserialize(response, "", UploadResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public UploadResponse Decompress (String userId, String path, String description, String archiveType, FileStream body) throws ApiException {
+  	String resourcePath = "/storage/{userId}/decompress/{*path}?description={description}&archiveType={archiveType}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "description" + "}", String.valueOf(description)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    // verify required params are set
+    if(userId == null || path == null || description == null || archiveType == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (UploadResponse) ApiInvoker.deserialize(response, "", UploadResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -197,7 +215,7 @@ public class StorageApi {
   }
   public UploadResponse UploadWeb (String userId, String url) throws ApiException {
   	String resourcePath = "/storage/{userId}/urls?url={url}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "url" + "}", String.valueOf(url));
 
     // query params
@@ -209,14 +227,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UploadResponse) ApiInvoker.deserialize(response, "", UploadResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -227,7 +245,7 @@ public class StorageApi {
   }
   public UploadResponse UploadGoogle (String userId, String path, String fileId) throws ApiException {
   	String resourcePath = "/storage/{userId}/google/files/{*path}?file_id={fileId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -239,14 +257,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UploadResponse) ApiInvoker.deserialize(response, "", UploadResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -257,7 +275,7 @@ public class StorageApi {
   }
   public DeleteResponse Delete (String userId, String fileId) throws ApiException {
   	String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -269,14 +287,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteResponse) ApiInvoker.deserialize(response, "", DeleteResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -287,7 +305,7 @@ public class StorageApi {
   }
   public DeleteResponse DeleteFromFolder (String userId, String path) throws ApiException {
   	String resourcePath = "/storage/{userId}/folders/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -299,14 +317,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteResponse) ApiInvoker.deserialize(response, "", DeleteResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -315,9 +333,9 @@ public class StorageApi {
       }
     }
   }
-  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
+  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
   	String resourcePath = "/storage/{userId}/files/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "mode" + "}", String.valueOf(mode));
 
     // query params
@@ -328,17 +346,17 @@ public class StorageApi {
     if(userId == null || path == null || mode == null ) {
        throw new ApiException(400, "missing required params");
     }
-    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
+    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (FileMoveResponse) ApiInvoker.deserialize(response, "", FileMoveResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -347,9 +365,9 @@ public class StorageApi {
       }
     }
   }
-  public FolderMoveResponse MoveFolder (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
+  public FolderMoveResponse MoveFolder (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
   	String resourcePath = "/storage/{userId}/folders/{*path}?override_mode={mode}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "mode" + "}", String.valueOf(mode));
 
     // query params
@@ -360,17 +378,17 @@ public class StorageApi {
     if(userId == null || path == null || mode == null ) {
        throw new ApiException(400, "missing required params");
     }
-    headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     headerParams.put("Groupdocs-Move", Groupdocs_Move);
+    headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (FolderMoveResponse) ApiInvoker.deserialize(response, "", FolderMoveResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -381,7 +399,7 @@ public class StorageApi {
   }
   public CreateFolderResponse Create (String userId, String path) throws ApiException {
   	String resourcePath = "/storage/{userId}/paths/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -393,14 +411,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (CreateFolderResponse) ApiInvoker.deserialize(response, "", CreateFolderResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -411,7 +429,7 @@ public class StorageApi {
   }
   public CompressResponse Compress (String userId, String fileId, String archiveType) throws ApiException {
   	String resourcePath = "/storage/{userId}/files/{fileId}/archive/{archiveType}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
 
     // query params
@@ -423,14 +441,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (CompressResponse) ApiInvoker.deserialize(response, "", CompressResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -441,7 +459,7 @@ public class StorageApi {
   }
   public CreatePackageResponse CreatePackage (String userId, String packageName, Boolean storeRelativePath, List<String> body) throws ApiException {
   	String resourcePath = "/storage/{userId}/packages/{packageName}?storeRelativePath={storeRelativePath}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "packageName" + "}", String.valueOf(packageName)).replace("{" + "storeRelativePath" + "}", String.valueOf(storeRelativePath));
 
     // query params
@@ -453,14 +471,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
         return (CreatePackageResponse) ApiInvoker.deserialize(response, "", CreatePackageResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -471,7 +489,7 @@ public class StorageApi {
   }
   public FolderMoveResponse MoveToTrash (String userId, String path) throws ApiException {
   	String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -483,14 +501,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (FolderMoveResponse) ApiInvoker.deserialize(response, "", FolderMoveResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -501,7 +519,7 @@ public class StorageApi {
   }
   public DeleteResponse RestoreFromTrash (String userId, String path) throws ApiException {
   	String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -513,14 +531,14 @@ public class StorageApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteResponse) ApiInvoker.deserialize(response, "", DeleteResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }

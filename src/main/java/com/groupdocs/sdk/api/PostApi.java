@@ -39,8 +39,8 @@ public class PostApi {
   }
 
   public RenameResponse RenameByPost (String userId, String fileId, String newName) throws ApiException {
-  	String resourcePath = "/post/file.rename?user_id={userId}&amp;file_id={fileId}&amp;new_name={newName}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/post/file.rename?user_id={userId}&file_id={fileId}&new_name={newName}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "newName" + "}", String.valueOf(newName));
 
     // query params
@@ -52,14 +52,14 @@ public class PostApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (RenameResponse) ApiInvoker.deserialize(response, "", RenameResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -69,8 +69,8 @@ public class PostApi {
     }
   }
   public DeleteResponse DeleteByPost (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/post/file.delete?user_id={userId}&amp;file_id={fileId}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/post/file.delete?user_id={userId}&file_id={fileId}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
@@ -82,14 +82,14 @@ public class PostApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteResponse) ApiInvoker.deserialize(response, "", DeleteResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -99,8 +99,8 @@ public class PostApi {
     }
   }
   public DeleteResponse DeleteFromFolderByPost (String userId, String path) throws ApiException {
-  	String resourcePath = "/post/file.delete.in?user_id={userId}&amp;path={path}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/post/file.delete.in?user_id={userId}&path={path}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
@@ -112,14 +112,14 @@ public class PostApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteResponse) ApiInvoker.deserialize(response, "", DeleteResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -129,8 +129,8 @@ public class PostApi {
     }
   }
   public CompressResponse CompressByPost (String userId, String fileId, String archiveType) throws ApiException {
-  	String resourcePath = "/post/file.compress?user_id={userId}&amp;file_id={fileId}&amp;archive_type={archiveType}".replace("*", "");
-    // create path and map variables
+  	String resourcePath = "/post/file.compress?user_id={userId}&file_id={fileId}&archive_type={archiveType}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
 
     // query params
@@ -142,14 +142,14 @@ public class PostApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (CompressResponse) ApiInvoker.deserialize(response, "", CompressResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }

@@ -22,28 +22,28 @@ package com.groupdocs.sdk.model;
  *
  */
 public class Range {
-  private Integer Length = null;
-  private Integer Position = null;
-  public Integer getLength() {
-    return Length;
+  private Integer position = null;
+  private Integer length = null;
+  public Integer getPosition() {
+    return position;
   }
-  public void setLength(Integer Length) {
-    this.Length = Length;
+  public void setPosition(Integer position) {
+    this.position = position;
   }
 
-  public Integer getPosition() {
-    return Position;
+  public Integer getLength() {
+    return length;
   }
-  public void setPosition(Integer Position) {
-    this.Position = Position;
+  public void setLength(Integer length) {
+    this.length = length;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Range {\n");
-    sb.append("  Length: ").append(Length).append("\n");
-    sb.append("  Position: ").append(Position).append("\n");
+    sb.append("  position: ").append(position).append("\n");
+    sb.append("  length: ").append(length).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

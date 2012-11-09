@@ -16,7 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import com.groupdocs.sdk.model.UserIdentity;
-import com.groupdocs.sdk.model.DocumentIdentity;
+import com.groupdocs.sdk.model.DocumentDownloadInfo;
 /**
  * 
  * <p>
@@ -28,7 +28,7 @@ public class QuestionnaireExecutionInfo {
   private Double datasource_id = null;
   private String guid = null;
   private UserIdentity executive = null;
-  private DocumentIdentity document = null;
+  private DocumentDownloadInfo document = null;
   private Double collector_id = null;
   private String collector_guid = null;
   private String status = null;
@@ -64,10 +64,10 @@ public class QuestionnaireExecutionInfo {
     this.executive = executive;
   }
 
-  public DocumentIdentity getDocument() {
+  public DocumentDownloadInfo getDocument() {
     return document;
   }
-  public void setDocument(DocumentIdentity document) {
+  public void setDocument(DocumentDownloadInfo document) {
     this.document = document;
   }
 

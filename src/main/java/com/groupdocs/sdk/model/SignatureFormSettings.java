@@ -23,7 +23,6 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureFormSettings {
   private Boolean canParticipantDownloadForm = null;
-  private String templateGuid = null;
   private String name = null;
   private String fieldsInFinalFileName = null;
   public Boolean getCanParticipantDownloadForm() {
@@ -31,13 +30,6 @@ public class SignatureFormSettings {
   }
   public void setCanParticipantDownloadForm(Boolean canParticipantDownloadForm) {
     this.canParticipantDownloadForm = canParticipantDownloadForm;
-  }
-
-  public String getTemplateGuid() {
-    return templateGuid;
-  }
-  public void setTemplateGuid(String templateGuid) {
-    this.templateGuid = templateGuid;
   }
 
   public String getName() {
@@ -59,7 +51,6 @@ public class SignatureFormSettings {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormSettings {\n");
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
-    sb.append("  templateGuid: ").append(templateGuid).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  fieldsInFinalFileName: ").append(fieldsInFinalFileName).append("\n");
     sb.append("}\n");

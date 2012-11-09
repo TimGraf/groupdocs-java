@@ -15,7 +15,6 @@
  */
 package com.groupdocs.sdk.model;
 
-import java.util.*;
 /**
  * 
  * <p>
@@ -23,14 +22,14 @@ import java.util.*;
  *
  */
 public class DatasourceField {
-  private List<String> values = new ArrayList<String>();
+  private String values = null;
   private String name = null;
   private String contentType = null;
   private String type = null;
-  public List<String> getValues() {
+  public String getValues() {
     return values;
   }
-  public void setValues(List<String> values) {
+  public void setValues(String values) {
     this.values = values;
   }
 

@@ -39,8 +39,8 @@ public abstract class AbstractIntegrationTest {
 		} else {
 			API_SERVER = apiServer;
 		}
-		String clientKey = System.getProperty("clientKey", "2721ad21bcf0d71e");
-		String privateKey = System.getProperty("privateKey", "8d8a7d642a807a31c2741c101a60cef2");
+		String clientKey = System.getProperty("clientKey", "<CLIENT_ID>");
+		String privateKey = System.getProperty("privateKey", "<PRIVATE_KEY>");
 		signer = new GroupDocsRequestSigner(privateKey);
 		ApiInvoker.getInstance().setRequestSigner(signer);
 		userId = clientKey;

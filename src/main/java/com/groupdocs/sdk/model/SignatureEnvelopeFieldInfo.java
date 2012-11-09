@@ -28,19 +28,17 @@ public class SignatureEnvelopeFieldInfo {
   private Integer fieldType = null;
   private Boolean mandatory = null;
   private List<Integer> data = new ArrayList<Integer>();
-  private Integer graphSizeH = null;
   private String id = null;
   private String acceptableValues = null;
   private String recipientId = null;
   private Double order = null;
-  private List<SignatureEnvelopeFieldLocationInfo> locations = new ArrayList<SignatureEnvelopeFieldLocationInfo>();
   private Double signatureFieldId = null;
+  private List<SignatureEnvelopeFieldLocationInfo> locations = new ArrayList<SignatureEnvelopeFieldLocationInfo>();
   private String envelopeId = null;
   private String name = null;
   private String fillTimeStamp = null;
   private String getDataFrom = null;
   private String defaultValue = null;
-  private Integer graphSizeW = null;
   private String tooltip = null;
   public String getRegularExpression() {
     return regularExpression;
@@ -68,13 +66,6 @@ public class SignatureEnvelopeFieldInfo {
   }
   public void setData(List<Integer> data) {
     this.data = data;
-  }
-
-  public Integer getGraphSizeH() {
-    return graphSizeH;
-  }
-  public void setGraphSizeH(Integer graphSizeH) {
-    this.graphSizeH = graphSizeH;
   }
 
   public String getId() {
@@ -105,18 +96,18 @@ public class SignatureEnvelopeFieldInfo {
     this.order = order;
   }
 
-  public List<SignatureEnvelopeFieldLocationInfo> getLocations() {
-    return locations;
-  }
-  public void setLocations(List<SignatureEnvelopeFieldLocationInfo> locations) {
-    this.locations = locations;
-  }
-
   public Double getSignatureFieldId() {
     return signatureFieldId;
   }
   public void setSignatureFieldId(Double signatureFieldId) {
     this.signatureFieldId = signatureFieldId;
+  }
+
+  public List<SignatureEnvelopeFieldLocationInfo> getLocations() {
+    return locations;
+  }
+  public void setLocations(List<SignatureEnvelopeFieldLocationInfo> locations) {
+    this.locations = locations;
   }
 
   public String getEnvelopeId() {
@@ -154,13 +145,6 @@ public class SignatureEnvelopeFieldInfo {
     this.defaultValue = defaultValue;
   }
 
-  public Integer getGraphSizeW() {
-    return graphSizeW;
-  }
-  public void setGraphSizeW(Integer graphSizeW) {
-    this.graphSizeW = graphSizeW;
-  }
-
   public String getTooltip() {
     return tooltip;
   }
@@ -176,19 +160,17 @@ public class SignatureEnvelopeFieldInfo {
     sb.append("  fieldType: ").append(fieldType).append("\n");
     sb.append("  mandatory: ").append(mandatory).append("\n");
     sb.append("  data: ").append(data).append("\n");
-    sb.append("  graphSizeH: ").append(graphSizeH).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  recipientId: ").append(recipientId).append("\n");
     sb.append("  order: ").append(order).append("\n");
-    sb.append("  locations: ").append(locations).append("\n");
     sb.append("  signatureFieldId: ").append(signatureFieldId).append("\n");
+    sb.append("  locations: ").append(locations).append("\n");
     sb.append("  envelopeId: ").append(envelopeId).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  fillTimeStamp: ").append(fillTimeStamp).append("\n");
     sb.append("  getDataFrom: ").append(getDataFrom).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
-    sb.append("  graphSizeW: ").append(graphSizeW).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("}\n");
     return sb.toString();

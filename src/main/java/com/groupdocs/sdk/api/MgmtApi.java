@@ -57,7 +57,7 @@ public class MgmtApi {
 
   public UserInfoResponse GetUserProfile (String userId) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/profile".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -69,14 +69,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -87,7 +87,7 @@ public class MgmtApi {
   }
   public UpdateUserResponse UpdateUserProfile (String userId, UserInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/profile".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -99,14 +99,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateUserResponse) ApiInvoker.deserialize(response, "", UpdateUserResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -117,7 +117,7 @@ public class MgmtApi {
   }
   public ChangePasswordResponse ChangeUserPassword (String userId, UserPasswordInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/profile/password".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -129,14 +129,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (ChangePasswordResponse) ApiInvoker.deserialize(response, "", ChangePasswordResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -147,7 +147,7 @@ public class MgmtApi {
   }
   public UserInfoResponse GetUserProfileByResetToken (String callerId, String token) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/reset-tokens?token={token}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "token" + "}", String.valueOf(token));
 
     // query params
@@ -159,14 +159,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -177,7 +177,7 @@ public class MgmtApi {
   }
   public UserInfoResponse GetUserProfileByVerifToken (String callerId, String token) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/verif-tokens?token={token}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "token" + "}", String.valueOf(token));
 
     // query params
@@ -189,14 +189,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -207,7 +207,7 @@ public class MgmtApi {
   }
   public UserInfoResponse GetUserProfileByClaimedToken (String callerId, String token) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/claimed-tokens?token={token}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "token" + "}", String.valueOf(token));
 
     // query params
@@ -219,14 +219,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -237,7 +237,7 @@ public class MgmtApi {
   }
   public UserInfoResponse GetAlienUserProfile (String callerId, String userId) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/profile".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -249,14 +249,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -267,7 +267,7 @@ public class MgmtApi {
   }
   public UpdateUserResponse UpdateAlienUserProfile (String callerId, String userId, UserInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/profile".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -279,14 +279,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateUserResponse) ApiInvoker.deserialize(response, "", UpdateUserResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -297,7 +297,7 @@ public class MgmtApi {
   }
   public CreateUserResponse CreateUser (String callerId, UserInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId));
 
     // query params
@@ -309,14 +309,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
         return (CreateUserResponse) ApiInvoker.deserialize(response, "", CreateUserResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -327,7 +327,7 @@ public class MgmtApi {
   }
   public UserInfoResponse CreateUserLogin (String callerId, String userId, String password) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/logins".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "password" + "}", String.valueOf(password));
 
     // query params
@@ -339,14 +339,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -357,7 +357,7 @@ public class MgmtApi {
   }
   public ChangePasswordResponse ChangeAlienUserPassword (String callerId, String userId, UserPasswordInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/password".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -369,14 +369,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (ChangePasswordResponse) ApiInvoker.deserialize(response, "", ChangePasswordResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -387,7 +387,7 @@ public class MgmtApi {
   }
   public ResetPasswordResponse ResetUserPassword (String callerId, String userId) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/password".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -399,14 +399,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (ResetPasswordResponse) ApiInvoker.deserialize(response, "", ResetPasswordResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -417,7 +417,7 @@ public class MgmtApi {
   }
   public GetStorageProvidersResponse GetStorageProviders (String userId) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/storages".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -429,14 +429,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetStorageProvidersResponse) ApiInvoker.deserialize(response, "", GetStorageProvidersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -447,7 +447,7 @@ public class MgmtApi {
   }
   public AddStorageProviderResponse AddStorageProvider (String userId, String provider, StorageProviderInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/storages/{provider}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "provider" + "}", String.valueOf(provider));
 
     // query params
@@ -459,14 +459,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
         return (AddStorageProviderResponse) ApiInvoker.deserialize(response, "", AddStorageProviderResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -477,7 +477,7 @@ public class MgmtApi {
   }
   public UpdateStorageProviderResponse UpdateStorageProvider (String userId, String provider, StorageProviderInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/storages/{provider}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "provider" + "}", String.valueOf(provider));
 
     // query params
@@ -489,14 +489,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateStorageProviderResponse) ApiInvoker.deserialize(response, "", UpdateStorageProviderResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -507,7 +507,7 @@ public class MgmtApi {
   }
   public GetRolesResponse GetRoles (String userId) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/roles".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -519,14 +519,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetRolesResponse) ApiInvoker.deserialize(response, "", GetRolesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -537,7 +537,7 @@ public class MgmtApi {
   }
   public GetRolesResponse GetUserRoles (String callerId, String userId) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/roles".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -549,14 +549,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetRolesResponse) ApiInvoker.deserialize(response, "", GetRolesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -567,7 +567,7 @@ public class MgmtApi {
   }
   public SetUserRolesResponse SetUserRoles (String callerId, String userId, List<RoleInfo> body) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/users/{userId}/roles".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -579,14 +579,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SetUserRolesResponse) ApiInvoker.deserialize(response, "", SetUserRolesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -597,7 +597,7 @@ public class MgmtApi {
   }
   public GetAccountResponse GetAccount (String userId) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/account".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -609,14 +609,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetAccountResponse) ApiInvoker.deserialize(response, "", GetAccountResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -627,7 +627,7 @@ public class MgmtApi {
   }
   public DeleteAccountResponse DeleteAccount (String userId) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/account".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
@@ -639,14 +639,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteAccountResponse) ApiInvoker.deserialize(response, "", DeleteAccountResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -657,7 +657,7 @@ public class MgmtApi {
   }
   public GetAccountUsersResponse GetAccountUsers (String adminId) throws ApiException {
   	String resourcePath = "/mgmt/{adminId}/account/users".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "adminId" + "}", String.valueOf(adminId));
 
     // query params
@@ -669,14 +669,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetAccountUsersResponse) ApiInvoker.deserialize(response, "", GetAccountUsersResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -687,7 +687,7 @@ public class MgmtApi {
   }
   public UpdateAccountUserResponse UpdateAccountUser (String adminId, String userName, UserInfo body) throws ApiException {
   	String resourcePath = "/mgmt/{adminId}/account/users/{userName}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "adminId" + "}", String.valueOf(adminId)).replace("{" + "userName" + "}", String.valueOf(userName));
 
     // query params
@@ -699,14 +699,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateAccountUserResponse) ApiInvoker.deserialize(response, "", UpdateAccountUserResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -717,7 +717,7 @@ public class MgmtApi {
   }
   public DeleteAccountUserResponse DeleteAccountUser (String adminId, String userName) throws ApiException {
   	String resourcePath = "/mgmt/{adminId}/account/users/{userName}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "adminId" + "}", String.valueOf(adminId)).replace("{" + "userName" + "}", String.valueOf(userName));
 
     // query params
@@ -729,14 +729,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteAccountUserResponse) ApiInvoker.deserialize(response, "", DeleteAccountUserResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -747,7 +747,7 @@ public class MgmtApi {
   }
   public GetUserEmbedKeyResponse GetUserEmbedKey (String userId, String area) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/embedkey/{area}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "area" + "}", String.valueOf(area));
 
     // query params
@@ -759,14 +759,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetUserEmbedKeyResponse) ApiInvoker.deserialize(response, "", GetUserEmbedKeyResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -777,7 +777,7 @@ public class MgmtApi {
   }
   public GetUserEmbedKeyResponse GetUserEmbedKeyFromGuid (String callerId, String guid) throws ApiException {
   	String resourcePath = "/mgmt/{callerId}/embedkey/guid/{guid}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "guid" + "}", String.valueOf(guid));
 
     // query params
@@ -789,14 +789,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetUserEmbedKeyResponse) ApiInvoker.deserialize(response, "", GetUserEmbedKeyResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -807,7 +807,7 @@ public class MgmtApi {
   }
   public GetUserEmbedKeyResponse GenerateKeyForUser (String userId, String area) throws ApiException {
   	String resourcePath = "/mgmt/{userId}/embedkey/new/{area}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "area" + "}", String.valueOf(area));
 
     // query params
@@ -819,14 +819,14 @@ public class MgmtApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetUserEmbedKeyResponse) ApiInvoker.deserialize(response, "", GetUserEmbedKeyResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }

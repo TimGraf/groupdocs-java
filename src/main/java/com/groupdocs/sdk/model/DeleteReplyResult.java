@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.AnnotationReplyInfo;
 /**
  * 
  * <p>
@@ -22,8 +24,16 @@ package com.groupdocs.sdk.model;
  *
  */
 public class DeleteReplyResult {
+  private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
   private String annotationGuid = null;
   private String replyGuid = null;
+  public List<AnnotationReplyInfo> getReplies() {
+    return replies;
+  }
+  public void setReplies(List<AnnotationReplyInfo> replies) {
+    this.replies = replies;
+  }
+
   public String getAnnotationGuid() {
     return annotationGuid;
   }
@@ -42,6 +52,7 @@ public class DeleteReplyResult {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteReplyResult {\n");
+    sb.append("  replies: ").append(replies).append("\n");
     sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
     sb.append("  replyGuid: ").append(replyGuid).append("\n");
     sb.append("}\n");

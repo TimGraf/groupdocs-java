@@ -32,13 +32,12 @@ public class SignatureEnvelopeRecipientInfo {
   private String signatureBrowser = null;
   private Integer order = null;
   private String email = null;
-  private Double userId = null;
   private String signatureLocation = null;
   private String signatureFingerprint = null;
   private String firstName = null;
-  private String signatureHost = null;
   private String userGuid = null;
   private Double roleId = null;
+  private String signatureHost = null;
   public String getLastName() {
     return lastName;
   }
@@ -102,13 +101,6 @@ public class SignatureEnvelopeRecipientInfo {
     this.email = email;
   }
 
-  public Double getUserId() {
-    return userId;
-  }
-  public void setUserId(Double userId) {
-    this.userId = userId;
-  }
-
   public String getSignatureLocation() {
     return signatureLocation;
   }
@@ -130,13 +122,6 @@ public class SignatureEnvelopeRecipientInfo {
     this.firstName = firstName;
   }
 
-  public String getSignatureHost() {
-    return signatureHost;
-  }
-  public void setSignatureHost(String signatureHost) {
-    this.signatureHost = signatureHost;
-  }
-
   public String getUserGuid() {
     return userGuid;
   }
@@ -149,6 +134,13 @@ public class SignatureEnvelopeRecipientInfo {
   }
   public void setRoleId(Double roleId) {
     this.roleId = roleId;
+  }
+
+  public String getSignatureHost() {
+    return signatureHost;
+  }
+  public void setSignatureHost(String signatureHost) {
+    this.signatureHost = signatureHost;
   }
 
   @Override
@@ -164,13 +156,12 @@ public class SignatureEnvelopeRecipientInfo {
     sb.append("  signatureBrowser: ").append(signatureBrowser).append("\n");
     sb.append("  order: ").append(order).append("\n");
     sb.append("  email: ").append(email).append("\n");
-    sb.append("  userId: ").append(userId).append("\n");
     sb.append("  signatureLocation: ").append(signatureLocation).append("\n");
     sb.append("  signatureFingerprint: ").append(signatureFingerprint).append("\n");
     sb.append("  firstName: ").append(firstName).append("\n");
-    sb.append("  signatureHost: ").append(signatureHost).append("\n");
     sb.append("  userGuid: ").append(userGuid).append("\n");
     sb.append("  roleId: ").append(roleId).append("\n");
+    sb.append("  signatureHost: ").append(signatureHost).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

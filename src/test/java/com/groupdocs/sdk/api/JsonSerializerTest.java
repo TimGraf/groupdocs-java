@@ -25,6 +25,7 @@ import java.util.List;
 
 import javax.ws.rs.core.MediaType;
 
+import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
@@ -43,6 +44,7 @@ import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.ReviewerInfo;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
 import com.groupdocs.sdk.model.SetDocumentRightsResponse;
+import com.groupdocs.sdk.model.SetReviewerRightsResponse;
 
 /**
  * Test cases to ensure correctness of Object to JSON serialization and Object from JSON deserialization
@@ -89,7 +91,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 				.withHeader("Content-Type", MediaType.TEXT_HTML).withMethod(Method.GET), 
                 giveResponse("GetFile returns raw file contents").withStatus(200));
 		
-		String response = storageApi.GetFile(userId, fileId);
+		String response = IOUtils.toString(storageApi.GetFile(userId, fileId).getInputStream());
 		assertThat(response, equalTo("GetFile returns raw file contents"));
 	}
 
@@ -178,7 +180,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 				.withMethod(Method.PUT).withBody(body, MediaType.APPLICATION_JSON), 
                 giveResponse(getSampleResponse("response_annotation_collaborators_rights.json")).withStatus(200));
 
-		SetDocumentRightsResponse response = antApi.SetReviewerRights(userId, fileId , collaborators);
+		SetReviewerRightsResponse response = antApi.SetReviewerRights(userId, fileId , collaborators);
 		assertThat(response.getStatus(), equalTo("Ok"));
 	}
 

@@ -17,6 +17,7 @@ package com.groupdocs.sdk.api;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
+import com.groupdocs.sdk.common.FileStream;
 import com.groupdocs.sdk.model.CompareResponse;
 import com.groupdocs.sdk.model.ChangesResponse;
 import com.groupdocs.sdk.model.ChangeInfo;
@@ -39,9 +40,9 @@ public class ComparisonApi {
     return basePath;
   }
 
-  public String DownloadResult (String userId, String resultFileId, String format) throws ApiException {
-  	String resourcePath = "/comparison/{userId}/comparison/download?resultFileId={resultFileId}&amp;format={format}".replace("*", "");
-    // create path and map variables
+  public FileStream DownloadResult (String userId, String resultFileId, String format) throws ApiException {
+  	String resourcePath = "/comparison/{userId}/comparison/download?resultFileId={resultFileId}&format={format}".replace("*", "");
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "resultFileId" + "}", String.valueOf(resultFileId)).replace("{" + "format" + "}", String.valueOf(format));
 
     // query params
@@ -53,14 +54,8 @@ public class ComparisonApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
-      if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -69,28 +64,28 @@ public class ComparisonApi {
       }
     }
   }
-  public CompareResponse Compare (String userId, String sourceFileId, String targetFileId) throws ApiException {
-  	String resourcePath = "/comparison/{userId}/comparison/compare?source={sourceFileId}&amp;target={targetFileId}".replace("*", "");
-    // create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "sourceFileId" + "}", String.valueOf(sourceFileId)).replace("{" + "targetFileId" + "}", String.valueOf(targetFileId));
+  public CompareResponse Compare (String userId, String sourceFileId, String targetFileId, String callbackUrl) throws ApiException {
+  	String resourcePath = "/comparison/{userId}/comparison/compare?source={sourceFileId}&target={targetFileId}&callback={callbackUrl}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "sourceFileId" + "}", String.valueOf(sourceFileId)).replace("{" + "targetFileId" + "}", String.valueOf(targetFileId)).replace("{" + "callbackUrl" + "}", String.valueOf(callbackUrl));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
     // verify required params are set
-    if(userId == null || sourceFileId == null || targetFileId == null ) {
+    if(userId == null || sourceFileId == null || targetFileId == null || callbackUrl == null ) {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (CompareResponse) ApiInvoker.deserialize(response, "", CompareResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -101,7 +96,7 @@ public class ComparisonApi {
   }
   public ChangesResponse GetChanges (String userId, String resultFileId) throws ApiException {
   	String resourcePath = "/comparison/{userId}/comparison/changes?resultFileId={resultFileId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
 
     // query params
@@ -113,14 +108,14 @@ public class ComparisonApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (ChangesResponse) ApiInvoker.deserialize(response, "", ChangesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -131,7 +126,7 @@ public class ComparisonApi {
   }
   public ChangesResponse UpdateChanges (String userId, String resultFileId, List<ChangeInfo> body) throws ApiException {
   	String resourcePath = "/comparison/{userId}/comparison/changes?resultFileId={resultFileId}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
 
     // query params
@@ -143,14 +138,14 @@ public class ComparisonApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (ChangesResponse) ApiInvoker.deserialize(response, "", ChangesResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
@@ -161,7 +156,7 @@ public class ComparisonApi {
   }
   public DocumentDetailsResponse GetDocumentDetails (String userId, String guid) throws ApiException {
   	String resourcePath = "/comparison/{userId}/comparison/document?guid={guid}".replace("*", "");
-    // create path and map variables
+  	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "guid" + "}", String.valueOf(guid));
 
     // query params
@@ -173,14 +168,14 @@ public class ComparisonApi {
        throw new ApiException(400, "missing required params");
     }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DocumentDetailsResponse) ApiInvoker.deserialize(response, "", DocumentDetailsResponse.class);
       }
       else {
         return null;
       }
-    } catch (ApiException ex) {
+      } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
       }
