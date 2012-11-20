@@ -39,18 +39,28 @@ public class PostApi {
   }
 
   public RenameResponse RenameByPost (String userId, String fileId, String newName) throws ApiException {
-  	String resourcePath = "/post/file.rename?user_id={userId}&file_id={fileId}&new_name={newName}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || newName == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/post/file.rename?user_id={userId}&file_id={fileId}&new_name={newName}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "newName" + "}", String.valueOf(newName));
+    resourcePath = resourcePath.replace("{format}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || newName == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(userId)))
+      queryParams.put("user_id", String.valueOf(userId));
+    if(!"null".equals(String.valueOf(fileId)))
+      queryParams.put("file_id", String.valueOf(fileId));
+    if(!"null".equals(String.valueOf(newName)))
+      queryParams.put("new_name", String.valueOf(newName));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -69,18 +79,26 @@ public class PostApi {
     }
   }
   public DeleteResponse DeleteByPost (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/post/file.delete?user_id={userId}&file_id={fileId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/post/file.delete?user_id={userId}&file_id={fileId}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+    resourcePath = resourcePath.replace("{format}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(userId)))
+      queryParams.put("user_id", String.valueOf(userId));
+    if(!"null".equals(String.valueOf(fileId)))
+      queryParams.put("file_id", String.valueOf(fileId));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -99,18 +117,26 @@ public class PostApi {
     }
   }
   public DeleteResponse DeleteFromFolderByPost (String userId, String path) throws ApiException {
-  	String resourcePath = "/post/file.delete.in?user_id={userId}&path={path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/post/file.delete.in?user_id={userId}&path={path}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
+    resourcePath = resourcePath.replace("{format}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(userId)))
+      queryParams.put("user_id", String.valueOf(userId));
+    if(!"null".equals(String.valueOf(path)))
+      queryParams.put("path", String.valueOf(path));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -129,18 +155,28 @@ public class PostApi {
     }
   }
   public CompressResponse CompressByPost (String userId, String fileId, String archiveType) throws ApiException {
-  	String resourcePath = "/post/file.compress?user_id={userId}&file_id={fileId}&archive_type={archiveType}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || archiveType == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/post/file.compress?user_id={userId}&file_id={fileId}&archive_type={archiveType}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
+    resourcePath = resourcePath.replace("{format}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || archiveType == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(userId)))
+      queryParams.put("user_id", String.valueOf(userId));
+    if(!"null".equals(String.valueOf(fileId)))
+      queryParams.put("file_id", String.valueOf(fileId));
+    if(!"null".equals(String.valueOf(archiveType)))
+      queryParams.put("archive_type", String.valueOf(archiveType));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){

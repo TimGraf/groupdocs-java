@@ -19,6 +19,7 @@ import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
+import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
@@ -28,6 +29,7 @@ import com.groupdocs.sdk.model.EditReplyResponse;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
 import com.groupdocs.sdk.model.SetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.SetAnnotationAccessResponse;
+import com.groupdocs.sdk.model.ReviewerContactInfo;
 import com.groupdocs.sdk.model.MoveAnnotationResponse;
 import com.groupdocs.sdk.model.SetReviewerRightsResponse;
 import com.groupdocs.sdk.model.ListAnnotationsResponse;
@@ -55,7 +57,11 @@ public class AntApi {
   }
 
   public CreateAnnotationResponse CreateAnnotation (String userId, String fileId, AnnotationInfo body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -63,10 +69,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -85,7 +87,11 @@ public class AntApi {
     }
   }
   public ListAnnotationsResponse ListAnnotations (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -93,10 +99,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -115,7 +117,11 @@ public class AntApi {
     }
   }
   public DeleteAnnotationResponse DeleteAnnotation (String userId, String annotationId) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
@@ -123,10 +129,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -145,7 +147,11 @@ public class AntApi {
     }
   }
   public AddReplyResponse CreateAnnotationReply (String userId, String annotationId, AnnotationReplyInfo body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}/replies".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/replies".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
@@ -153,10 +159,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -175,7 +177,11 @@ public class AntApi {
     }
   }
   public EditReplyResponse EditAnnotationReply (String userId, String replyGuid, String body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/replies/{replyGuid}".replace("*", "");
+    // verify required params are set
+    if(userId == null || replyGuid == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/replies/{replyGuid}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "replyGuid" + "}", String.valueOf(replyGuid));
 
@@ -183,10 +189,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || replyGuid == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -205,7 +207,11 @@ public class AntApi {
     }
   }
   public DeleteReplyResponse DeleteAnnotationReply (String userId, String replyGuid) throws ApiException {
-  	String resourcePath = "/ant/{userId}/replies/{replyGuid}".replace("*", "");
+    // verify required params are set
+    if(userId == null || replyGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/replies/{replyGuid}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "replyGuid" + "}", String.valueOf(replyGuid));
 
@@ -213,10 +219,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || replyGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -235,18 +237,24 @@ public class AntApi {
     }
   }
   public ListRepliesResponse ListAnnotationReplies (String userId, String annotationId, Long after) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}/replies?after={after}".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null || after == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/replies?after={after}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId)).replace("{" + "after" + "}", String.valueOf(after));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null || after == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(after)))
+      queryParams.put("after", String.valueOf(after));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -265,7 +273,11 @@ public class AntApi {
     }
   }
   public SetCollaboratorsResponse SetAnnotationCollaborators (String userId, String fileId, String version, List<String> body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/version/{version}/collaborators".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || version == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/version/{version}/collaborators".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "version" + "}", String.valueOf(version));
 
@@ -273,10 +285,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || version == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -295,7 +303,11 @@ public class AntApi {
     }
   }
   public GetCollaboratorsResponse GetAnnotationCollaborators (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/collaborators".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/collaborators".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -303,10 +315,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -325,7 +333,11 @@ public class AntApi {
     }
   }
   public AddCollaboratorResponse AddAnnotationCollaborator (String userId, String fileId, ReviewerInfo body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/collaborators".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/collaborators".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -333,10 +345,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -355,7 +363,11 @@ public class AntApi {
     }
   }
   public GetReviewerContactsResponse GetReviewerContacts (String userId) throws ApiException {
-  	String resourcePath = "/ant/{userId}/contacts".replace("*", "");
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/contacts".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
@@ -363,10 +375,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -384,8 +392,12 @@ public class AntApi {
       }
     }
   }
-  public GetReviewerContactsResponse SetReviewerContacts (String userId) throws ApiException {
-  	String resourcePath = "/ant/{userId}/reviewerContacts".replace("*", "");
+  public GetReviewerContactsResponse SetReviewerContacts (String userId, List<ReviewerContactInfo> body) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/reviewerContacts".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
@@ -393,12 +405,8 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (GetReviewerContactsResponse) ApiInvoker.deserialize(response, "", GetReviewerContactsResponse.class);
       }
@@ -415,7 +423,11 @@ public class AntApi {
     }
   }
   public MoveAnnotationResponse MoveAnnotation (String userId, String annotationId, Point body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}/position".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/position".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
@@ -423,10 +435,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -445,7 +453,11 @@ public class AntApi {
     }
   }
   public SetAnnotationAccessResponse SetAnnotationAccess (String userId, String annotationId, Integer body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}/annotationAccess".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/annotationAccess".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
@@ -453,10 +465,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -475,7 +483,11 @@ public class AntApi {
     }
   }
   public MoveAnnotationResponse MoveAnnotationMarker (String userId, String annotationId, Point body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/annotations/{annotationId}/markerPosition".replace("*", "");
+    // verify required params are set
+    if(userId == null || annotationId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/markerPosition".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 
@@ -483,10 +495,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || annotationId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -505,7 +513,11 @@ public class AntApi {
     }
   }
   public SetReviewerRightsResponse SetReviewerRights (String userId, String fileId, List<ReviewerInfo> body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/reviewerRights".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/reviewerRights".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -513,10 +525,6 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -534,8 +542,12 @@ public class AntApi {
       }
     }
   }
-  public SetSharedLinkAccessRightsResponse SetSharedLinkAccessRights (String userId, String fileId, Integer body) throws ApiException {
-  	String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("*", "");
+  public GetSharedLinkAccessRightsResponse GetSharedLinkAccessRights (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -543,10 +555,36 @@ public class AntApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetSharedLinkAccessRightsResponse) ApiInvoker.deserialize(response, "", GetSharedLinkAccessRightsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SetSharedLinkAccessRightsResponse SetSharedLinkAccessRights (String userId, String fileId, Integer body) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null || body == null ) {
        throw new ApiException(400, "missing required params");
     }
+    String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){

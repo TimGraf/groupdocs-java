@@ -46,7 +46,11 @@ public class StorageApi {
   }
 
   public StorageInfoResponse GetStorageInfo (String userId) throws ApiException {
-  	String resourcePath = "/storage/{userId}".replace("*", "");
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
@@ -54,10 +58,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -76,18 +76,36 @@ public class StorageApi {
     }
   }
   public ListEntitiesResponse ListEntities (String userId, String path, Integer pageIndex, Integer pageSize, String orderBy, Boolean orderAsc, String filter, String fileTypes, Boolean extended) throws ApiException {
-  	String resourcePath = "/storage/{userId}/folders/{*path}?page={pageIndex}&count={pageSize}&order_by={orderBy}&order_asc={orderAsc}&filter={filter}&file_types={fileTypes}&extended={extended}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/folders/{*path}?page={pageIndex}&count={pageSize}&order_by={orderBy}&order_asc={orderAsc}&filter={filter}&file_types={fileTypes}&extended={extended}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "pageIndex" + "}", String.valueOf(pageIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize)).replace("{" + "orderBy" + "}", String.valueOf(orderBy)).replace("{" + "orderAsc" + "}", String.valueOf(orderAsc)).replace("{" + "filter" + "}", String.valueOf(filter)).replace("{" + "fileTypes" + "}", String.valueOf(fileTypes)).replace("{" + "extended" + "}", String.valueOf(extended));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || pageIndex == null || pageSize == null || orderBy == null || orderAsc == null || filter == null || fileTypes == null || extended == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(pageIndex)))
+      queryParams.put("page", String.valueOf(pageIndex));
+    if(!"null".equals(String.valueOf(pageSize)))
+      queryParams.put("count", String.valueOf(pageSize));
+    if(!"null".equals(String.valueOf(orderBy)))
+      queryParams.put("order_by", String.valueOf(orderBy));
+    if(!"null".equals(String.valueOf(orderAsc)))
+      queryParams.put("order_asc", String.valueOf(orderAsc));
+    if(!"null".equals(String.valueOf(filter)))
+      queryParams.put("filter", String.valueOf(filter));
+    if(!"null".equals(String.valueOf(fileTypes)))
+      queryParams.put("file_types", String.valueOf(fileTypes));
+    if(!"null".equals(String.valueOf(extended)))
+      queryParams.put("extended", String.valueOf(extended));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -106,7 +124,11 @@ public class StorageApi {
     }
   }
   public FileStream GetFile (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -114,10 +136,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
@@ -130,7 +148,11 @@ public class StorageApi {
     }
   }
   public FileStream GetSharedFile (String userEmail, String filePath) throws ApiException {
-  	String resourcePath = "/storage/shared/{userEmail}/{*filePath}".replace("*", "");
+    // verify required params are set
+    if(userEmail == null || filePath == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/shared/{userEmail}/{*filePath}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userEmail" + "}", String.valueOf(userEmail)).replace("{" + "filePath" + "}", String.valueOf(filePath));
 
@@ -138,10 +160,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userEmail == null || filePath == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
@@ -154,18 +172,24 @@ public class StorageApi {
     }
   }
   public UploadResponse Upload (String userId, String path, String description, FileStream body) throws ApiException {
-  	String resourcePath = "/storage/{userId}/folders/{*path}?description={description}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/folders/{*path}?description={description}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "description" + "}", String.valueOf(description));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || description == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(description)))
+      queryParams.put("description", String.valueOf(description));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -184,18 +208,26 @@ public class StorageApi {
     }
   }
   public UploadResponse Decompress (String userId, String path, String description, String archiveType, FileStream body) throws ApiException {
-  	String resourcePath = "/storage/{userId}/decompress/{*path}?description={description}&archiveType={archiveType}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/decompress/{*path}?description={description}&archiveType={archiveType}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "description" + "}", String.valueOf(description)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || description == null || archiveType == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(description)))
+      queryParams.put("description", String.valueOf(description));
+    if(!"null".equals(String.valueOf(archiveType)))
+      queryParams.put("archiveType", String.valueOf(archiveType));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -214,18 +246,24 @@ public class StorageApi {
     }
   }
   public UploadResponse UploadWeb (String userId, String url) throws ApiException {
-  	String resourcePath = "/storage/{userId}/urls?url={url}".replace("*", "");
+    // verify required params are set
+    if(userId == null || url == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/urls?url={url}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "url" + "}", String.valueOf(url));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || url == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(url)))
+      queryParams.put("url", String.valueOf(url));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -244,18 +282,24 @@ public class StorageApi {
     }
   }
   public UploadResponse UploadGoogle (String userId, String path, String fileId) throws ApiException {
-  	String resourcePath = "/storage/{userId}/google/files/{*path}?file_id={fileId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/google/files/{*path}?file_id={fileId}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(fileId)))
+      queryParams.put("file_id", String.valueOf(fileId));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -274,7 +318,11 @@ public class StorageApi {
     }
   }
   public DeleteResponse Delete (String userId, String fileId) throws ApiException {
-  	String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/files/{fileId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
@@ -282,10 +330,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -304,7 +348,11 @@ public class StorageApi {
     }
   }
   public DeleteResponse DeleteFromFolder (String userId, String path) throws ApiException {
-  	String resourcePath = "/storage/{userId}/folders/{*path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/folders/{*path}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
@@ -312,10 +360,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -334,18 +378,24 @@ public class StorageApi {
     }
   }
   public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
-  	String resourcePath = "/storage/{userId}/files/{*path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/files/{*path}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "mode" + "}", String.valueOf(mode));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || mode == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(mode)))
+      queryParams.put("mode", String.valueOf(mode));
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     headerParams.put("Groupdocs-Move", Groupdocs_Move);
     try {
@@ -366,18 +416,24 @@ public class StorageApi {
     }
   }
   public FolderMoveResponse MoveFolder (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
-  	String resourcePath = "/storage/{userId}/folders/{*path}?override_mode={mode}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/folders/{*path}?override_mode={mode}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "mode" + "}", String.valueOf(mode));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null || mode == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(mode)))
+      queryParams.put("override_mode", String.valueOf(mode));
     headerParams.put("Groupdocs-Move", Groupdocs_Move);
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     try {
@@ -398,7 +454,11 @@ public class StorageApi {
     }
   }
   public CreateFolderResponse Create (String userId, String path) throws ApiException {
-  	String resourcePath = "/storage/{userId}/paths/{*path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/paths/{*path}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
@@ -406,10 +466,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -428,7 +484,11 @@ public class StorageApi {
     }
   }
   public CompressResponse Compress (String userId, String fileId, String archiveType) throws ApiException {
-  	String resourcePath = "/storage/{userId}/files/{fileId}/archive/{archiveType}".replace("*", "");
+    // verify required params are set
+    if(userId == null || fileId == null || archiveType == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/files/{fileId}/archive/{archiveType}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "archiveType" + "}", String.valueOf(archiveType));
 
@@ -436,10 +496,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || archiveType == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -458,18 +514,24 @@ public class StorageApi {
     }
   }
   public CreatePackageResponse CreatePackage (String userId, String packageName, Boolean storeRelativePath, List<String> body) throws ApiException {
-  	String resourcePath = "/storage/{userId}/packages/{packageName}?storeRelativePath={storeRelativePath}".replace("*", "");
+    // verify required params are set
+    if(userId == null || packageName == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/packages/{packageName}?storeRelativePath={storeRelativePath}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "packageName" + "}", String.valueOf(packageName)).replace("{" + "storeRelativePath" + "}", String.valueOf(storeRelativePath));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "packageName" + "}", String.valueOf(packageName));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || packageName == null || storeRelativePath == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(storeRelativePath)))
+      queryParams.put("storeRelativePath", String.valueOf(storeRelativePath));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -488,7 +550,11 @@ public class StorageApi {
     }
   }
   public FolderMoveResponse MoveToTrash (String userId, String path) throws ApiException {
-  	String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
@@ -496,10 +562,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -518,7 +580,11 @@ public class StorageApi {
     }
   }
   public DeleteResponse RestoreFromTrash (String userId, String path) throws ApiException {
-  	String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/storage/{userId}/trash/{*path}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 
@@ -526,10 +592,6 @@ public class StorageApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){

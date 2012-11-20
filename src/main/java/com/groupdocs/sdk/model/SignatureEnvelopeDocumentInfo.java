@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.SignatureDocumentFieldInfo;
 /**
  * 
  * <p>
@@ -23,6 +25,7 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureEnvelopeDocumentInfo {
   private Integer fieldsCount = null;
+  private List<SignatureDocumentFieldInfo> originalDocumentImportedFields = new ArrayList<SignatureDocumentFieldInfo>();
   private String finalDocumentMD5 = null;
   private Integer order = null;
   private String name = null;
@@ -35,6 +38,13 @@ public class SignatureEnvelopeDocumentInfo {
   }
   public void setFieldsCount(Integer fieldsCount) {
     this.fieldsCount = fieldsCount;
+  }
+
+  public List<SignatureDocumentFieldInfo> getOriginalDocumentImportedFields() {
+    return originalDocumentImportedFields;
+  }
+  public void setOriginalDocumentImportedFields(List<SignatureDocumentFieldInfo> originalDocumentImportedFields) {
+    this.originalDocumentImportedFields = originalDocumentImportedFields;
   }
 
   public String getFinalDocumentMD5() {
@@ -91,6 +101,7 @@ public class SignatureEnvelopeDocumentInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeDocumentInfo {\n");
     sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
+    sb.append("  originalDocumentImportedFields: ").append(originalDocumentImportedFields).append("\n");
     sb.append("  finalDocumentMD5: ").append(finalDocumentMD5).append("\n");
     sb.append("  order: ").append(order).append("\n");
     sb.append("  name: ").append(name).append("\n");

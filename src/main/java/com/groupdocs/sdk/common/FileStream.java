@@ -16,31 +16,48 @@
 package com.groupdocs.sdk.common;
 
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.ParseException;
 
 import javax.ws.rs.core.MultivaluedMap;
 
+import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.core.header.ContentDisposition;
 
 public class FileStream {
 
 	private InputStream inputStream;
+	private String contentType;
 	private String fileName;
-	private long size;
+	private long size = -1;
 	
 	
 	public FileStream(InputStream inputStream) {
-		this(inputStream, null);
+		this.inputStream = inputStream;
 	}
 
-	public FileStream(InputStream inputStream, MultivaluedMap<String, String> headers) {
-		this.inputStream = inputStream;
+	public FileStream(String requestUri, ClientResponse response) {
+		this.inputStream = response.getEntityInputStream();
+		this.contentType = response.getType().toString();
+		
+		MultivaluedMap<String, String> headers = response.getHeaders();
 		try {
 			// http://www.ietf.org/rfc/rfc2183.txt
 			ContentDisposition cd = new ContentDisposition(headers.getFirst("Content-Disposition"));
-			fileName = cd.getFileName();
-			size = cd.getSize();
+			fileName = cd.getFileName() == null ? getFileNameFromUrl(requestUri) : cd.getFileName();
+			size = cd.getSize() == 0 ? response.getLength() : cd.getSize();
 		} catch (ParseException e) {
+		}
+	}
+
+	private String getFileNameFromUrl(String requestUri) {
+		try {
+			URL url = new URL(requestUri);
+			String path = url.getPath();
+			return path.substring(path.lastIndexOf('/') + 1);
+		} catch (MalformedURLException e) {
+			return null;
 		}
 	}
 
@@ -66,6 +83,14 @@ public class FileStream {
 
 	public void setSize(long size) {
 		this.size = size;
+	}
+
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
 	}
 
 }

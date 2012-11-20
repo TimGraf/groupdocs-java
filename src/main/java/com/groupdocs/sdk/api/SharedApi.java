@@ -37,18 +37,26 @@ public class SharedApi {
   }
 
   public FileStream Download (String guid, String fileName, Boolean render) throws ApiException {
-  	String resourcePath = "/shared/files/{guid}?filename={fileName}&render={render}".replace("*", "");
+    // verify required params are set
+    if(guid == null || fileName == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/shared/files/{guid}?filename={fileName}&render={render}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "guid" + "}", String.valueOf(guid)).replace("{" + "fileName" + "}", String.valueOf(fileName)).replace("{" + "render" + "}", String.valueOf(render));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "guid" + "}", String.valueOf(guid));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(guid == null || fileName == null || render == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(fileName)))
+      queryParams.put("filename", String.valueOf(fileName));
+    if(!"null".equals(String.valueOf(render)))
+      queryParams.put("render", String.valueOf(render));
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
@@ -61,7 +69,11 @@ public class SharedApi {
     }
   }
   public FileStream GetXml (String guid) throws ApiException {
-  	String resourcePath = "/shared/files/{guid}/xml".replace("*", "");
+    // verify required params are set
+    if(guid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/shared/files/{guid}/xml".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "guid" + "}", String.valueOf(guid));
 
@@ -69,10 +81,6 @@ public class SharedApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(guid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
@@ -85,7 +93,11 @@ public class SharedApi {
     }
   }
   public FileStream GetPackage (String path) throws ApiException {
-  	String resourcePath = "/shared/packages/{*path}".replace("*", "");
+    // verify required params are set
+    if(path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/shared/packages/{*path}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "path" + "}", String.valueOf(path));
 
@@ -93,10 +105,6 @@ public class SharedApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(path == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {

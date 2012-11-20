@@ -48,7 +48,11 @@ public class AsyncApi {
   }
 
   public GetJobResponse GetJob (String userId, String jobId) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}?format=xml".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}?format=xml".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 
@@ -56,10 +60,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -78,7 +78,11 @@ public class AsyncApi {
     }
   }
   public GetJobResponse GetJobJson (String userId, String jobId) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}?format=json".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}?format=json".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 
@@ -86,10 +90,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -107,19 +107,29 @@ public class AsyncApi {
       }
     }
   }
-  public GetJobResourcesResponse GetJobResources (String userId, String statusIds) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/resources?statusIds={statusIds}".replace("*", "");
+  public GetJobResourcesResponse GetJobResources (String userId, String statusIds, String actions, String excludedActions) throws ApiException {
+    // verify required params are set
+    if(userId == null || statusIds == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/resources?statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "statusIds" + "}", String.valueOf(statusIds));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || statusIds == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(statusIds)))
+      queryParams.put("statusIds", String.valueOf(statusIds));
+    if(!"null".equals(String.valueOf(actions)))
+      queryParams.put("actions", String.valueOf(actions));
+    if(!"null".equals(String.valueOf(excludedActions)))
+      queryParams.put("excluded_actions", String.valueOf(excludedActions));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -138,18 +148,24 @@ public class AsyncApi {
     }
   }
   public GetJobDocumentsResponse GetJobDocuments (String userId, String jobId, String format) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}/documents?format={format}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}/documents?format={format}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId)).replace("{" + "format" + "}", String.valueOf(format));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null || format == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(format)))
+      queryParams.put("format", String.valueOf(format));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -168,7 +184,11 @@ public class AsyncApi {
     }
   }
   public CreateJobResponse CreateJob (String userId, JobInfo body) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs".replace("*", "");
+    // verify required params are set
+    if(userId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
@@ -176,10 +196,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -198,7 +214,11 @@ public class AsyncApi {
     }
   }
   public DeleteResult DeleteJob (String userId, String jobGuid) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobGuid}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobGuid}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobGuid" + "}", String.valueOf(jobGuid));
 
@@ -206,10 +226,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -228,18 +244,26 @@ public class AsyncApi {
     }
   }
   public AddJobDocumentResponse AddJobDocument (String userId, String jobId, String fileId, Boolean checkOwnership, String formats) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}/files/{fileId}?check_ownership={checkOwnership}&out_formats={formats}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null || fileId == null || checkOwnership == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}/files/{fileId}?check_ownership={checkOwnership}&out_formats={formats}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "checkOwnership" + "}", String.valueOf(checkOwnership)).replace("{" + "formats" + "}", String.valueOf(formats));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null || fileId == null || checkOwnership == null || formats == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(checkOwnership)))
+      queryParams.put("check_ownership", String.valueOf(checkOwnership));
+    if(!"null".equals(String.valueOf(formats)))
+      queryParams.put("out_formats", String.valueOf(formats));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -258,7 +282,11 @@ public class AsyncApi {
     }
   }
   public DeleteResponse DeleteJobDocument (String userId, String jobGuid, String documentId) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobGuid}/documents/{documentId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobGuid == null || documentId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobGuid}/documents/{documentId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobGuid" + "}", String.valueOf(jobGuid)).replace("{" + "documentId" + "}", String.valueOf(documentId));
 
@@ -266,10 +294,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobGuid == null || documentId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -288,18 +312,26 @@ public class AsyncApi {
     }
   }
   public AddJobDocumentResponse AddJobDocumentUrl (String userId, String jobId, String absoluteUrl, String formats) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}/urls?absolute_url={absoluteUrl}&out_formats={formats}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null || absoluteUrl == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}/urls?absolute_url={absoluteUrl}&out_formats={formats}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId)).replace("{" + "absoluteUrl" + "}", String.valueOf(absoluteUrl)).replace("{" + "formats" + "}", String.valueOf(formats));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null || absoluteUrl == null || formats == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(absoluteUrl)))
+      queryParams.put("absolute_url", String.valueOf(absoluteUrl));
+    if(!"null".equals(String.valueOf(formats)))
+      queryParams.put("out_formats", String.valueOf(formats));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -318,7 +350,11 @@ public class AsyncApi {
     }
   }
   public UpdateJobResponse UpdateJob (String userId, String jobId, JobInfo body) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/{jobId}".replace("*", "");
+    // verify required params are set
+    if(userId == null || jobId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/{jobId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 
@@ -326,10 +362,6 @@ public class AsyncApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || jobId == null || body == null ) {
-       throw new ApiException(400, "missing required params");
-    }
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -348,18 +380,34 @@ public class AsyncApi {
     }
   }
   public GetJobsResponse GetJobs (String userId, String pageIndex, String pageSize, String date, String statusIds, String actions, String excludedActions) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}".replace("*", "");
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "pageIndex" + "}", String.valueOf(pageIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize)).replace("{" + "date" + "}", String.valueOf(date)).replace("{" + "statusIds" + "}", String.valueOf(statusIds)).replace("{" + "actions" + "}", String.valueOf(actions)).replace("{" + "excludedActions" + "}", String.valueOf(excludedActions));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || pageIndex == null || pageSize == null || date == null || statusIds == null || actions == null || excludedActions == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(pageIndex)))
+      queryParams.put("page", String.valueOf(pageIndex));
+    if(!"null".equals(String.valueOf(pageSize)))
+      queryParams.put("count", String.valueOf(pageSize));
+    if(!"null".equals(String.valueOf(date)))
+      queryParams.put("date", String.valueOf(date));
+    if(!"null".equals(String.valueOf(statusIds)))
+      queryParams.put("statusIds", String.valueOf(statusIds));
+    if(!"null".equals(String.valueOf(actions)))
+      queryParams.put("actions", String.valueOf(actions));
+    if(!"null".equals(String.valueOf(excludedActions)))
+      queryParams.put("excluded_actions", String.valueOf(excludedActions));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -378,18 +426,34 @@ public class AsyncApi {
     }
   }
   public GetJobsDocumentsResponse GetJobsDocuments (String userId, String pageIndex, String pageSize, String actions, String excludedActions, String orderBy, Boolean orderAsc) throws ApiException {
-  	String resourcePath = "/async/{userId}/jobs/documents?page={pageIndex}&count={pageSize}&actions={actions}&excluded_actions={excludedActions}&order_by={orderBy}&order_asc={orderAsc}".replace("*", "");
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/jobs/documents?page={pageIndex}&count={pageSize}&actions={actions}&excluded_actions={excludedActions}&order_by={orderBy}&order_asc={orderAsc}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "pageIndex" + "}", String.valueOf(pageIndex)).replace("{" + "pageSize" + "}", String.valueOf(pageSize)).replace("{" + "actions" + "}", String.valueOf(actions)).replace("{" + "excludedActions" + "}", String.valueOf(excludedActions)).replace("{" + "orderBy" + "}", String.valueOf(orderBy)).replace("{" + "orderAsc" + "}", String.valueOf(orderAsc));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || pageIndex == null || pageSize == null || actions == null || excludedActions == null || orderBy == null || orderAsc == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(pageIndex)))
+      queryParams.put("page", String.valueOf(pageIndex));
+    if(!"null".equals(String.valueOf(pageSize)))
+      queryParams.put("count", String.valueOf(pageSize));
+    if(!"null".equals(String.valueOf(actions)))
+      queryParams.put("actions", String.valueOf(actions));
+    if(!"null".equals(String.valueOf(excludedActions)))
+      queryParams.put("excluded_actions", String.valueOf(excludedActions));
+    if(!"null".equals(String.valueOf(orderBy)))
+      queryParams.put("order_by", String.valueOf(orderBy));
+    if(!"null".equals(String.valueOf(orderAsc)))
+      queryParams.put("order_asc", String.valueOf(orderAsc));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -407,19 +471,35 @@ public class AsyncApi {
       }
     }
   }
-  public ConvertResponse Convert (String userId, String fileId, String targetType, String emailResults, String description, Boolean printScript, String callbackUrl) throws ApiException {
-  	String resourcePath = "/async/{userId}/files/{fileId}?new_type={targetType}&email_results={emailResults}&new_description={description}&print_script={printScript}&callback={callbackUrl}".replace("*", "");
+  public ConvertResponse Convert (String userId, String fileId, String targetType, String emailResults, String description, Boolean printScript, String callbackUrl, Boolean checkDocumentOwnership) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/files/{fileId}?new_type={targetType}&email_results={emailResults}&new_description={description}&print_script={printScript}&callback={callbackUrl}&checkDocumentOwnership={checkDocumentOwnership}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "targetType" + "}", String.valueOf(targetType)).replace("{" + "emailResults" + "}", String.valueOf(emailResults)).replace("{" + "description" + "}", String.valueOf(description)).replace("{" + "printScript" + "}", String.valueOf(printScript)).replace("{" + "callbackUrl" + "}", String.valueOf(callbackUrl));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
-    // verify required params are set
-    if(userId == null || fileId == null || targetType == null || emailResults == null || description == null || printScript == null || callbackUrl == null ) {
-       throw new ApiException(400, "missing required params");
-    }
+    if(!"null".equals(String.valueOf(targetType)))
+      queryParams.put("new_type", String.valueOf(targetType));
+    if(!"null".equals(String.valueOf(emailResults)))
+      queryParams.put("email_results", String.valueOf(emailResults));
+    if(!"null".equals(String.valueOf(description)))
+      queryParams.put("new_description", String.valueOf(description));
+    if(!"null".equals(String.valueOf(printScript)))
+      queryParams.put("print_script", String.valueOf(printScript));
+    if(!"null".equals(String.valueOf(callbackUrl)))
+      queryParams.put("callback", String.valueOf(callbackUrl));
+    if(!"null".equals(String.valueOf(checkDocumentOwnership)))
+      queryParams.put("checkDocumentOwnership", String.valueOf(checkDocumentOwnership));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){

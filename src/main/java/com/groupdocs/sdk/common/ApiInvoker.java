@@ -15,6 +15,9 @@
  */
 package com.groupdocs.sdk.common;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -24,11 +27,17 @@ import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 
+import org.apache.commons.io.IOUtils;
+import org.apache.sling.commons.mime.internal.MimeTypeServiceImpl;
+
 import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.filter.LoggingFilter;
+import com.sun.jersey.core.util.Base64;
+import com.sun.jersey.multipart.file.DefaultMediaTypePredictor;
 import com.wordnik.swagger.core.util.JsonUtil;
 
 public class ApiInvoker {
@@ -38,6 +47,15 @@ public class ApiInvoker {
   private static final String ENC = "UTF-8";
   private RequestSigner signer;
 
+  public static MimeTypeServiceImpl mimeTypeService = new MimeTypeServiceImpl();
+  
+  static {
+	try {
+		mimeTypeService.registerMimeType(ApiInvoker.class.getResourceAsStream(MimeTypeServiceImpl.CORE_MIME_TYPES));
+	} catch (IOException e) {
+		System.err.println("Failed to initialize MimeTypeServiceImpl");
+	}
+  }
 
   public static ApiInvoker getInstance() {
     return INSTANCE;
@@ -141,7 +159,8 @@ public class ApiInvoker {
     	}
     }
     
-    Builder builder = client.resource(encodeURI(signer.signUrl(host + path + querystring))).type(contentType);
+    String requestUri = encodeURI(signer.signUrl(host + path + querystring)); //TODO incorrect for redirects
+	Builder builder = client.resource(requestUri).type(contentType);
     for(String key : headerParams.keySet()) {
     	builder.header(key, headerParams.get(key));
     }
@@ -186,9 +205,9 @@ public class ApiInvoker {
         || response.getClientResponseStatus() == ClientResponse.Status.NOT_FOUND) {
     	T toReturn;
     	if(FileStream.class.equals(returnType)){
-    		toReturn = (T) new FileStream(response.getEntityInputStream(), response.getHeaders());
+    		toReturn = (T) new FileStream(requestUri, response);
     	} else {
-    		toReturn = (T) response.getEntity(returnType.getClass());
+    		toReturn = (T) response.getEntity(String.class);
     	}
     	return toReturn;
     }
@@ -197,6 +216,25 @@ public class ApiInvoker {
     	          response.getClientResponseStatus().getStatusCode(),
     	          response.getEntity(String.class));    	
     }
+  }
+  
+  /**
+   * Read file contents into String according to http://en.wikipedia.org/wiki/Data_URI_scheme#Format
+   * 
+   * @param file
+   * @return
+ * @throws IOException 
+ * @throws FileNotFoundException 
+   * @throws Exception
+   */
+  public static String readAsDataURL(File file) throws IOException  {
+//	String base64file = IOUtils.toString(new Base64InputStream(new FileInputStream(file), true));
+	String base64file = new String(Base64.encode(IOUtils.toString(new FileInputStream(file))));
+	String mimeType = mimeTypeService.getMimeType(file.getName());
+	if (mimeType == null) {
+		mimeType = new DefaultMediaTypePredictor().getMediaTypeFromFile(file).toString();
+	} 
+	return "data:" + mimeType + ";base64,"  + base64file;
   }
   
   private Client getClient(String host) {
