@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -27,16 +28,17 @@ import java.util.Map;
 
 import javax.ws.rs.core.MediaType;
 
+import org.apache.commons.codec.binary.Base64InputStream;
 import org.apache.commons.io.IOUtils;
 import org.apache.sling.commons.mime.internal.MimeTypeServiceImpl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.filter.LoggingFilter;
-import com.sun.jersey.core.util.Base64;
 import com.sun.jersey.multipart.file.DefaultMediaTypePredictor;
 import com.wordnik.swagger.core.util.JsonUtil;
 
@@ -124,7 +126,11 @@ public class ApiInvoker {
 
   public static String serialize(Object obj) throws ApiException {
     try {
-      if (obj != null) return JsonUtil.getJsonMapper().writeValueAsString(obj);
+      if (obj != null) {
+    	ObjectMapper jsonMapper = JsonUtil.getJsonMapper();
+    	jsonMapper.setSerializationInclusion(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL);
+		return jsonMapper.writeValueAsString(obj);
+      }
       else return "";
     }
     catch (Exception e) {
@@ -201,20 +207,31 @@ public class ApiInvoker {
     }
     if(response.getClientResponseStatus() == ClientResponse.Status.OK
     	|| response.getClientResponseStatus() == ClientResponse.Status.CREATED
-        || response.getClientResponseStatus() == ClientResponse.Status.ACCEPTED
-        || response.getClientResponseStatus() == ClientResponse.Status.NOT_FOUND) {
+        || response.getClientResponseStatus() == ClientResponse.Status.ACCEPTED) {
     	T toReturn;
     	if(FileStream.class.equals(returnType)){
-    		toReturn = (T) new FileStream(requestUri, response);
+    		if(response.getHeaders().containsKey("Transfer-Encoding") || response.getLength() > 0){
+    			toReturn = (T) new FileStream(requestUri, response);
+    		} else {
+    			toReturn = null;
+    		}
     	} else {
     		toReturn = (T) response.getEntity(String.class);
     	}
     	return toReturn;
     }
     else {
+    	String errMsg = response.getEntity(String.class);
+    	try {
+    		HashMap<String,Object> props = JsonUtil.getJsonMapper().readValue(errMsg, new TypeReference<HashMap<String,Object>>() {});
+    		if(props.containsKey("error_message")){
+    			errMsg = (String) props.get("error_message");
+    		}
+		} catch (IOException e) {
+		}
     	throw new ApiException(
     	          response.getClientResponseStatus().getStatusCode(),
-    	          response.getEntity(String.class));    	
+    	          errMsg);    	
     }
   }
   
@@ -228,13 +245,20 @@ public class ApiInvoker {
    * @throws Exception
    */
   public static String readAsDataURL(File file) throws IOException  {
-//	String base64file = IOUtils.toString(new Base64InputStream(new FileInputStream(file), true));
-	String base64file = new String(Base64.encode(IOUtils.toString(new FileInputStream(file))));
 	String mimeType = mimeTypeService.getMimeType(file.getName());
 	if (mimeType == null) {
 		mimeType = new DefaultMediaTypePredictor().getMediaTypeFromFile(file).toString();
 	} 
-	return "data:" + mimeType + ";base64,"  + base64file;
+	return readAsDataURL(file, mimeType);
+  }
+  
+  public static String readAsDataURL(File file, String contentType) throws IOException  {
+	return readAsDataURL(new FileInputStream(file), contentType);
+  }
+  
+  public static String readAsDataURL(InputStream is, String contentType) throws IOException  {
+	String base64file = IOUtils.toString(new Base64InputStream(is, true, 0, null));
+	return "data:" + contentType + ";base64,"  + base64file;
   }
   
   private Client getClient(String host) {

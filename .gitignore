@@ -2,4 +2,4 @@
 .classpath
 .settings/*
 /target/
-/ignored/
+/src/test/java/ignored/

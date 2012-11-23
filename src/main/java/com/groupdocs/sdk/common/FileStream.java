@@ -39,7 +39,9 @@ public class FileStream {
 
 	public FileStream(String requestUri, ClientResponse response) {
 		this.inputStream = response.getEntityInputStream();
-		this.contentType = response.getType().toString();
+		if(response.getType() != null){
+			this.contentType = response.getType().toString();
+		}
 		
 		MultivaluedMap<String, String> headers = response.getHeaders();
 		try {
