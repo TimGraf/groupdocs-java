@@ -25,9 +25,9 @@ import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 @Category(IntegrationTest.class)
@@ -340,9 +340,9 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 //  		body.setOwnerShouldSign(1);
   		String name = "Services Agreement";
   		body.setName(name);
-		Integer assemblyGuid = null;
-		String templateGuid = null;
-		SignatureFormResponse response = new SignatureApi().CreateSignatureForm(userId, name, body, templateGuid, assemblyGuid);
+		Integer assemblyId = null;
+		String templateId = null;
+		SignatureFormResponse response = new SignatureApi().CreateSignatureForm(userId, name, templateId, assemblyId, body);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -470,22 +470,32 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 	}
 	
 	@Test
-	public void testSignDocument() throws ApiException {
+	public void testSignDocument() throws Exception {
 	
-  		List<SignatureSignDocumentDocumentSettings> documents = new ArrayList<SignatureSignDocumentDocumentSettings>();
+		File file = new File("/home/zhaidarbek/workspace/groupdocs/java/groupdocs-java-samples/interactiveform_enabled.pdf");
+		File signature = new File(getClass().getClassLoader().getResource("signature.png").toURI());
+		String base64file = ApiInvoker.readAsDataURL(file);
+		String base64signature = ApiInvoker.readAsDataURL(signature);
+  		
   		SignatureSignDocumentDocumentSettings document = new SignatureSignDocumentDocumentSettings();
-  		document.setName("somename");
-  		document.setData("somedata");
-		documents.add(document);
+  		document.setName("test.doc");
+  		document.setData(base64file);
 		
-		List<SignatureSignDocumentSignerSettings> signers = new ArrayList<SignatureSignDocumentSignerSettings>();
 		SignatureSignDocumentSignerSettings signerr = new SignatureSignDocumentSignerSettings();
-		signerr.setPlaceSingatureOn("placeSingatureOn");
-		signerr.setName("name");
-		signers.add(signerr );
+		signerr.setPlaceSingatureOn("");
+		signerr.setName("My Name");
+		signerr.setData(base64signature);
+		signerr.setHeight(40d);
+		signerr.setWidth(100d);
+		signerr.setTop(0.03319);
+		signerr.setLeft(0.52171);
 		
 		SignatureSignDocumentSettings body = new SignatureSignDocumentSettings();
+		List<SignatureSignDocumentSignerSettings> signers = new ArrayList<SignatureSignDocumentSignerSettings>();
+		signers.add(signerr);
 		body.setSigners(signers);
+  		List<SignatureSignDocumentDocumentSettings> documents = new ArrayList<SignatureSignDocumentDocumentSettings>();
+		documents.add(document);
 		body.setDocuments(documents);
 		
 		SignatureSignDocumentResponse response = new SignatureApi().SignDocument(userId, body);
@@ -498,12 +508,12 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 	
 		String statusId = null;
 		Integer page = null;
-		String recipientEmail = null;
+		String recipient = null;
 		String date = null;
 		String name = null;
 		Integer records = null;
-		String documentId = null;
-		SignatureEnvelopesResponse response = new SignatureApi().GetSignatureEnvelopes(userId, statusId, page, recipientEmail, date, name, records, documentId);
+		String document = null;
+		SignatureEnvelopesResponse response = new SignatureApi().GetSignatureEnvelopes(userId, statusId, page, date, name, records, document, recipient);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -539,7 +549,7 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 		String name = "test envelope";
 		Integer envelopeGuid = null;
 		String templateGuid = null;
-		SignatureEnvelopeResponse response = new SignatureApi().CreateSignatureEnvelope(userId, name, body, templateGuid, envelopeGuid);
+		SignatureEnvelopeResponse response = new SignatureApi().CreateSignatureEnvelope(userId, name, body, envelopeGuid, templateGuid);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -635,12 +645,12 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 	public void testAddSignatureEnvelopeRecipient() throws ApiException {
 	
 		Integer order = null;
-		String lastname = "TestLastname";
-		String email = "somenone@existingemail.com";
+		String recipientLastName = "TestLastname";
+		String recipientEmail = "somenone@existingemail.com";
 		String envelopeId = "1a623fdf8bdfd1f527b3b9b5de947667";
-		String firstname = "TestFirstaname";
+		String recipientFirstName = "TestFirstaname";
 		String role = "693e6cee8a4a21285f86930491b455ec"; // Signer
-		SignatureEnvelopeRecipientResponse response = new SignatureApi().AddSignatureEnvelopeRecipient(userId, envelopeId, order, firstname, email, role, lastname);
+		SignatureEnvelopeRecipientResponse response = new SignatureApi().AddSignatureEnvelopeRecipient(userId, envelopeId, recipientEmail, recipientFirstName, recipientLastName, order, role);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -671,12 +681,12 @@ public class TestSignatureApi extends AbstractIntegrationTest {
   		String userId = "";
 		Integer order = 0;
 		String envelopeId = "";
-		String email = "";
-		String firstname = "";
-		String lastname = "";
+		String recipientEmail = "";
+		String recipientFirstName = "";
+		String recipientLastName = "";
 		String role = "";
 		String recipientId = "";
-		SignatureEnvelopeRecipientResponse response = new SignatureApi().ModifySignatureEnvelopeRecipient(userId, envelopeId, recipientId , order, email, firstname, role, lastname);
+		SignatureEnvelopeRecipientResponse response = new SignatureApi().ModifySignatureEnvelopeRecipient(userId, envelopeId, recipientId, recipientEmail, recipientFirstName, recipientLastName, order, role);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -948,8 +958,9 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 		String templateId = "";
 		String nickname = "";
 		String order = "";
-		String role = "";
-		SignatureTemplateResponse response = new SignatureApi().ModifySignatureTemplateRecipient(userId, templateId, nickname, order, role);
+		String roleId = "";
+		String recipientId = "";
+		SignatureTemplateResponse response = new SignatureApi().ModifySignatureTemplateRecipient(userId, templateId, recipientId , nickname, roleId, order);
 		assertThat(response, not(nullValue()));
 		
 	}
