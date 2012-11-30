@@ -25,6 +25,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.ws.rs.core.MediaType;
 
@@ -50,8 +51,26 @@ public class ApiInvoker {
   private RequestSigner signer;
 
   public static MimeTypeServiceImpl mimeTypeService = new MimeTypeServiceImpl();
-  
+  public static final String PACKAGE_NAME;
+  public static final String PACKAGE_VERSION;
+    
   static {
+	Properties prop = new Properties();
+    InputStream in = ApiInvoker.class.getResourceAsStream("/application.properties");
+	if(in != null){
+	    try {
+			prop.load(in);
+		} catch (IOException e) {
+		} finally {
+			try {
+				in.close();
+			} catch (IOException e) {
+			}
+		}
+	}
+	PACKAGE_NAME = prop.getProperty("application.name", "groupdocs-java");
+	PACKAGE_VERSION = prop.getProperty("application.version", "unknown");
+    
 	try {
 		mimeTypeService.registerMimeType(ApiInvoker.class.getResourceAsStream(MimeTypeServiceImpl.CORE_MIME_TYPES));
 	} catch (IOException e) {
@@ -167,6 +186,7 @@ public class ApiInvoker {
     
     String requestUri = encodeURI(signer.signUrl(host + path + querystring)); //TODO incorrect for redirects
 	Builder builder = client.resource(requestUri).type(contentType);
+	builder.header("Groupdocs-Referer", PACKAGE_NAME + "/" + PACKAGE_VERSION);	
     for(String key : headerParams.keySet()) {
     	builder.header(key, headerParams.get(key));
     }
