@@ -23,117 +23,26 @@ import java.util.Date;
  *
  */
 public class SignatureSignatureInfo {
-  private String position = null;
-  private String lastName = null;
-  private String companyName = null;
   private String id = null;
-  private Double signatureImageFileId = null;
-  private Double recipientId = null;
-  private Date createdTimeStamp = null;
-  private String initialsImageUrl = null;
-  private String name = null;
-  private Double initialsImageFileId = null;
-  private String fullName = null;
-  private String signatureImageUrl = null;
-  private String firstName = null;
-  private String textInitials = null;
   private String userGuid = null;
-  public String getPosition() {
-    return position;
-  }
-  public void setPosition(String position) {
-    this.position = position;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getCompanyName() {
-    return companyName;
-  }
-  public void setCompanyName(String companyName) {
-    this.companyName = companyName;
-  }
-
+  private Double recipientId = null;
+  private String name = null;
+  private String companyName = null;
+  private String position = null;
+  private String firstName = null;
+  private String lastName = null;
+  private String fullName = null;
+  private String textInitials = null;
+  private Double signatureImageFileId = null;
+  private Double initialsImageFileId = null;
+  private String signatureImageUrl = null;
+  private String initialsImageUrl = null;
+  private Date createdTimeStamp = null;
   public String getId() {
     return id;
   }
   public void setId(String id) {
     this.id = id;
-  }
-
-  public Double getSignatureImageFileId() {
-    return signatureImageFileId;
-  }
-  public void setSignatureImageFileId(Double signatureImageFileId) {
-    this.signatureImageFileId = signatureImageFileId;
-  }
-
-  public Double getRecipientId() {
-    return recipientId;
-  }
-  public void setRecipientId(Double recipientId) {
-    this.recipientId = recipientId;
-  }
-
-  public Date getCreatedTimeStamp() {
-    return createdTimeStamp;
-  }
-  public void setCreatedTimeStamp(Date createdTimeStamp) {
-    this.createdTimeStamp = createdTimeStamp;
-  }
-
-  public String getInitialsImageUrl() {
-    return initialsImageUrl;
-  }
-  public void setInitialsImageUrl(String initialsImageUrl) {
-    this.initialsImageUrl = initialsImageUrl;
-  }
-
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public Double getInitialsImageFileId() {
-    return initialsImageFileId;
-  }
-  public void setInitialsImageFileId(Double initialsImageFileId) {
-    this.initialsImageFileId = initialsImageFileId;
-  }
-
-  public String getFullName() {
-    return fullName;
-  }
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
-  }
-
-  public String getSignatureImageUrl() {
-    return signatureImageUrl;
-  }
-  public void setSignatureImageUrl(String signatureImageUrl) {
-    this.signatureImageUrl = signatureImageUrl;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getTextInitials() {
-    return textInitials;
-  }
-  public void setTextInitials(String textInitials) {
-    this.textInitials = textInitials;
   }
 
   public String getUserGuid() {
@@ -143,25 +52,116 @@ public class SignatureSignatureInfo {
     this.userGuid = userGuid;
   }
 
+  public Double getRecipientId() {
+    return recipientId;
+  }
+  public void setRecipientId(Double recipientId) {
+    this.recipientId = recipientId;
+  }
+
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getCompanyName() {
+    return companyName;
+  }
+  public void setCompanyName(String companyName) {
+    this.companyName = companyName;
+  }
+
+  public String getPosition() {
+    return position;
+  }
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getFullName() {
+    return fullName;
+  }
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
+
+  public String getTextInitials() {
+    return textInitials;
+  }
+  public void setTextInitials(String textInitials) {
+    this.textInitials = textInitials;
+  }
+
+  public Double getSignatureImageFileId() {
+    return signatureImageFileId;
+  }
+  public void setSignatureImageFileId(Double signatureImageFileId) {
+    this.signatureImageFileId = signatureImageFileId;
+  }
+
+  public Double getInitialsImageFileId() {
+    return initialsImageFileId;
+  }
+  public void setInitialsImageFileId(Double initialsImageFileId) {
+    this.initialsImageFileId = initialsImageFileId;
+  }
+
+  public String getSignatureImageUrl() {
+    return signatureImageUrl;
+  }
+  public void setSignatureImageUrl(String signatureImageUrl) {
+    this.signatureImageUrl = signatureImageUrl;
+  }
+
+  public String getInitialsImageUrl() {
+    return initialsImageUrl;
+  }
+  public void setInitialsImageUrl(String initialsImageUrl) {
+    this.initialsImageUrl = initialsImageUrl;
+  }
+
+  public Date getCreatedTimeStamp() {
+    return createdTimeStamp;
+  }
+  public void setCreatedTimeStamp(Date createdTimeStamp) {
+    this.createdTimeStamp = createdTimeStamp;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignatureInfo {\n");
-    sb.append("  position: ").append(position).append("\n");
-    sb.append("  lastName: ").append(lastName).append("\n");
-    sb.append("  companyName: ").append(companyName).append("\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  signatureImageFileId: ").append(signatureImageFileId).append("\n");
-    sb.append("  recipientId: ").append(recipientId).append("\n");
-    sb.append("  createdTimeStamp: ").append(createdTimeStamp).append("\n");
-    sb.append("  initialsImageUrl: ").append(initialsImageUrl).append("\n");
-    sb.append("  name: ").append(name).append("\n");
-    sb.append("  initialsImageFileId: ").append(initialsImageFileId).append("\n");
-    sb.append("  fullName: ").append(fullName).append("\n");
-    sb.append("  signatureImageUrl: ").append(signatureImageUrl).append("\n");
-    sb.append("  firstName: ").append(firstName).append("\n");
-    sb.append("  textInitials: ").append(textInitials).append("\n");
     sb.append("  userGuid: ").append(userGuid).append("\n");
+    sb.append("  recipientId: ").append(recipientId).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  companyName: ").append(companyName).append("\n");
+    sb.append("  position: ").append(position).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
+    sb.append("  lastName: ").append(lastName).append("\n");
+    sb.append("  fullName: ").append(fullName).append("\n");
+    sb.append("  textInitials: ").append(textInitials).append("\n");
+    sb.append("  signatureImageFileId: ").append(signatureImageFileId).append("\n");
+    sb.append("  initialsImageFileId: ").append(initialsImageFileId).append("\n");
+    sb.append("  signatureImageUrl: ").append(signatureImageUrl).append("\n");
+    sb.append("  initialsImageUrl: ").append(initialsImageUrl).append("\n");
+    sb.append("  createdTimeStamp: ").append(createdTimeStamp).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

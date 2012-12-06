@@ -27,30 +27,30 @@ import com.groupdocs.sdk.model.Range;
  *
  */
 public class AnnotationInfo {
-  private Long createdOn = null;
   private String guid = null;
-  private String sessionGuid = null;
   private String documentGuid = null;
+  private String sessionGuid = null;
+  private String creatorGuid = null;
+  private Rectangle box = null;
   private Point annotationPosition = null;
   private Range range = null;
-  private String creatorGuid = null;
   private String svgPath = null;
-  private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
-  private Rectangle box = null;
-  private String access = null;
   private String type = null;
-  public Long getCreatedOn() {
-    return createdOn;
-  }
-  public void setCreatedOn(Long createdOn) {
-    this.createdOn = createdOn;
-  }
-
+  private String access = null;
+  private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
+  private Long createdOn = null;
   public String getGuid() {
     return guid;
   }
   public void setGuid(String guid) {
     this.guid = guid;
+  }
+
+  public String getDocumentGuid() {
+    return documentGuid;
+  }
+  public void setDocumentGuid(String documentGuid) {
+    this.documentGuid = documentGuid;
   }
 
   public String getSessionGuid() {
@@ -60,11 +60,18 @@ public class AnnotationInfo {
     this.sessionGuid = sessionGuid;
   }
 
-  public String getDocumentGuid() {
-    return documentGuid;
+  public String getCreatorGuid() {
+    return creatorGuid;
   }
-  public void setDocumentGuid(String documentGuid) {
-    this.documentGuid = documentGuid;
+  public void setCreatorGuid(String creatorGuid) {
+    this.creatorGuid = creatorGuid;
+  }
+
+  public Rectangle getBox() {
+    return box;
+  }
+  public void setBox(Rectangle box) {
+    this.box = box;
   }
 
   public Point getAnnotationPosition() {
@@ -81,39 +88,11 @@ public class AnnotationInfo {
     this.range = range;
   }
 
-  public String getCreatorGuid() {
-    return creatorGuid;
-  }
-  public void setCreatorGuid(String creatorGuid) {
-    this.creatorGuid = creatorGuid;
-  }
-
   public String getSvgPath() {
     return svgPath;
   }
   public void setSvgPath(String svgPath) {
     this.svgPath = svgPath;
-  }
-
-  public List<AnnotationReplyInfo> getReplies() {
-    return replies;
-  }
-  public void setReplies(List<AnnotationReplyInfo> replies) {
-    this.replies = replies;
-  }
-
-  public Rectangle getBox() {
-    return box;
-  }
-  public void setBox(Rectangle box) {
-    this.box = box;
-  }
-
-  public String getAccess() {
-    return access;
-  }
-  public void setAccess(String access) {
-    this.access = access;
   }
 
   public String getType() {
@@ -123,22 +102,43 @@ public class AnnotationInfo {
     this.type = type;
   }
 
+  public String getAccess() {
+    return access;
+  }
+  public void setAccess(String access) {
+    this.access = access;
+  }
+
+  public List<AnnotationReplyInfo> getReplies() {
+    return replies;
+  }
+  public void setReplies(List<AnnotationReplyInfo> replies) {
+    this.replies = replies;
+  }
+
+  public Long getCreatedOn() {
+    return createdOn;
+  }
+  public void setCreatedOn(Long createdOn) {
+    this.createdOn = createdOn;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnnotationInfo {\n");
-    sb.append("  createdOn: ").append(createdOn).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
+    sb.append("  creatorGuid: ").append(creatorGuid).append("\n");
+    sb.append("  box: ").append(box).append("\n");
     sb.append("  annotationPosition: ").append(annotationPosition).append("\n");
     sb.append("  range: ").append(range).append("\n");
-    sb.append("  creatorGuid: ").append(creatorGuid).append("\n");
     sb.append("  svgPath: ").append(svgPath).append("\n");
-    sb.append("  replies: ").append(replies).append("\n");
-    sb.append("  box: ").append(box).append("\n");
-    sb.append("  access: ").append(access).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  access: ").append(access).append("\n");
+    sb.append("  replies: ").append(replies).append("\n");
+    sb.append("  createdOn: ").append(createdOn).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

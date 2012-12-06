@@ -22,29 +22,15 @@ package com.groupdocs.sdk.model;
  *
  */
 public class QuestionnaireMetadata {
-  private Integer assigned_questions = null;
-  private String guid = null;
   private Double id = null;
-  private Long expires = null;
-  private String status = null;
+  private String guid = null;
   private String name = null;
   private String descr = null;
-  private Long modified = null;
+  private String status = null;
+  private Integer assigned_questions = null;
   private Integer total_questions = null;
-  public Integer getAssigned_questions() {
-    return assigned_questions;
-  }
-  public void setAssigned_questions(Integer assigned_questions) {
-    this.assigned_questions = assigned_questions;
-  }
-
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
+  private Long modified = null;
+  private Long expires = null;
   public Double getId() {
     return id;
   }
@@ -52,18 +38,11 @@ public class QuestionnaireMetadata {
     this.id = id;
   }
 
-  public Long getExpires() {
-    return expires;
+  public String getGuid() {
+    return guid;
   }
-  public void setExpires(Long expires) {
-    this.expires = expires;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-  public void setStatus(String status) {
-    this.status = status;
+  public void setGuid(String guid) {
+    this.guid = guid;
   }
 
   public String getName() {
@@ -80,11 +59,18 @@ public class QuestionnaireMetadata {
     this.descr = descr;
   }
 
-  public Long getModified() {
-    return modified;
+  public String getStatus() {
+    return status;
   }
-  public void setModified(Long modified) {
-    this.modified = modified;
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public Integer getAssigned_questions() {
+    return assigned_questions;
+  }
+  public void setAssigned_questions(Integer assigned_questions) {
+    this.assigned_questions = assigned_questions;
   }
 
   public Integer getTotal_questions() {
@@ -94,19 +80,33 @@ public class QuestionnaireMetadata {
     this.total_questions = total_questions;
   }
 
+  public Long getModified() {
+    return modified;
+  }
+  public void setModified(Long modified) {
+    this.modified = modified;
+  }
+
+  public Long getExpires() {
+    return expires;
+  }
+  public void setExpires(Long expires) {
+    this.expires = expires;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionnaireMetadata {\n");
-    sb.append("  assigned_questions: ").append(assigned_questions).append("\n");
-    sb.append("  guid: ").append(guid).append("\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  expires: ").append(expires).append("\n");
-    sb.append("  status: ").append(status).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  descr: ").append(descr).append("\n");
-    sb.append("  modified: ").append(modified).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  assigned_questions: ").append(assigned_questions).append("\n");
     sb.append("  total_questions: ").append(total_questions).append("\n");
+    sb.append("  modified: ").append(modified).append("\n");
+    sb.append("  expires: ").append(expires).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

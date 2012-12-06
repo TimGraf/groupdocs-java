@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class Point {
-  private Double y = null;
   private Double x = null;
-  public Double getY() {
-    return y;
-  }
-  public void setY(Double y) {
-    this.y = y;
-  }
-
+  private Double y = null;
   public Double getX() {
     return x;
   }
@@ -38,12 +31,19 @@ public class Point {
     this.x = x;
   }
 
+  public Double getY() {
+    return y;
+  }
+  public void setY(Double y) {
+    this.y = y;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Point {\n");
-    sb.append("  y: ").append(y).append("\n");
     sb.append("  x: ").append(x).append("\n");
+    sb.append("  y: ").append(y).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

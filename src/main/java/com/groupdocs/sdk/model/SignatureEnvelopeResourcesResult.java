@@ -25,14 +25,14 @@ import com.groupdocs.sdk.model.SignatureEnvelopeDocumentInfo;
  *
  */
 public class SignatureEnvelopeResourcesResult {
-  private List<String> dates = new ArrayList<String>();
-  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   private List<SignatureEnvelopeDocumentInfo> documents = new ArrayList<SignatureEnvelopeDocumentInfo>();
-  public List<String> getDates() {
-    return dates;
+  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
+  private List<String> dates = new ArrayList<String>();
+  public List<SignatureEnvelopeDocumentInfo> getDocuments() {
+    return documents;
   }
-  public void setDates(List<String> dates) {
-    this.dates = dates;
+  public void setDocuments(List<SignatureEnvelopeDocumentInfo> documents) {
+    this.documents = documents;
   }
 
   public List<SignatureEnvelopeRecipientInfo> getRecipients() {
@@ -42,20 +42,20 @@ public class SignatureEnvelopeResourcesResult {
     this.recipients = recipients;
   }
 
-  public List<SignatureEnvelopeDocumentInfo> getDocuments() {
-    return documents;
+  public List<String> getDates() {
+    return dates;
   }
-  public void setDocuments(List<SignatureEnvelopeDocumentInfo> documents) {
-    this.documents = documents;
+  public void setDates(List<String> dates) {
+    this.dates = dates;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeResourcesResult {\n");
-    sb.append("  dates: ").append(dates).append("\n");
-    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  documents: ").append(documents).append("\n");
+    sb.append("  recipients: ").append(recipients).append("\n");
+    sb.append("  dates: ").append(dates).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

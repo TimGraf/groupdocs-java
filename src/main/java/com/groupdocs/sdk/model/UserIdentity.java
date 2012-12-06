@@ -22,21 +22,21 @@ package com.groupdocs.sdk.model;
  *
  */
 public class UserIdentity {
-  private String guid = null;
   private Double id = null;
+  private String guid = null;
   private String primary_email = null;
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
   public Double getId() {
     return id;
   }
   public void setId(Double id) {
     this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
   }
 
   public String getPrimary_email() {
@@ -50,8 +50,8 @@ public class UserIdentity {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserIdentity {\n");
-    sb.append("  guid: ").append(guid).append("\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");
     sb.append("}\n");
     return sb.toString();

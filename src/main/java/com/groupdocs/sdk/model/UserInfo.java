@@ -24,68 +24,33 @@ import com.groupdocs.sdk.model.RoleInfo;
  *
  */
 public class UserInfo {
-  private Integer signin_count = null;
-  private Long signedupOn = null;
   private String nickname = null;
-  private String pkey = null;
-  private String lastname = null;
-  private Boolean alerts_eanbled = null;
   private String firstname = null;
-  private Boolean news_eanbled = null;
-  private Boolean support_eanbled = null;
-  private List<Integer> photo = new ArrayList<Integer>();
-  private String support_email = null;
-  private String guid = null;
-  private Double id = null;
+  private String lastname = null;
+  private String pkey = null;
   private String pswd_salt = null;
-  private String token = null;
-  private String primary_email = null;
-  private List<RoleInfo> roles = new ArrayList<RoleInfo>();
-  private Boolean active = null;
-  private Long signedinOn = null;
-  private Boolean trial = null;
   private String claimed_id = null;
+  private String token = null;
   private Integer storage = null;
-  public Integer getSignin_count() {
-    return signin_count;
-  }
-  public void setSignin_count(Integer signin_count) {
-    this.signin_count = signin_count;
-  }
-
-  public Long getSignedupOn() {
-    return signedupOn;
-  }
-  public void setSignedupOn(Long signedupOn) {
-    this.signedupOn = signedupOn;
-  }
-
+  private List<Integer> photo = new ArrayList<Integer>();
+  private Boolean active = null;
+  private Boolean trial = null;
+  private Boolean news_eanbled = null;
+  private Boolean alerts_eanbled = null;
+  private Boolean support_eanbled = null;
+  private String support_email = null;
+  private Long signedupOn = null;
+  private Long signedinOn = null;
+  private Integer signin_count = null;
+  private List<RoleInfo> roles = new ArrayList<RoleInfo>();
+  private Double id = null;
+  private String guid = null;
+  private String primary_email = null;
   public String getNickname() {
     return nickname;
   }
   public void setNickname(String nickname) {
     this.nickname = nickname;
-  }
-
-  public String getPkey() {
-    return pkey;
-  }
-  public void setPkey(String pkey) {
-    this.pkey = pkey;
-  }
-
-  public String getLastname() {
-    return lastname;
-  }
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
-  }
-
-  public Boolean getAlerts_eanbled() {
-    return alerts_eanbled;
-  }
-  public void setAlerts_eanbled(Boolean alerts_eanbled) {
-    this.alerts_eanbled = alerts_eanbled;
   }
 
   public String getFirstname() {
@@ -95,46 +60,18 @@ public class UserInfo {
     this.firstname = firstname;
   }
 
-  public Boolean getNews_eanbled() {
-    return news_eanbled;
+  public String getLastname() {
+    return lastname;
   }
-  public void setNews_eanbled(Boolean news_eanbled) {
-    this.news_eanbled = news_eanbled;
-  }
-
-  public Boolean getSupport_eanbled() {
-    return support_eanbled;
-  }
-  public void setSupport_eanbled(Boolean support_eanbled) {
-    this.support_eanbled = support_eanbled;
+  public void setLastname(String lastname) {
+    this.lastname = lastname;
   }
 
-  public List<Integer> getPhoto() {
-    return photo;
+  public String getPkey() {
+    return pkey;
   }
-  public void setPhoto(List<Integer> photo) {
-    this.photo = photo;
-  }
-
-  public String getSupport_email() {
-    return support_email;
-  }
-  public void setSupport_email(String support_email) {
-    this.support_email = support_email;
-  }
-
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
+  public void setPkey(String pkey) {
+    this.pkey = pkey;
   }
 
   public String getPswd_salt() {
@@ -144,53 +81,18 @@ public class UserInfo {
     this.pswd_salt = pswd_salt;
   }
 
-  public String getToken() {
-    return token;
-  }
-  public void setToken(String token) {
-    this.token = token;
-  }
-
-  public String getPrimary_email() {
-    return primary_email;
-  }
-  public void setPrimary_email(String primary_email) {
-    this.primary_email = primary_email;
-  }
-
-  public List<RoleInfo> getRoles() {
-    return roles;
-  }
-  public void setRoles(List<RoleInfo> roles) {
-    this.roles = roles;
-  }
-
-  public Boolean getActive() {
-    return active;
-  }
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
-
-  public Long getSignedinOn() {
-    return signedinOn;
-  }
-  public void setSignedinOn(Long signedinOn) {
-    this.signedinOn = signedinOn;
-  }
-
-  public Boolean getTrial() {
-    return trial;
-  }
-  public void setTrial(Boolean trial) {
-    this.trial = trial;
-  }
-
   public String getClaimed_id() {
     return claimed_id;
   }
   public void setClaimed_id(String claimed_id) {
     this.claimed_id = claimed_id;
+  }
+
+  public String getToken() {
+    return token;
+  }
+  public void setToken(String token) {
+    this.token = token;
   }
 
   public Integer getStorage() {
@@ -200,32 +102,130 @@ public class UserInfo {
     this.storage = storage;
   }
 
+  public List<Integer> getPhoto() {
+    return photo;
+  }
+  public void setPhoto(List<Integer> photo) {
+    this.photo = photo;
+  }
+
+  public Boolean getActive() {
+    return active;
+  }
+  public void setActive(Boolean active) {
+    this.active = active;
+  }
+
+  public Boolean getTrial() {
+    return trial;
+  }
+  public void setTrial(Boolean trial) {
+    this.trial = trial;
+  }
+
+  public Boolean getNews_eanbled() {
+    return news_eanbled;
+  }
+  public void setNews_eanbled(Boolean news_eanbled) {
+    this.news_eanbled = news_eanbled;
+  }
+
+  public Boolean getAlerts_eanbled() {
+    return alerts_eanbled;
+  }
+  public void setAlerts_eanbled(Boolean alerts_eanbled) {
+    this.alerts_eanbled = alerts_eanbled;
+  }
+
+  public Boolean getSupport_eanbled() {
+    return support_eanbled;
+  }
+  public void setSupport_eanbled(Boolean support_eanbled) {
+    this.support_eanbled = support_eanbled;
+  }
+
+  public String getSupport_email() {
+    return support_email;
+  }
+  public void setSupport_email(String support_email) {
+    this.support_email = support_email;
+  }
+
+  public Long getSignedupOn() {
+    return signedupOn;
+  }
+  public void setSignedupOn(Long signedupOn) {
+    this.signedupOn = signedupOn;
+  }
+
+  public Long getSignedinOn() {
+    return signedinOn;
+  }
+  public void setSignedinOn(Long signedinOn) {
+    this.signedinOn = signedinOn;
+  }
+
+  public Integer getSignin_count() {
+    return signin_count;
+  }
+  public void setSignin_count(Integer signin_count) {
+    this.signin_count = signin_count;
+  }
+
+  public List<RoleInfo> getRoles() {
+    return roles;
+  }
+  public void setRoles(List<RoleInfo> roles) {
+    this.roles = roles;
+  }
+
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
+
+  public String getPrimary_email() {
+    return primary_email;
+  }
+  public void setPrimary_email(String primary_email) {
+    this.primary_email = primary_email;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserInfo {\n");
-    sb.append("  signin_count: ").append(signin_count).append("\n");
-    sb.append("  signedupOn: ").append(signedupOn).append("\n");
     sb.append("  nickname: ").append(nickname).append("\n");
-    sb.append("  pkey: ").append(pkey).append("\n");
-    sb.append("  lastname: ").append(lastname).append("\n");
-    sb.append("  alerts_eanbled: ").append(alerts_eanbled).append("\n");
     sb.append("  firstname: ").append(firstname).append("\n");
-    sb.append("  news_eanbled: ").append(news_eanbled).append("\n");
-    sb.append("  support_eanbled: ").append(support_eanbled).append("\n");
-    sb.append("  photo: ").append(photo).append("\n");
-    sb.append("  support_email: ").append(support_email).append("\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
+    sb.append("  lastname: ").append(lastname).append("\n");
+    sb.append("  pkey: ").append(pkey).append("\n");
     sb.append("  pswd_salt: ").append(pswd_salt).append("\n");
-    sb.append("  token: ").append(token).append("\n");
-    sb.append("  primary_email: ").append(primary_email).append("\n");
-    sb.append("  roles: ").append(roles).append("\n");
-    sb.append("  active: ").append(active).append("\n");
-    sb.append("  signedinOn: ").append(signedinOn).append("\n");
-    sb.append("  trial: ").append(trial).append("\n");
     sb.append("  claimed_id: ").append(claimed_id).append("\n");
+    sb.append("  token: ").append(token).append("\n");
     sb.append("  storage: ").append(storage).append("\n");
+    sb.append("  photo: ").append(photo).append("\n");
+    sb.append("  active: ").append(active).append("\n");
+    sb.append("  trial: ").append(trial).append("\n");
+    sb.append("  news_eanbled: ").append(news_eanbled).append("\n");
+    sb.append("  alerts_eanbled: ").append(alerts_eanbled).append("\n");
+    sb.append("  support_eanbled: ").append(support_eanbled).append("\n");
+    sb.append("  support_email: ").append(support_email).append("\n");
+    sb.append("  signedupOn: ").append(signedupOn).append("\n");
+    sb.append("  signedinOn: ").append(signedinOn).append("\n");
+    sb.append("  signin_count: ").append(signin_count).append("\n");
+    sb.append("  roles: ").append(roles).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
+    sb.append("  primary_email: ").append(primary_email).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

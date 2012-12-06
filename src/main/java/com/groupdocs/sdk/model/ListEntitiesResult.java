@@ -25,15 +25,15 @@ import com.groupdocs.sdk.model.FileSystemDocument;
  *
  */
 public class ListEntitiesResult {
-  private List<FileSystemDocument> files = new ArrayList<FileSystemDocument>();
-  private Integer count = null;
   private String path = null;
+  private Integer count = null;
   private List<FileSystemFolder> folders = new ArrayList<FileSystemFolder>();
-  public List<FileSystemDocument> getFiles() {
-    return files;
+  private List<FileSystemDocument> files = new ArrayList<FileSystemDocument>();
+  public String getPath() {
+    return path;
   }
-  public void setFiles(List<FileSystemDocument> files) {
-    this.files = files;
+  public void setPath(String path) {
+    this.path = path;
   }
 
   public Integer getCount() {
@@ -43,13 +43,6 @@ public class ListEntitiesResult {
     this.count = count;
   }
 
-  public String getPath() {
-    return path;
-  }
-  public void setPath(String path) {
-    this.path = path;
-  }
-
   public List<FileSystemFolder> getFolders() {
     return folders;
   }
@@ -57,14 +50,21 @@ public class ListEntitiesResult {
     this.folders = folders;
   }
 
+  public List<FileSystemDocument> getFiles() {
+    return files;
+  }
+  public void setFiles(List<FileSystemDocument> files) {
+    this.files = files;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListEntitiesResult {\n");
-    sb.append("  files: ").append(files).append("\n");
-    sb.append("  count: ").append(count).append("\n");
     sb.append("  path: ").append(path).append("\n");
+    sb.append("  count: ").append(count).append("\n");
     sb.append("  folders: ").append(folders).append("\n");
+    sb.append("  files: ").append(files).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

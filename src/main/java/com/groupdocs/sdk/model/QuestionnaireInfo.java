@@ -24,65 +24,23 @@ import com.groupdocs.sdk.model.QuestionnairePageInfo;
  *
  */
 public class QuestionnaireInfo {
-  private Integer assigned_questions = null;
-  private String guid = null;
-  private Double id = null;
-  private Long expires = null;
-  private String status = null;
   private Integer resolved_executions = null;
-  private String name = null;
   private List<QuestionnairePageInfo> pages = new ArrayList<QuestionnairePageInfo>();
   private List<String> document_ids = new ArrayList<String>();
+  private Double id = null;
+  private String guid = null;
+  private String name = null;
   private String descr = null;
-  private Long modified = null;
+  private String status = null;
+  private Integer assigned_questions = null;
   private Integer total_questions = null;
-  public Integer getAssigned_questions() {
-    return assigned_questions;
-  }
-  public void setAssigned_questions(Integer assigned_questions) {
-    this.assigned_questions = assigned_questions;
-  }
-
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public Long getExpires() {
-    return expires;
-  }
-  public void setExpires(Long expires) {
-    this.expires = expires;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
+  private Long modified = null;
+  private Long expires = null;
   public Integer getResolved_executions() {
     return resolved_executions;
   }
   public void setResolved_executions(Integer resolved_executions) {
     this.resolved_executions = resolved_executions;
-  }
-
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
   public List<QuestionnairePageInfo> getPages() {
@@ -99,6 +57,27 @@ public class QuestionnaireInfo {
     this.document_ids = document_ids;
   }
 
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
+
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public String getDescr() {
     return descr;
   }
@@ -106,11 +85,18 @@ public class QuestionnaireInfo {
     this.descr = descr;
   }
 
-  public Long getModified() {
-    return modified;
+  public String getStatus() {
+    return status;
   }
-  public void setModified(Long modified) {
-    this.modified = modified;
+  public void setStatus(String status) {
+    this.status = status;
+  }
+
+  public Integer getAssigned_questions() {
+    return assigned_questions;
+  }
+  public void setAssigned_questions(Integer assigned_questions) {
+    this.assigned_questions = assigned_questions;
   }
 
   public Integer getTotal_questions() {
@@ -120,22 +106,36 @@ public class QuestionnaireInfo {
     this.total_questions = total_questions;
   }
 
+  public Long getModified() {
+    return modified;
+  }
+  public void setModified(Long modified) {
+    this.modified = modified;
+  }
+
+  public Long getExpires() {
+    return expires;
+  }
+  public void setExpires(Long expires) {
+    this.expires = expires;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionnaireInfo {\n");
-    sb.append("  assigned_questions: ").append(assigned_questions).append("\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  expires: ").append(expires).append("\n");
-    sb.append("  status: ").append(status).append("\n");
     sb.append("  resolved_executions: ").append(resolved_executions).append("\n");
-    sb.append("  name: ").append(name).append("\n");
     sb.append("  pages: ").append(pages).append("\n");
     sb.append("  document_ids: ").append(document_ids).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
+    sb.append("  name: ").append(name).append("\n");
     sb.append("  descr: ").append(descr).append("\n");
-    sb.append("  modified: ").append(modified).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  assigned_questions: ").append(assigned_questions).append("\n");
     sb.append("  total_questions: ").append(total_questions).append("\n");
+    sb.append("  modified: ").append(modified).append("\n");
+    sb.append("  expires: ").append(expires).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.UserInfo;
  *
  */
 public class GetAccountUsersResult {
-  private List<UserInfo> users = new ArrayList<UserInfo>();
   private Integer max_users = null;
-  public List<UserInfo> getUsers() {
-    return users;
-  }
-  public void setUsers(List<UserInfo> users) {
-    this.users = users;
-  }
-
+  private List<UserInfo> users = new ArrayList<UserInfo>();
   public Integer getMax_users() {
     return max_users;
   }
@@ -40,12 +33,19 @@ public class GetAccountUsersResult {
     this.max_users = max_users;
   }
 
+  public List<UserInfo> getUsers() {
+    return users;
+  }
+  public void setUsers(List<UserInfo> users) {
+    this.users = users;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAccountUsersResult {\n");
-    sb.append("  users: ").append(users).append("\n");
     sb.append("  max_users: ").append(max_users).append("\n");
+    sb.append("  users: ").append(users).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

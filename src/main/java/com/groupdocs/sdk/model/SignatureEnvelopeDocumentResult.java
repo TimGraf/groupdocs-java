@@ -23,15 +23,8 @@ import com.groupdocs.sdk.model.SignatureEnvelopeDocumentInfo;
  *
  */
 public class SignatureEnvelopeDocumentResult {
-  private SignatureEnvelopeDocumentInfo document = null;
   private String envelopeId = null;
-  public SignatureEnvelopeDocumentInfo getDocument() {
-    return document;
-  }
-  public void setDocument(SignatureEnvelopeDocumentInfo document) {
-    this.document = document;
-  }
-
+  private SignatureEnvelopeDocumentInfo document = null;
   public String getEnvelopeId() {
     return envelopeId;
   }
@@ -39,12 +32,19 @@ public class SignatureEnvelopeDocumentResult {
     this.envelopeId = envelopeId;
   }
 
+  public SignatureEnvelopeDocumentInfo getDocument() {
+    return document;
+  }
+  public void setDocument(SignatureEnvelopeDocumentInfo document) {
+    this.document = document;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeDocumentResult {\n");
-    sb.append("  document: ").append(document).append("\n");
     sb.append("  envelopeId: ").append(envelopeId).append("\n");
+    sb.append("  document: ").append(document).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -22,9 +22,16 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureContactSettings {
+  private String firstName = null;
   private String lastName = null;
   private String email = null;
-  private String firstName = null;
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
   public String getLastName() {
     return lastName;
   }
@@ -39,20 +46,13 @@ public class SignatureContactSettings {
     this.email = email;
   }
 
-  public String getFirstName() {
-    return firstName;
-  }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureContactSettings {\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  email: ").append(email).append("\n");
-    sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

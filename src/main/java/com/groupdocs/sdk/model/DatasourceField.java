@@ -22,22 +22,22 @@ package com.groupdocs.sdk.model;
  *
  */
 public class DatasourceField {
-  private String values = null;
   private String name = null;
+  private String values = null;
   private String contentType = null;
   private String type = null;
-  public String getValues() {
-    return values;
-  }
-  public void setValues(String values) {
-    this.values = values;
-  }
-
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getValues() {
+    return values;
+  }
+  public void setValues(String values) {
+    this.values = values;
   }
 
   public String getContentType() {
@@ -58,8 +58,8 @@ public class DatasourceField {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DatasourceField {\n");
-    sb.append("  values: ").append(values).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  values: ").append(values).append("\n");
     sb.append("  contentType: ").append(contentType).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");

@@ -22,22 +22,15 @@ package com.groupdocs.sdk.model;
  *
  */
 public class Rectangle {
-  private Double height = null;
-  private Double width = null;
-  private Double y = null;
   private Double x = null;
-  public Double getHeight() {
-    return height;
+  private Double y = null;
+  private Double width = null;
+  private Double height = null;
+  public Double getX() {
+    return x;
   }
-  public void setHeight(Double height) {
-    this.height = height;
-  }
-
-  public Double getWidth() {
-    return width;
-  }
-  public void setWidth(Double width) {
-    this.width = width;
+  public void setX(Double x) {
+    this.x = x;
   }
 
   public Double getY() {
@@ -47,21 +40,28 @@ public class Rectangle {
     this.y = y;
   }
 
-  public Double getX() {
-    return x;
+  public Double getWidth() {
+    return width;
   }
-  public void setX(Double x) {
-    this.x = x;
+  public void setWidth(Double width) {
+    this.width = width;
+  }
+
+  public Double getHeight() {
+    return height;
+  }
+  public void setHeight(Double height) {
+    this.height = height;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rectangle {\n");
-    sb.append("  height: ").append(height).append("\n");
-    sb.append("  width: ").append(width).append("\n");
-    sb.append("  y: ").append(y).append("\n");
     sb.append("  x: ").append(x).append("\n");
+    sb.append("  y: ").append(y).append("\n");
+    sb.append("  width: ").append(width).append("\n");
+    sb.append("  height: ").append(height).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

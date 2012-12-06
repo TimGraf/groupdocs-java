@@ -22,72 +22,23 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureEnvelopeFieldLocationSettings {
-  private Double locationHeight = null;
-  private Boolean fontItalic = null;
-  private String fontColor = null;
-  private String fontName = null;
-  private Boolean forceNewField = null;
-  private Boolean fontUnderline = null;
   private Integer page = null;
-  private Double locationWidth = null;
   private Double locationX = null;
-  private Boolean fontBold = null;
-  private Double fontSize = null;
   private Double locationY = null;
-  public Double getLocationHeight() {
-    return locationHeight;
-  }
-  public void setLocationHeight(Double locationHeight) {
-    this.locationHeight = locationHeight;
-  }
-
-  public Boolean getFontItalic() {
-    return fontItalic;
-  }
-  public void setFontItalic(Boolean fontItalic) {
-    this.fontItalic = fontItalic;
-  }
-
-  public String getFontColor() {
-    return fontColor;
-  }
-  public void setFontColor(String fontColor) {
-    this.fontColor = fontColor;
-  }
-
-  public String getFontName() {
-    return fontName;
-  }
-  public void setFontName(String fontName) {
-    this.fontName = fontName;
-  }
-
-  public Boolean getForceNewField() {
-    return forceNewField;
-  }
-  public void setForceNewField(Boolean forceNewField) {
-    this.forceNewField = forceNewField;
-  }
-
-  public Boolean getFontUnderline() {
-    return fontUnderline;
-  }
-  public void setFontUnderline(Boolean fontUnderline) {
-    this.fontUnderline = fontUnderline;
-  }
-
+  private Double locationWidth = null;
+  private Double locationHeight = null;
+  private String fontName = null;
+  private String fontColor = null;
+  private Double fontSize = null;
+  private Boolean fontBold = null;
+  private Boolean fontItalic = null;
+  private Boolean fontUnderline = null;
+  private Boolean forceNewField = null;
   public Integer getPage() {
     return page;
   }
   public void setPage(Integer page) {
     this.page = page;
-  }
-
-  public Double getLocationWidth() {
-    return locationWidth;
-  }
-  public void setLocationWidth(Double locationWidth) {
-    this.locationWidth = locationWidth;
   }
 
   public Double getLocationX() {
@@ -97,11 +48,39 @@ public class SignatureEnvelopeFieldLocationSettings {
     this.locationX = locationX;
   }
 
-  public Boolean getFontBold() {
-    return fontBold;
+  public Double getLocationY() {
+    return locationY;
   }
-  public void setFontBold(Boolean fontBold) {
-    this.fontBold = fontBold;
+  public void setLocationY(Double locationY) {
+    this.locationY = locationY;
+  }
+
+  public Double getLocationWidth() {
+    return locationWidth;
+  }
+  public void setLocationWidth(Double locationWidth) {
+    this.locationWidth = locationWidth;
+  }
+
+  public Double getLocationHeight() {
+    return locationHeight;
+  }
+  public void setLocationHeight(Double locationHeight) {
+    this.locationHeight = locationHeight;
+  }
+
+  public String getFontName() {
+    return fontName;
+  }
+  public void setFontName(String fontName) {
+    this.fontName = fontName;
+  }
+
+  public String getFontColor() {
+    return fontColor;
+  }
+  public void setFontColor(String fontColor) {
+    this.fontColor = fontColor;
   }
 
   public Double getFontSize() {
@@ -111,29 +90,50 @@ public class SignatureEnvelopeFieldLocationSettings {
     this.fontSize = fontSize;
   }
 
-  public Double getLocationY() {
-    return locationY;
+  public Boolean getFontBold() {
+    return fontBold;
   }
-  public void setLocationY(Double locationY) {
-    this.locationY = locationY;
+  public void setFontBold(Boolean fontBold) {
+    this.fontBold = fontBold;
+  }
+
+  public Boolean getFontItalic() {
+    return fontItalic;
+  }
+  public void setFontItalic(Boolean fontItalic) {
+    this.fontItalic = fontItalic;
+  }
+
+  public Boolean getFontUnderline() {
+    return fontUnderline;
+  }
+  public void setFontUnderline(Boolean fontUnderline) {
+    this.fontUnderline = fontUnderline;
+  }
+
+  public Boolean getForceNewField() {
+    return forceNewField;
+  }
+  public void setForceNewField(Boolean forceNewField) {
+    this.forceNewField = forceNewField;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeFieldLocationSettings {\n");
-    sb.append("  locationHeight: ").append(locationHeight).append("\n");
-    sb.append("  fontItalic: ").append(fontItalic).append("\n");
-    sb.append("  fontColor: ").append(fontColor).append("\n");
-    sb.append("  fontName: ").append(fontName).append("\n");
-    sb.append("  forceNewField: ").append(forceNewField).append("\n");
-    sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
     sb.append("  page: ").append(page).append("\n");
-    sb.append("  locationWidth: ").append(locationWidth).append("\n");
     sb.append("  locationX: ").append(locationX).append("\n");
-    sb.append("  fontBold: ").append(fontBold).append("\n");
-    sb.append("  fontSize: ").append(fontSize).append("\n");
     sb.append("  locationY: ").append(locationY).append("\n");
+    sb.append("  locationWidth: ").append(locationWidth).append("\n");
+    sb.append("  locationHeight: ").append(locationHeight).append("\n");
+    sb.append("  fontName: ").append(fontName).append("\n");
+    sb.append("  fontColor: ").append(fontColor).append("\n");
+    sb.append("  fontSize: ").append(fontSize).append("\n");
+    sb.append("  fontBold: ").append(fontBold).append("\n");
+    sb.append("  fontItalic: ").append(fontItalic).append("\n");
+    sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
+    sb.append("  forceNewField: ").append(forceNewField).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

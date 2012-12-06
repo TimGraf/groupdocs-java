@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class Dimension {
-  private Integer height = null;
   private Integer width = null;
-  public Integer getHeight() {
-    return height;
-  }
-  public void setHeight(Integer height) {
-    this.height = height;
-  }
-
+  private Integer height = null;
   public Integer getWidth() {
     return width;
   }
@@ -38,12 +31,19 @@ public class Dimension {
     this.width = width;
   }
 
+  public Integer getHeight() {
+    return height;
+  }
+  public void setHeight(Integer height) {
+    this.height = height;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Dimension {\n");
-    sb.append("  height: ").append(height).append("\n");
     sb.append("  width: ").append(width).append("\n");
+    sb.append("  height: ").append(height).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

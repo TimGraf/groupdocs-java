@@ -23,14 +23,14 @@ import java.util.Date;
  *
  */
 public class AddReplyResult {
-  private Date replyDateTime = null;
-  private String annotationGuid = null;
   private String replyGuid = null;
-  public Date getReplyDateTime() {
-    return replyDateTime;
+  private String annotationGuid = null;
+  private Date replyDateTime = null;
+  public String getReplyGuid() {
+    return replyGuid;
   }
-  public void setReplyDateTime(Date replyDateTime) {
-    this.replyDateTime = replyDateTime;
+  public void setReplyGuid(String replyGuid) {
+    this.replyGuid = replyGuid;
   }
 
   public String getAnnotationGuid() {
@@ -40,20 +40,20 @@ public class AddReplyResult {
     this.annotationGuid = annotationGuid;
   }
 
-  public String getReplyGuid() {
-    return replyGuid;
+  public Date getReplyDateTime() {
+    return replyDateTime;
   }
-  public void setReplyGuid(String replyGuid) {
-    this.replyGuid = replyGuid;
+  public void setReplyDateTime(Date replyDateTime) {
+    this.replyDateTime = replyDateTime;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddReplyResult {\n");
-    sb.append("  replyDateTime: ").append(replyDateTime).append("\n");
-    sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
     sb.append("  replyGuid: ").append(replyGuid).append("\n");
+    sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
+    sb.append("  replyDateTime: ").append(replyDateTime).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

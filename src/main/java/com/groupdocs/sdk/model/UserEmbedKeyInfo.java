@@ -23,11 +23,18 @@ import com.groupdocs.sdk.model.UserIdentity;
  *
  */
 public class UserEmbedKeyInfo {
+  private UserIdentity user = null;
   private String guid = null;
   private String area = null;
   private Boolean active = null;
   private Integer hit_count = null;
-  private UserIdentity user = null;
+  public UserIdentity getUser() {
+    return user;
+  }
+  public void setUser(UserIdentity user) {
+    this.user = user;
+  }
+
   public String getGuid() {
     return guid;
   }
@@ -56,22 +63,15 @@ public class UserEmbedKeyInfo {
     this.hit_count = hit_count;
   }
 
-  public UserIdentity getUser() {
-    return user;
-  }
-  public void setUser(UserIdentity user) {
-    this.user = user;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserEmbedKeyInfo {\n");
+    sb.append("  user: ").append(user).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  area: ").append(area).append("\n");
     sb.append("  active: ").append(active).append("\n");
     sb.append("  hit_count: ").append(hit_count).append("\n");
-    sb.append("  user: ").append(user).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

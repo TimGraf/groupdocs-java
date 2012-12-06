@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.QuestionnaireExecutionInfo;
  *
  */
 public class GetQuestionnaireExecutionsResult {
-  private List<QuestionnaireExecutionInfo> executions = new ArrayList<QuestionnaireExecutionInfo>();
   private String questionnaire_guid = null;
-  public List<QuestionnaireExecutionInfo> getExecutions() {
-    return executions;
-  }
-  public void setExecutions(List<QuestionnaireExecutionInfo> executions) {
-    this.executions = executions;
-  }
-
+  private List<QuestionnaireExecutionInfo> executions = new ArrayList<QuestionnaireExecutionInfo>();
   public String getQuestionnaire_guid() {
     return questionnaire_guid;
   }
@@ -40,12 +33,19 @@ public class GetQuestionnaireExecutionsResult {
     this.questionnaire_guid = questionnaire_guid;
   }
 
+  public List<QuestionnaireExecutionInfo> getExecutions() {
+    return executions;
+  }
+  public void setExecutions(List<QuestionnaireExecutionInfo> executions) {
+    this.executions = executions;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetQuestionnaireExecutionsResult {\n");
-    sb.append("  executions: ").append(executions).append("\n");
     sb.append("  questionnaire_guid: ").append(questionnaire_guid).append("\n");
+    sb.append("  executions: ").append(executions).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

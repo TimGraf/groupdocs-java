@@ -23,8 +23,8 @@ package com.groupdocs.sdk.model;
  */
 public class AddDocumentQuestionnaireResult {
   private Double document_id = null;
-  private String questionnaire_guid = null;
   private Double questionnaire_id = null;
+  private String questionnaire_guid = null;
   private String adjusted_name = null;
   public Double getDocument_id() {
     return document_id;
@@ -33,18 +33,18 @@ public class AddDocumentQuestionnaireResult {
     this.document_id = document_id;
   }
 
-  public String getQuestionnaire_guid() {
-    return questionnaire_guid;
-  }
-  public void setQuestionnaire_guid(String questionnaire_guid) {
-    this.questionnaire_guid = questionnaire_guid;
-  }
-
   public Double getQuestionnaire_id() {
     return questionnaire_id;
   }
   public void setQuestionnaire_id(Double questionnaire_id) {
     this.questionnaire_id = questionnaire_id;
+  }
+
+  public String getQuestionnaire_guid() {
+    return questionnaire_guid;
+  }
+  public void setQuestionnaire_guid(String questionnaire_guid) {
+    this.questionnaire_guid = questionnaire_guid;
   }
 
   public String getAdjusted_name() {
@@ -59,8 +59,8 @@ public class AddDocumentQuestionnaireResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddDocumentQuestionnaireResult {\n");
     sb.append("  document_id: ").append(document_id).append("\n");
-    sb.append("  questionnaire_guid: ").append(questionnaire_guid).append("\n");
     sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
+    sb.append("  questionnaire_guid: ").append(questionnaire_guid).append("\n");
     sb.append("  adjusted_name: ").append(adjusted_name).append("\n");
     sb.append("}\n");
     return sb.toString();

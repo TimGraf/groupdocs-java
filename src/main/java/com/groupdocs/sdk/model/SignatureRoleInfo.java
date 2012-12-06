@@ -23,30 +23,16 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureRoleInfo {
   private String id = null;
-  private Integer canDelegate = null;
-  private Integer canSign = null;
   private String name = null;
   private Integer canEdit = null;
+  private Integer canSign = null;
   private Integer canAnnotate = null;
+  private Integer canDelegate = null;
   public String getId() {
     return id;
   }
   public void setId(String id) {
     this.id = id;
-  }
-
-  public Integer getCanDelegate() {
-    return canDelegate;
-  }
-  public void setCanDelegate(Integer canDelegate) {
-    this.canDelegate = canDelegate;
-  }
-
-  public Integer getCanSign() {
-    return canSign;
-  }
-  public void setCanSign(Integer canSign) {
-    this.canSign = canSign;
   }
 
   public String getName() {
@@ -63,6 +49,13 @@ public class SignatureRoleInfo {
     this.canEdit = canEdit;
   }
 
+  public Integer getCanSign() {
+    return canSign;
+  }
+  public void setCanSign(Integer canSign) {
+    this.canSign = canSign;
+  }
+
   public Integer getCanAnnotate() {
     return canAnnotate;
   }
@@ -70,16 +63,23 @@ public class SignatureRoleInfo {
     this.canAnnotate = canAnnotate;
   }
 
+  public Integer getCanDelegate() {
+    return canDelegate;
+  }
+  public void setCanDelegate(Integer canDelegate) {
+    this.canDelegate = canDelegate;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureRoleInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  canDelegate: ").append(canDelegate).append("\n");
-    sb.append("  canSign: ").append(canSign).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  canEdit: ").append(canEdit).append("\n");
+    sb.append("  canSign: ").append(canSign).append("\n");
     sb.append("  canAnnotate: ").append(canAnnotate).append("\n");
+    sb.append("  canDelegate: ").append(canDelegate).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

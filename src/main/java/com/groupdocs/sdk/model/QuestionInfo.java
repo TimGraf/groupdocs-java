@@ -26,11 +26,11 @@ import com.groupdocs.sdk.model.AnswerInfo;
 public class QuestionInfo {
   private String field = null;
   private String text = null;
-  private List<AnswerInfo> answers = new ArrayList<AnswerInfo>();
   private String def_answer = null;
-  private String type = null;
   private Boolean required = null;
   private Boolean disabled = null;
+  private String type = null;
+  private List<AnswerInfo> answers = new ArrayList<AnswerInfo>();
   public String getField() {
     return field;
   }
@@ -45,25 +45,11 @@ public class QuestionInfo {
     this.text = text;
   }
 
-  public List<AnswerInfo> getAnswers() {
-    return answers;
-  }
-  public void setAnswers(List<AnswerInfo> answers) {
-    this.answers = answers;
-  }
-
   public String getDef_answer() {
     return def_answer;
   }
   public void setDef_answer(String def_answer) {
     this.def_answer = def_answer;
-  }
-
-  public String getType() {
-    return type;
-  }
-  public void setType(String type) {
-    this.type = type;
   }
 
   public Boolean getRequired() {
@@ -80,17 +66,31 @@ public class QuestionInfo {
     this.disabled = disabled;
   }
 
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public List<AnswerInfo> getAnswers() {
+    return answers;
+  }
+  public void setAnswers(List<AnswerInfo> answers) {
+    this.answers = answers;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionInfo {\n");
     sb.append("  field: ").append(field).append("\n");
     sb.append("  text: ").append(text).append("\n");
-    sb.append("  answers: ").append(answers).append("\n");
     sb.append("  def_answer: ").append(def_answer).append("\n");
-    sb.append("  type: ").append(type).append("\n");
     sb.append("  required: ").append(required).append("\n");
     sb.append("  disabled: ").append(disabled).append("\n");
+    sb.append("  type: ").append(type).append("\n");
+    sb.append("  answers: ").append(answers).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

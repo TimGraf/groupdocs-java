@@ -22,14 +22,14 @@ package com.groupdocs.sdk.model;
  *
  */
 public class GetEditLockResult {
-  private String edit_url = null;
-  private String file_id = null;
   private String doc_guid = null;
-  public String getEdit_url() {
-    return edit_url;
+  private String file_id = null;
+  private String edit_url = null;
+  public String getDoc_guid() {
+    return doc_guid;
   }
-  public void setEdit_url(String edit_url) {
-    this.edit_url = edit_url;
+  public void setDoc_guid(String doc_guid) {
+    this.doc_guid = doc_guid;
   }
 
   public String getFile_id() {
@@ -39,20 +39,20 @@ public class GetEditLockResult {
     this.file_id = file_id;
   }
 
-  public String getDoc_guid() {
-    return doc_guid;
+  public String getEdit_url() {
+    return edit_url;
   }
-  public void setDoc_guid(String doc_guid) {
-    this.doc_guid = doc_guid;
+  public void setEdit_url(String edit_url) {
+    this.edit_url = edit_url;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetEditLockResult {\n");
-    sb.append("  edit_url: ").append(edit_url).append("\n");
-    sb.append("  file_id: ").append(file_id).append("\n");
     sb.append("  doc_guid: ").append(doc_guid).append("\n");
+    sb.append("  file_id: ").append(file_id).append("\n");
+    sb.append("  edit_url: ").append(edit_url).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

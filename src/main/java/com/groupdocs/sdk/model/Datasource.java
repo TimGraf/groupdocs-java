@@ -25,30 +25,16 @@ import com.groupdocs.sdk.model.DatasourceField;
  */
 public class Datasource {
   private Double id = null;
-  private Long modified_on = null;
-  private Long created_on = null;
   private Double questionnaire_id = null;
   private String descr = null;
   private List<DatasourceField> fields = new ArrayList<DatasourceField>();
+  private Long created_on = null;
+  private Long modified_on = null;
   public Double getId() {
     return id;
   }
   public void setId(Double id) {
     this.id = id;
-  }
-
-  public Long getModified_on() {
-    return modified_on;
-  }
-  public void setModified_on(Long modified_on) {
-    this.modified_on = modified_on;
-  }
-
-  public Long getCreated_on() {
-    return created_on;
-  }
-  public void setCreated_on(Long created_on) {
-    this.created_on = created_on;
   }
 
   public Double getQuestionnaire_id() {
@@ -72,16 +58,30 @@ public class Datasource {
     this.fields = fields;
   }
 
+  public Long getCreated_on() {
+    return created_on;
+  }
+  public void setCreated_on(Long created_on) {
+    this.created_on = created_on;
+  }
+
+  public Long getModified_on() {
+    return modified_on;
+  }
+  public void setModified_on(Long modified_on) {
+    this.modified_on = modified_on;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Datasource {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  modified_on: ").append(modified_on).append("\n");
-    sb.append("  created_on: ").append(created_on).append("\n");
     sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
     sb.append("  descr: ").append(descr).append("\n");
     sb.append("  fields: ").append(fields).append("\n");
+    sb.append("  created_on: ").append(created_on).append("\n");
+    sb.append("  modified_on: ").append(modified_on).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

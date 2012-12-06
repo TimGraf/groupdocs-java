@@ -22,21 +22,21 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignaturePredefinedListSettings {
-  private String values = null;
   private String name = null;
+  private String values = null;
   private String defaultValue = null;
-  public String getValues() {
-    return values;
-  }
-  public void setValues(String values) {
-    this.values = values;
-  }
-
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getValues() {
+    return values;
+  }
+  public void setValues(String values) {
+    this.values = values;
   }
 
   public String getDefaultValue() {
@@ -50,8 +50,8 @@ public class SignaturePredefinedListSettings {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignaturePredefinedListSettings {\n");
-    sb.append("  values: ").append(values).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  values: ").append(values).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("}\n");
     return sb.toString();

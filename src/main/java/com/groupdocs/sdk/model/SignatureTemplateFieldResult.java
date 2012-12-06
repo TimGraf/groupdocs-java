@@ -23,29 +23,15 @@ import com.groupdocs.sdk.model.SignatureTemplateFieldInfo;
  *
  */
 public class SignatureTemplateFieldResult {
-  private SignatureTemplateFieldInfo field = null;
   private String templateId = null;
-  private String recipientId = null;
   private String documentId = null;
-  public SignatureTemplateFieldInfo getField() {
-    return field;
-  }
-  public void setField(SignatureTemplateFieldInfo field) {
-    this.field = field;
-  }
-
+  private String recipientId = null;
+  private SignatureTemplateFieldInfo field = null;
   public String getTemplateId() {
     return templateId;
   }
   public void setTemplateId(String templateId) {
     this.templateId = templateId;
-  }
-
-  public String getRecipientId() {
-    return recipientId;
-  }
-  public void setRecipientId(String recipientId) {
-    this.recipientId = recipientId;
   }
 
   public String getDocumentId() {
@@ -55,14 +41,28 @@ public class SignatureTemplateFieldResult {
     this.documentId = documentId;
   }
 
+  public String getRecipientId() {
+    return recipientId;
+  }
+  public void setRecipientId(String recipientId) {
+    this.recipientId = recipientId;
+  }
+
+  public SignatureTemplateFieldInfo getField() {
+    return field;
+  }
+  public void setField(SignatureTemplateFieldInfo field) {
+    this.field = field;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureTemplateFieldResult {\n");
-    sb.append("  field: ").append(field).append("\n");
     sb.append("  templateId: ").append(templateId).append("\n");
-    sb.append("  recipientId: ").append(recipientId).append("\n");
     sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  recipientId: ").append(recipientId).append("\n");
+    sb.append("  field: ").append(field).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

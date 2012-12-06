@@ -22,23 +22,23 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureFieldSettings {
-  private String regularExpression = null;
   private String name = null;
+  private Integer graphSizeW = null;
   private Integer graphSizeH = null;
   private String getDataFrom = null;
-  private Integer graphSizeW = null;
-  public String getRegularExpression() {
-    return regularExpression;
-  }
-  public void setRegularExpression(String regularExpression) {
-    this.regularExpression = regularExpression;
-  }
-
+  private String regularExpression = null;
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Integer getGraphSizeW() {
+    return graphSizeW;
+  }
+  public void setGraphSizeW(Integer graphSizeW) {
+    this.graphSizeW = graphSizeW;
   }
 
   public Integer getGraphSizeH() {
@@ -55,22 +55,22 @@ public class SignatureFieldSettings {
     this.getDataFrom = getDataFrom;
   }
 
-  public Integer getGraphSizeW() {
-    return graphSizeW;
+  public String getRegularExpression() {
+    return regularExpression;
   }
-  public void setGraphSizeW(Integer graphSizeW) {
-    this.graphSizeW = graphSizeW;
+  public void setRegularExpression(String regularExpression) {
+    this.regularExpression = regularExpression;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFieldSettings {\n");
-    sb.append("  regularExpression: ").append(regularExpression).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  graphSizeW: ").append(graphSizeW).append("\n");
     sb.append("  graphSizeH: ").append(graphSizeH).append("\n");
     sb.append("  getDataFrom: ").append(getDataFrom).append("\n");
-    sb.append("  graphSizeW: ").append(graphSizeW).append("\n");
+    sb.append("  regularExpression: ").append(regularExpression).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

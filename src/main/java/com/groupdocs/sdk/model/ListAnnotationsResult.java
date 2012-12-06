@@ -24,21 +24,21 @@ import com.groupdocs.sdk.model.AnnotationInfo;
  *
  */
 public class ListAnnotationsResult {
-  private String sessionGuid = null;
   private String documentGuid = null;
+  private String sessionGuid = null;
   private List<AnnotationInfo> annotations = new ArrayList<AnnotationInfo>();
-  public String getSessionGuid() {
-    return sessionGuid;
-  }
-  public void setSessionGuid(String sessionGuid) {
-    this.sessionGuid = sessionGuid;
-  }
-
   public String getDocumentGuid() {
     return documentGuid;
   }
   public void setDocumentGuid(String documentGuid) {
     this.documentGuid = documentGuid;
+  }
+
+  public String getSessionGuid() {
+    return sessionGuid;
+  }
+  public void setSessionGuid(String sessionGuid) {
+    this.sessionGuid = sessionGuid;
   }
 
   public List<AnnotationInfo> getAnnotations() {
@@ -52,8 +52,8 @@ public class ListAnnotationsResult {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListAnnotationsResult {\n");
-    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  annotations: ").append(annotations).append("\n");
     sb.append("}\n");
     return sb.toString();

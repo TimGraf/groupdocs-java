@@ -23,36 +23,15 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureEnvelopeAuditLogInfo {
   private String id = null;
-  private String remoteAddress = null;
-  private String action = null;
-  private String userName = null;
   private String date = null;
+  private String userName = null;
+  private String action = null;
+  private String remoteAddress = null;
   public String getId() {
     return id;
   }
   public void setId(String id) {
     this.id = id;
-  }
-
-  public String getRemoteAddress() {
-    return remoteAddress;
-  }
-  public void setRemoteAddress(String remoteAddress) {
-    this.remoteAddress = remoteAddress;
-  }
-
-  public String getAction() {
-    return action;
-  }
-  public void setAction(String action) {
-    this.action = action;
-  }
-
-  public String getUserName() {
-    return userName;
-  }
-  public void setUserName(String userName) {
-    this.userName = userName;
   }
 
   public String getDate() {
@@ -62,15 +41,36 @@ public class SignatureEnvelopeAuditLogInfo {
     this.date = date;
   }
 
+  public String getUserName() {
+    return userName;
+  }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  public String getAction() {
+    return action;
+  }
+  public void setAction(String action) {
+    this.action = action;
+  }
+
+  public String getRemoteAddress() {
+    return remoteAddress;
+  }
+  public void setRemoteAddress(String remoteAddress) {
+    this.remoteAddress = remoteAddress;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeAuditLogInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  remoteAddress: ").append(remoteAddress).append("\n");
-    sb.append("  action: ").append(action).append("\n");
-    sb.append("  userName: ").append(userName).append("\n");
     sb.append("  date: ").append(date).append("\n");
+    sb.append("  userName: ").append(userName).append("\n");
+    sb.append("  action: ").append(action).append("\n");
+    sb.append("  remoteAddress: ").append(remoteAddress).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

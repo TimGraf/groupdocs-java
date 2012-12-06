@@ -22,9 +22,16 @@ package com.groupdocs.sdk.model;
  *
  */
 public class AddQuestionnaireCollectorResult {
+  private Double questionnaire_id = null;
   private Double collector_id = null;
   private String collector_guid = null;
-  private Double questionnaire_id = null;
+  public Double getQuestionnaire_id() {
+    return questionnaire_id;
+  }
+  public void setQuestionnaire_id(Double questionnaire_id) {
+    this.questionnaire_id = questionnaire_id;
+  }
+
   public Double getCollector_id() {
     return collector_id;
   }
@@ -39,20 +46,13 @@ public class AddQuestionnaireCollectorResult {
     this.collector_guid = collector_guid;
   }
 
-  public Double getQuestionnaire_id() {
-    return questionnaire_id;
-  }
-  public void setQuestionnaire_id(Double questionnaire_id) {
-    this.questionnaire_id = questionnaire_id;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddQuestionnaireCollectorResult {\n");
+    sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
     sb.append("  collector_id: ").append(collector_id).append("\n");
     sb.append("  collector_guid: ").append(collector_guid).append("\n");
-    sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -22,70 +22,21 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureDocumentFieldLocationInfo {
-  private Double locationHeight = null;
   private String id = null;
-  private String fontColor = null;
-  private String fontName = null;
-  private Integer page = null;
-  private Double locationWidth = null;
-  private Double locationX = null;
-  private Double fontSize = null;
   private String fieldId = null;
+  private Integer page = null;
+  private Double locationX = null;
   private Double locationY = null;
-  public Double getLocationHeight() {
-    return locationHeight;
-  }
-  public void setLocationHeight(Double locationHeight) {
-    this.locationHeight = locationHeight;
-  }
-
+  private Double locationWidth = null;
+  private Double locationHeight = null;
+  private String fontName = null;
+  private String fontColor = null;
+  private Double fontSize = null;
   public String getId() {
     return id;
   }
   public void setId(String id) {
     this.id = id;
-  }
-
-  public String getFontColor() {
-    return fontColor;
-  }
-  public void setFontColor(String fontColor) {
-    this.fontColor = fontColor;
-  }
-
-  public String getFontName() {
-    return fontName;
-  }
-  public void setFontName(String fontName) {
-    this.fontName = fontName;
-  }
-
-  public Integer getPage() {
-    return page;
-  }
-  public void setPage(Integer page) {
-    this.page = page;
-  }
-
-  public Double getLocationWidth() {
-    return locationWidth;
-  }
-  public void setLocationWidth(Double locationWidth) {
-    this.locationWidth = locationWidth;
-  }
-
-  public Double getLocationX() {
-    return locationX;
-  }
-  public void setLocationX(Double locationX) {
-    this.locationX = locationX;
-  }
-
-  public Double getFontSize() {
-    return fontSize;
-  }
-  public void setFontSize(Double fontSize) {
-    this.fontSize = fontSize;
   }
 
   public String getFieldId() {
@@ -95,6 +46,20 @@ public class SignatureDocumentFieldLocationInfo {
     this.fieldId = fieldId;
   }
 
+  public Integer getPage() {
+    return page;
+  }
+  public void setPage(Integer page) {
+    this.page = page;
+  }
+
+  public Double getLocationX() {
+    return locationX;
+  }
+  public void setLocationX(Double locationX) {
+    this.locationX = locationX;
+  }
+
   public Double getLocationY() {
     return locationY;
   }
@@ -102,20 +67,55 @@ public class SignatureDocumentFieldLocationInfo {
     this.locationY = locationY;
   }
 
+  public Double getLocationWidth() {
+    return locationWidth;
+  }
+  public void setLocationWidth(Double locationWidth) {
+    this.locationWidth = locationWidth;
+  }
+
+  public Double getLocationHeight() {
+    return locationHeight;
+  }
+  public void setLocationHeight(Double locationHeight) {
+    this.locationHeight = locationHeight;
+  }
+
+  public String getFontName() {
+    return fontName;
+  }
+  public void setFontName(String fontName) {
+    this.fontName = fontName;
+  }
+
+  public String getFontColor() {
+    return fontColor;
+  }
+  public void setFontColor(String fontColor) {
+    this.fontColor = fontColor;
+  }
+
+  public Double getFontSize() {
+    return fontSize;
+  }
+  public void setFontSize(Double fontSize) {
+    this.fontSize = fontSize;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureDocumentFieldLocationInfo {\n");
-    sb.append("  locationHeight: ").append(locationHeight).append("\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  fontColor: ").append(fontColor).append("\n");
-    sb.append("  fontName: ").append(fontName).append("\n");
-    sb.append("  page: ").append(page).append("\n");
-    sb.append("  locationWidth: ").append(locationWidth).append("\n");
-    sb.append("  locationX: ").append(locationX).append("\n");
-    sb.append("  fontSize: ").append(fontSize).append("\n");
     sb.append("  fieldId: ").append(fieldId).append("\n");
+    sb.append("  page: ").append(page).append("\n");
+    sb.append("  locationX: ").append(locationX).append("\n");
     sb.append("  locationY: ").append(locationY).append("\n");
+    sb.append("  locationWidth: ").append(locationWidth).append("\n");
+    sb.append("  locationHeight: ").append(locationHeight).append("\n");
+    sb.append("  fontName: ").append(fontName).append("\n");
+    sb.append("  fontColor: ").append(fontColor).append("\n");
+    sb.append("  fontSize: ").append(fontSize).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

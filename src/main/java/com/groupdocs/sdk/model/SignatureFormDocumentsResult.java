@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureFormDocumentInfo;
  *
  */
 public class SignatureFormDocumentsResult {
-  private List<SignatureFormDocumentInfo> documents = new ArrayList<SignatureFormDocumentInfo>();
   private String formId = null;
-  public List<SignatureFormDocumentInfo> getDocuments() {
-    return documents;
-  }
-  public void setDocuments(List<SignatureFormDocumentInfo> documents) {
-    this.documents = documents;
-  }
-
+  private List<SignatureFormDocumentInfo> documents = new ArrayList<SignatureFormDocumentInfo>();
   public String getFormId() {
     return formId;
   }
@@ -40,12 +33,19 @@ public class SignatureFormDocumentsResult {
     this.formId = formId;
   }
 
+  public List<SignatureFormDocumentInfo> getDocuments() {
+    return documents;
+  }
+  public void setDocuments(List<SignatureFormDocumentInfo> documents) {
+    this.documents = documents;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormDocumentsResult {\n");
-    sb.append("  documents: ").append(documents).append("\n");
     sb.append("  formId: ").append(formId).append("\n");
+    sb.append("  documents: ").append(documents).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

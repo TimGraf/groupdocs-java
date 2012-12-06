@@ -23,15 +23,8 @@ import com.groupdocs.sdk.model.DocumentInfo;
  *
  */
 public class FileMoveResult {
-  private DocumentInfo dst_file = null;
   private DocumentInfo src_file = null;
-  public DocumentInfo getDst_file() {
-    return dst_file;
-  }
-  public void setDst_file(DocumentInfo dst_file) {
-    this.dst_file = dst_file;
-  }
-
+  private DocumentInfo dst_file = null;
   public DocumentInfo getSrc_file() {
     return src_file;
   }
@@ -39,12 +32,19 @@ public class FileMoveResult {
     this.src_file = src_file;
   }
 
+  public DocumentInfo getDst_file() {
+    return dst_file;
+  }
+  public void setDst_file(DocumentInfo dst_file) {
+    this.dst_file = dst_file;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class FileMoveResult {\n");
-    sb.append("  dst_file: ").append(dst_file).append("\n");
     sb.append("  src_file: ").append(src_file).append("\n");
+    sb.append("  dst_file: ").append(dst_file).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

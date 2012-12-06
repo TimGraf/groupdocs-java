@@ -24,40 +24,19 @@ import com.groupdocs.sdk.model.SignatureTemplateFieldLocationInfo;
  *
  */
 public class SignatureTemplateFieldInfo {
-  private String regularExpression = null;
-  private Integer fieldType = null;
-  private Boolean mandatory = null;
   private String id = null;
   private String templateId = null;
-  private String acceptableValues = null;
   private String recipientId = null;
+  private String name = null;
+  private Boolean mandatory = null;
   private Double order = null;
+  private String regularExpression = null;
   private Double signatureFieldId = null;
   private List<SignatureTemplateFieldLocationInfo> locations = new ArrayList<SignatureTemplateFieldLocationInfo>();
-  private String name = null;
+  private Integer fieldType = null;
+  private String acceptableValues = null;
   private String defaultValue = null;
   private String tooltip = null;
-  public String getRegularExpression() {
-    return regularExpression;
-  }
-  public void setRegularExpression(String regularExpression) {
-    this.regularExpression = regularExpression;
-  }
-
-  public Integer getFieldType() {
-    return fieldType;
-  }
-  public void setFieldType(Integer fieldType) {
-    this.fieldType = fieldType;
-  }
-
-  public Boolean getMandatory() {
-    return mandatory;
-  }
-  public void setMandatory(Boolean mandatory) {
-    this.mandatory = mandatory;
-  }
-
   public String getId() {
     return id;
   }
@@ -72,13 +51,6 @@ public class SignatureTemplateFieldInfo {
     this.templateId = templateId;
   }
 
-  public String getAcceptableValues() {
-    return acceptableValues;
-  }
-  public void setAcceptableValues(String acceptableValues) {
-    this.acceptableValues = acceptableValues;
-  }
-
   public String getRecipientId() {
     return recipientId;
   }
@@ -86,11 +58,32 @@ public class SignatureTemplateFieldInfo {
     this.recipientId = recipientId;
   }
 
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Boolean getMandatory() {
+    return mandatory;
+  }
+  public void setMandatory(Boolean mandatory) {
+    this.mandatory = mandatory;
+  }
+
   public Double getOrder() {
     return order;
   }
   public void setOrder(Double order) {
     this.order = order;
+  }
+
+  public String getRegularExpression() {
+    return regularExpression;
+  }
+  public void setRegularExpression(String regularExpression) {
+    this.regularExpression = regularExpression;
   }
 
   public Double getSignatureFieldId() {
@@ -107,11 +100,18 @@ public class SignatureTemplateFieldInfo {
     this.locations = locations;
   }
 
-  public String getName() {
-    return name;
+  public Integer getFieldType() {
+    return fieldType;
   }
-  public void setName(String name) {
-    this.name = name;
+  public void setFieldType(Integer fieldType) {
+    this.fieldType = fieldType;
+  }
+
+  public String getAcceptableValues() {
+    return acceptableValues;
+  }
+  public void setAcceptableValues(String acceptableValues) {
+    this.acceptableValues = acceptableValues;
   }
 
   public String getDefaultValue() {
@@ -132,17 +132,17 @@ public class SignatureTemplateFieldInfo {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureTemplateFieldInfo {\n");
-    sb.append("  regularExpression: ").append(regularExpression).append("\n");
-    sb.append("  fieldType: ").append(fieldType).append("\n");
-    sb.append("  mandatory: ").append(mandatory).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  templateId: ").append(templateId).append("\n");
-    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  recipientId: ").append(recipientId).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  mandatory: ").append(mandatory).append("\n");
     sb.append("  order: ").append(order).append("\n");
+    sb.append("  regularExpression: ").append(regularExpression).append("\n");
     sb.append("  signatureFieldId: ").append(signatureFieldId).append("\n");
     sb.append("  locations: ").append(locations).append("\n");
-    sb.append("  name: ").append(name).append("\n");
+    sb.append("  fieldType: ").append(fieldType).append("\n");
+    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("}\n");

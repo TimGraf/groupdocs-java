@@ -23,8 +23,8 @@ package com.groupdocs.sdk.model;
  */
 public class SignaturePredefinedListInfo {
   private String id = null;
-  private String values = null;
   private String name = null;
+  private String values = null;
   private String defaultValue = null;
   public String getId() {
     return id;
@@ -33,18 +33,18 @@ public class SignaturePredefinedListInfo {
     this.id = id;
   }
 
-  public String getValues() {
-    return values;
-  }
-  public void setValues(String values) {
-    this.values = values;
-  }
-
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getValues() {
+    return values;
+  }
+  public void setValues(String values) {
+    this.values = values;
   }
 
   public String getDefaultValue() {
@@ -59,8 +59,8 @@ public class SignaturePredefinedListInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignaturePredefinedListInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  values: ").append(values).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  values: ").append(values).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("}\n");
     return sb.toString();

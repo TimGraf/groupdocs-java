@@ -22,20 +22,69 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureFormFieldLocationInfo {
+  private String id = null;
+  private String documentGuid = null;
+  private String fieldGuid = null;
+  private Integer page = null;
+  private Double locationX = null;
+  private Double locationY = null;
+  private Double locationWidth = null;
   private Double locationHeight = null;
   private String fontName = null;
   private String fontColor = null;
-  private Double locationX = null;
-  private Boolean fontBold = null;
   private Double fontSize = null;
-  private Double locationY = null;
-  private String id = null;
-  private String documentGuid = null;
+  private Boolean fontBold = null;
   private Boolean fontItalic = null;
   private Boolean fontUnderline = null;
-  private Integer page = null;
-  private String fieldGuid = null;
-  private Double locationWidth = null;
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getDocumentGuid() {
+    return documentGuid;
+  }
+  public void setDocumentGuid(String documentGuid) {
+    this.documentGuid = documentGuid;
+  }
+
+  public String getFieldGuid() {
+    return fieldGuid;
+  }
+  public void setFieldGuid(String fieldGuid) {
+    this.fieldGuid = fieldGuid;
+  }
+
+  public Integer getPage() {
+    return page;
+  }
+  public void setPage(Integer page) {
+    this.page = page;
+  }
+
+  public Double getLocationX() {
+    return locationX;
+  }
+  public void setLocationX(Double locationX) {
+    this.locationX = locationX;
+  }
+
+  public Double getLocationY() {
+    return locationY;
+  }
+  public void setLocationY(Double locationY) {
+    this.locationY = locationY;
+  }
+
+  public Double getLocationWidth() {
+    return locationWidth;
+  }
+  public void setLocationWidth(Double locationWidth) {
+    this.locationWidth = locationWidth;
+  }
+
   public Double getLocationHeight() {
     return locationHeight;
   }
@@ -57,20 +106,6 @@ public class SignatureFormFieldLocationInfo {
     this.fontColor = fontColor;
   }
 
-  public Double getLocationX() {
-    return locationX;
-  }
-  public void setLocationX(Double locationX) {
-    this.locationX = locationX;
-  }
-
-  public Boolean getFontBold() {
-    return fontBold;
-  }
-  public void setFontBold(Boolean fontBold) {
-    this.fontBold = fontBold;
-  }
-
   public Double getFontSize() {
     return fontSize;
   }
@@ -78,25 +113,11 @@ public class SignatureFormFieldLocationInfo {
     this.fontSize = fontSize;
   }
 
-  public Double getLocationY() {
-    return locationY;
+  public Boolean getFontBold() {
+    return fontBold;
   }
-  public void setLocationY(Double locationY) {
-    this.locationY = locationY;
-  }
-
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
-  public String getDocumentGuid() {
-    return documentGuid;
-  }
-  public void setDocumentGuid(String documentGuid) {
-    this.documentGuid = documentGuid;
+  public void setFontBold(Boolean fontBold) {
+    this.fontBold = fontBold;
   }
 
   public Boolean getFontItalic() {
@@ -113,45 +134,24 @@ public class SignatureFormFieldLocationInfo {
     this.fontUnderline = fontUnderline;
   }
 
-  public Integer getPage() {
-    return page;
-  }
-  public void setPage(Integer page) {
-    this.page = page;
-  }
-
-  public String getFieldGuid() {
-    return fieldGuid;
-  }
-  public void setFieldGuid(String fieldGuid) {
-    this.fieldGuid = fieldGuid;
-  }
-
-  public Double getLocationWidth() {
-    return locationWidth;
-  }
-  public void setLocationWidth(Double locationWidth) {
-    this.locationWidth = locationWidth;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormFieldLocationInfo {\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  fieldGuid: ").append(fieldGuid).append("\n");
+    sb.append("  page: ").append(page).append("\n");
+    sb.append("  locationX: ").append(locationX).append("\n");
+    sb.append("  locationY: ").append(locationY).append("\n");
+    sb.append("  locationWidth: ").append(locationWidth).append("\n");
     sb.append("  locationHeight: ").append(locationHeight).append("\n");
     sb.append("  fontName: ").append(fontName).append("\n");
     sb.append("  fontColor: ").append(fontColor).append("\n");
-    sb.append("  locationX: ").append(locationX).append("\n");
-    sb.append("  fontBold: ").append(fontBold).append("\n");
     sb.append("  fontSize: ").append(fontSize).append("\n");
-    sb.append("  locationY: ").append(locationY).append("\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  fontBold: ").append(fontBold).append("\n");
     sb.append("  fontItalic: ").append(fontItalic).append("\n");
     sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
-    sb.append("  page: ").append(page).append("\n");
-    sb.append("  fieldGuid: ").append(fieldGuid).append("\n");
-    sb.append("  locationWidth: ").append(locationWidth).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

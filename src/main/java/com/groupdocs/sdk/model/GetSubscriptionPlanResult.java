@@ -25,15 +25,8 @@ import com.groupdocs.sdk.model.ProductMetrics;
  *
  */
 public class GetSubscriptionPlanResult {
-  private SubscriptionPlanInfo subscription = null;
   private List<ProductMetrics> metrics = new ArrayList<ProductMetrics>();
-  public SubscriptionPlanInfo getSubscription() {
-    return subscription;
-  }
-  public void setSubscription(SubscriptionPlanInfo subscription) {
-    this.subscription = subscription;
-  }
-
+  private SubscriptionPlanInfo subscription = null;
   public List<ProductMetrics> getMetrics() {
     return metrics;
   }
@@ -41,12 +34,19 @@ public class GetSubscriptionPlanResult {
     this.metrics = metrics;
   }
 
+  public SubscriptionPlanInfo getSubscription() {
+    return subscription;
+  }
+  public void setSubscription(SubscriptionPlanInfo subscription) {
+    this.subscription = subscription;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetSubscriptionPlanResult {\n");
-    sb.append("  subscription: ").append(subscription).append("\n");
     sb.append("  metrics: ").append(metrics).append("\n");
+    sb.append("  subscription: ").append(subscription).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -24,34 +24,27 @@ import com.groupdocs.sdk.model.SignatureDocumentFieldInfo;
  *
  */
 public class SignatureEnvelopeDocumentInfo {
-  private Integer fieldsCount = null;
-  private List<SignatureDocumentFieldInfo> originalDocumentImportedFields = new ArrayList<SignatureDocumentFieldInfo>();
-  private String finalDocumentMD5 = null;
+  private String documentId = null;
+  private String envelopeId = null;
   private Integer order = null;
   private String name = null;
-  private String envelopeId = null;
-  private Integer originalDocumentPagesCount = null;
   private String originalDocumentMD5 = null;
-  private String documentId = null;
-  public Integer getFieldsCount() {
-    return fieldsCount;
+  private String finalDocumentMD5 = null;
+  private Integer originalDocumentPagesCount = null;
+  private Integer fieldsCount = null;
+  private List<SignatureDocumentFieldInfo> originalDocumentImportedFields = new ArrayList<SignatureDocumentFieldInfo>();
+  public String getDocumentId() {
+    return documentId;
   }
-  public void setFieldsCount(Integer fieldsCount) {
-    this.fieldsCount = fieldsCount;
-  }
-
-  public List<SignatureDocumentFieldInfo> getOriginalDocumentImportedFields() {
-    return originalDocumentImportedFields;
-  }
-  public void setOriginalDocumentImportedFields(List<SignatureDocumentFieldInfo> originalDocumentImportedFields) {
-    this.originalDocumentImportedFields = originalDocumentImportedFields;
+  public void setDocumentId(String documentId) {
+    this.documentId = documentId;
   }
 
-  public String getFinalDocumentMD5() {
-    return finalDocumentMD5;
+  public String getEnvelopeId() {
+    return envelopeId;
   }
-  public void setFinalDocumentMD5(String finalDocumentMD5) {
-    this.finalDocumentMD5 = finalDocumentMD5;
+  public void setEnvelopeId(String envelopeId) {
+    this.envelopeId = envelopeId;
   }
 
   public Integer getOrder() {
@@ -68,11 +61,18 @@ public class SignatureEnvelopeDocumentInfo {
     this.name = name;
   }
 
-  public String getEnvelopeId() {
-    return envelopeId;
+  public String getOriginalDocumentMD5() {
+    return originalDocumentMD5;
   }
-  public void setEnvelopeId(String envelopeId) {
-    this.envelopeId = envelopeId;
+  public void setOriginalDocumentMD5(String originalDocumentMD5) {
+    this.originalDocumentMD5 = originalDocumentMD5;
+  }
+
+  public String getFinalDocumentMD5() {
+    return finalDocumentMD5;
+  }
+  public void setFinalDocumentMD5(String finalDocumentMD5) {
+    this.finalDocumentMD5 = finalDocumentMD5;
   }
 
   public Integer getOriginalDocumentPagesCount() {
@@ -82,33 +82,33 @@ public class SignatureEnvelopeDocumentInfo {
     this.originalDocumentPagesCount = originalDocumentPagesCount;
   }
 
-  public String getOriginalDocumentMD5() {
-    return originalDocumentMD5;
+  public Integer getFieldsCount() {
+    return fieldsCount;
   }
-  public void setOriginalDocumentMD5(String originalDocumentMD5) {
-    this.originalDocumentMD5 = originalDocumentMD5;
+  public void setFieldsCount(Integer fieldsCount) {
+    this.fieldsCount = fieldsCount;
   }
 
-  public String getDocumentId() {
-    return documentId;
+  public List<SignatureDocumentFieldInfo> getOriginalDocumentImportedFields() {
+    return originalDocumentImportedFields;
   }
-  public void setDocumentId(String documentId) {
-    this.documentId = documentId;
+  public void setOriginalDocumentImportedFields(List<SignatureDocumentFieldInfo> originalDocumentImportedFields) {
+    this.originalDocumentImportedFields = originalDocumentImportedFields;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeDocumentInfo {\n");
-    sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
-    sb.append("  originalDocumentImportedFields: ").append(originalDocumentImportedFields).append("\n");
-    sb.append("  finalDocumentMD5: ").append(finalDocumentMD5).append("\n");
+    sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  envelopeId: ").append(envelopeId).append("\n");
     sb.append("  order: ").append(order).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  envelopeId: ").append(envelopeId).append("\n");
-    sb.append("  originalDocumentPagesCount: ").append(originalDocumentPagesCount).append("\n");
     sb.append("  originalDocumentMD5: ").append(originalDocumentMD5).append("\n");
-    sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  finalDocumentMD5: ").append(finalDocumentMD5).append("\n");
+    sb.append("  originalDocumentPagesCount: ").append(originalDocumentPagesCount).append("\n");
+    sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
+    sb.append("  originalDocumentImportedFields: ").append(originalDocumentImportedFields).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

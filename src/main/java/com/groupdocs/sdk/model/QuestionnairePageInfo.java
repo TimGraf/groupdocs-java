@@ -24,9 +24,16 @@ import com.groupdocs.sdk.model.QuestionInfo;
  *
  */
 public class QuestionnairePageInfo {
+  private Integer number = null;
   private String title = null;
   private List<QuestionInfo> questions = new ArrayList<QuestionInfo>();
-  private Integer number = null;
+  public Integer getNumber() {
+    return number;
+  }
+  public void setNumber(Integer number) {
+    this.number = number;
+  }
+
   public String getTitle() {
     return title;
   }
@@ -41,20 +48,13 @@ public class QuestionnairePageInfo {
     this.questions = questions;
   }
 
-  public Integer getNumber() {
-    return number;
-  }
-  public void setNumber(Integer number) {
-    this.number = number;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionnairePageInfo {\n");
+    sb.append("  number: ").append(number).append("\n");
     sb.append("  title: ").append(title).append("\n");
     sb.append("  questions: ").append(questions).append("\n");
-    sb.append("  number: ").append(number).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -23,29 +23,15 @@ import com.groupdocs.sdk.model.SignatureFormFieldInfo;
  *
  */
 public class SignatureFormFieldResult {
-  private SignatureFormFieldInfo field = null;
   private String formId = null;
-  private String participantId = null;
   private String documentId = null;
-  public SignatureFormFieldInfo getField() {
-    return field;
-  }
-  public void setField(SignatureFormFieldInfo field) {
-    this.field = field;
-  }
-
+  private String participantId = null;
+  private SignatureFormFieldInfo field = null;
   public String getFormId() {
     return formId;
   }
   public void setFormId(String formId) {
     this.formId = formId;
-  }
-
-  public String getParticipantId() {
-    return participantId;
-  }
-  public void setParticipantId(String participantId) {
-    this.participantId = participantId;
   }
 
   public String getDocumentId() {
@@ -55,14 +41,28 @@ public class SignatureFormFieldResult {
     this.documentId = documentId;
   }
 
+  public String getParticipantId() {
+    return participantId;
+  }
+  public void setParticipantId(String participantId) {
+    this.participantId = participantId;
+  }
+
+  public SignatureFormFieldInfo getField() {
+    return field;
+  }
+  public void setField(SignatureFormFieldInfo field) {
+    this.field = field;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormFieldResult {\n");
-    sb.append("  field: ").append(field).append("\n");
     sb.append("  formId: ").append(formId).append("\n");
-    sb.append("  participantId: ").append(participantId).append("\n");
     sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  participantId: ").append(participantId).append("\n");
+    sb.append("  field: ").append(field).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -22,10 +22,24 @@ package com.groupdocs.sdk.model;
  *
  */
 public class JobErrorInfo {
+  private Double job_id = null;
+  private Double original_document_id = null;
   private Integer error_code = null;
   private String expected_format = null;
-  private Double original_document_id = null;
-  private Double job_id = null;
+  public Double getJob_id() {
+    return job_id;
+  }
+  public void setJob_id(Double job_id) {
+    this.job_id = job_id;
+  }
+
+  public Double getOriginal_document_id() {
+    return original_document_id;
+  }
+  public void setOriginal_document_id(Double original_document_id) {
+    this.original_document_id = original_document_id;
+  }
+
   public Integer getError_code() {
     return error_code;
   }
@@ -40,28 +54,14 @@ public class JobErrorInfo {
     this.expected_format = expected_format;
   }
 
-  public Double getOriginal_document_id() {
-    return original_document_id;
-  }
-  public void setOriginal_document_id(Double original_document_id) {
-    this.original_document_id = original_document_id;
-  }
-
-  public Double getJob_id() {
-    return job_id;
-  }
-  public void setJob_id(Double job_id) {
-    this.job_id = job_id;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class JobErrorInfo {\n");
+    sb.append("  job_id: ").append(job_id).append("\n");
+    sb.append("  original_document_id: ").append(original_document_id).append("\n");
     sb.append("  error_code: ").append(error_code).append("\n");
     sb.append("  expected_format: ").append(expected_format).append("\n");
-    sb.append("  original_document_id: ").append(original_document_id).append("\n");
-    sb.append("  job_id: ").append(job_id).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

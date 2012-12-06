@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.JobInfo;
  *
  */
 public class GetJobsResult {
-  private List<JobInfo> jobs = new ArrayList<JobInfo>();
   private Integer count = null;
-  public List<JobInfo> getJobs() {
-    return jobs;
-  }
-  public void setJobs(List<JobInfo> jobs) {
-    this.jobs = jobs;
-  }
-
+  private List<JobInfo> jobs = new ArrayList<JobInfo>();
   public Integer getCount() {
     return count;
   }
@@ -40,12 +33,19 @@ public class GetJobsResult {
     this.count = count;
   }
 
+  public List<JobInfo> getJobs() {
+    return jobs;
+  }
+  public void setJobs(List<JobInfo> jobs) {
+    this.jobs = jobs;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetJobsResult {\n");
-    sb.append("  jobs: ").append(jobs).append("\n");
     sb.append("  count: ").append(count).append("\n");
+    sb.append("  jobs: ").append(jobs).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -25,9 +25,16 @@ import com.groupdocs.sdk.model.JobOutputDocument;
  *
  */
 public class GetJobDocumentsResult {
+  private String job_status = null;
   private List<JobInputDocument> inputs = new ArrayList<JobInputDocument>();
   private List<JobOutputDocument> outputs = new ArrayList<JobOutputDocument>();
-  private String job_status = null;
+  public String getJob_status() {
+    return job_status;
+  }
+  public void setJob_status(String job_status) {
+    this.job_status = job_status;
+  }
+
   public List<JobInputDocument> getInputs() {
     return inputs;
   }
@@ -42,20 +49,13 @@ public class GetJobDocumentsResult {
     this.outputs = outputs;
   }
 
-  public String getJob_status() {
-    return job_status;
-  }
-  public void setJob_status(String job_status) {
-    this.job_status = job_status;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetJobDocumentsResult {\n");
+    sb.append("  job_status: ").append(job_status).append("\n");
     sb.append("  inputs: ").append(inputs).append("\n");
     sb.append("  outputs: ").append(outputs).append("\n");
-    sb.append("  job_status: ").append(job_status).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

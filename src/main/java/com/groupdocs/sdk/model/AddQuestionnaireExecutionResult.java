@@ -22,16 +22,9 @@ package com.groupdocs.sdk.model;
  *
  */
 public class AddQuestionnaireExecutionResult {
-  private String execution_guid = null;
   private Double collector_id = null;
   private Double execution_id = null;
-  public String getExecution_guid() {
-    return execution_guid;
-  }
-  public void setExecution_guid(String execution_guid) {
-    this.execution_guid = execution_guid;
-  }
-
+  private String execution_guid = null;
   public Double getCollector_id() {
     return collector_id;
   }
@@ -46,13 +39,20 @@ public class AddQuestionnaireExecutionResult {
     this.execution_id = execution_id;
   }
 
+  public String getExecution_guid() {
+    return execution_guid;
+  }
+  public void setExecution_guid(String execution_guid) {
+    this.execution_guid = execution_guid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddQuestionnaireExecutionResult {\n");
-    sb.append("  execution_guid: ").append(execution_guid).append("\n");
     sb.append("  collector_id: ").append(collector_id).append("\n");
     sb.append("  execution_id: ").append(execution_id).append("\n");
+    sb.append("  execution_guid: ").append(execution_guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

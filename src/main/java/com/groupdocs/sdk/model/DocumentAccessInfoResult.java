@@ -24,29 +24,22 @@ import com.groupdocs.sdk.model.UserInfo;
  *
  */
 public class DocumentAccessInfoResult {
-  private List<UserInfo> sharers = new ArrayList<UserInfo>();
   private String status = null;
-  private String type_str = null;
+  private UserInfo owner = null;
+  private List<UserInfo> sharers = new ArrayList<UserInfo>();
   private Long shared_on = null;
+  private String name = null;
+  private Integer version = null;
+  private Long size = null;
   private String type = null;
+  private String type_str = null;
+  private String file_type_str = null;
+  private String document_path = null;
   private String access = null;
   private String url = null;
   private String file_type = null;
-  private Integer version = null;
-  private Long size = null;
-  private String guid = null;
   private Double id = null;
-  private String document_path = null;
-  private String name = null;
-  private UserInfo owner = null;
-  private String file_type_str = null;
-  public List<UserInfo> getSharers() {
-    return sharers;
-  }
-  public void setSharers(List<UserInfo> sharers) {
-    this.sharers = sharers;
-  }
-
+  private String guid = null;
   public String getStatus() {
     return status;
   }
@@ -54,11 +47,18 @@ public class DocumentAccessInfoResult {
     this.status = status;
   }
 
-  public String getType_str() {
-    return type_str;
+  public UserInfo getOwner() {
+    return owner;
   }
-  public void setType_str(String type_str) {
-    this.type_str = type_str;
+  public void setOwner(UserInfo owner) {
+    this.owner = owner;
+  }
+
+  public List<UserInfo> getSharers() {
+    return sharers;
+  }
+  public void setSharers(List<UserInfo> sharers) {
+    this.sharers = sharers;
   }
 
   public Long getShared_on() {
@@ -68,11 +68,53 @@ public class DocumentAccessInfoResult {
     this.shared_on = shared_on;
   }
 
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+  public Long getSize() {
+    return size;
+  }
+  public void setSize(Long size) {
+    this.size = size;
+  }
+
   public String getType() {
     return type;
   }
   public void setType(String type) {
     this.type = type;
+  }
+
+  public String getType_str() {
+    return type_str;
+  }
+  public void setType_str(String type_str) {
+    this.type_str = type_str;
+  }
+
+  public String getFile_type_str() {
+    return file_type_str;
+  }
+  public void setFile_type_str(String file_type_str) {
+    this.file_type_str = file_type_str;
+  }
+
+  public String getDocument_path() {
+    return document_path;
+  }
+  public void setDocument_path(String document_path) {
+    this.document_path = document_path;
   }
 
   public String getAccess() {
@@ -96,18 +138,11 @@ public class DocumentAccessInfoResult {
     this.file_type = file_type;
   }
 
-  public Integer getVersion() {
-    return version;
+  public Double getId() {
+    return id;
   }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  public Long getSize() {
-    return size;
-  }
-  public void setSize(Long size) {
-    this.size = size;
+  public void setId(Double id) {
+    this.id = id;
   }
 
   public String getGuid() {
@@ -117,61 +152,26 @@ public class DocumentAccessInfoResult {
     this.guid = guid;
   }
 
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public String getDocument_path() {
-    return document_path;
-  }
-  public void setDocument_path(String document_path) {
-    this.document_path = document_path;
-  }
-
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public UserInfo getOwner() {
-    return owner;
-  }
-  public void setOwner(UserInfo owner) {
-    this.owner = owner;
-  }
-
-  public String getFile_type_str() {
-    return file_type_str;
-  }
-  public void setFile_type_str(String file_type_str) {
-    this.file_type_str = file_type_str;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentAccessInfoResult {\n");
-    sb.append("  sharers: ").append(sharers).append("\n");
     sb.append("  status: ").append(status).append("\n");
-    sb.append("  type_str: ").append(type_str).append("\n");
+    sb.append("  owner: ").append(owner).append("\n");
+    sb.append("  sharers: ").append(sharers).append("\n");
     sb.append("  shared_on: ").append(shared_on).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  version: ").append(version).append("\n");
+    sb.append("  size: ").append(size).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  type_str: ").append(type_str).append("\n");
+    sb.append("  file_type_str: ").append(file_type_str).append("\n");
+    sb.append("  document_path: ").append(document_path).append("\n");
     sb.append("  access: ").append(access).append("\n");
     sb.append("  url: ").append(url).append("\n");
     sb.append("  file_type: ").append(file_type).append("\n");
-    sb.append("  version: ").append(version).append("\n");
-    sb.append("  size: ").append(size).append("\n");
-    sb.append("  guid: ").append(guid).append("\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  document_path: ").append(document_path).append("\n");
-    sb.append("  name: ").append(name).append("\n");
-    sb.append("  owner: ").append(owner).append("\n");
-    sb.append("  file_type_str: ").append(file_type_str).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

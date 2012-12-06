@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureTemplateInfo;
  *
  */
 public class SignatureTemplatesResult {
-  private List<SignatureTemplateInfo> templates = new ArrayList<SignatureTemplateInfo>();
   private Integer templatesCount = null;
-  public List<SignatureTemplateInfo> getTemplates() {
-    return templates;
-  }
-  public void setTemplates(List<SignatureTemplateInfo> templates) {
-    this.templates = templates;
-  }
-
+  private List<SignatureTemplateInfo> templates = new ArrayList<SignatureTemplateInfo>();
   public Integer getTemplatesCount() {
     return templatesCount;
   }
@@ -40,12 +33,19 @@ public class SignatureTemplatesResult {
     this.templatesCount = templatesCount;
   }
 
+  public List<SignatureTemplateInfo> getTemplates() {
+    return templates;
+  }
+  public void setTemplates(List<SignatureTemplateInfo> templates) {
+    this.templates = templates;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureTemplatesResult {\n");
-    sb.append("  templates: ").append(templates).append("\n");
     sb.append("  templatesCount: ").append(templatesCount).append("\n");
+    sb.append("  templates: ").append(templates).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

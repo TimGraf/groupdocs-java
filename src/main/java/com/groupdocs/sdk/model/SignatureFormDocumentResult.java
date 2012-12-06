@@ -23,15 +23,8 @@ import com.groupdocs.sdk.model.SignatureFormDocumentInfo;
  *
  */
 public class SignatureFormDocumentResult {
-  private SignatureFormDocumentInfo document = null;
   private String formId = null;
-  public SignatureFormDocumentInfo getDocument() {
-    return document;
-  }
-  public void setDocument(SignatureFormDocumentInfo document) {
-    this.document = document;
-  }
-
+  private SignatureFormDocumentInfo document = null;
   public String getFormId() {
     return formId;
   }
@@ -39,12 +32,19 @@ public class SignatureFormDocumentResult {
     this.formId = formId;
   }
 
+  public SignatureFormDocumentInfo getDocument() {
+    return document;
+  }
+  public void setDocument(SignatureFormDocumentInfo document) {
+    this.document = document;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormDocumentResult {\n");
-    sb.append("  document: ").append(document).append("\n");
     sb.append("  formId: ").append(formId).append("\n");
+    sb.append("  document: ").append(document).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

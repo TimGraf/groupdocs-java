@@ -24,17 +24,17 @@ import java.util.*;
  */
 public class SignatureFormInfo {
   private String id = null;
-  private Boolean canParticipantDownloadForm = null;
-  private Double participantsCount = null;
+  private String name = null;
+  private String ownerGuid = null;
   private String templateGuid = null;
   private String createdTimeStamp = null;
-  private Double documentsCount = null;
   private Integer status = null;
-  private Double documentsPages = null;
-  private String ownerGuid = null;
-  private String name = null;
-  private List<String> fieldsInFinalFileName = new ArrayList<String>();
   private String statusDateTime = null;
+  private Double documentsCount = null;
+  private Double documentsPages = null;
+  private Double participantsCount = null;
+  private List<String> fieldsInFinalFileName = new ArrayList<String>();
+  private Boolean canParticipantDownloadForm = null;
   public String getId() {
     return id;
   }
@@ -42,18 +42,18 @@ public class SignatureFormInfo {
     this.id = id;
   }
 
-  public Boolean getCanParticipantDownloadForm() {
-    return canParticipantDownloadForm;
+  public String getName() {
+    return name;
   }
-  public void setCanParticipantDownloadForm(Boolean canParticipantDownloadForm) {
-    this.canParticipantDownloadForm = canParticipantDownloadForm;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Double getParticipantsCount() {
-    return participantsCount;
+  public String getOwnerGuid() {
+    return ownerGuid;
   }
-  public void setParticipantsCount(Double participantsCount) {
-    this.participantsCount = participantsCount;
+  public void setOwnerGuid(String ownerGuid) {
+    this.ownerGuid = ownerGuid;
   }
 
   public String getTemplateGuid() {
@@ -70,46 +70,11 @@ public class SignatureFormInfo {
     this.createdTimeStamp = createdTimeStamp;
   }
 
-  public Double getDocumentsCount() {
-    return documentsCount;
-  }
-  public void setDocumentsCount(Double documentsCount) {
-    this.documentsCount = documentsCount;
-  }
-
   public Integer getStatus() {
     return status;
   }
   public void setStatus(Integer status) {
     this.status = status;
-  }
-
-  public Double getDocumentsPages() {
-    return documentsPages;
-  }
-  public void setDocumentsPages(Double documentsPages) {
-    this.documentsPages = documentsPages;
-  }
-
-  public String getOwnerGuid() {
-    return ownerGuid;
-  }
-  public void setOwnerGuid(String ownerGuid) {
-    this.ownerGuid = ownerGuid;
-  }
-
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public List<String> getFieldsInFinalFileName() {
-    return fieldsInFinalFileName;
-  }
-  public void setFieldsInFinalFileName(List<String> fieldsInFinalFileName) {
-    this.fieldsInFinalFileName = fieldsInFinalFileName;
   }
 
   public String getStatusDateTime() {
@@ -119,22 +84,57 @@ public class SignatureFormInfo {
     this.statusDateTime = statusDateTime;
   }
 
+  public Double getDocumentsCount() {
+    return documentsCount;
+  }
+  public void setDocumentsCount(Double documentsCount) {
+    this.documentsCount = documentsCount;
+  }
+
+  public Double getDocumentsPages() {
+    return documentsPages;
+  }
+  public void setDocumentsPages(Double documentsPages) {
+    this.documentsPages = documentsPages;
+  }
+
+  public Double getParticipantsCount() {
+    return participantsCount;
+  }
+  public void setParticipantsCount(Double participantsCount) {
+    this.participantsCount = participantsCount;
+  }
+
+  public List<String> getFieldsInFinalFileName() {
+    return fieldsInFinalFileName;
+  }
+  public void setFieldsInFinalFileName(List<String> fieldsInFinalFileName) {
+    this.fieldsInFinalFileName = fieldsInFinalFileName;
+  }
+
+  public Boolean getCanParticipantDownloadForm() {
+    return canParticipantDownloadForm;
+  }
+  public void setCanParticipantDownloadForm(Boolean canParticipantDownloadForm) {
+    this.canParticipantDownloadForm = canParticipantDownloadForm;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
-    sb.append("  participantsCount: ").append(participantsCount).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  ownerGuid: ").append(ownerGuid).append("\n");
     sb.append("  templateGuid: ").append(templateGuid).append("\n");
     sb.append("  createdTimeStamp: ").append(createdTimeStamp).append("\n");
-    sb.append("  documentsCount: ").append(documentsCount).append("\n");
     sb.append("  status: ").append(status).append("\n");
-    sb.append("  documentsPages: ").append(documentsPages).append("\n");
-    sb.append("  ownerGuid: ").append(ownerGuid).append("\n");
-    sb.append("  name: ").append(name).append("\n");
-    sb.append("  fieldsInFinalFileName: ").append(fieldsInFinalFileName).append("\n");
     sb.append("  statusDateTime: ").append(statusDateTime).append("\n");
+    sb.append("  documentsCount: ").append(documentsCount).append("\n");
+    sb.append("  documentsPages: ").append(documentsPages).append("\n");
+    sb.append("  participantsCount: ").append(participantsCount).append("\n");
+    sb.append("  fieldsInFinalFileName: ").append(fieldsInFinalFileName).append("\n");
+    sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -24,77 +24,21 @@ import com.groupdocs.sdk.model.Dimension;
  *
  */
 public class ViewDocumentResult {
-  private String guid = null;
-  private Double id = null;
-  private Dimension page_size = null;
-  private String token = null;
   private String name = null;
-  private List<String> image_urls = new ArrayList<String>();
-  private String doc_type = null;
-  private String url = null;
-  private Integer page_count = null;
   private Integer version = null;
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public Dimension getPage_size() {
-    return page_size;
-  }
-  public void setPage_size(Dimension page_size) {
-    this.page_size = page_size;
-  }
-
-  public String getToken() {
-    return token;
-  }
-  public void setToken(String token) {
-    this.token = token;
-  }
-
+  private Integer page_count = null;
+  private Dimension page_size = null;
+  private String url = null;
+  private String doc_type = null;
+  private List<String> image_urls = new ArrayList<String>();
+  private String token = null;
+  private Double id = null;
+  private String guid = null;
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  public List<String> getImage_urls() {
-    return image_urls;
-  }
-  public void setImage_urls(List<String> image_urls) {
-    this.image_urls = image_urls;
-  }
-
-  public String getDoc_type() {
-    return doc_type;
-  }
-  public void setDoc_type(String doc_type) {
-    this.doc_type = doc_type;
-  }
-
-  public String getUrl() {
-    return url;
-  }
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
-  public Integer getPage_count() {
-    return page_count;
-  }
-  public void setPage_count(Integer page_count) {
-    this.page_count = page_count;
   }
 
   public Integer getVersion() {
@@ -104,20 +48,76 @@ public class ViewDocumentResult {
     this.version = version;
   }
 
+  public Integer getPage_count() {
+    return page_count;
+  }
+  public void setPage_count(Integer page_count) {
+    this.page_count = page_count;
+  }
+
+  public Dimension getPage_size() {
+    return page_size;
+  }
+  public void setPage_size(Dimension page_size) {
+    this.page_size = page_size;
+  }
+
+  public String getUrl() {
+    return url;
+  }
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+  public String getDoc_type() {
+    return doc_type;
+  }
+  public void setDoc_type(String doc_type) {
+    this.doc_type = doc_type;
+  }
+
+  public List<String> getImage_urls() {
+    return image_urls;
+  }
+  public void setImage_urls(List<String> image_urls) {
+    this.image_urls = image_urls;
+  }
+
+  public String getToken() {
+    return token;
+  }
+  public void setToken(String token) {
+    this.token = token;
+  }
+
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ViewDocumentResult {\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  page_size: ").append(page_size).append("\n");
-    sb.append("  token: ").append(token).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  image_urls: ").append(image_urls).append("\n");
-    sb.append("  doc_type: ").append(doc_type).append("\n");
-    sb.append("  url: ").append(url).append("\n");
-    sb.append("  page_count: ").append(page_count).append("\n");
     sb.append("  version: ").append(version).append("\n");
+    sb.append("  page_count: ").append(page_count).append("\n");
+    sb.append("  page_size: ").append(page_size).append("\n");
+    sb.append("  url: ").append(url).append("\n");
+    sb.append("  doc_type: ").append(doc_type).append("\n");
+    sb.append("  image_urls: ").append(image_urls).append("\n");
+    sb.append("  token: ").append(token).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

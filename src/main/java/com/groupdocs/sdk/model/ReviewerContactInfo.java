@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class ReviewerContactInfo {
-  private String FullName = null;
   private String emailAddress = null;
-  public String getFullName() {
-    return FullName;
-  }
-  public void setFullName(String FullName) {
-    this.FullName = FullName;
-  }
-
+  private String FullName = null;
   public String getEmailAddress() {
     return emailAddress;
   }
@@ -38,12 +31,19 @@ public class ReviewerContactInfo {
     this.emailAddress = emailAddress;
   }
 
+  public String getFullName() {
+    return FullName;
+  }
+  public void setFullName(String FullName) {
+    this.FullName = FullName;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReviewerContactInfo {\n");
-    sb.append("  FullName: ").append(FullName).append("\n");
     sb.append("  emailAddress: ").append(emailAddress).append("\n");
+    sb.append("  FullName: ").append(FullName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

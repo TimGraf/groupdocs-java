@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class CreateJobResult {
-  private String job_guid = null;
   private Double job_id = null;
-  public String getJob_guid() {
-    return job_guid;
-  }
-  public void setJob_guid(String job_guid) {
-    this.job_guid = job_guid;
-  }
-
+  private String job_guid = null;
   public Double getJob_id() {
     return job_id;
   }
@@ -38,12 +31,19 @@ public class CreateJobResult {
     this.job_id = job_id;
   }
 
+  public String getJob_guid() {
+    return job_guid;
+  }
+  public void setJob_guid(String job_guid) {
+    this.job_guid = job_guid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateJobResult {\n");
-    sb.append("  job_guid: ").append(job_guid).append("\n");
     sb.append("  job_id: ").append(job_id).append("\n");
+    sb.append("  job_guid: ").append(job_guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

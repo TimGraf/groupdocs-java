@@ -24,11 +24,18 @@ import com.groupdocs.sdk.model.ReviewerInfo;
  *
  */
 public class GetCollaboratorsResult {
-  private String sessionGuid = null;
   private String documentGuid = null;
+  private String sessionGuid = null;
+  private ReviewerInfo owner = null;
   private List<ReviewerInfo> collaborators = new ArrayList<ReviewerInfo>();
   private Integer shared_link_access_rights = null;
-  private ReviewerInfo owner = null;
+  public String getDocumentGuid() {
+    return documentGuid;
+  }
+  public void setDocumentGuid(String documentGuid) {
+    this.documentGuid = documentGuid;
+  }
+
   public String getSessionGuid() {
     return sessionGuid;
   }
@@ -36,11 +43,11 @@ public class GetCollaboratorsResult {
     this.sessionGuid = sessionGuid;
   }
 
-  public String getDocumentGuid() {
-    return documentGuid;
+  public ReviewerInfo getOwner() {
+    return owner;
   }
-  public void setDocumentGuid(String documentGuid) {
-    this.documentGuid = documentGuid;
+  public void setOwner(ReviewerInfo owner) {
+    this.owner = owner;
   }
 
   public List<ReviewerInfo> getCollaborators() {
@@ -57,22 +64,15 @@ public class GetCollaboratorsResult {
     this.shared_link_access_rights = shared_link_access_rights;
   }
 
-  public ReviewerInfo getOwner() {
-    return owner;
-  }
-  public void setOwner(ReviewerInfo owner) {
-    this.owner = owner;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetCollaboratorsResult {\n");
-    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
+    sb.append("  owner: ").append(owner).append("\n");
     sb.append("  collaborators: ").append(collaborators).append("\n");
     sb.append("  shared_link_access_rights: ").append(shared_link_access_rights).append("\n");
-    sb.append("  owner: ").append(owner).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

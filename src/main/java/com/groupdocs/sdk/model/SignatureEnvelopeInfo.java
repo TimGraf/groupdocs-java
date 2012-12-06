@@ -24,22 +24,36 @@ import com.groupdocs.sdk.model.SignatureEnvelopeRecipientInfo;
  *
  */
 public class SignatureEnvelopeInfo {
-  private String creationDateTime = null;
-  private Boolean ownerShouldSign = null;
-  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
-  private Integer status = null;
-  private Double envelopeExpireTime = null;
-  private Double reminderTime = null;
-  private String emailSubject = null;
-  private String statusDateTime = null;
   private String id = null;
+  private String name = null;
+  private String creationDateTime = null;
+  private String ownerGuid = null;
+  private Integer status = null;
+  private String statusDateTime = null;
+  private Double reminderTime = null;
   private Double stepExpireTime = null;
+  private Double envelopeExpireTime = null;
+  private Boolean ownerShouldSign = null;
+  private Boolean orderedSignature = null;
+  private String emailSubject = null;
   private String emailBody = null;
   private Double documentsCount = null;
-  private Boolean orderedSignature = null;
   private Double documentsPages = null;
-  private String ownerGuid = null;
-  private String name = null;
+  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
+  public String getId() {
+    return id;
+  }
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public String getCreationDateTime() {
     return creationDateTime;
   }
@@ -47,18 +61,11 @@ public class SignatureEnvelopeInfo {
     this.creationDateTime = creationDateTime;
   }
 
-  public Boolean getOwnerShouldSign() {
-    return ownerShouldSign;
+  public String getOwnerGuid() {
+    return ownerGuid;
   }
-  public void setOwnerShouldSign(Boolean ownerShouldSign) {
-    this.ownerShouldSign = ownerShouldSign;
-  }
-
-  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
-    return recipients;
-  }
-  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
-    this.recipients = recipients;
+  public void setOwnerGuid(String ownerGuid) {
+    this.ownerGuid = ownerGuid;
   }
 
   public Integer getStatus() {
@@ -68,11 +75,11 @@ public class SignatureEnvelopeInfo {
     this.status = status;
   }
 
-  public Double getEnvelopeExpireTime() {
-    return envelopeExpireTime;
+  public String getStatusDateTime() {
+    return statusDateTime;
   }
-  public void setEnvelopeExpireTime(Double envelopeExpireTime) {
-    this.envelopeExpireTime = envelopeExpireTime;
+  public void setStatusDateTime(String statusDateTime) {
+    this.statusDateTime = statusDateTime;
   }
 
   public Double getReminderTime() {
@@ -82,32 +89,39 @@ public class SignatureEnvelopeInfo {
     this.reminderTime = reminderTime;
   }
 
-  public String getEmailSubject() {
-    return emailSubject;
-  }
-  public void setEmailSubject(String emailSubject) {
-    this.emailSubject = emailSubject;
-  }
-
-  public String getStatusDateTime() {
-    return statusDateTime;
-  }
-  public void setStatusDateTime(String statusDateTime) {
-    this.statusDateTime = statusDateTime;
-  }
-
-  public String getId() {
-    return id;
-  }
-  public void setId(String id) {
-    this.id = id;
-  }
-
   public Double getStepExpireTime() {
     return stepExpireTime;
   }
   public void setStepExpireTime(Double stepExpireTime) {
     this.stepExpireTime = stepExpireTime;
+  }
+
+  public Double getEnvelopeExpireTime() {
+    return envelopeExpireTime;
+  }
+  public void setEnvelopeExpireTime(Double envelopeExpireTime) {
+    this.envelopeExpireTime = envelopeExpireTime;
+  }
+
+  public Boolean getOwnerShouldSign() {
+    return ownerShouldSign;
+  }
+  public void setOwnerShouldSign(Boolean ownerShouldSign) {
+    this.ownerShouldSign = ownerShouldSign;
+  }
+
+  public Boolean getOrderedSignature() {
+    return orderedSignature;
+  }
+  public void setOrderedSignature(Boolean orderedSignature) {
+    this.orderedSignature = orderedSignature;
+  }
+
+  public String getEmailSubject() {
+    return emailSubject;
+  }
+  public void setEmailSubject(String emailSubject) {
+    this.emailSubject = emailSubject;
   }
 
   public String getEmailBody() {
@@ -124,13 +138,6 @@ public class SignatureEnvelopeInfo {
     this.documentsCount = documentsCount;
   }
 
-  public Boolean getOrderedSignature() {
-    return orderedSignature;
-  }
-  public void setOrderedSignature(Boolean orderedSignature) {
-    this.orderedSignature = orderedSignature;
-  }
-
   public Double getDocumentsPages() {
     return documentsPages;
   }
@@ -138,40 +145,33 @@ public class SignatureEnvelopeInfo {
     this.documentsPages = documentsPages;
   }
 
-  public String getOwnerGuid() {
-    return ownerGuid;
+  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
+    return recipients;
   }
-  public void setOwnerGuid(String ownerGuid) {
-    this.ownerGuid = ownerGuid;
-  }
-
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
+  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
+    this.recipients = recipients;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeInfo {\n");
-    sb.append("  creationDateTime: ").append(creationDateTime).append("\n");
-    sb.append("  ownerShouldSign: ").append(ownerShouldSign).append("\n");
-    sb.append("  recipients: ").append(recipients).append("\n");
-    sb.append("  status: ").append(status).append("\n");
-    sb.append("  envelopeExpireTime: ").append(envelopeExpireTime).append("\n");
-    sb.append("  reminderTime: ").append(reminderTime).append("\n");
-    sb.append("  emailSubject: ").append(emailSubject).append("\n");
-    sb.append("  statusDateTime: ").append(statusDateTime).append("\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  name: ").append(name).append("\n");
+    sb.append("  creationDateTime: ").append(creationDateTime).append("\n");
+    sb.append("  ownerGuid: ").append(ownerGuid).append("\n");
+    sb.append("  status: ").append(status).append("\n");
+    sb.append("  statusDateTime: ").append(statusDateTime).append("\n");
+    sb.append("  reminderTime: ").append(reminderTime).append("\n");
     sb.append("  stepExpireTime: ").append(stepExpireTime).append("\n");
+    sb.append("  envelopeExpireTime: ").append(envelopeExpireTime).append("\n");
+    sb.append("  ownerShouldSign: ").append(ownerShouldSign).append("\n");
+    sb.append("  orderedSignature: ").append(orderedSignature).append("\n");
+    sb.append("  emailSubject: ").append(emailSubject).append("\n");
     sb.append("  emailBody: ").append(emailBody).append("\n");
     sb.append("  documentsCount: ").append(documentsCount).append("\n");
-    sb.append("  orderedSignature: ").append(orderedSignature).append("\n");
     sb.append("  documentsPages: ").append(documentsPages).append("\n");
-    sb.append("  ownerGuid: ").append(ownerGuid).append("\n");
-    sb.append("  name: ").append(name).append("\n");
+    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

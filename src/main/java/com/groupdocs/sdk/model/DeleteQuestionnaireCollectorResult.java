@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class DeleteQuestionnaireCollectorResult {
-  private Double collector_id = null;
   private Double questionnaire_id = null;
-  public Double getCollector_id() {
-    return collector_id;
-  }
-  public void setCollector_id(Double collector_id) {
-    this.collector_id = collector_id;
-  }
-
+  private Double collector_id = null;
   public Double getQuestionnaire_id() {
     return questionnaire_id;
   }
@@ -38,12 +31,19 @@ public class DeleteQuestionnaireCollectorResult {
     this.questionnaire_id = questionnaire_id;
   }
 
+  public Double getCollector_id() {
+    return collector_id;
+  }
+  public void setCollector_id(Double collector_id) {
+    this.collector_id = collector_id;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteQuestionnaireCollectorResult {\n");
-    sb.append("  collector_id: ").append(collector_id).append("\n");
     sb.append("  questionnaire_id: ").append(questionnaire_id).append("\n");
+    sb.append("  collector_id: ").append(collector_id).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

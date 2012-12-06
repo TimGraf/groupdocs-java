@@ -22,16 +22,9 @@ package com.groupdocs.sdk.model;
  *
  */
 public class UserPasswordInfo {
-  private String reset_token = null;
   private String old_pswd_salt = null;
   private String new_pswd_salt = null;
-  public String getReset_token() {
-    return reset_token;
-  }
-  public void setReset_token(String reset_token) {
-    this.reset_token = reset_token;
-  }
-
+  private String reset_token = null;
   public String getOld_pswd_salt() {
     return old_pswd_salt;
   }
@@ -46,13 +39,20 @@ public class UserPasswordInfo {
     this.new_pswd_salt = new_pswd_salt;
   }
 
+  public String getReset_token() {
+    return reset_token;
+  }
+  public void setReset_token(String reset_token) {
+    this.reset_token = reset_token;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserPasswordInfo {\n");
-    sb.append("  reset_token: ").append(reset_token).append("\n");
     sb.append("  old_pswd_salt: ").append(old_pswd_salt).append("\n");
     sb.append("  new_pswd_salt: ").append(new_pswd_salt).append("\n");
+    sb.append("  reset_token: ").append(reset_token).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

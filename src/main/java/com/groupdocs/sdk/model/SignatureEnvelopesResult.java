@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureEnvelopeInfo;
  *
  */
 public class SignatureEnvelopesResult {
-  private List<SignatureEnvelopeInfo> envelopes = new ArrayList<SignatureEnvelopeInfo>();
   private Integer envelopesCount = null;
-  public List<SignatureEnvelopeInfo> getEnvelopes() {
-    return envelopes;
-  }
-  public void setEnvelopes(List<SignatureEnvelopeInfo> envelopes) {
-    this.envelopes = envelopes;
-  }
-
+  private List<SignatureEnvelopeInfo> envelopes = new ArrayList<SignatureEnvelopeInfo>();
   public Integer getEnvelopesCount() {
     return envelopesCount;
   }
@@ -40,12 +33,19 @@ public class SignatureEnvelopesResult {
     this.envelopesCount = envelopesCount;
   }
 
+  public List<SignatureEnvelopeInfo> getEnvelopes() {
+    return envelopes;
+  }
+  public void setEnvelopes(List<SignatureEnvelopeInfo> envelopes) {
+    this.envelopes = envelopes;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopesResult {\n");
-    sb.append("  envelopes: ").append(envelopes).append("\n");
     sb.append("  envelopesCount: ").append(envelopesCount).append("\n");
+    sb.append("  envelopes: ").append(envelopes).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

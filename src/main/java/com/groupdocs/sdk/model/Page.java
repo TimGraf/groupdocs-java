@@ -22,21 +22,21 @@ package com.groupdocs.sdk.model;
  *
  */
 public class Page {
-  private Double w = null;
   private Integer id = null;
+  private Double w = null;
   private Double h = null;
-  public Double getW() {
-    return w;
-  }
-  public void setW(Double w) {
-    this.w = w;
-  }
-
   public Integer getId() {
     return id;
   }
   public void setId(Integer id) {
     this.id = id;
+  }
+
+  public Double getW() {
+    return w;
+  }
+  public void setW(Double w) {
+    this.w = w;
   }
 
   public Double getH() {
@@ -50,8 +50,8 @@ public class Page {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Page {\n");
-    sb.append("  w: ").append(w).append("\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  w: ").append(w).append("\n");
     sb.append("  h: ").append(h).append("\n");
     sb.append("}\n");
     return sb.toString();

@@ -25,8 +25,8 @@ import com.groupdocs.sdk.model.Rectangle;
 public class TemplateField {
   private Integer page = null;
   private String name = null;
-  private Rectangle rect = null;
   private String type = null;
+  private Rectangle rect = null;
   public Integer getPage() {
     return page;
   }
@@ -41,18 +41,18 @@ public class TemplateField {
     this.name = name;
   }
 
-  public Rectangle getRect() {
-    return rect;
-  }
-  public void setRect(Rectangle rect) {
-    this.rect = rect;
-  }
-
   public String getType() {
     return type;
   }
   public void setType(String type) {
     this.type = type;
+  }
+
+  public Rectangle getRect() {
+    return rect;
+  }
+  public void setRect(Rectangle rect) {
+    this.rect = rect;
   }
 
   @Override
@@ -61,8 +61,8 @@ public class TemplateField {
     sb.append("class TemplateField {\n");
     sb.append("  page: ").append(page).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  rect: ").append(rect).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  rect: ").append(rect).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

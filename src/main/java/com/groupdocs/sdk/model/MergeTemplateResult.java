@@ -22,14 +22,14 @@ package com.groupdocs.sdk.model;
  *
  */
 public class MergeTemplateResult {
-  private Double datasource_id = null;
-  private Double document_id = null;
   private Double job_id = null;
-  public Double getDatasource_id() {
-    return datasource_id;
+  private Double document_id = null;
+  private Double datasource_id = null;
+  public Double getJob_id() {
+    return job_id;
   }
-  public void setDatasource_id(Double datasource_id) {
-    this.datasource_id = datasource_id;
+  public void setJob_id(Double job_id) {
+    this.job_id = job_id;
   }
 
   public Double getDocument_id() {
@@ -39,20 +39,20 @@ public class MergeTemplateResult {
     this.document_id = document_id;
   }
 
-  public Double getJob_id() {
-    return job_id;
+  public Double getDatasource_id() {
+    return datasource_id;
   }
-  public void setJob_id(Double job_id) {
-    this.job_id = job_id;
+  public void setDatasource_id(Double datasource_id) {
+    this.datasource_id = datasource_id;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class MergeTemplateResult {\n");
-    sb.append("  datasource_id: ").append(datasource_id).append("\n");
-    sb.append("  document_id: ").append(document_id).append("\n");
     sb.append("  job_id: ").append(job_id).append("\n");
+    sb.append("  document_id: ").append(document_id).append("\n");
+    sb.append("  datasource_id: ").append(datasource_id).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

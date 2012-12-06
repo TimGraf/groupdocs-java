@@ -23,44 +23,16 @@ package com.groupdocs.sdk.model;
  */
 public class AnnotationReplyInfo {
   private String guid = null;
-  private Long repliedOn = null;
-  private String text = null;
-  private String userName = null;
-  private String parentReplyGuid = null;
   private String userGuid = null;
+  private String userName = null;
+  private String text = null;
+  private Long repliedOn = null;
+  private String parentReplyGuid = null;
   public String getGuid() {
     return guid;
   }
   public void setGuid(String guid) {
     this.guid = guid;
-  }
-
-  public Long getRepliedOn() {
-    return repliedOn;
-  }
-  public void setRepliedOn(Long repliedOn) {
-    this.repliedOn = repliedOn;
-  }
-
-  public String getText() {
-    return text;
-  }
-  public void setText(String text) {
-    this.text = text;
-  }
-
-  public String getUserName() {
-    return userName;
-  }
-  public void setUserName(String userName) {
-    this.userName = userName;
-  }
-
-  public String getParentReplyGuid() {
-    return parentReplyGuid;
-  }
-  public void setParentReplyGuid(String parentReplyGuid) {
-    this.parentReplyGuid = parentReplyGuid;
   }
 
   public String getUserGuid() {
@@ -70,16 +42,44 @@ public class AnnotationReplyInfo {
     this.userGuid = userGuid;
   }
 
+  public String getUserName() {
+    return userName;
+  }
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  public String getText() {
+    return text;
+  }
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public Long getRepliedOn() {
+    return repliedOn;
+  }
+  public void setRepliedOn(Long repliedOn) {
+    this.repliedOn = repliedOn;
+  }
+
+  public String getParentReplyGuid() {
+    return parentReplyGuid;
+  }
+  public void setParentReplyGuid(String parentReplyGuid) {
+    this.parentReplyGuid = parentReplyGuid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnnotationReplyInfo {\n");
     sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  repliedOn: ").append(repliedOn).append("\n");
-    sb.append("  text: ").append(text).append("\n");
-    sb.append("  userName: ").append(userName).append("\n");
-    sb.append("  parentReplyGuid: ").append(parentReplyGuid).append("\n");
     sb.append("  userGuid: ").append(userGuid).append("\n");
+    sb.append("  userName: ").append(userName).append("\n");
+    sb.append("  text: ").append(text).append("\n");
+    sb.append("  repliedOn: ").append(repliedOn).append("\n");
+    sb.append("  parentReplyGuid: ").append(parentReplyGuid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -23,20 +23,13 @@ package com.groupdocs.sdk.model;
  */
 public class DocumentDetailsResult {
   private String guid = null;
-  private Boolean supported = null;
   private String name = null;
+  private Boolean supported = null;
   public String getGuid() {
     return guid;
   }
   public void setGuid(String guid) {
     this.guid = guid;
-  }
-
-  public Boolean getSupported() {
-    return supported;
-  }
-  public void setSupported(Boolean supported) {
-    this.supported = supported;
   }
 
   public String getName() {
@@ -46,13 +39,20 @@ public class DocumentDetailsResult {
     this.name = name;
   }
 
+  public Boolean getSupported() {
+    return supported;
+  }
+  public void setSupported(Boolean supported) {
+    this.supported = supported;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentDetailsResult {\n");
     sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  supported: ").append(supported).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  supported: ").append(supported).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

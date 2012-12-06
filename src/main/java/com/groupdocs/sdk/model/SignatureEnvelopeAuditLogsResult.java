@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureEnvelopeAuditLogInfo;
  *
  */
 public class SignatureEnvelopeAuditLogsResult {
-  private List<SignatureEnvelopeAuditLogInfo> logs = new ArrayList<SignatureEnvelopeAuditLogInfo>();
   private String envelopeId = null;
-  public List<SignatureEnvelopeAuditLogInfo> getLogs() {
-    return logs;
-  }
-  public void setLogs(List<SignatureEnvelopeAuditLogInfo> logs) {
-    this.logs = logs;
-  }
-
+  private List<SignatureEnvelopeAuditLogInfo> logs = new ArrayList<SignatureEnvelopeAuditLogInfo>();
   public String getEnvelopeId() {
     return envelopeId;
   }
@@ -40,12 +33,19 @@ public class SignatureEnvelopeAuditLogsResult {
     this.envelopeId = envelopeId;
   }
 
+  public List<SignatureEnvelopeAuditLogInfo> getLogs() {
+    return logs;
+  }
+  public void setLogs(List<SignatureEnvelopeAuditLogInfo> logs) {
+    this.logs = logs;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeAuditLogsResult {\n");
-    sb.append("  logs: ").append(logs).append("\n");
     sb.append("  envelopeId: ").append(envelopeId).append("\n");
+    sb.append("  logs: ").append(logs).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

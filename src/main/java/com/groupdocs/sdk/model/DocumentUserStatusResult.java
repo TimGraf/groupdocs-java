@@ -25,8 +25,8 @@ import com.groupdocs.sdk.model.DocumentInfo;
 public class DocumentUserStatusResult {
   private DocumentInfo doc_info = null;
   private Double owner_id = null;
-  private String user_status = null;
   private Double user_id = null;
+  private String user_status = null;
   public DocumentInfo getDoc_info() {
     return doc_info;
   }
@@ -41,18 +41,18 @@ public class DocumentUserStatusResult {
     this.owner_id = owner_id;
   }
 
-  public String getUser_status() {
-    return user_status;
-  }
-  public void setUser_status(String user_status) {
-    this.user_status = user_status;
-  }
-
   public Double getUser_id() {
     return user_id;
   }
   public void setUser_id(Double user_id) {
     this.user_id = user_id;
+  }
+
+  public String getUser_status() {
+    return user_status;
+  }
+  public void setUser_status(String user_status) {
+    this.user_status = user_status;
   }
 
   @Override
@@ -61,8 +61,8 @@ public class DocumentUserStatusResult {
     sb.append("class DocumentUserStatusResult {\n");
     sb.append("  doc_info: ").append(doc_info).append("\n");
     sb.append("  owner_id: ").append(owner_id).append("\n");
-    sb.append("  user_status: ").append(user_status).append("\n");
     sb.append("  user_id: ").append(user_id).append("\n");
+    sb.append("  user_status: ").append(user_status).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

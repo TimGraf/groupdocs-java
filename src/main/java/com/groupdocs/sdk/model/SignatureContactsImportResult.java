@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureContactsImportResult {
-  private String ignored = null;
   private String imported = null;
-  public String getIgnored() {
-    return ignored;
-  }
-  public void setIgnored(String ignored) {
-    this.ignored = ignored;
-  }
-
+  private String ignored = null;
   public String getImported() {
     return imported;
   }
@@ -38,12 +31,19 @@ public class SignatureContactsImportResult {
     this.imported = imported;
   }
 
+  public String getIgnored() {
+    return ignored;
+  }
+  public void setIgnored(String ignored) {
+    this.ignored = ignored;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureContactsImportResult {\n");
-    sb.append("  ignored: ").append(ignored).append("\n");
     sb.append("  imported: ").append(imported).append("\n");
+    sb.append("  ignored: ").append(ignored).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

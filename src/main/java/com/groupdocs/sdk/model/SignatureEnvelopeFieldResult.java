@@ -23,24 +23,10 @@ import com.groupdocs.sdk.model.SignatureEnvelopeFieldInfo;
  *
  */
 public class SignatureEnvelopeFieldResult {
-  private SignatureEnvelopeFieldInfo field = null;
-  private String recipientId = null;
   private String envelopeId = null;
   private String documentId = null;
-  public SignatureEnvelopeFieldInfo getField() {
-    return field;
-  }
-  public void setField(SignatureEnvelopeFieldInfo field) {
-    this.field = field;
-  }
-
-  public String getRecipientId() {
-    return recipientId;
-  }
-  public void setRecipientId(String recipientId) {
-    this.recipientId = recipientId;
-  }
-
+  private String recipientId = null;
+  private SignatureEnvelopeFieldInfo field = null;
   public String getEnvelopeId() {
     return envelopeId;
   }
@@ -55,14 +41,28 @@ public class SignatureEnvelopeFieldResult {
     this.documentId = documentId;
   }
 
+  public String getRecipientId() {
+    return recipientId;
+  }
+  public void setRecipientId(String recipientId) {
+    this.recipientId = recipientId;
+  }
+
+  public SignatureEnvelopeFieldInfo getField() {
+    return field;
+  }
+  public void setField(SignatureEnvelopeFieldInfo field) {
+    this.field = field;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeFieldResult {\n");
-    sb.append("  field: ").append(field).append("\n");
-    sb.append("  recipientId: ").append(recipientId).append("\n");
     sb.append("  envelopeId: ").append(envelopeId).append("\n");
     sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  recipientId: ").append(recipientId).append("\n");
+    sb.append("  field: ").append(field).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

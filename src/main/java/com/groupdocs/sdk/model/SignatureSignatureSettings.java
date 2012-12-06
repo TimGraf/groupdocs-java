@@ -22,54 +22,19 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureSignatureSettings {
-  private String position = null;
-  private String initialsData = null;
-  private String lastName = null;
-  private String signatureData = null;
   private String name = null;
-  private String firstName = null;
   private String companyName = null;
+  private String position = null;
+  private String firstName = null;
+  private String lastName = null;
   private String textInitials = null;
-  public String getPosition() {
-    return position;
-  }
-  public void setPosition(String position) {
-    this.position = position;
-  }
-
-  public String getInitialsData() {
-    return initialsData;
-  }
-  public void setInitialsData(String initialsData) {
-    this.initialsData = initialsData;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getSignatureData() {
-    return signatureData;
-  }
-  public void setSignatureData(String signatureData) {
-    this.signatureData = signatureData;
-  }
-
+  private String signatureData = null;
+  private String initialsData = null;
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
   }
 
   public String getCompanyName() {
@@ -79,6 +44,27 @@ public class SignatureSignatureSettings {
     this.companyName = companyName;
   }
 
+  public String getPosition() {
+    return position;
+  }
+  public void setPosition(String position) {
+    this.position = position;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
   public String getTextInitials() {
     return textInitials;
   }
@@ -86,18 +72,32 @@ public class SignatureSignatureSettings {
     this.textInitials = textInitials;
   }
 
+  public String getSignatureData() {
+    return signatureData;
+  }
+  public void setSignatureData(String signatureData) {
+    this.signatureData = signatureData;
+  }
+
+  public String getInitialsData() {
+    return initialsData;
+  }
+  public void setInitialsData(String initialsData) {
+    this.initialsData = initialsData;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignatureSettings {\n");
-    sb.append("  position: ").append(position).append("\n");
-    sb.append("  initialsData: ").append(initialsData).append("\n");
-    sb.append("  lastName: ").append(lastName).append("\n");
-    sb.append("  signatureData: ").append(signatureData).append("\n");
     sb.append("  name: ").append(name).append("\n");
-    sb.append("  firstName: ").append(firstName).append("\n");
     sb.append("  companyName: ").append(companyName).append("\n");
+    sb.append("  position: ").append(position).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
+    sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  textInitials: ").append(textInitials).append("\n");
+    sb.append("  signatureData: ").append(signatureData).append("\n");
+    sb.append("  initialsData: ").append(initialsData).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

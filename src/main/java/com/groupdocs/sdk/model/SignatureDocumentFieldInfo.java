@@ -25,12 +25,12 @@ import com.groupdocs.sdk.model.SignatureDocumentFieldLocationInfo;
  */
 public class SignatureDocumentFieldInfo {
   private String id = null;
-  private String acceptableValues = null;
-  private List<SignatureDocumentFieldLocationInfo> locations = new ArrayList<SignatureDocumentFieldLocationInfo>();
-  private Double signatureFieldId = null;
-  private Integer fieldType = null;
-  private Boolean mandatory = null;
   private String name = null;
+  private Boolean mandatory = null;
+  private Double signatureFieldId = null;
+  private List<SignatureDocumentFieldLocationInfo> locations = new ArrayList<SignatureDocumentFieldLocationInfo>();
+  private Integer fieldType = null;
+  private String acceptableValues = null;
   private String defaultValue = null;
   private String tooltip = null;
   public String getId() {
@@ -40,32 +40,11 @@ public class SignatureDocumentFieldInfo {
     this.id = id;
   }
 
-  public String getAcceptableValues() {
-    return acceptableValues;
+  public String getName() {
+    return name;
   }
-  public void setAcceptableValues(String acceptableValues) {
-    this.acceptableValues = acceptableValues;
-  }
-
-  public List<SignatureDocumentFieldLocationInfo> getLocations() {
-    return locations;
-  }
-  public void setLocations(List<SignatureDocumentFieldLocationInfo> locations) {
-    this.locations = locations;
-  }
-
-  public Double getSignatureFieldId() {
-    return signatureFieldId;
-  }
-  public void setSignatureFieldId(Double signatureFieldId) {
-    this.signatureFieldId = signatureFieldId;
-  }
-
-  public Integer getFieldType() {
-    return fieldType;
-  }
-  public void setFieldType(Integer fieldType) {
-    this.fieldType = fieldType;
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Boolean getMandatory() {
@@ -75,11 +54,32 @@ public class SignatureDocumentFieldInfo {
     this.mandatory = mandatory;
   }
 
-  public String getName() {
-    return name;
+  public Double getSignatureFieldId() {
+    return signatureFieldId;
   }
-  public void setName(String name) {
-    this.name = name;
+  public void setSignatureFieldId(Double signatureFieldId) {
+    this.signatureFieldId = signatureFieldId;
+  }
+
+  public List<SignatureDocumentFieldLocationInfo> getLocations() {
+    return locations;
+  }
+  public void setLocations(List<SignatureDocumentFieldLocationInfo> locations) {
+    this.locations = locations;
+  }
+
+  public Integer getFieldType() {
+    return fieldType;
+  }
+  public void setFieldType(Integer fieldType) {
+    this.fieldType = fieldType;
+  }
+
+  public String getAcceptableValues() {
+    return acceptableValues;
+  }
+  public void setAcceptableValues(String acceptableValues) {
+    this.acceptableValues = acceptableValues;
   }
 
   public String getDefaultValue() {
@@ -101,12 +101,12 @@ public class SignatureDocumentFieldInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureDocumentFieldInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
-    sb.append("  locations: ").append(locations).append("\n");
-    sb.append("  signatureFieldId: ").append(signatureFieldId).append("\n");
-    sb.append("  fieldType: ").append(fieldType).append("\n");
-    sb.append("  mandatory: ").append(mandatory).append("\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  mandatory: ").append(mandatory).append("\n");
+    sb.append("  signatureFieldId: ").append(signatureFieldId).append("\n");
+    sb.append("  locations: ").append(locations).append("\n");
+    sb.append("  fieldType: ").append(fieldType).append("\n");
+    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("}\n");

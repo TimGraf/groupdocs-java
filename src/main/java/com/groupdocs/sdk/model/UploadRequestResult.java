@@ -22,48 +22,20 @@ package com.groupdocs.sdk.model;
  *
  */
 public class UploadRequestResult {
-  private String guid = null;
-  private Double id = null;
-  private String thumbnail = null;
   private String adj_name = null;
-  private String type = null;
   private String url = null;
-  private Integer version = null;
-  private Long size = null;
+  private String type = null;
   private String file_type = null;
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public String getThumbnail() {
-    return thumbnail;
-  }
-  public void setThumbnail(String thumbnail) {
-    this.thumbnail = thumbnail;
-  }
-
+  private Long size = null;
+  private Integer version = null;
+  private String thumbnail = null;
+  private Double id = null;
+  private String guid = null;
   public String getAdj_name() {
     return adj_name;
   }
   public void setAdj_name(String adj_name) {
     this.adj_name = adj_name;
-  }
-
-  public String getType() {
-    return type;
-  }
-  public void setType(String type) {
-    this.type = type;
   }
 
   public String getUrl() {
@@ -73,18 +45,11 @@ public class UploadRequestResult {
     this.url = url;
   }
 
-  public Integer getVersion() {
-    return version;
+  public String getType() {
+    return type;
   }
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-  public Long getSize() {
-    return size;
-  }
-  public void setSize(Long size) {
-    this.size = size;
+  public void setType(String type) {
+    this.type = type;
   }
 
   public String getFile_type() {
@@ -94,19 +59,54 @@ public class UploadRequestResult {
     this.file_type = file_type;
   }
 
+  public Long getSize() {
+    return size;
+  }
+  public void setSize(Long size) {
+    this.size = size;
+  }
+
+  public Integer getVersion() {
+    return version;
+  }
+  public void setVersion(Integer version) {
+    this.version = version;
+  }
+
+  public String getThumbnail() {
+    return thumbnail;
+  }
+  public void setThumbnail(String thumbnail) {
+    this.thumbnail = thumbnail;
+  }
+
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class UploadRequestResult {\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  thumbnail: ").append(thumbnail).append("\n");
     sb.append("  adj_name: ").append(adj_name).append("\n");
-    sb.append("  type: ").append(type).append("\n");
     sb.append("  url: ").append(url).append("\n");
-    sb.append("  version: ").append(version).append("\n");
-    sb.append("  size: ").append(size).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("  file_type: ").append(file_type).append("\n");
+    sb.append("  size: ").append(size).append("\n");
+    sb.append("  version: ").append(version).append("\n");
+    sb.append("  thumbnail: ").append(thumbnail).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -25,15 +25,8 @@ import com.groupdocs.sdk.model.SignatureTemplateRecipientInfo;
  *
  */
 public class SignatureTemplateResourcesResult {
-  private List<SignatureTemplateRecipientInfo> recipients = new ArrayList<SignatureTemplateRecipientInfo>();
   private List<SignatureTemplateDocumentInfo> documents = new ArrayList<SignatureTemplateDocumentInfo>();
-  public List<SignatureTemplateRecipientInfo> getRecipients() {
-    return recipients;
-  }
-  public void setRecipients(List<SignatureTemplateRecipientInfo> recipients) {
-    this.recipients = recipients;
-  }
-
+  private List<SignatureTemplateRecipientInfo> recipients = new ArrayList<SignatureTemplateRecipientInfo>();
   public List<SignatureTemplateDocumentInfo> getDocuments() {
     return documents;
   }
@@ -41,12 +34,19 @@ public class SignatureTemplateResourcesResult {
     this.documents = documents;
   }
 
+  public List<SignatureTemplateRecipientInfo> getRecipients() {
+    return recipients;
+  }
+  public void setRecipients(List<SignatureTemplateRecipientInfo> recipients) {
+    this.recipients = recipients;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureTemplateResourcesResult {\n");
-    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  documents: ").append(documents).append("\n");
+    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

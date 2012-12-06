@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.AnnotationReplyInfo;
  *
  */
 public class ListRepliesResult {
-  private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
   private String annotationGuid = null;
-  public List<AnnotationReplyInfo> getReplies() {
-    return replies;
-  }
-  public void setReplies(List<AnnotationReplyInfo> replies) {
-    this.replies = replies;
-  }
-
+  private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
   public String getAnnotationGuid() {
     return annotationGuid;
   }
@@ -40,12 +33,19 @@ public class ListRepliesResult {
     this.annotationGuid = annotationGuid;
   }
 
+  public List<AnnotationReplyInfo> getReplies() {
+    return replies;
+  }
+  public void setReplies(List<AnnotationReplyInfo> replies) {
+    this.replies = replies;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListRepliesResult {\n");
-    sb.append("  replies: ").append(replies).append("\n");
     sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
+    sb.append("  replies: ").append(replies).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

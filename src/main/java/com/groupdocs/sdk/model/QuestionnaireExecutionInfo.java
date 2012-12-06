@@ -24,30 +24,23 @@ import com.groupdocs.sdk.model.DocumentDownloadInfo;
  *
  */
 public class QuestionnaireExecutionInfo {
-  private Double id = null;
-  private Double datasource_id = null;
+  private String status = null;
   private String guid = null;
-  private UserIdentity executive = null;
-  private DocumentDownloadInfo document = null;
   private Double collector_id = null;
   private String collector_guid = null;
-  private String status = null;
-  private UserIdentity approver = null;
-  private UserIdentity owner = null;
   private String questionnaire_name = null;
+  private UserIdentity owner = null;
+  private UserIdentity executive = null;
+  private UserIdentity approver = null;
+  private Double datasource_id = null;
+  private Double id = null;
   private Long modified = null;
-  public Double getId() {
-    return id;
+  private DocumentDownloadInfo document = null;
+  public String getStatus() {
+    return status;
   }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public Double getDatasource_id() {
-    return datasource_id;
-  }
-  public void setDatasource_id(Double datasource_id) {
-    this.datasource_id = datasource_id;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public String getGuid() {
@@ -55,20 +48,6 @@ public class QuestionnaireExecutionInfo {
   }
   public void setGuid(String guid) {
     this.guid = guid;
-  }
-
-  public UserIdentity getExecutive() {
-    return executive;
-  }
-  public void setExecutive(UserIdentity executive) {
-    this.executive = executive;
-  }
-
-  public DocumentDownloadInfo getDocument() {
-    return document;
-  }
-  public void setDocument(DocumentDownloadInfo document) {
-    this.document = document;
   }
 
   public Double getCollector_id() {
@@ -85,18 +64,11 @@ public class QuestionnaireExecutionInfo {
     this.collector_guid = collector_guid;
   }
 
-  public String getStatus() {
-    return status;
+  public String getQuestionnaire_name() {
+    return questionnaire_name;
   }
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public UserIdentity getApprover() {
-    return approver;
-  }
-  public void setApprover(UserIdentity approver) {
-    this.approver = approver;
+  public void setQuestionnaire_name(String questionnaire_name) {
+    this.questionnaire_name = questionnaire_name;
   }
 
   public UserIdentity getOwner() {
@@ -106,11 +78,32 @@ public class QuestionnaireExecutionInfo {
     this.owner = owner;
   }
 
-  public String getQuestionnaire_name() {
-    return questionnaire_name;
+  public UserIdentity getExecutive() {
+    return executive;
   }
-  public void setQuestionnaire_name(String questionnaire_name) {
-    this.questionnaire_name = questionnaire_name;
+  public void setExecutive(UserIdentity executive) {
+    this.executive = executive;
+  }
+
+  public UserIdentity getApprover() {
+    return approver;
+  }
+  public void setApprover(UserIdentity approver) {
+    this.approver = approver;
+  }
+
+  public Double getDatasource_id() {
+    return datasource_id;
+  }
+  public void setDatasource_id(Double datasource_id) {
+    this.datasource_id = datasource_id;
+  }
+
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
   }
 
   public Long getModified() {
@@ -120,22 +113,29 @@ public class QuestionnaireExecutionInfo {
     this.modified = modified;
   }
 
+  public DocumentDownloadInfo getDocument() {
+    return document;
+  }
+  public void setDocument(DocumentDownloadInfo document) {
+    this.document = document;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class QuestionnaireExecutionInfo {\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  datasource_id: ").append(datasource_id).append("\n");
+    sb.append("  status: ").append(status).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  executive: ").append(executive).append("\n");
-    sb.append("  document: ").append(document).append("\n");
     sb.append("  collector_id: ").append(collector_id).append("\n");
     sb.append("  collector_guid: ").append(collector_guid).append("\n");
-    sb.append("  status: ").append(status).append("\n");
-    sb.append("  approver: ").append(approver).append("\n");
-    sb.append("  owner: ").append(owner).append("\n");
     sb.append("  questionnaire_name: ").append(questionnaire_name).append("\n");
+    sb.append("  owner: ").append(owner).append("\n");
+    sb.append("  executive: ").append(executive).append("\n");
+    sb.append("  approver: ").append(approver).append("\n");
+    sb.append("  datasource_id: ").append(datasource_id).append("\n");
+    sb.append("  id: ").append(id).append("\n");
     sb.append("  modified: ").append(modified).append("\n");
+    sb.append("  document: ").append(document).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

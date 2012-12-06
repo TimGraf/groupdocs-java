@@ -23,8 +23,8 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureTemplateRecipientInfo {
   private String id = null;
-  private Integer order = null;
   private String nickname = null;
+  private Integer order = null;
   private Double roleId = null;
   public String getId() {
     return id;
@@ -33,18 +33,18 @@ public class SignatureTemplateRecipientInfo {
     this.id = id;
   }
 
-  public Integer getOrder() {
-    return order;
-  }
-  public void setOrder(Integer order) {
-    this.order = order;
-  }
-
   public String getNickname() {
     return nickname;
   }
   public void setNickname(String nickname) {
     this.nickname = nickname;
+  }
+
+  public Integer getOrder() {
+    return order;
+  }
+  public void setOrder(Integer order) {
+    this.order = order;
   }
 
   public Double getRoleId() {
@@ -59,8 +59,8 @@ public class SignatureTemplateRecipientInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureTemplateRecipientInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  order: ").append(order).append("\n");
     sb.append("  nickname: ").append(nickname).append("\n");
+    sb.append("  order: ").append(order).append("\n");
     sb.append("  roleId: ").append(roleId).append("\n");
     sb.append("}\n");
     return sb.toString();

@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureEnvelopeRecipientInfo;
  *
  */
 public class SignatureEnvelopeRecipientsResult {
-  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   private String envelopeId = null;
-  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
-    return recipients;
-  }
-  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
-    this.recipients = recipients;
-  }
-
+  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   public String getEnvelopeId() {
     return envelopeId;
   }
@@ -40,12 +33,19 @@ public class SignatureEnvelopeRecipientsResult {
     this.envelopeId = envelopeId;
   }
 
+  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
+    return recipients;
+  }
+  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
+    this.recipients = recipients;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeRecipientsResult {\n");
-    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  envelopeId: ").append(envelopeId).append("\n");
+    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

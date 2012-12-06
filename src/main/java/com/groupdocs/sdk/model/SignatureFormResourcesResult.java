@@ -24,15 +24,8 @@ import com.groupdocs.sdk.model.SignatureFormDocumentInfo;
  *
  */
 public class SignatureFormResourcesResult {
-  private List<String> dates = new ArrayList<String>();
   private List<SignatureFormDocumentInfo> documents = new ArrayList<SignatureFormDocumentInfo>();
-  public List<String> getDates() {
-    return dates;
-  }
-  public void setDates(List<String> dates) {
-    this.dates = dates;
-  }
-
+  private List<String> dates = new ArrayList<String>();
   public List<SignatureFormDocumentInfo> getDocuments() {
     return documents;
   }
@@ -40,12 +33,19 @@ public class SignatureFormResourcesResult {
     this.documents = documents;
   }
 
+  public List<String> getDates() {
+    return dates;
+  }
+  public void setDates(List<String> dates) {
+    this.dates = dates;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormResourcesResult {\n");
-    sb.append("  dates: ").append(dates).append("\n");
     sb.append("  documents: ").append(documents).append("\n");
+    sb.append("  dates: ").append(dates).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -24,17 +24,10 @@ import com.groupdocs.sdk.model.ReviewerInfo;
  *
  */
 public class SetCollaboratorsResult {
-  private String sessionGuid = null;
   private String documentGuid = null;
-  private List<ReviewerInfo> collaborators = new ArrayList<ReviewerInfo>();
+  private String sessionGuid = null;
   private ReviewerInfo owner = null;
-  public String getSessionGuid() {
-    return sessionGuid;
-  }
-  public void setSessionGuid(String sessionGuid) {
-    this.sessionGuid = sessionGuid;
-  }
-
+  private List<ReviewerInfo> collaborators = new ArrayList<ReviewerInfo>();
   public String getDocumentGuid() {
     return documentGuid;
   }
@@ -42,11 +35,11 @@ public class SetCollaboratorsResult {
     this.documentGuid = documentGuid;
   }
 
-  public List<ReviewerInfo> getCollaborators() {
-    return collaborators;
+  public String getSessionGuid() {
+    return sessionGuid;
   }
-  public void setCollaborators(List<ReviewerInfo> collaborators) {
-    this.collaborators = collaborators;
+  public void setSessionGuid(String sessionGuid) {
+    this.sessionGuid = sessionGuid;
   }
 
   public ReviewerInfo getOwner() {
@@ -56,14 +49,21 @@ public class SetCollaboratorsResult {
     this.owner = owner;
   }
 
+  public List<ReviewerInfo> getCollaborators() {
+    return collaborators;
+  }
+  public void setCollaborators(List<ReviewerInfo> collaborators) {
+    this.collaborators = collaborators;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SetCollaboratorsResult {\n");
-    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
-    sb.append("  collaborators: ").append(collaborators).append("\n");
+    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  owner: ").append(owner).append("\n");
+    sb.append("  collaborators: ").append(collaborators).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

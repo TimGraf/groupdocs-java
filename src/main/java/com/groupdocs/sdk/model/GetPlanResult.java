@@ -22,15 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class GetPlanResult {
-  private String name = null;
   private String ref_id = null;
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
-  }
-
+  private String name = null;
   public String getRef_id() {
     return ref_id;
   }
@@ -38,12 +31,19 @@ public class GetPlanResult {
     this.ref_id = ref_id;
   }
 
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetPlanResult {\n");
-    sb.append("  name: ").append(name).append("\n");
     sb.append("  ref_id: ").append(ref_id).append("\n");
+    sb.append("  name: ").append(name).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

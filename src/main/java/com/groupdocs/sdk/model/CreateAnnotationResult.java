@@ -23,30 +23,16 @@ package com.groupdocs.sdk.model;
  */
 public class CreateAnnotationResult {
   private Double id = null;
-  private String sessionGuid = null;
-  private String documentGuid = null;
   private String annotationGuid = null;
-  private String access = null;
   private String replyGuid = null;
+  private String documentGuid = null;
+  private String sessionGuid = null;
+  private String access = null;
   public Double getId() {
     return id;
   }
   public void setId(Double id) {
     this.id = id;
-  }
-
-  public String getSessionGuid() {
-    return sessionGuid;
-  }
-  public void setSessionGuid(String sessionGuid) {
-    this.sessionGuid = sessionGuid;
-  }
-
-  public String getDocumentGuid() {
-    return documentGuid;
-  }
-  public void setDocumentGuid(String documentGuid) {
-    this.documentGuid = documentGuid;
   }
 
   public String getAnnotationGuid() {
@@ -56,13 +42,6 @@ public class CreateAnnotationResult {
     this.annotationGuid = annotationGuid;
   }
 
-  public String getAccess() {
-    return access;
-  }
-  public void setAccess(String access) {
-    this.access = access;
-  }
-
   public String getReplyGuid() {
     return replyGuid;
   }
@@ -70,16 +49,37 @@ public class CreateAnnotationResult {
     this.replyGuid = replyGuid;
   }
 
+  public String getDocumentGuid() {
+    return documentGuid;
+  }
+  public void setDocumentGuid(String documentGuid) {
+    this.documentGuid = documentGuid;
+  }
+
+  public String getSessionGuid() {
+    return sessionGuid;
+  }
+  public void setSessionGuid(String sessionGuid) {
+    this.sessionGuid = sessionGuid;
+  }
+
+  public String getAccess() {
+    return access;
+  }
+  public void setAccess(String access) {
+    this.access = access;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateAnnotationResult {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
-    sb.append("  documentGuid: ").append(documentGuid).append("\n");
     sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
-    sb.append("  access: ").append(access).append("\n");
     sb.append("  replyGuid: ").append(replyGuid).append("\n");
+    sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
+    sb.append("  access: ").append(access).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

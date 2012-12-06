@@ -22,24 +22,10 @@ package com.groupdocs.sdk.model;
  *
  */
 public class TemplateInfo {
-  private String guid = null;
-  private Double id = null;
   private String name = null;
   private Integer field_count = null;
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
+  private Double id = null;
+  private String guid = null;
   public String getName() {
     return name;
   }
@@ -54,14 +40,28 @@ public class TemplateInfo {
     this.field_count = field_count;
   }
 
+  public Double getId() {
+    return id;
+  }
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class TemplateInfo {\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  field_count: ").append(field_count).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

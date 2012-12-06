@@ -23,23 +23,16 @@ import com.groupdocs.sdk.model.DocumentViewInfo;
  *
  */
 public class GetDocumentInfoResult {
-  private String guid = null;
-  private Double id = null;
+  private Integer page_count = null;
   private Integer views_count = null;
   private DocumentViewInfo last_view = null;
-  private Integer page_count = null;
-  public String getGuid() {
-    return guid;
+  private Double id = null;
+  private String guid = null;
+  public Integer getPage_count() {
+    return page_count;
   }
-  public void setGuid(String guid) {
-    this.guid = guid;
-  }
-
-  public Double getId() {
-    return id;
-  }
-  public void setId(Double id) {
-    this.id = id;
+  public void setPage_count(Integer page_count) {
+    this.page_count = page_count;
   }
 
   public Integer getViews_count() {
@@ -56,22 +49,29 @@ public class GetDocumentInfoResult {
     this.last_view = last_view;
   }
 
-  public Integer getPage_count() {
-    return page_count;
+  public Double getId() {
+    return id;
   }
-  public void setPage_count(Integer page_count) {
-    this.page_count = page_count;
+  public void setId(Double id) {
+    this.id = id;
+  }
+
+  public String getGuid() {
+    return guid;
+  }
+  public void setGuid(String guid) {
+    this.guid = guid;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetDocumentInfoResult {\n");
-    sb.append("  guid: ").append(guid).append("\n");
-    sb.append("  id: ").append(id).append("\n");
+    sb.append("  page_count: ").append(page_count).append("\n");
     sb.append("  views_count: ").append(views_count).append("\n");
     sb.append("  last_view: ").append(last_view).append("\n");
-    sb.append("  page_count: ").append(page_count).append("\n");
+    sb.append("  id: ").append(id).append("\n");
+    sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
