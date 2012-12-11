@@ -57,7 +57,13 @@ public abstract class AbstractUnitTest {
 	}
 	
 	public static String getSampleResponse(String fileName) throws Exception {
-		URL resource = AbstractUnitTest.class.getClassLoader().getResource(fileName);
+		URL resource = AbstractUnitTest.class.getClassLoader().getResource("responses/" + fileName);
+		File jsonFile = new File(resource.toURI());
+		return FileUtils.readFileToString(jsonFile);
+	}
+	
+	public static String getSampleRequest(String fileName) throws Exception {
+		URL resource = AbstractUnitTest.class.getClassLoader().getResource("requests/" + fileName);
 		File jsonFile = new File(resource.toURI());
 		return FileUtils.readFileToString(jsonFile);
 	}
