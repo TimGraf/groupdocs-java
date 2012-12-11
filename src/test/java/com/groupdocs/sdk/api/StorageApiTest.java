@@ -70,12 +70,14 @@ public class StorageApiTest extends AbstractUnitTest {
 		mockRequest = mockRequest.withParam("page", pageIndex).withParam("count", pageSize).withParam("extended", extended).withParam("filter", filter).withParam("file_types", fileTypes).withParam("order_asc", orderAsc).withParam("order_by", orderBy).withParam("signature", Pattern.compile(".*"));
 		
 		// read response json from file
-		ClientDriverResponse mockResponse = giveResponse(getSampleResponse("storage/ListEntities.json")).withStatus(200);
+		String responseBody = getSampleResponse("storage/ListEntities.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		ListEntitiesResponse response = api.ListEntities(userId, path, pageIndex, pageSize, orderBy, orderAsc, filter, fileTypes, extended);
-		// this ensures that json was successfully deserialized into model object
-		assertThat(response.getStatus(), equalTo("Ok"));
+		// this ensures that json was successfully deserialized into corresponding model object
+		assertSameJson(responseBody, response);
 	}
 
 }
