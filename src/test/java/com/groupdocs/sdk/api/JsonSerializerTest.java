@@ -15,10 +15,11 @@
  */
 package com.groupdocs.sdk.api;
 
-import static com.github.restdriver.clientdriver.RestClientDriver.*;
+import static com.github.restdriver.clientdriver.RestClientDriver.giveResponse;
+import static com.github.restdriver.clientdriver.RestClientDriver.onRequestTo;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,7 +34,6 @@ import org.junit.Test;
 
 import com.github.restdriver.clientdriver.ClientDriverRequest.Method;
 import com.github.restdriver.clientdriver.ClientDriverRule;
-import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.AddReplyResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
@@ -43,7 +43,6 @@ import com.groupdocs.sdk.model.EditReplyResponse;
 import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.ReviewerInfo;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
-import com.groupdocs.sdk.model.SetDocumentRightsResponse;
 import com.groupdocs.sdk.model.SetReviewerRightsResponse;
 
 /**
@@ -76,7 +75,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String resourcePath = "/ant/{userId}/replies/{replyGuid}".replace("{userId}", userId).replace("{replyGuid}", replyGuid);
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.PUT).withBody("\"" + message + "\"", MediaType.APPLICATION_JSON), 
-                giveResponse(getSampleResponse("annotation/response_annotation_replies_edit.json")).withStatus(200));
+                giveResponse(getSampleResponse("ant/response_annotation_replies_edit.json")).withStatus(200));
 		
 		EditReplyResponse response = antApi.EditAnnotationReply(userId, replyGuid, message);
 		assertThat(response.getStatus(), equalTo("Ok"));
@@ -106,7 +105,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String body = "{\"text\":\"test message from java client library\",\"parentReplyGuid\":\"6a215585\"}";
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.POST).withBody(body, MediaType.APPLICATION_JSON), 
-                giveResponse(getSampleResponse("annotation/response_annotation_replies_create.json")).withStatus(200));
+                giveResponse(getSampleResponse("ant/response_annotation_replies_create.json")).withStatus(200));
 		
 		AddReplyResponse response = antApi.CreateAnnotationReply(userId, annotationId, reply);
 		assertThat(response.getStatus(), equalTo("Ok"));
@@ -131,10 +130,10 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String fileId = "SomeFileGuid";
 		
 		String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("{userId}", userId).replace("{fileId}", fileId);
-		String body = ApiInvoker.getInstance().serialize(annotation);
+		String body = ApiInvoker.serialize(annotation);
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.POST).withBody(body, MediaType.APPLICATION_JSON), 
-                giveResponse(getSampleResponse("annotation/response_annotation_create.json")).withStatus(200));
+                giveResponse(getSampleResponse("ant/CreateAnnotation.json")).withStatus(200));
 
 		CreateAnnotationResponse response = antApi.CreateAnnotation(userId, fileId , annotation);
 		assertThat(response.getStatus(), equalTo("Ok"));
@@ -151,7 +150,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String body = "[\"test1@gmail.com\",\"test2@gmail.com\"]";
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.PUT).withBody(body, MediaType.APPLICATION_JSON), 
-                giveResponse(getSampleResponse("annotation/response_annotation_collaborators_set.json")).withStatus(200));
+                giveResponse(getSampleResponse("ant/response_annotation_collaborators_set.json")).withStatus(200));
 		
 		SetCollaboratorsResponse response = antApi.SetAnnotationCollaborators(userId, fileId , version, collaborators);
 		assertThat(response.getStatus(), equalTo("Ok"));
@@ -178,7 +177,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String body = "[{\"id\":1232.0,\"access_rights\":1},{\"id\":1233.0,\"access_rights\":0}]";
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.PUT).withBody(body, MediaType.APPLICATION_JSON), 
-                giveResponse(getSampleResponse("annotation/response_annotation_collaborators_rights.json")).withStatus(200));
+                giveResponse(getSampleResponse("ant/response_annotation_collaborators_rights.json")).withStatus(200));
 
 		SetReviewerRightsResponse response = antApi.SetReviewerRights(userId, fileId , collaborators);
 		assertThat(response.getStatus(), equalTo("Ok"));

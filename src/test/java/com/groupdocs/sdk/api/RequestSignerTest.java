@@ -15,10 +15,8 @@
  */
 package com.groupdocs.sdk.api;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.groupdocs.sdk.common.ApiInvoker;
@@ -33,8 +31,11 @@ import com.groupdocs.sdk.common.RequestSigner;
  */
 public class RequestSignerTest extends AbstractUnitTest {
 	
-	String basePath = API_SERVER + "/storage/2721ad21bcf0d71e/folders/test.docx?description=";
-	
+	String basePath = "https://api.groupdocs.com/v2.0/storage/2721ad21bcf0d71e/folders/test.docx?description=";
+	String clientKey = "2721ad21bcf0d71e";
+	String privateKey = "8d8a7d642a807a31c2741c101a60cef2";
+	RequestSigner signer = new GroupDocsRequestSigner(privateKey);
+
 	@Test
 	public void testSimplePath() {
 		String requestUrl = basePath + "uploaded";

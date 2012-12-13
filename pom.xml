@@ -201,18 +201,8 @@
 		<dependency>
 		  	<groupId>com.github.rest-driver</groupId>
 		  	<artifactId>rest-client-driver</artifactId>
-		  	<version>1.1.27</version>
+		  	<version>1.1.28</version>
 		  	<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.sling</groupId>
-			<artifactId>org.apache.sling.commons.mime</artifactId>
-			<version>2.1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.osgi</groupId>
-			<artifactId>org.osgi.core</artifactId>
-			<version>5.0.0</version>
 		</dependency>
 	</dependencies>
 

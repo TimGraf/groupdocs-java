@@ -474,8 +474,8 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 	
 		File file = new File("/home/zhaidarbek/workspace/groupdocs/java/groupdocs-java-samples/interactiveform_enabled.pdf");
 		File signature = new File(getClass().getClassLoader().getResource("signature.png").toURI());
-		String base64file = ApiInvoker.readAsDataURL(file);
-		String base64signature = ApiInvoker.readAsDataURL(signature);
+		String base64file = MimeUtils.readAsDataURL(file);
+		String base64signature = MimeUtils.readAsDataURL(signature);
   		
   		SignatureSignDocumentDocumentSettings document = new SignatureSignDocumentDocumentSettings();
   		document.setName("test.doc");
