@@ -1,0 +1,24 @@
+{
+  "result": {
+    "datasource": {
+      "id": 9585,
+      "questionnaire_id": 23061,
+      "descr": "Description",
+      "fields": [
+        {
+          "name": "Test1",
+          "values": [
+            "test1",
+            "test2"
+          ],
+          "contentType": null,
+          "type": "Text"
+        }
+      ],
+      "created_on": 1355730950338,
+      "modified_on": 1355730950432
+    }
+  },
+  "status": "Ok",
+  "error_message": null
+}

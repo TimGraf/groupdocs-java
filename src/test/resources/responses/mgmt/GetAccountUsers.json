@@ -1,0 +1,40 @@
+{
+  "result": {
+    "max_users": 1,
+    "users": [
+      {
+        "nickname": "api-tests@groupdocs.com",
+        "firstname": "sadf",
+        "lastname": "asdf",
+        "pkey": null,
+        "pswd_salt": "uCXoBZH7pY1Sy8JOK+/BGw==",
+        "claimed_id": null,
+        "token": "dd1eee2a2002e0656e7058852a0753bb16b5bfd52f04efdeba8ea67468a4daa7",
+        "storage": null,
+        "photo": null,
+        "active": false,
+        "trial": false,
+        "news_eanbled": false,
+        "alerts_eanbled": null,
+        "support_eanbled": null,
+        "support_email": null,
+        "annotation_branded": null,
+        "viewer_branded": null,
+        "signedupOn": 1341805769540,
+        "signedinOn": 1354616642847,
+        "signin_count": null,
+        "roles": [
+          {
+            "id": 2,
+            "name": "Admin"
+          }
+        ],
+        "id": 167,
+        "guid": "ea103bbe8cb8ce07",
+        "primary_email": "api-tests@groupdocs.com"
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null
+}

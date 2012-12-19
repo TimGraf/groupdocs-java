@@ -1,0 +1,6 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/bb307c1da005d726/annotationAccess?signature=NkvIjlSqKjxGjdlfwHBW6mBXfdc
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 1
+Content-Type: application/json

@@ -1,0 +1,22 @@
+{
+  "result": {
+    "documentGuid": "5be7e20ab56030ff28cedeead168e4c9066f3733e3e2f77b19b07ff1b24d95c5",
+    "sessionGuid": "a00cb9cdf5f98fda",
+    "owner": {
+      "id": 167,
+      "guid": "ea103bbe8cb8ce07",
+      "primary_email": "api-tests@groupdocs.com",
+      "firstName": "sadf",
+      "lastName": "asdf",
+      "access_rights": null,
+      "color": null,
+      "customEmailMessage": null
+    },
+    "collaborators": [
+
+    ],
+    "shared_link_access_rights": null
+  },
+  "status": "Ok",
+  "error_message": null
+}

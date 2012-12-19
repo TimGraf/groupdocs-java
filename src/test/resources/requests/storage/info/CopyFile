@@ -1,0 +1,6 @@
+PUT /v2.0/storage/ea103bbe8cb8ce07/files/document_two_672576763902327.doc?signature=%2F7tqcsWjpD2prhONnDSAv7FSgtg
+
+Host: dev-api.groupdocs.com
+Groupdocs-copy: 128859
+Accept: application/json
+Content-Length: 0

@@ -1,0 +1,6 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/02bd7c8e8b115d89/markerPosition?signature=1ydexEXVUkliVZundRCuTODbHXI
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 18
+Content-Type: application/json

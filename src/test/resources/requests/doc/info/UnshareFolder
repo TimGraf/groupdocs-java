@@ -1,0 +1,5 @@
+DELETE /v2.0/doc/ea103bbe8cb8ce07/folders/73494/sharers?signature=PGavX3vd7F8dSOgACCEra1yw1PY
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0

@@ -1,0 +1,6 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/files/2d3ff661e8f5b070548f2f2f13cd01167239d05f2acff0ce9725b29f26dc2343/sharedLinkAccessRights?signature=fMaY5LWIKvnJqYxFNaDSWMAJq0g
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 2
+Content-Type: application/json

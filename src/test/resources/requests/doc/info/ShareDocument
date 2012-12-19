@@ -1,0 +1,6 @@
+PUT /v2.0/doc/ea103bbe8cb8ce07/files/128745/sharers?signature=0h8PeQ0vdh0%2FvhdqbHspyvl9YdU
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 55
+Content-Type: application/json

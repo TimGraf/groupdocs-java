@@ -1,0 +1,19 @@
+{
+  "result": {
+    "id": 303707,
+    "out_formats": null,
+    "actions": "Convert, CompressZip",
+    "status": "Draft",
+    "email_results": false,
+    "priority": 5,
+    "url_only": null,
+    "documents": null,
+    "requested_time": 1355730010713,
+    "scheduled_time": 1355730010713,
+    "guid": "97081c729e6622f62f1c69ab14531b910bb3846aae8c20cdb9c439a6b062920a",
+    "name": null,
+    "callback_url": null
+  },
+  "status": "Ok",
+  "error_message": null
+}

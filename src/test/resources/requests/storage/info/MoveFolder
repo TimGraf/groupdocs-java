@@ -1,0 +1,6 @@
+PUT /v2.0/storage/ea103bbe8cb8ce07/folders/NewFolder-9915924970715079?signature=ig5ZREuQyx5bT65m1zNghZmQEPA
+
+Host: dev-api.groupdocs.com
+Groupdocs-move: Folder-9915924970715079
+Accept: application/json
+Content-Length: 0

@@ -24,13 +24,17 @@ import java.lang.reflect.Type;
 import java.net.URL;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Rule;
+import org.junit.rules.TestName;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.NumberSerializers.NumberSerializer;
@@ -44,6 +48,7 @@ public abstract class AbstractUnitTest {
 	public static ObjectMapper jsonMapper = JsonUtil.getJsonMapper();
 	protected static String userId;
 	private static final Boolean enableLogging;
+	@Rule public TestName name = new TestName();
 	
 	static {
 		String clientKey = System.getProperty("clientKey", "CLIENT_ID");
@@ -55,6 +60,7 @@ public abstract class AbstractUnitTest {
 		
 		// some GroupDocs models define ints as doubles
 		jsonMapper.setSerializationInclusion(com.fasterxml.jackson.annotation.JsonInclude.Include.ALWAYS);
+		jsonMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
 		SimpleModule m = new SimpleModule(ApiInvoker.PACKAGE_NAME, Version.unknownVersion());
 		m.addSerializer(new StdScalarSerializer<Number>(Number.class){
 
@@ -95,14 +101,20 @@ public abstract class AbstractUnitTest {
 		}
 	}
 	
-	public static String getSampleResponse(String fileName) throws Exception {
-		URL resource = AbstractUnitTest.class.getClassLoader().getResource("responses/" + fileName);
-		File jsonFile = new File(resource.toURI());
-		return FileUtils.readFileToString(jsonFile);
+	public String getSampleResponse(String fileName) throws Exception {
+		return readFileToString("responses/" + fileName);
 	}
 	
-	public static String getSampleRequest(String fileName) throws Exception {
-		URL resource = AbstractUnitTest.class.getClassLoader().getResource("requests/" + fileName);
+	public <T> T getSampleRequest(String fileName, final TypeReference<T> type) throws Exception {
+		return jsonMapper.readValue(readFileToString("requests/" + fileName), type);
+	}
+	
+	public String readFileToString(String filepath) throws Exception {
+		URL resource = AbstractUnitTest.class.getClassLoader().getResource(filepath);
+		if(resource == null){
+			log("WARNING: File " + filepath + " doesn't exist. Ignoring " + name.getMethodName());
+		}
+		org.junit.Assume.assumeNotNull(resource);
 		File jsonFile = new File(resource.toURI());
 		return FileUtils.readFileToString(jsonFile);
 	}

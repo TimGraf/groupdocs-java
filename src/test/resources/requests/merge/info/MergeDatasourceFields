@@ -1,0 +1,6 @@
+POST /v2.0/merge/ea103bbe8cb8ce07/files/37dba273b3d7a6d4ced79deeb242130f54b369756b4da228c18d7d93b10c8f0a/datasources?signature=eQ0Mx6KopPIaV%2FnWau%2F2fuI62ss
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 66
+Content-Type: application/json

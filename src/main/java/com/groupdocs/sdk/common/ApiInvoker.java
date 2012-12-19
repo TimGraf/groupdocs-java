@@ -41,6 +41,7 @@ public class ApiInvoker {
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   private static final String ENC = "UTF-8";
   private RequestSigner signer;
+  private boolean isDebug;
 
   public static final String PACKAGE_NAME;
   public static final String PACKAGE_VERSION;
@@ -65,6 +66,10 @@ public class ApiInvoker {
   
   public static ApiInvoker getInstance() {
     return INSTANCE;
+  }
+  
+  public void setDebug(boolean flag){
+	  this.isDebug = flag;
   }
 
   public void setRequestSigner(RequestSigner signer){
@@ -205,7 +210,7 @@ public class ApiInvoker {
         response = builder.put(ClientResponse.class, requestBody);
       }
     else if ("DELETE".equals(method)) {
-        response = builder.delete(ClientResponse.class, signer.signContent(serialize(body), builder));
+        response = builder.delete(ClientResponse.class);
     }
     else {
     	throw new ApiException(500, "unknown method type " + method);
@@ -243,7 +248,9 @@ public class ApiInvoker {
   private Client getClient(String host) {
 	if(!hostMap.containsKey(host)) {
 		Client client = Client.create();
-		client.addFilter(new LoggingFilter());
+		if(isDebug){
+			client.addFilter(new LoggingFilter());
+		}
         hostMap.put(host, client);
 	}
 	return hostMap.get(host);

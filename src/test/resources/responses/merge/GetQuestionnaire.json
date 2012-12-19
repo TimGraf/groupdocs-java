@@ -1,0 +1,41 @@
+{
+  "result": {
+    "questionnaire": {
+      "resolved_executions": 0,
+      "pages": [
+        {
+          "number": 1,
+          "title": "Page1",
+          "questions": [
+            {
+              "field": "Field1",
+              "text": "Text1",
+              "def_answer": "Answer1",
+              "required": true,
+              "disabled": false,
+              "type": "GenericText",
+              "answers": [
+                {
+                  "text": "Text",
+                  "value": "Value1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "document_ids": null,
+      "id": 23083,
+      "guid": "16dc72ba4001d830044132df629e6426",
+      "name": "Test Questionnaire",
+      "descr": "Test Questionnaire Description",
+      "status": "Ready",
+      "assigned_questions": 1,
+      "total_questions": 1,
+      "modified": 1355731011730,
+      "expires": 0
+    }
+  },
+  "status": "Ok",
+  "error_message": null
+}

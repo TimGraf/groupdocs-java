@@ -1,0 +1,5 @@
+DELETE /v2.0/async/ea103bbe8cb8ce07/jobs/303700/documents/8292e6101129995296425bd5c46ffe145f8485ccd2e1a6c65ec72842262c8d4c?signature=AuNEpxCan4UnaHBiM1%2FL2CtSFTc
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0

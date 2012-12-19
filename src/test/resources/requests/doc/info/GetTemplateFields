@@ -1,0 +1,5 @@
+GET /v2.0/doc/ea103bbe8cb8ce07/files/594f1d09b2973decc1dfd84bc93c09cc6658c92f7f9681051936c8a093fc82e6/fields?include_geometry=true&signature=egdGabcIjlB5bSooQaVOc0itn4s
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0
