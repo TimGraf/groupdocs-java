@@ -30,7 +30,7 @@ public class SignatureFormFieldInfo {
   private String name = null;
   private Boolean mandatory = null;
   private String regularExpression = null;
-  private List<Integer> data = new ArrayList<Integer>();
+  private String data = null;
   private String fillTimeStamp = null;
   private List<SignatureFormFieldLocationInfo> locations = new ArrayList<SignatureFormFieldLocationInfo>();
   private Integer fieldType = null;
@@ -78,10 +78,10 @@ public class SignatureFormFieldInfo {
     this.regularExpression = regularExpression;
   }
 
-  public List<Integer> getData() {
+  public String getData() {
     return data;
   }
-  public void setData(List<Integer> data) {
+  public void setData(String data) {
     this.data = data;
   }
 

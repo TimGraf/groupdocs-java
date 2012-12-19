@@ -15,7 +15,6 @@
  */
 package com.groupdocs.sdk.model;
 
-import java.util.*;
 /**
  * 
  * <p>
@@ -26,7 +25,7 @@ public class StorageProviderInfo {
   private Double id = null;
   private String provider = null;
   private String type = null;
-  private List<Integer> token = new ArrayList<Integer>();
+  private String token = null;
   private String publicKey = null;
   private String privateKey = null;
   private String rootFolder = null;
@@ -53,10 +52,10 @@ public class StorageProviderInfo {
     this.type = type;
   }
 
-  public List<Integer> getToken() {
+  public String getToken() {
     return token;
   }
-  public void setToken(List<Integer> token) {
+  public void setToken(String token) {
     this.token = token;
   }
 

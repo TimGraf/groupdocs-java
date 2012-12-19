@@ -32,7 +32,7 @@ public class UserInfo {
   private String claimed_id = null;
   private String token = null;
   private Integer storage = null;
-  private List<Integer> photo = new ArrayList<Integer>();
+  private String photo = null;
   private Boolean active = null;
   private Boolean trial = null;
   private Boolean news_eanbled = null;
@@ -102,10 +102,10 @@ public class UserInfo {
     this.storage = storage;
   }
 
-  public List<Integer> getPhoto() {
+  public String getPhoto() {
     return photo;
   }
-  public void setPhoto(List<Integer> photo) {
+  public void setPhoto(String photo) {
     this.photo = photo;
   }
 
