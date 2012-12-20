@@ -52,7 +52,7 @@ public class AsyncApi {
     if(userId == null || jobId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/async/{userId}/jobs/{jobId}?format=xml".replace("*", "");
+    String resourcePath = "/async/{userId}/jobs/{jobId}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 

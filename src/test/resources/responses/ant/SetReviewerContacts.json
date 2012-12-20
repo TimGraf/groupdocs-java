@@ -3,8 +3,7 @@
     "reviewerContacts": [
       {
         "emailAddress": "john@smith.com",
-        "firstName": null,
-        "lastName": null
+        "fullName": null
       }
     ]
   },

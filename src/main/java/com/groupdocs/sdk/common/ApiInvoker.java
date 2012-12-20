@@ -19,6 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,9 +28,12 @@ import java.util.Properties;
 
 import javax.ws.rs.core.MediaType;
 
+import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers.DateDeserializer;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource.Builder;
@@ -36,6 +41,7 @@ import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.wordnik.swagger.core.util.JsonUtil;
 
 public class ApiInvoker {
+  public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
   private static ApiInvoker INSTANCE = new ApiInvoker();
   private Map<String, Client> hostMap = new HashMap<String, Client>();
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -62,6 +68,12 @@ public class ApiInvoker {
 	}
 	PACKAGE_NAME = prop.getProperty("application.name", "groupdocs-java");
 	PACKAGE_VERSION = prop.getProperty("application.version", "unknown");
+  }
+  
+  public static class CustomDateDeserializer extends DateDeserializer {
+	  public CustomDateDeserializer(DateDeserializer base){
+		  super(base, new SimpleDateFormat(DATE_FORMAT), DATE_FORMAT);
+	  }
   }
   
   public static ApiInvoker getInstance() {
@@ -116,16 +128,21 @@ public class ApiInvoker {
 
   public static Object deserialize(String json, String containerType, Class cls) throws ApiException {
     try{
+      ObjectMapper mapper = JsonUtil.getJsonMapper();
+	  SimpleModule m = new SimpleModule(PACKAGE_NAME, Version.unknownVersion());
+	  m.addDeserializer(Date.class, new CustomDateDeserializer(new DateDeserializer()));
+	  mapper.registerModule(m);
+      
       if("List".equals(containerType)) {
-        JavaType typeInfo = JsonUtil.getJsonMapper().getTypeFactory().constructCollectionType(List.class, cls);
-        List response = (List<?>) JsonUtil.getJsonMapper().readValue(json, typeInfo);
+        JavaType typeInfo = mapper.getTypeFactory().constructCollectionType(List.class, cls);
+        List response = (List<?>) mapper.readValue(json, typeInfo);
         return response;
       }
       else if(String.class.equals(cls)) {
         return json;
       }
       else {
-        return JsonUtil.getJsonMapper().readValue(json, cls);
+        return mapper.readValue(json, cls);
       }
     }
     catch (IOException e) {

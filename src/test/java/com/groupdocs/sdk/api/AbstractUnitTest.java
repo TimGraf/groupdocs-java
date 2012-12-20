@@ -15,20 +15,21 @@
  */
 package com.groupdocs.sdk.api;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Rule;
 import org.junit.rules.TestName;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -48,6 +49,7 @@ public abstract class AbstractUnitTest {
 	public static ObjectMapper jsonMapper = JsonUtil.getJsonMapper();
 	protected static String userId;
 	private static final Boolean enableLogging;
+	private static final SimpleDateFormat dateFormat = new SimpleDateFormat(ApiInvoker.DATE_FORMAT);
 	@Rule public TestName name = new TestName();
 	
 	static {
@@ -62,6 +64,15 @@ public abstract class AbstractUnitTest {
 		jsonMapper.setSerializationInclusion(com.fasterxml.jackson.annotation.JsonInclude.Include.ALWAYS);
 		jsonMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
 		SimpleModule m = new SimpleModule(ApiInvoker.PACKAGE_NAME, Version.unknownVersion());
+		m.addSerializer(new StdScalarSerializer<Date>(Date.class){
+			
+			@Override
+			public void serialize(Date value, JsonGenerator jgen,
+					SerializerProvider provider) throws IOException,
+					JsonProcessingException {
+				jgen.writeString(dateFormat.format(value));
+			}
+		});
 		m.addSerializer(new StdScalarSerializer<Number>(Number.class){
 
 			@Override
@@ -120,8 +131,13 @@ public abstract class AbstractUnitTest {
 	}
 	
 	public static void assertSameJson(String expectedJson, Object actualJson) throws Exception {
-		assertThat(jsonMapper.readTree(expectedJson), 
-				equalTo(jsonMapper.readTree(jsonMapper.writeValueAsString(actualJson))));
+//		assertThat(jsonMapper.readTree(expectedJson), 
+//				equalTo(jsonMapper.readTree(jsonMapper.writeValueAsString(actualJson))));
+		JSONAssert.assertEquals(jsonMapper.writeValueAsString(actualJson), expectedJson, false);
+//        JSONCompareResult result = JSONCompare.compareJSON(jsonMapper.writeValueAsString(actualJson), expectedJson, JSONCompareMode.STRICT_ORDER);
+//        if (result.failed()) {
+//            throw new AssertionError(result.getMessage());
+//        }
 	}
 	
 }
