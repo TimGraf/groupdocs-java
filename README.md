@@ -13,7 +13,7 @@ GroupDocs Java SDK is now in Maven Central. To use SDK in your own project just 
 	<dependency>
 		<groupId>com.groupdocs</groupId>
 		<artifactId>groupdocs-java-client</artifactId>
-		<version>1.2</version>
+		<version>1.2.2</version>
 	</dependency>
 
 ### Usage Example
