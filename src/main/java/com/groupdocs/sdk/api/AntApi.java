@@ -365,7 +365,7 @@ public class AntApi {
       }
     }
   }
-  public AddCollaboratorResponse DeleteDocumentReviewer (String userId, String fileId, System.Decimal,System reviewerId) throws ApiException {
+  public AddCollaboratorResponse DeleteDocumentReviewer (String userId, String fileId, String reviewerId) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null || reviewerId == null ) {
        throw new ApiException(400, "missing required params");
