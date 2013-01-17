@@ -89,9 +89,9 @@ public class MergeApiTest extends AbstractUnitTest {
 	public void testAddJobDocumentDataSource() throws Exception {
 		// sample parameters
 		String userId = "userId";
-		String jobId = "jobId";
-		String fileId = "fileId";
-		String datasourceId = "datasourceId";
+		Integer jobId = 0;
+		Integer fileId = 0;
+		Integer datasourceId = 0;
 		
 		String resourcePath = "/merge/{userId}/jobs/{jobId}/files/{fileId}/datasources/{datasourceId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "datasourceId" + "}", String.valueOf(datasourceId));
 		

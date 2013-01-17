@@ -38,6 +38,7 @@ import com.github.restdriver.clientdriver.ClientDriverRule;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.FileStream;
 import com.groupdocs.sdk.model.SignatureEnvelopeResponse;
+import com.groupdocs.sdk.model.SignatureSignDocumentsResponse;
 import com.groupdocs.sdk.model.SignatureStatusResponse;
 import com.groupdocs.sdk.model.SignatureContactResponse;
 import com.groupdocs.sdk.model.SignatureRolesResponse;
@@ -62,7 +63,6 @@ import com.groupdocs.sdk.model.SignatureTemplateDocumentResponse;
 import com.groupdocs.sdk.model.SignatureTemplateFieldSettings;
 import com.groupdocs.sdk.model.SignatureFormDocumentResponse;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldSettings;
-import com.groupdocs.sdk.model.SignatureSignDocumentResponse;
 import com.groupdocs.sdk.model.SignatureFormSettings;
 import com.groupdocs.sdk.model.SignatureFormFieldSettings;
 import com.groupdocs.sdk.model.SignatureFormResourcesResponse;
@@ -299,7 +299,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SignatureSignDocumentResponse response = api.SignDocument(userId, body);
+			SignatureSignDocumentsResponse response = api.SignDocument(userId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -1652,7 +1652,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SignatureEnvelopeResponse response = api.CreateSignatureEnvelope(userId, name, body, envelopeGuid, templateGuid);
+			SignatureEnvelopeResponse response = api.CreateSignatureEnvelope(userId, name, body, templateGuid, envelopeGuid);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -2385,7 +2385,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SignatureStatusResponse response = api.SignatureEnvelopeSend(userId, envelopeId);
+			SignatureStatusResponse response = api.SignatureEnvelopeSend(userId, envelopeId, null);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

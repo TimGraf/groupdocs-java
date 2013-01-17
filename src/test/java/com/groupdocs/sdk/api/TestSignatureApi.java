@@ -482,7 +482,7 @@ public class TestSignatureApi extends AbstractIntegrationTest {
   		document.setData(base64file);
 		
 		SignatureSignDocumentSignerSettings signerr = new SignatureSignDocumentSignerSettings();
-		signerr.setPlaceSingatureOn("");
+		signerr.setPlaceSignatureOn("");
 		signerr.setName("My Name");
 		signerr.setData(base64signature);
 		signerr.setHeight(40d);
@@ -498,7 +498,7 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 		documents.add(document);
 		body.setDocuments(documents);
 		
-		SignatureSignDocumentResponse response = new SignatureApi().SignDocument(userId, body);
+		SignatureSignDocumentsResponse response = new SignatureApi().SignDocument(userId, body);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -549,7 +549,7 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 		String name = "test envelope";
 		Integer envelopeGuid = null;
 		String templateGuid = null;
-		SignatureEnvelopeResponse response = new SignatureApi().CreateSignatureEnvelope(userId, name, body, envelopeGuid, templateGuid);
+		SignatureEnvelopeResponse response = new SignatureApi().CreateSignatureEnvelope(userId, name, body, templateGuid, envelopeGuid);
 		assertThat(response, not(nullValue()));
 		
 	}
@@ -817,7 +817,7 @@ public class TestSignatureApi extends AbstractIntegrationTest {
 	
   		String userId = "";
 		String envelopeId = "";
-		SignatureStatusResponse response = new SignatureApi().SignatureEnvelopeSend(userId, envelopeId);
+		SignatureStatusResponse response = new SignatureApi().SignatureEnvelopeSend(userId, envelopeId, null);
 		assertThat(response, not(nullValue()));
 		
 	}
