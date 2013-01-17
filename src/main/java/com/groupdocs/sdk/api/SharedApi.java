@@ -38,7 +38,7 @@ public class SharedApi {
 
   public FileStream Download (String guid, String fileName, Boolean render) throws ApiException {
     // verify required params are set
-    if(guid == null || fileName == null ) {
+    if(guid == null ) {
        throw new ApiException(400, "missing required params");
     }
     String resourcePath = "/shared/files/{guid}?filename={fileName}&render={render}".replace("*", "");

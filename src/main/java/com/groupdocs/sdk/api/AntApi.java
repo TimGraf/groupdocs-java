@@ -17,7 +17,9 @@ package com.groupdocs.sdk.api;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
+import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
+import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
@@ -28,6 +30,7 @@ import com.groupdocs.sdk.model.CreateAnnotationResponse;
 import com.groupdocs.sdk.model.EditReplyResponse;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
 import com.groupdocs.sdk.model.SetSharedLinkAccessRightsResponse;
+import com.groupdocs.sdk.model.SetSessionCallbackUrlResponse;
 import com.groupdocs.sdk.model.SetAnnotationAccessResponse;
 import com.groupdocs.sdk.model.ReviewerContactInfo;
 import com.groupdocs.sdk.model.MoveAnnotationResponse;
@@ -362,6 +365,36 @@ public class AntApi {
       }
     }
   }
+  public AddCollaboratorResponse DeleteDocumentReviewer (String userId, String fileId, System.Decimal,System reviewerId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || reviewerId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/collaborators/{reviewerId}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "reviewerId" + "}", String.valueOf(reviewerId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (AddCollaboratorResponse) ApiInvoker.deserialize(response, "", AddCollaboratorResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public GetReviewerContactsResponse GetReviewerContacts (String userId) throws ApiException {
     // verify required params are set
     if(userId == null ) {
@@ -589,6 +622,66 @@ public class AntApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SetSharedLinkAccessRightsResponse) ApiInvoker.deserialize(response, "", SetSharedLinkAccessRightsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SetSessionCallbackUrlResponse SetSessionCallbackUrl (String userId, String fileId, String body) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/sessionCallbackUrl".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SetSessionCallbackUrlResponse) ApiInvoker.deserialize(response, "", SetSessionCallbackUrlResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SaveAnnotationTextResponse SaveTextField (String userId, String annotationId, TextFieldInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || annotationId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/annotations/{annotationId}/textFieldInfo".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SaveAnnotationTextResponse) ApiInvoker.deserialize(response, "", SaveAnnotationTextResponse.class);
       }
       else {
         return null;

@@ -39,6 +39,8 @@ public class UserInfo {
   private Boolean alerts_eanbled = null;
   private Boolean support_eanbled = null;
   private String support_email = null;
+  private Boolean annotation_branded = null;
+  private Boolean viewer_branded = null;
   private Long signedupOn = null;
   private Long signedinOn = null;
   private Integer signin_count = null;
@@ -151,6 +153,20 @@ public class UserInfo {
     this.support_email = support_email;
   }
 
+  public Boolean getAnnotation_branded() {
+    return annotation_branded;
+  }
+  public void setAnnotation_branded(Boolean annotation_branded) {
+    this.annotation_branded = annotation_branded;
+  }
+
+  public Boolean getViewer_branded() {
+    return viewer_branded;
+  }
+  public void setViewer_branded(Boolean viewer_branded) {
+    this.viewer_branded = viewer_branded;
+  }
+
   public Long getSignedupOn() {
     return signedupOn;
   }
@@ -219,6 +235,8 @@ public class UserInfo {
     sb.append("  alerts_eanbled: ").append(alerts_eanbled).append("\n");
     sb.append("  support_eanbled: ").append(support_eanbled).append("\n");
     sb.append("  support_email: ").append(support_email).append("\n");
+    sb.append("  annotation_branded: ").append(annotation_branded).append("\n");
+    sb.append("  viewer_branded: ").append(viewer_branded).append("\n");
     sb.append("  signedupOn: ").append(signedupOn).append("\n");
     sb.append("  signedinOn: ").append(signedinOn).append("\n");
     sb.append("  signin_count: ").append(signin_count).append("\n");

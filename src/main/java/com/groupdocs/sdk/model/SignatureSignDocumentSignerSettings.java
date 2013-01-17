@@ -27,7 +27,7 @@ public class SignatureSignDocumentSignerSettings {
   private Double left = null;
   private Double width = null;
   private Double height = null;
-  private String placeSingatureOn = null;
+  private String placeSignatureOn = null;
   private String data = null;
   public String getName() {
     return name;
@@ -64,11 +64,11 @@ public class SignatureSignDocumentSignerSettings {
     this.height = height;
   }
 
-  public String getPlaceSingatureOn() {
-    return placeSingatureOn;
+  public String getPlaceSignatureOn() {
+    return placeSignatureOn;
   }
-  public void setPlaceSingatureOn(String placeSingatureOn) {
-    this.placeSingatureOn = placeSingatureOn;
+  public void setPlaceSignatureOn(String placeSignatureOn) {
+    this.placeSignatureOn = placeSignatureOn;
   }
 
   public String getData() {
@@ -87,7 +87,7 @@ public class SignatureSignDocumentSignerSettings {
     sb.append("  left: ").append(left).append("\n");
     sb.append("  width: ").append(width).append("\n");
     sb.append("  height: ").append(height).append("\n");
-    sb.append("  placeSingatureOn: ").append(placeSingatureOn).append("\n");
+    sb.append("  placeSignatureOn: ").append(placeSignatureOn).append("\n");
     sb.append("  data: ").append(data).append("\n");
     sb.append("}\n");
     return sb.toString();

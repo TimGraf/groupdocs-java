@@ -38,6 +38,7 @@ public class SignatureFieldInfo {
   private Integer fieldType = null;
   private String acceptableValues = null;
   private String defaultValue = null;
+  private Integer align = null;
   public String getId() {
     return id;
   }
@@ -150,6 +151,13 @@ public class SignatureFieldInfo {
     this.defaultValue = defaultValue;
   }
 
+  public Integer getAlign() {
+    return align;
+  }
+  public void setAlign(Integer align) {
+    this.align = align;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -170,6 +178,7 @@ public class SignatureFieldInfo {
     sb.append("  fieldType: ").append(fieldType).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
+    sb.append("  align: ").append(align).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

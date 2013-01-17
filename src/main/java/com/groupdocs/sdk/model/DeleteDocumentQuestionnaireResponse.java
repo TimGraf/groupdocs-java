@@ -26,6 +26,7 @@ public class DeleteDocumentQuestionnaireResponse {
   private DeleteDocumentQuestionnaireResult result = null;
   private String status = null;
   private String error_message = null;
+  private Long composedOn = null;
   public DeleteDocumentQuestionnaireResult getResult() {
     return result;
   }
@@ -47,6 +48,13 @@ public class DeleteDocumentQuestionnaireResponse {
     this.error_message = error_message;
   }
 
+  public Long getComposedOn() {
+    return composedOn;
+  }
+  public void setComposedOn(Long composedOn) {
+    this.composedOn = composedOn;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -54,6 +62,7 @@ public class DeleteDocumentQuestionnaireResponse {
     sb.append("  result: ").append(result).append("\n");
     sb.append("  status: ").append(status).append("\n");
     sb.append("  error_message: ").append(error_message).append("\n");
+    sb.append("  composedOn: ").append(composedOn).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

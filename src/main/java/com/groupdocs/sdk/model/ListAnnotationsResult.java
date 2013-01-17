@@ -27,6 +27,7 @@ public class ListAnnotationsResult {
   private String documentGuid = null;
   private String sessionGuid = null;
   private List<AnnotationInfo> annotations = new ArrayList<AnnotationInfo>();
+  private Long serverTime = null;
   public String getDocumentGuid() {
     return documentGuid;
   }
@@ -48,6 +49,13 @@ public class ListAnnotationsResult {
     this.annotations = annotations;
   }
 
+  public Long getServerTime() {
+    return serverTime;
+  }
+  public void setServerTime(Long serverTime) {
+    this.serverTime = serverTime;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -55,6 +63,7 @@ public class ListAnnotationsResult {
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  annotations: ").append(annotations).append("\n");
+    sb.append("  serverTime: ").append(serverTime).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

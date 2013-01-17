@@ -40,6 +40,8 @@ public class SignatureEnvelopeInfo {
   private Double documentsCount = null;
   private Double documentsPages = null;
   private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
+  private String waterMarkText = null;
+  private String waterMarkImage = null;
   public String getId() {
     return id;
   }
@@ -152,6 +154,20 @@ public class SignatureEnvelopeInfo {
     this.recipients = recipients;
   }
 
+  public String getWaterMarkText() {
+    return waterMarkText;
+  }
+  public void setWaterMarkText(String waterMarkText) {
+    this.waterMarkText = waterMarkText;
+  }
+
+  public String getWaterMarkImage() {
+    return waterMarkImage;
+  }
+  public void setWaterMarkImage(String waterMarkImage) {
+    this.waterMarkImage = waterMarkImage;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -172,6 +188,8 @@ public class SignatureEnvelopeInfo {
     sb.append("  documentsCount: ").append(documentsCount).append("\n");
     sb.append("  documentsPages: ").append(documentsPages).append("\n");
     sb.append("  recipients: ").append(recipients).append("\n");
+    sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
+    sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

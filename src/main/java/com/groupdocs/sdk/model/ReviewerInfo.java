@@ -25,7 +25,8 @@ public class ReviewerInfo {
   private Double id = null;
   private String guid = null;
   private String primary_email = null;
-  private String firstname = null;
+  private String firstName = null;
+  private String lastName = null;
   private Integer access_rights = null;
   private Integer color = null;
   private String customEmailMessage = null;
@@ -50,11 +51,18 @@ public class ReviewerInfo {
     this.primary_email = primary_email;
   }
 
-  public String getFirstname() {
-    return firstname;
+  public String getFirstName() {
+    return firstName;
   }
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   public Integer getAccess_rights() {
@@ -85,7 +93,8 @@ public class ReviewerInfo {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");
-    sb.append("  firstname: ").append(firstname).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
+    sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("  access_rights: ").append(access_rights).append("\n");
     sb.append("  color: ").append(color).append("\n");
     sb.append("  customEmailMessage: ").append(customEmailMessage).append("\n");

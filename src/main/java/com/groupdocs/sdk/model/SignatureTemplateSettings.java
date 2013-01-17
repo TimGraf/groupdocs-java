@@ -29,6 +29,8 @@ public class SignatureTemplateSettings {
   private Double envelopeExpireTime = null;
   private String emailSubject = null;
   private String emailBody = null;
+  private String waterMarkText = null;
+  private String waterMarkImage = null;
   public Integer getOwnerShouldSign() {
     return ownerShouldSign;
   }
@@ -78,6 +80,20 @@ public class SignatureTemplateSettings {
     this.emailBody = emailBody;
   }
 
+  public String getWaterMarkText() {
+    return waterMarkText;
+  }
+  public void setWaterMarkText(String waterMarkText) {
+    this.waterMarkText = waterMarkText;
+  }
+
+  public String getWaterMarkImage() {
+    return waterMarkImage;
+  }
+  public void setWaterMarkImage(String waterMarkImage) {
+    this.waterMarkImage = waterMarkImage;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -89,6 +105,8 @@ public class SignatureTemplateSettings {
     sb.append("  envelopeExpireTime: ").append(envelopeExpireTime).append("\n");
     sb.append("  emailSubject: ").append(emailSubject).append("\n");
     sb.append("  emailBody: ").append(emailBody).append("\n");
+    sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
+    sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

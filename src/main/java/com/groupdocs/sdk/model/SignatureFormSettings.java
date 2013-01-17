@@ -25,6 +25,8 @@ public class SignatureFormSettings {
   private String name = null;
   private String fieldsInFinalFileName = null;
   private Boolean canParticipantDownloadForm = null;
+  private String waterMarkText = null;
+  private String waterMarkImage = null;
   public String getName() {
     return name;
   }
@@ -46,6 +48,20 @@ public class SignatureFormSettings {
     this.canParticipantDownloadForm = canParticipantDownloadForm;
   }
 
+  public String getWaterMarkText() {
+    return waterMarkText;
+  }
+  public void setWaterMarkText(String waterMarkText) {
+    this.waterMarkText = waterMarkText;
+  }
+
+  public String getWaterMarkImage() {
+    return waterMarkImage;
+  }
+  public void setWaterMarkImage(String waterMarkImage) {
+    this.waterMarkImage = waterMarkImage;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -53,6 +69,8 @@ public class SignatureFormSettings {
     sb.append("  name: ").append(name).append("\n");
     sb.append("  fieldsInFinalFileName: ").append(fieldsInFinalFileName).append("\n");
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
+    sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
+    sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

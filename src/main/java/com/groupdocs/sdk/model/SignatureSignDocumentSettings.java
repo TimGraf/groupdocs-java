@@ -27,6 +27,8 @@ import com.groupdocs.sdk.model.SignatureSignDocumentDocumentSettings;
 public class SignatureSignDocumentSettings {
   private List<SignatureSignDocumentDocumentSettings> documents = new ArrayList<SignatureSignDocumentDocumentSettings>();
   private List<SignatureSignDocumentSignerSettings> signers = new ArrayList<SignatureSignDocumentSignerSettings>();
+  private String waterMarkText = null;
+  private String waterMarkImage = null;
   public List<SignatureSignDocumentDocumentSettings> getDocuments() {
     return documents;
   }
@@ -41,12 +43,28 @@ public class SignatureSignDocumentSettings {
     this.signers = signers;
   }
 
+  public String getWaterMarkText() {
+    return waterMarkText;
+  }
+  public void setWaterMarkText(String waterMarkText) {
+    this.waterMarkText = waterMarkText;
+  }
+
+  public String getWaterMarkImage() {
+    return waterMarkImage;
+  }
+  public void setWaterMarkImage(String waterMarkImage) {
+    this.waterMarkImage = waterMarkImage;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignDocumentSettings {\n");
     sb.append("  documents: ").append(documents).append("\n");
     sb.append("  signers: ").append(signers).append("\n");
+    sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
+    sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

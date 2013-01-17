@@ -36,6 +36,7 @@ public class SignatureFormFieldInfo {
   private Integer fieldType = null;
   private String acceptableValues = null;
   private String defaultValue = null;
+  private String tooltip = null;
   public String getId() {
     return id;
   }
@@ -120,6 +121,13 @@ public class SignatureFormFieldInfo {
     this.defaultValue = defaultValue;
   }
 
+  public String getTooltip() {
+    return tooltip;
+  }
+  public void setTooltip(String tooltip) {
+    this.tooltip = tooltip;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -136,6 +144,7 @@ public class SignatureFormFieldInfo {
     sb.append("  fieldType: ").append(fieldType).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
+    sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

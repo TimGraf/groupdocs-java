@@ -32,6 +32,8 @@ public class ViewDocumentResult {
   private String doc_type = null;
   private List<String> image_urls = new ArrayList<String>();
   private String token = null;
+  private String pageHtml = null;
+  private String pageCss = null;
   private Double id = null;
   private String guid = null;
   public String getName() {
@@ -90,6 +92,20 @@ public class ViewDocumentResult {
     this.token = token;
   }
 
+  public String getPageHtml() {
+    return pageHtml;
+  }
+  public void setPageHtml(String pageHtml) {
+    this.pageHtml = pageHtml;
+  }
+
+  public String getPageCss() {
+    return pageCss;
+  }
+  public void setPageCss(String pageCss) {
+    this.pageCss = pageCss;
+  }
+
   public Double getId() {
     return id;
   }
@@ -116,6 +132,8 @@ public class ViewDocumentResult {
     sb.append("  doc_type: ").append(doc_type).append("\n");
     sb.append("  image_urls: ").append(image_urls).append("\n");
     sb.append("  token: ").append(token).append("\n");
+    sb.append("  pageHtml: ").append(pageHtml).append("\n");
+    sb.append("  pageCss: ").append(pageCss).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");

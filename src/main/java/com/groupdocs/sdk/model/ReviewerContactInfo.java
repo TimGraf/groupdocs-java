@@ -23,7 +23,8 @@ package com.groupdocs.sdk.model;
  */
 public class ReviewerContactInfo {
   private String emailAddress = null;
-  private String FullName = null;
+  private String firstName = null;
+  private String lastName = null;
   public String getEmailAddress() {
     return emailAddress;
   }
@@ -31,11 +32,18 @@ public class ReviewerContactInfo {
     this.emailAddress = emailAddress;
   }
 
-  public String getFullName() {
-    return FullName;
+  public String getFirstName() {
+    return firstName;
   }
-  public void setFullName(String FullName) {
-    this.FullName = FullName;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   @Override
@@ -43,7 +51,8 @@ public class ReviewerContactInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReviewerContactInfo {\n");
     sb.append("  emailAddress: ").append(emailAddress).append("\n");
-    sb.append("  FullName: ").append(FullName).append("\n");
+    sb.append("  firstName: ").append(firstName).append("\n");
+    sb.append("  lastName: ").append(lastName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

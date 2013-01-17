@@ -36,6 +36,7 @@ public class SignatureEnvelopeFieldLocationInfo {
   private Boolean fontBold = null;
   private Boolean fontItalic = null;
   private Boolean fontUnderline = null;
+  private Integer align = null;
   public String getId() {
     return id;
   }
@@ -134,6 +135,13 @@ public class SignatureEnvelopeFieldLocationInfo {
     this.fontUnderline = fontUnderline;
   }
 
+  public Integer getAlign() {
+    return align;
+  }
+  public void setAlign(Integer align) {
+    this.align = align;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -152,6 +160,7 @@ public class SignatureEnvelopeFieldLocationInfo {
     sb.append("  fontBold: ").append(fontBold).append("\n");
     sb.append("  fontItalic: ").append(fontItalic).append("\n");
     sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
+    sb.append("  align: ").append(align).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -15,7 +15,6 @@
  */
 package com.groupdocs.sdk.model;
 
-import java.util.Date;
 /**
  * 
  * <p>
@@ -32,7 +31,7 @@ public class SignatureEnvelopeRecipientInfo {
   private Double roleId = null;
   private Integer status = null;
   private String statusMessage = null;
-  private Date statusDateTime = null;
+  private String statusDateTime = null;
   private Double delegatedRecipientId = null;
   private String signatureFingerprint = null;
   private String signatureHost = null;
@@ -101,10 +100,10 @@ public class SignatureEnvelopeRecipientInfo {
     this.statusMessage = statusMessage;
   }
 
-  public Date getStatusDateTime() {
+  public String getStatusDateTime() {
     return statusDateTime;
   }
-  public void setStatusDateTime(Date statusDateTime) {
+  public void setStatusDateTime(String statusDateTime) {
     this.statusDateTime = statusDateTime;
   }
 

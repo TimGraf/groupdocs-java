@@ -26,6 +26,7 @@ public class GetReviewerContactsResponse {
   private GetReviewerContactsResult result = null;
   private String status = null;
   private String error_message = null;
+  private Long composedOn = null;
   public GetReviewerContactsResult getResult() {
     return result;
   }
@@ -47,6 +48,13 @@ public class GetReviewerContactsResponse {
     this.error_message = error_message;
   }
 
+  public Long getComposedOn() {
+    return composedOn;
+  }
+  public void setComposedOn(Long composedOn) {
+    this.composedOn = composedOn;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -54,6 +62,7 @@ public class GetReviewerContactsResponse {
     sb.append("  result: ").append(result).append("\n");
     sb.append("  status: ").append(status).append("\n");
     sb.append("  error_message: ").append(error_message).append("\n");
+    sb.append("  composedOn: ").append(composedOn).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

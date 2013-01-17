@@ -39,6 +39,9 @@ public class AnnotationInfo {
   private String access = null;
   private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
   private Long createdOn = null;
+  private String fieldText = null;
+  private String fontFamily = null;
+  private Double fontSize = null;
   public String getGuid() {
     return guid;
   }
@@ -123,6 +126,27 @@ public class AnnotationInfo {
     this.createdOn = createdOn;
   }
 
+  public String getFieldText() {
+    return fieldText;
+  }
+  public void setFieldText(String fieldText) {
+    this.fieldText = fieldText;
+  }
+
+  public String getFontFamily() {
+    return fontFamily;
+  }
+  public void setFontFamily(String fontFamily) {
+    this.fontFamily = fontFamily;
+  }
+
+  public Double getFontSize() {
+    return fontSize;
+  }
+  public void setFontSize(Double fontSize) {
+    this.fontSize = fontSize;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -139,6 +163,9 @@ public class AnnotationInfo {
     sb.append("  access: ").append(access).append("\n");
     sb.append("  replies: ").append(replies).append("\n");
     sb.append("  createdOn: ").append(createdOn).append("\n");
+    sb.append("  fieldText: ").append(fieldText).append("\n");
+    sb.append("  fontFamily: ").append(fontFamily).append("\n");
+    sb.append("  fontSize: ").append(fontSize).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

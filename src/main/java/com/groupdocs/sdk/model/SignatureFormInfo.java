@@ -35,6 +35,8 @@ public class SignatureFormInfo {
   private Double participantsCount = null;
   private List<String> fieldsInFinalFileName = new ArrayList<String>();
   private Boolean canParticipantDownloadForm = null;
+  private String waterMarkText = null;
+  private String waterMarkImage = null;
   public String getId() {
     return id;
   }
@@ -119,6 +121,20 @@ public class SignatureFormInfo {
     this.canParticipantDownloadForm = canParticipantDownloadForm;
   }
 
+  public String getWaterMarkText() {
+    return waterMarkText;
+  }
+  public void setWaterMarkText(String waterMarkText) {
+    this.waterMarkText = waterMarkText;
+  }
+
+  public String getWaterMarkImage() {
+    return waterMarkImage;
+  }
+  public void setWaterMarkImage(String waterMarkImage) {
+    this.waterMarkImage = waterMarkImage;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -135,6 +151,8 @@ public class SignatureFormInfo {
     sb.append("  participantsCount: ").append(participantsCount).append("\n");
     sb.append("  fieldsInFinalFileName: ").append(fieldsInFinalFileName).append("\n");
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
+    sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
+    sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

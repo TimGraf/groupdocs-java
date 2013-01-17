@@ -34,6 +34,7 @@ public class SignatureFormFieldLocationSettings {
   private Boolean fontItalic = null;
   private Boolean fontUnderline = null;
   private Boolean forceNewField = null;
+  private Integer align = null;
   public Integer getPage() {
     return page;
   }
@@ -118,6 +119,13 @@ public class SignatureFormFieldLocationSettings {
     this.forceNewField = forceNewField;
   }
 
+  public Integer getAlign() {
+    return align;
+  }
+  public void setAlign(Integer align) {
+    this.align = align;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -134,6 +142,7 @@ public class SignatureFormFieldLocationSettings {
     sb.append("  fontItalic: ").append(fontItalic).append("\n");
     sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
     sb.append("  forceNewField: ").append(forceNewField).append("\n");
+    sb.append("  align: ").append(align).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

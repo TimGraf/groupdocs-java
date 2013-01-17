@@ -33,6 +33,7 @@ public class SignatureEnvelopeDocumentInfo {
   private Integer originalDocumentPagesCount = null;
   private Integer fieldsCount = null;
   private List<SignatureDocumentFieldInfo> originalDocumentImportedFields = new ArrayList<SignatureDocumentFieldInfo>();
+  private String originalDocumentId = null;
   public String getDocumentId() {
     return documentId;
   }
@@ -96,6 +97,13 @@ public class SignatureEnvelopeDocumentInfo {
     this.originalDocumentImportedFields = originalDocumentImportedFields;
   }
 
+  public String getOriginalDocumentId() {
+    return originalDocumentId;
+  }
+  public void setOriginalDocumentId(String originalDocumentId) {
+    this.originalDocumentId = originalDocumentId;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -109,6 +117,7 @@ public class SignatureEnvelopeDocumentInfo {
     sb.append("  originalDocumentPagesCount: ").append(originalDocumentPagesCount).append("\n");
     sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
     sb.append("  originalDocumentImportedFields: ").append(originalDocumentImportedFields).append("\n");
+    sb.append("  originalDocumentId: ").append(originalDocumentId).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

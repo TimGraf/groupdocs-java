@@ -22,6 +22,7 @@ import com.groupdocs.sdk.model.SharedUsersResponse;
 import com.groupdocs.sdk.model.GetDocumentForeignTypesResponse;
 import com.groupdocs.sdk.model.GetDocumentInfoResponse;
 import com.groupdocs.sdk.model.DocumentAccessInfoResponse;
+import com.groupdocs.sdk.model.SetTagsResponse;
 import com.groupdocs.sdk.model.DocumentViewsResponse;
 import com.groupdocs.sdk.model.SharedDocumentsResponse;
 import com.groupdocs.sdk.model.RemoveEditLockResponse;
@@ -29,6 +30,8 @@ import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.ViewDocumentResponse;
 import com.groupdocs.sdk.model.GetEditLockResponse;
 import com.groupdocs.sdk.model.DocumentUserStatusResponse;
+import com.groupdocs.sdk.model.GetTagsResponse;
+import com.groupdocs.sdk.model.RemoveTagsResponse;
 import com.groupdocs.sdk.model.GetImageUrlsResponse;
 import java.util.*;
 
@@ -75,6 +78,44 @@ public class DocApi {
       queryParams.put("quality", String.valueOf(quality));
     if(!"null".equals(String.valueOf(usePdf)))
       queryParams.put("use_pdf", String.valueOf(usePdf));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (ViewDocumentResponse) ApiInvoker.deserialize(response, "", ViewDocumentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public ViewDocumentResponse ViewDocumentAsHtml (String userId, String fileId, String pageNumber, String pageCount) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(pageNumber)))
+      queryParams.put("page_number", String.valueOf(pageNumber));
+    if(!"null".equals(String.valueOf(pageCount)))
+      queryParams.put("page_count", String.valueOf(pageCount));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -584,6 +625,36 @@ public class DocApi {
       }
     }
   }
+  public FileStream GetDocumentPageHtml (String userId, String fileId, Integer pageNumber, Boolean expiresOn) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || pageNumber == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlRepresentations?expires={expiresOn}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(expiresOn)))
+      queryParams.put("expires", String.valueOf(expiresOn));
+    try {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public GetImageUrlsResponse GetDocumentPagesImageUrls (String userId, String fileId, Integer firstPage, Integer pageCount, String dimension, Integer quality, Boolean usePdf, String token) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null || dimension == null ) {
@@ -611,6 +682,44 @@ public class DocApi {
       queryParams.put("use_pdf", String.valueOf(usePdf));
     if(!"null".equals(String.valueOf(token)))
       queryParams.put("token", String.valueOf(token));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetImageUrlsResponse) ApiInvoker.deserialize(response, "", GetImageUrlsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetImageUrlsResponse GetDocumentPagesHtmlUrls (String userId, String fileId, Integer firstPage, Integer pageCount) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/pages/htmlRepresentationUrls?first_page={firstPage}&page_count={pageCount}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(firstPage)))
+      queryParams.put("first_page", String.valueOf(firstPage));
+    if(!"null".equals(String.valueOf(pageCount)))
+      queryParams.put("page_count", String.valueOf(pageCount));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -681,6 +790,96 @@ public class DocApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (RemoveEditLockResponse) ApiInvoker.deserialize(response, "", RemoveEditLockResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetTagsResponse GetDocumentTags (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/tags".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetTagsResponse) ApiInvoker.deserialize(response, "", GetTagsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SetTagsResponse SetDocumentTags (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/tags".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SetTagsResponse) ApiInvoker.deserialize(response, "", SetTagsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public RemoveTagsResponse RemoveDocumentTags (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/tags".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (RemoveTagsResponse) ApiInvoker.deserialize(response, "", RemoveTagsResponse.class);
       }
       else {
         return null;
