@@ -1,13 +1,13 @@
 {
   "result": {
-    "documentGuid": "5be7e20ab56030ff28cedeead168e4c9066f3733e3e2f77b19b07ff1b24d95c5",
-    "sessionGuid": "a00cb9cdf5f98fda",
+    "documentGuid": "54dc0c83767a89ae571633337ae783e60aa30ce35b519de313bd9db4b2049375",
+    "sessionGuid": "98d6ee11903ce478",
     "owner": {
       "id": 167,
       "guid": "ea103bbe8cb8ce07",
       "primary_email": "api-tests@groupdocs.com",
-      "firstname": "sadf",
-      "lastName": "asdf",
+      "firstName": "sadfg",
+      "lastName": "asdfg",
       "access_rights": null,
       "color": null,
       "customEmailMessage": null
@@ -18,5 +18,6 @@
     "shared_link_access_rights": null
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358748793182
 }

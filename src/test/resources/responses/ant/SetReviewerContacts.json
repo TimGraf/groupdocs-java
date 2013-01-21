@@ -3,10 +3,12 @@
     "reviewerContacts": [
       {
         "emailAddress": "john@smith.com",
-        "fullName": null
+        "firstName": null,
+        "lastName": null
       }
     ]
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358748995838
 }

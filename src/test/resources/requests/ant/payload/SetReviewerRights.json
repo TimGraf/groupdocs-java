@@ -1,1 +1,12 @@
-[{"id":1232.0,"access_rights":1},{"id":1233.0,"access_rights":0}]
+[
+  {
+    "id": 7796,
+    "guid": null,
+    "primary_email": "user_one@mailinator.com",
+    "firstname": "John",
+    "lastname": "Smith",
+    "access_rights": 15,
+    "color": 12582783,
+    "customEmailMessage": "Hi, reviewer!"
+  }
+]

@@ -1,6 +1,7 @@
-POST /v2.0/ant/ea103bbe8cb8ce07/files/f83d8447902e9b70c423db8d1075d3cb9a5cafa5959b4a3063f05ed6c2583774/annotations?signature=VRCp6E48JXSoKMaiWvowC2LlZCw
+POST /v2.0/ant/ea103bbe8cb8ce07/files/77e53031588102b57e81faf193ad64729af454817ca30bdec5578c14c48fce14/annotations?signature=84oPc7cmeo5xfsHKJxfcYQH0Ygk
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 89
+Groupdocs-Referrer: ruby/1.2.0
 Content-Type: application/json

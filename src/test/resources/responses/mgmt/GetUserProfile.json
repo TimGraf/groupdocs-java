@@ -2,24 +2,29 @@
   "result": {
     "user": {
       "nickname": "api-tests@groupdocs.com",
-      "firstname": "sadf",
-      "lastname": "asdf",
+      "firstname": "sadfg",
+      "lastname": "asdfg",
       "pkey": "808ee048519831cd47f2ae067b7f99b2",
       "pswd_salt": "uCXoBZH7pY1Sy8JOK+/BGw==",
       "claimed_id": null,
-      "token": "dd1eee2a2002e0656e7058852a0753bb16b5bfd52f04efdeba8ea67468a4daa7",
+      "token": null,
       "storage": null,
       "photo": null,
-      "active": false,
+      "active": null,
       "trial": null,
-      "news_eanbled": false,
+      "news_eanbled": null,
       "alerts_eanbled": null,
       "support_eanbled": null,
       "support_email": null,
       "annotation_branded": null,
       "viewer_branded": null,
+      "is_real_time_broadcast_enabled": null,
+      "is_scroll_broadcast_enabled": null,
+      "is_zoom_broadcast_enabled": null,
+      "annotation_logo": null,
+      "annotation_header_options": 0,
       "signedupOn": 1341805769540,
-      "signedinOn": 1354616642847,
+      "signedinOn": 1358178531493,
       "signin_count": null,
       "roles": null,
       "id": 167,
@@ -28,5 +33,6 @@
     }
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358757632062
 }

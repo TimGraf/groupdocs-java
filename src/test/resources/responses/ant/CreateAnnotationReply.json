@@ -1,9 +1,10 @@
 {
   "result": {
-    "replyGuid": "cec0757c",
-    "annotationGuid": "71fb032d32850667",
-    "replyDateTime": "2012-12-17T06:02:39.422Z"
+    "replyGuid": "db1e2f30",
+    "annotationGuid": "8257702b138f2b55",
+    "replyDateTime": "2013-01-21T06:11:47.5419921Z"
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358748707323
 }

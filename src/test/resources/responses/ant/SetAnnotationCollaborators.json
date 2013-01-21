@@ -1,33 +1,33 @@
 {
   "result": {
-    "documentGuid": "0750c74d7b7b61e8ad0609da5ca7d4cf616cb13c3f6962faaa93fb9506d06338",
-    "sessionGuid": "25838c58bacfd238",
+    "documentGuid": "bb501cf42d44e459d11216b89d665c486b7f5229b444e213817a6d98bb525aa1",
+    "sessionGuid": "6aecbb26b94a9bcd",
     "owner": {
       "id": 167,
       "guid": "ea103bbe8cb8ce07",
       "primary_email": "api-tests@groupdocs.com",
-      "firstname": "sadf",
-      "lastName": "asdf",
+      "firstName": "sadfg",
+      "lastName": "asdfg",
       "access_rights": null,
       "color": null,
       "customEmailMessage": null
     },
     "collaborators": [
       {
-        "id": 4291,
+        "id": 7794,
         "guid": "c5bdd25f9d8b36fd",
         "primary_email": "user_one@mailinator.com",
-        "firstname": null,
-        "lastName": null,
+        "firstName": "John",
+        "lastName": "Smith",
         "access_rights": 15,
         "color": 1201033,
         "customEmailMessage": null
       },
       {
-        "id": 4292,
+        "id": 7795,
         "guid": "db5b39313fcb0c5c",
         "primary_email": "user_two@mailinator.com",
-        "firstname": null,
+        "firstName": null,
         "lastName": null,
         "access_rights": 15,
         "color": 1201033,
@@ -36,5 +36,6 @@
     ]
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358748975635
 }

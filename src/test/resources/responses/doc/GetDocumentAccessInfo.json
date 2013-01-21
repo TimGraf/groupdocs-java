@@ -3,8 +3,8 @@
     "status": "Pending",
     "owner": {
       "nickname": "api-tests@groupdocs.com",
-      "firstname": "sadf",
-      "lastname": "asdf",
+      "firstname": "sadfg",
+      "lastname": "asdfg",
       "pkey": null,
       "pswd_salt": null,
       "claimed_id": null,
@@ -19,6 +19,11 @@
       "support_email": null,
       "annotation_branded": null,
       "viewer_branded": null,
+      "is_real_time_broadcast_enabled": null,
+      "is_scroll_broadcast_enabled": null,
+      "is_zoom_broadcast_enabled": null,
+      "annotation_logo": null,
+      "annotation_header_options": 0,
       "signedupOn": 0,
       "signedinOn": 0,
       "signin_count": null,
@@ -39,11 +44,12 @@
     "file_type_str": "Doc",
     "document_path": null,
     "access": "Private",
-    "url": "https://dev-api.groupdocs.com/v2.0/shared/files/a162d4cc27701566cc1548c9b2b20ff3e8453397dedb8794b2ba3a7a0bcc10ee",
+    "url": "https://dev-api.groupdocs.com/v2.0/shared/files/5387f519b47c3438673b5e6f98d19f85bc1fa53c2cdba97433d705d9af77a962",
     "file_type": "Doc",
-    "id": 128735,
-    "guid": "a162d4cc27701566cc1548c9b2b20ff3e8453397dedb8794b2ba3a7a0bcc10ee"
+    "id": 157119,
+    "guid": "5387f519b47c3438673b5e6f98d19f85bc1fa53c2cdba97433d705d9af77a962"
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358755721135
 }

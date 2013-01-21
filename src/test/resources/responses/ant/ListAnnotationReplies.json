@@ -1,10 +1,11 @@
 {
   "result": {
-    "annotationGuid": "5ee95a31fb7725cd",
+    "annotationGuid": "843af79882f57470",
     "replies": [
 
     ]
   },
   "status": "Ok",
-  "error_message": null
+  "error_message": null,
+  "composedOn": 1358748888135
 }
