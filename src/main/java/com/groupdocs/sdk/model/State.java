@@ -22,10 +22,19 @@ package com.groupdocs.sdk.model;
  *
  */
 public class State {
+  private String Name = null;
+  public String getName() {
+    return Name;
+  }
+  public void setName(String Name) {
+    this.Name = Name;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class State {\n");
+    sb.append("  Name: ").append(Name).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -96,7 +96,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 
 	@Test
 	public void testSimpleObjectSerilizationDeserilization() throws Exception {
-		String annotationId = "71fb032d32850667";
+		String annotationId = "8257702b138f2b55";
 		AnnotationReplyInfo reply = new AnnotationReplyInfo();
 		reply.setText("test message from java client library");
 		reply.setParentReplyGuid("6a215585");
