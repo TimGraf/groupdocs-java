@@ -45,6 +45,7 @@ public abstract class AbstractIntegrationTest {
 		ApiInvoker.getInstance().setRequestSigner(signer);
 		userId = clientKey;
 		enableLogging = Boolean.valueOf(System.getProperty("enableLogging", "true"));
+		ApiInvoker.getInstance().setDebug(enableLogging);
 	}
 
 	public static void log(Object msg){
