@@ -36,7 +36,9 @@ import com.github.restdriver.clientdriver.ClientDriverResponse;
 import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
+import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
+import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
@@ -47,6 +49,7 @@ import com.groupdocs.sdk.model.CreateAnnotationResponse;
 import com.groupdocs.sdk.model.EditReplyResponse;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
 import com.groupdocs.sdk.model.SetSharedLinkAccessRightsResponse;
+import com.groupdocs.sdk.model.SetSessionCallbackUrlResponse;
 import com.groupdocs.sdk.model.SetAnnotationAccessResponse;
 import com.groupdocs.sdk.model.ReviewerContactInfo;
 import com.groupdocs.sdk.model.MoveAnnotationResponse;
@@ -361,6 +364,35 @@ public class AntApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testDeleteDocumentReviewer() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		String reviewerId = "reviewerId";
+		
+		String resourcePath = "/ant/{userId}/files/{fileId}/collaborators/{reviewerId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "reviewerId" + "}", String.valueOf(reviewerId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.DELETE).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("ant/DeleteDocumentReviewer.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			AddCollaboratorResponse response = api.DeleteDocumentReviewer(userId, fileId, reviewerId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testGetReviewerContacts() throws Exception {
 		// sample parameters
 		String userId = "userId";
@@ -579,6 +611,64 @@ public class AntApiTest extends AbstractUnitTest {
 		
 		try {
 			SetSharedLinkAccessRightsResponse response = api.SetSharedLinkAccessRights(userId, fileId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testSetSessionCallbackUrl() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		String body = "body";
+		
+		String resourcePath = "/ant/{userId}/files/{fileId}/sessionCallbackUrl".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("ant/SetSessionCallbackUrl.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SetSessionCallbackUrlResponse response = api.SetSessionCallbackUrl(userId, fileId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testSaveTextField() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String annotationId = "annotationId";
+		TextFieldInfo body = getSampleRequest("ant/payload/SaveTextField.json", new TypeReference<TextFieldInfo>(){});
+		
+		String resourcePath = "/ant/{userId}/annotations/{annotationId}/textFieldInfo".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("ant/SaveTextField.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SaveAnnotationTextResponse response = api.SaveTextField(userId, annotationId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
