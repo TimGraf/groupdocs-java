@@ -13,8 +13,11 @@ import java.util.UUID;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
+import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.common.FileStream;
+import com.groupdocs.sdk.common.GroupDocsRequestSigner;
 import com.groupdocs.sdk.model.SignatureEnvelopeDocumentResponse;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldSettings;
 import com.groupdocs.sdk.model.SignatureEnvelopeResponse;
@@ -23,9 +26,17 @@ import com.groupdocs.sdk.model.SignatureFieldInfo;
 import com.groupdocs.sdk.model.SignatureRoleInfo;
 import com.groupdocs.sdk.model.SignatureStatusResponse;
 
+@Category(IntegrationTest.class)
 public class TestSignatureApiUseCases extends AbstractIntegrationTest {
 	
 	SignatureApi api = new SignatureApi();
+	String server = "dev-"; // use "" for production
+	
+	{
+		api.setBasePath("https://" + server + "api.groupdocs.com/v2.0");
+		ApiInvoker.getInstance().setRequestSigner(new GroupDocsRequestSigner("e205c73b479f0e5a66501fac3e89d86b"));
+		userId = "16698cae909805f2";
+	}
 	
 	@Test
 	public void testSendEnvelopeForSigning() throws Exception {
@@ -33,6 +44,7 @@ public class TestSignatureApiUseCases extends AbstractIntegrationTest {
 		File file = new File(".", "src/test/resources/interactiveform_enabled.pdf");
 		InputStream is = new FileInputStream(file);
 		StorageApi storageApi = new StorageApi();
+		storageApi.setBasePath("https://" + server + "api.groupdocs.com/v2.0");
 		String documentId = storageApi.Upload(userId, "samples/signature/" + file.getName(), null, new FileStream(is)).getResult().getGuid();
 		IOUtils.closeQuietly(is);
 		assertThat(documentId, not(nullValue()));
@@ -97,11 +109,12 @@ public class TestSignatureApiUseCases extends AbstractIntegrationTest {
 		api.AddSignatureEnvelopeField(userId, envelopeId, documentId, recipientId, fieldId, envField);
 		
 		//send envelope
-		SignatureStatusResponse envelopeSend = api.SignatureEnvelopeSend(userId, envelopeId, null);
+		FileStream fs = new FileStream(IOUtils.toInputStream("http://jake.dyndns.biz:8080/dummyCallbackHandler"));
+		SignatureStatusResponse envelopeSend = api.SignatureEnvelopeSend(userId, envelopeId, fs);
 		assertThat(envelopeSend, not(nullValue()));
 		assertThat(envelopeSend.getStatus(), equalTo("Ok"));
 		
-		String embedUrl = "https://apps.groupdocs.com/signature/signembed/" + envelopeId + "/" + recipientId;
+		String embedUrl = "https://" + server + "apps.groupdocs.com/signature/signembed/" + envelopeId + "/" + recipientId;
 		System.out.println("Use following URL to sign the envelope: " + embedUrl);
 	}
 
