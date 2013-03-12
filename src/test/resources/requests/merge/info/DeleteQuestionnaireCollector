@@ -1,6 +1,6 @@
-DELETE /v2.0/merge/ea103bbe8cb8ce07/questionnaires/collectors/eb5e6836bbc4ed97442a2b3c3855f059?signature=HpYIQmcwGO0IMktVM3q2uyqZZyY
+DELETE /v2.0/merge/ea103bbe8cb8ce07/questionnaires/collectors/8d54e59568ba1937b6556ae039853768?signature=VO2csEwtXgy9065q0QcCwbSzgqA
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.2.0
+Groupdocs-Referrer: ruby/1.3.0

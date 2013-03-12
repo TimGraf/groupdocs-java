@@ -1,11 +1,13 @@
 {
   "result": {
     "total_space": 26843545600,
-    "avail_space": 24832903623,
+    "avail_space": 23497270311,
     "doc_credits": null,
-    "avail_credits": null
+    "avail_credits": null,
+    "total_documents": null,
+    "avail_documents": null
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1358757368651
+  "composedOn": 1362989909560
 }

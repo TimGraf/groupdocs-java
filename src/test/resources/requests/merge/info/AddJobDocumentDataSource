@@ -1,6 +1,6 @@
-PUT /v2.0/merge/ea103bbe8cb8ce07/jobs/384632/files/157163/datasources/12265?signature=AJ2TUtKD9MstYxzBP8%2Biw5rZ7Yg
+PUT /v2.0/merge/ea103bbe8cb8ce07/jobs/506822/files/201096/datasources/15607?signature=erxDcHtDb6Z5FRIS5M8ze%2FhEEcw
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.2.0
+Groupdocs-Referrer: ruby/1.3.0

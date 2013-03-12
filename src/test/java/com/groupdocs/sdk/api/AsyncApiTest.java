@@ -74,6 +74,7 @@ public class AsyncApiTest extends AbstractUnitTest {
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		mockRequest = mockRequest.withParam("format", "xml");
 		// read response json from file
 		String responseBody = getSampleResponse("async/GetJob.json");
 		
@@ -444,23 +445,21 @@ public class AsyncApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String fileId = "fileId";
-		String targetType = "targetType";
 		String emailResults = "emailResults";
 		String description = "description";
 		Boolean printScript = Boolean.TRUE;
 		String callbackUrl = "callbackUrl";
-		Boolean checkDocumentOwnership = Boolean.TRUE;
+		String new_type = "new_type";
 		
 		String resourcePath = "/async/{userId}/files/{fileId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("new_type", targetType);
 		mockRequest = mockRequest.withParam("email_results", emailResults);
 		mockRequest = mockRequest.withParam("new_description", description);
 		mockRequest = mockRequest.withParam("print_script", printScript);
 		mockRequest = mockRequest.withParam("callback", callbackUrl);
-		mockRequest = mockRequest.withParam("checkDocumentOwnership", checkDocumentOwnership);
+		mockRequest = mockRequest.withParam("new_type", new_type);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("async/Convert.json");
@@ -469,7 +468,7 @@ public class AsyncApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			ConvertResponse response = api.Convert(userId, fileId, targetType, emailResults, description, printScript, callbackUrl, checkDocumentOwnership);
+			ConvertResponse response = api.Convert(userId, fileId, emailResults, description, printScript, callbackUrl, new_type);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

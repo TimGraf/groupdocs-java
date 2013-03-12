@@ -1,0 +1,7 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/replies/1f8949ca?signature=HPg%2BBn01obebcvJ2%2FYuBvZGW65A
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 16
+Groupdocs-Referrer: ruby/1.3.0
+Content-Type: application/json

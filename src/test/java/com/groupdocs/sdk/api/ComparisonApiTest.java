@@ -57,36 +57,6 @@ public class ComparisonApiTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testDownloadResult() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String resultFileId = "resultFileId";
-		String format = "format";
-		
-		String resourcePath = "/comparison/{userId}/comparison/download".replace("{" + "userId" + "}", String.valueOf(userId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
-		mockRequest = mockRequest.withParam("format", format);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("comparison/DownloadResult.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			FileStream response = api.DownloadResult(userId, resultFileId, format);
-			assertThat(response.getInputStream(), not(nullValue()));
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
 	public void testCompare() throws Exception {
 		// sample parameters
 		String userId = "userId";
@@ -200,6 +170,36 @@ public class ComparisonApiTest extends AbstractUnitTest {
 			DocumentDetailsResponse response = api.GetDocumentDetails(userId, guid);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testDownloadResult() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String resultFileId = "resultFileId";
+		String format = "format";
+		
+		String resourcePath = "/comparison/{userId}/comparison/download".replace("{" + "userId" + "}", String.valueOf(userId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
+		mockRequest = mockRequest.withParam("format", format);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("comparison/DownloadResult.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			FileStream response = api.DownloadResult(userId, resultFileId, format);
+			assertThat(response.getInputStream(), not(nullValue()));
 			
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());

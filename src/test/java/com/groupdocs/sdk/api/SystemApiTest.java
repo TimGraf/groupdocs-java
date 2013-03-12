@@ -26,7 +26,6 @@ import java.util.regex.Pattern;
 import javax.ws.rs.core.MediaType;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -37,9 +36,11 @@ import com.github.restdriver.clientdriver.ClientDriverResponse;
 import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
+import com.groupdocs.sdk.model.BillingAddressInfo;
 import com.groupdocs.sdk.model.GetCountriesResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
+import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlansResponse;
 import com.groupdocs.sdk.model.GetStatesResponse;
@@ -124,6 +125,7 @@ public class SystemApiTest extends AbstractUnitTest {
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		mockRequest = mockRequest.withParam("invalidate", "{invalidate}");
 		// read response json from file
 		String responseBody = getSampleResponse("system/GetSubscriptionPlans.json");
 		
@@ -170,7 +172,6 @@ public class SystemApiTest extends AbstractUnitTest {
 	
 	}
 	
-	@Ignore("upper case property name can't be deserialized")
 	@Test
 	public void testGetCountries() throws Exception {
 		// sample parameters
@@ -198,7 +199,6 @@ public class SystemApiTest extends AbstractUnitTest {
 	
 	}
 	
-	@Ignore("upper case property name can't be deserialized")
 	@Test
 	public void testGetStates() throws Exception {
 		// sample parameters
@@ -218,6 +218,34 @@ public class SystemApiTest extends AbstractUnitTest {
 		
 		try {
 			GetStatesResponse response = api.GetStates(callerId, countryName);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testSetBillingAddress() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		BillingAddressInfo body = getSampleRequest("system/payload/SetBillingAddress.json", new TypeReference<BillingAddressInfo>(){});
+		
+		String resourcePath = "/system/{userId}/billingaddress".replace("{" + "userId" + "}", String.valueOf(userId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/SetBillingAddress.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetBillingAddressResponse response = api.SetBillingAddress(userId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

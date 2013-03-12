@@ -1,0 +1,6 @@
+DELETE /v2.0/doc/ea103bbe8cb8ce07/folders/107929/sharers?signature=6W1%2BFleCK9uO5NkvLk9XCHnO8tA
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.3.0

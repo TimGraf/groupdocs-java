@@ -1,0 +1,6 @@
+DELETE /v2.0/ant/ea103bbe8cb8ce07/replies/53bab4e5?signature=Hwj66za0XO4OOM96KSFPGyXxW%2B8
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.3.0

@@ -9,10 +9,10 @@
       "file_type_str": "Doc",
       "document_path": "document_one.doc",
       "access": "Private",
-      "url": "https://dev-api.groupdocs.com/v2.0/shared/files/ef87153f04c6c61d52438a2596ebe35bb3c4639a0ac771f8486abe524857ee16",
+      "url": "https://dev-api.groupdocs.com/v2.0/shared/files/e8aeac0f8b2504016e4522ca058634c8e3c5627e3ff3258ab49a577ba2b609c4",
       "file_type": "Doc",
-      "id": 157384,
-      "guid": "ef87153f04c6c61d52438a2596ebe35bb3c4639a0ac771f8486abe524857ee16"
+      "id": 201311,
+      "guid": "e8aeac0f8b2504016e4522ca058634c8e3c5627e3ff3258ab49a577ba2b609c4"
     },
     "dst_file": {
       "name": "document_two.doc",
@@ -23,13 +23,13 @@
       "file_type_str": "Doc",
       "document_path": "document_two.doc",
       "access": "Private",
-      "url": "https://dev-api.groupdocs.com/v2.0/shared/files/ef87153f04c6c61d52438a2596ebe35bb3c4639a0ac771f8486abe524857ee16",
+      "url": "https://dev-api.groupdocs.com/v2.0/shared/files/e8aeac0f8b2504016e4522ca058634c8e3c5627e3ff3258ab49a577ba2b609c4",
       "file_type": "Doc",
-      "id": 157384,
-      "guid": "ef87153f04c6c61d52438a2596ebe35bb3c4639a0ac771f8486abe524857ee16"
+      "id": 201311,
+      "guid": "e8aeac0f8b2504016e4522ca058634c8e3c5627e3ff3258ab49a577ba2b609c4"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1358757398135
+  "composedOn": 1362989963528
 }

@@ -36,7 +36,6 @@ import com.github.restdriver.clientdriver.ClientDriverResponse;
 import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
-import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
 import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
@@ -45,20 +44,23 @@ import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
 import com.groupdocs.sdk.model.DeleteAnnotationResponse;
-import com.groupdocs.sdk.model.CreateAnnotationResponse;
 import com.groupdocs.sdk.model.EditReplyResponse;
+import com.groupdocs.sdk.model.CreateAnnotationResponse;
 import com.groupdocs.sdk.model.SetCollaboratorsResponse;
+import com.groupdocs.sdk.model.AnnotationSizeInfo;
 import com.groupdocs.sdk.model.SetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.SetSessionCallbackUrlResponse;
+import com.groupdocs.sdk.model.ResizeAnnotationResponse;
 import com.groupdocs.sdk.model.SetAnnotationAccessResponse;
-import com.groupdocs.sdk.model.ReviewerContactInfo;
 import com.groupdocs.sdk.model.MoveAnnotationResponse;
+import com.groupdocs.sdk.model.ReviewerContactInfo;
 import com.groupdocs.sdk.model.SetReviewerRightsResponse;
 import com.groupdocs.sdk.model.ListAnnotationsResponse;
-import com.groupdocs.sdk.model.GetCollaboratorsResponse;
 import com.groupdocs.sdk.model.ReviewerInfo;
+import com.groupdocs.sdk.model.GetCollaboratorsResponse;
 import com.groupdocs.sdk.model.AnnotationReplyInfo;
 import com.groupdocs.sdk.model.ListRepliesResponse;
+import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddReplyResponse;
 
 
@@ -477,6 +479,35 @@ public class AntApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testResizeAnnotation() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String annotationId = "annotationId";
+		AnnotationSizeInfo body = getSampleRequest("ant/payload/ResizeAnnotation.json", new TypeReference<AnnotationSizeInfo>(){});
+		
+		String resourcePath = "/ant/{userId}/annotations/{annotationId}/size".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("ant/ResizeAnnotation.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			ResizeAnnotationResponse response = api.ResizeAnnotation(userId, annotationId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testSetAnnotationAccess() throws Exception {
 		// sample parameters
 		String userId = "userId";
@@ -669,6 +700,35 @@ public class AntApiTest extends AbstractUnitTest {
 		
 		try {
 			SaveAnnotationTextResponse response = api.SaveTextField(userId, annotationId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testSetTextFieldColor() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String annotationId = "annotationId";
+		Integer body = 0;
+		
+		String resourcePath = "/ant/{userId}/annotations/{annotationId}/textFieldColor".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("ant/SetTextFieldColor.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SaveAnnotationTextResponse response = api.SetTextFieldColor(userId, annotationId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

@@ -207,7 +207,7 @@
 		<dependency>
 		  	<groupId>com.github.rest-driver</groupId>
 		  	<artifactId>rest-client-driver</artifactId>
-		  	<version>1.1.28</version>
+		  	<version>1.1.30</version>
 		  	<scope>test</scope>
 		</dependency>
 		<dependency>
