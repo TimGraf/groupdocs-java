@@ -37,6 +37,7 @@ public class SignatureFormInfo {
   private Boolean canParticipantDownloadForm = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
+  private Double fieldsCount = null;
   public String getId() {
     return id;
   }
@@ -135,6 +136,13 @@ public class SignatureFormInfo {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Double getFieldsCount() {
+    return fieldsCount;
+  }
+  public void setFieldsCount(Double fieldsCount) {
+    this.fieldsCount = fieldsCount;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -153,6 +161,7 @@ public class SignatureFormInfo {
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

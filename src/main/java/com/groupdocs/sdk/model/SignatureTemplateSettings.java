@@ -22,26 +22,26 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureTemplateSettings {
-  private Integer ownerShouldSign = null;
-  private Integer orderedSignature = null;
+  private Boolean ownerShouldSign = null;
+  private Boolean orderedSignature = null;
   private Double reminderTime = null;
   private Double stepExpireTime = null;
-  private Double envelopeExpireTime = null;
+  private Double templateExpireTime = null;
   private String emailSubject = null;
   private String emailBody = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
-  public Integer getOwnerShouldSign() {
+  public Boolean getOwnerShouldSign() {
     return ownerShouldSign;
   }
-  public void setOwnerShouldSign(Integer ownerShouldSign) {
+  public void setOwnerShouldSign(Boolean ownerShouldSign) {
     this.ownerShouldSign = ownerShouldSign;
   }
 
-  public Integer getOrderedSignature() {
+  public Boolean getOrderedSignature() {
     return orderedSignature;
   }
-  public void setOrderedSignature(Integer orderedSignature) {
+  public void setOrderedSignature(Boolean orderedSignature) {
     this.orderedSignature = orderedSignature;
   }
 
@@ -59,11 +59,11 @@ public class SignatureTemplateSettings {
     this.stepExpireTime = stepExpireTime;
   }
 
-  public Double getEnvelopeExpireTime() {
-    return envelopeExpireTime;
+  public Double getTemplateExpireTime() {
+    return templateExpireTime;
   }
-  public void setEnvelopeExpireTime(Double envelopeExpireTime) {
-    this.envelopeExpireTime = envelopeExpireTime;
+  public void setTemplateExpireTime(Double templateExpireTime) {
+    this.templateExpireTime = templateExpireTime;
   }
 
   public String getEmailSubject() {
@@ -102,7 +102,7 @@ public class SignatureTemplateSettings {
     sb.append("  orderedSignature: ").append(orderedSignature).append("\n");
     sb.append("  reminderTime: ").append(reminderTime).append("\n");
     sb.append("  stepExpireTime: ").append(stepExpireTime).append("\n");
-    sb.append("  envelopeExpireTime: ").append(envelopeExpireTime).append("\n");
+    sb.append("  templateExpireTime: ").append(templateExpireTime).append("\n");
     sb.append("  emailSubject: ").append(emailSubject).append("\n");
     sb.append("  emailBody: ").append(emailBody).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");

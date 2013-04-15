@@ -33,6 +33,9 @@ public class SubscriptionPlanInfo {
   private Date expirationDate = null;
   private String cvv = null;
   private BillingAddressInfo address = null;
+  private Double price = null;
+  private String currencyCode = null;
+  private Integer billingPeriod = null;
   public Integer getProductId() {
     return productId;
   }
@@ -96,6 +99,27 @@ public class SubscriptionPlanInfo {
     this.address = address;
   }
 
+  public Double getPrice() {
+    return price;
+  }
+  public void setPrice(Double price) {
+    this.price = price;
+  }
+
+  public String getCurrencyCode() {
+    return currencyCode;
+  }
+  public void setCurrencyCode(String currencyCode) {
+    this.currencyCode = currencyCode;
+  }
+
+  public Integer getBillingPeriod() {
+    return billingPeriod;
+  }
+  public void setBillingPeriod(Integer billingPeriod) {
+    this.billingPeriod = billingPeriod;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -109,6 +133,9 @@ public class SubscriptionPlanInfo {
     sb.append("  expirationDate: ").append(expirationDate).append("\n");
     sb.append("  cvv: ").append(cvv).append("\n");
     sb.append("  address: ").append(address).append("\n");
+    sb.append("  price: ").append(price).append("\n");
+    sb.append("  currencyCode: ").append(currencyCode).append("\n");
+    sb.append("  billingPeriod: ").append(billingPeriod).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

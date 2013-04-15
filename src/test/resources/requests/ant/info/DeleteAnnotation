@@ -1,0 +1,6 @@
+DELETE /v2.0/ant/ea103bbe8cb8ce07/annotations/b8ed9ac0774e6426?signature=hA4KGcqXZPbodF0VZNDae1nXl5U
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.3.0

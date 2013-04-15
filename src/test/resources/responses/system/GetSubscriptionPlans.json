@@ -12,10 +12,13 @@
       "number": null,
       "expirationDate": null,
       "cvv": null,
-      "address": null
+      "address": null,
+      "price": 200,
+      "currencyCode": "USD",
+      "billingPeriod": null
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1362990101201
+  "composedOn": 1365673461372
 }

@@ -152,6 +152,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		String datasourceId = "datasourceId";
 		String targetType = "targetType";
 		String emailResults = "emailResults";
+		String callbackUrl = "callbackUrl";
 		
 		String resourcePath = "/merge/{userId}/questionnaires/collectors/{collectorId}/datasources/{datasourceId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "collectorId" + "}", String.valueOf(collectorId)).replace("{" + "datasourceId" + "}", String.valueOf(datasourceId));
 		
@@ -159,6 +160,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("new_type", targetType);
 		mockRequest = mockRequest.withParam("email_results", emailResults);
+		mockRequest = mockRequest.withParam("callback", callbackUrl);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("merge/FillQuestionnaire.json");
@@ -167,7 +169,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			MergeTemplateResponse response = api.FillQuestionnaire(userId, collectorId, datasourceId, targetType, emailResults);
+			MergeTemplateResponse response = api.FillQuestionnaire(userId, collectorId, datasourceId, targetType, emailResults, callbackUrl);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -185,6 +187,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		String datasourceId = "datasourceId";
 		String targetType = "targetType";
 		String emailResults = "emailResults";
+		String callbackUrl = "callbackUrl";
 		
 		String resourcePath = "/merge/{userId}/questionnaires/executions/{executionId}/datasources/{datasourceId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "executionId" + "}", String.valueOf(executionId)).replace("{" + "datasourceId" + "}", String.valueOf(datasourceId));
 		
@@ -192,6 +195,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("new_type", targetType);
 		mockRequest = mockRequest.withParam("email_results", emailResults);
+		mockRequest = mockRequest.withParam("callback", callbackUrl);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("merge/FillExecution.json");
@@ -200,7 +204,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			MergeTemplateResponse response = api.FillExecution(userId, executionId, datasourceId, targetType, emailResults);
+			MergeTemplateResponse response = api.FillExecution(userId, executionId, datasourceId, targetType, emailResults, callbackUrl);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -245,8 +249,6 @@ public class MergeApiTest extends AbstractUnitTest {
 	
 	@Test
 	public void testMergeDatasourceFields() throws Exception {
-		// In spec - DatasourceField.values is string, bat in test mock it is List<String>
-		/*
 		// sample parameters
 		String userId = "userId";
 		String fileId = "fileId";
@@ -277,7 +279,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());
 		}
-	*/
+	
 	}
 	
 	@Test
@@ -543,8 +545,6 @@ public class MergeApiTest extends AbstractUnitTest {
 	
 	@Test
 	public void testAddDataSource() throws Exception {
-		// Some error as in MergeApiTest.testMergeDatasourceFields
-		/*
 		// sample parameters
 		String userId = "userId";
 		Datasource body = getSampleRequest("merge/payload/AddDataSource.json", new TypeReference<Datasource>(){});
@@ -568,13 +568,11 @@ public class MergeApiTest extends AbstractUnitTest {
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());
 		}
-	*/
+	
 	}
 	
 	@Test
 	public void testUpdateDataSource() throws Exception {
-		// Some error as in MergeApiTest.testMergeDatasourceFields
-		/*
 		// sample parameters
 		String userId = "userId";
 		String datasourceId = "datasourceId";
@@ -599,7 +597,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());
 		}
-	*/
+	
 	}
 	
 	@Test

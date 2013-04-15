@@ -2,12 +2,12 @@
   "result": {
     "owner": {
       "nickname": "api-tests@groupdocs.com",
-      "firstname": null,
-      "lastname": null,
+      "firstname": "John",
+      "lastname": "Doe",
       "pkey": null,
       "pswd_salt": "uCXoBZH7pY1Sy8JOK+/BGw==",
       "claimed_id": null,
-      "token": "",
+      "token": null,
       "storage": null,
       "photo": null,
       "active": null,
@@ -40,6 +40,7 @@
       "is_polyline_annotation_button_enabled": null,
       "is_typewriter_annotation_button_enabled": null,
       "is_watermark_annotation_button_enabled": null,
+      "is_annotation_document_name_shown": null,
       "viewer_logo": null,
       "viewer_options": null,
       "is_viewer_navigation_widget_enabled": null,
@@ -47,8 +48,9 @@
       "is_viewer_download_widget_enabled": null,
       "is_viewer_print_widget_enabled": null,
       "is_viewer_help_widget_enabled": null,
+      "is_viewer_document_name_shown": null,
       "signedupOn": 1341805769540,
-      "signedinOn": 1361276226883,
+      "signedinOn": 1363064399490,
       "signin_count": null,
       "roles": null,
       "id": 167,
@@ -59,5 +61,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1362988443015
+  "composedOn": 1365671719273
 }

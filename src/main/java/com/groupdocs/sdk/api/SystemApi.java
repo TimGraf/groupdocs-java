@@ -109,7 +109,7 @@ public class SystemApi {
     if(callerId == null || family == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/system/{callerId}/plans/{family}?invalidate={invalidate}".replace("*", "");
+    String resourcePath = "/system/{callerId}/plans/{family}".replace("*", "");
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "family" + "}", String.valueOf(family));
 
@@ -149,6 +149,36 @@ public class SystemApi {
 
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SetUserSubscriptionPlanResponse) ApiInvoker.deserialize(response, "", SetUserSubscriptionPlanResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SetUserSubscriptionPlanResponse UpdateSubscriptionPlan (String userId, String productId, String userCount) throws ApiException {
+    // verify required params are set
+    if(userId == null || productId == null || userCount == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/subscriptions/{productId}/{userCount}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId)).replace("{" + "userCount" + "}", String.valueOf(userCount));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SetUserSubscriptionPlanResponse) ApiInvoker.deserialize(response, "", SetUserSubscriptionPlanResponse.class);
       }

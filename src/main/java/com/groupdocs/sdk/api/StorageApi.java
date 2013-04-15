@@ -171,12 +171,12 @@ public class StorageApi {
       }
     }
   }
-  public UploadResponse Upload (String userId, String path, String description, FileStream body) throws ApiException {
+  public UploadResponse Upload (String userId, String path, String description, String callbackUrl, FileStream body) throws ApiException {
     // verify required params are set
     if(userId == null || path == null || body == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/storage/{userId}/folders/{*path}?description={description}".replace("*", "");
+    String resourcePath = "/storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -190,6 +190,8 @@ public class StorageApi {
 
     if(!"null".equals(String.valueOf(description)))
       queryParams.put("description", String.valueOf(description));
+    if(!"null".equals(String.valueOf(callbackUrl)))
+      queryParams.put("callbackUrl", String.valueOf(callbackUrl));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
@@ -377,7 +379,7 @@ public class StorageApi {
       }
     }
   }
-  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
+  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
     // verify required params are set
     if(userId == null || path == null ) {
        throw new ApiException(400, "missing required params");
@@ -396,8 +398,8 @@ public class StorageApi {
 
     if(!"null".equals(String.valueOf(mode)))
       queryParams.put("mode", String.valueOf(mode));
-    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
+    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -415,7 +417,7 @@ public class StorageApi {
       }
     }
   }
-  public FolderMoveResponse MoveFolder (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
+  public FolderMoveResponse MoveFolder (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
     // verify required params are set
     if(userId == null || path == null ) {
        throw new ApiException(400, "missing required params");
@@ -434,8 +436,8 @@ public class StorageApi {
 
     if(!"null".equals(String.valueOf(mode)))
       queryParams.put("override_mode", String.valueOf(mode));
-    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
+    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){

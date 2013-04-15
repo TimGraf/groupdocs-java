@@ -128,12 +128,12 @@ public class MergeApi {
       }
     }
   }
-  public MergeTemplateResponse FillQuestionnaire (String userId, String collectorId, String datasourceId, String targetType, String emailResults) throws ApiException {
+  public MergeTemplateResponse FillQuestionnaire (String userId, String collectorId, String datasourceId, String targetType, String emailResults, String callbackUrl) throws ApiException {
     // verify required params are set
     if(userId == null || collectorId == null || datasourceId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/merge/{userId}/questionnaires/collectors/{collectorId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}".replace("*", "");
+    String resourcePath = "/merge/{userId}/questionnaires/collectors/{collectorId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}&callback={callbackUrl}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -149,6 +149,8 @@ public class MergeApi {
       queryParams.put("new_type", String.valueOf(targetType));
     if(!"null".equals(String.valueOf(emailResults)))
       queryParams.put("email_results", String.valueOf(emailResults));
+    if(!"null".equals(String.valueOf(callbackUrl)))
+      queryParams.put("callback", String.valueOf(callbackUrl));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -166,12 +168,12 @@ public class MergeApi {
       }
     }
   }
-  public MergeTemplateResponse FillExecution (String userId, String executionId, String datasourceId, String targetType, String emailResults) throws ApiException {
+  public MergeTemplateResponse FillExecution (String userId, String executionId, String datasourceId, String targetType, String emailResults, String callbackUrl) throws ApiException {
     // verify required params are set
     if(userId == null || executionId == null || datasourceId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/merge/{userId}/questionnaires/executions/{executionId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}".replace("*", "");
+    String resourcePath = "/merge/{userId}/questionnaires/executions/{executionId}/datasources/{datasourceId}?new_type={targetType}&email_results={emailResults}&callback={callbackUrl}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -187,6 +189,8 @@ public class MergeApi {
       queryParams.put("new_type", String.valueOf(targetType));
     if(!"null".equals(String.valueOf(emailResults)))
       queryParams.put("email_results", String.valueOf(emailResults));
+    if(!"null".equals(String.valueOf(callbackUrl)))
+      queryParams.put("callback", String.valueOf(callbackUrl));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){

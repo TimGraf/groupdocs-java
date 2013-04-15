@@ -125,7 +125,6 @@ public class SystemApiTest extends AbstractUnitTest {
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		mockRequest = mockRequest.withParam("invalidate", "{invalidate}");
 		// read response json from file
 		String responseBody = getSampleResponse("system/GetSubscriptionPlans.json");
 		
@@ -163,6 +162,35 @@ public class SystemApiTest extends AbstractUnitTest {
 		
 		try {
 			SetUserSubscriptionPlanResponse response = api.SetSubscriptionPlan(userId, productId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testUpdateSubscriptionPlan() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String productId = "productId";
+		String userCount = "userCount";
+		
+		String resourcePath = "/system/{userId}/subscriptions/{productId}/{userCount}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId)).replace("{" + "userCount" + "}", String.valueOf(userCount));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/UpdateSubscriptionPlan.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SetUserSubscriptionPlanResponse response = api.UpdateSubscriptionPlan(userId, productId, userCount);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

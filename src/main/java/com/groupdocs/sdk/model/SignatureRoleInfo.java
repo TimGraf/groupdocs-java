@@ -24,10 +24,10 @@ package com.groupdocs.sdk.model;
 public class SignatureRoleInfo {
   private String id = null;
   private String name = null;
-  private Integer canEdit = null;
-  private Integer canSign = null;
-  private Integer canAnnotate = null;
-  private Integer canDelegate = null;
+  private Boolean canEdit = null;
+  private Boolean canSign = null;
+  private Boolean canAnnotate = null;
+  private Boolean canDelegate = null;
   public String getId() {
     return id;
   }
@@ -42,31 +42,31 @@ public class SignatureRoleInfo {
     this.name = name;
   }
 
-  public Integer getCanEdit() {
+  public Boolean getCanEdit() {
     return canEdit;
   }
-  public void setCanEdit(Integer canEdit) {
+  public void setCanEdit(Boolean canEdit) {
     this.canEdit = canEdit;
   }
 
-  public Integer getCanSign() {
+  public Boolean getCanSign() {
     return canSign;
   }
-  public void setCanSign(Integer canSign) {
+  public void setCanSign(Boolean canSign) {
     this.canSign = canSign;
   }
 
-  public Integer getCanAnnotate() {
+  public Boolean getCanAnnotate() {
     return canAnnotate;
   }
-  public void setCanAnnotate(Integer canAnnotate) {
+  public void setCanAnnotate(Boolean canAnnotate) {
     this.canAnnotate = canAnnotate;
   }
 
-  public Integer getCanDelegate() {
+  public Boolean getCanDelegate() {
     return canDelegate;
   }
-  public void setCanDelegate(Integer canDelegate) {
+  public void setCanDelegate(Boolean canDelegate) {
     this.canDelegate = canDelegate;
   }
 

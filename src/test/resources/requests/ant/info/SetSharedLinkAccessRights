@@ -1,0 +1,7 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/files/e5bb679bfaaf4a2373321bec3546dabe3399a5a34f626e97fdc25014245a5c5c/sharedLinkAccessRights?signature=xGByJxjOmiB3M5yXAo6nxyFrC1k
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 2
+Groupdocs-Referrer: ruby/1.3.0
+Content-Type: application/json

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "id": 66942,
+    "annotationGuid": "59dbba6638d54ebb",
+    "replyGuid": null,
+    "documentGuid": "20cbbb28301bc547b95d1b09c904713baf492090ef9199135633d0a1a71359c8",
+    "sessionGuid": "8ef983e6d9586d91",
+    "access": "Public",
+    "serverTime": 1365658577616
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1365658577335
+}

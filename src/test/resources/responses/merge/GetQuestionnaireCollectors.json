@@ -2,18 +2,18 @@
   "result": {
     "collectors": [
       {
-        "id": 11607,
-        "guid": "19f23ebf4f99b0de9b5e80928c44d2b5",
+        "id": 15674,
+        "guid": "65e2090f1cd0627bbd820a9203f831b5",
         "type": "Link",
         "status": "Active",
-        "questionnaire_id": 44009,
+        "questionnaire_id": 51851,
         "resolved_executions": 0,
         "emails": null,
-        "modified": 1362989070250
+        "modified": 1365672381727
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1362989070609
+  "composedOn": 1365672382007
 }

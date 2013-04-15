@@ -27,6 +27,7 @@ public class SignatureEnvelopeAuditLogInfo {
   private String userName = null;
   private String action = null;
   private String remoteAddress = null;
+  private String details = null;
   public String getId() {
     return id;
   }
@@ -62,6 +63,13 @@ public class SignatureEnvelopeAuditLogInfo {
     this.remoteAddress = remoteAddress;
   }
 
+  public String getDetails() {
+    return details;
+  }
+  public void setDetails(String details) {
+    this.details = details;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -71,6 +79,7 @@ public class SignatureEnvelopeAuditLogInfo {
     sb.append("  userName: ").append(userName).append("\n");
     sb.append("  action: ").append(action).append("\n");
     sb.append("  remoteAddress: ").append(remoteAddress).append("\n");
+    sb.append("  details: ").append(details).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

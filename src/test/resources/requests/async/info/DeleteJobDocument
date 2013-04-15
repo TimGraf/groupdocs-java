@@ -1,4 +1,4 @@
-DELETE /v2.0/async/ea103bbe8cb8ce07/jobs/506651/documents/1d24806fc7f3cba5875bc8a3ef9749501f047085142401ee850ac70e91754b18?signature=KP81Idcnz6%2BBhf1yrS4zux%2BNIAs
+DELETE /v2.0/async/ea103bbe8cb8ce07/jobs/614684/documents/f7fa1a3be9ebd50f2d0393ab49e49b92ae60e1dd437d528debab2a44282de32b?signature=tdFBV9U8ex74ooj59boalTNV3Yg
 
 Host: dev-api.groupdocs.com
 Accept: application/json

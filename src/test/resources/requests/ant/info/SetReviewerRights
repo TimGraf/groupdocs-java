@@ -1,0 +1,7 @@
+PUT /v2.0/ant/ea103bbe8cb8ce07/files/ffabde330738d23ee4735404d648cd46666d7413c1f1a0838a553d3dff77030b/reviewerRights?signature=dXsERF1vgxYxkMaj4YoMtw9RLXI
+
+Host: dev-api.groupdocs.com
+Accept: application/json
+Content-Length: 179
+Groupdocs-Referrer: ruby/1.3.0
+Content-Type: application/json

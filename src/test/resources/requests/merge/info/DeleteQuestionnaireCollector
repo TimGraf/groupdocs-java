@@ -1,4 +1,4 @@
-DELETE /v2.0/merge/ea103bbe8cb8ce07/questionnaires/collectors/8d54e59568ba1937b6556ae039853768?signature=VO2csEwtXgy9065q0QcCwbSzgqA
+DELETE /v2.0/merge/ea103bbe8cb8ce07/questionnaires/collectors/b759aae54bb546acd8e86578d3a199d8?signature=Ne0MVJnaCnG0NA3jCq47s0%2FYL2o
 
 Host: dev-api.groupdocs.com
 Accept: application/json

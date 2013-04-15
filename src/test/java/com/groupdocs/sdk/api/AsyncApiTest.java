@@ -74,7 +74,6 @@ public class AsyncApiTest extends AbstractUnitTest {
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		mockRequest = mockRequest.withParam("format", "xml");
 		// read response json from file
 		String responseBody = getSampleResponse("async/GetJob.json");
 		

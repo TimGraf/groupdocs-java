@@ -173,7 +173,7 @@ public class DocApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String fileId = "fileId";
-		List<String> body = getSampleRequest("document/payload/ShareDocument.json", new TypeReference<List<String>>(){});
+		List<String> body = getSampleRequest("doc/payload/ShareDocument.json", new TypeReference<List<String>>(){});
 		
 		String resourcePath = "/doc/{userId}/files/{fileId}/sharers".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
@@ -181,7 +181,7 @@ public class DocApiTest extends AbstractUnitTest {
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
-		String responseBody = getSampleResponse("document/ShareDocument.json");
+		String responseBody = getSampleResponse("doc/ShareDocument.json");
 		
 		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
 		driver.addExpectation(mockRequest, mockResponse);

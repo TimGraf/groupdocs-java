@@ -42,6 +42,8 @@ public class SignatureEnvelopeInfo {
   private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   private String waterMarkText = null;
   private String waterMarkImage = null;
+  private Boolean attachSignedDocument = null;
+  private Boolean includeViewLink = null;
   public String getId() {
     return id;
   }
@@ -168,6 +170,20 @@ public class SignatureEnvelopeInfo {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Boolean getAttachSignedDocument() {
+    return attachSignedDocument;
+  }
+  public void setAttachSignedDocument(Boolean attachSignedDocument) {
+    this.attachSignedDocument = attachSignedDocument;
+  }
+
+  public Boolean getIncludeViewLink() {
+    return includeViewLink;
+  }
+  public void setIncludeViewLink(Boolean includeViewLink) {
+    this.includeViewLink = includeViewLink;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -190,6 +206,8 @@ public class SignatureEnvelopeInfo {
     sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
+    sb.append("  includeViewLink: ").append(includeViewLink).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -22,8 +22,8 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureEnvelopeSettings {
-  private Integer ownerShouldSign = null;
-  private Integer orderedSignature = null;
+  private Boolean ownerShouldSign = null;
+  private Boolean orderedSignature = null;
   private Double reminderTime = null;
   private Double stepExpireTime = null;
   private Double envelopeExpireTime = null;
@@ -32,17 +32,19 @@ public class SignatureEnvelopeSettings {
   private Boolean isDemo = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
-  public Integer getOwnerShouldSign() {
+  private Boolean attachSignedDocument = null;
+  private Boolean includeViewLink = null;
+  public Boolean getOwnerShouldSign() {
     return ownerShouldSign;
   }
-  public void setOwnerShouldSign(Integer ownerShouldSign) {
+  public void setOwnerShouldSign(Boolean ownerShouldSign) {
     this.ownerShouldSign = ownerShouldSign;
   }
 
-  public Integer getOrderedSignature() {
+  public Boolean getOrderedSignature() {
     return orderedSignature;
   }
-  public void setOrderedSignature(Integer orderedSignature) {
+  public void setOrderedSignature(Boolean orderedSignature) {
     this.orderedSignature = orderedSignature;
   }
 
@@ -102,6 +104,20 @@ public class SignatureEnvelopeSettings {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Boolean getAttachSignedDocument() {
+    return attachSignedDocument;
+  }
+  public void setAttachSignedDocument(Boolean attachSignedDocument) {
+    this.attachSignedDocument = attachSignedDocument;
+  }
+
+  public Boolean getIncludeViewLink() {
+    return includeViewLink;
+  }
+  public void setIncludeViewLink(Boolean includeViewLink) {
+    this.includeViewLink = includeViewLink;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -116,6 +132,8 @@ public class SignatureEnvelopeSettings {
     sb.append("  isDemo: ").append(isDemo).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
+    sb.append("  includeViewLink: ").append(includeViewLink).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

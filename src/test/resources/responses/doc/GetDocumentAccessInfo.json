@@ -3,8 +3,8 @@
     "status": "Pending",
     "owner": {
       "nickname": "api-tests@groupdocs.com",
-      "firstname": null,
-      "lastname": null,
+      "firstname": "John",
+      "lastname": "Doe",
       "pkey": null,
       "pswd_salt": null,
       "claimed_id": null,
@@ -41,6 +41,7 @@
       "is_polyline_annotation_button_enabled": null,
       "is_typewriter_annotation_button_enabled": null,
       "is_watermark_annotation_button_enabled": null,
+      "is_annotation_document_name_shown": null,
       "viewer_logo": null,
       "viewer_options": null,
       "is_viewer_navigation_widget_enabled": null,
@@ -48,6 +49,7 @@
       "is_viewer_download_widget_enabled": null,
       "is_viewer_print_widget_enabled": null,
       "is_viewer_help_widget_enabled": null,
+      "is_viewer_document_name_shown": null,
       "signedupOn": 0,
       "signedinOn": 0,
       "signin_count": null,
@@ -68,12 +70,12 @@
     "file_type_str": "Doc",
     "document_path": null,
     "access": "Private",
-    "url": "https://dev-api.groupdocs.com/v2.0/shared/files/7b83ec9724b0ec1785f66844581ff91f8474c6e9679e81e0475edc316d1b274e",
+    "url": "https://dev-api.groupdocs.com/v2.0/shared/files/e48d04656f215aaacba1d898a4a5c7a2d69b83540e08bc7b4458f89384149ad4",
     "file_type": "Doc",
-    "id": 201052,
-    "guid": "7b83ec9724b0ec1785f66844581ff91f8474c6e9679e81e0475edc316d1b274e"
+    "id": 231947,
+    "guid": "e48d04656f215aaacba1d898a4a5c7a2d69b83540e08bc7b4458f89384149ad4"
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1362988200812
+  "composedOn": 1365671449695
 }

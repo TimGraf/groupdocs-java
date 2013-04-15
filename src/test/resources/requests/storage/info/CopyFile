@@ -1,7 +1,7 @@
-PUT /v2.0/storage/ea103bbe8cb8ce07/files/document_two_7710936086370255.doc?signature=vKf%2Fh%2ByGbMcfCj%2Fx6lirYHHxbL8
+PUT /v2.0/storage/ea103bbe8cb8ce07/files/document_two_7223076022542699.doc?signature=Y6Y4oe%2BBuQ6RuFloJf%2BKMJW%2FA8Y
 
 Host: dev-api.groupdocs.com
-Groupdocs-copy: 201284
+Groupdocs-copy: 232180
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.3.0

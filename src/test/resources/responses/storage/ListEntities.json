@@ -4,8 +4,8 @@
     "count": 3,
     "folders": [
       {
-        "folder_count": 3372,
-        "file_count": 3312,
+        "folder_count": 4453,
+        "file_count": 3938,
         "id": 35121,
         "guid": null,
         "name": "Dropbox Shortcut",
@@ -13,12 +13,12 @@
         "owner": null,
         "sharers": null,
         "dir": true,
-        "modified_on": 1362988706037,
+        "modified_on": 1365671966003,
         "created_on": 1347282637500
       },
       {
-        "folder_count": 2378,
-        "file_count": 2917,
+        "folder_count": 3536,
+        "file_count": 3600,
         "id": 50512,
         "guid": null,
         "name": "BoxNet Shortcut",
@@ -26,21 +26,21 @@
         "owner": null,
         "sharers": null,
         "dir": true,
-        "modified_on": 1362988168913,
+        "modified_on": 1365671351453,
         "created_on": 1350973909297
       },
       {
         "folder_count": 0,
         "file_count": 0,
-        "id": 108034,
+        "id": 122421,
         "guid": null,
         "name": "CreatedFolder",
         "access": "Private",
         "owner": null,
         "sharers": null,
         "dir": true,
-        "modified_on": 1362989915170,
-        "created_on": 1362989915170
+        "modified_on": 1365673253727,
+        "created_on": 1365673253727
       }
     ],
     "files": [
@@ -49,5 +49,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1362989915466
+  "composedOn": 1365673254007
 }

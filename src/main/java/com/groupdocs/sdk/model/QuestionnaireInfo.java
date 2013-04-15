@@ -38,6 +38,8 @@ public class QuestionnaireInfo {
   private Long expires = null;
   private String folder = null;
   private String emails = null;
+  private String output_format = null;
+  private Boolean open_on_completion = null;
   public Integer getResolved_executions() {
     return resolved_executions;
   }
@@ -136,6 +138,20 @@ public class QuestionnaireInfo {
     this.emails = emails;
   }
 
+  public String getOutput_format() {
+    return output_format;
+  }
+  public void setOutput_format(String output_format) {
+    this.output_format = output_format;
+  }
+
+  public Boolean getOpen_on_completion() {
+    return open_on_completion;
+  }
+  public void setOpen_on_completion(Boolean open_on_completion) {
+    this.open_on_completion = open_on_completion;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -154,6 +170,8 @@ public class QuestionnaireInfo {
     sb.append("  expires: ").append(expires).append("\n");
     sb.append("  folder: ").append(folder).append("\n");
     sb.append("  emails: ").append(emails).append("\n");
+    sb.append("  output_format: ").append(output_format).append("\n");
+    sb.append("  open_on_completion: ").append(open_on_completion).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

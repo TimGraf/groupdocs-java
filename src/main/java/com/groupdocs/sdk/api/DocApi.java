@@ -596,7 +596,7 @@ public class DocApi {
     if(userId == null || fileId == null || pageNumber == null || dimension == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/images/{dimension}?quality={quality}&use_pdf={usePdf}&expires={expiresOn}".replace("*", "");
+    String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/images/{dimension}?quality={quality}&use_pdf={usePdf}&expires={expiresOn}&v={version}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
