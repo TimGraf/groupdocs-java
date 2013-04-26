@@ -14,5 +14,4 @@ To see annotation API in work - annotate the document and click `List Annotation
 * [All GroupDocs SDK] (http://groupdocs.com/api/sdk-platforms)
 * [All GroupDocs SDK examples] (http://groupdocs.com/api/sdk-examples)
 
-
 ###Created by [Marketplace Team](http://groupdocs.com/marketplace/).
