@@ -1,6 +1,6 @@
-GET /v2.0/doc/ea103bbe8cb8ce07/files/098bb9cad7e44cb81fea2ed04ed70345539e072ce40addb504f1a05fdcbb1cb5/fields?include_geometry=true&signature=le82JfqyWS3yj7FL%2FiId%2FtGl6DQ
+GET /v2.0/doc/ea103bbe8cb8ce07/files/b96ca128fe97b93dfe64e37ebe100c5c2f9195f1d6d80bca4e8003406e1591f9/fields?include_geometry=true&signature=jtY1rUJMyuNEWcqcZrULQ7D5G4I
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

@@ -1,6 +1,6 @@
-GET /v2.0/ant/ea103bbe8cb8ce07/files/3abb9879afa0d761902b1f78ab0813f064e4e871fe63c45a210fea52d83e0aab/sharedLinkAccessRights?signature=l50UqFkJsJbtYO72unxUbGsbtqs
+GET /v2.0/ant/ea103bbe8cb8ce07/files/4d1159aacad3e745afb202b8b3a4db6f815b413dc0a03b55c06def3e56cda3a8/sharedLinkAccessRights?signature=VfiVPRpGDYesKOTsMtySLXHqpL4
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

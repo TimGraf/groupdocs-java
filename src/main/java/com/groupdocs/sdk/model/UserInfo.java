@@ -63,6 +63,7 @@ public class UserInfo {
   private Boolean is_polyline_annotation_button_enabled = null;
   private Boolean is_typewriter_annotation_button_enabled = null;
   private Boolean is_watermark_annotation_button_enabled = null;
+  private Boolean is_annotation_document_name_shown = null;
   private List<Integer> viewer_logo = new ArrayList<Integer>();
   private Integer viewer_options = null;
   private Boolean is_viewer_navigation_widget_enabled = null;
@@ -70,10 +71,15 @@ public class UserInfo {
   private Boolean is_viewer_download_widget_enabled = null;
   private Boolean is_viewer_print_widget_enabled = null;
   private Boolean is_viewer_help_widget_enabled = null;
+  private Boolean is_viewer_document_name_shown = null;
   private Long signedupOn = null;
   private Long signedinOn = null;
   private Integer signin_count = null;
   private List<RoleInfo> roles = new ArrayList<RoleInfo>();
+  private Boolean signature_watermark_enabled = null;
+  private Boolean signature_desktop_notifications = null;
+  private Integer webhook_notification_retries = null;
+  private String webhook_notification_failed_recipients = null;
   private Double id = null;
   private String guid = null;
   private String primary_email = null;
@@ -350,6 +356,13 @@ public class UserInfo {
     this.is_watermark_annotation_button_enabled = is_watermark_annotation_button_enabled;
   }
 
+  public Boolean getIs_annotation_document_name_shown() {
+    return is_annotation_document_name_shown;
+  }
+  public void setIs_annotation_document_name_shown(Boolean is_annotation_document_name_shown) {
+    this.is_annotation_document_name_shown = is_annotation_document_name_shown;
+  }
+
   public List<Integer> getViewer_logo() {
     return viewer_logo;
   }
@@ -399,6 +412,13 @@ public class UserInfo {
     this.is_viewer_help_widget_enabled = is_viewer_help_widget_enabled;
   }
 
+  public Boolean getIs_viewer_document_name_shown() {
+    return is_viewer_document_name_shown;
+  }
+  public void setIs_viewer_document_name_shown(Boolean is_viewer_document_name_shown) {
+    this.is_viewer_document_name_shown = is_viewer_document_name_shown;
+  }
+
   public Long getSignedupOn() {
     return signedupOn;
   }
@@ -425,6 +445,34 @@ public class UserInfo {
   }
   public void setRoles(List<RoleInfo> roles) {
     this.roles = roles;
+  }
+
+  public Boolean getSignature_watermark_enabled() {
+    return signature_watermark_enabled;
+  }
+  public void setSignature_watermark_enabled(Boolean signature_watermark_enabled) {
+    this.signature_watermark_enabled = signature_watermark_enabled;
+  }
+
+  public Boolean getSignature_desktop_notifications() {
+    return signature_desktop_notifications;
+  }
+  public void setSignature_desktop_notifications(Boolean signature_desktop_notifications) {
+    this.signature_desktop_notifications = signature_desktop_notifications;
+  }
+
+  public Integer getWebhook_notification_retries() {
+    return webhook_notification_retries;
+  }
+  public void setWebhook_notification_retries(Integer webhook_notification_retries) {
+    this.webhook_notification_retries = webhook_notification_retries;
+  }
+
+  public String getWebhook_notification_failed_recipients() {
+    return webhook_notification_failed_recipients;
+  }
+  public void setWebhook_notification_failed_recipients(String webhook_notification_failed_recipients) {
+    this.webhook_notification_failed_recipients = webhook_notification_failed_recipients;
   }
 
   public Double getId() {
@@ -491,6 +539,7 @@ public class UserInfo {
     sb.append("  is_polyline_annotation_button_enabled: ").append(is_polyline_annotation_button_enabled).append("\n");
     sb.append("  is_typewriter_annotation_button_enabled: ").append(is_typewriter_annotation_button_enabled).append("\n");
     sb.append("  is_watermark_annotation_button_enabled: ").append(is_watermark_annotation_button_enabled).append("\n");
+    sb.append("  is_annotation_document_name_shown: ").append(is_annotation_document_name_shown).append("\n");
     sb.append("  viewer_logo: ").append(viewer_logo).append("\n");
     sb.append("  viewer_options: ").append(viewer_options).append("\n");
     sb.append("  is_viewer_navigation_widget_enabled: ").append(is_viewer_navigation_widget_enabled).append("\n");
@@ -498,10 +547,15 @@ public class UserInfo {
     sb.append("  is_viewer_download_widget_enabled: ").append(is_viewer_download_widget_enabled).append("\n");
     sb.append("  is_viewer_print_widget_enabled: ").append(is_viewer_print_widget_enabled).append("\n");
     sb.append("  is_viewer_help_widget_enabled: ").append(is_viewer_help_widget_enabled).append("\n");
+    sb.append("  is_viewer_document_name_shown: ").append(is_viewer_document_name_shown).append("\n");
     sb.append("  signedupOn: ").append(signedupOn).append("\n");
     sb.append("  signedinOn: ").append(signedinOn).append("\n");
     sb.append("  signin_count: ").append(signin_count).append("\n");
     sb.append("  roles: ").append(roles).append("\n");
+    sb.append("  signature_watermark_enabled: ").append(signature_watermark_enabled).append("\n");
+    sb.append("  signature_desktop_notifications: ").append(signature_desktop_notifications).append("\n");
+    sb.append("  webhook_notification_retries: ").append(webhook_notification_retries).append("\n");
+    sb.append("  webhook_notification_failed_recipients: ").append(webhook_notification_failed_recipients).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

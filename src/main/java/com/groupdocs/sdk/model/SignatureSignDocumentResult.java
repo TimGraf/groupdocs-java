@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.SignatureSignDocumentInfo;
 /**
  * 
  * <p>
@@ -22,19 +24,19 @@ package com.groupdocs.sdk.model;
  *
  */
 public class SignatureSignDocumentResult {
-  private String documentId = null;
-  public String getDocumentId() {
-    return documentId;
+  private List<SignatureSignDocumentInfo> documents = new ArrayList<SignatureSignDocumentInfo>();
+  public List<SignatureSignDocumentInfo> getDocuments() {
+    return documents;
   }
-  public void setDocumentId(String documentId) {
-    this.documentId = documentId;
+  public void setDocuments(List<SignatureSignDocumentInfo> documents) {
+    this.documents = documents;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignDocumentResult {\n");
-    sb.append("  documentId: ").append(documentId).append("\n");
+    sb.append("  documents: ").append(documents).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

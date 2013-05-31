@@ -18,6 +18,7 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.common.FileStream;
+import com.groupdocs.sdk.model.UserInfoResponse;
 import java.util.*;
 
 public class SharedApi {
@@ -107,6 +108,36 @@ public class SharedApi {
 
     try {
       return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public UserInfoResponse LoginUser (String userName, String body) throws ApiException {
+    // verify required params are set
+    if(userName == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/shared/users/{userName}/logins".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userName" + "}", String.valueOf(userName));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (UserInfoResponse) ApiInvoker.deserialize(response, "", UserInfoResponse.class);
+      }
+      else {
+        return null;
+      }
       } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;

@@ -1,6 +1,6 @@
-GET /v2.0/doc/ea103bbe8cb8ce07/files/1dc47688170167bb64c628b066bcbc450d1176e6a8f56a24cb362fbdbffa8c75/metadata?signature=UsyNczAm%2BiHcviQn36%2FGo4pEYO0
+GET /v2.0/doc/ea103bbe8cb8ce07/files/1d2ccbe7990c7b93595f3eb41a16b564bb2aa2e30fc3b1fe8e0790c0caa2cd4f/metadata?signature=sqm2Cqi%2BGAmXWHCFgFVcrCS2kQ4
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

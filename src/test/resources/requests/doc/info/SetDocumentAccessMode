@@ -1,6 +1,6 @@
-PUT /v2.0/doc/ea103bbe8cb8ce07/files/231956/accessinfo?mode=0&signature=vLpN4wmCrKzEGcWm2e%2BaRjkQFJQ
+PUT /v2.0/doc/ea103bbe8cb8ce07/files/268739/accessinfo?mode=0&signature=jp9o%2ByhOdAWh%2FKoPoghPfJdy9u8
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

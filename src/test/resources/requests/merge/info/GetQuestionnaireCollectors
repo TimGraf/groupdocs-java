@@ -1,6 +1,6 @@
-GET /v2.0/merge/ea103bbe8cb8ce07/questionnaires/75396e3c3415bab6fdbf45ea6df3b9ed/collectors?signature=penV%2BIVP5uI8q85qmMfBzT6vfXo
+GET /v2.0/merge/ea103bbe8cb8ce07/questionnaires/fe77897731fadeb65e9355cfa5b656fc/collectors?signature=IlNA0oo5q2zXmB1WWHf%2FReNP8iQ
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

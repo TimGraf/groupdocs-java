@@ -1,25 +1,28 @@
 {
-  "result": {
-    "datasource": {
-      "id": 17779,
-      "questionnaire_id": 51839,
-      "descr": "Description",
-      "fields": [
-        {
-          "name": "Test1",
-          "values": [
-            "test1",
-            "test2"
-          ],
-          "contentType": null,
-          "type": "Text"
-        }
-      ],
-      "created_on": 1365672300648,
-      "modified_on": 1365672300679
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1365672300945
+   "result":{
+      "datasource":{
+         "id":12269,
+         "questionnaire_id":31767,
+         "descr":"Description",
+         "fields":[
+            {
+               "name":"Test1",
+               "values":[
+                  "test1",
+                  "test2"
+               ],
+               "contentType":null,
+               "type":"Text",
+               "nested_fields":[
+
+               ]
+            }
+         ],
+         "created_on":1358756496463,
+         "modified_on":1358756496495
+      }
+   },
+   "status":"Ok",
+   "error_message":null,
+   "composedOn":1358756496666
 }

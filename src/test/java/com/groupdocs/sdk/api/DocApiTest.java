@@ -48,6 +48,7 @@ import com.groupdocs.sdk.model.RemoveEditLockResponse;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.ViewDocumentResponse;
 import com.groupdocs.sdk.model.GetEditLockResponse;
+import com.groupdocs.sdk.model.GetDocumentContentResponse;
 import com.groupdocs.sdk.model.DocumentUserStatusResponse;
 import com.groupdocs.sdk.model.GetTagsResponse;
 import com.groupdocs.sdk.model.RemoveTagsResponse;
@@ -817,6 +818,35 @@ public class DocApiTest extends AbstractUnitTest {
 		
 		try {
 			RemoveTagsResponse response = api.RemoveDocumentTags(userId, fileId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetDocumentContent() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		String contentType = "contentType";
+		
+		String resourcePath = "/doc/{userId}/files/{fileId}/content/{contentType}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "contentType" + "}", String.valueOf(contentType));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("doc/GetDocumentContent.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetDocumentContentResponse response = api.GetDocumentContent(userId, fileId, contentType);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

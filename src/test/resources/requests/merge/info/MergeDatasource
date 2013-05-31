@@ -1,6 +1,6 @@
-POST /v2.0/merge/ea103bbe8cb8ce07/files/cfc30dc964be669a911184d609bb051ab4cad248f61c39667f5aa018e6be1f18/datasources/17805?signature=NaSQ8JI2MVVvl7IbUVN9RmwZlJ4
+POST /v2.0/merge/ea103bbe8cb8ce07/files/ba5f66787d78634bfd9112a6641dc493b0bcc6c5fba6d7d6ed67545b725b77e4/datasources/20063?signature=ZAVy1M%2BlpGPKMtMT8%2B9siJ1wG%2BE
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

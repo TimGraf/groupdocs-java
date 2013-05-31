@@ -27,6 +27,7 @@ public class SignatureEnvelopeInfo {
   private String id = null;
   private String name = null;
   private String creationDateTime = null;
+  private String updatedDateTime = null;
   private String ownerGuid = null;
   private Integer status = null;
   private String statusDateTime = null;
@@ -63,6 +64,13 @@ public class SignatureEnvelopeInfo {
   }
   public void setCreationDateTime(String creationDateTime) {
     this.creationDateTime = creationDateTime;
+  }
+
+  public String getUpdatedDateTime() {
+    return updatedDateTime;
+  }
+  public void setUpdatedDateTime(String updatedDateTime) {
+    this.updatedDateTime = updatedDateTime;
   }
 
   public String getOwnerGuid() {
@@ -191,6 +199,7 @@ public class SignatureEnvelopeInfo {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  creationDateTime: ").append(creationDateTime).append("\n");
+    sb.append("  updatedDateTime: ").append(updatedDateTime).append("\n");
     sb.append("  ownerGuid: ").append(ownerGuid).append("\n");
     sb.append("  status: ").append(status).append("\n");
     sb.append("  statusDateTime: ").append(statusDateTime).append("\n");

@@ -37,6 +37,7 @@ import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.FileStream;
+import com.groupdocs.sdk.model.UserInfoResponse;
 
 
 public class SharedApiTest extends AbstractUnitTest {
@@ -127,6 +128,34 @@ public class SharedApiTest extends AbstractUnitTest {
 		try {
 			FileStream response = api.GetPackage(path);
 			assertThat(response.getInputStream(), not(nullValue()));
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testLoginUser() throws Exception {
+		// sample parameters
+		String userName = "userName";
+		String body = "body";
+		
+		String resourcePath = "/shared/users/{userName}/logins".replace("{" + "userName" + "}", String.valueOf(userName));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("shared/LoginUser.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			UserInfoResponse response = api.LoginUser(userName, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
 			
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());

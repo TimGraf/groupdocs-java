@@ -18,9 +18,11 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.BillingAddressInfo;
+import com.groupdocs.sdk.model.GetInvoicesResponse;
 import com.groupdocs.sdk.model.GetCountriesResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
+import com.groupdocs.sdk.model.GetSubscriptionPlanUsageResponse;
 import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlansResponse;
@@ -271,6 +273,74 @@ public class SystemApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (GetBillingAddressResponse) ApiInvoker.deserialize(response, "", GetBillingAddressResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetInvoicesResponse GetInvoices (String callerId, String pageNumber, Integer pageSize) throws ApiException {
+    // verify required params are set
+    if(callerId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{callerId}/invoices?pageNumber={pageNumber}&pageSize={pageSize}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "callerId" + "}", String.valueOf(callerId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(pageNumber)))
+      queryParams.put("pageNumber", String.valueOf(pageNumber));
+    if(!"null".equals(String.valueOf(pageSize)))
+      queryParams.put("pageSize", String.valueOf(pageSize));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetInvoicesResponse) ApiInvoker.deserialize(response, "", GetInvoicesResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetSubscriptionPlanUsageResponse GetSubscriptionPlanUsage (String userId) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/usage".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetSubscriptionPlanUsageResponse) ApiInvoker.deserialize(response, "", GetSubscriptionPlanUsageResponse.class);
       }
       else {
         return null;

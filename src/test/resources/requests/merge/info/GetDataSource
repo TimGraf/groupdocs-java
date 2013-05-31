@@ -1,6 +1,6 @@
-GET /v2.0/merge/ea103bbe8cb8ce07/datasources/17779?field=Test1,Nonexistent&signature=8NSqfHsS1mn3i%2FR3pLyxWVJUIhU
+GET /v2.0/merge/ea103bbe8cb8ce07/datasources/20037?field=Test1,Nonexistent&signature=U1G6i6Ondbn5%2FyVRdjSWT6itTWE
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

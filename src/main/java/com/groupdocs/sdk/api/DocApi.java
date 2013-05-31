@@ -29,6 +29,7 @@ import com.groupdocs.sdk.model.RemoveEditLockResponse;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.ViewDocumentResponse;
 import com.groupdocs.sdk.model.GetEditLockResponse;
+import com.groupdocs.sdk.model.GetDocumentContentResponse;
 import com.groupdocs.sdk.model.DocumentUserStatusResponse;
 import com.groupdocs.sdk.model.GetTagsResponse;
 import com.groupdocs.sdk.model.RemoveTagsResponse;
@@ -880,6 +881,36 @@ public class DocApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (RemoveTagsResponse) ApiInvoker.deserialize(response, "", RemoveTagsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetDocumentContentResponse GetDocumentContent (String userId, String fileId, String contentType) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || contentType == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/content/{contentType}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "contentType" + "}", String.valueOf(contentType));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetDocumentContentResponse) ApiInvoker.deserialize(response, "", GetDocumentContentResponse.class);
       }
       else {
         return null;

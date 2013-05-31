@@ -1,6 +1,6 @@
-DELETE /v2.0/storage/ea103bbe8cb8ce07/folders/Folder-5468575861283048?signature=85TkEQM7lDQxFKjYe89WUK0Py8o
+DELETE /v2.0/storage/ea103bbe8cb8ce07/folders/Folder-12115155766867203?signature=RYNxdhRIN0r3m7OaS6pNk38SpZE
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

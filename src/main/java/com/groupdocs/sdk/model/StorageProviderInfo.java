@@ -32,6 +32,7 @@ public class StorageProviderInfo {
   private String rootFolder = null;
   private Boolean isPrimary = null;
   private String serviceHost = null;
+  private String syncOptions = null;
   public Double getId() {
     return id;
   }
@@ -95,6 +96,13 @@ public class StorageProviderInfo {
     this.serviceHost = serviceHost;
   }
 
+  public String getSyncOptions() {
+    return syncOptions;
+  }
+  public void setSyncOptions(String syncOptions) {
+    this.syncOptions = syncOptions;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -108,6 +116,7 @@ public class StorageProviderInfo {
     sb.append("  rootFolder: ").append(rootFolder).append("\n");
     sb.append("  isPrimary: ").append(isPrimary).append("\n");
     sb.append("  serviceHost: ").append(serviceHost).append("\n");
+    sb.append("  syncOptions: ").append(syncOptions).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

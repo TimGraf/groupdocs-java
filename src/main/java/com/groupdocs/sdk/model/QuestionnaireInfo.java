@@ -40,6 +40,7 @@ public class QuestionnaireInfo {
   private String emails = null;
   private String output_format = null;
   private Boolean open_on_completion = null;
+  private Integer allowed_operations = null;
   public Integer getResolved_executions() {
     return resolved_executions;
   }
@@ -152,6 +153,13 @@ public class QuestionnaireInfo {
     this.open_on_completion = open_on_completion;
   }
 
+  public Integer getAllowed_operations() {
+    return allowed_operations;
+  }
+  public void setAllowed_operations(Integer allowed_operations) {
+    this.allowed_operations = allowed_operations;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -172,6 +180,7 @@ public class QuestionnaireInfo {
     sb.append("  emails: ").append(emails).append("\n");
     sb.append("  output_format: ").append(output_format).append("\n");
     sb.append("  open_on_completion: ").append(open_on_completion).append("\n");
+    sb.append("  allowed_operations: ").append(allowed_operations).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

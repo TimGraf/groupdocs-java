@@ -1,35 +1,8 @@
 {
   "result": {
-    "annotation": {
-      "guid": "e8ff53ee725d72c1",
-      "documentGuid": "89dd6a307850d595c186c490f437df30a811fcd06c39d4df21b567346f1885fc",
-      "sessionGuid": "3c8bcf68034f7e5a",
-      "creatorGuid": "ea103bbe8cb8ce07",
-      "box": {
-        "x": 10,
-        "y": 10,
-        "width": 10,
-        "height": 10
-      },
-      "annotationPosition": {
-        "x": 10,
-        "y": 10
-      },
-      "range": null,
-      "svgPath": null,
-      "type": "Point",
-      "access": "Public",
-      "replies": [
-
-      ],
-      "createdOn": 1365658787647,
-      "fontColor": 0,
-      "fieldText": null,
-      "fontFamily": null,
-      "fontSize": null
-    }
+    "annotation": null
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1365658788116
+  "composedOn": 1358748942432
 }

@@ -27,6 +27,7 @@ public class DatasourceField {
   private List<String> values = new ArrayList<String>();
   private String contentType = null;
   private String type = null;
+  private List<DatasourceField> nested_fields = new ArrayList<DatasourceField>();
   public String getName() {
     return name;
   }
@@ -55,6 +56,13 @@ public class DatasourceField {
     this.type = type;
   }
 
+  public List<DatasourceField> getNested_fields() {
+    return nested_fields;
+  }
+  public void setNested_fields(List<DatasourceField> nested_fields) {
+    this.nested_fields = nested_fields;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -63,6 +71,7 @@ public class DatasourceField {
     sb.append("  values: ").append(values).append("\n");
     sb.append("  contentType: ").append(contentType).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  nested_fields: ").append(nested_fields).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

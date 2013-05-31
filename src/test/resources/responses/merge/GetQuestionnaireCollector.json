@@ -1,19 +1,19 @@
 {
-  "result": {
-    "collector": {
-      "id": 15676,
-      "guid": "bf8a9d4d2d0fc23018d46a5272d2a29c",
-      "type": "Link",
-      "status": "Active",
-      "questionnaire_id": 51853,
-      "resolved_executions": 0,
-      "emails": [
+   "result":{
+      "collector":{
+         "id":5261,
+         "guid":"3068c4e93845879930d85111419eeeaf",
+         "type":"Link",
+         "status":"Active",
+         "questionnaire_id":31781,
+         "resolved_executions":null,
+         "emails":[
 
-      ],
-      "modified": 1365672401477
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1365672401710
+         ],
+         "modified":1358756596137
+      }
+   },
+   "status":"Ok",
+   "error_message":null,
+   "composedOn":1358756596338
 }

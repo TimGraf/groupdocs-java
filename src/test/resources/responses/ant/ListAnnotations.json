@@ -1,13 +1,13 @@
 {
   "result": {
-    "documentGuid": "6041d95b5c7f3689d532cdf6f41d798d44f2315343b9018f7174717330f45dfa",
-    "sessionGuid": "9afac782250b2025",
+    "documentGuid": "6c4f0a5e8a4301067432f5f4ae854f6a14d6b94f9840bf13ef461f73cc745f04",
+    "sessionGuid": "635d5a8083b3e83d",
     "annotations": [
 
     ],
-    "serverTime": 1365658721491
+    "serverTime": 1358748870088
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1365658721195
+  "composedOn": 1358748869807
 }

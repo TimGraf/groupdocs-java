@@ -1,6 +1,6 @@
-POST /v2.0/storage/ea103bbe8cb8ce07/paths/Folder-19235622772526295?signature=w3cpsW%2FlFQAnlRgVC91LYHI8Uok
+POST /v2.0/storage/ea103bbe8cb8ce07/paths/Folder-5763750605329301?signature=%2FM7QmIP1c1oGHljdSJdmIp6MR6k
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

@@ -1,7 +1,7 @@
-PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/e8ff53ee725d72c1/annotationAccess?signature=TrvUGQ6Hc%2Fylf%2BSH22mY2EZmmck
+PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/0223b89f6f9f2aab/annotationAccess?signature=Jaz0zEOXOOltC70LQ%2FU2NXq%2BgOg
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 1
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2
 Content-Type: application/json

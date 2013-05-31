@@ -39,6 +39,7 @@ public class SignatureTemplateInfo {
   private List<SignatureTemplateRecipientInfo> recipients = new ArrayList<SignatureTemplateRecipientInfo>();
   private String waterMarkText = null;
   private String waterMarkImage = null;
+  private Double fieldsCount = null;
   public String getId() {
     return id;
   }
@@ -144,6 +145,13 @@ public class SignatureTemplateInfo {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Double getFieldsCount() {
+    return fieldsCount;
+  }
+  public void setFieldsCount(Double fieldsCount) {
+    this.fieldsCount = fieldsCount;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -163,6 +171,7 @@ public class SignatureTemplateInfo {
     sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

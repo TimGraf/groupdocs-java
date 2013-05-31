@@ -1,6 +1,6 @@
-GET /v2.0/async/ea103bbe8cb8ce07/jobs/614693?format=json&signature=HiOczxpBMDpsidkD3vsyGrkapt8
+GET /v2.0/async/ea103bbe8cb8ce07/jobs/726041?format=json&signature=%2BgxJ8iSBVCOJ2VkwxFZqOx%2FlgRY
 
 Host: dev-api.groupdocs.com
 Accept: application/json
 Content-Length: 0
-Groupdocs-Referrer: ruby/1.3.0
+Groupdocs-Referrer: ruby/1.4.2

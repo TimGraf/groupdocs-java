@@ -1,14 +1,14 @@
 {
   "result": {
-    "id": 66942,
-    "annotationGuid": "59dbba6638d54ebb",
+    "id": 42789,
+    "annotationGuid": "e119d7369543ba86",
     "replyGuid": null,
-    "documentGuid": "20cbbb28301bc547b95d1b09c904713baf492090ef9199135633d0a1a71359c8",
-    "sessionGuid": "8ef983e6d9586d91",
+    "documentGuid": "77e53031588102b57e81faf193ad64729af454817ca30bdec5578c14c48fce14",
+    "sessionGuid": "4b7c27b7aa6b6699",
     "access": "Public",
-    "serverTime": 1365658577616
+    "serverTime": 1358748723120
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1365658577335
+  "composedOn": 1358748722823
 }

@@ -25,6 +25,7 @@ public class SignatureFormParticipantInfo {
   private String id = null;
   private String documentGuid = null;
   private String fillDateTime = null;
+  private Integer status = null;
   public String getId() {
     return id;
   }
@@ -46,6 +47,13 @@ public class SignatureFormParticipantInfo {
     this.fillDateTime = fillDateTime;
   }
 
+  public Integer getStatus() {
+    return status;
+  }
+  public void setStatus(Integer status) {
+    this.status = status;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -53,6 +61,7 @@ public class SignatureFormParticipantInfo {
     sb.append("  id: ").append(id).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
     sb.append("  fillDateTime: ").append(fillDateTime).append("\n");
+    sb.append("  status: ").append(status).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
