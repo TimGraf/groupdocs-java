@@ -8,7 +8,7 @@
 	<groupId>com.groupdocs</groupId>
 	<artifactId>groupdocs-java-client</artifactId>
 	<packaging>jar</packaging>
-	<version>1.6.0-SNAPSHOT</version>
+	<version>1.5.0</version>
 	
 	<name>GroupDocsJava</name>
 	<description>GroupDocs API library for Java</description>
