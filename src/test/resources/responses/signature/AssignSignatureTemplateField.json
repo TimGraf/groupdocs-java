@@ -1,44 +1,44 @@
 {
-  "result": {
-    "templateId": "3d5b8a8183c2303f4f39ae52482f1cea",
-    "documentId": "ef18ca622c70d042d0d90e0b2bd29d886b9fe63c537b80ade8dc2e12cad214ec",
-    "recipientId": "7e6545a640da60fd0ced9a0506be3593",
-    "field": {
-      "id": "04bc674b1ee8d501625e413bc6e75c49",
-      "templateId": "3d5b8a8183c2303f4f39ae52482f1cea",
-      "recipientId": "7e6545a640da60fd0ced9a0506be3593",
-      "name": "Signature",
-      "mandatory": true,
-      "order": 0,
-      "regularExpression": "",
-      "signatureFieldId": 1,
-      "locations": [
-        {
-          "id": "5a03a46d44422facc678cdddcf632c55",
-          "documentId": "ef18ca622c70d042d0d90e0b2bd29d886b9fe63c537b80ade8dc2e12cad214ec",
-          "fieldId": "04bc674b1ee8d501625e413bc6e75c49",
-          "page": 1,
-          "locationX": 0.1,
-          "locationY": 0.1,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
-          "fontName": "Arial",
-          "fontColor": "black",
-          "fontSize": 10,
-          "fontBold": false,
-          "fontItalic": false,
-          "fontUnderline": false,
-          "align": 0
+    "result": {
+        "templateId": "3d5b8a8183c2303f4f39ae52482f1cea",
+        "documentId": "ef18ca622c70d042d0d90e0b2bd29d886b9fe63c537b80ade8dc2e12cad214ec",
+        "recipientId": "7e6545a640da60fd0ced9a0506be3593",
+        "field": {
+            "id": "04bc674b1ee8d501625e413bc6e75c49",
+            "templateId": "3d5b8a8183c2303f4f39ae52482f1cea",
+            "recipientId": "7e6545a640da60fd0ced9a0506be3593",
+            "name": "Signature",
+            "mandatory": true,
+            "order": 0,
+            "regularExpression": "",
+            "signatureFieldId": 1,
+            "locations": [
+                {
+                    "id": "5a03a46d44422facc678cdddcf632c55",
+                    "documentId": "ef18ca622c70d042d0d90e0b2bd29d886b9fe63c537b80ade8dc2e12cad214ec",
+                    "fieldId": "04bc674b1ee8d501625e413bc6e75c49",
+                    "page": 1,
+                    "locationX": 0.1,
+                    "locationY": 0.1,
+                    "locationWidth": 90,
+                    "locationHeight": 30,
+                    "fontName": "Arial",
+                    "fontColor": "black",
+                    "fontSize": 10,
+                    "fontBold": false,
+                    "fontItalic": false,
+                    "fontUnderline": false,
+                    "align": 0
+                }
+            ],
+            "fieldType": 1,
+            "acceptableValues": "",
+            "defaultValue": "",
+            "tooltip": "Signature",
+            "guidanceText": ""
         }
-      ],
-      "fieldType": 1,
-      "acceptableValues": "",
-      "defaultValue": "",
-      "tooltip": "Signature",
-      "guidanceText": ""
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375215473543
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375215473543
 }

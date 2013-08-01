@@ -1,44 +1,44 @@
 {
-  "result": {
-    "formId": "1de45ffe079c840fc9e92519287a8b76",
-    "fields": [
-      {
-        "id": "1fe423ea20d49e8a51c4121d719876b4",
-        "formGuid": "1de45ffe079c840fc9e92519287a8b76",
-        "participantGuid": "",
-        "name": "Signature",
-        "mandatory": true,
-        "regularExpression": "",
-        "data": null,
-        "fillTimeStamp": "1/1/1970 12:00:00 AM",
-        "locations": [
-          {
-            "id": "ca535928379cde52176f51881ab3d955",
-            "documentGuid": "893e487e855929e6902d72afe2962c55e0417b76f6e8cccc5e23cb875f58e3ee",
-            "fieldGuid": "1fe423ea20d49e8a51c4121d719876b4",
-            "page": 1,
-            "locationX": 0.1,
-            "locationY": 0.1,
-            "locationWidth": 90.0,
-            "locationHeight": 30.0,
-            "fontName": "Arial",
-            "fontColor": "black",
-            "fontSize": 10,
-            "fontBold": false,
-            "fontItalic": false,
-            "fontUnderline": false,
-            "align": 0
-          }
-        ],
-        "fieldType": 1,
-        "acceptableValues": null,
-        "defaultValue": null,
-        "tooltip": "Signature",
-        "guidanceText": ""
-      }
-    ]
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375219585594
+    "result": {
+        "formId": "1de45ffe079c840fc9e92519287a8b76",
+        "fields": [
+            {
+                "id": "1fe423ea20d49e8a51c4121d719876b4",
+                "formGuid": "1de45ffe079c840fc9e92519287a8b76",
+                "participantGuid": "",
+                "name": "Signature",
+                "mandatory": true,
+                "regularExpression": "",
+                "data": null,
+                "fillTimeStamp": "1/1/1970 12:00:00 AM",
+                "locations": [
+                    {
+                        "id": "ca535928379cde52176f51881ab3d955",
+                        "documentGuid": "893e487e855929e6902d72afe2962c55e0417b76f6e8cccc5e23cb875f58e3ee",
+                        "fieldGuid": "1fe423ea20d49e8a51c4121d719876b4",
+                        "page": 1,
+                        "locationX": 0.1,
+                        "locationY": 0.1,
+                        "locationWidth": 90,
+                        "locationHeight": 30,
+                        "fontName": "Arial",
+                        "fontColor": "black",
+                        "fontSize": 10,
+                        "fontBold": false,
+                        "fontItalic": false,
+                        "fontUnderline": false,
+                        "align": 0
+                    }
+                ],
+                "fieldType": 1,
+                "acceptableValues": null,
+                "defaultValue": null,
+                "tooltip": "Signature",
+                "guidanceText": ""
+            }
+        ]
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375219585594
 }

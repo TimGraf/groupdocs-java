@@ -1,7 +1,8 @@
 {
-  "result": {
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375216537845
+    "result": {
+        "template": null
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375216537845
 }

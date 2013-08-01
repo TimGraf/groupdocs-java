@@ -1,44 +1,44 @@
 {
-  "result": {
-    "templateId": "fcf187ea60a692fadcee52d9b70a97b7",
-    "documentId": "bec1f3bfa7ef7c98b5ce9a2b8ff6080a78d5717c4c9f653b3e9e4d29b957183a",
-    "recipientId": "a5e29233033a1efa884d396e5004e213",
-    "field": {
-      "id": "a6233dc3d879ca94c00897bcf27c5f06",
-      "templateId": "fcf187ea60a692fadcee52d9b70a97b7",
-      "recipientId": "a5e29233033a1efa884d396e5004e213",
-      "name": "Signature2847649691220322",
-      "mandatory": true,
-      "order": 0,
-      "regularExpression": "^.+$",
-      "signatureFieldId": 1,
-      "locations": [
-        {
-          "id": "1a4a7afd5edba22ac26872823e81030c",
-          "documentId": "bec1f3bfa7ef7c98b5ce9a2b8ff6080a78d5717c4c9f653b3e9e4d29b957183a",
-          "fieldId": "a6233dc3d879ca94c00897bcf27c5f06",
-          "page": 1,
-          "locationX": 0.1,
-          "locationY": 0.1,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
-          "fontName": "Arial",
-          "fontColor": "black",
-          "fontSize": 10,
-          "fontBold": false,
-          "fontItalic": false,
-          "fontUnderline": false,
-          "align": 0
+    "result": {
+        "templateId": "fcf187ea60a692fadcee52d9b70a97b7",
+        "documentId": "bec1f3bfa7ef7c98b5ce9a2b8ff6080a78d5717c4c9f653b3e9e4d29b957183a",
+        "recipientId": "a5e29233033a1efa884d396e5004e213",
+        "field": {
+            "id": "a6233dc3d879ca94c00897bcf27c5f06",
+            "templateId": "fcf187ea60a692fadcee52d9b70a97b7",
+            "recipientId": "a5e29233033a1efa884d396e5004e213",
+            "name": "Signature2847649691220322",
+            "mandatory": true,
+            "order": 0,
+            "regularExpression": "^.+$",
+            "signatureFieldId": 1,
+            "locations": [
+                {
+                    "id": "1a4a7afd5edba22ac26872823e81030c",
+                    "documentId": "bec1f3bfa7ef7c98b5ce9a2b8ff6080a78d5717c4c9f653b3e9e4d29b957183a",
+                    "fieldId": "a6233dc3d879ca94c00897bcf27c5f06",
+                    "page": 1,
+                    "locationX": 0.1,
+                    "locationY": 0.1,
+                    "locationWidth": 90,
+                    "locationHeight": 30,
+                    "fontName": "Arial",
+                    "fontColor": "black",
+                    "fontSize": 10,
+                    "fontBold": false,
+                    "fontItalic": false,
+                    "fontUnderline": false,
+                    "align": 0
+                }
+            ],
+            "fieldType": 1,
+            "acceptableValues": "",
+            "defaultValue": "",
+            "tooltip": null,
+            "guidanceText": ""
         }
-      ],
-      "fieldType": 1,
-      "acceptableValues": "",
-      "defaultValue": "",
-      "tooltip": null,
-      "guidanceText": ""
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375218680047
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375218680047
 }

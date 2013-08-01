@@ -3,3 +3,5 @@
 .settings/*
 /target/
 /src/test/java/ignored/
+/.idea
+/*.iml

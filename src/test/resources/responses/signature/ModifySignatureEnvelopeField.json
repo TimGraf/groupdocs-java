@@ -1,47 +1,47 @@
 {
-  "result": {
-    "envelopeId": "b761dad8a2dd4a6f24afcbe37b5f7f64",
-    "documentId": "1585f265bbe2d79041e70b1481146d2ed99c55ddddb72d16898e5f6288196cd9",
-    "recipientId": "83965e5f23fc33a8facec959c973ca75",
-    "field": {
-      "id": "f0b371777ae3a20d33b097a295fbf6bc",
-      "envelopeId": "b761dad8a2dd4a6f24afcbe37b5f7f64",
-      "recipientId": "83965e5f23fc33a8facec959c973ca75",
-      "name": "Signature07921589405565932",
-      "mandatory": true,
-      "order": 0,
-      "regularExpression": "^.+$",
-      "getDataFrom": null,
-      "data": null,
-      "fillTimeStamp": "1/1/1970 12:00:00 AM",
-      "signatureFieldId": 1,
-      "locations": [
-        {
-          "id": "59d3ca3e0b5a35b5d94b6d600c9b9c5d",
-          "documentId": "1585f265bbe2d79041e70b1481146d2ed99c55ddddb72d16898e5f6288196cd9",
-          "fieldId": "f0b371777ae3a20d33b097a295fbf6bc",
-          "page": 1,
-          "locationX": 0.1,
-          "locationY": 0.1,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
-          "fontName": "Arial",
-          "fontColor": "black",
-          "fontSize": 10,
-          "fontBold": false,
-          "fontItalic": false,
-          "fontUnderline": false,
-          "align": 0
+    "result": {
+        "envelopeId": "b761dad8a2dd4a6f24afcbe37b5f7f64",
+        "documentId": "1585f265bbe2d79041e70b1481146d2ed99c55ddddb72d16898e5f6288196cd9",
+        "recipientId": "83965e5f23fc33a8facec959c973ca75",
+        "field": {
+            "id": "f0b371777ae3a20d33b097a295fbf6bc",
+            "envelopeId": "b761dad8a2dd4a6f24afcbe37b5f7f64",
+            "recipientId": "83965e5f23fc33a8facec959c973ca75",
+            "name": "Signature07921589405565932",
+            "mandatory": true,
+            "order": 0,
+            "regularExpression": "^.+$",
+            "getDataFrom": null,
+            "data": null,
+            "fillTimeStamp": "1/1/1970 12:00:00 AM",
+            "signatureFieldId": 1,
+            "locations": [
+                {
+                    "id": "59d3ca3e0b5a35b5d94b6d600c9b9c5d",
+                    "documentId": "1585f265bbe2d79041e70b1481146d2ed99c55ddddb72d16898e5f6288196cd9",
+                    "fieldId": "f0b371777ae3a20d33b097a295fbf6bc",
+                    "page": 1,
+                    "locationX": 0.1,
+                    "locationY": 0.1,
+                    "locationWidth": 90,
+                    "locationHeight": 30,
+                    "fontName": "Arial",
+                    "fontColor": "black",
+                    "fontSize": 10,
+                    "fontBold": false,
+                    "fontItalic": false,
+                    "fontUnderline": false,
+                    "align": 0
+                }
+            ],
+            "fieldType": 1,
+            "acceptableValues": "",
+            "defaultValue": "",
+            "tooltip": null,
+            "guidanceText": ""
         }
-      ],
-      "fieldType": 1,
-      "acceptableValues": "",
-      "defaultValue": "",
-      "tooltip": null,
-      "guidanceText": ""
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375218099642
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375218099642
 }

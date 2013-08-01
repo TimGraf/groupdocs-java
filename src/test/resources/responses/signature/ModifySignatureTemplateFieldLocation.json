@@ -1,44 +1,44 @@
 {
-  "result": {
-    "templateId": "78cfc0015f5701430a0b5198c271b4a3",
-    "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
-    "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
-    "field": {
-      "id": "039836b06dbca3f80c9fd7a66a2a23de",
-      "templateId": "78cfc0015f5701430a0b5198c271b4a3",
-      "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
-      "name": "Signature",
-      "mandatory": true,
-      "order": 0,
-      "regularExpression": "",
-      "signatureFieldId": 1,
-      "locations": [
-        {
-          "id": "dddbaa2fcf070ceabe2b0c9fd4399179",
-          "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
-          "fieldId": "039836b06dbca3f80c9fd7a66a2a23de",
-          "page": 1,
-          "locationX": 0.2,
-          "locationY": 0.2,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
-          "fontName": "Helvetica",
-          "fontColor": "red",
-          "fontSize": 10,
-          "fontBold": true,
-          "fontItalic": true,
-          "fontUnderline": true,
-          "align": 1
+    "result": {
+        "templateId": "78cfc0015f5701430a0b5198c271b4a3",
+        "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
+        "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
+        "field": {
+            "id": "039836b06dbca3f80c9fd7a66a2a23de",
+            "templateId": "78cfc0015f5701430a0b5198c271b4a3",
+            "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
+            "name": "Signature",
+            "mandatory": true,
+            "order": 0,
+            "regularExpression": "",
+            "signatureFieldId": 1,
+            "locations": [
+                {
+                    "id": "dddbaa2fcf070ceabe2b0c9fd4399179",
+                    "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
+                    "fieldId": "039836b06dbca3f80c9fd7a66a2a23de",
+                    "page": 1,
+                    "locationX": 0.2,
+                    "locationY": 0.2,
+                    "locationWidth": 90,
+                    "locationHeight": 30,
+                    "fontName": "Helvetica",
+                    "fontColor": "red",
+                    "fontSize": 10,
+                    "fontBold": true,
+                    "fontItalic": true,
+                    "fontUnderline": true,
+                    "align": 1
+                }
+            ],
+            "fieldType": 1,
+            "acceptableValues": "",
+            "defaultValue": "",
+            "tooltip": "Signature",
+            "guidanceText": ""
         }
-      ],
-      "fieldType": 1,
-      "acceptableValues": "",
-      "defaultValue": "",
-      "tooltip": "Signature",
-      "guidanceText": ""
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375218536454
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375218536454
 }
