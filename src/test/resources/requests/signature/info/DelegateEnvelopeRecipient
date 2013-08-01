@@ -1,0 +1,6 @@
+POST /v2.0/signature/ea103bbe8cb8ce07/envelopes/b4ee6cd9f62af05487f2e5f391ef3b4a/recipient/1ad6959498ef5f28a9990dd350aa10c7/delegate?email=delegated-10254855813361585@mailinator.com&firstname=Delegated&lastname=User&signature=O1TAjK3N5LFC11OO43fG0JFY9sY
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

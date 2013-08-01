@@ -1,0 +1,28 @@
+{
+  "result": {
+    "field": {
+      "id": "800c45eaedd1c508dfb2efa59a858c7e",
+      "name": "TestSignField22988871892044416",
+      "graphSizeW": 100,
+      "graphSizeH": 100,
+      "getDataFrom": "Test",
+      "regularExpression": "^.+$",
+      "fontName": null,
+      "fontColor": null,
+      "fontSize": 0,
+      "fontBold": false,
+      "fontItalic": false,
+      "fontUnderline": false,
+      "isSystem": false,
+      "fieldType": 0,
+      "acceptableValues": null,
+      "defaultValue": null,
+      "align": 0,
+      "minGraphSizeW": 0,
+      "minGraphSizeH": 0
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375215644202
+}

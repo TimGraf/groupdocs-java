@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.SignatureEnvelopeRecipientInfo;
 /**
  * 
  * <p>
@@ -23,6 +25,9 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureVerifyDocumentResult {
   private Boolean authentic = null;
+  private List<String> datesSigned = new ArrayList<String>();
+  private List<String> references = new ArrayList<String>();
+  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   public Boolean getAuthentic() {
     return authentic;
   }
@@ -30,11 +35,35 @@ public class SignatureVerifyDocumentResult {
     this.authentic = authentic;
   }
 
+  public List<String> getDatesSigned() {
+    return datesSigned;
+  }
+  public void setDatesSigned(List<String> datesSigned) {
+    this.datesSigned = datesSigned;
+  }
+
+  public List<String> getReferences() {
+    return references;
+  }
+  public void setReferences(List<String> references) {
+    this.references = references;
+  }
+
+  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
+    return recipients;
+  }
+  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
+    this.recipients = recipients;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureVerifyDocumentResult {\n");
     sb.append("  authentic: ").append(authentic).append("\n");
+    sb.append("  datesSigned: ").append(datesSigned).append("\n");
+    sb.append("  references: ").append(references).append("\n");
+    sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

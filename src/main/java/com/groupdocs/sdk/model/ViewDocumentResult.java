@@ -34,6 +34,7 @@ public class ViewDocumentResult {
   private String token = null;
   private String pageHtml = null;
   private String pageCss = null;
+  private String password = null;
   private Double id = null;
   private String guid = null;
   public String getName() {
@@ -106,6 +107,13 @@ public class ViewDocumentResult {
     this.pageCss = pageCss;
   }
 
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
   public Double getId() {
     return id;
   }
@@ -134,6 +142,7 @@ public class ViewDocumentResult {
     sb.append("  token: ").append(token).append("\n");
     sb.append("  pageHtml: ").append(pageHtml).append("\n");
     sb.append("  pageCss: ").append(pageCss).append("\n");
+    sb.append("  password: ").append(password).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");

@@ -15,6 +15,19 @@
  */
 package com.groupdocs.sdk.common;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.ws.rs.core.MediaType;
+
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
@@ -26,17 +39,6 @@ import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.wordnik.swagger.core.util.JsonUtil;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import javax.ws.rs.core.MediaType;
 
 public class ApiInvoker {
   public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
@@ -126,10 +128,10 @@ public class ApiInvoker {
 
   public static Object deserialize(String json, String containerType, Class cls) throws ApiException {
     try{
-        ObjectMapper mapper = JsonUtil.getJsonMapper();
-        SimpleModule m = new SimpleModule(PACKAGE_NAME, Version.unknownVersion());
-        m.addDeserializer(Date.class, new CustomDateDeserializer(new DateDeserializer()));
-        mapper.registerModule(m);
+      ObjectMapper mapper = JsonUtil.getJsonMapper();
+	  SimpleModule m = new SimpleModule(PACKAGE_NAME, Version.unknownVersion());
+	  m.addDeserializer(Date.class, new CustomDateDeserializer(new DateDeserializer()));
+	  mapper.registerModule(m);
       
       if("List".equals(containerType)) {
         JavaType typeInfo = mapper.getTypeFactory().constructCollectionType(List.class, cls);

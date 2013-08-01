@@ -1,0 +1,29 @@
+{
+  "result": {
+    "form": {
+      "id": "d064ea6a9428eb356abbf6608a7e65e2",
+      "name": "New Form 233",
+      "ownerGuid": "ea103bbe8cb8ce07",
+      "templateGuid": null,
+      "createdTimeStamp": "2013-07-30T21:08:03.9530000Z",
+      "status": -1,
+      "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "participantsCount": 0,
+      "fieldsInFinalFileName": [
+        "test1",
+        "test2"
+      ],
+      "canParticipantDownloadForm": true,
+      "waterMarkText": "Text",
+      "waterMarkImage": "data:image/png,Text",
+      "fieldsCount": 0,
+      "notifyOwnerOnSign": false,
+      "attachSignedDocument": false
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375218484422
+}

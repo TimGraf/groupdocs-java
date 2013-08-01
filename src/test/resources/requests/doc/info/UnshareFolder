@@ -1,6 +1,6 @@
-DELETE /v2.0/doc/ea103bbe8cb8ce07/folders/145292/sharers?signature=u7dAIHys5Cbf8O2xnuTT4espF%2BE
+DELETE /v2.0/doc/ea103bbe8cb8ce07/folders/167947/sharers?signature=bTfyZqM%2Bde0jCgDiAiyNvWBLk3s
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

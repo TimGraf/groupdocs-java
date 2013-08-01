@@ -1,6 +1,6 @@
-POST /v2.0/merge/ea103bbe8cb8ce07/files/b443e4d55c29fefcbda6062290e5ddcd2044aa5ef1b4ce36cf89c1fea66e4d51/questionnaires?signature=FxmnyfEifodT9OlgeJAiu1H6dcs
+POST /v2.0/merge/ea103bbe8cb8ce07/files/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca/questionnaires?signature=5CU3VuE%2Fjh%2Bsv5JwbXCD0SylSyU
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 261
 Groupdocs-Referrer: ruby/1.4.2

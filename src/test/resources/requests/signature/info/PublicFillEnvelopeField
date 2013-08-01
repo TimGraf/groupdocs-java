@@ -1,0 +1,6 @@
+PUT /v2.0/signature/public/envelopes/5aa86f661a36f7f7b9575fa826d4dcce/documents/fd858b5c6d9aa1b654414323a9cadcc6d704d26cac1fad8242aa8bdf3b10c63f/recipient/3e79365551df699128631cb23db36690/field/5113fe30c59416c8f5bdc05be0d869fb?signature=AZ%2FdMffY0zshhaSpTegLDal9vNs
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 2
+Groupdocs-Referrer: ruby/1.4.2

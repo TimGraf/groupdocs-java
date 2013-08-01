@@ -1,6 +1,6 @@
-DELETE /v2.0/async/ea103bbe8cb8ce07/jobs/726032/documents/d7d87b25b763e9cf734e464b0c46707d059c7594227ee72be5d301a4047353f3?signature=pHFKIIJH2eabQLM5XWRMWcwozuo
+DELETE /v2.0/async/ea103bbe8cb8ce07/jobs/801994/documents/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca?signature=lkFNhzLkFcHKuTq0mDwFrYtJMvU
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

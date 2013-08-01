@@ -1,0 +1,23 @@
+{
+  "name": "Signature07921589405565932",
+  "graphSizeW": 0,
+  "graphSizeH": 0,
+  "getDataFrom": null,
+  "regularExpression": "^.+$",
+  "fontName": "Arial",
+  "fontColor": "black",
+  "fontSize": 10,
+  "fontBold": false,
+  "fontItalic": false,
+  "fontUnderline": false,
+  "isSystem": true,
+  "fieldType": 1,
+  "acceptableValues": null,
+  "defaultValue": null,
+  "locationX": 0.1,
+  "locationY": 0.1,
+  "locationWidth": 0.1,
+  "locationHeight": 0.1,
+  "page": 1,
+  "forceNewField": true
+}

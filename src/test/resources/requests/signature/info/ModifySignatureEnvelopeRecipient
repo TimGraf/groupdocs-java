@@ -1,0 +1,6 @@
+PUT /v2.0/signature/ea103bbe8cb8ce07/envelopes/54cfb911fd2bf67a406410956edc40ee/recipient/ae0c81f2783ca9817def9a65eb023769?email=new-recipient-9026574703507284@mailinator.com&firstname=New%20John&lastname=New%20Smith&role=6df1056f4d9a27ec34698552a6372a68&order=1&signature=qJly6ny2%2BOVVDrqGyDXGrVRzj7w
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

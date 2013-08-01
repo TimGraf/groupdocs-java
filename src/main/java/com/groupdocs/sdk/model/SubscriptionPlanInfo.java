@@ -36,6 +36,7 @@ public class SubscriptionPlanInfo {
   private Double price = null;
   private String currencyCode = null;
   private Integer billingPeriod = null;
+  private String promoCode = null;
   public Integer getProductId() {
     return productId;
   }
@@ -120,6 +121,13 @@ public class SubscriptionPlanInfo {
     this.billingPeriod = billingPeriod;
   }
 
+  public String getPromoCode() {
+    return promoCode;
+  }
+  public void setPromoCode(String promoCode) {
+    this.promoCode = promoCode;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -136,6 +144,7 @@ public class SubscriptionPlanInfo {
     sb.append("  price: ").append(price).append("\n");
     sb.append("  currencyCode: ").append(currencyCode).append("\n");
     sb.append("  billingPeriod: ").append(billingPeriod).append("\n");
+    sb.append("  promoCode: ").append(promoCode).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -1,0 +1,7 @@
+{
+  "name": "New Form",
+  "fieldsInFinalFileName": "test1,test2",
+  "canParticipantDownloadForm": true,
+  "waterMarkText": "Text",
+  "waterMarkImage": "data:image/png,Text"
+}

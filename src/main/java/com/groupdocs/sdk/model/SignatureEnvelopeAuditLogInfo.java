@@ -23,6 +23,7 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureEnvelopeAuditLogInfo {
   private String id = null;
+  private Integer type = null;
   private String date = null;
   private String userName = null;
   private String action = null;
@@ -33,6 +34,13 @@ public class SignatureEnvelopeAuditLogInfo {
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+  public Integer getType() {
+    return type;
+  }
+  public void setType(Integer type) {
+    this.type = type;
   }
 
   public String getDate() {
@@ -75,6 +83,7 @@ public class SignatureEnvelopeAuditLogInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureEnvelopeAuditLogInfo {\n");
     sb.append("  id: ").append(id).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("  date: ").append(date).append("\n");
     sb.append("  userName: ").append(userName).append("\n");
     sb.append("  action: ").append(action).append("\n");

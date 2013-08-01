@@ -1,7 +1,7 @@
-PUT /v2.0/storage/ea103bbe8cb8ce07/folders/NewFolder-7048371437909947?signature=2DMXUhN8hywFD2Lzu6FKygErV80
+PUT /v2.0/storage/ea103bbe8cb8ce07/folders/NewFolder-36542806556370655?signature=Zr%2Bf9bA2GTaFBrO%2FoEkwcCXsbcs
 
-Host: dev-api.groupdocs.com
-Groupdocs-copy: Folder-7048371437909947
+Host: dev-api-groupdocs.dynabic.com
+Groupdocs-copy: Folder-36542806556370655
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

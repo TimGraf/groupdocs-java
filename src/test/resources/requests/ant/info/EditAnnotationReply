@@ -1,6 +1,6 @@
-PUT /v2.0/ant/ea103bbe8cb8ce07/replies/8304dc2d?signature=MXZalLBSvU4oEbVhszW6XUS8rdA
+PUT /v2.0/ant/ea103bbe8cb8ce07/replies/8b4f6992?signature=Drpqcj9ImeXZy2NOA5WF5eZLxTo
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 16
 Groupdocs-Referrer: ruby/1.4.2

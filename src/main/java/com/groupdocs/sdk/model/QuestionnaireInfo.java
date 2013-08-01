@@ -27,6 +27,7 @@ public class QuestionnaireInfo {
   private Integer resolved_executions = null;
   private List<QuestionnairePageInfo> pages = new ArrayList<QuestionnairePageInfo>();
   private List<String> document_ids = new ArrayList<String>();
+  private List<String> formats = new ArrayList<String>();
   private Double id = null;
   private String guid = null;
   private String name = null;
@@ -60,6 +61,13 @@ public class QuestionnaireInfo {
   }
   public void setDocument_ids(List<String> document_ids) {
     this.document_ids = document_ids;
+  }
+
+  public List<String> getFormats() {
+    return formats;
+  }
+  public void setFormats(List<String> formats) {
+    this.formats = formats;
   }
 
   public Double getId() {
@@ -167,6 +175,7 @@ public class QuestionnaireInfo {
     sb.append("  resolved_executions: ").append(resolved_executions).append("\n");
     sb.append("  pages: ").append(pages).append("\n");
     sb.append("  document_ids: ").append(document_ids).append("\n");
+    sb.append("  formats: ").append(formats).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  name: ").append(name).append("\n");

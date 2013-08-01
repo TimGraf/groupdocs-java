@@ -1,0 +1,20 @@
+{
+  "result": {
+    "templateId": "3086d40e0b9c7b5cfe7178ad85ea875c",
+    "documents": [
+      {
+        "documentId": "1ed92cd9da7f312d12ad47a27330edf6df3685c44e4a05fa40a5d40b17074dde",
+        "templateId": "3086d40e0b9c7b5cfe7178ad85ea875c",
+        "order": 0,
+        "name": "document_one.doc",
+        "originalDocumentMD5": "4102f70d43d8cd309866ae9b914961c0",
+        "originalDocumentPagesCount": 1,
+        "fieldsCount": 0,
+        "originalDocumentId": "1ed92cd9da7f312d12ad47a27330edf6df3685c44e4a05fa40a5d40b17074dde"
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375217602283
+}

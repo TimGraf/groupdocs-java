@@ -1,0 +1,14 @@
+{
+  "result": {
+    "templateId": "eb105a7aeccf7169100630f8c2245fee",
+    "recipient": {
+      "id": "826c585137f1fcfb942016ab87d03b23",
+      "nickname": "John Smith",
+      "order": 0,
+      "roleId": 2
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375215270559
+}

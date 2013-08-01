@@ -45,6 +45,8 @@ public class SignatureEnvelopeInfo {
   private String waterMarkImage = null;
   private Boolean attachSignedDocument = null;
   private Boolean includeViewLink = null;
+  private Boolean canBeCommented = null;
+  private Boolean inPersonSign = null;
   public String getId() {
     return id;
   }
@@ -192,6 +194,20 @@ public class SignatureEnvelopeInfo {
     this.includeViewLink = includeViewLink;
   }
 
+  public Boolean getCanBeCommented() {
+    return canBeCommented;
+  }
+  public void setCanBeCommented(Boolean canBeCommented) {
+    this.canBeCommented = canBeCommented;
+  }
+
+  public Boolean getInPersonSign() {
+    return inPersonSign;
+  }
+  public void setInPersonSign(Boolean inPersonSign) {
+    this.inPersonSign = inPersonSign;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -217,6 +233,8 @@ public class SignatureEnvelopeInfo {
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
     sb.append("  includeViewLink: ").append(includeViewLink).append("\n");
+    sb.append("  canBeCommented: ").append(canBeCommented).append("\n");
+    sb.append("  inPersonSign: ").append(inPersonSign).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

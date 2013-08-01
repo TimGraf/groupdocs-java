@@ -1,6 +1,6 @@
 POST /v2.0/storage/ea103bbe8cb8ce07/packages/package.zip?signature=rWUhQrwrrp%2BwcoZp9CK2JOd%2BOxg
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 39
 Groupdocs-Referrer: ruby/1.4.2

@@ -17,11 +17,13 @@ package com.groupdocs.sdk.api;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
+import com.groupdocs.sdk.model.UpdateSubscriptionPlanInfo;
 import com.groupdocs.sdk.model.BillingAddressInfo;
 import com.groupdocs.sdk.model.GetInvoicesResponse;
 import com.groupdocs.sdk.model.GetCountriesResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
+import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlanUsageResponse;
 import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
@@ -46,6 +48,36 @@ public class SystemApi {
     return basePath;
   }
 
+  public GetInvoicesResponse SimulateAssessForPricingPlan (String userId, String discountCode, String planId) throws ApiException {
+    // verify required params are set
+    if(userId == null || discountCode == null || planId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/plans/{planId}/discounts/{discountCode}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "discountCode" + "}", String.valueOf(discountCode)).replace("{" + "planId" + "}", String.valueOf(planId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetInvoicesResponse) ApiInvoker.deserialize(response, "", GetInvoicesResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public GetPlanResponse GetUserPlan (String callerId) throws ApiException {
     // verify required params are set
     if(callerId == null ) {
@@ -166,21 +198,21 @@ public class SystemApi {
       }
     }
   }
-  public SetUserSubscriptionPlanResponse UpdateSubscriptionPlan (String userId, String productId, String userCount) throws ApiException {
+  public SetUserSubscriptionPlanResponse UpdateSubscriptionPlan (String userId, String productId, UpdateSubscriptionPlanInfo body) throws ApiException {
     // verify required params are set
-    if(userId == null || productId == null || userCount == null ) {
+    if(userId == null || productId == null || body == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/system/{userId}/subscriptions/{productId}/{userCount}".replace("*", "");
+    String resourcePath = "/system/{userId}/subscriptions/{productId}".replace("*", "");
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId)).replace("{" + "userCount" + "}", String.valueOf(userCount));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SetUserSubscriptionPlanResponse) ApiInvoker.deserialize(response, "", SetUserSubscriptionPlanResponse.class);
       }
@@ -341,6 +373,36 @@ public class SystemApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetSubscriptionPlanUsageResponse) ApiInvoker.deserialize(response, "", GetSubscriptionPlanUsageResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetPurchaseWizardResponse GetPurchseWizardInfo (String userId) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/purchase/wizard".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetPurchaseWizardResponse) ApiInvoker.deserialize(response, "", GetPurchaseWizardResponse.class);
       }
       else {
         return null;

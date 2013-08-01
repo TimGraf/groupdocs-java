@@ -1,0 +1,6 @@
+GET /v2.0/signature/ea103bbe8cb8ce07/templates/b9fd52a9023dbe1eb077c1bf3e0ee985/recipients?signature=CbG6K%2F4qUcBNOvM7rWF9xalD%2BUY
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

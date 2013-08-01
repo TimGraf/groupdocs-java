@@ -1,0 +1,34 @@
+{
+  "result": {
+    "count": 3,
+    "roles": [
+      {
+        "id": "58416f6827eb612fef7750b62cf2bf9a",
+        "name": "Owner",
+        "canEdit": true,
+        "canSign": true,
+        "canAnnotate": true,
+        "canDelegate": false
+      },
+      {
+        "id": "693e6cee8a4a21285f86930491b455ec",
+        "name": "Signer",
+        "canEdit": false,
+        "canSign": true,
+        "canAnnotate": true,
+        "canDelegate": true
+      },
+      {
+        "id": "6df1056f4d9a27ec34698552a6372a68",
+        "name": "CC",
+        "canEdit": false,
+        "canSign": false,
+        "canAnnotate": false,
+        "canDelegate": false
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375216923501
+}

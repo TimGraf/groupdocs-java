@@ -1,0 +1,27 @@
+{
+  "result": {
+    "recipients": [
+      {
+        "id": "b6a147bdc0b61f19fff882319d83af26",
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "api-tests@groupdocs.com",
+        "userGuid": "ea103bbe8cb8ce07",
+        "order": 0,
+        "roleId": 2,
+        "status": 1,
+        "statusMessage": null,
+        "statusDateTime": "2013-07-30T21:18:34.7509297ZZ",
+        "delegatedRecipientId": null,
+        "signatureFingerprint": null,
+        "signatureHost": null,
+        "signatureLocation": null,
+        "signatureBrowser": null,
+        "embedUrl": "http://dev-apps-groupdocs.dynabic.com/signature/signembed/a485c49b83cdc82147a5caabcfa0656c/b6a147bdc0b61f19fff882319d83af26"
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375219114438
+}

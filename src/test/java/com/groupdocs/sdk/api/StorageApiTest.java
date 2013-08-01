@@ -403,8 +403,8 @@ public class StorageApiTest extends AbstractUnitTest {
 		String userId = "userId";
 		String path = "path";
 		String mode = "mode";
-		String Groupdocs_Copy = "Groupdocs_Copy";
 		String Groupdocs_Move = "Groupdocs_Move";
+		String Groupdocs_Copy = "Groupdocs_Copy";
 		
 		String resourcePath = "/storage/{userId}/folders/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 		
@@ -419,7 +419,7 @@ public class StorageApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			FolderMoveResponse response = api.MoveFolder(userId, path, mode, Groupdocs_Copy, Groupdocs_Move);
+			FolderMoveResponse response = api.MoveFolder(userId, path, mode, Groupdocs_Move, Groupdocs_Copy);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

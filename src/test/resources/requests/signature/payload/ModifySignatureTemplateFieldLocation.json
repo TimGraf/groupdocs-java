@@ -1,0 +1,15 @@
+{
+  "page": 1,
+  "locationX": 0.2,
+  "locationY": 0.2,
+  "locationWidth": 0.2,
+  "locationHeight": 0.2,
+  "fontName": "Helvetica",
+  "fontColor": "red",
+  "fontSize": 10,
+  "fontBold": true,
+  "fontItalic": true,
+  "fontUnderline": true,
+  "forceNewField": false,
+  "align": 1
+}

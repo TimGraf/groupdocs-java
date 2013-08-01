@@ -1,0 +1,17 @@
+[
+  {
+    "firstName": "John1",
+    "lastName": "Smith1",
+    "email": "user_one_057279492727743686@mailinator.com"
+  },
+  {
+    "firstName": "John2",
+    "lastName": "Smith2",
+    "email": "user_two_057279492727743686@mailinator.com"
+  },
+  {
+    "firstName": "John3",
+    "lastName": "Smith3",
+    "email": null
+  }
+]

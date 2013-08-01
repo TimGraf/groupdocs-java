@@ -1,0 +1,27 @@
+{
+  "result": {
+    "template": {
+      "id": "302d490491c638447c7751e548987e16",
+      "name": "Template Test 8120702993243918",
+      "ownerGuid": "ea103bbe8cb8ce07",
+      "reminderTime": 1,
+      "stepExpireTime": 1,
+      "templateExpireTime": 1,
+      "ownerShouldSign": true,
+      "orderedSignature": true,
+      "emailSubject": "Test",
+      "emailBody": "Test",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "recipients": [
+
+      ],
+      "waterMarkText": "Text",
+      "waterMarkImage": "data:image/png,Text",
+      "fieldsCount": 0
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375215766311
+}

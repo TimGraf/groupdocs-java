@@ -32,7 +32,7 @@ public class UserInfo {
   private String claimed_id = null;
   private String token = null;
   private Integer storage = null;
-  private Object photo = new Object();
+  private List<Integer> photo = new ArrayList<Integer>();
   private Boolean active = null;
   private Boolean trial = null;
   private Boolean news_eanbled = null;
@@ -64,6 +64,9 @@ public class UserInfo {
   private Boolean is_typewriter_annotation_button_enabled = null;
   private Boolean is_watermark_annotation_button_enabled = null;
   private Boolean is_annotation_document_name_shown = null;
+  private List<Integer> annotation_navigation_icons = new ArrayList<Integer>();
+  private List<Integer> annotation_tool_icons = new ArrayList<Integer>();
+  private Integer annotation_background_color = null;
   private List<Integer> viewer_logo = new ArrayList<Integer>();
   private Integer viewer_options = null;
   private Boolean is_viewer_navigation_widget_enabled = null;
@@ -72,6 +75,7 @@ public class UserInfo {
   private Boolean is_viewer_print_widget_enabled = null;
   private Boolean is_viewer_help_widget_enabled = null;
   private Boolean is_viewer_document_name_shown = null;
+  private Boolean isviewer_right_mouse_button_menu_enabled = null;
   private Long signedupOn = null;
   private Long signedinOn = null;
   private Integer signin_count = null;
@@ -80,6 +84,7 @@ public class UserInfo {
   private Boolean signature_desktop_notifications = null;
   private Integer webhook_notification_retries = null;
   private String webhook_notification_failed_recipients = null;
+  private String signature_color = null;
   private Double id = null;
   private String guid = null;
   private String primary_email = null;
@@ -139,10 +144,10 @@ public class UserInfo {
     this.storage = storage;
   }
 
-  public Object getPhoto() {
+  public List<Integer> getPhoto() {
     return photo;
   }
-  public void setPhoto(Object photo) {
+  public void setPhoto(List<Integer> photo) {
     this.photo = photo;
   }
 
@@ -363,6 +368,27 @@ public class UserInfo {
     this.is_annotation_document_name_shown = is_annotation_document_name_shown;
   }
 
+  public List<Integer> getAnnotation_navigation_icons() {
+    return annotation_navigation_icons;
+  }
+  public void setAnnotation_navigation_icons(List<Integer> annotation_navigation_icons) {
+    this.annotation_navigation_icons = annotation_navigation_icons;
+  }
+
+  public List<Integer> getAnnotation_tool_icons() {
+    return annotation_tool_icons;
+  }
+  public void setAnnotation_tool_icons(List<Integer> annotation_tool_icons) {
+    this.annotation_tool_icons = annotation_tool_icons;
+  }
+
+  public Integer getAnnotation_background_color() {
+    return annotation_background_color;
+  }
+  public void setAnnotation_background_color(Integer annotation_background_color) {
+    this.annotation_background_color = annotation_background_color;
+  }
+
   public List<Integer> getViewer_logo() {
     return viewer_logo;
   }
@@ -419,6 +445,13 @@ public class UserInfo {
     this.is_viewer_document_name_shown = is_viewer_document_name_shown;
   }
 
+  public Boolean getIsviewer_right_mouse_button_menu_enabled() {
+    return isviewer_right_mouse_button_menu_enabled;
+  }
+  public void setIsviewer_right_mouse_button_menu_enabled(Boolean isviewer_right_mouse_button_menu_enabled) {
+    this.isviewer_right_mouse_button_menu_enabled = isviewer_right_mouse_button_menu_enabled;
+  }
+
   public Long getSignedupOn() {
     return signedupOn;
   }
@@ -473,6 +506,13 @@ public class UserInfo {
   }
   public void setWebhook_notification_failed_recipients(String webhook_notification_failed_recipients) {
     this.webhook_notification_failed_recipients = webhook_notification_failed_recipients;
+  }
+
+  public String getSignature_color() {
+    return signature_color;
+  }
+  public void setSignature_color(String signature_color) {
+    this.signature_color = signature_color;
   }
 
   public Double getId() {
@@ -540,6 +580,9 @@ public class UserInfo {
     sb.append("  is_typewriter_annotation_button_enabled: ").append(is_typewriter_annotation_button_enabled).append("\n");
     sb.append("  is_watermark_annotation_button_enabled: ").append(is_watermark_annotation_button_enabled).append("\n");
     sb.append("  is_annotation_document_name_shown: ").append(is_annotation_document_name_shown).append("\n");
+    sb.append("  annotation_navigation_icons: ").append(annotation_navigation_icons).append("\n");
+    sb.append("  annotation_tool_icons: ").append(annotation_tool_icons).append("\n");
+    sb.append("  annotation_background_color: ").append(annotation_background_color).append("\n");
     sb.append("  viewer_logo: ").append(viewer_logo).append("\n");
     sb.append("  viewer_options: ").append(viewer_options).append("\n");
     sb.append("  is_viewer_navigation_widget_enabled: ").append(is_viewer_navigation_widget_enabled).append("\n");
@@ -548,6 +591,7 @@ public class UserInfo {
     sb.append("  is_viewer_print_widget_enabled: ").append(is_viewer_print_widget_enabled).append("\n");
     sb.append("  is_viewer_help_widget_enabled: ").append(is_viewer_help_widget_enabled).append("\n");
     sb.append("  is_viewer_document_name_shown: ").append(is_viewer_document_name_shown).append("\n");
+    sb.append("  isviewer_right_mouse_button_menu_enabled: ").append(isviewer_right_mouse_button_menu_enabled).append("\n");
     sb.append("  signedupOn: ").append(signedupOn).append("\n");
     sb.append("  signedinOn: ").append(signedinOn).append("\n");
     sb.append("  signin_count: ").append(signin_count).append("\n");
@@ -556,6 +600,7 @@ public class UserInfo {
     sb.append("  signature_desktop_notifications: ").append(signature_desktop_notifications).append("\n");
     sb.append("  webhook_notification_retries: ").append(webhook_notification_retries).append("\n");
     sb.append("  webhook_notification_failed_recipients: ").append(webhook_notification_failed_recipients).append("\n");
+    sb.append("  signature_color: ").append(signature_color).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

@@ -53,6 +53,7 @@ import com.groupdocs.sdk.model.DocumentUserStatusResponse;
 import com.groupdocs.sdk.model.GetTagsResponse;
 import com.groupdocs.sdk.model.RemoveTagsResponse;
 import com.groupdocs.sdk.model.GetImageUrlsResponse;
+import com.groupdocs.sdk.model.SetDocumentPasswordResponse;
 
 
 public class DocApiTest extends AbstractUnitTest {
@@ -78,6 +79,7 @@ public class DocApiTest extends AbstractUnitTest {
 		String width = "width";
 		String quality = "quality";
 		String usePdf = "usePdf";
+		String passwordSalt = "passwordSalt";
 		
 		String resourcePath = "/doc/{userId}/files/{fileId}/thumbnails".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
@@ -88,6 +90,7 @@ public class DocApiTest extends AbstractUnitTest {
 		mockRequest = mockRequest.withParam("width", width);
 		mockRequest = mockRequest.withParam("quality", quality);
 		mockRequest = mockRequest.withParam("use_pdf", usePdf);
+		mockRequest = mockRequest.withParam("passwordSalt", passwordSalt);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("doc/ViewDocument.json");
@@ -96,7 +99,7 @@ public class DocApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			ViewDocumentResponse response = api.ViewDocument(userId, fileId, pageNumber, pageCount, width, quality, usePdf);
+			ViewDocumentResponse response = api.ViewDocument(userId, fileId, pageNumber, pageCount, width, quality, usePdf, passwordSalt);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -113,6 +116,7 @@ public class DocApiTest extends AbstractUnitTest {
 		String fileId = "fileId";
 		String pageNumber = "pageNumber";
 		String pageCount = "pageCount";
+		String passwordSalt = "passwordSalt";
 		
 		String resourcePath = "/doc/{userId}/files/{fileId}/htmlRepresentations".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
@@ -120,6 +124,7 @@ public class DocApiTest extends AbstractUnitTest {
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("page_number", pageNumber);
 		mockRequest = mockRequest.withParam("page_count", pageCount);
+		mockRequest = mockRequest.withParam("passwordSalt", passwordSalt);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("doc/ViewDocumentAsHtml.json");
@@ -128,7 +133,7 @@ public class DocApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			ViewDocumentResponse response = api.ViewDocumentAsHtml(userId, fileId, pageNumber, pageCount);
+			ViewDocumentResponse response = api.ViewDocumentAsHtml(userId, fileId, pageNumber, pageCount, passwordSalt);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -189,6 +194,35 @@ public class DocApiTest extends AbstractUnitTest {
 		
 		try {
 			SharedUsersResponse response = api.ShareDocument(userId, fileId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testSetDocumentPassword() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		String body = "body";
+		
+		String resourcePath = "/doc/{userId}/files/{fileId}/password".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("doc/SetDocumentPassword.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SetDocumentPasswordResponse response = api.SetDocumentPassword(userId, fileId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -576,6 +610,36 @@ public class DocApiTest extends AbstractUnitTest {
 		
 		try {
 			FileStream response = api.GetDocumentPageImage(userId, fileId, pageNumber, dimension, quality, usePdf, expiresOn);
+			assertThat(response.getInputStream(), not(nullValue()));
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetDocumentPageHtmlFixed() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		Integer pageNumber = 0;
+		Boolean expiresOn = Boolean.TRUE;
+		
+		String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("expires", expiresOn);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("doc/GetDocumentPageHtmlFixed.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			FileStream response = api.GetDocumentPageHtmlFixed(userId, fileId, pageNumber, expiresOn);
 			assertThat(response.getInputStream(), not(nullValue()));
 			
 		} catch(ApiException e){

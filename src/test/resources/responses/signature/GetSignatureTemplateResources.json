@@ -1,0 +1,49 @@
+{
+  "result": {
+    "documents": [
+      {
+        "documentId": "4a33733b74d8982d931a1fdcc45590735346a82fe973e8075e66ec6406665429",
+        "templateId": "",
+        "order": 0,
+        "name": "document_one_doc.pdf",
+        "originalDocumentMD5": "4102f70d43d8cd309866ae9b914961c0",
+        "originalDocumentPagesCount": 1,
+        "fieldsCount": 0,
+        "originalDocumentId": "4a33733b74d8982d931a1fdcc45590735346a82fe973e8075e66ec6406665429"
+      },
+      {
+        "documentId": "e8551f622bc86541033a3ca7b56435f5b353905674048364ad643309d46b6dd3",
+        "templateId": "",
+        "order": 1,
+        "name": "document_one_docx.pdf",
+        "originalDocumentMD5": "8cf89bdc1c58444a969f2a88d1623b4f",
+        "originalDocumentPagesCount": 1,
+        "fieldsCount": 0,
+        "originalDocumentId": "e8551f622bc86541033a3ca7b56435f5b353905674048364ad643309d46b6dd3"
+      }
+    ],
+    "recipients": [
+      {
+        "id": "01152ec8e06ae751dce48727bfda4d64",
+        "nickname": "John Smith",
+        "order": 0,
+        "roleId": 2
+      },
+      {
+        "id": "8b797bf51be8ce22dcbc0951eb9d72f0",
+        "nickname": "John Smith 2",
+        "order": 0,
+        "roleId": 2
+      },
+      {
+        "id": "df91a9ff7fb4d110edd3f8f963a3b678",
+        "nickname": "Pavel",
+        "order": 32767,
+        "roleId": 1
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375217774408
+}

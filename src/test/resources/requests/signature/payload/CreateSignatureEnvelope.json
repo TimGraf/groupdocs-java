@@ -1,0 +1,12 @@
+{
+  "ownerShouldSign": true,
+  "orderedSignature": true,
+  "reminderTime": 1,
+  "stepExpireTime": 1,
+  "envelopeExpireTime": 1,
+  "emailSubject": "Test",
+  "emailBody": "Test",
+  "isDemo": true,
+  "waterMarkText": "Text",
+  "waterMarkImage": "data:image/png,Text"
+}

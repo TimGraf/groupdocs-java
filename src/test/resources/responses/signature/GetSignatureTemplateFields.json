@@ -1,0 +1,44 @@
+{
+  "result": {
+    "templateId": "8dd6e1be32b6a471cb72b4a2c125e509",
+    "fields": [
+      {
+        "id": "b69706708e0ec41bf39e1f1e9d7c80d1",
+        "templateId": "8dd6e1be32b6a471cb72b4a2c125e509",
+        "recipientId": "e91b895b17a9a70865aeb1267a244ae2",
+        "name": "Signature",
+        "mandatory": true,
+        "order": 0,
+        "regularExpression": "",
+        "signatureFieldId": 1,
+        "locations": [
+          {
+            "id": "c35586c889ff63c36001e79827678f46",
+            "documentId": "b9edbedfa0c8567dff25cea6941748c54c288b3915d95e1d1c520d9f2dbbfc56",
+            "fieldId": "b69706708e0ec41bf39e1f1e9d7c80d1",
+            "page": 1,
+            "locationX": 0.1,
+            "locationY": 0.1,
+            "locationWidth": 90.0,
+            "locationHeight": 30.0,
+            "fontName": "Arial",
+            "fontColor": "black",
+            "fontSize": 10,
+            "fontBold": false,
+            "fontItalic": false,
+            "fontUnderline": false,
+            "align": 0
+          }
+        ],
+        "fieldType": 1,
+        "acceptableValues": "",
+        "defaultValue": "",
+        "tooltip": "Signature",
+        "guidanceText": ""
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375217671861
+}

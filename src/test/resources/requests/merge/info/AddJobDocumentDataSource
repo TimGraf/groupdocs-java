@@ -1,6 +1,6 @@
-PUT /v2.0/merge/ea103bbe8cb8ce07/jobs/726204/files/268774/datasources/20033?signature=7mC62lFTQrFYjtTsZRNh70IR%2B6A
+PUT /v2.0/merge/ea103bbe8cb8ce07/jobs/802165/files/317869/datasources/21918?signature=twJxryEgtTvbf2VACCngJ3%2F5qL4
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

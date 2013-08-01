@@ -2,8 +2,8 @@
   "result": {
     "user": {
       "nickname": "api-tests@groupdocs.com",
-      "firstname": "John",
-      "lastname": "Doe",
+      "firstname": "Pavel",
+      "lastname": "Strashniy",
       "pkey": "808ee048519831cd47f2ae067b7f99b2",
       "pswd_salt": "uCXoBZH7pY1Sy8JOK+/BGw==",
       "claimed_id": null,
@@ -41,6 +41,9 @@
       "is_typewriter_annotation_button_enabled": null,
       "is_watermark_annotation_button_enabled": null,
       "is_annotation_document_name_shown": null,
+      "annotation_navigation_icons": null,
+      "annotation_tool_icons": null,
+      "annotation_background_color": null,
       "viewer_logo": null,
       "viewer_options": null,
       "is_viewer_navigation_widget_enabled": null,
@@ -49,10 +52,16 @@
       "is_viewer_print_widget_enabled": null,
       "is_viewer_help_widget_enabled": null,
       "is_viewer_document_name_shown": null,
+      "isviewer_right_mouse_button_menu_enabled": null,
       "signedupOn": 1341805769540,
-      "signedinOn": 1363064399490,
+      "signedinOn": 1374561348667,
       "signin_count": null,
       "roles": null,
+      "signature_watermark_enabled": null,
+      "signature_desktop_notifications": null,
+      "webhook_notification_retries": null,
+      "webhook_notification_failed_recipients": null,
+      "signature_color": null,
       "id": 167,
       "guid": "ea103bbe8cb8ce07",
       "primary_email": "api-tests@groupdocs.com"
@@ -60,5 +69,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1365673492404
+  "composedOn": 1375220709851
 }

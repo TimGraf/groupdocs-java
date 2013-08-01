@@ -1,0 +1,28 @@
+{
+  "result": {
+    "envelopeId": "648052dda05bc3c1a48357715727a712",
+    "recipients": [
+      {
+        "id": "bfbabbcd535b5bf64cffdf9cd15336ad",
+        "firstName": "John",
+        "lastName": "Smith",
+        "email": "api-tests@groupdocs.com",
+        "userGuid": "ea103bbe8cb8ce07",
+        "order": 0,
+        "roleId": 2,
+        "status": 0,
+        "statusMessage": null,
+        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "delegatedRecipientId": null,
+        "signatureFingerprint": null,
+        "signatureHost": null,
+        "signatureLocation": null,
+        "signatureBrowser": null,
+        "embedUrl": ""
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375219400235
+}

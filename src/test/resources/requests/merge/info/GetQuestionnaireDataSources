@@ -1,6 +1,6 @@
-GET /v2.0/merge/ea103bbe8cb8ce07/questionnaires/60089/datasources?signature=KREQTHeK6eaoYwhNLfMVFs0Gtz4
+GET /v2.0/merge/ea103bbe8cb8ce07/questionnaires/66801/datasources?signature=ZAEAB5YQC6H3KxwQlyxup4niRgw
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

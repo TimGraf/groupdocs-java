@@ -34,6 +34,7 @@ import com.groupdocs.sdk.model.DocumentUserStatusResponse;
 import com.groupdocs.sdk.model.GetTagsResponse;
 import com.groupdocs.sdk.model.RemoveTagsResponse;
 import com.groupdocs.sdk.model.GetImageUrlsResponse;
+import com.groupdocs.sdk.model.SetDocumentPasswordResponse;
 import java.util.*;
 
 public class DocApi {
@@ -52,12 +53,12 @@ public class DocApi {
     return basePath;
   }
 
-  public ViewDocumentResponse ViewDocument (String userId, String fileId, String pageNumber, String pageCount, String width, String quality, String usePdf) throws ApiException {
+  public ViewDocumentResponse ViewDocument (String userId, String fileId, String pageNumber, String pageCount, String width, String quality, String usePdf, String passwordSalt) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/doc/{userId}/files/{fileId}/thumbnails?page_number={pageNumber}&page_count={pageCount}&width={width}&quality={quality}&use_pdf={usePdf}".replace("*", "");
+    String resourcePath = "/doc/{userId}/files/{fileId}/thumbnails?page_number={pageNumber}&page_count={pageCount}&width={width}&quality={quality}&use_pdf={usePdf}&passwordSalt={passwordSalt}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -79,6 +80,8 @@ public class DocApi {
       queryParams.put("quality", String.valueOf(quality));
     if(!"null".equals(String.valueOf(usePdf)))
       queryParams.put("use_pdf", String.valueOf(usePdf));
+    if(!"null".equals(String.valueOf(passwordSalt)))
+      queryParams.put("passwordSalt", String.valueOf(passwordSalt));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -96,12 +99,12 @@ public class DocApi {
       }
     }
   }
-  public ViewDocumentResponse ViewDocumentAsHtml (String userId, String fileId, String pageNumber, String pageCount) throws ApiException {
+  public ViewDocumentResponse ViewDocumentAsHtml (String userId, String fileId, String pageNumber, String pageCount, String passwordSalt) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}".replace("*", "");
+    String resourcePath = "/doc/{userId}/files/{fileId}/htmlRepresentations?page_number={pageNumber}&page_count={pageCount}&passwordSalt={passwordSalt}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -117,6 +120,8 @@ public class DocApi {
       queryParams.put("page_number", String.valueOf(pageNumber));
     if(!"null".equals(String.valueOf(pageCount)))
       queryParams.put("page_count", String.valueOf(pageCount));
+    if(!"null".equals(String.valueOf(passwordSalt)))
+      queryParams.put("passwordSalt", String.valueOf(passwordSalt));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -189,6 +194,36 @@ public class DocApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (SharedUsersResponse) ApiInvoker.deserialize(response, "", SharedUsersResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SetDocumentPasswordResponse SetDocumentPassword (String userId, String fileId, String body) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/password".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SetDocumentPasswordResponse) ApiInvoker.deserialize(response, "", SetDocumentPasswordResponse.class);
       }
       else {
         return null;
@@ -613,6 +648,36 @@ public class DocApi {
       queryParams.put("quality", String.valueOf(quality));
     if(!"null".equals(String.valueOf(usePdf)))
       queryParams.put("use_pdf", String.valueOf(usePdf));
+    if(!"null".equals(String.valueOf(expiresOn)))
+      queryParams.put("expires", String.valueOf(expiresOn));
+    try {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public FileStream GetDocumentPageHtmlFixed (String userId, String fileId, Integer pageNumber, Boolean expiresOn) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || pageNumber == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed?expires={expiresOn}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
     if(!"null".equals(String.valueOf(expiresOn)))
       queryParams.put("expires", String.valueOf(expiresOn));
     try {

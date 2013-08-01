@@ -39,6 +39,8 @@ public class SignatureFieldInfo {
   private String acceptableValues = null;
   private String defaultValue = null;
   private Integer align = null;
+  private Integer minGraphSizeW = null;
+  private Integer minGraphSizeH = null;
   public String getId() {
     return id;
   }
@@ -158,6 +160,20 @@ public class SignatureFieldInfo {
     this.align = align;
   }
 
+  public Integer getMinGraphSizeW() {
+    return minGraphSizeW;
+  }
+  public void setMinGraphSizeW(Integer minGraphSizeW) {
+    this.minGraphSizeW = minGraphSizeW;
+  }
+
+  public Integer getMinGraphSizeH() {
+    return minGraphSizeH;
+  }
+  public void setMinGraphSizeH(Integer minGraphSizeH) {
+    this.minGraphSizeH = minGraphSizeH;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -179,6 +195,8 @@ public class SignatureFieldInfo {
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  align: ").append(align).append("\n");
+    sb.append("  minGraphSizeW: ").append(minGraphSizeW).append("\n");
+    sb.append("  minGraphSizeH: ").append(minGraphSizeH).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

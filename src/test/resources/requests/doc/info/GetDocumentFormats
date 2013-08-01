@@ -1,6 +1,6 @@
-GET /v2.0/doc/ea103bbe8cb8ce07/files/268731/formats?signature=dtQ6C3h2HfL5wVijWbxKTbgtClU
+GET /v2.0/doc/ea103bbe8cb8ce07/files/325150/formats?signature=96EwU0CbkVuNCJJjIfAo0rr0SYg
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

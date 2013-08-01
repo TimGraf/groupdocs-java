@@ -1,0 +1,6 @@
+DELETE /v2.0/signature/ea103bbe8cb8ce07/envelopes/c465aa172ced4c6797188f91bd75ccc2/fields/86db8a967e7bc1539174d570e6bdb10b?signature=DP6YeYfyobillS3ZO%2FrtUvDIGhQ
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

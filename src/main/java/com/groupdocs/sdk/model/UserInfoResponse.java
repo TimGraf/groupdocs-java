@@ -14,6 +14,8 @@
  *  limitations under the License.
  */
 package com.groupdocs.sdk.model;
+
+import com.groupdocs.sdk.model.UserInfoResult;
 /**
  * 
  * <p>

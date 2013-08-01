@@ -1,0 +1,35 @@
+{
+  "result": {
+    "envelope": {
+      "id": "91e439ba62a36b69a815780854f514fc",
+      "name": "Envelope 5916256021203607",
+      "creationDateTime": "2013-07-30T20:47:41.0800000Z",
+      "updatedDateTime": "2013-07-30T20:47:41.0800000Z",
+      "ownerGuid": "ea103bbe8cb8ce07",
+      "status": -1,
+      "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+      "reminderTime": 1,
+      "stepExpireTime": 3,
+      "envelopeExpireTime": 6,
+      "ownerShouldSign": false,
+      "orderedSignature": false,
+      "emailSubject": "Sign this!",
+      "emailBody": "",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "recipients": [
+
+      ],
+      "waterMarkText": "",
+      "waterMarkImage": "",
+      "attachSignedDocument": false,
+      "includeViewLink": true,
+      "canBeCommented": true,
+      "inPersonSign": false,
+      "ownerName": "Pavel Strashniy"
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375217261423
+}

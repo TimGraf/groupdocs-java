@@ -1,0 +1,13 @@
+{
+  "result": {
+    "list": {
+      "id": "38d51389a5cd1b4a4c42fcb01ac4eaed",
+      "name": "List 90026545089663",
+      "values": "value1;value2",
+      "defaultValue": "value1"
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375215957467
+}

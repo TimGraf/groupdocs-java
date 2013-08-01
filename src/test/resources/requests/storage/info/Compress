@@ -1,6 +1,6 @@
-POST /v2.0/storage/ea103bbe8cb8ce07/files/269292/archive/zip?signature=%2ByRm%2FLOpQLledy1zJMbECR4O1IU
+POST /v2.0/storage/ea103bbe8cb8ce07/files/325150/archive/zip?signature=ZpF98ff%2Fnf1dAGx7gLMt4KielbE
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

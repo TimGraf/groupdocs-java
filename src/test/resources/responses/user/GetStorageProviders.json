@@ -10,7 +10,8 @@
         "privateKey": "swaurn5gnfrbh1s",
         "rootFolder": null,
         "isPrimary": false,
-        "serviceHost": null
+        "serviceHost": null,
+        "syncOptions": "None"
       },
       {
         "id": 54,
@@ -21,11 +22,12 @@
         "privateKey": "fyypebzyu9tpe4753utoe1fcru1bxdnz",
         "rootFolder": null,
         "isPrimary": false,
-        "serviceHost": null
+        "serviceHost": null,
+        "syncOptions": "None"
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1365673487294
+  "composedOn": 1375220677851
 }

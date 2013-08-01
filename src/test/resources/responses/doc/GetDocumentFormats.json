@@ -16,10 +16,11 @@
       "Tiff",
       "Xps",
       "Epub",
-      "Jpeg"
+      "Jpeg",
+      "HtmlFixed"
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1358755737948
+  "composedOn": 1375210049681
 }

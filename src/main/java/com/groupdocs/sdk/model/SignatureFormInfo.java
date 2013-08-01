@@ -38,6 +38,8 @@ public class SignatureFormInfo {
   private String waterMarkText = null;
   private String waterMarkImage = null;
   private Double fieldsCount = null;
+  private Boolean notifyOwnerOnSign = null;
+  private Boolean attachSignedDocument = null;
   public String getId() {
     return id;
   }
@@ -143,6 +145,20 @@ public class SignatureFormInfo {
     this.fieldsCount = fieldsCount;
   }
 
+  public Boolean getNotifyOwnerOnSign() {
+    return notifyOwnerOnSign;
+  }
+  public void setNotifyOwnerOnSign(Boolean notifyOwnerOnSign) {
+    this.notifyOwnerOnSign = notifyOwnerOnSign;
+  }
+
+  public Boolean getAttachSignedDocument() {
+    return attachSignedDocument;
+  }
+  public void setAttachSignedDocument(Boolean attachSignedDocument) {
+    this.attachSignedDocument = attachSignedDocument;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -162,6 +178,8 @@ public class SignatureFormInfo {
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("  fieldsCount: ").append(fieldsCount).append("\n");
+    sb.append("  notifyOwnerOnSign: ").append(notifyOwnerOnSign).append("\n");
+    sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

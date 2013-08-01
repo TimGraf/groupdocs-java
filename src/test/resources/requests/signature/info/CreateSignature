@@ -1,0 +1,7 @@
+POST /v2.0/signature/ea103bbe8cb8ce07/signature?name=Signature%203022425752990485&signature=rl6nNmD5EEqBXCsPg72Zwkr9CO8
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 175
+Groupdocs-Referrer: ruby/1.4.2
+Content-Type: application/json

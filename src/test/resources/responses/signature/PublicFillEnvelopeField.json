@@ -1,0 +1,47 @@
+{
+  "result": {
+    "envelopeId": "5aa86f661a36f7f7b9575fa826d4dcce",
+    "documentId": "fd858b5c6d9aa1b654414323a9cadcc6d704d26cac1fad8242aa8bdf3b10c63f",
+    "recipientId": "3e79365551df699128631cb23db36690",
+    "field": {
+      "id": "5113fe30c59416c8f5bdc05be0d869fb",
+      "envelopeId": "5aa86f661a36f7f7b9575fa826d4dcce",
+      "recipientId": "3e79365551df699128631cb23db36690",
+      "name": "Checkbox",
+      "mandatory": true,
+      "order": 0,
+      "regularExpression": "",
+      "getDataFrom": null,
+      "data": "b24=",
+      "fillTimeStamp": "7/30/2013 9:21:07 PM",
+      "signatureFieldId": 10,
+      "locations": [
+        {
+          "id": "f536a48d65c7a0b1baf1135467f1a87f",
+          "documentId": "fd858b5c6d9aa1b654414323a9cadcc6d704d26cac1fad8242aa8bdf3b10c63f",
+          "fieldId": "5113fe30c59416c8f5bdc05be0d869fb",
+          "page": 1,
+          "locationX": 0.1,
+          "locationY": 0.1,
+          "locationWidth": 25.0,
+          "locationHeight": 25.0,
+          "fontName": "Arial",
+          "fontColor": "black",
+          "fontSize": 10,
+          "fontBold": false,
+          "fontItalic": false,
+          "fontUnderline": false,
+          "align": 0
+        }
+      ],
+      "fieldType": 6,
+      "acceptableValues": "",
+      "defaultValue": "",
+      "tooltip": "Checkbox",
+      "guidanceText": ""
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375219266891
+}

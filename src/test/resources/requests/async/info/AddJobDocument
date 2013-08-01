@@ -1,6 +1,6 @@
-PUT /v2.0/async/ea103bbe8cb8ce07/jobs/724918/files/5ea179dc3f18491bcaa7ae7d9b93da7c0db63216a7f38bef6b790cd7b9257644?signature=FwHz%2Bj%2F3Wa7TkrYyIFBErHxBu8E
+PUT /v2.0/async/ea103bbe8cb8ce07/jobs/801903/files/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca?signature=r1S5nYDnxAXNGfq0yOL%2FJijMjHs
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

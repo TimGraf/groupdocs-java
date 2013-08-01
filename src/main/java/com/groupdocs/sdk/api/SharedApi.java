@@ -93,6 +93,30 @@ public class SharedApi {
       }
     }
   }
+  public FileStream GetHtml (String guid) throws ApiException {
+    // verify required params are set
+    if(guid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/shared/files/{guid}/html".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "guid" + "}", String.valueOf(guid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public FileStream GetPackage (String path) throws ApiException {
     // verify required params are set
     if(path == null ) {

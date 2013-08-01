@@ -42,6 +42,7 @@ public class SignatureTemplateFieldSettings {
   private String defaultValue = null;
   private String tooltip = null;
   private Integer align = null;
+  private String guidanceText = null;
   public String getName() {
     return name;
   }
@@ -182,6 +183,13 @@ public class SignatureTemplateFieldSettings {
     this.align = align;
   }
 
+  public String getGuidanceText() {
+    return guidanceText;
+  }
+  public void setGuidanceText(String guidanceText) {
+    this.guidanceText = guidanceText;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -206,6 +214,7 @@ public class SignatureTemplateFieldSettings {
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("  align: ").append(align).append("\n");
+    sb.append("  guidanceText: ").append(guidanceText).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

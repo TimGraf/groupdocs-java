@@ -27,6 +27,8 @@ public class SignatureFormSettings {
   private Boolean canParticipantDownloadForm = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
+  private Boolean notifyOwnerOnSign  = null;
+  private Boolean attachSignedDocument = null;
   public String getName() {
     return name;
   }
@@ -62,6 +64,20 @@ public class SignatureFormSettings {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Boolean getNotifyOwnerOnSign () {
+    return notifyOwnerOnSign ;
+  }
+  public void setNotifyOwnerOnSign (Boolean notifyOwnerOnSign ) {
+    this.notifyOwnerOnSign  = notifyOwnerOnSign ;
+  }
+
+  public Boolean getAttachSignedDocument() {
+    return attachSignedDocument;
+  }
+  public void setAttachSignedDocument(Boolean attachSignedDocument) {
+    this.attachSignedDocument = attachSignedDocument;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -71,6 +87,8 @@ public class SignatureFormSettings {
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  notifyOwnerOnSign : ").append(notifyOwnerOnSign ).append("\n");
+    sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -1,6 +1,6 @@
-GET /v2.0/doc/ea103bbe8cb8ce07/folders/145252/sharers?signature=%2FIOMhiIzHYbk3xP9ewoHpJcTk5Y
+GET /v2.0/doc/ea103bbe8cb8ce07/folders/167907/sharers?signature=VaJJ0n31lULfJOal%2B4aBYXcHT9E
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

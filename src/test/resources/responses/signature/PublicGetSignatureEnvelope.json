@@ -1,0 +1,52 @@
+{
+  "result": {
+    "envelope": {
+      "id": "2757e229258b3a5d59626e1b93675a24",
+      "name": "Envelope 05565103249326131",
+      "creationDateTime": "2013-07-30T21:25:07.3130000Z",
+      "updatedDateTime": "2013-07-30T21:25:08.1730000Z",
+      "ownerGuid": "ea103bbe8cb8ce07",
+      "status": -1,
+      "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+      "reminderTime": 1,
+      "stepExpireTime": 3,
+      "envelopeExpireTime": 6,
+      "ownerShouldSign": true,
+      "orderedSignature": false,
+      "emailSubject": "Sign this!",
+      "emailBody": "",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "recipients": [
+        {
+          "id": "5716a06e6274aaa16bdb26e5a0aa1a4c",
+          "firstName": "John",
+          "lastName": "Smith",
+          "email": "api-tests@groupdocs.com",
+          "userGuid": "ea103bbe8cb8ce07",
+          "order": 0,
+          "roleId": 2,
+          "status": 0,
+          "statusMessage": null,
+          "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+          "delegatedRecipientId": null,
+          "signatureFingerprint": null,
+          "signatureHost": null,
+          "signatureLocation": null,
+          "signatureBrowser": null,
+          "embedUrl": ""
+        }
+      ],
+      "waterMarkText": "",
+      "waterMarkImage": "",
+      "attachSignedDocument": false,
+      "includeViewLink": true,
+      "canBeCommented": true,
+      "inPersonSign": false,
+      "ownerName": "Pavel Strashniy"
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375219508719
+}

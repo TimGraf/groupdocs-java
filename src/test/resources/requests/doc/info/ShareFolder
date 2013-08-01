@@ -1,6 +1,6 @@
-PUT /v2.0/doc/ea103bbe8cb8ce07/folders/145269/sharers?signature=ln2tvP4Hclt46L7%2Fx7j2FomXkDU
+PUT /v2.0/doc/ea103bbe8cb8ce07/folders/167924/sharers?signature=LmA2CO%2FjOSjSAgKa7ks2RUd9fjo
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 55
 Groupdocs-Referrer: ruby/1.4.2

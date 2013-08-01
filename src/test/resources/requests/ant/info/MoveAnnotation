@@ -1,6 +1,6 @@
-PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/c923e12761a8a6c3/position?signature=VYDFkcbLnL1W2zB5zZa2y5pWij8
+PUT /v2.0/ant/ea103bbe8cb8ce07/annotations/db827f1f3f6880ab/position?signature=0QItOVxhFwyoESSEOBfyYB9WH5o
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 18
 Groupdocs-Referrer: ruby/1.4.2

@@ -110,6 +110,32 @@ public class SharedApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testGetHtml() throws Exception {
+		// sample parameters
+		String guid = "guid";
+		
+		String resourcePath = "/shared/files/{guid}/html".replace("{" + "guid" + "}", String.valueOf(guid));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("shared/GetHtml.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			FileStream response = api.GetHtml(guid);
+			assertThat(response.getInputStream(), not(nullValue()));
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testGetPackage() throws Exception {
 		// sample parameters
 		String path = "path";

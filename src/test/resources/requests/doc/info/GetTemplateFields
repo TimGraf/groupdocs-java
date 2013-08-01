@@ -1,6 +1,6 @@
-GET /v2.0/doc/ea103bbe8cb8ce07/files/b96ca128fe97b93dfe64e37ebe100c5c2f9195f1d6d80bca4e8003406e1591f9/fields?include_geometry=true&signature=jtY1rUJMyuNEWcqcZrULQ7D5G4I
+GET /v2.0/doc/ea103bbe8cb8ce07/files/6b6412d41d6fd7a367d9ed9bcc7bf868f4c717f7cb1dbcfe3ba2d177e94c3a15/fields?include_geometry=true&signature=XJHeZqFz3PEIIn1QpxUPFLXYV98
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

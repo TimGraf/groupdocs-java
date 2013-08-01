@@ -1,6 +1,6 @@
-GET /v2.0/async/ea103bbe8cb8ce07/jobs/726038/documents?signature=UvAVm3i4KFWwrLXaMiS2ro5%2BpsQ
+GET /v2.0/async/ea103bbe8cb8ce07/jobs/802000/documents?signature=kgVOrrrYvyR0AK8Uq5Qr8RHE5k8
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

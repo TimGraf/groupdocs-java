@@ -1,6 +1,6 @@
-PUT /v2.0/merge/ea103bbe8cb8ce07/questionnaires/fe97c624dde22a705683a6027a55a1dc/metadata?signature=q6IKwfgtK34beVobha8fj5jlao8
+PUT /v2.0/merge/ea103bbe8cb8ce07/questionnaires/83490a22d65abcd87e0d121a51bb0278/metadata?signature=Kufh%2BEz5OhPJtbiNr%2Fl%2Bq9Kk9AQ
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 285
 Groupdocs-Referrer: ruby/1.4.2

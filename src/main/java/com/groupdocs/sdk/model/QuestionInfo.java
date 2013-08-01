@@ -16,6 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
+import com.groupdocs.sdk.model.ConditionInfo;
 import com.groupdocs.sdk.model.AnswerInfo;
 /**
  * 
@@ -31,6 +32,7 @@ public class QuestionInfo {
   private Boolean disabled = null;
   private String type = null;
   private List<AnswerInfo> answers = new ArrayList<AnswerInfo>();
+  private List<ConditionInfo> conditions = new ArrayList<ConditionInfo>();
   public String getField() {
     return field;
   }
@@ -80,6 +82,13 @@ public class QuestionInfo {
     this.answers = answers;
   }
 
+  public List<ConditionInfo> getConditions() {
+    return conditions;
+  }
+  public void setConditions(List<ConditionInfo> conditions) {
+    this.conditions = conditions;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -91,6 +100,7 @@ public class QuestionInfo {
     sb.append("  disabled: ").append(disabled).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("  answers: ").append(answers).append("\n");
+    sb.append("  conditions: ").append(conditions).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

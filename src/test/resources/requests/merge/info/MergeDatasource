@@ -1,6 +1,6 @@
-POST /v2.0/merge/ea103bbe8cb8ce07/files/ba5f66787d78634bfd9112a6641dc493b0bcc6c5fba6d7d6ed67545b725b77e4/datasources/20063?signature=ZAVy1M%2BlpGPKMtMT8%2B9siJ1wG%2BE
+POST /v2.0/merge/ea103bbe8cb8ce07/files/d95e53681cbc31a7c001524f64c8aeaf4f71a89f1dffe1c0bd6a6b0e109c91cc/datasources/21948?signature=byEW4Jpi12STJtWUc%2BW4ozhvJjI
 
-Host: dev-api.groupdocs.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

@@ -36,11 +36,13 @@ import com.github.restdriver.clientdriver.ClientDriverResponse;
 import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
+import com.groupdocs.sdk.model.UpdateSubscriptionPlanInfo;
 import com.groupdocs.sdk.model.BillingAddressInfo;
 import com.groupdocs.sdk.model.GetInvoicesResponse;
 import com.groupdocs.sdk.model.GetCountriesResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
+import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlanUsageResponse;
 import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
@@ -62,6 +64,35 @@ public class SystemApiTest extends AbstractUnitTest {
 		api.setBasePath(driver.getBaseUrl());
 	}
 
+	@Test
+	public void testSimulateAssessForPricingPlan() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String discountCode = "discountCode";
+		String planId = "planId";
+		
+		String resourcePath = "/system/{userId}/plans/{planId}/discounts/{discountCode}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "discountCode" + "}", String.valueOf(discountCode)).replace("{" + "planId" + "}", String.valueOf(planId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/SimulateAssessForPricingPlan.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetInvoicesResponse response = api.SimulateAssessForPricingPlan(userId, discountCode, planId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
 	@Test
 	public void testGetUserPlan() throws Exception {
 		// sample parameters
@@ -178,11 +209,11 @@ public class SystemApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String productId = "productId";
-		String userCount = "userCount";
+		UpdateSubscriptionPlanInfo body = getSampleRequest("system/payload/UpdateSubscriptionPlan.json", new TypeReference<UpdateSubscriptionPlanInfo>(){});
 		
-		String resourcePath = "/system/{userId}/subscriptions/{productId}/{userCount}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId)).replace("{" + "userCount" + "}", String.valueOf(userCount));
+		String resourcePath = "/system/{userId}/subscriptions/{productId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "productId" + "}", String.valueOf(productId));
 		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.TEXT_HTML);
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.APPLICATION_JSON);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
@@ -192,7 +223,7 @@ public class SystemApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SetUserSubscriptionPlanResponse response = api.UpdateSubscriptionPlan(userId, productId, userCount);
+			SetUserSubscriptionPlanResponse response = api.UpdateSubscriptionPlan(userId, productId, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -334,6 +365,33 @@ public class SystemApiTest extends AbstractUnitTest {
 		
 		try {
 			GetSubscriptionPlanUsageResponse response = api.GetSubscriptionPlanUsage(userId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetPurchseWizardInfo() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		
+		String resourcePath = "/system/{userId}/purchase/wizard".replace("{" + "userId" + "}", String.valueOf(userId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/GetPurchseWizardInfo.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetPurchaseWizardResponse response = api.GetPurchseWizardInfo(userId);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

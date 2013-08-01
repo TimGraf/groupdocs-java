@@ -1,0 +1,6 @@
+POST /v2.0/signature/public/verify?signature=RWNuPK5rv0LfnlhnxH9J5Wz213s
+
+Host: dev-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2
