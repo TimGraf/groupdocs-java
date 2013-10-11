@@ -37,6 +37,7 @@ public class SubscriptionPlanInfo {
   private String currencyCode = null;
   private Integer billingPeriod = null;
   private String promoCode = null;
+  private String nextAssesmentDate = null;
   public Integer getProductId() {
     return productId;
   }
@@ -128,6 +129,13 @@ public class SubscriptionPlanInfo {
     this.promoCode = promoCode;
   }
 
+  public String getNextAssesmentDate() {
+    return nextAssesmentDate;
+  }
+  public void setNextAssesmentDate(String nextAssesmentDate) {
+    this.nextAssesmentDate = nextAssesmentDate;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -145,6 +153,7 @@ public class SubscriptionPlanInfo {
     sb.append("  currencyCode: ").append(currencyCode).append("\n");
     sb.append("  billingPeriod: ").append(billingPeriod).append("\n");
     sb.append("  promoCode: ").append(promoCode).append("\n");
+    sb.append("  nextAssesmentDate: ").append(nextAssesmentDate).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

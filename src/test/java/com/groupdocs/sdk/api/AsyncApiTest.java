@@ -64,34 +64,6 @@ public class AsyncApiTest extends AbstractUnitTest {
 	}
 
 	@Test
-	public void testGetJob() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String jobId = "jobId";
-		
-		String resourcePath = "/async/{userId}/jobs/{jobId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("async/GetJob.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			GetJobResponse response = api.GetJob(userId, jobId);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
 	public void testGetJobJson() throws Exception {
 		// sample parameters
 		String userId = "userId";

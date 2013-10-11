@@ -38,6 +38,7 @@ import com.github.restdriver.clientdriver.ClientDriverRule;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.model.UpdateStorageProviderResponse;
 import com.groupdocs.sdk.model.DeleteAccountUserResponse;
+import com.groupdocs.sdk.model.RevokeResponse;
 import com.groupdocs.sdk.model.UserInfoResponse;
 import com.groupdocs.sdk.model.UserInfo;
 import com.groupdocs.sdk.model.SetUserRolesResponse;
@@ -117,6 +118,33 @@ public class MgmtApiTest extends AbstractUnitTest {
 		
 		try {
 			UpdateUserResponse response = api.UpdateUserProfile(userId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testRevoke() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		
+		String resourcePath = "/mgmt/{userId}/revoke".replace("{" + "userId" + "}", String.valueOf(userId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("mgmt/Revoke.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			RevokeResponse response = api.Revoke(userId);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

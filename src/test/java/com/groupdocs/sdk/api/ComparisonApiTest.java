@@ -199,6 +199,7 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		
 		try {
 			FileStream response = api.DownloadResult(userId, resultFileId, format);
+			assertThat(response, not(nullValue()));
 			assertThat(response.getInputStream(), not(nullValue()));
 			
 		} catch(ApiException e){

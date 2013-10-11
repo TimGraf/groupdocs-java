@@ -40,12 +40,13 @@ import com.groupdocs.sdk.model.UpdateSubscriptionPlanInfo;
 import com.groupdocs.sdk.model.BillingAddressInfo;
 import com.groupdocs.sdk.model.GetInvoicesResponse;
 import com.groupdocs.sdk.model.GetCountriesResponse;
+import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
-import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlanUsageResponse;
 import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
+import com.groupdocs.sdk.model.GetTermSuggestionsResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlansResponse;
 import com.groupdocs.sdk.model.GetStatesResponse;
 import com.groupdocs.sdk.model.SetUserSubscriptionPlanResponse;
@@ -392,6 +393,34 @@ public class SystemApiTest extends AbstractUnitTest {
 		
 		try {
 			GetPurchaseWizardResponse response = api.GetPurchseWizardInfo(userId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetTermSuggestions() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String term = "term";
+		
+		String resourcePath = "/system/{userId}/terms/{term}/suggestions".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "term" + "}", String.valueOf(term));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/GetTermSuggestions.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetTermSuggestionsResponse response = api.GetTermSuggestions(userId, term);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

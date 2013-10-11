@@ -21,12 +21,13 @@ import com.groupdocs.sdk.model.UpdateSubscriptionPlanInfo;
 import com.groupdocs.sdk.model.BillingAddressInfo;
 import com.groupdocs.sdk.model.GetInvoicesResponse;
 import com.groupdocs.sdk.model.GetCountriesResponse;
+import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetPlanResponse;
 import com.groupdocs.sdk.model.SubscriptionPlanInfo;
-import com.groupdocs.sdk.model.GetPurchaseWizardResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlanUsageResponse;
 import com.groupdocs.sdk.model.GetBillingAddressResponse;
 import com.groupdocs.sdk.model.GetUserSubscriptionPlanResponse;
+import com.groupdocs.sdk.model.GetTermSuggestionsResponse;
 import com.groupdocs.sdk.model.GetSubscriptionPlansResponse;
 import com.groupdocs.sdk.model.GetStatesResponse;
 import com.groupdocs.sdk.model.SetUserSubscriptionPlanResponse;
@@ -403,6 +404,36 @@ public class SystemApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetPurchaseWizardResponse) ApiInvoker.deserialize(response, "", GetPurchaseWizardResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetTermSuggestionsResponse GetTermSuggestions (String userId, String term) throws ApiException {
+    // verify required params are set
+    if(userId == null || term == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/terms/{term}/suggestions".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "term" + "}", String.valueOf(term));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetTermSuggestionsResponse) ApiInvoker.deserialize(response, "", GetTermSuggestionsResponse.class);
       }
       else {
         return null;

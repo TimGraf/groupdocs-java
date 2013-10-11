@@ -47,6 +47,7 @@ public class SignatureEnvelopeInfo {
   private Boolean includeViewLink = null;
   private Boolean canBeCommented = null;
   private Boolean inPersonSign = null;
+  private String ownerName = null;
   public String getId() {
     return id;
   }
@@ -208,6 +209,13 @@ public class SignatureEnvelopeInfo {
     this.inPersonSign = inPersonSign;
   }
 
+  public String getOwnerName() {
+    return ownerName;
+  }
+  public void setOwnerName(String ownerName) {
+    this.ownerName = ownerName;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -235,6 +243,7 @@ public class SignatureEnvelopeInfo {
     sb.append("  includeViewLink: ").append(includeViewLink).append("\n");
     sb.append("  canBeCommented: ").append(canBeCommented).append("\n");
     sb.append("  inPersonSign: ").append(inPersonSign).append("\n");
+    sb.append("  ownerName: ").append(ownerName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

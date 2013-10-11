@@ -16,7 +16,8 @@
             "price": 200,
             "currencyCode": "USD",
             "billingPeriod": null,
-            "promoCode": null
+            "promoCode": null,
+            "nextAssesmentDate": null
         }
     },
     "status": "Ok",

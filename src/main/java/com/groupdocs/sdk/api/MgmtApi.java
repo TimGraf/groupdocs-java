@@ -19,6 +19,7 @@ import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.UpdateStorageProviderResponse;
 import com.groupdocs.sdk.model.DeleteAccountUserResponse;
+import com.groupdocs.sdk.model.RevokeResponse;
 import com.groupdocs.sdk.model.UserInfoResponse;
 import com.groupdocs.sdk.model.UserInfo;
 import com.groupdocs.sdk.model.SetUserRolesResponse;
@@ -102,6 +103,36 @@ public class MgmtApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateUserResponse) ApiInvoker.deserialize(response, "", UpdateUserResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public RevokeResponse Revoke (String userId) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/mgmt/{userId}/revoke".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (RevokeResponse) ApiInvoker.deserialize(response, "", RevokeResponse.class);
       }
       else {
         return null;

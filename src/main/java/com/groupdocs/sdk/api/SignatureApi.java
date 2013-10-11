@@ -18,66 +18,68 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.common.FileStream;
-import com.groupdocs.sdk.model.SignatureEnvelopeResponse;
+import com.groupdocs.sdk.model.SignatureTemplateRecipientsResponse;
 import com.groupdocs.sdk.model.SignatureStatusResponse;
 import com.groupdocs.sdk.model.SignatureContactResponse;
+import com.groupdocs.sdk.model.SignatureFormSettingsInfo;
+import com.groupdocs.sdk.model.SignatureFormFieldLocationSettingsInfo;
 import com.groupdocs.sdk.model.SignatureRolesResponse;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldsResponse;
+import com.groupdocs.sdk.model.PublicSignatureSignDocumentSignerSettingsInfo;
 import com.groupdocs.sdk.model.SignatureFormDocumentsResponse;
+import com.groupdocs.sdk.model.WebhookInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopeRecipientResponse;
-import com.groupdocs.sdk.model.PublicSignatureSignDocumentSignerSettings;
+import com.groupdocs.sdk.model.SignatureSignatureSettingsInfo;
 import com.groupdocs.sdk.model.SignatureFormResponse;
+import com.groupdocs.sdk.model.SignatureTemplateFieldLocationSettingsInfo;
+import com.groupdocs.sdk.model.SignatureFieldSettingsInfo;
+import com.groupdocs.sdk.model.SignatureFormDocumentSettingsInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopeResourcesResponse;
-import com.groupdocs.sdk.model.SignatureContactSettings;
 import com.groupdocs.sdk.model.SignatureEnvelopeDocumentsResponse;
 import com.groupdocs.sdk.model.SignatureTemplatesResponse;
-import com.groupdocs.sdk.model.SignatureTemplateAssignFieldSettings;
+import com.groupdocs.sdk.model.SignaturePredefinedListSettingsInfo;
 import com.groupdocs.sdk.model.SignatureFieldsResponse;
 import com.groupdocs.sdk.model.SignatureTemplateFieldsResponse;
+import com.groupdocs.sdk.model.SignatureEnvelopeFieldSettingsInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldResponse;
-import com.groupdocs.sdk.model.SignaturePredefinedListSettings;
 import com.groupdocs.sdk.model.SignatureContactsResponse;
-import com.groupdocs.sdk.model.SignatureEnvelopeSettings;
 import com.groupdocs.sdk.model.SignatureFormsResponse;
-import com.groupdocs.sdk.model.SignatureFormFieldLocationSettings;
-import com.groupdocs.sdk.model.SignatureSignatureSettings;
 import com.groupdocs.sdk.model.SignatureTemplateDocumentResponse;
-import com.groupdocs.sdk.model.SignatureTemplateFieldSettings;
-import com.groupdocs.sdk.model.SignatureEnvelopeFieldSettings;
 import com.groupdocs.sdk.model.SignatureFormDocumentResponse;
+import com.groupdocs.sdk.model.SignatureEnvelopeSettingsInfo;
 import com.groupdocs.sdk.model.SignatureSignDocumentResponse;
-import com.groupdocs.sdk.model.SignatureFormSettings;
-import com.groupdocs.sdk.model.SignatureFormFieldSettings;
 import com.groupdocs.sdk.model.SignatureFormResourcesResponse;
-import com.groupdocs.sdk.model.SignatureTemplateSettings;
 import com.groupdocs.sdk.model.SignatureContactsImportResponse;
 import com.groupdocs.sdk.model.SignatureFormFieldResponse;
 import com.groupdocs.sdk.model.SignatureFormParticipantResponse;
+import com.groupdocs.sdk.model.SignatureFormFieldSettingsInfo;
 import com.groupdocs.sdk.model.SignatureTemplateResourcesResponse;
 import com.groupdocs.sdk.model.SignatureTemplateDocumentsResponse;
-import com.groupdocs.sdk.model.SignatureEnvelopeFieldLocationSettings;
 import com.groupdocs.sdk.model.SignatureEnvelopeRecipientsResponse;
 import com.groupdocs.sdk.model.SignatureSignatureResponse;
 import com.groupdocs.sdk.model.SignatureFieldResponse;
 import com.groupdocs.sdk.model.SignatureTemplateFieldResponse;
-import com.groupdocs.sdk.model.SignatureEnvelopeAssignFieldSettings;
-import com.groupdocs.sdk.model.SignatureTemplateFieldLocationSettings;
 import com.groupdocs.sdk.model.SignatureTemplateRecipientResponse;
+import com.groupdocs.sdk.model.SignatureSignDocumentSettingsInfo;
+import com.groupdocs.sdk.model.SignatureEnvelopeFieldLocationSettingsInfo;
+import com.groupdocs.sdk.model.SignatureTemplateSettingsInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopesResponse;
 import com.groupdocs.sdk.model.SignatureFormFieldsResponse;
 import com.groupdocs.sdk.model.SignatureEnvelopeDocumentResponse;
-import com.groupdocs.sdk.model.SignatureFieldSettings;
 import com.groupdocs.sdk.model.SignaturePredefinedListResponse;
-import com.groupdocs.sdk.model.SignatureSignDocumentSettings;
+import com.groupdocs.sdk.model.SignatureContactSettingsInfo;
 import com.groupdocs.sdk.model.SignatureSignaturesResponse;
+import com.groupdocs.sdk.model.SignatureTemplateAssignFieldSettingsInfo;
+import com.groupdocs.sdk.model.SignatureTemplateFieldSettingsInfo;
 import com.groupdocs.sdk.model.SignatureVerifyDocumentResponse;
 import com.groupdocs.sdk.model.SignaturePredefinedListsResponse;
+import com.groupdocs.sdk.model.SignatureEnvelopeAssignFieldSettingsInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopeAuditLogsResponse;
 import com.groupdocs.sdk.model.SignatureContactIntegrationSettings;
 import com.groupdocs.sdk.model.SignatureEnvelopeSendResponse;
 import com.groupdocs.sdk.model.SignatureTemplateResponse;
 import com.groupdocs.sdk.model.SignatureSignDocumentStatusResponse;
-import com.groupdocs.sdk.model.SignatureTemplateRecipientsResponse;
+import com.groupdocs.sdk.model.SignatureEnvelopeResponse;
 import java.util.*;
 
 public class SignatureApi {
@@ -96,6 +98,392 @@ public class SignatureApi {
     return basePath;
   }
 
+  public SignatureTemplateRecipientsResponse GetSignatureTemplateRecipients (String userId, String templateGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipients".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateRecipientsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateRecipientsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureStatusResponse DeleteSignatureTemplateRecipient (String userId, String templateGuid, String recipientGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || recipientGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipients/{recipientGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateRecipientResponse ModifySignatureTemplateRecipient (String userId, String templateGuid, String recipientGuid, String nickname, String roleGuid, String order) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || recipientGuid == null || nickname == null || roleGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipient/{recipientGuid}?nickname={nickname}&role={roleGuid}&order={order}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(nickname)))
+      queryParams.put("nickname", String.valueOf(nickname));
+    if(!"null".equals(String.valueOf(roleGuid)))
+      queryParams.put("role", String.valueOf(roleGuid));
+    if(!"null".equals(String.valueOf(order)))
+      queryParams.put("order", String.valueOf(order));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateRecipientResponse) ApiInvoker.deserialize(response, "", SignatureTemplateRecipientResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateDocumentResponse AddSignatureTemplateDocument (String userId, String templateGuid, String documentGuid, Integer order, Boolean parseFields) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/document/{documentGuid}?parseFields={parseFields}&order={order}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(order)))
+      queryParams.put("order", String.valueOf(order));
+    if(!"null".equals(String.valueOf(parseFields)))
+      queryParams.put("parseFields", String.valueOf(parseFields));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateDocumentResponse) ApiInvoker.deserialize(response, "", SignatureTemplateDocumentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateDocumentsResponse GetSignatureTemplateDocuments (String userId, String templateGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateDocumentsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateDocumentsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureStatusResponse DeleteSignatureTemplateDocument (String userId, String templateGuid, String documentGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateFieldResponse AddSignatureTemplateField (String userId, String templateGuid, String documentGuid, String recipientGuid, String fieldGuid, SignatureTemplateFieldSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/recipient/{recipientGuid}/field/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateFieldResponse AssignSignatureTemplateField (String userId, String templateGuid, String documentGuid, String fieldGuid, SignatureTemplateAssignFieldSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/field/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateFieldResponse ModifySignatureTemplateField (String userId, String templateGuid, String documentGuid, String fieldGuid, SignatureTemplateFieldSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/field/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureStatusResponse DeleteSignatureTemplateFieldLocation (String userId, String templateGuid, String fieldGuid, String locationGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || fieldGuid == null || locationGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/fields/{fieldGuid}/locations/{locationGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid)).replace("{" + "locationGuid" + "}", String.valueOf(locationGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateFieldResponse ModifySignatureTemplateFieldLocation (String userId, String templateGuid, String documentGuid, String recipientGuid, String fieldGuid, String locationGuid, SignatureTemplateFieldLocationSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null || locationGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/recipient/{recipientGuid}/fields/{fieldGuid}/locations/{locationGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid)).replace("{" + "locationGuid" + "}", String.valueOf(locationGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureTemplateFieldsResponse GetSignatureTemplateFields (String userId, String templateGuid, String documentGuid, String recipientGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || templateGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/templates/{templateGuid}/fields?document={documentGuid}&recipient={recipientGuid}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(documentGuid)))
+      queryParams.put("document", String.valueOf(documentGuid));
+    if(!"null".equals(String.valueOf(recipientGuid)))
+      queryParams.put("recipient", String.valueOf(recipientGuid));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureTemplateFieldsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public SignatureTemplateResponse DeleteSignatureTemplateField (String userId, String templateGuid, String fieldGuid) throws ApiException {
     // verify required params are set
     if(userId == null || templateGuid == null || fieldGuid == null ) {
@@ -192,132 +580,6 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFieldsResponse GetFieldsList (String userId, String fieldGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/fields?id={fieldGuid}".replace("*", "");
-  	int pos = resourcePath.indexOf("?");
-  	if(pos > -1){
-  		resourcePath = resourcePath.substring(0, pos);
-  	}
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    if(!"null".equals(String.valueOf(fieldGuid)))
-      queryParams.put("id", String.valueOf(fieldGuid));
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureFieldsResponse) ApiInvoker.deserialize(response, "", SignatureFieldsResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureFieldResponse CreateSignatureField (String userId, SignatureFieldSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/field".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureFieldResponse) ApiInvoker.deserialize(response, "", SignatureFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureFieldResponse ModifySignatureField (String userId, String fieldGuid, SignatureFieldSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null || fieldGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/fields/{fieldGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureFieldResponse) ApiInvoker.deserialize(response, "", SignatureFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureStatusResponse DeleteSignatureField (String userId, String fieldGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || fieldGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/fields/{fieldGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
   public SignatureContactsResponse GetContacts (String userId, Integer page, Integer records, String firstName, String lastName, String email) throws ApiException {
     // verify required params are set
     if(userId == null ) {
@@ -362,7 +624,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureContactResponse AddContact (String userId, SignatureContactSettings body) throws ApiException {
+  public SignatureContactResponse AddContact (String userId, SignatureContactSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || body == null ) {
        throw new ApiException(400, "missing required params");
@@ -392,7 +654,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureContactResponse ModifyContact (String userId, String contactGuid, SignatureContactSettings body) throws ApiException {
+  public SignatureContactResponse ModifyContact (String userId, String contactGuid, SignatureContactSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || contactGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -452,7 +714,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureContactsImportResponse ImportContacts (String userId, List<SignatureContactSettings> body) throws ApiException {
+  public SignatureContactsImportResponse ImportContacts (String userId, List<SignatureContactSettingsInfo> body) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
@@ -512,7 +774,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureSignDocumentResponse SignDocument (String userId, SignatureSignDocumentSettings body) throws ApiException {
+  public SignatureSignDocumentResponse SignDocument (String userId, SignatureSignDocumentSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
@@ -632,7 +894,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeResponse CreateSignatureEnvelope (String userId, String name, String templateGuid, String envelopeGuid, String documentGuid, Boolean parseFields, SignatureEnvelopeSettings body) throws ApiException {
+  public SignatureEnvelopeResponse CreateSignatureEnvelope (String userId, String name, String templateGuid, String envelopeGuid, String documentGuid, Boolean parseFields, SignatureEnvelopeSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
@@ -922,7 +1184,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeFieldsResponse AddSignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String recipientGuid, String fieldGuid, SignatureEnvelopeFieldSettings body) throws ApiException {
+  public SignatureEnvelopeFieldsResponse AddSignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String recipientGuid, String fieldGuid, SignatureEnvelopeFieldSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || envelopeGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -952,7 +1214,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeFieldResponse AssignSignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String fieldGuid, SignatureEnvelopeAssignFieldSettings body) throws ApiException {
+  public SignatureEnvelopeFieldResponse AssignSignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String fieldGuid, SignatureEnvelopeAssignFieldSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || envelopeGuid == null || documentGuid == null || fieldGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -1018,7 +1280,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeFieldResponse ModifySignatureEnvelopeFieldLocation (String userId, String envelopeGuid, String documentGuid, String recipientGuid, String fieldGuid, String locationGuid, SignatureEnvelopeFieldLocationSettings body) throws ApiException {
+  public SignatureEnvelopeFieldResponse ModifySignatureEnvelopeFieldLocation (String userId, String envelopeGuid, String documentGuid, String recipientGuid, String fieldGuid, String locationGuid, SignatureEnvelopeFieldLocationSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || envelopeGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null || locationGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -1078,7 +1340,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeFieldResponse ModifySignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String fieldGuid, SignatureEnvelopeFieldSettings body) throws ApiException {
+  public SignatureEnvelopeFieldResponse ModifySignatureEnvelopeField (String userId, String envelopeGuid, String documentGuid, String fieldGuid, SignatureEnvelopeFieldSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || envelopeGuid == null || documentGuid == null || fieldGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -1206,7 +1468,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeResponse ModifySignatureEnvelope (String userId, String envelopeGuid, SignatureEnvelopeSettings body) throws ApiException {
+  public SignatureEnvelopeResponse ModifySignatureEnvelope (String userId, String envelopeGuid, SignatureEnvelopeSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || envelopeGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -1450,9 +1712,9 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureEnvelopeSendResponse SignatureEnvelopeSend (String userId, String envelopeGuid, FileStream body) throws ApiException {
+  public SignatureEnvelopeSendResponse SignatureEnvelopeSend (String userId, String envelopeGuid, WebhookInfo body) throws ApiException {
     // verify required params are set
-    if(userId == null || envelopeGuid == null || body == null ) {
+    if(userId == null || envelopeGuid == null ) {
        throw new ApiException(400, "missing required params");
     }
     String resourcePath = "/signature/{userId}/envelopes/{envelopeGuid}/send".replace("*", "");
@@ -1700,6 +1962,162 @@ public class SignatureApi {
       }
     }
   }
+  public SignatureStatusResponse RetrySignEnvelope (String userId, String envelopeGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || envelopeGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/envelopes/{envelopeGuid}/retry".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "envelopeGuid" + "}", String.valueOf(envelopeGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureFieldsResponse GetFieldsList (String userId, String fieldGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/fields?id={fieldGuid}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(fieldGuid)))
+      queryParams.put("id", String.valueOf(fieldGuid));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureFieldsResponse) ApiInvoker.deserialize(response, "", SignatureFieldsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureFieldResponse CreateSignatureField (String userId, SignatureFieldSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/field".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureFieldResponse) ApiInvoker.deserialize(response, "", SignatureFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureFieldResponse ModifySignatureField (String userId, String fieldGuid, SignatureFieldSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/fields/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureFieldResponse) ApiInvoker.deserialize(response, "", SignatureFieldResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureStatusResponse DeleteSignatureField (String userId, String fieldGuid) throws ApiException {
+    // verify required params are set
+    if(userId == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/fields/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public SignatureStatusResponse ArchiveSignatureForm (String userId, String formGuid) throws ApiException {
     // verify required params are set
     if(userId == null || formGuid == null ) {
@@ -1760,7 +2178,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFormResponse CreateSignatureForm (String userId, String name, String templateGuid, String assemblyGuid, String formGuid, SignatureFormSettings body) throws ApiException {
+  public SignatureFormResponse CreateSignatureForm (String userId, String name, String templateGuid, String assemblyGuid, String formGuid, SignatureFormSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
@@ -1930,7 +2348,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFormFieldResponse AddSignatureFormField (String userId, String formGuid, String documentGuid, String fieldGuid, SignatureFormFieldSettings body) throws ApiException {
+  public SignatureFormFieldResponse AddSignatureFormField (String userId, String formGuid, String documentGuid, String fieldGuid, SignatureFormFieldSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || formGuid == null || documentGuid == null || fieldGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -1960,7 +2378,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFormFieldResponse ModifySignatureFormFieldLocation (String userId, String formGuid, String documentGuid, String fieldGuid, String locationGuid, SignatureFormFieldLocationSettings body) throws ApiException {
+  public SignatureFormFieldResponse ModifySignatureFormFieldLocation (String userId, String formGuid, String documentGuid, String fieldGuid, String locationGuid, SignatureFormFieldLocationSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || formGuid == null || documentGuid == null || fieldGuid == null || locationGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -2020,7 +2438,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFormFieldResponse ModifySignatureFormField (String userId, String formGuid, String documentGuid, String fieldGuid, SignatureFormFieldSettings body) throws ApiException {
+  public SignatureFormFieldResponse ModifySignatureFormField (String userId, String formGuid, String documentGuid, String fieldGuid, SignatureFormFieldSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || formGuid == null || documentGuid == null || fieldGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -2140,7 +2558,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureFormResponse ModifySignatureForm (String userId, String formGuid, SignatureFormSettings body) throws ApiException {
+  public SignatureFormResponse ModifySignatureForm (String userId, String formGuid, SignatureFormSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || formGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -2170,9 +2588,9 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureStatusResponse PublishSignatureForm (String userId, String formGuid, FileStream body) throws ApiException {
+  public SignatureStatusResponse PublishSignatureForm (String userId, String formGuid, WebhookInfo body) throws ApiException {
     // verify required params are set
-    if(userId == null || formGuid == null || body == null ) {
+    if(userId == null || formGuid == null ) {
        throw new ApiException(400, "missing required params");
     }
     String resourcePath = "/signature/{userId}/forms/{formGuid}/publish".replace("*", "");
@@ -2372,6 +2790,72 @@ public class SignatureApi {
       }
     }
   }
+  public SignatureFormDocumentResponse RenameSignatureFormDocument (String userId, String formGuid, String documentGuid, String newName) throws ApiException {
+    // verify required params are set
+    if(userId == null || formGuid == null || documentGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/forms/{formGuid}/document/{documentGuid}?newName={newName}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "formGuid" + "}", String.valueOf(formGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(newName)))
+      queryParams.put("newName", String.valueOf(newName));
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (SignatureFormDocumentResponse) ApiInvoker.deserialize(response, "", SignatureFormDocumentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public SignatureFormDocumentResponse ModifySignatureFormDocument (String userId, String formGuid, String documentGuid, SignatureFormDocumentSettingsInfo body) throws ApiException {
+    // verify required params are set
+    if(userId == null || formGuid == null || documentGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/{userId}/forms/{formGuid}/document/{documentGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "formGuid" + "}", String.valueOf(formGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (SignatureFormDocumentResponse) ApiInvoker.deserialize(response, "", SignatureFormDocumentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public SignaturePredefinedListsResponse GetSignaturePredefinedLists (String userId) throws ApiException {
     // verify required params are set
     if(userId == null ) {
@@ -2402,7 +2886,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignaturePredefinedListResponse AddPredefinedList (String userId, SignaturePredefinedListSettings body) throws ApiException {
+  public SignaturePredefinedListResponse AddPredefinedList (String userId, SignaturePredefinedListSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || body == null ) {
        throw new ApiException(400, "missing required params");
@@ -2498,7 +2982,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureSignatureResponse CreateSignature (String userId, String name, SignatureSignatureSettings body) throws ApiException {
+  public SignatureSignatureResponse CreateSignature (String userId, String name, SignatureSignatureSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || name == null ) {
        throw new ApiException(400, "missing required params");
@@ -2678,7 +3162,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureTemplateResponse CreateSignatureTemplate (String userId, String name, String templateGuid, String envelopeGuid, SignatureTemplateSettings body) throws ApiException {
+  public SignatureTemplateResponse CreateSignatureTemplate (String userId, String name, String templateGuid, String envelopeGuid, SignatureTemplateSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
@@ -2718,7 +3202,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureTemplateResponse ModifySignatureTemplate (String userId, String templateGuid, SignatureTemplateSettings body) throws ApiException {
+  public SignatureTemplateResponse ModifySignatureTemplate (String userId, String templateGuid, SignatureTemplateSettingsInfo body) throws ApiException {
     // verify required params are set
     if(userId == null || templateGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -2841,392 +3325,6 @@ public class SignatureApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (SignatureTemplateRecipientResponse) ApiInvoker.deserialize(response, "", SignatureTemplateRecipientResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateRecipientsResponse GetSignatureTemplateRecipients (String userId, String templateGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipients".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateRecipientsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateRecipientsResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureStatusResponse DeleteSignatureTemplateRecipient (String userId, String templateGuid, String recipientGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || recipientGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipients/{recipientGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateRecipientResponse ModifySignatureTemplateRecipient (String userId, String templateGuid, String recipientGuid, String nickname, String roleGuid, String order) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || recipientGuid == null || nickname == null || roleGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipient/{recipientGuid}?nickname={nickname}&role={roleGuid}&order={order}".replace("*", "");
-  	int pos = resourcePath.indexOf("?");
-  	if(pos > -1){
-  		resourcePath = resourcePath.substring(0, pos);
-  	}
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    if(!"null".equals(String.valueOf(nickname)))
-      queryParams.put("nickname", String.valueOf(nickname));
-    if(!"null".equals(String.valueOf(roleGuid)))
-      queryParams.put("role", String.valueOf(roleGuid));
-    if(!"null".equals(String.valueOf(order)))
-      queryParams.put("order", String.valueOf(order));
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateRecipientResponse) ApiInvoker.deserialize(response, "", SignatureTemplateRecipientResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateDocumentResponse AddSignatureTemplateDocument (String userId, String templateGuid, String documentGuid, Integer order, Boolean parseFields) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/document/{documentGuid}?parseFields={parseFields}&order={order}".replace("*", "");
-  	int pos = resourcePath.indexOf("?");
-  	if(pos > -1){
-  		resourcePath = resourcePath.substring(0, pos);
-  	}
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    if(!"null".equals(String.valueOf(order)))
-      queryParams.put("order", String.valueOf(order));
-    if(!"null".equals(String.valueOf(parseFields)))
-      queryParams.put("parseFields", String.valueOf(parseFields));
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateDocumentResponse) ApiInvoker.deserialize(response, "", SignatureTemplateDocumentResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateDocumentsResponse GetSignatureTemplateDocuments (String userId, String templateGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateDocumentsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateDocumentsResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureStatusResponse DeleteSignatureTemplateDocument (String userId, String templateGuid, String documentGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateFieldResponse AddSignatureTemplateField (String userId, String templateGuid, String documentGuid, String recipientGuid, String fieldGuid, SignatureTemplateFieldSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/recipient/{recipientGuid}/field/{fieldGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateFieldResponse AssignSignatureTemplateField (String userId, String templateGuid, String documentGuid, String fieldGuid, SignatureTemplateAssignFieldSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null || fieldGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/field/{fieldGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateFieldResponse ModifySignatureTemplateField (String userId, String templateGuid, String documentGuid, String fieldGuid, SignatureTemplateFieldSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null || fieldGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/field/{fieldGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureStatusResponse DeleteSignatureTemplateFieldLocation (String userId, String templateGuid, String fieldGuid, String locationGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || fieldGuid == null || locationGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/fields/{fieldGuid}/locations/{locationGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid)).replace("{" + "locationGuid" + "}", String.valueOf(locationGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureStatusResponse) ApiInvoker.deserialize(response, "", SignatureStatusResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateFieldResponse ModifySignatureTemplateFieldLocation (String userId, String templateGuid, String documentGuid, String recipientGuid, String fieldGuid, String locationGuid, SignatureTemplateFieldLocationSettings body) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null || documentGuid == null || recipientGuid == null || fieldGuid == null || locationGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/documents/{documentGuid}/recipient/{recipientGuid}/fields/{fieldGuid}/locations/{locationGuid}".replace("*", "");
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid)).replace("{" + "documentGuid" + "}", String.valueOf(documentGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid)).replace("{" + "locationGuid" + "}", String.valueOf(locationGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateFieldResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldResponse.class);
-      }
-      else {
-        return null;
-      }
-      } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  public SignatureTemplateFieldsResponse GetSignatureTemplateFields (String userId, String templateGuid, String documentGuid, String recipientGuid) throws ApiException {
-    // verify required params are set
-    if(userId == null || templateGuid == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    String resourcePath = "/signature/{userId}/templates/{templateGuid}/fields?document={documentGuid}&recipient={recipientGuid}".replace("*", "");
-  	int pos = resourcePath.indexOf("?");
-  	if(pos > -1){
-  		resourcePath = resourcePath.substring(0, pos);
-  	}
-  	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-
-    if(!"null".equals(String.valueOf(documentGuid)))
-      queryParams.put("document", String.valueOf(documentGuid));
-    if(!"null".equals(String.valueOf(recipientGuid)))
-      queryParams.put("recipient", String.valueOf(recipientGuid));
-    try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (SignatureTemplateFieldsResponse) ApiInvoker.deserialize(response, "", SignatureTemplateFieldsResponse.class);
       }
       else {
         return null;
@@ -3428,7 +3526,7 @@ public class SignatureApi {
       }
     }
   }
-  public String PublicGetSignedEnvelopeDocuments (String envelopeGuid, String recipientGuid) throws ApiException {
+  public FileStream PublicGetSignedEnvelopeDocuments (String envelopeGuid, String recipientGuid) throws ApiException {
     // verify required params are set
     if(envelopeGuid == null || recipientGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -3442,13 +3540,7 @@ public class SignatureApi {
     Map<String, String> headerParams = new HashMap<String, String>();
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
-      }
-      else {
-        return null;
-      }
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
@@ -3658,7 +3750,7 @@ public class SignatureApi {
       }
     }
   }
-  public String PublicGetSignedFormDocuments (String formGuid, String participantGuid) throws ApiException {
+  public FileStream PublicGetSignedFormDocuments (String formGuid, String participantGuid) throws ApiException {
     // verify required params are set
     if(formGuid == null || participantGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -3672,13 +3764,7 @@ public class SignatureApi {
     Map<String, String> headerParams = new HashMap<String, String>();
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
-      if(response != null){
-        return (String) ApiInvoker.deserialize(response, "", String.class);
-      }
-      else {
-        return null;
-      }
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
@@ -3718,7 +3804,7 @@ public class SignatureApi {
       }
     }
   }
-  public SignatureSignDocumentResponse PublicSignDocument (String documentGuid, PublicSignatureSignDocumentSignerSettings body) throws ApiException {
+  public SignatureSignDocumentResponse PublicSignDocument (String documentGuid, PublicSignatureSignDocumentSignerSettingsInfo body) throws ApiException {
     // verify required params are set
     if(documentGuid == null ) {
        throw new ApiException(400, "missing required params");
@@ -3799,6 +3885,30 @@ public class SignatureApi {
       else {
         return null;
       }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public FileStream GetSignatureEnvelopeFieldData (String envelopeGuid, String recipientGuid, String fieldGuid) throws ApiException {
+    // verify required params are set
+    if(envelopeGuid == null || recipientGuid == null || fieldGuid == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/signature/public/envelopes/{envelopeGuid}/fields/recipient/{recipientGuid}/field/{fieldGuid}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "envelopeGuid" + "}", String.valueOf(envelopeGuid)).replace("{" + "recipientGuid" + "}", String.valueOf(recipientGuid)).replace("{" + "fieldGuid" + "}", String.valueOf(fieldGuid));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      return apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, FileStream.class);
       } catch (ApiException ex) {
       if(ex.getCode() == 404) {
       	return null;
