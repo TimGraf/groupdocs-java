@@ -174,7 +174,7 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		String fileId = "SomeFileGuid";
 
 		String resourcePath = "/ant/{userId}/files/{fileId}/reviewerRights".replace("{userId}", userId).replace("{fileId}", fileId);
-		String body = "[{\"id\":1232.0,\"access_rights\":1},{\"id\":1233.0,\"access_rights\":0}]";
+		String body = "[{\"id\":1232,\"access_rights\":1},{\"id\":1233,\"access_rights\":0}]";
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.PUT).withBody(body, MediaType.APPLICATION_JSON), 
                 giveResponse(getSampleResponse("ant/SetReviewerRights.json")).withStatus(200));

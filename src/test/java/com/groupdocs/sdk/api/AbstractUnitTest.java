@@ -46,7 +46,7 @@ import com.groupdocs.sdk.common.RequestSigner;
 import com.wordnik.swagger.core.util.JsonUtil;
 
 public abstract class AbstractUnitTest {
-	public static ObjectMapper jsonMapper = JsonUtil.getJsonMapper();
+	public static ObjectMapper jsonMapper = JsonUtil.mapper();
 	protected static String userId;
 	private static final Boolean enableLogging;
 	private static final SimpleDateFormat dateFormat = new SimpleDateFormat(ApiInvoker.DATE_FORMAT);

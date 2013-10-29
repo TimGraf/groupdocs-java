@@ -128,7 +128,7 @@ public class ApiInvoker {
 
   public static Object deserialize(String json, String containerType, Class cls) throws ApiException {
     try{
-      ObjectMapper mapper = JsonUtil.getJsonMapper();
+      ObjectMapper mapper = JsonUtil.mapper();
 	  SimpleModule m = new SimpleModule(PACKAGE_NAME, Version.unknownVersion());
 	  m.addDeserializer(Date.class, new CustomDateDeserializer(new DateDeserializer()));
 	  mapper.registerModule(m);
@@ -153,7 +153,7 @@ public class ApiInvoker {
   public static String serialize(Object obj) throws ApiException {
     try {
       if (obj != null) {
-    	ObjectMapper jsonMapper = JsonUtil.getJsonMapper();
+    	ObjectMapper jsonMapper = JsonUtil.mapper();
     	jsonMapper.setSerializationInclusion(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL);
 		return jsonMapper.writeValueAsString(obj);
       }
@@ -250,7 +250,7 @@ public class ApiInvoker {
     else {
     	String errMsg = response.getEntity(String.class);
     	try {
-    		HashMap<String,Object> props = JsonUtil.getJsonMapper().readValue(errMsg, new TypeReference<HashMap<String,Object>>() {});
+    		HashMap<String,Object> props = JsonUtil.mapper().readValue(errMsg, new TypeReference<HashMap<String,Object>>() {});
     		if(props.containsKey("error_message")){
     			errMsg = (String) props.get("error_message");
     		}
