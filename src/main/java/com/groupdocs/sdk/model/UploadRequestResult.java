@@ -30,6 +30,7 @@ public class UploadRequestResult {
   private Integer version = null;
   private Double view_job_id = null;
   private String thumbnail = null;
+  private Long upload_time = null;
   private Double id = null;
   private String guid = null;
   public String getAdj_name() {
@@ -88,6 +89,13 @@ public class UploadRequestResult {
     this.thumbnail = thumbnail;
   }
 
+  public Long getUpload_time() {
+    return upload_time;
+  }
+  public void setUpload_time(Long upload_time) {
+    this.upload_time = upload_time;
+  }
+
   public Double getId() {
     return id;
   }
@@ -114,6 +122,7 @@ public class UploadRequestResult {
     sb.append("  version: ").append(version).append("\n");
     sb.append("  view_job_id: ").append(view_job_id).append("\n");
     sb.append("  thumbnail: ").append(thumbnail).append("\n");
+    sb.append("  upload_time: ").append(upload_time).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");

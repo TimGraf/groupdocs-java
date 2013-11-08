@@ -316,12 +316,12 @@ public class MergeApi {
       }
     }
   }
-  public GetQuestionnairesResponse GetQuestionnaires (String userId, String status, Integer pageNumber, Integer pageSize) throws ApiException {
+  public GetQuestionnairesResponse GetQuestionnaires (String userId, String status, Integer pageNumber, Integer pageSize, String orderBy, Boolean isAscending) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/merge/{userId}/questionnaires?status={status}&page_number={pageNumber}&page_size={pageSize}".replace("*", "");
+    String resourcePath = "/merge/{userId}/questionnaires?status={status}&page_number={pageNumber}&page_size={pageSize}&orderBy={orderBy}&isAscending={isAscending}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -339,6 +339,10 @@ public class MergeApi {
       queryParams.put("page_number", String.valueOf(pageNumber));
     if(!"null".equals(String.valueOf(pageSize)))
       queryParams.put("page_size", String.valueOf(pageSize));
+    if(!"null".equals(String.valueOf(orderBy)))
+      queryParams.put("orderBy", String.valueOf(orderBy));
+    if(!"null".equals(String.valueOf(isAscending)))
+      queryParams.put("isAscending", String.valueOf(isAscending));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -968,12 +972,16 @@ public class MergeApi {
       }
     }
   }
-  public GetQuestionnaireCollectorsResponse GetQuestionnaireCollectors (String userId, String questionnaireId) throws ApiException {
+  public GetQuestionnaireCollectorsResponse GetQuestionnaireCollectors (String userId, String questionnaireId, String orderBy, Boolean isAsc) throws ApiException {
     // verify required params are set
-    if(userId == null || questionnaireId == null ) {
+    if(userId == null || questionnaireId == null || orderBy == null || isAsc == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/merge/{userId}/questionnaires/{questionnaireId}/collectors".replace("*", "");
+    String resourcePath = "/merge/{userId}/questionnaires/{questionnaireId}/collectors?orderBy={orderBy}&isAsc={isAsc}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "questionnaireId" + "}", String.valueOf(questionnaireId));
 
@@ -981,6 +989,10 @@ public class MergeApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
+    if(!"null".equals(String.valueOf(orderBy)))
+      queryParams.put("orderBy", String.valueOf(orderBy));
+    if(!"null".equals(String.valueOf(isAsc)))
+      queryParams.put("isAsc", String.valueOf(isAsc));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -1231,6 +1243,44 @@ public class MergeApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, body, headerParams, String.class);
       if(response != null){
         return (UpdateQuestionnaireResponse) ApiInvoker.deserialize(response, "", UpdateQuestionnaireResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetTemplatesResponse CopyFileToTemplates (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
+    // verify required params are set
+    if(userId == null || path == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/merge/{userId}/files/{*path}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(mode)))
+      queryParams.put("mode", String.valueOf(mode));
+    headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
+    headerParams.put("Groupdocs-Move", Groupdocs_Move);
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetTemplatesResponse) ApiInvoker.deserialize(response, "", GetTemplatesResponse.class);
       }
       else {
         return null;

@@ -1,6 +1,6 @@
-GET /v2.0/signature/ea103bbe8cb8ce07/envelopes/91e439ba62a36b69a815780854f514fc?signature=jyePMWoFOhdjrrpsN01%2BQTFHtEw
+GET /v2.0/signature/6d75a4d4db83f6fc/envelopes/eb477c31aea60e54f0c2c87daa35a5a0?signature=aLULAx98tCENq55z2XUDE67oLCM
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

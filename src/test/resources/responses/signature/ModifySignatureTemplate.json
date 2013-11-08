@@ -1,9 +1,9 @@
 {
   "result": {
     "template": {
-      "id": "e171c182366b36bffe326e28ecf90733",
-      "name": "Template 585310958010442",
-      "ownerGuid": "ea103bbe8cb8ce07",
+      "id": "e49a154e7829e977b7cab656db4003cb",
+      "name": "Template 8482632966459701",
+      "ownerGuid": "6d75a4d4db83f6fc",
       "reminderTime": 1,
       "stepExpireTime": 1,
       "templateExpireTime": 1,
@@ -15,8 +15,8 @@
       "documentsPages": 0,
       "recipients": [
         {
-          "id": "25fb94322597b7ad347c458ed081aa69",
-          "nickname": "Pavel",
+          "id": "495e5fe166df1b70cc495325e9d7c35c",
+          "nickname": "api@groupdocs.com",
           "order": 32767,
           "roleId": 1
         }
@@ -28,5 +28,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375218774813
+  "composedOn": 1383332775575
 }

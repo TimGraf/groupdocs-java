@@ -1,0 +1,6 @@
+PUT /v2.0/signature/6d75a4d4db83f6fc/envelopes/433e5d764c2cee0b6813a782501ecc64/document/c084c1f56d76ac474429c6a580825024427eaf8b57213ceb7afcedea3bf033be?newName=Document%20-%203852280852152479&signature=ji6HzcOlQCnBYdzv1%2FF63goL02k
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

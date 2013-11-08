@@ -1,10 +1,10 @@
 {
   "result": {
     "signature": {
-      "id": "f8b7b5b2d9e923758e32d038c891f94a",
-      "userGuid": "ea103bbe8cb8ce07",
+      "id": "f05cdab9d65e6d4302c377ad3bac347a",
+      "userGuid": "6d75a4d4db83f6fc",
       "recipientId": null,
-      "name": "Signature 26654325684980473",
+      "name": "Signature 6579859354264942",
       "companyName": "Aspose",
       "position": "QA",
       "firstName": "John",
@@ -13,12 +13,12 @@
       "textInitials": "JS",
       "signatureImageFileId": null,
       "initialsImageFileId": null,
-      "signatureImageUrl": "https://dev-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/f8b7b5b2d9e923758e32d038c891f94a/signatureData",
-      "initialsImageUrl": "https://dev-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/f8b7b5b2d9e923758e32d038c891f94a/initialsData",
-      "createdTimeStamp": "2013-07-30T21:19:50.547"
+      "signatureImageUrl": "https://stage-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/f05cdab9d65e6d4302c377ad3bac347a/signatureData",
+      "initialsImageUrl": "https://stage-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/f05cdab9d65e6d4302c377ad3bac347a/initialsData",
+      "createdTimeStamp": "2013-11-01T19:11:21.463Z"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375219190500
+  "composedOn": 1383333081440
 }

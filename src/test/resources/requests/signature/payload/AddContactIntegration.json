@@ -1,0 +1,6 @@
+{
+  "provider": 2,
+  "refreshToken": "fake",
+  "accessToken": "fake",
+  "accessTokenExpiration": "2014-12-12"
+}

@@ -24,6 +24,8 @@ package com.groupdocs.sdk.model;
 public class TemplateInfo {
   private String name = null;
   private Integer field_count = null;
+  private Long size = null;
+  private Long upload_time = null;
   private Double id = null;
   private String guid = null;
   public String getName() {
@@ -38,6 +40,20 @@ public class TemplateInfo {
   }
   public void setField_count(Integer field_count) {
     this.field_count = field_count;
+  }
+
+  public Long getSize() {
+    return size;
+  }
+  public void setSize(Long size) {
+    this.size = size;
+  }
+
+  public Long getUpload_time() {
+    return upload_time;
+  }
+  public void setUpload_time(Long upload_time) {
+    this.upload_time = upload_time;
   }
 
   public Double getId() {
@@ -60,6 +76,8 @@ public class TemplateInfo {
     sb.append("class TemplateInfo {\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  field_count: ").append(field_count).append("\n");
+    sb.append("  size: ").append(size).append("\n");
+    sb.append("  upload_time: ").append(upload_time).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");

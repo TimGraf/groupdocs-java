@@ -1,18 +1,18 @@
 {
   "result": {
-    "templateId": "0ef230028c012ba27ca94fcaf5c045f1",
+    "templateId": "114534419303120b11eb21b81ea5c47e",
     "document": {
-      "documentId": "09efad13e5dfcf7a5d8fc34bfd21f6f1ad5b5e160e293a5cbd779dd63d7cf52b",
-      "templateId": "0ef230028c012ba27ca94fcaf5c045f1",
+      "documentId": "7b856e4929cf58c7b7a8aaa6cef0aeb17f743a262546b39aeb38406a5790032d",
+      "templateId": "114534419303120b11eb21b81ea5c47e",
       "order": 0,
-      "name": "document_one.doc",
+      "name": "document_one_doc.pdf",
       "originalDocumentMD5": "4102f70d43d8cd309866ae9b914961c0",
       "originalDocumentPagesCount": 1,
       "fieldsCount": 0,
-      "originalDocumentId": "09efad13e5dfcf7a5d8fc34bfd21f6f1ad5b5e160e293a5cbd779dd63d7cf52b"
+      "originalDocumentId": "7b856e4929cf58c7b7a8aaa6cef0aeb17f743a262546b39aeb38406a5790032d"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375215157418
+  "composedOn": 1383330685272
 }

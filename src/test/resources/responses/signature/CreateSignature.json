@@ -1,24 +1,20 @@
 {
-  "result": {
-    "signature": {
-      "id": "04499241ae3aa5cb9a7ab9c4274c088c",
-      "userGuid": "ea103bbe8cb8ce07",
-      "recipientId": null,
-      "name": "Signature 3022425752990485",
-      "companyName": "Aspose",
-      "position": "QA",
-      "firstName": "John",
-      "lastName": "Smith",
-      "fullName": "John Smith",
-      "textInitials": "JS",
-      "signatureImageFileId": null,
-      "initialsImageFileId": null,
-      "signatureImageUrl": "https://dev-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/04499241ae3aa5cb9a7ab9c4274c088c/signatureData",
-      "initialsImageUrl": "https://dev-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/04499241ae3aa5cb9a7ab9c4274c088c/initialsData",
-      "createdTimeStamp": "2013-07-30T20:22:05.187"
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1375215725139
+    "result": {
+        "signature": {
+            "id": "c4d44d1d7f86544d514b79de437c0597",
+            "userGuid": "6d75a4d4db83f6fc",
+            "name": "Signature 622123269984327",
+            "companyName": "Aspose",
+            "position": "QA",
+            "firstName": "John",
+            "lastName": "Smith",
+            "fullName": "John Smith",
+            "textInitials": "JS",
+            "signatureImageUrl": "https://stage-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/c4d44d1d7f86544d514b79de437c0597/signatureData",
+            "initialsImageUrl": "https://stage-api-groupdocs.dynabic.com/v2.0/signature/public/signatures/signature/c4d44d1d7f86544d514b79de437c0597/initialsData",
+            "createdTimeStamp": "2013-11-01T18:40:59.586Z"
+        }
+    },
+    "status": "Ok",
+    "composedOn": 1383331103135
 }

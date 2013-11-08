@@ -1,0 +1,7 @@
+POST /v2.0/ant/6d75a4d4db83f6fc/files/5a0751f92bca8097c50161f7090d8fb923b023cfc47fdc2fac4dfee0e81daeaf/collaborators?signature=EjMdKZemUiNiQFJyBm0zBhzauv8
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 176
+Groupdocs-Referrer: ruby/1.4.2
+Content-Type: application/json

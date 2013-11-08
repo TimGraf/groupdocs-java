@@ -1,6 +1,6 @@
-POST /v2.0/signature/ea103bbe8cb8ce07/envelope?name=Envelope%20Test%208137565865601627&signature=Di0oWrE2HXPWWhJhSDenXrcEa40
+POST /v2.0/signature/6d75a4d4db83f6fc/envelope?name=Envelope%20Test%207812232806311765&signature=gMFEz0JknzyA5NE1kk3Y7o3yaxc
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 224
 Groupdocs-Referrer: ruby/1.4.2

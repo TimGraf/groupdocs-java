@@ -1,0 +1,6 @@
+PUT /v2.0/signature/6d75a4d4db83f6fc/envelopes/57b5b29141159edaf4fb2057901404dd/cancel?signature=6NjUuzwPLi5ztRP3LZepdEmsjfE
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

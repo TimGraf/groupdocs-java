@@ -1,6 +1,6 @@
-DOWNLOAD /v2.0/storage/ea103bbe8cb8ce07/files/2293d1911db1d145b2159356eba40474a9cddd4a265b077e21130c919024d355?signature=SX%2B7V6Z1PQ5lFe9x5ZH2qNuYElQ
+DOWNLOAD /v2.0/storage/6d75a4d4db83f6fc/files/96c04ca5f07c8bea4e7299faa81c0f1706391d2aed1a35868c1e15e5e5bba648?signature=yGNuUs1eYpjvSlLdortu1MvWOdg
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

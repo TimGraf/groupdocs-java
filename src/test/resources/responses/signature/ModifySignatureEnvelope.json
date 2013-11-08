@@ -1,11 +1,11 @@
 {
   "result": {
     "envelope": {
-      "id": "534571cee9aeffe865560cb1d547b369",
-      "name": "Envelope 912092395241101",
-      "creationDateTime": "2013-07-30T21:03:20.8930000Z",
-      "updatedDateTime": "2013-07-30T21:03:21.6269063ZZ",
-      "ownerGuid": "ea103bbe8cb8ce07",
+      "id": "9a6a3c33d417a4655c5ca36a435d5b13",
+      "name": "Envelope 010989810044765291",
+      "creationDateTime": "2013-11-01T18:59:02.8300000Z",
+      "updatedDateTime": "2013-11-01T18:59:03.8450625ZZ",
+      "ownerGuid": "6d75a4d4db83f6fc",
       "status": -1,
       "statusDateTime": "1970-01-01T00:00:00.0000000Z",
       "reminderTime": 1,
@@ -19,16 +19,16 @@
       "documentsPages": 0,
       "recipients": [
         {
-          "id": "b7deadb82570c1eb259eed094370baff",
-          "firstName": "Pavel",
-          "lastName": "Strashniy",
-          "email": "api-tests@groupdocs.com",
-          "userGuid": "ea103bbe8cb8ce07",
+          "id": "c08888d5a2547bc15f85abc80c7c89ac",
+          "firstName": "owner",
+          "lastName": "owner",
+          "email": "api@groupdocs.com",
+          "userGuid": "6d75a4d4db83f6fc",
           "order": 32767,
           "roleId": 1,
           "status": 0,
           "statusMessage": null,
-          "statusDateTime": "1970-01-01T00:00:00.0000000ZZ",
+          "statusDateTime": "",
           "delegatedRecipientId": null,
           "signatureFingerprint": null,
           "signatureHost": null,
@@ -43,10 +43,10 @@
       "includeViewLink": true,
       "canBeCommented": true,
       "inPersonSign": false,
-      "ownerName": "Pavel Strashniy"
+      "ownerName": " "
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375218201470
+  "composedOn": 1383332343506
 }

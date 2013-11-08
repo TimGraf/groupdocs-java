@@ -1,6 +1,6 @@
-POST /v2.0/signature/ea103bbe8cb8ce07/envelopes/3e0250b180c6ecb0cfae5281d0ac6a64/recipient?email=recipient-6207312293153898@mailinator.com&firstname=John&lastname=Smith&role=693e6cee8a4a21285f86930491b455ec&order=1&signature=pLWxQ8ho5HU1d8YAFhntPKcLbKg
+POST /v2.0/signature/6d75a4d4db83f6fc/envelopes/83fe8616518c226a4a3813e2ac83406f/recipient?email=recipient-5564351491703736@mailinator.com&firstname=John&lastname=Smith&role=693e6cee8a4a21285f86930491b455ec&order=1&signature=ap4FPDlGMntp2kAdCtvekoPCc7s
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

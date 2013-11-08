@@ -1,6 +1,6 @@
-DELETE /v2.0/signature/ea103bbe8cb8ce07/templates/e598bca616fc30422dac2fd461d13add/fields/5367b94f4e7aab7d13e5168a4a40415e/locations/c993edaac2ef731875ffbf8c808d5548?signature=bA2DIIE1ISLghjKMSDfn8dqZkVE
+DELETE /v2.0/signature/6d75a4d4db83f6fc/templates/d2737ce2abc0ca3f8d02a202634b7aee/fields/8218ed3fa07efe68ebbb6b7eb3f69bb2/locations/ccc944390279f14036d333667b74f0c9?signature=1a9hSxKp4GBOpD%2FBaT8OaYQ3%2FQY
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

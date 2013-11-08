@@ -1,13 +1,13 @@
 {
   "result": {
-    "envelopesCount": 6854,
+    "envelopesCount": 1756,
     "envelopes": [
       {
-        "id": "86d884a8b9f386591651a1eb2fd01908",
-        "name": "Envelope 75081708451482",
-        "creationDateTime": "2013-07-30T20:43:09.7530000Z",
-        "updatedDateTime": "2013-07-30T20:43:13.0170000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
+        "id": "26a0c971b0b7226719f9a7bb7efa67cd",
+        "name": "Envelope 8600470510920635",
+        "creationDateTime": "2013-11-01T18:48:08.3870000Z",
+        "updatedDateTime": "2013-11-01T18:48:11.8530000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
         "status": -1,
         "statusDateTime": "1970-01-01T00:00:00.0000000Z",
         "reminderTime": 1,
@@ -21,16 +21,16 @@
         "documentsPages": 1,
         "recipients": [
           {
-            "id": "580c7890573753f0fe4b789a32fe7d2c",
+            "id": "149e0246825192c53ec205b93715e6a1",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
             "status": 0,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
@@ -45,16 +45,16 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       },
       {
-        "id": "33552336679d41e77e2f803a7e37a9ac",
-        "name": "Envelope 9874775858470601",
-        "creationDateTime": "2013-07-30T20:41:27.5330000Z",
-        "updatedDateTime": "2013-07-30T20:41:28.4070000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
-        "status": -1,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "id": "ec1d3b9ea849c6a74c30ec3f9b36c298",
+        "name": "Envelope 1233896619121313",
+        "creationDateTime": "2013-11-01T18:46:39.3530000Z",
+        "updatedDateTime": "2013-11-01T18:46:45.5030000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
+        "status": 1,
+        "statusDateTime": "2013-11-01T18:46:45.5030000Z",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "envelopeExpireTime": 6,
@@ -66,22 +66,22 @@
         "documentsPages": 0,
         "recipients": [
           {
-            "id": "2145ecc0d095fd602af5e7df18848b03",
+            "id": "a4acc6c0e220d51a94ba6121e30f7617",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
-            "status": 0,
+            "status": 1,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "2013-11-01T18:46:45.4870000Z",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
             "signatureLocation": null,
             "signatureBrowser": null,
-            "embedUrl": ""
+            "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/ec1d3b9ea849c6a74c30ec3f9b36c298/a4acc6c0e220d51a94ba6121e30f7617"
           }
         ],
         "waterMarkText": "",
@@ -90,16 +90,16 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       },
       {
-        "id": "5af94d516581ebb2950387fd9b5ef73e",
-        "name": "Envelope 3805254671519176",
-        "creationDateTime": "2013-07-30T20:41:25.2370000Z",
-        "updatedDateTime": "2013-07-30T20:41:26.1430000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
-        "status": -1,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "id": "96d4906f30898bc37a430dcb2725b0bf",
+        "name": "Envelope 015749699663053285",
+        "creationDateTime": "2013-11-01T18:46:31.2670000Z",
+        "updatedDateTime": "2013-11-01T18:46:37.3370000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
+        "status": 1,
+        "statusDateTime": "2013-11-01T18:46:37.3370000Z",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "envelopeExpireTime": 6,
@@ -111,22 +111,22 @@
         "documentsPages": 0,
         "recipients": [
           {
-            "id": "4b4b12c3551e0c3e46e815b698442943",
+            "id": "43b9a743f24b65a058b9f9681fcdbacb",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
-            "status": 0,
+            "status": 1,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "2013-11-01T18:46:37.3130000Z",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
             "signatureLocation": null,
             "signatureBrowser": null,
-            "embedUrl": ""
+            "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/96d4906f30898bc37a430dcb2725b0bf/43b9a743f24b65a058b9f9681fcdbacb"
           }
         ],
         "waterMarkText": "",
@@ -135,16 +135,16 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       },
       {
-        "id": "132d7fe6c6d4badef4e3034fa7053da7",
-        "name": "Envelope 9155437748139598",
-        "creationDateTime": "2013-07-30T20:41:23.2370000Z",
-        "updatedDateTime": "2013-07-30T20:41:24.0030000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
-        "status": -1,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "id": "fda1879239aff2a5ed3c81316e604dbd",
+        "name": "Envelope 766919943839699",
+        "creationDateTime": "2013-11-01T18:46:23.2100000Z",
+        "updatedDateTime": "2013-11-01T18:46:29.2100000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
+        "status": 1,
+        "statusDateTime": "2013-11-01T18:46:29.2100000Z",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "envelopeExpireTime": 6,
@@ -156,22 +156,22 @@
         "documentsPages": 0,
         "recipients": [
           {
-            "id": "ffc1e9e8ed13ac2f59f8b3f31c6daf4a",
+            "id": "c98811fa144aeb5a4f05e7160d812862",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
-            "status": 0,
+            "status": 1,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "2013-11-01T18:46:29.1930000Z",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
             "signatureLocation": null,
             "signatureBrowser": null,
-            "embedUrl": ""
+            "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/fda1879239aff2a5ed3c81316e604dbd/c98811fa144aeb5a4f05e7160d812862"
           }
         ],
         "waterMarkText": "",
@@ -180,16 +180,16 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       },
       {
-        "id": "c8d63074586c663feea97a77b9a9cfd4",
-        "name": "Envelope 9383468358052186",
-        "creationDateTime": "2013-07-30T20:41:21.0630000Z",
-        "updatedDateTime": "2013-07-30T20:41:21.8770000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
-        "status": -1,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "id": "d7f9abdda48d10fbb087cdd812c3956c",
+        "name": "Envelope 766853939078461",
+        "creationDateTime": "2013-11-01T18:46:14.9370000Z",
+        "updatedDateTime": "2013-11-01T18:46:21.1870000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
+        "status": 1,
+        "statusDateTime": "2013-11-01T18:46:21.1870000Z",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "envelopeExpireTime": 6,
@@ -201,22 +201,22 @@
         "documentsPages": 0,
         "recipients": [
           {
-            "id": "1b3eee27406166932b38e3dc5006141a",
+            "id": "19c3101d4cfe1affe8aaf5b61bb1b97e",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
-            "status": 0,
+            "status": 1,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "2013-11-01T18:46:21.1630000Z",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
             "signatureLocation": null,
             "signatureBrowser": null,
-            "embedUrl": ""
+            "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/d7f9abdda48d10fbb087cdd812c3956c/19c3101d4cfe1affe8aaf5b61bb1b97e"
           }
         ],
         "waterMarkText": "",
@@ -225,16 +225,16 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       },
       {
-        "id": "3f1979dfa4b15b0e6438b5fe30aae976",
-        "name": "Envelope 3741900865536437",
-        "creationDateTime": "2013-07-30T20:41:18.8000000Z",
-        "updatedDateTime": "2013-07-30T20:41:19.5970000Z",
-        "ownerGuid": "ea103bbe8cb8ce07",
-        "status": -1,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "id": "aac89cb362a47de92cb163f138ddaf20",
+        "name": "Envelope 7784095745494438",
+        "creationDateTime": "2013-11-01T18:46:06.5970000Z",
+        "updatedDateTime": "2013-11-01T18:46:12.7970000Z",
+        "ownerGuid": "6d75a4d4db83f6fc",
+        "status": 1,
+        "statusDateTime": "2013-11-01T18:46:12.7970000Z",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "envelopeExpireTime": 6,
@@ -246,22 +246,22 @@
         "documentsPages": 0,
         "recipients": [
           {
-            "id": "3b7aabfedc7a389e5f421ae4aabc23e6",
+            "id": "c37d6ebf96d9344818fef2d51ce5d24c",
             "firstName": "John",
             "lastName": "Smith",
-            "email": "api-tests@groupdocs.com",
-            "userGuid": "ea103bbe8cb8ce07",
+            "email": "api@groupdocs.com",
+            "userGuid": "6d75a4d4db83f6fc",
             "order": 0,
             "roleId": 2,
-            "status": 0,
+            "status": 1,
             "statusMessage": null,
-            "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+            "statusDateTime": "2013-11-01T18:46:12.7830000Z",
             "delegatedRecipientId": null,
             "signatureFingerprint": null,
             "signatureHost": null,
             "signatureLocation": null,
             "signatureBrowser": null,
-            "embedUrl": ""
+            "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/aac89cb362a47de92cb163f138ddaf20/c37d6ebf96d9344818fef2d51ce5d24c"
           }
         ],
         "waterMarkText": "",
@@ -270,11 +270,11 @@
         "includeViewLink": true,
         "canBeCommented": true,
         "inPersonSign": false,
-        "ownerName": "Pavel Strashniy"
+        "ownerName": " "
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375216993298
+  "composedOn": 1383331692374
 }

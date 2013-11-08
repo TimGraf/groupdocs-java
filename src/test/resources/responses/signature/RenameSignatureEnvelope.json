@@ -1,8 +1,35 @@
 {
   "result": {
-    "envelope": null
+    "envelope": {
+      "id": "77c9c3b1dfedfbbd77e7126b6a36f15e",
+      "name": "Envelope - 020434552002888573",
+      "creationDateTime": "2013-11-01T19:07:26.4130000Z",
+      "updatedDateTime": "2013-11-01T19:07:27.0110781ZZ",
+      "ownerGuid": "6d75a4d4db83f6fc",
+      "status": -1,
+      "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+      "reminderTime": 1,
+      "stepExpireTime": 3,
+      "envelopeExpireTime": 6,
+      "ownerShouldSign": false,
+      "orderedSignature": false,
+      "emailSubject": "Sign this!",
+      "emailBody": "",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "recipients": [
+
+      ],
+      "waterMarkText": "",
+      "waterMarkImage": "",
+      "attachSignedDocument": false,
+      "includeViewLink": true,
+      "canBeCommented": true,
+      "inPersonSign": false,
+      "ownerName": " "
+    }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375218868594
+  "composedOn": 1383332846858
 }

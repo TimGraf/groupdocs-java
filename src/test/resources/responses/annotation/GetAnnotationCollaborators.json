@@ -1,0 +1,23 @@
+{
+  "result": {
+    "documentGuid": "96c88865a65912fb9858ee8c34894ee80eca8bf70f7601b2deba057712459922",
+    "sessionGuid": "c8ae104f21057835",
+    "owner": {
+      "id": 1085,
+      "guid": "6d75a4d4db83f6fc",
+      "primary_email": "api@groupdocs.com",
+      "firstName": null,
+      "lastName": null,
+      "access_rights": null,
+      "color": null,
+      "customEmailMessage": null
+    },
+    "collaborators": [
+
+    ],
+    "shared_link_access_rights": null
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1383329054003
+}

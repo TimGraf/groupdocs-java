@@ -44,7 +44,7 @@
         "Name": "Tsjeljabinsk"
       },
       {
-        "Name": "Zaba├â┬»kalski"
+        "Name": "Zaba├»kalski"
       },
       {
         "Name": "Chukotskiy Avtonomnyy Okrug"
@@ -80,7 +80,7 @@
         "Name": "Kaluga"
       },
       {
-        "Name": "Kamchatskaya Oblast├»┬┐┬╜"
+        "Name": "Kamchatskaya Oblast∩┐╜"
       },
       {
         "Name": "Karachayevo-Cherkesiya"
@@ -176,7 +176,7 @@
         "Name": "Penza"
       },
       {
-        "Name": "Permskaya Oblast├»┬┐┬╜"
+        "Name": "Permskaya Oblast∩┐╜"
       },
       {
         "Name": "Primorskiy"
@@ -248,7 +248,7 @@
         "Name": "Uljanovsk"
       },
       {
-        "Name": "Ust├»┬┐┬╜-Ordynskiy Buryatskiy Avtonomnyy Okrug"
+        "Name": "Ust∩┐╜-Ordynskiy Buryatskiy Avtonomnyy Okrug"
       },
       {
         "Name": "Vladimir"
@@ -281,7 +281,7 @@
         "Name": "Kamtsjatka"
       },
       {
-        "Name": "Zabaykal├ó┬Ç┬Öskiy Kray"
+        "Name": "ZabaykalΓÇÖskiy Kray"
       },
       {
         "Name": "Chechnya and Ingushetiya"
@@ -293,5 +293,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375220474242
+  "composedOn": 1383333621737
 }

@@ -1,0 +1,6 @@
+GET /v2.0/ant/6d75a4d4db83f6fc/files/96c88865a65912fb9858ee8c34894ee80eca8bf70f7601b2deba057712459922/collaborators?signature=k%2Flgb6l57eIagfaoW03tAuBcEYY
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

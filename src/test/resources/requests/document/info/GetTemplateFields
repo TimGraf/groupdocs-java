@@ -1,0 +1,6 @@
+GET /v2.0/doc/6d75a4d4db83f6fc/files/3436709742c791a470dcc2ca213e1139e3b512bedd28f76057230a45f1bee96d/fields?include_geometry=true&signature=WcJxHmI5vGcNbAI3hxC6hDbHNYM
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

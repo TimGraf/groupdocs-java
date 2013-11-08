@@ -1,6 +1,6 @@
-PUT /v2.0/signature/ea103bbe8cb8ce07/forms/9a8c69f818c8956c3bdf3faaa148cd4f/archive?signature=HHYVRxGeiynSN4XZ0AXZwxgqZgE
+PUT /v2.0/signature/6d75a4d4db83f6fc/forms/eb28875d93135a63613603361193b49e/archive?signature=SaY0BN5N8D8CLuGWG6L2F23MqRo
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

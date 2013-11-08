@@ -1,7 +1,7 @@
-PUT /v2.0/storage/ea103bbe8cb8ce07/files/document_two.doc?signature=YshAYxdYmieWJOmWRIqFxGM3jIY
+PUT /v2.0/storage/6d75a4d4db83f6fc/files/document_two.doc?signature=eRSNS5C5kvvIWgPc7SJxib2vegI
 
-Host: dev-api-groupdocs.dynabic.com
-Groupdocs-move: 325683
+Host: stage-api-groupdocs.dynabic.com
+Groupdocs-move: 132457
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

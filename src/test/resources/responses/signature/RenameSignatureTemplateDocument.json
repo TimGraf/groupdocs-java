@@ -1,6 +1,18 @@
 {
-    "result": null,
-    "status": null,
-    "error_message": null,
-    "composedOn": null
+  "result": {
+    "templateId": "e5060b38d918eecf3bc20cbe9dd83088",
+    "document": {
+      "documentId": "fbace24862bb268aa4b1de223a61a79d7d8b7aceec2df621381b58f3f090fd05",
+      "templateId": "e5060b38d918eecf3bc20cbe9dd83088",
+      "order": 0,
+      "name": "Document - 05985362426913665.pdf",
+      "originalDocumentMD5": "4102f70d43d8cd309866ae9b914961c0",
+      "originalDocumentPagesCount": 1,
+      "fieldsCount": 0,
+      "originalDocumentId": "fbace24862bb268aa4b1de223a61a79d7d8b7aceec2df621381b58f3f090fd05"
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1383332882417
 }

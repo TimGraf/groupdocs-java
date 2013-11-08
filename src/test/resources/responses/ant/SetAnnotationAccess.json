@@ -15,21 +15,15 @@
                 "x": 10,
                 "y": 10
             },
-            "range": null,
-            "svgPath": null,
             "type": "Point",
             "access": "Public",
             "replies": [
 
             ],
             "createdOn": 1375208092467,
-            "fontColor": 0,
-            "fieldText": null,
-            "fontFamily": null,
-            "fontSize": null
+            "fontColor": 0
         }
     },
     "status": "Ok",
-    "error_message": null,
     "composedOn": 1375208092918
 }

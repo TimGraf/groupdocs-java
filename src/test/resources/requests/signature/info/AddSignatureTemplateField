@@ -1,6 +1,6 @@
-POST /v2.0/signature/ea103bbe8cb8ce07/templates/07ebf782805ab99b4203389ef0eb0aa6/documents/f487ba8303555ae51dc04f911f534d33af24fb93d0de0a1ce332ae051e7e99e3/recipient/253b7da38fa68a43f2a7053fe3a1bf7f/field/0545e589fb3e27c9bb7a1f59d0e3fcb9?signature=DLOajfizKVhMMpOKQ9bWdj3gxII
+POST /v2.0/signature/6d75a4d4db83f6fc/templates/90cc99ab1019ac2365bc6b10d329bbf6/documents/089ae7db282cc58b7e340c0d69f86490e945a773738aaa900e03e53c0986c3d2/recipient/2c91f450f22d34655cf668b70a358e68/field/0545e589fb3e27c9bb7a1f59d0e3fcb9?signature=8py3oWAYqRa8gtBkRlq6F29%2F1EY
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 384
 Groupdocs-Referrer: ruby/1.4.2

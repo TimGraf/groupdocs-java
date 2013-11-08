@@ -1,22 +1,22 @@
 {
     "result": {
-        "templateId": "78cfc0015f5701430a0b5198c271b4a3",
-        "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
-        "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
+        "templateId": "32fad24daf743c81b163beedd8ac0cc9",
+        "documentId": "e9ba16b182324d41aa332ab0df60c21df335ba2059cada9af07899d4e689b3f7",
+        "recipientId": "6c0b199db3498282faaf706093782a8f",
         "field": {
-            "id": "039836b06dbca3f80c9fd7a66a2a23de",
-            "templateId": "78cfc0015f5701430a0b5198c271b4a3",
-            "recipientId": "0e27ab42d5f2a68a9d0f479c3d1e61f2",
-            "name": "Signature",
+            "id": "1e255f2c867d49bb75d89009f0f33907",
+            "templateId": "32fad24daf743c81b163beedd8ac0cc9",
+            "recipientId": "6c0b199db3498282faaf706093782a8f",
+            "name": "Signature_1",
             "mandatory": true,
             "order": 0,
             "regularExpression": "",
             "signatureFieldId": 1,
             "locations": [
                 {
-                    "id": "dddbaa2fcf070ceabe2b0c9fd4399179",
-                    "documentId": "4c7a6b6010cac00c6f1d7758ab5b50ee4d29a6dd0ac8c0cda4073ca22c7328c3",
-                    "fieldId": "039836b06dbca3f80c9fd7a66a2a23de",
+                    "id": "784e8126672080dce08ab559b86686cb",
+                    "documentId": "e9ba16b182324d41aa332ab0df60c21df335ba2059cada9af07899d4e689b3f7",
+                    "fieldId": "1e255f2c867d49bb75d89009f0f33907",
                     "page": 1,
                     "locationX": 0.2,
                     "locationY": 0.2,
@@ -32,13 +32,10 @@
                 }
             ],
             "fieldType": 1,
-            "acceptableValues": "",
-            "defaultValue": "",
-            "tooltip": "Signature",
+            "tooltip": "Signature_1",
             "guidanceText": ""
         }
     },
     "status": "Ok",
-    "error_message": null,
-    "composedOn": 1375218536454
+    "composedOn": 1383332606485
 }

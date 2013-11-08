@@ -1,6 +1,6 @@
-POST /v2.0/merge/ea103bbe8cb8ce07/questionnaires/86877552d95f953a98e15bcfdd06a2dc/collectors?signature=QUSwo7TZP2uOW28wqoBA7wJTVOw
+POST /v2.0/merge/6d75a4d4db83f6fc/questionnaires/58a8144d45ce7e56f2a0eb3dfda72d79/collectors?signature=2eBz05%2B9RmoRafdRIYGTZuKEQG8
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 375
 Groupdocs-Referrer: ruby/1.4.2

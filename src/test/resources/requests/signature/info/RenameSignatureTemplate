@@ -1,6 +1,6 @@
-PUT /v2.0/signature/ea103bbe8cb8ce07/templates/d2dc358eb4e5602c29ae5a50f2f84ec0?name=Template%20-%200072861268946695645&signature=bXFnWmoS%2F1SMoAVyTer1lPQWMok
+PUT /v2.0/signature/6d75a4d4db83f6fc/templates/3386a523d2804a43dcc08533246897ec?name=Template%20-%205691259309148357&signature=iXO%2BOEthdW05HkZCwPF6vY9cgGw
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

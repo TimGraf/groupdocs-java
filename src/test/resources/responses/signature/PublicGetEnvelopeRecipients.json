@@ -1,18 +1,18 @@
 {
   "result": {
-    "envelopeId": "648052dda05bc3c1a48357715727a712",
+    "envelopeId": "0b775b8fd2d4de5ac415c16cd17e43ec",
     "recipients": [
       {
-        "id": "bfbabbcd535b5bf64cffdf9cd15336ad",
+        "id": "eb80356991f31402c7b2299ca94b9f61",
         "firstName": "John",
         "lastName": "Smith",
-        "email": "api-tests@groupdocs.com",
-        "userGuid": "ea103bbe8cb8ce07",
+        "email": "api@groupdocs.com",
+        "userGuid": "6d75a4d4db83f6fc",
         "order": 0,
         "roleId": 2,
         "status": 0,
         "statusMessage": null,
-        "statusDateTime": "1970-01-01T00:00:00.0000000Z",
+        "statusDateTime": "",
         "delegatedRecipientId": null,
         "signatureFingerprint": null,
         "signatureHost": null,
@@ -24,5 +24,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375219400235
+  "composedOn": 1383333237228
 }

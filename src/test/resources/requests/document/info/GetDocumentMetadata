@@ -1,0 +1,6 @@
+GET /v2.0/doc/6d75a4d4db83f6fc/files/73a1b218acecd280cb970b6394f7d6befa827993b695a741d3ed6a51cc6bdff6/metadata?signature=tFxE9pYRHG1PzfKPxzZVpaPH9XM
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 0
+Groupdocs-Referrer: ruby/1.4.2

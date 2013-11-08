@@ -61,6 +61,7 @@ import com.groupdocs.sdk.model.SignatureFieldsResponse;
 import com.groupdocs.sdk.model.SignatureTemplateFieldsResponse;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldSettingsInfo;
 import com.groupdocs.sdk.model.SignatureEnvelopeFieldResponse;
+import com.groupdocs.sdk.model.SignatureDocumentFieldsResponse;
 import com.groupdocs.sdk.model.SignatureContactsResponse;
 import com.groupdocs.sdk.model.SignatureFormsResponse;
 import com.groupdocs.sdk.model.SignatureTemplateDocumentResponse;
@@ -114,6 +115,40 @@ public class SignatureApiTest extends AbstractUnitTest {
 		api.setBasePath(driver.getBaseUrl());
 	}
 
+	@Test
+	public void testAddSignatureTemplateRecipient() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String templateGuid = "templateGuid";
+		String nickname = "nickname";
+		String roleGuid = "roleGuid";
+		Integer order = 0;
+		
+		String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipient".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("nickname", nickname);
+		mockRequest = mockRequest.withParam("role", roleGuid);
+		mockRequest = mockRequest.withParam("order", order);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("signature/AddSignatureTemplateRecipient.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SignatureTemplateRecipientResponse response = api.AddSignatureTemplateRecipient(userId, templateGuid, nickname, roleGuid, order);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
 	@Test
 	public void testGetSignatureTemplateRecipients() throws Exception {
 		// sample parameters
@@ -581,6 +616,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		String firstName = "firstName";
 		String lastName = "lastName";
 		String email = "email";
+		Boolean useAnd = Boolean.TRUE;
 		
 		String resourcePath = "/signature/{userId}/contacts".replace("{" + "userId" + "}", String.valueOf(userId));
 		
@@ -591,6 +627,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		mockRequest = mockRequest.withParam("firstName", firstName);
 		mockRequest = mockRequest.withParam("lastName", lastName);
 		mockRequest = mockRequest.withParam("email", email);
+		mockRequest = mockRequest.withParam("useAnd", useAnd);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("signature/GetContacts.json");
@@ -599,7 +636,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SignatureContactsResponse response = api.GetContacts(userId, page, records, firstName, lastName, email);
+			SignatureContactsResponse response = api.GetContacts(userId, page, records, firstName, lastName, email, useAnd);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -1887,6 +1924,35 @@ public class SignatureApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testUpdateEnvelopeFromTemplate() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String envelopeGuid = "envelopeGuid";
+		String templateGuid = "templateGuid";
+		
+		String resourcePath = "/signature/{userId}/envelopes/{envelopeGuid}/templates/{templateGuid}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "envelopeGuid" + "}", String.valueOf(envelopeGuid)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("signature/UpdateEnvelopeFromTemplate.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SignatureEnvelopeResponse response = api.UpdateEnvelopeFromTemplate(userId, envelopeGuid, templateGuid);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testGetFieldsList() throws Exception {
 		// sample parameters
 		String userId = "userId";
@@ -2766,7 +2832,7 @@ public class SignatureApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			SignaturePredefinedListResponse response = api.DeletePredefinedList(userId, listGuid);
+			SignaturePredefinedListsResponse response = api.DeletePredefinedList(userId, listGuid);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -3073,40 +3139,6 @@ public class SignatureApiTest extends AbstractUnitTest {
 		
 		try {
 			SignatureStatusResponse response = api.DeleteSignatureTemplate(userId, templateGuid);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
-	public void testAddSignatureTemplateRecipient() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String templateGuid = "templateGuid";
-		String nickname = "nickname";
-		String roleGuid = "roleGuid";
-		Integer order = 0;
-		
-		String resourcePath = "/signature/{userId}/templates/{templateGuid}/recipient".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "templateGuid" + "}", String.valueOf(templateGuid));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("nickname", nickname);
-		mockRequest = mockRequest.withParam("role", roleGuid);
-		mockRequest = mockRequest.withParam("order", order);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("signature/AddSignatureTemplateRecipient.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			SignatureTemplateRecipientResponse response = api.AddSignatureTemplateRecipient(userId, templateGuid, nickname, roleGuid, order);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -3619,6 +3651,33 @@ public class SignatureApiTest extends AbstractUnitTest {
 		
 		try {
 			SignatureSignDocumentStatusResponse response = api.PublicGetSignDocumentStatus(jobGuid);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testPublicGetDocumentFields() throws Exception {
+		// sample parameters
+		String documentGuid = "documentGuid";
+		
+		String resourcePath = "/signature/public/documents/{documentGuid}/fields".replace("{" + "documentGuid" + "}", String.valueOf(documentGuid));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("signature/PublicGetDocumentFields.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			SignatureDocumentFieldsResponse response = api.PublicGetDocumentFields(documentGuid);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

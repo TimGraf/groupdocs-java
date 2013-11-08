@@ -317,6 +317,8 @@ public class MergeApiTest extends AbstractUnitTest {
 		String status = "status";
 		Integer pageNumber = 0;
 		Integer pageSize = 0;
+		String orderBy = "orderBy";
+		Boolean isAscending = Boolean.TRUE;
 		
 		String resourcePath = "/merge/{userId}/questionnaires".replace("{" + "userId" + "}", String.valueOf(userId));
 		
@@ -325,6 +327,8 @@ public class MergeApiTest extends AbstractUnitTest {
 		mockRequest = mockRequest.withParam("status", status);
 		mockRequest = mockRequest.withParam("page_number", pageNumber);
 		mockRequest = mockRequest.withParam("page_size", pageSize);
+		mockRequest = mockRequest.withParam("orderBy", orderBy);
+		mockRequest = mockRequest.withParam("isAscending", isAscending);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("merge/GetQuestionnaires.json");
@@ -333,7 +337,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetQuestionnairesResponse response = api.GetQuestionnaires(userId, status, pageNumber, pageSize);
+			GetQuestionnairesResponse response = api.GetQuestionnaires(userId, status, pageNumber, pageSize, orderBy, isAscending);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -921,11 +925,15 @@ public class MergeApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String questionnaireId = "questionnaireId";
+		String orderBy = "orderBy";
+		Boolean isAsc = Boolean.TRUE;
 		
 		String resourcePath = "/merge/{userId}/questionnaires/{questionnaireId}/collectors".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "questionnaireId" + "}", String.valueOf(questionnaireId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("orderBy", orderBy);
+		mockRequest = mockRequest.withParam("isAsc", isAsc);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("merge/GetQuestionnaireCollectors.json");
@@ -934,7 +942,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetQuestionnaireCollectorsResponse response = api.GetQuestionnaireCollectors(userId, questionnaireId);
+			GetQuestionnaireCollectorsResponse response = api.GetQuestionnaireCollectors(userId, questionnaireId, orderBy, isAsc);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -1163,6 +1171,38 @@ public class MergeApiTest extends AbstractUnitTest {
 		
 		try {
 			UpdateQuestionnaireResponse response = api.UpdateQuestionnaireMetadata(userId, questionnaireId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testCopyFileToTemplates() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String path = "path";
+		String mode = "mode";
+		String Groupdocs_Copy = "Groupdocs_Copy";
+		String Groupdocs_Move = "Groupdocs_Move";
+		
+		String resourcePath = "/merge/{userId}/files/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("mode", mode);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("merge/CopyFileToTemplates.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetTemplatesResponse response = api.CopyFileToTemplates(userId, path, mode, Groupdocs_Copy, Groupdocs_Move);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

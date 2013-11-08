@@ -4,12 +4,14 @@
       {
         "name": "document_one_with_fields.pdf",
         "field_count": 42,
-        "id": 324660,
-        "guid": "4fd1c98cc2a8a69bfc5d166967675541af1887588e26a0e5911829a90cf54828"
+        "size": 109410,
+        "upload_time": 1383330254720,
+        "id": 131980,
+        "guid": "11e14fc78a88857b9d138b75ee10dbb9e1e510a27b06aa6bacbc1717410bed68"
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375213488533
+  "composedOn": 1383330255402
 }

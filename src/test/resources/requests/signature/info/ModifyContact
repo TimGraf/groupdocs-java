@@ -1,7 +1,7 @@
-POST /v2.0/signature/ea103bbe8cb8ce07/contacts/bc5c944c1d8228ef9690887efad91a3c?signature=oXaK2YQrKyA8JA9icMGQcpfxhYk
+POST /v2.0/signature/6d75a4d4db83f6fc/contacts/7eb1bbd84bcbbcf27bb708abfa390c7d?signature=c2%2Bsqw7ep%2FVPoMl3lxQhM4O%2B14M
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
-Content-Length: 90
+Content-Length: 89
 Groupdocs-Referrer: ruby/1.4.2
 Content-Type: application/json

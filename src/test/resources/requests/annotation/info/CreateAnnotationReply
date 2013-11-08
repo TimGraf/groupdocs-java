@@ -1,0 +1,7 @@
+POST /v2.0/ant/6d75a4d4db83f6fc/annotations/c26778ffcd3d07be/replies?signature=Faj29%2Bfy9dwowuW%2FoPIsewGY6P8
+
+Host: stage-api-groupdocs.dynabic.com
+Accept: application/json
+Content-Length: 21
+Groupdocs-Referrer: ruby/1.4.2
+Content-Type: application/json

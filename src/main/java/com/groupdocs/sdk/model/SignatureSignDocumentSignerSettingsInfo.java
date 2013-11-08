@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.SignatureFieldInfo;
 /**
  * 
  * <p>
@@ -29,6 +31,7 @@ public class SignatureSignDocumentSignerSettingsInfo {
   private Double height = null;
   private String placeSignatureOn = null;
   private String data = null;
+  private List<SignatureFieldInfo> fields = new ArrayList<SignatureFieldInfo>();
   public String getName() {
     return name;
   }
@@ -78,6 +81,13 @@ public class SignatureSignDocumentSignerSettingsInfo {
     this.data = data;
   }
 
+  public List<SignatureFieldInfo> getFields() {
+    return fields;
+  }
+  public void setFields(List<SignatureFieldInfo> fields) {
+    this.fields = fields;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -89,6 +99,7 @@ public class SignatureSignDocumentSignerSettingsInfo {
     sb.append("  height: ").append(height).append("\n");
     sb.append("  placeSignatureOn: ").append(placeSignatureOn).append("\n");
     sb.append("  data: ").append(data).append("\n");
+    sb.append("  fields: ").append(fields).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -1,11 +1,11 @@
 {
   "result": {
     "envelope": {
-      "id": "91e439ba62a36b69a815780854f514fc",
-      "name": "Envelope 5916256021203607",
-      "creationDateTime": "2013-07-30T20:47:41.0800000Z",
-      "updatedDateTime": "2013-07-30T20:47:41.0800000Z",
-      "ownerGuid": "ea103bbe8cb8ce07",
+      "id": "eb477c31aea60e54f0c2c87daa35a5a0",
+      "name": "Envelope 710484964577702",
+      "creationDateTime": "2013-11-01T18:50:25.3800000Z",
+      "updatedDateTime": "2013-11-01T18:50:25.3800000Z",
+      "ownerGuid": "6d75a4d4db83f6fc",
       "status": -1,
       "statusDateTime": "1970-01-01T00:00:00.0000000Z",
       "reminderTime": 1,
@@ -26,10 +26,10 @@
       "includeViewLink": true,
       "canBeCommented": true,
       "inPersonSign": false,
-      "ownerName": "Pavel Strashniy"
+      "ownerName": " "
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375217261423
+  "composedOn": 1383331825848
 }

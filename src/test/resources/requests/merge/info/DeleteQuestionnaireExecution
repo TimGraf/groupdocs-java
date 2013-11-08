@@ -1,6 +1,6 @@
-DELETE /v2.0/merge/ea103bbe8cb8ce07/questionnaires/executions/20994?signature=BvUh5RxpndCOAqPwFB1y2qvS2h0
+DELETE /v2.0/merge/6d75a4d4db83f6fc/questionnaires/executions/5178?signature=GCUQZu66CtbOxUSDIJwa0wV6Y1k
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

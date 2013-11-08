@@ -1,6 +1,6 @@
-PUT /v2.0/async/ea103bbe8cb8ce07/jobs/801903/files/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca?signature=r1S5nYDnxAXNGfq0yOL%2FJijMjHs
+PUT /v2.0/async/6d75a4d4db83f6fc/jobs/127987/files/c1cd4a9db84431900a5c2eda035ea5a0089ec7bd15babe8155da3c9c6ddf1c8b?signature=aKVlL%2FSVT0kpaDTJW5Vq089p50s
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

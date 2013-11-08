@@ -1,7 +1,7 @@
-PUT /v2.0/storage/ea103bbe8cb8ce07/folders/NewFolder-37321294257731785?signature=JJxlaOM%2B76OfZCQeJWxbow0QUgM
+PUT /v2.0/storage/6d75a4d4db83f6fc/folders/NewFolder-437802616248015?signature=jL4VHa%2F95uM1sPTyMX953HHPXrI
 
-Host: dev-api-groupdocs.dynabic.com
-Groupdocs-move: Folder-37321294257731785
+Host: stage-api-groupdocs.dynabic.com
+Groupdocs-move: Folder-437802616248015
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

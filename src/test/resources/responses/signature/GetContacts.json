@@ -1,6 +1,17 @@
 {
-    "result": null,
-    "status": null,
-    "error_message": null,
-    "composedOn": null
+  "result": {
+    "count": 1,
+    "contacts": [
+      {
+        "id": "13df387148922dbe4047561d8ed127cd",
+        "firstName": "Test",
+        "lastName": "User",
+        "email": "test-8941016934115329@mailinator.com",
+        "provider": "Groupdocs"
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1383331615319
 }

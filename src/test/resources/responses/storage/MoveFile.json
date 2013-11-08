@@ -2,34 +2,34 @@
   "result": {
     "src_file": {
       "name": "document_one.doc",
-      "version": 6,
+      "version": 1,
       "size": 9216,
       "type": "Words",
       "type_str": "Words",
       "file_type_str": "Doc",
       "document_path": "document_one.doc",
       "access": "Private",
-      "url": "https://dev-api-groupdocs.dynabic.com/v2.0/shared/files/2293d1911db1d145b2159356eba40474a9cddd4a265b077e21130c919024d355",
+      "url": "https://stage-api-groupdocs.dynabic.com/v2.0/shared/files/f13866c25e153954a333bab1e32d16a71ae39872638c0ac66ef871cb65587271",
       "file_type": "Doc",
-      "id": 325683,
-      "guid": "2293d1911db1d145b2159356eba40474a9cddd4a265b077e21130c919024d355"
+      "id": 132457,
+      "guid": "f13866c25e153954a333bab1e32d16a71ae39872638c0ac66ef871cb65587271"
     },
     "dst_file": {
       "name": "document_two.doc",
-      "version": 6,
+      "version": 1,
       "size": 9216,
       "type": "Words",
       "type_str": "Words",
       "file_type_str": "Doc",
       "document_path": "document_two.doc",
       "access": "Private",
-      "url": "https://dev-api-groupdocs.dynabic.com/v2.0/shared/files/2293d1911db1d145b2159356eba40474a9cddd4a265b077e21130c919024d355",
+      "url": "https://stage-api-groupdocs.dynabic.com/v2.0/shared/files/f13866c25e153954a333bab1e32d16a71ae39872638c0ac66ef871cb65587271",
       "file_type": "Doc",
-      "id": 325683,
-      "guid": "2293d1911db1d145b2159356eba40474a9cddd4a265b077e21130c919024d355"
+      "id": 132457,
+      "guid": "f13866c25e153954a333bab1e32d16a71ae39872638c0ac66ef871cb65587271"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1375220188945
+  "composedOn": 1383333501557
 }

@@ -1,6 +1,6 @@
-DELETE /v2.0/storage/ea103bbe8cb8ce07/folders/Folder-3193367992485978?signature=Q35YCzEQ2z71CpW1NnswHEaFZPo
+DELETE /v2.0/storage/6d75a4d4db83f6fc/folders/Folder-8528550163583494?signature=C%2FQSmtfXz5%2FaQcoJ61RlyjOnr%2F4
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

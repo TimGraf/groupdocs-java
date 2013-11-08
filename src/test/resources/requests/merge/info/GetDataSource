@@ -1,6 +1,6 @@
-GET /v2.0/merge/ea103bbe8cb8ce07/datasources/21922?field=Test1,Nonexistent&signature=4QrIQv7d%2B8otcg83ELid726hhrY
+GET /v2.0/merge/6d75a4d4db83f6fc/datasources/4025?field=Test1,Nonexistent&signature=fqEzln%2Bm5bHE%2FXdRro1XboqDoUI
 
-Host: dev-api-groupdocs.dynabic.com
+Host: stage-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2
