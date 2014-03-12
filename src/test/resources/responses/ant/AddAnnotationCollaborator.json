@@ -10,7 +10,8 @@
       "lastName": "Strashniy",
       "access_rights": null,
       "color": null,
-      "customEmailMessage": null
+      "customEmailMessage": null,
+        "avatar": null
     },
     "collaborators": [
       {
@@ -19,9 +20,10 @@
         "primary_email": "user_one@mailinator.com",
         "firstName": "John",
         "lastName": "Smith",
-        "access_rights": 15,
+
         "color": 13828740,
-        "customEmailMessage": null
+        "customEmailMessage": null,
+          "avatar": null
       }
     ]
   },

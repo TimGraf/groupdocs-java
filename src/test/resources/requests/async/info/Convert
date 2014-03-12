@@ -1,6 +1,6 @@
-POST /v2.0/async/6d75a4d4db83f6fc/files/54916c96d07b6149a032e297f90fd7f9d82e76e619e75188e2dd2f0df9cd72f7?emails_results=false&new_type=doc&signature=%2FWlzYx%2Fyq1nV%2BPVYej9eB%2BvN%2Biw
+POST /v2.0/async/ea103bbe8cb8ce07/files/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca?emails_results=false&new_type=doc&signature=o1dHAk4gvfNkdxlWaeBed%2FE7%2BHY
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

@@ -1,14 +1,14 @@
 {
   "result": {
-    "templateId": "7703c3124c320d30c96292912d0441c2",
+    "templateId": "3fc440ab71773b046ceef7c0bfec8205",
     "recipient": {
-      "id": "15d02effc15a970fa13efb56289a8820",
+      "id": "c0b116e59a17e604f96f2a54f8ad8382",
       "nickname": "John Smith 2",
-      "order": 1,
+      "order": 0,
       "roleId": 2
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383332765268
+  "composedOn": 1375218740469
 }

@@ -1,6 +1,6 @@
-GET /v2.0/system/6d75a4d4db83f6fc/plans/groupdocs?signature=NVcONOXhBxuefpS6akOtqHQo6TQ
+GET /v2.0/system/faa5c82daad84030/plans/groupdocs?signature=T2INN2qxR7rdFdHFn2PPMc7TtPM
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

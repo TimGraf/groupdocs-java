@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.StyleChangeInfo;
 import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.Page;
 /**
@@ -24,16 +26,19 @@ import com.groupdocs.sdk.model.Page;
  *
  */
 public class ChangeInfo {
-  private Double id = null;
+  private Integer id = null;
   private String type = null;
+  private String typeStr = null;
   private String action = null;
+  private String actionStr = null;
   private Page page = null;
   private Rectangle box = null;
   private String text = null;
-  public Double getId() {
+  private List<StyleChangeInfo> styleChanges = new ArrayList<StyleChangeInfo>();
+  public Integer getId() {
     return id;
   }
-  public void setId(Double id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
@@ -44,11 +49,25 @@ public class ChangeInfo {
     this.type = type;
   }
 
+  public String getTypeStr() {
+    return typeStr;
+  }
+  public void setTypeStr(String typeStr) {
+    this.typeStr = typeStr;
+  }
+
   public String getAction() {
     return action;
   }
   public void setAction(String action) {
     this.action = action;
+  }
+
+  public String getActionStr() {
+    return actionStr;
+  }
+  public void setActionStr(String actionStr) {
+    this.actionStr = actionStr;
   }
 
   public Page getPage() {
@@ -72,16 +91,26 @@ public class ChangeInfo {
     this.text = text;
   }
 
+  public List<StyleChangeInfo> getStyleChanges() {
+    return styleChanges;
+  }
+  public void setStyleChanges(List<StyleChangeInfo> styleChanges) {
+    this.styleChanges = styleChanges;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChangeInfo {\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  type: ").append(type).append("\n");
+    sb.append("  typeStr: ").append(typeStr).append("\n");
     sb.append("  action: ").append(action).append("\n");
+    sb.append("  actionStr: ").append(actionStr).append("\n");
     sb.append("  page: ").append(page).append("\n");
     sb.append("  box: ").append(box).append("\n");
     sb.append("  text: ").append(text).append("\n");
+    sb.append("  styleChanges: ").append(styleChanges).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -28,6 +28,7 @@ public class StorageInfoResult {
   private Integer avail_credits = null;
   private Integer total_documents = null;
   private Long avail_documents = null;
+  private Long maxViewingFileSize = null;
   public Long getTotal_space() {
     return total_space;
   }
@@ -70,6 +71,13 @@ public class StorageInfoResult {
     this.avail_documents = avail_documents;
   }
 
+  public Long getMaxViewingFileSize() {
+    return maxViewingFileSize;
+  }
+  public void setMaxViewingFileSize(Long maxViewingFileSize) {
+    this.maxViewingFileSize = maxViewingFileSize;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -80,6 +88,7 @@ public class StorageInfoResult {
     sb.append("  avail_credits: ").append(avail_credits).append("\n");
     sb.append("  total_documents: ").append(total_documents).append("\n");
     sb.append("  avail_documents: ").append(avail_documents).append("\n");
+    sb.append("  maxViewingFileSize: ").append(maxViewingFileSize).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

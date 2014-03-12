@@ -1,18 +1,17 @@
 {
   "result": {
     "adj_name": null,
-    "url": "https://stage-api-groupdocs.dynabic.com/v2.0/shared/files/f2dfb1b9e12578b3e20ee6139c378cede6584f8702ddeb3a427b32d757830553",
+    "url": "https://dev-api-groupdocs.dynabic.com/v2.0/shared/files/a9f39896803b5ce6aa520545d5fc0b664a3e1c067ecdc28e1e26c2339773e2d7",
     "type": "Html",
     "file_type": "Html",
     "size": 0,
     "version": 1,
     "view_job_id": null,
     "thumbnail": null,
-    "upload_time": -62135596800000,
-    "id": 132482,
-    "guid": "f2dfb1b9e12578b3e20ee6139c378cede6584f8702ddeb3a427b32d757830553"
+    "id": 325699,
+    "guid": "a9f39896803b5ce6aa520545d5fc0b664a3e1c067ecdc28e1e26c2339773e2d7"
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333578591
+  "composedOn": 1375220376632
 }

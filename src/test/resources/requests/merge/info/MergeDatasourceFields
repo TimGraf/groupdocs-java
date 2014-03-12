@@ -1,6 +1,6 @@
-POST /v2.0/merge/6d75a4d4db83f6fc/files/2327da14c3e36f6e7f134905ca65888d79a27295e173e2fe2408318058f925e1/datasources?signature=Z58gz54FbfjwVcAZW3N2AekyxAE
+POST /v2.0/merge/ea103bbe8cb8ce07/files/6ba8051b9c7b18b15391b86340514bd87c82c90a9c69786b691193a6391f2cca/datasources?signature=gMgH0WJ5cKqGtIBi0wgcaELzxcE
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 66
 Groupdocs-Referrer: ruby/1.4.2

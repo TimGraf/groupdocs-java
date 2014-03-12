@@ -17,6 +17,7 @@ package com.groupdocs.sdk.model;
 
 import java.util.*;
 import com.groupdocs.sdk.model.ConditionInfo;
+import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.AnswerInfo;
 /**
  * 
@@ -33,6 +34,9 @@ public class QuestionInfo {
   private String type = null;
   private List<AnswerInfo> answers = new ArrayList<AnswerInfo>();
   private List<ConditionInfo> conditions = new ArrayList<ConditionInfo>();
+  private List<String> acceptableValues = new ArrayList<String>();
+  private Integer max_length = null;
+  private Rectangle rect = null;
   public String getField() {
     return field;
   }
@@ -89,6 +93,27 @@ public class QuestionInfo {
     this.conditions = conditions;
   }
 
+  public List<String> getAcceptableValues() {
+    return acceptableValues;
+  }
+  public void setAcceptableValues(List<String> acceptableValues) {
+    this.acceptableValues = acceptableValues;
+  }
+
+  public Integer getMax_length() {
+    return max_length;
+  }
+  public void setMax_length(Integer max_length) {
+    this.max_length = max_length;
+  }
+
+  public Rectangle getRect() {
+    return rect;
+  }
+  public void setRect(Rectangle rect) {
+    this.rect = rect;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -101,6 +126,9 @@ public class QuestionInfo {
     sb.append("  type: ").append(type).append("\n");
     sb.append("  answers: ").append(answers).append("\n");
     sb.append("  conditions: ").append(conditions).append("\n");
+    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
+    sb.append("  max_length: ").append(max_length).append("\n");
+    sb.append("  rect: ").append(rect).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

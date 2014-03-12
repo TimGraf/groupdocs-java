@@ -42,6 +42,8 @@ import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
+import com.groupdocs.sdk.model.MarkerPosition;
+import com.groupdocs.sdk.model.AnnotationReviewerRights;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
 import com.groupdocs.sdk.model.DeleteAnnotationResponse;
 import com.groupdocs.sdk.model.EditReplyResponse;
@@ -60,8 +62,8 @@ import com.groupdocs.sdk.model.ReviewerInfo;
 import com.groupdocs.sdk.model.GetCollaboratorsResponse;
 import com.groupdocs.sdk.model.AnnotationReplyInfo;
 import com.groupdocs.sdk.model.ListRepliesResponse;
-import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddReplyResponse;
+import com.groupdocs.sdk.model.TextFieldInfo;
 
 
 public class AntApiTest extends AbstractUnitTest {
@@ -175,7 +177,16 @@ public class AntApiTest extends AbstractUnitTest {
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
-		String responseBody = getSampleResponse("ant/CreateAnnotationReply.json");
+		String responseBody = "{\n" +
+                "  \"result\": {\n" +
+                "    \"replyGuid\": \"688a648b\",\n" +
+                "    \"annotationGuid\": \"8257702b138f2b55\",\n" +
+                "    \"replyDateTime\": \"Tue Jul 30 18:06:04 EEST 2013\"\n" +
+                "  },\n" +
+                "  \"status\": \"Ok\",\n" +
+                "  \"error_message\": null,\n" +
+                "  \"composedOn\": 1375207486195\n" +
+                "}";
 		
 		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
 		driver.addExpectation(mockRequest, mockResponse);
@@ -541,7 +552,7 @@ public class AntApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String annotationId = "annotationId";
-		Point body = getSampleRequest("ant/payload/MoveAnnotationMarker.json", new TypeReference<Point>(){});
+		MarkerPosition body = getSampleRequest("ant/payload/MoveAnnotationMarker.json", new TypeReference<MarkerPosition>(){});
 		
 		String resourcePath = "/ant/{userId}/annotations/{annotationId}/markerPosition".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "annotationId" + "}", String.valueOf(annotationId));
 		
@@ -602,7 +613,7 @@ public class AntApiTest extends AbstractUnitTest {
 		
 		String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.APPLICATION_JSON);
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
@@ -612,7 +623,9 @@ public class AntApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetSharedLinkAccessRightsResponse response = api.GetSharedLinkAccessRights(userId, fileId);
+            AnnotationReviewerRights rights = new AnnotationReviewerRights();
+            rights.setCanView(1);
+			GetSharedLinkAccessRightsResponse response = api.GetSharedLinkAccessRights(userId, fileId, rights);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -627,8 +640,8 @@ public class AntApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String fileId = "fileId";
-		Integer body = 0;
-		
+        AnnotationReviewerRights body = new AnnotationReviewerRights();
+        body.setAll(31);
 		String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);

@@ -1,39 +1,26 @@
 {
-  "result": {
-    "metrics": [
+    "result": {
+        "metrics": [
 
-    ],
-    "subscription": {
-      "productId": 81295,
-      "name": "Gold",
-      "userCount": null,
-      "firstNameOnCard": "test",
-      "lastNameOnCard": "test",
-      "number": "XXXX-XXXX-XXXX-1111",
-      "expirationDate": "2015-10-31T23:59:00",
-      "cvv": null,
-      "address": {
-        "address1": "address",
-        "address2": null,
-        "city": null,
-        "company": null,
-        "country": "United States",
-        "email": null,
-        "fax": null,
-        "firstName": "test",
-        "lastName": "test",
-        "phone": null,
-        "state": null,
-        "zip": null
-      },
-      "price": null,
-      "currencyCode": "USD",
-      "billingPeriod": 1,
-      "promoCode": null,
-      "nextAssesmentDate": "2014-10-08T07:18:06.0000000Z"
-    }
-  },
-  "status": "Ok",
-  "error_message": null,
-  "composedOn": 1383333627108
+        ],
+        "subscription": {
+            "productId": 460,
+            "name": "Enterprise",
+            "userCount": null,
+            "firstNameOnCard": null,
+            "lastNameOnCard": null,
+            "number": null,
+            "expirationDate": null,
+            "cvv": null,
+            "address": null,
+            "price": 200,
+            "currencyCode": "USD",
+            "billingPeriod": null,
+            "promoCode": null,
+            "nextAssesmentDate": null
+        }
+    },
+    "status": "Ok",
+    "error_message": null,
+    "composedOn": 1375220507070
 }

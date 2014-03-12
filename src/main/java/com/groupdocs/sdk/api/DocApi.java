@@ -28,6 +28,7 @@ import com.groupdocs.sdk.model.SharedDocumentsResponse;
 import com.groupdocs.sdk.model.RemoveEditLockResponse;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.ViewDocumentResponse;
+import com.groupdocs.sdk.model.GetHyperlinksResponse;
 import com.groupdocs.sdk.model.GetEditLockResponse;
 import com.groupdocs.sdk.model.GetDocumentContentResponse;
 import com.groupdocs.sdk.model.DocumentUserStatusResponse;
@@ -976,6 +977,36 @@ public class DocApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetDocumentContentResponse) ApiInvoker.deserialize(response, "", GetDocumentContentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetHyperlinksResponse GetDocumentHyperlinks (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/hyperlinks".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetHyperlinksResponse) ApiInvoker.deserialize(response, "", GetHyperlinksResponse.class);
       }
       else {
         return null;

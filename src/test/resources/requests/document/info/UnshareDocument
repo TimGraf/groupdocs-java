@@ -1,6 +1,0 @@
-DELETE /v2.0/doc/6d75a4d4db83f6fc/files/131856/sharers?signature=rjlPec0TnE2%2FlpMQIpn80fl9frM
-
-Host: stage-api-groupdocs.dynabic.com
-Accept: application/json
-Content-Length: 0
-Groupdocs-Referrer: ruby/1.4.2

@@ -188,7 +188,7 @@
         "Name": "Cuba"
       },
       {
-        "Name": "Cura├ºao"
+        "Name": "Cura├â┬ºao"
       },
       {
         "Name": "Cyprus"
@@ -569,7 +569,7 @@
         "Name": "Rwanda"
       },
       {
-        "Name": "Saint Barth├⌐lemy"
+        "Name": "Saint Barth├â┬⌐lemy"
       },
       {
         "Name": "Saint Helena"
@@ -755,5 +755,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333587136
+  "composedOn": 1375220411945
 }

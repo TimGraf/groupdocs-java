@@ -1,6 +1,6 @@
-DELETE /v2.0/signature/6d75a4d4db83f6fc/envelopes/b4fb5ffc10fcf4e8e80c7a7b5db1972c/recipients/0171f086731524b9bbd22d5fc5782118?signature=k1Ic0BIOVkz6Y4Bv3I8BWgw7DHk
+DELETE /v2.0/signature/ea103bbe8cb8ce07/envelopes/65763e27b43cfbc8ea16d344bacac0a3/recipients/f07249f73db61d0f2cc2d62c12a84839?signature=OEPoSrNj30NW1obdfNtzKWnh7nA
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

@@ -1,7 +1,0 @@
-PUT /v2.0/ant/6d75a4d4db83f6fc/files/91745d0ba6c51557495993f406f98e0dfcc98d309d59ccf658727eec3beab506/sharedLinkAccessRights?signature=GDPd%2BN3Qq2wou4TcPguj9vJCd0M
-
-Host: stage-api-groupdocs.dynabic.com
-Accept: application/json
-Content-Length: 2
-Groupdocs-Referrer: ruby/1.4.2
-Content-Type: application/json

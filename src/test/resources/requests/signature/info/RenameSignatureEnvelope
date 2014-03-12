@@ -1,6 +1,6 @@
-PUT /v2.0/signature/6d75a4d4db83f6fc/envelopes/77c9c3b1dfedfbbd77e7126b6a36f15e?name=Envelope%20-%20020434552002888573&signature=d3TQJLNlqM2vVzunERb2Aqr9ZMI
+PUT /v2.0/signature/ea103bbe8cb8ce07/envelopes/aec59dc26868cab5ae0ba1552d3a95d1?name=Envelope%20-%203797726614276461&signature=82qVlXOC78OQEDLTXp7E2PkqPD0
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

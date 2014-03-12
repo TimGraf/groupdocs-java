@@ -1,27 +1,8 @@
 {
   "result": {
-    "template": {
-      "id": "3386a523d2804a43dcc08533246897ec",
-      "name": "Template - 5691259309148357",
-      "ownerGuid": "6d75a4d4db83f6fc",
-      "reminderTime": 1,
-      "stepExpireTime": 3,
-      "templateExpireTime": 6,
-      "ownerShouldSign": false,
-      "orderedSignature": false,
-      "emailSubject": "Sign this!",
-      "emailBody": "",
-      "documentsCount": 0,
-      "documentsPages": 0,
-      "recipients": [
-
-      ],
-      "waterMarkText": "",
-      "waterMarkImage": "",
-      "fieldsCount": 0
-    }
+    "template": null
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383332901370
+  "composedOn": 1375218945344
 }

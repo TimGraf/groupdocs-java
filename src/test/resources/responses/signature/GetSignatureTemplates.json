@@ -1,11 +1,11 @@
 {
   "result": {
-    "templatesCount": 1,
+    "templatesCount": 1054,
     "templates": [
       {
-        "id": "1b4ab8325355b4c032efa3345335f71e",
-        "name": "Template 4728109317125784",
-        "ownerGuid": "6d75a4d4db83f6fc",
+        "id": "043c5d84add3d66bc6bde913c4cb1e58",
+        "name": "Template 29890233107781017",
+        "ownerGuid": "ea103bbe8cb8ce07",
         "reminderTime": 1,
         "stepExpireTime": 3,
         "templateExpireTime": 6,
@@ -17,7 +17,117 @@
         "documentsPages": 1,
         "recipients": [
           {
-            "id": "1969abeab827c912a53533b97ead422e",
+            "id": "536e83f01868992aedcf340146944fe6",
+            "nickname": "John Smith",
+            "order": 0,
+            "roleId": 2
+          }
+        ],
+        "waterMarkText": "",
+        "waterMarkImage": "",
+        "fieldsCount": 0
+      },
+      {
+        "id": "6531ef116b0dfd21f1e6988d5ab1db3d",
+        "name": "Template 5628106895819844",
+        "ownerGuid": "ea103bbe8cb8ce07",
+        "reminderTime": 1,
+        "stepExpireTime": 3,
+        "templateExpireTime": 6,
+        "ownerShouldSign": false,
+        "orderedSignature": false,
+        "emailSubject": "Sign this!",
+        "emailBody": "",
+        "documentsCount": 0,
+        "documentsPages": 0,
+        "recipients": [
+
+        ],
+        "waterMarkText": "",
+        "waterMarkImage": "",
+        "fieldsCount": 0
+      },
+      {
+        "id": "24f515503d33b1b69702e4bb66c7ac1e",
+        "name": "Template 7685166967868785",
+        "ownerGuid": "ea103bbe8cb8ce07",
+        "reminderTime": 1,
+        "stepExpireTime": 3,
+        "templateExpireTime": 6,
+        "ownerShouldSign": false,
+        "orderedSignature": false,
+        "emailSubject": "Sign this!",
+        "emailBody": "",
+        "documentsCount": 0,
+        "documentsPages": 0,
+        "recipients": [
+
+        ],
+        "waterMarkText": "",
+        "waterMarkImage": "",
+        "fieldsCount": 0
+      },
+      {
+        "id": "4b7d8c2a3a2e273d0542fa36f6638a44",
+        "name": "Template 7789151215115653",
+        "ownerGuid": "ea103bbe8cb8ce07",
+        "reminderTime": 1,
+        "stepExpireTime": 3,
+        "templateExpireTime": 6,
+        "ownerShouldSign": false,
+        "orderedSignature": false,
+        "emailSubject": "Sign this!",
+        "emailBody": "",
+        "documentsCount": 0,
+        "documentsPages": 0,
+        "recipients": [
+
+        ],
+        "waterMarkText": "",
+        "waterMarkImage": "",
+        "fieldsCount": 0
+      },
+      {
+        "id": "e80c086b46070c21cc6db7946be3de9d",
+        "name": "Template 24743352230095994",
+        "ownerGuid": "ea103bbe8cb8ce07",
+        "reminderTime": 1,
+        "stepExpireTime": 3,
+        "templateExpireTime": 6,
+        "ownerShouldSign": false,
+        "orderedSignature": false,
+        "emailSubject": "Sign this!",
+        "emailBody": "",
+        "documentsCount": 1,
+        "documentsPages": 1,
+        "recipients": [
+          {
+            "id": "aa930c2f842fa878d01d4ae965b44d03",
+            "nickname": "John Smith",
+            "order": 0,
+            "roleId": 2
+          }
+        ],
+        "waterMarkText": "",
+        "waterMarkImage": "",
+        "fieldsCount": 0
+      },
+      {
+        "id": "e5f8efb715e9670d5d852f94b8808d40",
+        "name": "Template 7114800724232201",
+        "ownerGuid": "ea103bbe8cb8ce07",
+        "reminderTime": 1,
+        "stepExpireTime": 3,
+        "templateExpireTime": 6,
+        "ownerShouldSign": false,
+        "orderedSignature": false,
+        "emailSubject": "Sign this!",
+        "emailBody": "",
+        "documentsCount": 1,
+        "documentsPages": 1,
+        "recipients": [
+          {
+            "id": "2e9ba1b0e2e94663cce113c9c02dcc3d",
             "nickname": "John Smith",
             "order": 0,
             "roleId": 2
@@ -31,5 +141,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383331926643
+  "composedOn": 1375217535501
 }

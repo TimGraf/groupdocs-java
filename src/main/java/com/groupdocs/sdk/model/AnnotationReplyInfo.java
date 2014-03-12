@@ -28,6 +28,7 @@ public class AnnotationReplyInfo {
   private String text = null;
   private Long repliedOn = null;
   private String parentReplyGuid = null;
+  private Boolean isAvatarExist = null;
   public String getGuid() {
     return guid;
   }
@@ -70,6 +71,13 @@ public class AnnotationReplyInfo {
     this.parentReplyGuid = parentReplyGuid;
   }
 
+  public Boolean getIsAvatarExist() {
+    return isAvatarExist;
+  }
+  public void setIsAvatarExist(Boolean isAvatarExist) {
+    this.isAvatarExist = isAvatarExist;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -80,6 +88,7 @@ public class AnnotationReplyInfo {
     sb.append("  text: ").append(text).append("\n");
     sb.append("  repliedOn: ").append(repliedOn).append("\n");
     sb.append("  parentReplyGuid: ").append(parentReplyGuid).append("\n");
+    sb.append("  isAvatarExist: ").append(isAvatarExist).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

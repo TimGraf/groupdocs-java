@@ -1,13 +1,13 @@
 {
   "result": {
     "list": {
-      "id": "66100d8d38286c6ca5eb53fbd9509022",
-      "name": "List - 5406043595139229",
+      "id": "c1fe03372d1db4131f8a35a3aadb425d",
+      "name": "List - 8434865226745041",
       "values": "value1;value2",
       "defaultValue": "value1"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383330514717
+  "composedOn": 1375214830575
 }

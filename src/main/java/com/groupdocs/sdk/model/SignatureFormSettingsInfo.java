@@ -29,6 +29,7 @@ public class SignatureFormSettingsInfo {
   private String waterMarkImage = null;
   private Boolean notifyOwnerOnSign  = null;
   private Boolean attachSignedDocument = null;
+  private String notifyOtherOnSign  = null;
   public String getName() {
     return name;
   }
@@ -78,6 +79,13 @@ public class SignatureFormSettingsInfo {
     this.attachSignedDocument = attachSignedDocument;
   }
 
+  public String getNotifyOtherOnSign () {
+    return notifyOtherOnSign ;
+  }
+  public void setNotifyOtherOnSign (String notifyOtherOnSign ) {
+    this.notifyOtherOnSign  = notifyOtherOnSign ;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -89,6 +97,7 @@ public class SignatureFormSettingsInfo {
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
     sb.append("  notifyOwnerOnSign : ").append(notifyOwnerOnSign ).append("\n");
     sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
+    sb.append("  notifyOtherOnSign : ").append(notifyOtherOnSign ).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -38,6 +38,8 @@ public class SignatureFormFieldInfo {
   private String defaultValue = null;
   private String tooltip = null;
   private String guidanceText = null;
+  private String groupName = null;
+  private String settings = null;
   public String getId() {
     return id;
   }
@@ -136,6 +138,20 @@ public class SignatureFormFieldInfo {
     this.guidanceText = guidanceText;
   }
 
+  public String getGroupName() {
+    return groupName;
+  }
+  public void setGroupName(String groupName) {
+    this.groupName = groupName;
+  }
+
+  public String getSettings() {
+    return settings;
+  }
+  public void setSettings(String settings) {
+    this.settings = settings;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -154,6 +170,8 @@ public class SignatureFormFieldInfo {
     sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("  guidanceText: ").append(guidanceText).append("\n");
+    sb.append("  groupName: ").append(groupName).append("\n");
+    sb.append("  settings: ").append(settings).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

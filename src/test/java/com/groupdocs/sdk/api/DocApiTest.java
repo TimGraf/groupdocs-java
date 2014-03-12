@@ -47,6 +47,7 @@ import com.groupdocs.sdk.model.SharedDocumentsResponse;
 import com.groupdocs.sdk.model.RemoveEditLockResponse;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.ViewDocumentResponse;
+import com.groupdocs.sdk.model.GetHyperlinksResponse;
 import com.groupdocs.sdk.model.GetEditLockResponse;
 import com.groupdocs.sdk.model.GetDocumentContentResponse;
 import com.groupdocs.sdk.model.DocumentUserStatusResponse;
@@ -911,6 +912,34 @@ public class DocApiTest extends AbstractUnitTest {
 		
 		try {
 			GetDocumentContentResponse response = api.GetDocumentContent(userId, fileId, contentType);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetDocumentHyperlinks() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		
+		String resourcePath = "/doc/{userId}/files/{fileId}/hyperlinks".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("doc/GetDocumentHyperlinks.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetHyperlinksResponse response = api.GetDocumentHyperlinks(userId, fileId);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

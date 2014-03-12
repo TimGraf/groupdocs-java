@@ -2,26 +2,26 @@
   "result": {
     "recipients": [
       {
-        "id": "797796384b8278d988d0270ba374dee8",
+        "id": "b6a147bdc0b61f19fff882319d83af26",
         "firstName": "John",
         "lastName": "Smith",
-        "email": "api@groupdocs.com",
-        "userGuid": "6d75a4d4db83f6fc",
+        "email": "api-tests@groupdocs.com",
+        "userGuid": "ea103bbe8cb8ce07",
         "order": 0,
         "roleId": 2,
         "status": 1,
         "statusMessage": null,
-        "statusDateTime": "2013-11-01T19:10:59.8585079ZZ",
+        "statusDateTime": "2013-07-30T21:18:34.7509297ZZ",
         "delegatedRecipientId": null,
         "signatureFingerprint": null,
         "signatureHost": null,
         "signatureLocation": null,
         "signatureBrowser": null,
-        "embedUrl": "https://stage-apps-groupdocs.dynabic.com/signature/signembed/7b63fa70f2f83fe9efc6a007ae718f3b/797796384b8278d988d0270ba374dee8"
+        "embedUrl": "http://dev-apps-groupdocs.dynabic.com/signature/signembed/a485c49b83cdc82147a5caabcfa0656c/b6a147bdc0b61f19fff882319d83af26"
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333059328
+  "composedOn": 1375219114438
 }

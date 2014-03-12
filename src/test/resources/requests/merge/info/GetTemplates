@@ -1,6 +1,6 @@
-GET /v2.0/merge/6d75a4d4db83f6fc/templates?signature=pDT41q0K3LcrtXeQrpeh6fna3nE
+GET /v2.0/merge/ea103bbe8cb8ce07/templates?signature=VA2SDPAWo4jQZbNoGYn78yhz17o
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

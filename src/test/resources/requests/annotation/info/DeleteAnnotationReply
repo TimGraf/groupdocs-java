@@ -1,6 +1,0 @@
-DELETE /v2.0/ant/6d75a4d4db83f6fc/replies/4a38f746?signature=yvG4XAj8Vo%2B4nREBbZJDfEzFkko
-
-Host: stage-api-groupdocs.dynabic.com
-Accept: application/json
-Content-Length: 0
-Groupdocs-Referrer: ruby/1.4.2

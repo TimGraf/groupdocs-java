@@ -64,7 +64,7 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		String targetFileId = "targetFileId";
 		String callbackUrl = "callbackUrl";
 		
-		String resourcePath = "/comparison/{userId}/comparison/compare".replace("{" + "userId" + "}", String.valueOf(userId));
+		String resourcePath = "/comparison/{userId}/compare".replace("{" + "userId" + "}", String.valueOf(userId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
@@ -90,71 +90,12 @@ public class ComparisonApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
-	public void testGetChanges() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String resultFileId = "resultFileId";
-		
-		String resourcePath = "/comparison/{userId}/comparison/changes".replace("{" + "userId" + "}", String.valueOf(userId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("comparison/GetChanges.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			ChangesResponse response = api.GetChanges(userId, resultFileId);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
-	public void testUpdateChanges() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String resultFileId = "resultFileId";
-		List<ChangeInfo> body = getSampleRequest("comparison/payload/UpdateChanges.json", new TypeReference<List<ChangeInfo>>(){});
-		
-		String resourcePath = "/comparison/{userId}/comparison/changes".replace("{" + "userId" + "}", String.valueOf(userId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("comparison/UpdateChanges.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			ChangesResponse response = api.UpdateChanges(userId, resultFileId, body);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
 	public void testGetDocumentDetails() throws Exception {
 		// sample parameters
 		String userId = "userId";
 		String guid = "guid";
 		
-		String resourcePath = "/comparison/{userId}/comparison/document".replace("{" + "userId" + "}", String.valueOf(userId));
+		String resourcePath = "/comparison/{userId}/document".replace("{" + "userId" + "}", String.valueOf(userId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
@@ -180,15 +121,13 @@ public class ComparisonApiTest extends AbstractUnitTest {
 	@Test
 	public void testDownloadResult() throws Exception {
 		// sample parameters
-		String userId = "userId";
 		String resultFileId = "resultFileId";
 		String format = "format";
 		
-		String resourcePath = "/comparison/{userId}/comparison/download".replace("{" + "userId" + "}", String.valueOf(userId));
+		String resourcePath = "/comparison/{resultFileId}/download".replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
 		mockRequest = mockRequest.withParam("format", format);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
@@ -198,8 +137,65 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			FileStream response = api.DownloadResult(userId, resultFileId, format);
+			FileStream response = api.DownloadResult(resultFileId, format);
 			assertThat(response.getInputStream(), not(nullValue()));
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetChanges() throws Exception {
+		// sample parameters
+		String resultFileId = "resultFileId";
+		
+		String resourcePath = "/comparison/{resultFileId}/changes";
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("comparison/GetChanges.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			ChangesResponse response = api.GetChanges(resultFileId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testUpdateChanges() throws Exception {
+		// sample parameters
+		String resultFileId = "resultFileId";
+		List<ChangeInfo> body = getSampleRequest("comparison/payload/UpdateChanges.json", new TypeReference<List<ChangeInfo>>(){});
+		
+		String resourcePath = "/comparison/{resultFileId}/changes";
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("resultFileId", resultFileId);
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("comparison/UpdateChanges.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			ChangesResponse response = api.UpdateChanges(resultFileId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
 			
 		} catch(ApiException e){
 			log(e.getCode() + ": " + e.getMessage());

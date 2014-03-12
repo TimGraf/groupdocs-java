@@ -1,16 +1,16 @@
 {
   "result": {
     "user": {
-      "nickname": "api@groupdocs.com",
-      "firstname": null,
-      "lastname": null,
-      "pkey": "7a7573ecaebf57169ddffa51e0a31a64",
-      "pswd_salt": "TEm3NL1EC3vRO5PDCRRMUw==",
+      "nickname": "api-tests@groupdocs.com",
+      "firstname": "Pavel",
+      "lastname": "Strashniy",
+      "pkey": "808ee048519831cd47f2ae067b7f99b2",
+      "pswd_salt": "uCXoBZH7pY1Sy8JOK+/BGw==",
       "claimed_id": null,
-      "token": "0cf33f280861642eefbba16eac57a940cf4dc8505d152a645c63992a2add3388",
+      "token": null,
       "storage": null,
       "photo": null,
-      "active": false,
+      "active": null,
       "trial": null,
       "news_eanbled": null,
       "alerts_eanbled": null,
@@ -53,21 +53,21 @@
       "is_viewer_help_widget_enabled": null,
       "is_viewer_document_name_shown": null,
       "isviewer_right_mouse_button_menu_enabled": null,
-      "signedupOn": 1381234750823,
-      "signedinOn": 1382132641813,
-      "signin_count": 5,
+      "signedupOn": 1341805769540,
+      "signedinOn": 1374561348667,
+      "signin_count": null,
       "roles": null,
       "signature_watermark_enabled": null,
       "signature_desktop_notifications": null,
-      "webhook_notification_retries": 3,
+      "webhook_notification_retries": null,
       "webhook_notification_failed_recipients": null,
       "signature_color": null,
-      "id": 1085,
-      "guid": "6d75a4d4db83f6fc",
-      "primary_email": "api@groupdocs.com"
+      "id": 167,
+      "guid": "ea103bbe8cb8ce07",
+      "primary_email": "api-tests@groupdocs.com"
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333663561
+  "composedOn": 1375220709851
 }

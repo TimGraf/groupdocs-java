@@ -39,6 +39,7 @@ public class UserInfo {
   private Boolean alerts_eanbled = null;
   private Boolean support_eanbled = null;
   private String support_email = null;
+  private String apps = null;
   private Boolean annotation_branded = null;
   private Boolean viewer_branded = null;
   private Boolean is_real_time_broadcast_enabled = null;
@@ -85,7 +86,8 @@ public class UserInfo {
   private Integer webhook_notification_retries = null;
   private String webhook_notification_failed_recipients = null;
   private String signature_color = null;
-  private Double id = null;
+  private Boolean signature_save_field_changes_automatically = null;
+  private Long id = null;
   private String guid = null;
   private String primary_email = null;
   public String getNickname() {
@@ -191,6 +193,13 @@ public class UserInfo {
   }
   public void setSupport_email(String support_email) {
     this.support_email = support_email;
+  }
+
+  public String getApps() {
+    return apps;
+  }
+  public void setApps(String apps) {
+    this.apps = apps;
   }
 
   public Boolean getAnnotation_branded() {
@@ -515,10 +524,17 @@ public class UserInfo {
     this.signature_color = signature_color;
   }
 
-  public Double getId() {
+  public Boolean getSignature_save_field_changes_automatically() {
+    return signature_save_field_changes_automatically;
+  }
+  public void setSignature_save_field_changes_automatically(Boolean signature_save_field_changes_automatically) {
+    this.signature_save_field_changes_automatically = signature_save_field_changes_automatically;
+  }
+
+  public Long getId() {
     return id;
   }
-  public void setId(Double id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
@@ -555,6 +571,7 @@ public class UserInfo {
     sb.append("  alerts_eanbled: ").append(alerts_eanbled).append("\n");
     sb.append("  support_eanbled: ").append(support_eanbled).append("\n");
     sb.append("  support_email: ").append(support_email).append("\n");
+    sb.append("  apps: ").append(apps).append("\n");
     sb.append("  annotation_branded: ").append(annotation_branded).append("\n");
     sb.append("  viewer_branded: ").append(viewer_branded).append("\n");
     sb.append("  is_real_time_broadcast_enabled: ").append(is_real_time_broadcast_enabled).append("\n");
@@ -601,6 +618,7 @@ public class UserInfo {
     sb.append("  webhook_notification_retries: ").append(webhook_notification_retries).append("\n");
     sb.append("  webhook_notification_failed_recipients: ").append(webhook_notification_failed_recipients).append("\n");
     sb.append("  signature_color: ").append(signature_color).append("\n");
+    sb.append("  signature_save_field_changes_automatically: ").append(signature_save_field_changes_automatically).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

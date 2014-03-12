@@ -44,6 +44,7 @@ import com.groupdocs.sdk.model.CompressResponse;
 import com.groupdocs.sdk.model.StorageInfoResponse;
 import com.groupdocs.sdk.model.UploadResponse;
 import com.groupdocs.sdk.model.DeleteResponse;
+import com.groupdocs.sdk.model.CancelFileUploadResponse;
 import com.groupdocs.sdk.model.FolderMoveResponse;
 import com.groupdocs.sdk.model.CreatePackageResponse;
 
@@ -61,6 +62,35 @@ public class StorageApiTest extends AbstractUnitTest {
 		api.setBasePath(driver.getBaseUrl());
 	}
 
+	@Test
+	public void testCancelFileUpload() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		String filePath = "filePath";
+		
+		String resourcePath = "/storage/{userId}/cancelUpload/{fileId}/{filePath}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "filePath" + "}", String.valueOf(filePath));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("storage/CancelFileUpload.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			CancelFileUploadResponse response = api.CancelFileUpload(userId, fileId, filePath);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
 	@Test
 	public void testGetStorageInfo() throws Exception {
 		// sample parameters
@@ -371,8 +401,8 @@ public class StorageApiTest extends AbstractUnitTest {
 		String userId = "userId";
 		String path = "path";
 		String mode = "mode";
-		String Groupdocs_Copy = "Groupdocs_Copy";
 		String Groupdocs_Move = "Groupdocs_Move";
+		String Groupdocs_Copy = "Groupdocs_Copy";
 		
 		String resourcePath = "/storage/{userId}/files/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 		
@@ -387,7 +417,7 @@ public class StorageApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			FileMoveResponse response = api.MoveFile(userId, path, mode, Groupdocs_Copy, Groupdocs_Move);
+			FileMoveResponse response = api.MoveFile(userId, path, mode, Groupdocs_Move, Groupdocs_Copy);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -535,7 +565,7 @@ public class StorageApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			FolderMoveResponse response = api.MoveToTrash(userId, path);
+			DeleteResponse response = api.MoveToTrash(userId, path);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

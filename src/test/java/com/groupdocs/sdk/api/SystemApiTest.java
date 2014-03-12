@@ -147,34 +147,34 @@ public class SystemApiTest extends AbstractUnitTest {
 		}
 	
 	}
-	
-	@Test
-	public void testGetSubscriptionPlans() throws Exception {
-		// sample parameters
-		String callerId = "callerId";
-		String family = "family";
-		
-		String resourcePath = "/system/{callerId}/plans/{family}".replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "family" + "}", String.valueOf(family));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("system/GetSubscriptionPlans.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			GetSubscriptionPlansResponse response = api.GetSubscriptionPlans(callerId, family);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
+
+    @Test
+    public void testGetSubscriptionPlans() throws Exception {
+        // sample parameters
+        String callerId = "callerId";
+        String family = "family";
+
+        String resourcePath = "/system/{callerId}/plans/{family}".replace("{" + "callerId" + "}", String.valueOf(callerId)).replace("{" + "family" + "}", String.valueOf(family));
+
+        ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+        // add query parameters to expectation
+        mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+        // read response json from file
+        String responseBody = getSampleResponse("system/GetSubscriptionPlans.json");
+
+        ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+        driver.addExpectation(mockRequest, mockResponse);
+
+        try {
+            GetSubscriptionPlansResponse response = api.GetSubscriptionPlans(callerId, family);
+            // this ensures that json was successfully deserialized into corresponding model object
+            assertSameJson(responseBody, response);
+
+        } catch(ApiException e){
+            log(e.getCode() + ": " + e.getMessage());
+        }
+
+    }
 	
 	@Test
 	public void testSetSubscriptionPlan() throws Exception {

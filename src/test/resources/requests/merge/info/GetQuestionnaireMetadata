@@ -1,6 +1,6 @@
-GET /v2.0/merge/6d75a4d4db83f6fc/questionnaires/58fe8c2a26e0e0838b04b84fb250d5c3/metadata?signature=tTf5oyj19oUgnY73PspSW%2BJOyKg
+GET /v2.0/merge/ea103bbe8cb8ce07/questionnaires/9a0112fa9de14991787d88b85d0fd74f/metadata?signature=4ui5U2%2B5%2FA5jWiLdRo6F3EeFNEc
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

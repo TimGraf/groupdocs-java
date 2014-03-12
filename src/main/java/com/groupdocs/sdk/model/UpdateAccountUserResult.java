@@ -22,13 +22,13 @@ package com.groupdocs.sdk.model;
  *
  */
 public class UpdateAccountUserResult {
-  private Double id = null;
+  private Long id = null;
   private String guid = null;
   private String primary_email = null;
-  public Double getId() {
+  public Long getId() {
     return id;
   }
-  public void setId(Double id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

@@ -22,11 +22,11 @@ package com.groupdocs.sdk.model;
  *
  */
 public class GetSharedLinkAccessRightsResult {
-  private Integer accessRights = null;
-  public Integer getAccessRights() {
+  private String accessRights = null;
+  public String getAccessRights() {
     return accessRights;
   }
-  public void setAccessRights(Integer accessRights) {
+  public void setAccessRights(String accessRights) {
     this.accessRights = accessRights;
   }
 

@@ -1,9 +1,9 @@
 {
   "result": {
     "template": {
-      "id": "67d1cf7a1fef82796846077aeabe7412",
-      "name": "Template 33723108540352487",
-      "ownerGuid": "6d75a4d4db83f6fc",
+      "id": "98fa2df94425d2344bcb3e6d15300bf2",
+      "name": "Template 1892367510115256",
+      "ownerGuid": "ea103bbe8cb8ce07",
       "reminderTime": 1,
       "stepExpireTime": 3,
       "templateExpireTime": 6,
@@ -23,5 +23,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383332072969
+  "composedOn": 1375217806892
 }

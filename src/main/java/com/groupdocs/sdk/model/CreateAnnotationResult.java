@@ -22,17 +22,17 @@ package com.groupdocs.sdk.model;
  *
  */
 public class CreateAnnotationResult {
-  private Double id = null;
+  private Long id = null;
   private String annotationGuid = null;
   private String replyGuid = null;
   private String documentGuid = null;
   private String sessionGuid = null;
   private String access = null;
   private Long serverTime = null;
-  public Double getId() {
+  public Long getId() {
     return id;
   }
-  public void setId(Double id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

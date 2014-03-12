@@ -15,6 +15,7 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
 import com.groupdocs.sdk.model.Rectangle;
 /**
  * 
@@ -27,6 +28,10 @@ public class TemplateField {
   private String name = null;
   private String type = null;
   private Rectangle rect = null;
+  private Integer maxlength = null;
+  private Boolean mandatory = null;
+  private String fieldtype = null;
+  private List<String> acceptableValues = new ArrayList<String>();
   public Integer getPage() {
     return page;
   }
@@ -55,6 +60,34 @@ public class TemplateField {
     this.rect = rect;
   }
 
+  public Integer getMaxlength() {
+    return maxlength;
+  }
+  public void setMaxlength(Integer maxlength) {
+    this.maxlength = maxlength;
+  }
+
+  public Boolean getMandatory() {
+    return mandatory;
+  }
+  public void setMandatory(Boolean mandatory) {
+    this.mandatory = mandatory;
+  }
+
+  public String getFieldtype() {
+    return fieldtype;
+  }
+  public void setFieldtype(String fieldtype) {
+    this.fieldtype = fieldtype;
+  }
+
+  public List<String> getAcceptableValues() {
+    return acceptableValues;
+  }
+  public void setAcceptableValues(List<String> acceptableValues) {
+    this.acceptableValues = acceptableValues;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -63,6 +96,10 @@ public class TemplateField {
     sb.append("  name: ").append(name).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("  rect: ").append(rect).append("\n");
+    sb.append("  maxlength: ").append(maxlength).append("\n");
+    sb.append("  mandatory: ").append(mandatory).append("\n");
+    sb.append("  fieldtype: ").append(fieldtype).append("\n");
+    sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

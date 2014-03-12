@@ -1,6 +1,6 @@
-GET /v2.0/mgmt/6d75a4d4db83f6fc/roles?signature=PcVxX2XyYvh2ENks2B8ji8ChiPA
+GET /v2.0/mgmt/ea103bbe8cb8ce07/roles?signature=jiWOMKZjMkJa88J8BdLooeEzbqU
 
-Host: stage-api-groupdocs.dynabic.com
+Host: dev-api-groupdocs.dynabic.com
 Accept: application/json
 Content-Length: 0
 Groupdocs-Referrer: ruby/1.4.2

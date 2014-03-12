@@ -10,7 +10,8 @@
       "lastName": "Strashniy",
       "access_rights": null,
       "color": null,
-      "customEmailMessage": null
+      "customEmailMessage": null,
+        "avatar": null
     },
     "collaborators": [
       {
@@ -19,9 +20,10 @@
         "primary_email": "user_one@mailinator.com",
         "firstName": "John",
         "lastName": "Smith",
-        "access_rights": 15,
+        "access_rights": "15",
         "color": 7220678,
-        "customEmailMessage": null
+        "customEmailMessage": null,
+          "avatar": null
       },
       {
         "id": 22103,
@@ -29,9 +31,10 @@
         "primary_email": "user_two@mailinator.com",
         "firstName": null,
         "lastName": null,
-        "access_rights": 15,
+        "access_rights": "15",
         "color": 16515083,
-        "customEmailMessage": null
+        "customEmailMessage": null,
+          "avatar": null
       }
     ]
   },

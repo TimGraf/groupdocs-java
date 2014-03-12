@@ -1,30 +1,30 @@
 {
   "result": {
-    "envelopeId": "3289367689a425375d4519bf2a028cc5",
-    "documentId": "3cad6755580a8bc8efdc7315b0f8b114aea0defee1bface3f29d66dbb89191d8",
-    "recipientId": "6224f8dc15e02de402d3446e29ea946c",
+    "envelopeId": "c47202c7a5e3e1ca97ef31f3a59ffbcd",
+    "documentId": "db7da448305d67ce5acd011e8b1e79f5697dc928580b8b9c5b1a17d252aa1e1a",
+    "recipientId": "e203492fce86c386b591ec4d188767d2",
     "field": {
-      "id": "41b09370a1e43b05d62f7c3772c9a3ee",
-      "envelopeId": "3289367689a425375d4519bf2a028cc5",
-      "recipientId": "6224f8dc15e02de402d3446e29ea946c",
-      "name": "Signature_1",
+      "id": "e578ca9b65f2d9a1914222cd8d0a5f9f",
+      "envelopeId": "c47202c7a5e3e1ca97ef31f3a59ffbcd",
+      "recipientId": "e203492fce86c386b591ec4d188767d2",
+      "name": "Signature",
       "mandatory": true,
       "order": 0,
       "regularExpression": "",
       "getDataFrom": null,
-      "data": "",
-      "fillTimeStamp": "",
+      "data": null,
+      "fillTimeStamp": "1/1/1970 12:00:00 AM",
       "signatureFieldId": 1,
       "locations": [
         {
-          "id": "29c6c68b04a09e9cdcb7f5823147b80e",
-          "documentId": "3cad6755580a8bc8efdc7315b0f8b114aea0defee1bface3f29d66dbb89191d8",
-          "fieldId": "41b09370a1e43b05d62f7c3772c9a3ee",
+          "id": "0e65e5516154b7f56e33f520a98045d1",
+          "documentId": "db7da448305d67ce5acd011e8b1e79f5697dc928580b8b9c5b1a17d252aa1e1a",
+          "fieldId": "e578ca9b65f2d9a1914222cd8d0a5f9f",
           "page": 1,
           "locationX": 0.2,
           "locationY": 0.2,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
+          "locationWidth": 90,
+          "locationHeight": 30,
           "fontName": "Helvetica",
           "fontColor": "red",
           "fontSize": 10,
@@ -35,13 +35,13 @@
         }
       ],
       "fieldType": 1,
-      "acceptableValues": null,
-      "defaultValue": null,
-      "tooltip": "Signature_1",
+      "acceptableValues": "",
+      "defaultValue": "",
+      "tooltip": "Signature",
       "guidanceText": ""
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383332123117
+  "composedOn": 1375217929955
 }

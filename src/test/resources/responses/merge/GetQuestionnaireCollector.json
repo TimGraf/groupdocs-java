@@ -1,19 +1,19 @@
 {
   "result": {
     "collector": {
-      "id": 7041,
-      "guid": "4931d0b704f569de92fa702dce71677e",
+      "id": 23402,
+      "guid": "47fbcd1b7b1b887d61cc1e1d64460d2c",
       "type": "Link",
       "status": "Active",
-      "questionnaire_id": 13784,
+      "questionnaire_id": 66800,
       "resolved_executions": 0,
       "emails": [
 
       ],
-      "modified": 1383330043057
+      "modified": 1375212421257
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383330043298
+  "composedOn": 1375212421506
 }

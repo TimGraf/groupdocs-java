@@ -25,6 +25,7 @@ public class TemplateInfo {
   private String name = null;
   private Integer field_count = null;
   private Long size = null;
+  private String fileType = null;
   private Long upload_time = null;
   private Double id = null;
   private String guid = null;
@@ -47,6 +48,13 @@ public class TemplateInfo {
   }
   public void setSize(Long size) {
     this.size = size;
+  }
+
+  public String getFileType() {
+    return fileType;
+  }
+  public void setFileType(String fileType) {
+    this.fileType = fileType;
   }
 
   public Long getUpload_time() {
@@ -77,6 +85,7 @@ public class TemplateInfo {
     sb.append("  name: ").append(name).append("\n");
     sb.append("  field_count: ").append(field_count).append("\n");
     sb.append("  size: ").append(size).append("\n");
+    sb.append("  fileType: ").append(fileType).append("\n");
     sb.append("  upload_time: ").append(upload_time).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");

@@ -1,29 +1,29 @@
 {
   "result": {
-    "envelopeId": "0a1d28dbb03f67c74f33322102213a16",
+    "envelopeId": "132ae0acd89fb6608ffc92be05203d69",
     "fields": [
       {
-        "id": "ace3f8521f0c6155d2635dff626a8957",
-        "envelopeId": "0a1d28dbb03f67c74f33322102213a16",
-        "recipientId": "85dd4e6fe4896e300fc2e911130cb8c9",
-        "name": "Signature_1",
+        "id": "9f38ffd6a8a84665541bd16571288807",
+        "envelopeId": "132ae0acd89fb6608ffc92be05203d69",
+        "recipientId": "968d2debac51b1f63543c5d3fa96eef0",
+        "name": "Signature",
         "mandatory": true,
         "order": 0,
         "regularExpression": "",
         "getDataFrom": null,
-        "data": "",
-        "fillTimeStamp": "",
+        "data": null,
+        "fillTimeStamp": "1/1/1970 12:00:00 AM",
         "signatureFieldId": 1,
         "locations": [
           {
-            "id": "f394a9afa191d5b3349bc851ae5f8247",
-            "documentId": "e792992ac2b8ec710d7d1024d6204096a906758d8a9c9fccc4b75aa7f0f8bb62",
-            "fieldId": "ace3f8521f0c6155d2635dff626a8957",
+            "id": "b9567e19db2be8d32af7c78c12ec0332",
+            "documentId": "b22c5541f444233f181b5ba936ccdc1654bc21f19650de8efad032cdbf56a080",
+            "fieldId": "9f38ffd6a8a84665541bd16571288807",
             "page": 1,
             "locationX": 0.1,
             "locationY": 0.1,
-            "locationWidth": 90.0,
-            "locationHeight": 30.0,
+            "locationWidth": 90,
+            "locationHeight": 30,
             "fontName": "Arial",
             "fontColor": "black",
             "fontSize": 10,
@@ -34,14 +34,14 @@
           }
         ],
         "fieldType": 1,
-        "acceptableValues": null,
-        "defaultValue": null,
-        "tooltip": "Signature_1",
+        "acceptableValues": "",
+        "defaultValue": "",
+        "tooltip": "Signature",
         "guidanceText": ""
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333251301
+  "composedOn": 1375219440063
 }

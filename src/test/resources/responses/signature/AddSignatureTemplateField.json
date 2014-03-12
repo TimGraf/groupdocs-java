@@ -1,41 +1,44 @@
 {
-    "result": {
-        "templateId": "90cc99ab1019ac2365bc6b10d329bbf6",
-        "documentId": "089ae7db282cc58b7e340c0d69f86490e945a773738aaa900e03e53c0986c3d2",
-        "recipientId": "2c91f450f22d34655cf668b70a358e68",
-        "field": {
-            "id": "f5a52438862bbc1b120973871392029f",
-            "templateId": "90cc99ab1019ac2365bc6b10d329bbf6",
-            "recipientId": "2c91f450f22d34655cf668b70a358e68",
-            "name": "Signature_1",
-            "mandatory": true,
-            "order": 0,
-            "regularExpression": "^.+$",
-            "signatureFieldId": 1,
-            "locations": [
-                {
-                    "id": "a6df41d9a7e8c96c457485c56b916e44",
-                    "documentId": "089ae7db282cc58b7e340c0d69f86490e945a773738aaa900e03e53c0986c3d2",
-                    "fieldId": "f5a52438862bbc1b120973871392029f",
-                    "page": 1,
-                    "locationX": 0.1,
-                    "locationY": 0.1,
-                    "locationWidth": 90,
-                    "locationHeight": 30,
-                    "fontName": "Arial",
-                    "fontColor": "black",
-                    "fontSize": 10,
-                    "fontBold": false,
-                    "fontItalic": false,
-                    "fontUnderline": false,
-                    "align": 0
-                }
-            ],
-            "fieldType": 1,
-            "tooltip": "Signature_1",
-            "guidanceText": ""
+  "result": {
+    "templateId": "07ebf782805ab99b4203389ef0eb0aa6",
+    "documentId": "f487ba8303555ae51dc04f911f534d33af24fb93d0de0a1ce332ae051e7e99e3",
+    "recipientId": "253b7da38fa68a43f2a7053fe3a1bf7f",
+    "field": {
+      "id": "a32761c984ea1ef128fd859b5424df64",
+      "templateId": "07ebf782805ab99b4203389ef0eb0aa6",
+      "recipientId": "253b7da38fa68a43f2a7053fe3a1bf7f",
+      "name": "Signature",
+      "mandatory": true,
+      "order": 0,
+      "regularExpression": "^.+$",
+      "signatureFieldId": 1,
+      "locations": [
+        {
+          "id": "8313a9e53db3d3ea3f43ad187fe2dd7c",
+          "documentId": "f487ba8303555ae51dc04f911f534d33af24fb93d0de0a1ce332ae051e7e99e3",
+          "fieldId": "a32761c984ea1ef128fd859b5424df64",
+          "page": 1,
+          "locationX": 0.1,
+          "locationY": 0.1,
+          "locationWidth": 90,
+          "locationHeight": 30,
+          "fontName": "Arial",
+          "fontColor": "black",
+          "fontSize": 10,
+          "fontBold": false,
+          "fontItalic": false,
+          "fontUnderline": false,
+          "align": 0
         }
-    },
-    "status": "Ok",
-    "composedOn": 1383330718052
+      ],
+      "fieldType": 1,
+      "acceptableValues": "",
+      "defaultValue": "",
+      "tooltip": "Signature",
+      "guidanceText": ""
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375215213372
 }

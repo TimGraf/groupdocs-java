@@ -5,11 +5,15 @@
         "page": 0,
         "name": "topmostSubform[0].Page1[0].f1_01_0_[0]",
         "type": null,
-        "rect": null
+        "rect": null,
+          "fieldtype": null,
+          "acceptableValues": null,
+          "mandatory": null,
+          "maxlength":null
       }
     ]
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383330232498
+  "composedOn": 1375213354001
 }

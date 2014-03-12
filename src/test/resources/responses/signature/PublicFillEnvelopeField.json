@@ -1,30 +1,30 @@
 {
   "result": {
-    "envelopeId": "92a9e26cb515bf2e462af8e2ffbc9ca3",
-    "documentId": "0d43e7f95001019f96bbf826bd3c572d84beadb268f00a9a2e25840c37350d7b",
-    "recipientId": "f5ca14fb896bce51f32ab5102daddb8d",
+    "envelopeId": "5aa86f661a36f7f7b9575fa826d4dcce",
+    "documentId": "fd858b5c6d9aa1b654414323a9cadcc6d704d26cac1fad8242aa8bdf3b10c63f",
+    "recipientId": "3e79365551df699128631cb23db36690",
     "field": {
-      "id": "821c4c4e20b80e613e2d8398f74512b3",
-      "envelopeId": "92a9e26cb515bf2e462af8e2ffbc9ca3",
-      "recipientId": "f5ca14fb896bce51f32ab5102daddb8d",
-      "name": "Checkbox_1",
+      "id": "5113fe30c59416c8f5bdc05be0d869fb",
+      "envelopeId": "5aa86f661a36f7f7b9575fa826d4dcce",
+      "recipientId": "3e79365551df699128631cb23db36690",
+      "name": "Checkbox",
       "mandatory": true,
       "order": 0,
       "regularExpression": "",
       "getDataFrom": null,
       "data": "b24=",
-      "fillTimeStamp": "11/1/2013 7:12:22 PM",
+      "fillTimeStamp": "7/30/2013 9:21:07 PM",
       "signatureFieldId": 10,
       "locations": [
         {
-          "id": "aeddb9befd65d3d67b58a8fef1a1eced",
-          "documentId": "0d43e7f95001019f96bbf826bd3c572d84beadb268f00a9a2e25840c37350d7b",
-          "fieldId": "821c4c4e20b80e613e2d8398f74512b3",
+          "id": "f536a48d65c7a0b1baf1135467f1a87f",
+          "documentId": "fd858b5c6d9aa1b654414323a9cadcc6d704d26cac1fad8242aa8bdf3b10c63f",
+          "fieldId": "5113fe30c59416c8f5bdc05be0d869fb",
           "page": 1,
           "locationX": 0.1,
           "locationY": 0.1,
-          "locationWidth": 10.0,
-          "locationHeight": 10.0,
+          "locationWidth": 25.0,
+          "locationHeight": 25.0,
           "fontName": "Arial",
           "fontColor": "black",
           "fontSize": 10,
@@ -35,13 +35,13 @@
         }
       ],
       "fieldType": 6,
-      "acceptableValues": null,
-      "defaultValue": null,
-      "tooltip": "Checkbox_1",
+      "acceptableValues": "",
+      "defaultValue": "",
+      "tooltip": "Checkbox",
       "guidanceText": ""
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383333142463
+  "composedOn": 1375219266891
 }

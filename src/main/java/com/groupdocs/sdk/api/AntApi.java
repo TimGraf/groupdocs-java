@@ -23,6 +23,8 @@ import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
+import com.groupdocs.sdk.model.MarkerPosition;
+import com.groupdocs.sdk.model.AnnotationReviewerRights;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
 import com.groupdocs.sdk.model.DeleteAnnotationResponse;
 import com.groupdocs.sdk.model.EditReplyResponse;
@@ -41,8 +43,8 @@ import com.groupdocs.sdk.model.ReviewerInfo;
 import com.groupdocs.sdk.model.GetCollaboratorsResponse;
 import com.groupdocs.sdk.model.AnnotationReplyInfo;
 import com.groupdocs.sdk.model.ListRepliesResponse;
-import com.groupdocs.sdk.model.TextFieldInfo;
 import com.groupdocs.sdk.model.AddReplyResponse;
+import com.groupdocs.sdk.model.TextFieldInfo;
 import java.util.*;
 
 public class AntApi {
@@ -547,7 +549,7 @@ public class AntApi {
       }
     }
   }
-  public MoveAnnotationResponse MoveAnnotationMarker (String userId, String annotationId, Point body) throws ApiException {
+  public MoveAnnotationResponse MoveAnnotationMarker (String userId, String annotationId, MarkerPosition body) throws ApiException {
     // verify required params are set
     if(userId == null || annotationId == null || body == null ) {
        throw new ApiException(400, "missing required params");
@@ -607,9 +609,9 @@ public class AntApi {
       }
     }
   }
-  public GetSharedLinkAccessRightsResponse GetSharedLinkAccessRights (String userId, String fileId) throws ApiException {
+  public GetSharedLinkAccessRightsResponse GetSharedLinkAccessRights (String userId, String fileId, AnnotationReviewerRights body) throws ApiException {
     // verify required params are set
-    if(userId == null || fileId == null ) {
+    if(userId == null || fileId == null || body == null ) {
        throw new ApiException(400, "missing required params");
     }
     String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("*", "");
@@ -621,7 +623,7 @@ public class AntApi {
     Map<String, String> headerParams = new HashMap<String, String>();
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, body, headerParams, String.class);
       if(response != null){
         return (GetSharedLinkAccessRightsResponse) ApiInvoker.deserialize(response, "", GetSharedLinkAccessRightsResponse.class);
       }
@@ -637,7 +639,7 @@ public class AntApi {
       }
     }
   }
-  public SetSharedLinkAccessRightsResponse SetSharedLinkAccessRights (String userId, String fileId, Integer body) throws ApiException {
+  public SetSharedLinkAccessRightsResponse SetSharedLinkAccessRights (String userId, String fileId, AnnotationReviewerRights body) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null || body == null ) {
        throw new ApiException(400, "missing required params");

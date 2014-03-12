@@ -27,6 +27,7 @@ public class DeleteReplyResult {
   private String replyGuid = null;
   private String annotationGuid = null;
   private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
+  private Long serverTime = null;
   public String getReplyGuid() {
     return replyGuid;
   }
@@ -48,6 +49,13 @@ public class DeleteReplyResult {
     this.replies = replies;
   }
 
+  public Long getServerTime() {
+    return serverTime;
+  }
+  public void setServerTime(Long serverTime) {
+    this.serverTime = serverTime;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -55,6 +63,7 @@ public class DeleteReplyResult {
     sb.append("  replyGuid: ").append(replyGuid).append("\n");
     sb.append("  annotationGuid: ").append(annotationGuid).append("\n");
     sb.append("  replies: ").append(replies).append("\n");
+    sb.append("  serverTime: ").append(serverTime).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -32,6 +32,7 @@ public class AnnotationInfo {
   private String sessionGuid = null;
   private String creatorGuid = null;
   private Rectangle box = null;
+  private Integer pageNumber = null;
   private Point annotationPosition = null;
   private Range range = null;
   private String svgPath = null;
@@ -76,6 +77,13 @@ public class AnnotationInfo {
   }
   public void setBox(Rectangle box) {
     this.box = box;
+  }
+
+  public Integer getPageNumber() {
+    return pageNumber;
+  }
+  public void setPageNumber(Integer pageNumber) {
+    this.pageNumber = pageNumber;
   }
 
   public Point getAnnotationPosition() {
@@ -164,6 +172,7 @@ public class AnnotationInfo {
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  creatorGuid: ").append(creatorGuid).append("\n");
     sb.append("  box: ").append(box).append("\n");
+    sb.append("  pageNumber: ").append(pageNumber).append("\n");
     sb.append("  annotationPosition: ").append(annotationPosition).append("\n");
     sb.append("  range: ").append(range).append("\n");
     sb.append("  svgPath: ").append(svgPath).append("\n");

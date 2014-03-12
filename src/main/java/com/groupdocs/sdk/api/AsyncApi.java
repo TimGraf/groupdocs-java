@@ -349,12 +349,12 @@ public class AsyncApi {
       }
     }
   }
-  public GetJobsResponse GetJobs (String userId, String pageIndex, String pageSize, String date, String statusIds, String actions, String excludedActions) throws ApiException {
+  public GetJobsResponse GetJobs (String userId, String pageIndex, String pageSize, String date, String statusIds, String actions, String excludedActions, String jobName) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}".replace("*", "");
+    String resourcePath = "/async/{userId}/jobs?page={pageIndex}&count={pageSize}&date={date}&statusIds={statusIds}&actions={actions}&excluded_actions={excludedActions}&jobName={jobName}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
@@ -378,6 +378,8 @@ public class AsyncApi {
       queryParams.put("actions", String.valueOf(actions));
     if(!"null".equals(String.valueOf(excludedActions)))
       queryParams.put("excluded_actions", String.valueOf(excludedActions));
+    if(!"null".equals(String.valueOf(jobName)))
+      queryParams.put("jobName", String.valueOf(jobName));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){

@@ -15,6 +15,7 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
 /**
  * 
  * <p>
@@ -27,9 +28,10 @@ public class ReviewerInfo {
   private String primary_email = null;
   private String firstName = null;
   private String lastName = null;
-  private Integer access_rights = null;
+  private String access_rights = null;
   private Integer color = null;
   private String customEmailMessage = null;
+  private List<Integer> avatar = new ArrayList<Integer>();
   public Double getId() {
     return id;
   }
@@ -65,10 +67,10 @@ public class ReviewerInfo {
     this.lastName = lastName;
   }
 
-  public Integer getAccess_rights() {
+  public String getAccess_rights() {
     return access_rights;
   }
-  public void setAccess_rights(Integer access_rights) {
+  public void setAccess_rights(String access_rights) {
     this.access_rights = access_rights;
   }
 
@@ -86,6 +88,13 @@ public class ReviewerInfo {
     this.customEmailMessage = customEmailMessage;
   }
 
+  public List<Integer> getAvatar() {
+    return avatar;
+  }
+  public void setAvatar(List<Integer> avatar) {
+    this.avatar = avatar;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -98,6 +107,7 @@ public class ReviewerInfo {
     sb.append("  access_rights: ").append(access_rights).append("\n");
     sb.append("  color: ").append(color).append("\n");
     sb.append("  customEmailMessage: ").append(customEmailMessage).append("\n");
+    sb.append("  avatar: ").append(avatar).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

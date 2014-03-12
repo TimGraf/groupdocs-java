@@ -1,9 +1,9 @@
 {
   "result": {
-    "templateId": "cf69731e1ef81541bddb7cb2df205479",
+    "templateId": "b9fd52a9023dbe1eb077c1bf3e0ee985",
     "recipients": [
       {
-        "id": "e271674362ed3994eb14f0b7d1fe49e6",
+        "id": "eeb57ed729ef9ce3f5d54969f7168e8b",
         "nickname": "John Smith",
         "order": 0,
         "roleId": 2
@@ -12,5 +12,5 @@
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383332053982
+  "composedOn": 1375217736330
 }

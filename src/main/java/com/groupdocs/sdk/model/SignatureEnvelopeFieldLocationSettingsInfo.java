@@ -35,6 +35,8 @@ public class SignatureEnvelopeFieldLocationSettingsInfo {
   private Boolean fontUnderline = null;
   private Boolean forceNewField = null;
   private Integer align = null;
+  private Integer pageWidth = null;
+  private Integer pageHeight = null;
   public Integer getPage() {
     return page;
   }
@@ -126,6 +128,20 @@ public class SignatureEnvelopeFieldLocationSettingsInfo {
     this.align = align;
   }
 
+  public Integer getPageWidth() {
+    return pageWidth;
+  }
+  public void setPageWidth(Integer pageWidth) {
+    this.pageWidth = pageWidth;
+  }
+
+  public Integer getPageHeight() {
+    return pageHeight;
+  }
+  public void setPageHeight(Integer pageHeight) {
+    this.pageHeight = pageHeight;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -143,6 +159,8 @@ public class SignatureEnvelopeFieldLocationSettingsInfo {
     sb.append("  fontUnderline: ").append(fontUnderline).append("\n");
     sb.append("  forceNewField: ").append(forceNewField).append("\n");
     sb.append("  align: ").append(align).append("\n");
+    sb.append("  pageWidth: ").append(pageWidth).append("\n");
+    sb.append("  pageHeight: ").append(pageHeight).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

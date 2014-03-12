@@ -27,6 +27,7 @@ public class ConditionInfo {
   private String answerId = null;
   private String action = null;
   private String operator = null;
+  private String operatorComparer = null;
   public String getFieldId() {
     return fieldId;
   }
@@ -62,6 +63,13 @@ public class ConditionInfo {
     this.operator = operator;
   }
 
+  public String getOperatorComparer() {
+    return operatorComparer;
+  }
+  public void setOperatorComparer(String operatorComparer) {
+    this.operatorComparer = operatorComparer;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -71,6 +79,7 @@ public class ConditionInfo {
     sb.append("  answerId: ").append(answerId).append("\n");
     sb.append("  action: ").append(action).append("\n");
     sb.append("  operator: ").append(operator).append("\n");
+    sb.append("  operatorComparer: ").append(operatorComparer).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

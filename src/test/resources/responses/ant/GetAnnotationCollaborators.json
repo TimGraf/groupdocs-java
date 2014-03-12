@@ -10,10 +10,10 @@
       "lastName": "Strashniy",
       "access_rights": null,
       "color": null,
-      "customEmailMessage": null
+      "customEmailMessage": null,
+        "avatar": null
     },
     "collaborators": [
-
     ],
     "shared_link_access_rights": null
   },

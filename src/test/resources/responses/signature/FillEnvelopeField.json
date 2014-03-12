@@ -1,30 +1,30 @@
 {
   "result": {
-    "envelopeId": "29ba0e8bf8588cd558b9ace94bc65485",
-    "documentId": "a96df1d1894f1553816bb4060e7bc0289bb15c943ef3535a61db656a13d2239b",
-    "recipientId": "c2f9d7328c0c96ce701cb9460d7c13e1",
+    "envelopeId": "495eb84af8354b6f809cbe21b0e94faa",
+    "documentId": "07f7cce3fa878ef939e917c68d029e237c9793a47e978f6efb6602673a7e6e57",
+    "recipientId": "f2593d2b307b4dd51bbaf28ddf7c7557",
     "field": {
-      "id": "6f4ceb38ad513b2ae595cf85076006f5",
-      "envelopeId": "29ba0e8bf8588cd558b9ace94bc65485",
-      "recipientId": "c2f9d7328c0c96ce701cb9460d7c13e1",
-      "name": "Signature_1",
+      "id": "b54f9b9d2842958dd6486788a86b932f",
+      "envelopeId": "495eb84af8354b6f809cbe21b0e94faa",
+      "recipientId": "f2593d2b307b4dd51bbaf28ddf7c7557",
+      "name": "Checkbox",
       "mandatory": true,
       "order": 0,
       "regularExpression": "",
       "getDataFrom": null,
-      "data": "",
-      "fillTimeStamp": "11/1/2013 6:45:17 PM",
-      "signatureFieldId": 1,
+      "data": "b24=",
+      "fillTimeStamp": "7/30/2013 8:37:40 PM",
+      "signatureFieldId": 10,
       "locations": [
         {
-          "id": "881063566d1068da895eaf5078248881",
-          "documentId": "a96df1d1894f1553816bb4060e7bc0289bb15c943ef3535a61db656a13d2239b",
-          "fieldId": "6f4ceb38ad513b2ae595cf85076006f5",
+          "id": "12af715a7e8c8754af6478883eade607",
+          "documentId": "07f7cce3fa878ef939e917c68d029e237c9793a47e978f6efb6602673a7e6e57",
+          "fieldId": "b54f9b9d2842958dd6486788a86b932f",
           "page": 1,
           "locationX": 0.1,
           "locationY": 0.1,
-          "locationWidth": 90.0,
-          "locationHeight": 30.0,
+          "locationWidth": 25.0,
+          "locationHeight": 25.0,
           "fontName": "Arial",
           "fontColor": "black",
           "fontSize": 10,
@@ -34,14 +34,14 @@
           "align": 0
         }
       ],
-      "fieldType": 1,
-      "acceptableValues": null,
-      "defaultValue": null,
-      "tooltip": "Signature_1",
+      "fieldType": 6,
+      "acceptableValues": "",
+      "defaultValue": "",
+      "tooltip": "Checkbox",
       "guidanceText": ""
     }
   },
   "status": "Ok",
   "error_message": null,
-  "composedOn": 1383331517116
+  "composedOn": 1375216660533
 }

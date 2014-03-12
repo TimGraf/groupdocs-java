@@ -24,6 +24,7 @@ package com.groupdocs.sdk.model;
 public class AnswerInfo {
   private String text = null;
   private String value = null;
+  private Integer ordinal = null;
   public String getText() {
     return text;
   }
@@ -38,12 +39,20 @@ public class AnswerInfo {
     this.value = value;
   }
 
+  public Integer getOrdinal() {
+    return ordinal;
+  }
+  public void setOrdinal(Integer ordinal) {
+    this.ordinal = ordinal;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class AnswerInfo {\n");
     sb.append("  text: ").append(text).append("\n");
     sb.append("  value: ").append(value).append("\n");
+    sb.append("  ordinal: ").append(ordinal).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

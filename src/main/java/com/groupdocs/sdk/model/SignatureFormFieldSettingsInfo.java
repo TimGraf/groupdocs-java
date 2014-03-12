@@ -43,6 +43,11 @@ public class SignatureFormFieldSettingsInfo {
   private String tooltip = null;
   private Integer align = null;
   private String guidanceText = null;
+  private String groupName = null;
+  private Integer fieldType = null;
+  private String settings = null;
+  private Integer pageWidth = null;
+  private Integer pageHeight = null;
   public String getName() {
     return name;
   }
@@ -190,6 +195,41 @@ public class SignatureFormFieldSettingsInfo {
     this.guidanceText = guidanceText;
   }
 
+  public String getGroupName() {
+    return groupName;
+  }
+  public void setGroupName(String groupName) {
+    this.groupName = groupName;
+  }
+
+  public Integer getFieldType() {
+    return fieldType;
+  }
+  public void setFieldType(Integer fieldType) {
+    this.fieldType = fieldType;
+  }
+
+  public String getSettings() {
+    return settings;
+  }
+  public void setSettings(String settings) {
+    this.settings = settings;
+  }
+
+  public Integer getPageWidth() {
+    return pageWidth;
+  }
+  public void setPageWidth(Integer pageWidth) {
+    this.pageWidth = pageWidth;
+  }
+
+  public Integer getPageHeight() {
+    return pageHeight;
+  }
+  public void setPageHeight(Integer pageHeight) {
+    this.pageHeight = pageHeight;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -215,6 +255,11 @@ public class SignatureFormFieldSettingsInfo {
     sb.append("  tooltip: ").append(tooltip).append("\n");
     sb.append("  align: ").append(align).append("\n");
     sb.append("  guidanceText: ").append(guidanceText).append("\n");
+    sb.append("  groupName: ").append(groupName).append("\n");
+    sb.append("  fieldType: ").append(fieldType).append("\n");
+    sb.append("  settings: ").append(settings).append("\n");
+    sb.append("  pageWidth: ").append(pageWidth).append("\n");
+    sb.append("  pageHeight: ").append(pageHeight).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
