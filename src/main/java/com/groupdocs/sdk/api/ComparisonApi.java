@@ -151,7 +151,7 @@ public class ComparisonApi {
     if(resultFileId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/comparison/{resultFileId}/changes".replace("*", "");
+    String resourcePath = "/comparison/public/{resultFileId}/changes".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
