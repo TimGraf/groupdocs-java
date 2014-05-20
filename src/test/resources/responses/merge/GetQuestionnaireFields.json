@@ -4,12 +4,12 @@
       {
         "page": 0,
         "name": "topmostSubform[0].Page1[0].f1_01_0_[0]",
-        "type": null,
-        "rect": null,
-          "fieldtype": null,
           "acceptableValues": null,
+          "fieldtype": null,
           "mandatory": null,
-          "maxlength":null
+          "maxlength": null,
+        "type": null,
+        "rect": null
       }
     ]
   },

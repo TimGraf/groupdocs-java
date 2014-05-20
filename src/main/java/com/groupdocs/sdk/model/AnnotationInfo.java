@@ -31,6 +31,8 @@ public class AnnotationInfo {
   private String documentGuid = null;
   private String sessionGuid = null;
   private String creatorGuid = null;
+  private String creatorName = null;
+  private String creatorEmail = null;
   private Rectangle box = null;
   private Integer pageNumber = null;
   private Point annotationPosition = null;
@@ -41,6 +43,9 @@ public class AnnotationInfo {
   private List<AnnotationReplyInfo> replies = new ArrayList<AnnotationReplyInfo>();
   private Long createdOn = null;
   private Integer fontColor = null;
+  private Integer penColor = null;
+  private Integer penWidth = null;
+  private Integer penStyle = null;
   private String fieldText = null;
   private String fontFamily = null;
   private Double fontSize = null;
@@ -70,6 +75,20 @@ public class AnnotationInfo {
   }
   public void setCreatorGuid(String creatorGuid) {
     this.creatorGuid = creatorGuid;
+  }
+
+  public String getCreatorName() {
+    return creatorName;
+  }
+  public void setCreatorName(String creatorName) {
+    this.creatorName = creatorName;
+  }
+
+  public String getCreatorEmail() {
+    return creatorEmail;
+  }
+  public void setCreatorEmail(String creatorEmail) {
+    this.creatorEmail = creatorEmail;
   }
 
   public Rectangle getBox() {
@@ -142,6 +161,27 @@ public class AnnotationInfo {
     this.fontColor = fontColor;
   }
 
+  public Integer getPenColor() {
+    return penColor;
+  }
+  public void setPenColor(Integer penColor) {
+    this.penColor = penColor;
+  }
+
+  public Integer getPenWidth() {
+    return penWidth;
+  }
+  public void setPenWidth(Integer penWidth) {
+    this.penWidth = penWidth;
+  }
+
+  public Integer getPenStyle() {
+    return penStyle;
+  }
+  public void setPenStyle(Integer penStyle) {
+    this.penStyle = penStyle;
+  }
+
   public String getFieldText() {
     return fieldText;
   }
@@ -171,6 +211,8 @@ public class AnnotationInfo {
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  creatorGuid: ").append(creatorGuid).append("\n");
+    sb.append("  creatorName: ").append(creatorName).append("\n");
+    sb.append("  creatorEmail: ").append(creatorEmail).append("\n");
     sb.append("  box: ").append(box).append("\n");
     sb.append("  pageNumber: ").append(pageNumber).append("\n");
     sb.append("  annotationPosition: ").append(annotationPosition).append("\n");
@@ -181,6 +223,9 @@ public class AnnotationInfo {
     sb.append("  replies: ").append(replies).append("\n");
     sb.append("  createdOn: ").append(createdOn).append("\n");
     sb.append("  fontColor: ").append(fontColor).append("\n");
+    sb.append("  penColor: ").append(penColor).append("\n");
+    sb.append("  penWidth: ").append(penWidth).append("\n");
+    sb.append("  penStyle: ").append(penStyle).append("\n");
     sb.append("  fieldText: ").append(fieldText).append("\n");
     sb.append("  fontFamily: ").append(fontFamily).append("\n");
     sb.append("  fontSize: ").append(fontSize).append("\n");

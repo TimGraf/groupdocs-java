@@ -18,6 +18,7 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
+import com.groupdocs.sdk.model.DeleteDocumentAnnotationsReponse;
 import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
@@ -140,6 +141,36 @@ public class AntApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
         return (DeleteAnnotationResponse) ApiInvoker.deserialize(response, "", DeleteAnnotationResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public DeleteDocumentAnnotationsReponse DeleteDocumentAnnotations (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/ant/{userId}/files/{fileId}/annotations".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (DeleteDocumentAnnotationsReponse) ApiInvoker.deserialize(response, "", DeleteDocumentAnnotationsReponse.class);
       }
       else {
         return null;
@@ -609,9 +640,9 @@ public class AntApi {
       }
     }
   }
-  public GetSharedLinkAccessRightsResponse GetSharedLinkAccessRights (String userId, String fileId, AnnotationReviewerRights body) throws ApiException {
+  public GetSharedLinkAccessRightsResponse GetSharedLinkAccessRights (String userId, String fileId) throws ApiException {
     // verify required params are set
-    if(userId == null || fileId == null || body == null ) {
+    if(userId == null || fileId == null ) {
        throw new ApiException(400, "missing required params");
     }
     String resourcePath = "/ant/{userId}/files/{fileId}/sharedLinkAccessRights".replace("*", "");
@@ -623,7 +654,7 @@ public class AntApi {
     Map<String, String> headerParams = new HashMap<String, String>();
 
     try {
-      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, body, headerParams, String.class);
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetSharedLinkAccessRightsResponse) ApiInvoker.deserialize(response, "", GetSharedLinkAccessRightsResponse.class);
       }

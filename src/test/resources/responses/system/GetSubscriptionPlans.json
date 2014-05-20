@@ -1,26 +1,26 @@
 {
-    "result": {
-        "metrics": [
+  "result": {
+    "metrics": [
 
-        ],
-        "subscription": {
-            "productId": 460,
-            "name": "Enterprise",
-            "userCount": null,
-            "firstNameOnCard": null,
-            "lastNameOnCard": null,
-            "number": null,
-            "expirationDate": null,
-            "cvv": null,
-            "address": null,
-            "price": 200,
-            "currencyCode": "USD",
-            "billingPeriod": null,
-            "promoCode": null,
-            "nextAssesmentDate": null
-        }
-    },
-    "status": "Ok",
-    "error_message": null,
-    "composedOn": 1375220507070
+    ],
+    "subscription": {
+      "productId": 460,
+      "name": "Enterprise",
+      "userCount": null,
+      "firstNameOnCard": null,
+      "lastNameOnCard": null,
+      "number": null,
+      "expirationDate": null,
+      "cvv": null,
+      "address": null,
+      "price": 200,
+      "currencyCode": "USD",
+      "billingPeriod": null,
+      "promoCode": null,
+        "nextAssesmentDate": null
+    }
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375220507070
 }

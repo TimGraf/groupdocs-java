@@ -26,6 +26,7 @@ public class TemplateInfo {
   private Integer field_count = null;
   private Long size = null;
   private String fileType = null;
+  private Integer dependent_questionnaires_count = null;
   private Long upload_time = null;
   private Double id = null;
   private String guid = null;
@@ -57,6 +58,13 @@ public class TemplateInfo {
     this.fileType = fileType;
   }
 
+  public Integer getDependent_questionnaires_count() {
+    return dependent_questionnaires_count;
+  }
+  public void setDependent_questionnaires_count(Integer dependent_questionnaires_count) {
+    this.dependent_questionnaires_count = dependent_questionnaires_count;
+  }
+
   public Long getUpload_time() {
     return upload_time;
   }
@@ -86,6 +94,7 @@ public class TemplateInfo {
     sb.append("  field_count: ").append(field_count).append("\n");
     sb.append("  size: ").append(size).append("\n");
     sb.append("  fileType: ").append(fileType).append("\n");
+    sb.append("  dependent_questionnaires_count: ").append(dependent_questionnaires_count).append("\n");
     sb.append("  upload_time: ").append(upload_time).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");

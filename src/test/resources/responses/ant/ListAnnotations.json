@@ -7,14 +7,14 @@
         "guid": "d71705c6b7ed8498",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -22,11 +22,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
-
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
+           
         ],
         "createdOn": 1375207363133,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -35,14 +35,14 @@
         "guid": "9247c81ff0887880",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -50,11 +50,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207366367,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -63,14 +63,14 @@
         "guid": "f4b5ee8e543ce8b2",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -78,11 +78,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207370133,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -91,14 +91,14 @@
         "guid": "fc45947141e01afa",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -106,11 +106,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207372900,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -119,14 +119,14 @@
         "guid": "a550752dc8f4b4d0",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -134,11 +134,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207375633,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -147,14 +147,14 @@
         "guid": "69a155e1d0c967a5",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -162,11 +162,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207378447,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -175,14 +175,14 @@
         "guid": "2ae4733289936065",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -190,11 +190,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207381163,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -203,14 +203,14 @@
         "guid": "2ad27688411aa2f0",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -218,11 +218,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207383710,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -231,14 +231,14 @@
         "guid": "75df5549211de191",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -246,11 +246,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207386133,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -259,14 +259,14 @@
         "guid": "29e9f2ab761774db",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -274,11 +274,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207389163,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -287,14 +287,14 @@
         "guid": "69ba536d3eaef4f5",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -302,11 +302,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207392040,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -315,14 +315,14 @@
         "guid": "40faf4596a39b3e4",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -330,11 +330,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207394743,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -343,14 +343,14 @@
         "guid": "0ad17fd53c7c2fb6",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -358,11 +358,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207397477,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -371,14 +371,14 @@
         "guid": "535f709709677c87",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -386,11 +386,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207400337,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -399,14 +399,14 @@
         "guid": "f3f4fb3aac62b673",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -414,11 +414,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207403163,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -427,14 +427,14 @@
         "guid": "56668faee8f72f4b",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -442,11 +442,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207406007,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -455,14 +455,14 @@
         "guid": "6bb2b09ab7583883",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -470,11 +470,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207408947,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -483,14 +483,14 @@
         "guid": "778adcc2494988e2",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -498,11 +498,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207411790,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -511,14 +511,14 @@
         "guid": "957c51837232688f",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -526,11 +526,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207414743,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -539,14 +539,14 @@
         "guid": "24466493beeb5f63",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -554,11 +554,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207417507,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -567,14 +567,14 @@
         "guid": "d8d199abc8f4808d",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -582,11 +582,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207420273,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -595,14 +595,14 @@
         "guid": "6c136fb84e8b6f28",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -610,11 +610,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207423100,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -623,14 +623,14 @@
         "guid": "4079f1fd936f8eaa",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -638,11 +638,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207425867,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -651,14 +651,14 @@
         "guid": "ca2f60e73d31bfa8",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -666,11 +666,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207428757,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -679,14 +679,14 @@
         "guid": "832d5c19389752e0",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -694,11 +694,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207431773,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -707,14 +707,14 @@
         "guid": "7f0a33afffd770a7",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -722,11 +722,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207434773,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -735,14 +735,14 @@
         "guid": "d16f645d2d6abf2e",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -750,11 +750,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207437210,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -763,14 +763,14 @@
         "guid": "c716a81724716932",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -778,11 +778,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207439727,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -791,14 +791,14 @@
         "guid": "e5776763a0aa97cc",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -806,11 +806,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207442303,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -819,14 +819,14 @@
         "guid": "3f89084b03c3a0a8",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -834,11 +834,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207444743,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -847,14 +847,14 @@
         "guid": "9637e7d6e7838681",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -862,11 +862,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207447023,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -875,14 +875,14 @@
         "guid": "8b6b89d551e128c1",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -890,11 +890,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207449507,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -903,14 +903,14 @@
         "guid": "6d9badae2cc1ab02",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -918,11 +918,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207451913,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -931,14 +931,14 @@
         "guid": "7543a176c2d98310",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -946,7 +946,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "688a648b",
             "userGuid": "ea103bbe8cb8ce07",
@@ -957,7 +957,7 @@
           }
         ],
         "createdOn": 1375207485710,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -966,14 +966,14 @@
         "guid": "ee800f33a38147f3",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -981,7 +981,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "951bf0e0",
             "userGuid": "ea103bbe8cb8ce07",
@@ -992,7 +992,7 @@
           }
         ],
         "createdOn": 1375207488430,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1001,14 +1001,14 @@
         "guid": "4426b519c57526e4",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1016,7 +1016,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "b8af7c3b",
             "userGuid": "ea103bbe8cb8ce07",
@@ -1027,7 +1027,7 @@
           }
         ],
         "createdOn": 1375207490947,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1036,14 +1036,14 @@
         "guid": "a0e1857d01912394",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1051,7 +1051,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "90e42484",
             "userGuid": "ea103bbe8cb8ce07",
@@ -1062,7 +1062,7 @@
           }
         ],
         "createdOn": 1375207493507,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1071,23 +1071,23 @@
         "guid": "586ca3c1c11c510f",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207527383,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1096,23 +1096,23 @@
         "guid": "423149f77099ea1e",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207529087,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1121,23 +1121,23 @@
         "guid": "5a38daec40578f54",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207530710,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1146,23 +1146,23 @@
         "guid": "b0fc4a0e83f7cbb6",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207532320,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1171,23 +1171,23 @@
         "guid": "abf1a98b06fe295a",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207533883,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1196,23 +1196,23 @@
         "guid": "f436d8160955fd52",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207536900,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1221,23 +1221,23 @@
         "guid": "d77b333c72f4688f",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Area",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207539820,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1246,23 +1246,23 @@
         "guid": "558f56f2a02a6d92",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207542850,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1271,23 +1271,23 @@
         "guid": "f04df3f20831df5e",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "TextStrikeout",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207545803,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1296,23 +1296,23 @@
         "guid": "4bcf6e75b0f90e67",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Polyline",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207548710,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1321,23 +1321,23 @@
         "guid": "207030cf199a5463",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Private",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207551587,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1346,23 +1346,23 @@
         "guid": "5a19450e75ef5b12",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207554617,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1371,23 +1371,23 @@
         "guid": "ec61f052de419cbb",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
-          "width": 0,
-          "height": 0
+          "width": 0.0,
+          "height": 0.0
         },
         "annotationPosition": null,
         "range": null,
         "svgPath": null,
         "type": "Text",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207558023,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1396,14 +1396,14 @@
         "guid": "06431efe20fa9830",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1411,11 +1411,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207591383,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1424,14 +1424,14 @@
         "guid": "4745772570c406b8",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1439,11 +1439,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207594007,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1452,14 +1452,14 @@
         "guid": "96e1aed704b83aeb",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1467,11 +1467,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207596493,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1480,14 +1480,14 @@
         "guid": "54ccfaf157d11fca",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1495,7 +1495,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "8b4f6992",
             "userGuid": "ea103bbe8cb8ce07",
@@ -1506,7 +1506,7 @@
           }
         ],
         "createdOn": 1375207673100,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1515,14 +1515,14 @@
         "guid": "f5b9ac3ccc7a779b",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1530,7 +1530,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "dec9ccaf",
             "userGuid": "ea103bbe8cb8ce07",
@@ -1541,7 +1541,7 @@
           }
         ],
         "createdOn": 1375207675913,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1550,14 +1550,14 @@
         "guid": "bda6bbe6b8d5539e",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1565,7 +1565,7 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
           {
             "guid": "6a6c0df9",
             "userGuid": "ea103bbe8cb8ce07",
@@ -1576,7 +1576,7 @@
           }
         ],
         "createdOn": 1375207678977,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1585,14 +1585,14 @@
         "guid": "537c17444befb32f",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1600,11 +1600,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207713210,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1613,14 +1613,14 @@
         "guid": "cd9a50f54ec2e8a1",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1628,11 +1628,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207714850,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1641,14 +1641,14 @@
         "guid": "f0b16b938b2f4c95",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1656,11 +1656,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207716553,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1669,14 +1669,14 @@
         "guid": "b13afab668e33286",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1684,11 +1684,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207718413,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1697,14 +1697,14 @@
         "guid": "d66f16fd9711b222",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1712,11 +1712,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207720070,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1725,14 +1725,14 @@
         "guid": "831f4c41fcb6c574",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1740,11 +1740,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207722040,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1753,14 +1753,14 @@
         "guid": "a9d0f644517f6161",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1768,11 +1768,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207724007,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1781,14 +1781,14 @@
         "guid": "0b52d566532dcf4f",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1796,11 +1796,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207725710,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1809,14 +1809,14 @@
         "guid": "2f727722cab52fbf",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1824,11 +1824,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207727413,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1837,14 +1837,14 @@
         "guid": "b9fa704c39c25de9",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1852,11 +1852,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207729180,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1865,14 +1865,14 @@
         "guid": "0e9dd58f2b67ed65",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1880,11 +1880,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207730900,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1893,14 +1893,14 @@
         "guid": "bffc45e596549bc2",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1908,11 +1908,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207733493,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1921,14 +1921,14 @@
         "guid": "72af2cbb317893e1",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1936,11 +1936,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207736087,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1949,14 +1949,14 @@
         "guid": "c298d213de6d2445",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1964,11 +1964,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207738617,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -1977,14 +1977,14 @@
         "guid": "35a6bd72b1178c37",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -1992,11 +1992,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207741023,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -2005,14 +2005,14 @@
         "guid": "2648b083081b1e37",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -2020,11 +2020,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207744150,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -2033,14 +2033,14 @@
         "guid": "3ca98834903ea726",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -2048,11 +2048,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207747273,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -2061,14 +2061,14 @@
         "guid": "d35ba3fe053079ad",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -2076,11 +2076,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207749960,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null
@@ -2089,14 +2089,14 @@
         "guid": "e5c7755f1b25d0dc",
         "documentGuid": null,
         "sessionGuid": null,
-        "creatorGuid": "ea103bbe8cb8ce07",
+        "creatorGuid": "ea103bbe8cb8ce07", "creatorEmail": null, "creatorName": null,
         "box": {
           "x": 10,
           "y": 10,
           "width": 10,
           "height": 10
         },
-        "annotationPosition": {
+        "pageNumber": null, "annotationPosition": {
           "x": 10,
           "y": 10
         },
@@ -2104,11 +2104,11 @@
         "svgPath": null,
         "type": "Point",
         "access": "Public",
-        "replies": [
+        "replies": [  {"guid": "6a6c0df9", "isAvatarExist": null} 
 
         ],
         "createdOn": 1375207752743,
-        "fontColor": 0,
+        "fontColor": 0, "penColor": null,   "penWidth": null,   "penStyle": null,
         "fieldText": null,
         "fontFamily": null,
         "fontSize": null

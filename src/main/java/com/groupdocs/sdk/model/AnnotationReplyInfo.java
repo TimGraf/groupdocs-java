@@ -25,6 +25,7 @@ public class AnnotationReplyInfo {
   private String guid = null;
   private String userGuid = null;
   private String userName = null;
+  private String userEmail = null;
   private String text = null;
   private Long repliedOn = null;
   private String parentReplyGuid = null;
@@ -48,6 +49,13 @@ public class AnnotationReplyInfo {
   }
   public void setUserName(String userName) {
     this.userName = userName;
+  }
+
+  public String getUserEmail() {
+    return userEmail;
+  }
+  public void setUserEmail(String userEmail) {
+    this.userEmail = userEmail;
   }
 
   public String getText() {
@@ -85,6 +93,7 @@ public class AnnotationReplyInfo {
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  userGuid: ").append(userGuid).append("\n");
     sb.append("  userName: ").append(userName).append("\n");
+    sb.append("  userEmail: ").append(userEmail).append("\n");
     sb.append("  text: ").append(text).append("\n");
     sb.append("  repliedOn: ").append(repliedOn).append("\n");
     sb.append("  parentReplyGuid: ").append(parentReplyGuid).append("\n");

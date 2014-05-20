@@ -30,6 +30,7 @@ public class SignatureFormSettingsInfo {
   private Boolean notifyOwnerOnSign  = null;
   private Boolean attachSignedDocument = null;
   private String notifyOtherOnSign  = null;
+  private Boolean canParticipantPrintForm = null;
   public String getName() {
     return name;
   }
@@ -86,6 +87,13 @@ public class SignatureFormSettingsInfo {
     this.notifyOtherOnSign  = notifyOtherOnSign ;
   }
 
+  public Boolean getCanParticipantPrintForm() {
+    return canParticipantPrintForm;
+  }
+  public void setCanParticipantPrintForm(Boolean canParticipantPrintForm) {
+    this.canParticipantPrintForm = canParticipantPrintForm;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -98,6 +106,7 @@ public class SignatureFormSettingsInfo {
     sb.append("  notifyOwnerOnSign : ").append(notifyOwnerOnSign ).append("\n");
     sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
     sb.append("  notifyOtherOnSign : ").append(notifyOtherOnSign ).append("\n");
+    sb.append("  canParticipantPrintForm: ").append(canParticipantPrintForm).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

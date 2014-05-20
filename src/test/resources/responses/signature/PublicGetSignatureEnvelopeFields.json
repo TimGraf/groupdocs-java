@@ -30,11 +30,14 @@
             "fontBold": false,
             "fontItalic": false,
             "fontUnderline": false,
-            "align": 0
+            "align": 0,
+              "order": null
           }
         ],
         "fieldType": 1,
         "acceptableValues": "",
+          "settings": null,
+          "groupName": null,
         "defaultValue": "",
         "tooltip": "Signature",
         "guidanceText": ""

@@ -344,6 +344,8 @@ public class AsyncApiTest extends AbstractUnitTest {
 		String actions = "actions";
 		String excludedActions = "excludedActions";
 		String jobName = "jobName";
+		String orderBy = "orderBy";
+		Boolean orderAsc = Boolean.TRUE;
 		
 		String resourcePath = "/async/{userId}/jobs".replace("{" + "userId" + "}", String.valueOf(userId));
 		
@@ -356,6 +358,8 @@ public class AsyncApiTest extends AbstractUnitTest {
 		mockRequest = mockRequest.withParam("actions", actions);
 		mockRequest = mockRequest.withParam("excluded_actions", excludedActions);
 		mockRequest = mockRequest.withParam("jobName", jobName);
+		mockRequest = mockRequest.withParam("order_by", orderBy);
+		mockRequest = mockRequest.withParam("order_asc", orderAsc);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("async/GetJobs.json");
@@ -364,7 +368,7 @@ public class AsyncApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetJobsResponse response = api.GetJobs(userId, pageIndex, pageSize, date, statusIds, actions, excludedActions, jobName);
+			GetJobsResponse response = api.GetJobs(userId, pageIndex, pageSize, date, statusIds, actions, excludedActions, jobName, orderBy, orderAsc);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

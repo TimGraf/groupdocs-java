@@ -15,25 +15,35 @@
  */
 package com.groupdocs.sdk.api;
 
-import com.github.restdriver.clientdriver.ClientDriverRequest.Method;
-import com.github.restdriver.clientdriver.ClientDriverRule;
-import com.groupdocs.sdk.common.ApiInvoker;
-import com.groupdocs.sdk.model.*;
+import static com.github.restdriver.clientdriver.RestClientDriver.giveResponse;
+import static com.github.restdriver.clientdriver.RestClientDriver.onRequestTo;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.fail;
+
+import java.util.Arrays;
+import java.util.List;
+
+import javax.ws.rs.core.MediaType;
+
 import org.apache.commons.io.IOUtils;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 
-import javax.ws.rs.core.MediaType;
-import java.util.Arrays;
-import java.util.List;
-
-import static com.github.restdriver.clientdriver.RestClientDriver.giveResponse;
-import static com.github.restdriver.clientdriver.RestClientDriver.onRequestTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.fail;
+import com.github.restdriver.clientdriver.ClientDriverRequest.Method;
+import com.github.restdriver.clientdriver.ClientDriverRule;
+import com.groupdocs.sdk.common.ApiInvoker;
+import com.groupdocs.sdk.model.AddReplyResponse;
+import com.groupdocs.sdk.model.AnnotationInfo;
+import com.groupdocs.sdk.model.AnnotationReplyInfo;
+import com.groupdocs.sdk.model.CreateAnnotationResponse;
+import com.groupdocs.sdk.model.EditReplyResponse;
+import com.groupdocs.sdk.model.Rectangle;
+import com.groupdocs.sdk.model.ReviewerInfo;
+import com.groupdocs.sdk.model.SetCollaboratorsResponse;
+import com.groupdocs.sdk.model.SetReviewerRightsResponse;
 
 /**
  * Test cases to ensure correctness of Object to JSON serialization and Object from JSON deserialization
@@ -161,11 +171,10 @@ public class JsonSerializerTest extends AbstractUnitTest {
 		rev2.setAccess_rights("0");
 		rev2.setId(1233d);
 		List<ReviewerInfo> collaborators = Arrays.asList(rev1, rev2);
-        String userId = "userId";
 		String fileId = "SomeFileGuid";
 
 		String resourcePath = "/ant/{userId}/files/{fileId}/reviewerRights".replace("{userId}", userId).replace("{fileId}", fileId);
-        String body = "[{\"id\":1232,\"access_rights\":\"1\",\"avatar\":[]},{\"id\":1233,\"access_rights\":\"0\",\"avatar\":[]}]";
+		String body = "[{\"id\":1232,\"access_rights\":\"1\",\"avatar\":[]},{\"id\":1233,\"access_rights\":\"0\",\"avatar\":[]}]";
 		driver.addExpectation(onRequestTo(resourcePath).withAnyParams()
 				.withMethod(Method.PUT).withBody(body, MediaType.APPLICATION_JSON), 
                 giveResponse(getSampleResponse("ant/SetReviewerRights.json")).withStatus(200));

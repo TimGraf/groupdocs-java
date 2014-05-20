@@ -25,6 +25,7 @@ import com.groupdocs.sdk.model.DeleteDatasourceListResponse;
 import com.groupdocs.sdk.model.GetQuestionnairesResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireMetadataResponse;
 import com.groupdocs.sdk.model.UpdateQuestionnaireResponse;
+import com.groupdocs.sdk.model.CreateQuestionnaireTemplateResponse;
 import com.groupdocs.sdk.model.GetDocumentQuestionnairesResponse;
 import com.groupdocs.sdk.model.QuestionnaireExecutionInfo;
 import com.groupdocs.sdk.model.AddDatasourceResponse;
@@ -35,6 +36,7 @@ import com.groupdocs.sdk.model.DatasourceField;
 import com.groupdocs.sdk.model.DeleteQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.DeleteDocumentQuestionnaireResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireCollectorResponse;
+import com.groupdocs.sdk.model.TemplateField;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.QuestionnaireCollectorInfo;
 import com.groupdocs.sdk.model.AddDocumentQuestionnaireResponse;
@@ -1512,6 +1514,36 @@ public class MergeApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (GetQuestionnaireDocumentResponse) ApiInvoker.deserialize(response, "", GetQuestionnaireDocumentResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public CreateQuestionnaireTemplateResponse CreateQuestionnaireTemplate (String userId, String fileId, List<TemplateField> body) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/merge/{userId}/files/{fileId}/templates".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (CreateQuestionnaireTemplateResponse) ApiInvoker.deserialize(response, "", CreateQuestionnaireTemplateResponse.class);
       }
       else {
         return null;

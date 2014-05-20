@@ -124,7 +124,7 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		String resultFileId = "resultFileId";
 		String format = "format";
 		
-		String resourcePath = "/comparison/{resultFileId}/download".replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
+		String resourcePath = "/comparison/public/{resultFileId}/download".replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
@@ -151,7 +151,7 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		// sample parameters
 		String resultFileId = "resultFileId";
 		
-		String resourcePath = "/comparison/{resultFileId}/changes";
+		String resourcePath = "/comparison/public/{resultFileId}/changes";
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
@@ -180,7 +180,7 @@ public class ComparisonApiTest extends AbstractUnitTest {
 		String resultFileId = "resultFileId";
 		List<ChangeInfo> body = getSampleRequest("comparison/payload/UpdateChanges.json", new TypeReference<List<ChangeInfo>>(){});
 		
-		String resourcePath = "/comparison/{resultFileId}/changes";
+		String resourcePath = "/comparison/public/{resultFileId}/changes";
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.PUT).withHeader("Content-Type", MediaType.APPLICATION_JSON);
 		// add query parameters to expectation

@@ -14,17 +14,18 @@
               "required": true,
               "disabled": false,
               "type": "GenericText",
+                "max_length": null,
+                "rect": null,
+                "acceptableValues": null,
               "answers": [
                 {
                   "text": "Text",
-                  "value": "Value",
-                    "ordinal": null
+                    "ordinal": null,
+
+                  "value": "Value"
                 }
               ],
-              "conditions": null,
-                "acceptableValues": null,
-                "max_length": null,
-                "rect": null
+              "conditions": null
             }
           ]
         }

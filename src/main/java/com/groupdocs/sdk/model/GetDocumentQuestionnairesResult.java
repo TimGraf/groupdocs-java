@@ -26,6 +26,7 @@ import com.groupdocs.sdk.model.QuestionnaireInfo;
 public class GetDocumentQuestionnairesResult {
   private Double document_id = null;
   private List<QuestionnaireInfo> questionnaires = new ArrayList<QuestionnaireInfo>();
+  private Integer totalCount = null;
   public Double getDocument_id() {
     return document_id;
   }
@@ -40,12 +41,20 @@ public class GetDocumentQuestionnairesResult {
     this.questionnaires = questionnaires;
   }
 
+  public Integer getTotalCount() {
+    return totalCount;
+  }
+  public void setTotalCount(Integer totalCount) {
+    this.totalCount = totalCount;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetDocumentQuestionnairesResult {\n");
     sb.append("  document_id: ").append(document_id).append("\n");
     sb.append("  questionnaires: ").append(questionnaires).append("\n");
+    sb.append("  totalCount: ").append(totalCount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

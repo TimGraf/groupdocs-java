@@ -87,6 +87,18 @@ public class UserInfo {
   private String webhook_notification_failed_recipients = null;
   private String signature_color = null;
   private Boolean signature_save_field_changes_automatically = null;
+  private Boolean signature_use_custom_email_templates = null;
+  private String signature_envelope_sent_owner_template = null;
+  private String signature_envelope_sent_other_template = null;
+  private String signature_envelope_completed_template = null;
+  private String signature_envelope_signed_template = null;
+  private String signature_envelope_declined_template = null;
+  private String signature_envelope_failed_template = null;
+  private String signature_envelope_cancelled_template = null;
+  private String signature_envelope_expired_template = null;
+  private String signature_envelope_step_expired_template = null;
+  private String signature_envelope_recipient_reminder_template = null;
+  private String signature_form_signed_template = null;
   private Long id = null;
   private String guid = null;
   private String primary_email = null;
@@ -531,6 +543,90 @@ public class UserInfo {
     this.signature_save_field_changes_automatically = signature_save_field_changes_automatically;
   }
 
+  public Boolean getSignature_use_custom_email_templates() {
+    return signature_use_custom_email_templates;
+  }
+  public void setSignature_use_custom_email_templates(Boolean signature_use_custom_email_templates) {
+    this.signature_use_custom_email_templates = signature_use_custom_email_templates;
+  }
+
+  public String getSignature_envelope_sent_owner_template() {
+    return signature_envelope_sent_owner_template;
+  }
+  public void setSignature_envelope_sent_owner_template(String signature_envelope_sent_owner_template) {
+    this.signature_envelope_sent_owner_template = signature_envelope_sent_owner_template;
+  }
+
+  public String getSignature_envelope_sent_other_template() {
+    return signature_envelope_sent_other_template;
+  }
+  public void setSignature_envelope_sent_other_template(String signature_envelope_sent_other_template) {
+    this.signature_envelope_sent_other_template = signature_envelope_sent_other_template;
+  }
+
+  public String getSignature_envelope_completed_template() {
+    return signature_envelope_completed_template;
+  }
+  public void setSignature_envelope_completed_template(String signature_envelope_completed_template) {
+    this.signature_envelope_completed_template = signature_envelope_completed_template;
+  }
+
+  public String getSignature_envelope_signed_template() {
+    return signature_envelope_signed_template;
+  }
+  public void setSignature_envelope_signed_template(String signature_envelope_signed_template) {
+    this.signature_envelope_signed_template = signature_envelope_signed_template;
+  }
+
+  public String getSignature_envelope_declined_template() {
+    return signature_envelope_declined_template;
+  }
+  public void setSignature_envelope_declined_template(String signature_envelope_declined_template) {
+    this.signature_envelope_declined_template = signature_envelope_declined_template;
+  }
+
+  public String getSignature_envelope_failed_template() {
+    return signature_envelope_failed_template;
+  }
+  public void setSignature_envelope_failed_template(String signature_envelope_failed_template) {
+    this.signature_envelope_failed_template = signature_envelope_failed_template;
+  }
+
+  public String getSignature_envelope_cancelled_template() {
+    return signature_envelope_cancelled_template;
+  }
+  public void setSignature_envelope_cancelled_template(String signature_envelope_cancelled_template) {
+    this.signature_envelope_cancelled_template = signature_envelope_cancelled_template;
+  }
+
+  public String getSignature_envelope_expired_template() {
+    return signature_envelope_expired_template;
+  }
+  public void setSignature_envelope_expired_template(String signature_envelope_expired_template) {
+    this.signature_envelope_expired_template = signature_envelope_expired_template;
+  }
+
+  public String getSignature_envelope_step_expired_template() {
+    return signature_envelope_step_expired_template;
+  }
+  public void setSignature_envelope_step_expired_template(String signature_envelope_step_expired_template) {
+    this.signature_envelope_step_expired_template = signature_envelope_step_expired_template;
+  }
+
+  public String getSignature_envelope_recipient_reminder_template() {
+    return signature_envelope_recipient_reminder_template;
+  }
+  public void setSignature_envelope_recipient_reminder_template(String signature_envelope_recipient_reminder_template) {
+    this.signature_envelope_recipient_reminder_template = signature_envelope_recipient_reminder_template;
+  }
+
+  public String getSignature_form_signed_template() {
+    return signature_form_signed_template;
+  }
+  public void setSignature_form_signed_template(String signature_form_signed_template) {
+    this.signature_form_signed_template = signature_form_signed_template;
+  }
+
   public Long getId() {
     return id;
   }
@@ -619,6 +715,18 @@ public class UserInfo {
     sb.append("  webhook_notification_failed_recipients: ").append(webhook_notification_failed_recipients).append("\n");
     sb.append("  signature_color: ").append(signature_color).append("\n");
     sb.append("  signature_save_field_changes_automatically: ").append(signature_save_field_changes_automatically).append("\n");
+    sb.append("  signature_use_custom_email_templates: ").append(signature_use_custom_email_templates).append("\n");
+    sb.append("  signature_envelope_sent_owner_template: ").append(signature_envelope_sent_owner_template).append("\n");
+    sb.append("  signature_envelope_sent_other_template: ").append(signature_envelope_sent_other_template).append("\n");
+    sb.append("  signature_envelope_completed_template: ").append(signature_envelope_completed_template).append("\n");
+    sb.append("  signature_envelope_signed_template: ").append(signature_envelope_signed_template).append("\n");
+    sb.append("  signature_envelope_declined_template: ").append(signature_envelope_declined_template).append("\n");
+    sb.append("  signature_envelope_failed_template: ").append(signature_envelope_failed_template).append("\n");
+    sb.append("  signature_envelope_cancelled_template: ").append(signature_envelope_cancelled_template).append("\n");
+    sb.append("  signature_envelope_expired_template: ").append(signature_envelope_expired_template).append("\n");
+    sb.append("  signature_envelope_step_expired_template: ").append(signature_envelope_step_expired_template).append("\n");
+    sb.append("  signature_envelope_recipient_reminder_template: ").append(signature_envelope_recipient_reminder_template).append("\n");
+    sb.append("  signature_form_signed_template: ").append(signature_form_signed_template).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

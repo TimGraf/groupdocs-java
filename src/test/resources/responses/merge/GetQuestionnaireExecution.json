@@ -14,6 +14,9 @@
               "required": true,
               "disabled": false,
               "type": "GenericText",
+                "acceptableValues": null,
+                "max_length": null,
+                "rect": null,
               "answers": [
                 {
                   "text": "Text",
@@ -21,10 +24,7 @@
                     "ordinal": null
                 }
               ],
-              "conditions": null,
-                "acceptableValues": null,
-                "max_length": null,
-                "rect": null
+              "conditions": null
             }
           ]
         }

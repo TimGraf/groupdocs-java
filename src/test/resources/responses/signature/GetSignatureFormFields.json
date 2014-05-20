@@ -1,47 +1,44 @@
 {
-    "result": {
-        "formId": "93d83c829ab4d8ffc5abf94d2f520c03",
-        "fields": [
-            {
-                "id": "4d21052930e7fdd46a54a8cd548defa3",
-                "formGuid": "93d83c829ab4d8ffc5abf94d2f520c03",
-                "participantGuid": "",
-                "name": "Signature",
-                "mandatory": true,
-                "regularExpression": "",
-                "data": null,
-                "fillTimeStamp": "1/1/1970 12:00:00 AM",
-                "groupName": null,
-                "settings": null,
-                "locations": [
-                    {
-                        "id": "6ece0f3a02c2cf72cbc3d9962bfa9e52",
-                        "documentGuid": "57d8150d963ff517ee77285888b0a67127c6f897c4db575a2ad2024e235fa0c6",
-                        "fieldGuid": "4d21052930e7fdd46a54a8cd548defa3",
-                        "page": 1,
-                        "locationX": 0.1,
-                        "locationY": 0.1,
-                        "locationWidth": 90,
-                        "locationHeight": 30,
-                        "fontName": "Arial",
-                        "fontColor": "black",
-                        "fontSize": 10,
-                        "fontBold": false,
-                        "fontItalic": false,
-                        "fontUnderline": false,
-                        "align": 0,
-                        "order": null
-                    }
-                ],
-                "fieldType": 1,
-                "acceptableValues": null,
-                "defaultValue": null,
-                "tooltip": "Signature",
-                "guidanceText": ""
-            }
-        ]
-    },
-    "status": "Ok",
-    "error_message": null,
-    "composedOn": 1375217393126
+  "result": {
+    "formId": "93d83c829ab4d8ffc5abf94d2f520c03",
+    "fields": [
+      {
+        "id": "4d21052930e7fdd46a54a8cd548defa3",
+        "formGuid": "93d83c829ab4d8ffc5abf94d2f520c03",
+        "participantGuid": "",
+        "name": "Signature",
+        "mandatory": true,
+        "regularExpression": "",
+        "data": null,
+        "fillTimeStamp": "1/1/1970 12:00:00 AM",
+        "locations": [
+          {
+            "id": "6ece0f3a02c2cf72cbc3d9962bfa9e52",
+            "documentGuid": "57d8150d963ff517ee77285888b0a67127c6f897c4db575a2ad2024e235fa0c6",
+            "fieldGuid": "4d21052930e7fdd46a54a8cd548defa3",
+            "page": 1,
+            "locationX": 0.1,
+            "locationY": 0.1,
+            "locationWidth": 90,
+            "locationHeight": 30,
+            "fontName": "Arial",
+            "fontColor": "black",
+            "fontSize": 10,
+            "fontBold": false,
+            "fontItalic": false,
+            "fontUnderline": false,
+            "align": 0
+          }
+        ],
+        "fieldType": 1,
+        "acceptableValues": null,
+        "defaultValue": null,
+        "tooltip": "Signature",
+        "guidanceText": ""
+      }
+    ]
+  },
+  "status": "Ok",
+  "error_message": null,
+  "composedOn": 1375217393126
 }

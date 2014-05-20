@@ -11,7 +11,7 @@
       "access_rights": null,
       "color": null,
       "customEmailMessage": null,
-        "avatar": null
+        "avatar": []
     },
     "collaborators": [
       {
@@ -23,7 +23,7 @@
         "access_rights": "15",
         "color": 7220678,
         "customEmailMessage": null,
-          "avatar": null
+         "avatar": []
       },
       {
         "id": 22103,
@@ -34,7 +34,7 @@
         "access_rights": "15",
         "color": 16515083,
         "customEmailMessage": null,
-          "avatar": null
+          "avatar": []
       }
     ]
   },

@@ -25,6 +25,7 @@ import com.groupdocs.sdk.model.QuestionnaireInfo;
  */
 public class GetQuestionnairesResult {
   private List<QuestionnaireInfo> questionnaires = new ArrayList<QuestionnaireInfo>();
+  private Integer totalCount = null;
   public List<QuestionnaireInfo> getQuestionnaires() {
     return questionnaires;
   }
@@ -32,11 +33,19 @@ public class GetQuestionnairesResult {
     this.questionnaires = questionnaires;
   }
 
+  public Integer getTotalCount() {
+    return totalCount;
+  }
+  public void setTotalCount(Integer totalCount) {
+    this.totalCount = totalCount;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetQuestionnairesResult {\n");
     sb.append("  questionnaires: ").append(questionnaires).append("\n");
+    sb.append("  totalCount: ").append(totalCount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

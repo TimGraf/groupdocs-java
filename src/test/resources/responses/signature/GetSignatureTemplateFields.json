@@ -33,6 +33,8 @@
         "fieldType": 1,
         "acceptableValues": "",
         "defaultValue": "",
+          "groupName": null,
+          "settings": null,
         "tooltip": "Signature",
         "guidanceText": ""
       }
