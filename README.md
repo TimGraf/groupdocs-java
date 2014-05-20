@@ -1,7 +1,7 @@
 GroupDocs Java SDK [![Build Status](https://secure.travis-ci.org/groupdocs/groupdocs-java.png)](http://travis-ci.org/groupdocs/groupdocs-java)
 =============
 
-Latest SDK version 1.8.1.
+Latest SDK version 1.9.0.
 
 ## Requirements
 
