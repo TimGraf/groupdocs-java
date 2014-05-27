@@ -20,4 +20,4 @@ Now open `http://localhost:8080` and try it!
 * [All GroupDocs SDK examples] (http://groupdocs.com/cloud/sdk-examples)
 
 
-###Created by [Marketplace Team](http://groupdocs.com/marketplace/).
+###Created by [Marketplace Team](http://groupdocs.com/marketplace).
