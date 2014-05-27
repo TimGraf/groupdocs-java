@@ -17,8 +17,8 @@ Now open `http://localhost:8080` and try it!
 
 ###[View, Sign, Manage, Annotate, Assemble, Compare and Convert Documents with GroupDocs](http://groupdocs.com)
 * [Annotate Doc, PDF, Docx, PPT and other documents online with GroupDocs Annotation](http://groupdocs.com/apps/viewer)
-* [All GroupDocs SDK] (http://groupdocs.com/api/sdk-platforms)
-* [All GroupDocs SDK examples] (http://groupdocs.com/api/sdk-examples)
+* [All GroupDocs SDK] (http://groupdocs.com/cloud/sdk)
+* [All GroupDocs SDK examples] (http://groupdocs.com/cloud/sdk-examples)
 
 
 ###Created by [Marketplace Team](http://groupdocs.com/marketplace/).
