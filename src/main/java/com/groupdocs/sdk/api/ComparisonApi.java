@@ -157,7 +157,7 @@ public class ComparisonApi {
   		resourcePath = resourcePath.substring(0, pos);
   	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json");
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "resultFileId" + "}", String.valueOf(resultFileId));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
