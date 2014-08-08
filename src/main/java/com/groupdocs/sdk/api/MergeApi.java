@@ -27,7 +27,9 @@ import com.groupdocs.sdk.model.GetQuestionnaireMetadataResponse;
 import com.groupdocs.sdk.model.UpdateQuestionnaireResponse;
 import com.groupdocs.sdk.model.CreateQuestionnaireTemplateResponse;
 import com.groupdocs.sdk.model.GetDocumentQuestionnairesResponse;
+import com.groupdocs.sdk.model.GetQuestionnaireCollectorStyleResponse;
 import com.groupdocs.sdk.model.QuestionnaireExecutionInfo;
+import com.groupdocs.sdk.model.TemplateEditorField;
 import com.groupdocs.sdk.model.AddDatasourceResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireListResponse;
 import com.groupdocs.sdk.model.AddQuestionnaireCollectorResponse;
@@ -36,7 +38,6 @@ import com.groupdocs.sdk.model.DatasourceField;
 import com.groupdocs.sdk.model.DeleteQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.DeleteDocumentQuestionnaireResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireCollectorResponse;
-import com.groupdocs.sdk.model.TemplateField;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.QuestionnaireCollectorInfo;
 import com.groupdocs.sdk.model.AddDocumentQuestionnaireResponse;
@@ -47,6 +48,7 @@ import com.groupdocs.sdk.model.DeleteDatasourceResponse;
 import com.groupdocs.sdk.model.QuestionnaireMetadata;
 import com.groupdocs.sdk.model.GetDatasourceResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireExecutionListResponse;
+import com.groupdocs.sdk.model.AddQuestionnaireCollectorStyleResponse;
 import com.groupdocs.sdk.model.AddQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.GetTemplatesResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireResponse;
@@ -54,6 +56,7 @@ import com.groupdocs.sdk.model.MergeTemplateResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireCollectorListResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireResponse;
 import com.groupdocs.sdk.model.GetDatasourcesResponse;
+import com.groupdocs.sdk.model.QuestionnaireCollectorStyle;
 import com.groupdocs.sdk.model.UpdateQuestionnaireCollectorResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.CreateQuestionnaireResponse;
@@ -1333,12 +1336,76 @@ public class MergeApi {
       }
     }
   }
-  public GetTemplatesResponse GetTemplates (String userId) throws ApiException {
+  public AddQuestionnaireCollectorStyleResponse DecorateQuestionnaireCollector (String userId, String collectorId, QuestionnaireCollectorStyle body) throws ApiException {
+    // verify required params are set
+    if(userId == null || collectorId == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/merge/{userId}/questionnaires/collectors/{collectorId}/decorate".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "collectorId" + "}", String.valueOf(collectorId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, body, headerParams, String.class);
+      if(response != null){
+        return (AddQuestionnaireCollectorStyleResponse) ApiInvoker.deserialize(response, "", AddQuestionnaireCollectorStyleResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetQuestionnaireCollectorStyleResponse GetQuestionnaireCollectorStyle (String userId, String collectorId) throws ApiException {
+    // verify required params are set
+    if(userId == null || collectorId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/merge/{userId}/questionnaires/collector/{collectorId}/style".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "collectorId" + "}", String.valueOf(collectorId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetQuestionnaireCollectorStyleResponse) ApiInvoker.deserialize(response, "", GetQuestionnaireCollectorStyleResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetTemplatesResponse GetTemplates (String userId, String orderBy, Boolean isAscending) throws ApiException {
     // verify required params are set
     if(userId == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/merge/{userId}/templates".replace("*", "");
+    String resourcePath = "/merge/{userId}/templates?orderBy={orderBy}&isAscending={isAscending}".replace("*", "");
+  	int pos = resourcePath.indexOf("?");
+  	if(pos > -1){
+  		resourcePath = resourcePath.substring(0, pos);
+  	}
   	// create path and map variables
     resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId));
 
@@ -1346,6 +1413,10 @@ public class MergeApi {
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
 
+    if(!"null".equals(String.valueOf(orderBy)))
+      queryParams.put("orderBy", String.valueOf(orderBy));
+    if(!"null".equals(String.valueOf(isAscending)))
+      queryParams.put("isAscending", String.valueOf(isAscending));
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -1459,7 +1530,7 @@ public class MergeApi {
       }
     }
   }
-  public GetTemplatesResponse CopyFileToTemplates (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
+  public GetTemplatesResponse CopyFileToTemplates (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
     // verify required params are set
     if(userId == null || path == null ) {
        throw new ApiException(400, "missing required params");
@@ -1478,8 +1549,8 @@ public class MergeApi {
 
     if(!"null".equals(String.valueOf(mode)))
       queryParams.put("mode", String.valueOf(mode));
-    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
+    headerParams.put("Groupdocs-Move", Groupdocs_Move);
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){
@@ -1527,7 +1598,7 @@ public class MergeApi {
       }
     }
   }
-  public CreateQuestionnaireTemplateResponse CreateQuestionnaireTemplate (String userId, String fileId, List<TemplateField> body) throws ApiException {
+  public CreateQuestionnaireTemplateResponse CreateQuestionnaireTemplate (String userId, String fileId, List<TemplateEditorField> body) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null || body == null ) {
        throw new ApiException(400, "missing required params");

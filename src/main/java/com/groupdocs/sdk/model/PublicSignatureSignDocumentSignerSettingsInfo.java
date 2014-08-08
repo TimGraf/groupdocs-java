@@ -16,7 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
-import com.groupdocs.sdk.model.SignatureDocumentFieldInfo;
+import com.groupdocs.sdk.model.SignatureFieldInfo;
 /**
  * 
  * <p>
@@ -33,7 +33,7 @@ public class PublicSignatureSignDocumentSignerSettingsInfo {
   private Double height = null;
   private String placeSignatureOn = null;
   private String data = null;
-  private List<SignatureDocumentFieldInfo> fields = new ArrayList<SignatureDocumentFieldInfo>();
+  private List<SignatureFieldInfo> fields = new ArrayList<SignatureFieldInfo>();
   public String getWaterMarkText() {
     return waterMarkText;
   }
@@ -97,10 +97,10 @@ public class PublicSignatureSignDocumentSignerSettingsInfo {
     this.data = data;
   }
 
-  public List<SignatureDocumentFieldInfo> getFields() {
+  public List<SignatureFieldInfo> getFields() {
     return fields;
   }
-  public void setFields(List<SignatureDocumentFieldInfo> fields) {
+  public void setFields(List<SignatureFieldInfo> fields) {
     this.fields = fields;
   }
 

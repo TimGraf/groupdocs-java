@@ -48,6 +48,12 @@ public class SignatureEnvelopeInfo {
   private Boolean canBeCommented = null;
   private Boolean inPersonSign = null;
   private String ownerName = null;
+  private Boolean enableTypedSignature = null;
+  private Boolean enableUploadedSignature = null;
+  private Boolean requireUserAuthForSign = null;
+  private Boolean requestUserAuthByPhoto = null;
+  private Boolean showRecipientCommentInSignedDocument = null;
+  private String tags = null;
   public String getId() {
     return id;
   }
@@ -216,6 +222,48 @@ public class SignatureEnvelopeInfo {
     this.ownerName = ownerName;
   }
 
+  public Boolean getEnableTypedSignature() {
+    return enableTypedSignature;
+  }
+  public void setEnableTypedSignature(Boolean enableTypedSignature) {
+    this.enableTypedSignature = enableTypedSignature;
+  }
+
+  public Boolean getEnableUploadedSignature() {
+    return enableUploadedSignature;
+  }
+  public void setEnableUploadedSignature(Boolean enableUploadedSignature) {
+    this.enableUploadedSignature = enableUploadedSignature;
+  }
+
+  public Boolean getRequireUserAuthForSign() {
+    return requireUserAuthForSign;
+  }
+  public void setRequireUserAuthForSign(Boolean requireUserAuthForSign) {
+    this.requireUserAuthForSign = requireUserAuthForSign;
+  }
+
+  public Boolean getRequestUserAuthByPhoto() {
+    return requestUserAuthByPhoto;
+  }
+  public void setRequestUserAuthByPhoto(Boolean requestUserAuthByPhoto) {
+    this.requestUserAuthByPhoto = requestUserAuthByPhoto;
+  }
+
+  public Boolean getShowRecipientCommentInSignedDocument() {
+    return showRecipientCommentInSignedDocument;
+  }
+  public void setShowRecipientCommentInSignedDocument(Boolean showRecipientCommentInSignedDocument) {
+    this.showRecipientCommentInSignedDocument = showRecipientCommentInSignedDocument;
+  }
+
+  public String getTags() {
+    return tags;
+  }
+  public void setTags(String tags) {
+    this.tags = tags;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -244,6 +292,12 @@ public class SignatureEnvelopeInfo {
     sb.append("  canBeCommented: ").append(canBeCommented).append("\n");
     sb.append("  inPersonSign: ").append(inPersonSign).append("\n");
     sb.append("  ownerName: ").append(ownerName).append("\n");
+    sb.append("  enableTypedSignature: ").append(enableTypedSignature).append("\n");
+    sb.append("  enableUploadedSignature: ").append(enableUploadedSignature).append("\n");
+    sb.append("  requireUserAuthForSign: ").append(requireUserAuthForSign).append("\n");
+    sb.append("  requestUserAuthByPhoto: ").append(requestUserAuthByPhoto).append("\n");
+    sb.append("  showRecipientCommentInSignedDocument: ").append(showRecipientCommentInSignedDocument).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

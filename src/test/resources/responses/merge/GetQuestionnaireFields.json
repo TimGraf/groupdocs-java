@@ -4,10 +4,15 @@
       {
         "page": 0,
         "name": "topmostSubform[0].Page1[0].f1_01_0_[0]",
-          "acceptableValues": null,
-          "fieldtype": null,
-          "mandatory": null,
-          "maxlength": null,
+          "acceptableValues": [
+              {
+                  "dimension": null,
+                  "hint": null,
+                  "max_length": null,
+                  "rect": null,
+                  "regionName": null
+              }
+          ],
         "type": null,
         "rect": null
       }

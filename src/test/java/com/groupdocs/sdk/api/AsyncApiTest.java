@@ -43,6 +43,7 @@ import com.groupdocs.sdk.model.AddJobDocumentResponse;
 import com.groupdocs.sdk.model.GetJobResourcesResponse;
 import com.groupdocs.sdk.model.ConvertResponse;
 import com.groupdocs.sdk.model.DeleteResponse;
+import com.groupdocs.sdk.model.GetPossibleConversions;
 import com.groupdocs.sdk.model.CreateJobResponse;
 import com.groupdocs.sdk.model.UpdateJobResponse;
 import com.groupdocs.sdk.model.DeleteResult;
@@ -446,6 +447,34 @@ public class AsyncApiTest extends AbstractUnitTest {
 		
 		try {
 			ConvertResponse response = api.Convert(userId, fileId, emailResults, description, printScript, callbackUrl, new_type);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetPossibleConversions() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileExt = "fileExt";
+		
+		String resourcePath = "/async/{userId}/possibleConversions/{fileExt}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileExt" + "}", String.valueOf(fileExt));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("async/GetPossibleConversions.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetPossibleConversions response = api.GetPossibleConversions(userId, fileExt);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

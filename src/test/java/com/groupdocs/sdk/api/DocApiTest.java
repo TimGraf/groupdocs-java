@@ -37,6 +37,7 @@ import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.FileStream;
+import com.groupdocs.sdk.model.TemplateEditorFieldsResponse;
 import com.groupdocs.sdk.model.SharedUsersResponse;
 import com.groupdocs.sdk.model.GetDocumentForeignTypesResponse;
 import com.groupdocs.sdk.model.GetDocumentInfoResponse;
@@ -547,6 +548,34 @@ public class DocApiTest extends AbstractUnitTest {
 		
 		try {
 			TemplateFieldsResponse response = api.GetTemplateFields(userId, fileId, includeGeometry);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetTemplateEditorFields() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String fileId = "fileId";
+		
+		String resourcePath = "/doc/{userId}/files/{fileId}/editor_fields".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("doc/GetTemplateEditorFields.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			TemplateEditorFieldsResponse response = api.GetTemplateEditorFields(userId, fileId);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

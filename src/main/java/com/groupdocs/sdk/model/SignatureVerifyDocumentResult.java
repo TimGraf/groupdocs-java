@@ -16,7 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
-import com.groupdocs.sdk.model.SignatureEnvelopeRecipientInfo;
+import com.groupdocs.sdk.model.SignatureSignerInfo;
 /**
  * 
  * <p>
@@ -27,7 +27,7 @@ public class SignatureVerifyDocumentResult {
   private Boolean authentic = null;
   private List<String> datesSigned = new ArrayList<String>();
   private List<String> references = new ArrayList<String>();
-  private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
+  private List<SignatureSignerInfo> recipients = new ArrayList<SignatureSignerInfo>();
   public Boolean getAuthentic() {
     return authentic;
   }
@@ -49,10 +49,10 @@ public class SignatureVerifyDocumentResult {
     this.references = references;
   }
 
-  public List<SignatureEnvelopeRecipientInfo> getRecipients() {
+  public List<SignatureSignerInfo> getRecipients() {
     return recipients;
   }
-  public void setRecipients(List<SignatureEnvelopeRecipientInfo> recipients) {
+  public void setRecipients(List<SignatureSignerInfo> recipients) {
     this.recipients = recipients;
   }
 

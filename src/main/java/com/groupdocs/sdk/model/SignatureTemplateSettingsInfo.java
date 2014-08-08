@@ -31,6 +31,9 @@ public class SignatureTemplateSettingsInfo {
   private String emailBody = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
+  private Boolean enableTypedSignature = null;
+  private Boolean enableUploadedSignature = null;
+  private String tags = null;
   public Boolean getOwnerShouldSign() {
     return ownerShouldSign;
   }
@@ -94,6 +97,27 @@ public class SignatureTemplateSettingsInfo {
     this.waterMarkImage = waterMarkImage;
   }
 
+  public Boolean getEnableTypedSignature() {
+    return enableTypedSignature;
+  }
+  public void setEnableTypedSignature(Boolean enableTypedSignature) {
+    this.enableTypedSignature = enableTypedSignature;
+  }
+
+  public Boolean getEnableUploadedSignature() {
+    return enableUploadedSignature;
+  }
+  public void setEnableUploadedSignature(Boolean enableUploadedSignature) {
+    this.enableUploadedSignature = enableUploadedSignature;
+  }
+
+  public String getTags() {
+    return tags;
+  }
+  public void setTags(String tags) {
+    this.tags = tags;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -107,6 +131,9 @@ public class SignatureTemplateSettingsInfo {
     sb.append("  emailBody: ").append(emailBody).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
+    sb.append("  enableTypedSignature: ").append(enableTypedSignature).append("\n");
+    sb.append("  enableUploadedSignature: ").append(enableUploadedSignature).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

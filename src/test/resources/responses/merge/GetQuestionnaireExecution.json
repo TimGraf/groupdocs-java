@@ -11,12 +11,18 @@
               "field": "topmostSubform[0].Page1[0].f1_01_0_[0]",
               "text": "Text",
               "def_answer": "Answer",
+                "acceptableValues": [
+                    {
+                        "dimension": null,
+                        "hint": null,
+                        "max_length": null,
+                        "rect": null,
+                        "regionName": null
+                    }
+                ],
               "required": true,
               "disabled": false,
               "type": "GenericText",
-                "acceptableValues": null,
-                "max_length": null,
-                "rect": null,
               "answers": [
                 {
                   "text": "Text",

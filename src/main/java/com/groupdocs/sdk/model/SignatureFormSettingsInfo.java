@@ -31,6 +31,14 @@ public class SignatureFormSettingsInfo {
   private Boolean attachSignedDocument = null;
   private String notifyOtherOnSign  = null;
   private Boolean canParticipantPrintForm = null;
+  private Boolean requireUserAuthForSign = null;
+  private Boolean requestUserAuthByPhoto = null;
+  private Boolean enableTypedSignature = null;
+  private Boolean enableUploadedSignature = null;
+  private Boolean requireUserIdentityValidation = null;
+  private Boolean canBeCommented = null;
+  private Boolean showParticipantCommentInSignedDocument = null;
+  private String tags = null;
   public String getName() {
     return name;
   }
@@ -94,6 +102,62 @@ public class SignatureFormSettingsInfo {
     this.canParticipantPrintForm = canParticipantPrintForm;
   }
 
+  public Boolean getRequireUserAuthForSign() {
+    return requireUserAuthForSign;
+  }
+  public void setRequireUserAuthForSign(Boolean requireUserAuthForSign) {
+    this.requireUserAuthForSign = requireUserAuthForSign;
+  }
+
+  public Boolean getRequestUserAuthByPhoto() {
+    return requestUserAuthByPhoto;
+  }
+  public void setRequestUserAuthByPhoto(Boolean requestUserAuthByPhoto) {
+    this.requestUserAuthByPhoto = requestUserAuthByPhoto;
+  }
+
+  public Boolean getEnableTypedSignature() {
+    return enableTypedSignature;
+  }
+  public void setEnableTypedSignature(Boolean enableTypedSignature) {
+    this.enableTypedSignature = enableTypedSignature;
+  }
+
+  public Boolean getEnableUploadedSignature() {
+    return enableUploadedSignature;
+  }
+  public void setEnableUploadedSignature(Boolean enableUploadedSignature) {
+    this.enableUploadedSignature = enableUploadedSignature;
+  }
+
+  public Boolean getRequireUserIdentityValidation() {
+    return requireUserIdentityValidation;
+  }
+  public void setRequireUserIdentityValidation(Boolean requireUserIdentityValidation) {
+    this.requireUserIdentityValidation = requireUserIdentityValidation;
+  }
+
+  public Boolean getCanBeCommented() {
+    return canBeCommented;
+  }
+  public void setCanBeCommented(Boolean canBeCommented) {
+    this.canBeCommented = canBeCommented;
+  }
+
+  public Boolean getShowParticipantCommentInSignedDocument() {
+    return showParticipantCommentInSignedDocument;
+  }
+  public void setShowParticipantCommentInSignedDocument(Boolean showParticipantCommentInSignedDocument) {
+    this.showParticipantCommentInSignedDocument = showParticipantCommentInSignedDocument;
+  }
+
+  public String getTags() {
+    return tags;
+  }
+  public void setTags(String tags) {
+    this.tags = tags;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -107,6 +171,14 @@ public class SignatureFormSettingsInfo {
     sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
     sb.append("  notifyOtherOnSign : ").append(notifyOtherOnSign ).append("\n");
     sb.append("  canParticipantPrintForm: ").append(canParticipantPrintForm).append("\n");
+    sb.append("  requireUserAuthForSign: ").append(requireUserAuthForSign).append("\n");
+    sb.append("  requestUserAuthByPhoto: ").append(requestUserAuthByPhoto).append("\n");
+    sb.append("  enableTypedSignature: ").append(enableTypedSignature).append("\n");
+    sb.append("  enableUploadedSignature: ").append(enableUploadedSignature).append("\n");
+    sb.append("  requireUserIdentityValidation: ").append(requireUserIdentityValidation).append("\n");
+    sb.append("  canBeCommented: ").append(canBeCommented).append("\n");
+    sb.append("  showParticipantCommentInSignedDocument: ").append(showParticipantCommentInSignedDocument).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

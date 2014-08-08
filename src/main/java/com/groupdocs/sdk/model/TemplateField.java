@@ -32,6 +32,11 @@ public class TemplateField {
   private Boolean mandatory = null;
   private String fieldtype = null;
   private List<String> acceptableValues = new ArrayList<String>();
+  private Integer selectionPosition = null;
+  private Integer selectionLength = null;
+  private Boolean isTableStartMarker = null;
+  private Boolean isTableEndMarker = null;
+  private String regionName = null;
   public Integer getPage() {
     return page;
   }
@@ -88,6 +93,41 @@ public class TemplateField {
     this.acceptableValues = acceptableValues;
   }
 
+  public Integer getSelectionPosition() {
+    return selectionPosition;
+  }
+  public void setSelectionPosition(Integer selectionPosition) {
+    this.selectionPosition = selectionPosition;
+  }
+
+  public Integer getSelectionLength() {
+    return selectionLength;
+  }
+  public void setSelectionLength(Integer selectionLength) {
+    this.selectionLength = selectionLength;
+  }
+
+  public Boolean getIsTableStartMarker() {
+    return isTableStartMarker;
+  }
+  public void setIsTableStartMarker(Boolean isTableStartMarker) {
+    this.isTableStartMarker = isTableStartMarker;
+  }
+
+  public Boolean getIsTableEndMarker() {
+    return isTableEndMarker;
+  }
+  public void setIsTableEndMarker(Boolean isTableEndMarker) {
+    this.isTableEndMarker = isTableEndMarker;
+  }
+
+  public String getRegionName() {
+    return regionName;
+  }
+  public void setRegionName(String regionName) {
+    this.regionName = regionName;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -100,6 +140,11 @@ public class TemplateField {
     sb.append("  mandatory: ").append(mandatory).append("\n");
     sb.append("  fieldtype: ").append(fieldtype).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
+    sb.append("  selectionPosition: ").append(selectionPosition).append("\n");
+    sb.append("  selectionLength: ").append(selectionLength).append("\n");
+    sb.append("  isTableStartMarker: ").append(isTableStartMarker).append("\n");
+    sb.append("  isTableEndMarker: ").append(isTableEndMarker).append("\n");
+    sb.append("  regionName: ").append(regionName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

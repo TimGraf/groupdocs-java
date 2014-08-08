@@ -14,10 +14,10 @@
       "cvv": null,
       "address": null,
       "price": 200,
+        "nextAssesmentDate": "",
       "currencyCode": "USD",
       "billingPeriod": null,
-      "promoCode": null,
-        "nextAssesmentDate": null
+      "promoCode": null
     }
   },
   "status": "Ok",

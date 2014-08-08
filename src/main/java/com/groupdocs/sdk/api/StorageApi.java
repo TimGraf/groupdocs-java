@@ -202,18 +202,18 @@ public class StorageApi {
       }
     }
   }
-  public UploadResponse Upload (String userId, String path, String description, String callbackUrl, FileStream body) throws ApiException {
+  public UploadResponse Upload (String userId, String path, String description, String callbackUrl, Boolean isKeepBothMode, FileStream body) throws ApiException {
     // verify required params are set
-    if(userId == null || path == null || body == null ) {
+    if(userId == null || path == null || isKeepBothMode == null || body == null ) {
        throw new ApiException(400, "missing required params");
     }
-    String resourcePath = "/storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}".replace("*", "");
+    String resourcePath = "/storage/{userId}/folders/{*path}?description={description}&callbackUrl={callbackUrl}&isKeepBothMode={isKeepBothMode}".replace("*", "");
   	int pos = resourcePath.indexOf("?");
   	if(pos > -1){
   		resourcePath = resourcePath.substring(0, pos);
   	}
   	// create path and map variables
-    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "isKeepBothMode" + "}", String.valueOf(isKeepBothMode));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -410,7 +410,7 @@ public class StorageApi {
       }
     }
   }
-  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Copy, String Groupdocs_Move) throws ApiException {
+  public FileMoveResponse MoveFile (String userId, String path, String mode, String Groupdocs_Move, String Groupdocs_Copy) throws ApiException {
     // verify required params are set
     if(userId == null || path == null ) {
        throw new ApiException(400, "missing required params");
@@ -429,8 +429,8 @@ public class StorageApi {
 
     if(!"null".equals(String.valueOf(mode)))
       queryParams.put("mode", String.valueOf(mode));
-    headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     headerParams.put("Groupdocs-Move", Groupdocs_Move);
+    headerParams.put("Groupdocs-Copy", Groupdocs_Copy);
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "PUT", queryParams, null, headerParams, String.class);
       if(response != null){

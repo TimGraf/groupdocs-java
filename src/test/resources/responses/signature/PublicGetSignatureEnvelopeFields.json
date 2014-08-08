@@ -31,13 +31,11 @@
             "fontItalic": false,
             "fontUnderline": false,
             "align": 0,
-              "order": null
+              "order": ""
           }
         ],
         "fieldType": 1,
-        "acceptableValues": "",
-          "settings": null,
-          "groupName": null,
+        "acceptableValues": [{"groupName": "", "settings": ""}],
         "defaultValue": "",
         "tooltip": "Signature",
         "guidanceText": ""

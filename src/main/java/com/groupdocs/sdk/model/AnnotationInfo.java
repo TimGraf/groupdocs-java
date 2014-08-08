@@ -29,6 +29,7 @@ import com.groupdocs.sdk.model.Range;
 public class AnnotationInfo {
   private String guid = null;
   private String documentGuid = null;
+  private Long layerId = null;
   private String sessionGuid = null;
   private String creatorGuid = null;
   private String creatorName = null;
@@ -46,6 +47,7 @@ public class AnnotationInfo {
   private Integer penColor = null;
   private Integer penWidth = null;
   private Integer penStyle = null;
+  private Integer backgroundColor = null;
   private String fieldText = null;
   private String fontFamily = null;
   private Double fontSize = null;
@@ -61,6 +63,13 @@ public class AnnotationInfo {
   }
   public void setDocumentGuid(String documentGuid) {
     this.documentGuid = documentGuid;
+  }
+
+  public Long getLayerId() {
+    return layerId;
+  }
+  public void setLayerId(Long layerId) {
+    this.layerId = layerId;
   }
 
   public String getSessionGuid() {
@@ -182,6 +191,13 @@ public class AnnotationInfo {
     this.penStyle = penStyle;
   }
 
+  public Integer getBackgroundColor() {
+    return backgroundColor;
+  }
+  public void setBackgroundColor(Integer backgroundColor) {
+    this.backgroundColor = backgroundColor;
+  }
+
   public String getFieldText() {
     return fieldText;
   }
@@ -209,6 +225,7 @@ public class AnnotationInfo {
     sb.append("class AnnotationInfo {\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  layerId: ").append(layerId).append("\n");
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  creatorGuid: ").append(creatorGuid).append("\n");
     sb.append("  creatorName: ").append(creatorName).append("\n");
@@ -226,6 +243,7 @@ public class AnnotationInfo {
     sb.append("  penColor: ").append(penColor).append("\n");
     sb.append("  penWidth: ").append(penWidth).append("\n");
     sb.append("  penStyle: ").append(penStyle).append("\n");
+    sb.append("  backgroundColor: ").append(backgroundColor).append("\n");
     sb.append("  fieldText: ").append(fieldText).append("\n");
     sb.append("  fontFamily: ").append(fontFamily).append("\n");
     sb.append("  fontSize: ").append(fontSize).append("\n");

@@ -18,13 +18,13 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
-import com.groupdocs.sdk.model.DeleteDocumentAnnotationsReponse;
 import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
 import com.groupdocs.sdk.model.MarkerPosition;
+import com.groupdocs.sdk.model.DeleteDocumentAnnotationsResponse;
 import com.groupdocs.sdk.model.AnnotationReviewerRights;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
 import com.groupdocs.sdk.model.DeleteAnnotationResponse;
@@ -154,7 +154,7 @@ public class AntApi {
       }
     }
   }
-  public DeleteDocumentAnnotationsReponse DeleteDocumentAnnotations (String userId, String fileId) throws ApiException {
+  public DeleteDocumentAnnotationsResponse DeleteDocumentAnnotations (String userId, String fileId) throws ApiException {
     // verify required params are set
     if(userId == null || fileId == null ) {
        throw new ApiException(400, "missing required params");
@@ -170,7 +170,7 @@ public class AntApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "DELETE", queryParams, null, headerParams, String.class);
       if(response != null){
-        return (DeleteDocumentAnnotationsReponse) ApiInvoker.deserialize(response, "", DeleteDocumentAnnotationsReponse.class);
+        return (DeleteDocumentAnnotationsResponse) ApiInvoker.deserialize(response, "", DeleteDocumentAnnotationsResponse.class);
       }
       else {
         return null;

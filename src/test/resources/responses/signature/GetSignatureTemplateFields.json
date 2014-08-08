@@ -31,10 +31,8 @@
           }
         ],
         "fieldType": 1,
-        "acceptableValues": "",
+        "acceptableValues": [{"groupName": "", "settings": ""}],
         "defaultValue": "",
-          "groupName": null,
-          "settings": null,
         "tooltip": "Signature",
         "guidanceText": ""
       }

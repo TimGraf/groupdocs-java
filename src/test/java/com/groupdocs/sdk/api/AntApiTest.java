@@ -37,13 +37,13 @@ import com.github.restdriver.clientdriver.ClientDriverRule;
 
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.model.AddCollaboratorResponse;
-import com.groupdocs.sdk.model.DeleteDocumentAnnotationsReponse;
 import com.groupdocs.sdk.model.SaveAnnotationTextResponse;
 import com.groupdocs.sdk.model.AnnotationInfo;
 import com.groupdocs.sdk.model.GetSharedLinkAccessRightsResponse;
 import com.groupdocs.sdk.model.Point;
 import com.groupdocs.sdk.model.GetReviewerContactsResponse;
 import com.groupdocs.sdk.model.MarkerPosition;
+import com.groupdocs.sdk.model.DeleteDocumentAnnotationsResponse;
 import com.groupdocs.sdk.model.AnnotationReviewerRights;
 import com.groupdocs.sdk.model.DeleteReplyResponse;
 import com.groupdocs.sdk.model.DeleteAnnotationResponse;
@@ -183,7 +183,7 @@ public class AntApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			DeleteDocumentAnnotationsReponse response = api.DeleteDocumentAnnotations(userId, fileId);
+			DeleteDocumentAnnotationsResponse response = api.DeleteDocumentAnnotations(userId, fileId);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

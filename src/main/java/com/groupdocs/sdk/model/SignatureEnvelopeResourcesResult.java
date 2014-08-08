@@ -28,6 +28,7 @@ public class SignatureEnvelopeResourcesResult {
   private List<SignatureEnvelopeDocumentInfo> documents = new ArrayList<SignatureEnvelopeDocumentInfo>();
   private List<SignatureEnvelopeRecipientInfo> recipients = new ArrayList<SignatureEnvelopeRecipientInfo>();
   private List<String> dates = new ArrayList<String>();
+  private List<String> tags = new ArrayList<String>();
   public List<SignatureEnvelopeDocumentInfo> getDocuments() {
     return documents;
   }
@@ -49,6 +50,13 @@ public class SignatureEnvelopeResourcesResult {
     this.dates = dates;
   }
 
+  public List<String> getTags() {
+    return tags;
+  }
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -56,6 +64,7 @@ public class SignatureEnvelopeResourcesResult {
     sb.append("  documents: ").append(documents).append("\n");
     sb.append("  recipients: ").append(recipients).append("\n");
     sb.append("  dates: ").append(dates).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

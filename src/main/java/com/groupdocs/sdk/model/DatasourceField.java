@@ -16,6 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
+import com.groupdocs.sdk.model.Dimension;
 /**
  * 
  * <p>
@@ -28,6 +29,8 @@ public class DatasourceField {
   private String contentType = null;
   private String type = null;
   private List<DatasourceField> nested_fields = new ArrayList<DatasourceField>();
+  private String regionName = null;
+  private Dimension dimension = null;
   public String getName() {
     return name;
   }
@@ -63,6 +66,20 @@ public class DatasourceField {
     this.nested_fields = nested_fields;
   }
 
+  public String getRegionName() {
+    return regionName;
+  }
+  public void setRegionName(String regionName) {
+    this.regionName = regionName;
+  }
+
+  public Dimension getDimension() {
+    return dimension;
+  }
+  public void setDimension(Dimension dimension) {
+    this.dimension = dimension;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -72,6 +89,8 @@ public class DatasourceField {
     sb.append("  contentType: ").append(contentType).append("\n");
     sb.append("  type: ").append(type).append("\n");
     sb.append("  nested_fields: ").append(nested_fields).append("\n");
+    sb.append("  regionName: ").append(regionName).append("\n");
+    sb.append("  dimension: ").append(dimension).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

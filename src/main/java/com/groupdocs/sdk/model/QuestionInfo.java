@@ -19,6 +19,7 @@ import java.util.*;
 import com.groupdocs.sdk.model.ConditionInfo;
 import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.AnswerInfo;
+import com.groupdocs.sdk.model.FieldDimension;
 /**
  * 
  * <p>
@@ -37,6 +38,9 @@ public class QuestionInfo {
   private List<String> acceptableValues = new ArrayList<String>();
   private Integer max_length = null;
   private Rectangle rect = null;
+  private String regionName = null;
+  private String hint = null;
+  private FieldDimension dimension = null;
   public String getField() {
     return field;
   }
@@ -114,6 +118,27 @@ public class QuestionInfo {
     this.rect = rect;
   }
 
+  public String getRegionName() {
+    return regionName;
+  }
+  public void setRegionName(String regionName) {
+    this.regionName = regionName;
+  }
+
+  public String getHint() {
+    return hint;
+  }
+  public void setHint(String hint) {
+    this.hint = hint;
+  }
+
+  public FieldDimension getDimension() {
+    return dimension;
+  }
+  public void setDimension(FieldDimension dimension) {
+    this.dimension = dimension;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -129,6 +154,9 @@ public class QuestionInfo {
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
     sb.append("  max_length: ").append(max_length).append("\n");
     sb.append("  rect: ").append(rect).append("\n");
+    sb.append("  regionName: ").append(regionName).append("\n");
+    sb.append("  hint: ").append(hint).append("\n");
+    sb.append("  dimension: ").append(dimension).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

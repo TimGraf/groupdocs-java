@@ -46,7 +46,9 @@ import com.groupdocs.sdk.model.GetQuestionnaireMetadataResponse;
 import com.groupdocs.sdk.model.UpdateQuestionnaireResponse;
 import com.groupdocs.sdk.model.CreateQuestionnaireTemplateResponse;
 import com.groupdocs.sdk.model.GetDocumentQuestionnairesResponse;
+import com.groupdocs.sdk.model.GetQuestionnaireCollectorStyleResponse;
 import com.groupdocs.sdk.model.QuestionnaireExecutionInfo;
+import com.groupdocs.sdk.model.TemplateEditorField;
 import com.groupdocs.sdk.model.AddDatasourceResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireListResponse;
 import com.groupdocs.sdk.model.AddQuestionnaireCollectorResponse;
@@ -55,7 +57,6 @@ import com.groupdocs.sdk.model.DatasourceField;
 import com.groupdocs.sdk.model.DeleteQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.DeleteDocumentQuestionnaireResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireCollectorResponse;
-import com.groupdocs.sdk.model.TemplateField;
 import com.groupdocs.sdk.model.TemplateFieldsResponse;
 import com.groupdocs.sdk.model.QuestionnaireCollectorInfo;
 import com.groupdocs.sdk.model.AddDocumentQuestionnaireResponse;
@@ -66,6 +67,7 @@ import com.groupdocs.sdk.model.DeleteDatasourceResponse;
 import com.groupdocs.sdk.model.QuestionnaireMetadata;
 import com.groupdocs.sdk.model.GetDatasourceResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireExecutionListResponse;
+import com.groupdocs.sdk.model.AddQuestionnaireCollectorStyleResponse;
 import com.groupdocs.sdk.model.AddQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.GetTemplatesResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireResponse;
@@ -73,6 +75,7 @@ import com.groupdocs.sdk.model.MergeTemplateResponse;
 import com.groupdocs.sdk.model.DeleteQuestionnaireCollectorListResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireResponse;
 import com.groupdocs.sdk.model.GetDatasourcesResponse;
+import com.groupdocs.sdk.model.QuestionnaireCollectorStyle;
 import com.groupdocs.sdk.model.UpdateQuestionnaireCollectorResponse;
 import com.groupdocs.sdk.model.GetQuestionnaireExecutionResponse;
 import com.groupdocs.sdk.model.CreateQuestionnaireResponse;
@@ -1253,14 +1256,75 @@ public class MergeApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testDecorateQuestionnaireCollector() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String collectorId = "collectorId";
+		QuestionnaireCollectorStyle body = getSampleRequest("merge/payload/DecorateQuestionnaireCollector.json", new TypeReference<QuestionnaireCollectorStyle>(){});
+		
+		String resourcePath = "/merge/{userId}/questionnaires/collectors/{collectorId}/decorate".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "collectorId" + "}", String.valueOf(collectorId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.APPLICATION_JSON);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("merge/DecorateQuestionnaireCollector.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			AddQuestionnaireCollectorStyleResponse response = api.DecorateQuestionnaireCollector(userId, collectorId, body);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
+	public void testGetQuestionnaireCollectorStyle() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String collectorId = "collectorId";
+		
+		String resourcePath = "/merge/{userId}/questionnaires/collector/{collectorId}/style".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "collectorId" + "}", String.valueOf(collectorId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("merge/GetQuestionnaireCollectorStyle.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetQuestionnaireCollectorStyleResponse response = api.GetQuestionnaireCollectorStyle(userId, collectorId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testGetTemplates() throws Exception {
 		// sample parameters
 		String userId = "userId";
+		String orderBy = "orderBy";
+		Boolean isAscending = Boolean.TRUE;
 		
 		String resourcePath = "/merge/{userId}/templates".replace("{" + "userId" + "}", String.valueOf(userId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
 		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("orderBy", orderBy);
+		mockRequest = mockRequest.withParam("isAscending", isAscending);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("merge/GetTemplates.json");
@@ -1269,7 +1333,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetTemplatesResponse response = api.GetTemplates(userId);
+			GetTemplatesResponse response = api.GetTemplates(userId, orderBy, isAscending);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -1372,8 +1436,8 @@ public class MergeApiTest extends AbstractUnitTest {
 		String userId = "userId";
 		String path = "path";
 		String mode = "mode";
-		String Groupdocs_Move = "Groupdocs_Move";
 		String Groupdocs_Copy = "Groupdocs_Copy";
+		String Groupdocs_Move = "Groupdocs_Move";
 		
 		String resourcePath = "/merge/{userId}/files/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 		
@@ -1388,7 +1452,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			GetTemplatesResponse response = api.CopyFileToTemplates(userId, path, mode, Groupdocs_Move, Groupdocs_Copy);
+			GetTemplatesResponse response = api.CopyFileToTemplates(userId, path, mode, Groupdocs_Copy, Groupdocs_Move);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			
@@ -1431,7 +1495,7 @@ public class MergeApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String fileId = "fileId";
-		List<TemplateField> body = getSampleRequest("merge/payload/CreateQuestionnaireTemplate.json", new TypeReference<List<TemplateField>>(){});
+		List<TemplateEditorField> body = getSampleRequest("merge/payload/CreateQuestionnaireTemplate.json", new TypeReference<List<TemplateEditorField>>(){});
 		
 		String resourcePath = "/merge/{userId}/files/{fileId}/templates".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
 		

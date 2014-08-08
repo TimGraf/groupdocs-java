@@ -28,6 +28,7 @@ public class CreateAnnotationResult {
   private String documentGuid = null;
   private String sessionGuid = null;
   private String access = null;
+  private String type = null;
   private Long serverTime = null;
   public Long getId() {
     return id;
@@ -71,6 +72,13 @@ public class CreateAnnotationResult {
     this.access = access;
   }
 
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
   public Long getServerTime() {
     return serverTime;
   }
@@ -88,6 +96,7 @@ public class CreateAnnotationResult {
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  access: ").append(access).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("  serverTime: ").append(serverTime).append("\n");
     sb.append("}\n");
     return sb.toString();

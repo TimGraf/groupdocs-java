@@ -8,10 +8,10 @@
       "primary_email": "api-tests@groupdocs.com",
       "firstName": "Pavel",
       "lastName": "Strashniy",
-      "access_rights": null,
+      "access_rights": "15",
       "color": null,
-      "customEmailMessage": null,
-        "avatar": null
+        "avatar": null,
+      "customEmailMessage": null
     },
     "collaborators": [
       {

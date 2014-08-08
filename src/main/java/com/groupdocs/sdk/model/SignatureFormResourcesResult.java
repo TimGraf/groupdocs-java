@@ -26,6 +26,7 @@ import com.groupdocs.sdk.model.SignatureFormDocumentInfo;
 public class SignatureFormResourcesResult {
   private List<SignatureFormDocumentInfo> documents = new ArrayList<SignatureFormDocumentInfo>();
   private List<String> dates = new ArrayList<String>();
+  private List<String> tags = new ArrayList<String>();
   public List<SignatureFormDocumentInfo> getDocuments() {
     return documents;
   }
@@ -40,12 +41,20 @@ public class SignatureFormResourcesResult {
     this.dates = dates;
   }
 
+  public List<String> getTags() {
+    return tags;
+  }
+  public void setTags(List<String> tags) {
+    this.tags = tags;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormResourcesResult {\n");
     sb.append("  documents: ").append(documents).append("\n");
     sb.append("  dates: ").append(dates).append("\n");
+    sb.append("  tags: ").append(tags).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

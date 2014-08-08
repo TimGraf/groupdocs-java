@@ -99,6 +99,15 @@ public class UserInfo {
   private String signature_envelope_step_expired_template = null;
   private String signature_envelope_recipient_reminder_template = null;
   private String signature_form_signed_template = null;
+  private Boolean signature_form_require_user_auth_for_sign = null;
+  private Boolean signature_form_request_user_auth_by_photo = null;
+  private Boolean signature_form_require_user_identity_validation = null;
+  private Boolean signature_envelope_require_user_auth_for_sign = null;
+  private Boolean signature_envelope_request_user_auth_by_photo = null;
+  private Boolean signature_enable_uploaded_signature = null;
+  private Boolean signature_enable_typed_signature = null;
+  private Boolean signature_enable_envelope_comment = null;
+  private Boolean signature_enable_form_comment = null;
   private Long id = null;
   private String guid = null;
   private String primary_email = null;
@@ -627,6 +636,69 @@ public class UserInfo {
     this.signature_form_signed_template = signature_form_signed_template;
   }
 
+  public Boolean getSignature_form_require_user_auth_for_sign() {
+    return signature_form_require_user_auth_for_sign;
+  }
+  public void setSignature_form_require_user_auth_for_sign(Boolean signature_form_require_user_auth_for_sign) {
+    this.signature_form_require_user_auth_for_sign = signature_form_require_user_auth_for_sign;
+  }
+
+  public Boolean getSignature_form_request_user_auth_by_photo() {
+    return signature_form_request_user_auth_by_photo;
+  }
+  public void setSignature_form_request_user_auth_by_photo(Boolean signature_form_request_user_auth_by_photo) {
+    this.signature_form_request_user_auth_by_photo = signature_form_request_user_auth_by_photo;
+  }
+
+  public Boolean getSignature_form_require_user_identity_validation() {
+    return signature_form_require_user_identity_validation;
+  }
+  public void setSignature_form_require_user_identity_validation(Boolean signature_form_require_user_identity_validation) {
+    this.signature_form_require_user_identity_validation = signature_form_require_user_identity_validation;
+  }
+
+  public Boolean getSignature_envelope_require_user_auth_for_sign() {
+    return signature_envelope_require_user_auth_for_sign;
+  }
+  public void setSignature_envelope_require_user_auth_for_sign(Boolean signature_envelope_require_user_auth_for_sign) {
+    this.signature_envelope_require_user_auth_for_sign = signature_envelope_require_user_auth_for_sign;
+  }
+
+  public Boolean getSignature_envelope_request_user_auth_by_photo() {
+    return signature_envelope_request_user_auth_by_photo;
+  }
+  public void setSignature_envelope_request_user_auth_by_photo(Boolean signature_envelope_request_user_auth_by_photo) {
+    this.signature_envelope_request_user_auth_by_photo = signature_envelope_request_user_auth_by_photo;
+  }
+
+  public Boolean getSignature_enable_uploaded_signature() {
+    return signature_enable_uploaded_signature;
+  }
+  public void setSignature_enable_uploaded_signature(Boolean signature_enable_uploaded_signature) {
+    this.signature_enable_uploaded_signature = signature_enable_uploaded_signature;
+  }
+
+  public Boolean getSignature_enable_typed_signature() {
+    return signature_enable_typed_signature;
+  }
+  public void setSignature_enable_typed_signature(Boolean signature_enable_typed_signature) {
+    this.signature_enable_typed_signature = signature_enable_typed_signature;
+  }
+
+  public Boolean getSignature_enable_envelope_comment() {
+    return signature_enable_envelope_comment;
+  }
+  public void setSignature_enable_envelope_comment(Boolean signature_enable_envelope_comment) {
+    this.signature_enable_envelope_comment = signature_enable_envelope_comment;
+  }
+
+  public Boolean getSignature_enable_form_comment() {
+    return signature_enable_form_comment;
+  }
+  public void setSignature_enable_form_comment(Boolean signature_enable_form_comment) {
+    this.signature_enable_form_comment = signature_enable_form_comment;
+  }
+
   public Long getId() {
     return id;
   }
@@ -727,6 +799,15 @@ public class UserInfo {
     sb.append("  signature_envelope_step_expired_template: ").append(signature_envelope_step_expired_template).append("\n");
     sb.append("  signature_envelope_recipient_reminder_template: ").append(signature_envelope_recipient_reminder_template).append("\n");
     sb.append("  signature_form_signed_template: ").append(signature_form_signed_template).append("\n");
+    sb.append("  signature_form_require_user_auth_for_sign: ").append(signature_form_require_user_auth_for_sign).append("\n");
+    sb.append("  signature_form_request_user_auth_by_photo: ").append(signature_form_request_user_auth_by_photo).append("\n");
+    sb.append("  signature_form_require_user_identity_validation: ").append(signature_form_require_user_identity_validation).append("\n");
+    sb.append("  signature_envelope_require_user_auth_for_sign: ").append(signature_envelope_require_user_auth_for_sign).append("\n");
+    sb.append("  signature_envelope_request_user_auth_by_photo: ").append(signature_envelope_request_user_auth_by_photo).append("\n");
+    sb.append("  signature_enable_uploaded_signature: ").append(signature_enable_uploaded_signature).append("\n");
+    sb.append("  signature_enable_typed_signature: ").append(signature_enable_typed_signature).append("\n");
+    sb.append("  signature_enable_envelope_comment: ").append(signature_enable_envelope_comment).append("\n");
+    sb.append("  signature_enable_form_comment: ").append(signature_enable_form_comment).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

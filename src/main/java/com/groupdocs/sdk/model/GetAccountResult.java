@@ -24,8 +24,16 @@ import com.groupdocs.sdk.model.UserInfo;
  *
  */
 public class GetAccountResult {
+  private Long max_file_size = null;
   private Integer max_users = null;
   private List<UserInfo> users = new ArrayList<UserInfo>();
+  public Long getMax_file_size() {
+    return max_file_size;
+  }
+  public void setMax_file_size(Long max_file_size) {
+    this.max_file_size = max_file_size;
+  }
+
   public Integer getMax_users() {
     return max_users;
   }
@@ -44,6 +52,7 @@ public class GetAccountResult {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetAccountResult {\n");
+    sb.append("  max_file_size: ").append(max_file_size).append("\n");
     sb.append("  max_users: ").append(max_users).append("\n");
     sb.append("  users: ").append(users).append("\n");
     sb.append("}\n");

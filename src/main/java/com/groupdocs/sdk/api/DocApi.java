@@ -18,6 +18,7 @@ package com.groupdocs.sdk.api;
 import com.groupdocs.sdk.common.ApiException;
 import com.groupdocs.sdk.common.ApiInvoker;
 import com.groupdocs.sdk.common.FileStream;
+import com.groupdocs.sdk.model.TemplateEditorFieldsResponse;
 import com.groupdocs.sdk.model.SharedUsersResponse;
 import com.groupdocs.sdk.model.GetDocumentForeignTypesResponse;
 import com.groupdocs.sdk.model.GetDocumentInfoResponse;
@@ -585,6 +586,36 @@ public class DocApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
       if(response != null){
         return (TemplateFieldsResponse) ApiInvoker.deserialize(response, "", TemplateFieldsResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public TemplateEditorFieldsResponse GetTemplateEditorFields (String userId, String fileId) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/doc/{userId}/files/{fileId}/editor_fields".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (TemplateEditorFieldsResponse) ApiInvoker.deserialize(response, "", TemplateEditorFieldsResponse.class);
       }
       else {
         return null;

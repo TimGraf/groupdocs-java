@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.SignatureFormParticipantSignedDocumentInfo;
 /**
  * 
  * <p>
@@ -23,9 +25,11 @@ package com.groupdocs.sdk.model;
  */
 public class SignatureFormParticipantInfo {
   private String id = null;
-  private String documentGuid = null;
+  private List<SignatureFormParticipantSignedDocumentInfo> signedDocuments = new ArrayList<SignatureFormParticipantSignedDocumentInfo>();
   private String fillDateTime = null;
   private Integer status = null;
+  private String email = null;
+  private String comment = null;
   public String getId() {
     return id;
   }
@@ -33,11 +37,11 @@ public class SignatureFormParticipantInfo {
     this.id = id;
   }
 
-  public String getDocumentGuid() {
-    return documentGuid;
+  public List<SignatureFormParticipantSignedDocumentInfo> getSignedDocuments() {
+    return signedDocuments;
   }
-  public void setDocumentGuid(String documentGuid) {
-    this.documentGuid = documentGuid;
+  public void setSignedDocuments(List<SignatureFormParticipantSignedDocumentInfo> signedDocuments) {
+    this.signedDocuments = signedDocuments;
   }
 
   public String getFillDateTime() {
@@ -54,14 +58,30 @@ public class SignatureFormParticipantInfo {
     this.status = status;
   }
 
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getComment() {
+    return comment;
+  }
+  public void setComment(String comment) {
+    this.comment = comment;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureFormParticipantInfo {\n");
     sb.append("  id: ").append(id).append("\n");
-    sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  signedDocuments: ").append(signedDocuments).append("\n");
     sb.append("  fillDateTime: ").append(fillDateTime).append("\n");
     sb.append("  status: ").append(status).append("\n");
+    sb.append("  email: ").append(email).append("\n");
+    sb.append("  comment: ").append(comment).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

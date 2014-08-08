@@ -8,10 +8,10 @@
       "primary_email": "api-tests@groupdocs.com",
       "firstName": "Pavel",
       "lastName": "Strashniy",
-      "access_rights": null,
+      "access_rights": "15",
+        "avatar": null,
       "color": null,
-      "customEmailMessage": null,
-        "avatar": []
+      "customEmailMessage": null
     },
     "collaborators": [
       {
@@ -21,9 +21,9 @@
         "firstName": "John",
         "lastName": "Smith",
         "access_rights": "15",
+          "avatar": null,
         "color": 7220678,
-        "customEmailMessage": null,
-         "avatar": []
+        "customEmailMessage": null
       },
       {
         "id": 22103,
@@ -32,9 +32,9 @@
         "firstName": null,
         "lastName": null,
         "access_rights": "15",
+          "avatar": null,
         "color": 16515083,
-        "customEmailMessage": null,
-          "avatar": []
+        "customEmailMessage": null
       }
     ]
   },

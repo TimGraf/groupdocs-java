@@ -9,7 +9,6 @@
         "name": "Signature",
         "mandatory": true,
         "regularExpression": "",
-          "settings": null,
         "data": null,
         "fillTimeStamp": "1/1/1970 12:00:00 AM",
         "locations": [
@@ -26,15 +25,14 @@
             "fontColor": "black",
             "fontSize": 10,
             "fontBold": false,
-              "order": null,
             "fontItalic": false,
             "fontUnderline": false,
-            "align": 0
+            "align": 0,
+              "order": ""
           }
         ],
         "fieldType": 1,
-        "acceptableValues": null,
-          "groupName": null,
+        "acceptableValues": [{"groupName": "", "settings": ""}],
         "defaultValue": null,
         "tooltip": "Signature",
         "guidanceText": ""

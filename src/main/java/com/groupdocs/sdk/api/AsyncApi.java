@@ -24,6 +24,7 @@ import com.groupdocs.sdk.model.AddJobDocumentResponse;
 import com.groupdocs.sdk.model.GetJobResourcesResponse;
 import com.groupdocs.sdk.model.ConvertResponse;
 import com.groupdocs.sdk.model.DeleteResponse;
+import com.groupdocs.sdk.model.GetPossibleConversions;
 import com.groupdocs.sdk.model.CreateJobResponse;
 import com.groupdocs.sdk.model.UpdateJobResponse;
 import com.groupdocs.sdk.model.DeleteResult;
@@ -478,6 +479,36 @@ public class AsyncApi {
       String response = apiInvoker.invokeAPI(basePath, resourcePath, "POST", queryParams, null, headerParams, String.class);
       if(response != null){
         return (ConvertResponse) ApiInvoker.deserialize(response, "", ConvertResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  public GetPossibleConversions GetPossibleConversions (String userId, String fileExt) throws ApiException {
+    // verify required params are set
+    if(userId == null || fileExt == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/async/{userId}/possibleConversions/{fileExt}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileExt" + "}", String.valueOf(fileExt));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetPossibleConversions) ApiInvoker.deserialize(response, "", GetPossibleConversions.class);
       }
       else {
         return null;
