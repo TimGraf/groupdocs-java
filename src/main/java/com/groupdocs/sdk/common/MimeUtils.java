@@ -113,11 +113,10 @@ public class MimeUtils {
 	 * Read file contents into String according to
 	 * http://en.wikipedia.org/wiki/Data_URI_scheme#Format
 	 * 
-	 * @param file
-	 * @return
-	 * @throws IOException
-	 * @throws FileNotFoundException
-	 * @throws Exception
+	 * @param file File class
+         * @return return result
+         * @throws IOException IOException class
+         * @throws FileNotFoundException FileNotFoundException class
 	 */
 	public static String readAsDataURL(File file) throws IOException {
 		String mimeType = getMimeTypeFor(file.getName());
