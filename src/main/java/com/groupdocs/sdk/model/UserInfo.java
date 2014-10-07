@@ -108,6 +108,13 @@ public class UserInfo {
   private Boolean signature_enable_typed_signature = null;
   private Boolean signature_enable_envelope_comment = null;
   private Boolean signature_enable_form_comment = null;
+  private Boolean can_participan_download_form = null;
+  private Boolean can_participant_print_form = null;
+  private Boolean notify_form_owner_on_sign = null;
+  private Boolean attach_signed_form_document = null;
+  private Boolean show_participant_comment_in_signed_document = null;
+  private String forms_notify_other_on_sign = null;
+  private Boolean form_document_parse_fields = null;
   private Long id = null;
   private String guid = null;
   private String primary_email = null;
@@ -699,6 +706,55 @@ public class UserInfo {
     this.signature_enable_form_comment = signature_enable_form_comment;
   }
 
+  public Boolean getCan_participan_download_form() {
+    return can_participan_download_form;
+  }
+  public void setCan_participan_download_form(Boolean can_participan_download_form) {
+    this.can_participan_download_form = can_participan_download_form;
+  }
+
+  public Boolean getCan_participant_print_form() {
+    return can_participant_print_form;
+  }
+  public void setCan_participant_print_form(Boolean can_participant_print_form) {
+    this.can_participant_print_form = can_participant_print_form;
+  }
+
+  public Boolean getNotify_form_owner_on_sign() {
+    return notify_form_owner_on_sign;
+  }
+  public void setNotify_form_owner_on_sign(Boolean notify_form_owner_on_sign) {
+    this.notify_form_owner_on_sign = notify_form_owner_on_sign;
+  }
+
+  public Boolean getAttach_signed_form_document() {
+    return attach_signed_form_document;
+  }
+  public void setAttach_signed_form_document(Boolean attach_signed_form_document) {
+    this.attach_signed_form_document = attach_signed_form_document;
+  }
+
+  public Boolean getShow_participant_comment_in_signed_document() {
+    return show_participant_comment_in_signed_document;
+  }
+  public void setShow_participant_comment_in_signed_document(Boolean show_participant_comment_in_signed_document) {
+    this.show_participant_comment_in_signed_document = show_participant_comment_in_signed_document;
+  }
+
+  public String getForms_notify_other_on_sign() {
+    return forms_notify_other_on_sign;
+  }
+  public void setForms_notify_other_on_sign(String forms_notify_other_on_sign) {
+    this.forms_notify_other_on_sign = forms_notify_other_on_sign;
+  }
+
+  public Boolean getForm_document_parse_fields() {
+    return form_document_parse_fields;
+  }
+  public void setForm_document_parse_fields(Boolean form_document_parse_fields) {
+    this.form_document_parse_fields = form_document_parse_fields;
+  }
+
   public Long getId() {
     return id;
   }
@@ -808,6 +864,13 @@ public class UserInfo {
     sb.append("  signature_enable_typed_signature: ").append(signature_enable_typed_signature).append("\n");
     sb.append("  signature_enable_envelope_comment: ").append(signature_enable_envelope_comment).append("\n");
     sb.append("  signature_enable_form_comment: ").append(signature_enable_form_comment).append("\n");
+    sb.append("  can_participan_download_form: ").append(can_participan_download_form).append("\n");
+    sb.append("  can_participant_print_form: ").append(can_participant_print_form).append("\n");
+    sb.append("  notify_form_owner_on_sign: ").append(notify_form_owner_on_sign).append("\n");
+    sb.append("  attach_signed_form_document: ").append(attach_signed_form_document).append("\n");
+    sb.append("  show_participant_comment_in_signed_document: ").append(show_participant_comment_in_signed_document).append("\n");
+    sb.append("  forms_notify_other_on_sign: ").append(forms_notify_other_on_sign).append("\n");
+    sb.append("  form_document_parse_fields: ").append(form_document_parse_fields).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  primary_email: ").append(primary_email).append("\n");

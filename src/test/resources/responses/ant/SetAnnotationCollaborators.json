@@ -9,7 +9,7 @@
       "firstName": "Pavel",
       "lastName": "Strashniy",
       "access_rights": "15",
-        "avatar": null,
+	  "avatar": null,
       "color": null,
       "customEmailMessage": null
     },
@@ -21,7 +21,7 @@
         "firstName": "John",
         "lastName": "Smith",
         "access_rights": "15",
-          "avatar": null,
+		"avatar": null,
         "color": 7220678,
         "customEmailMessage": null
       },
@@ -32,7 +32,7 @@
         "firstName": null,
         "lastName": null,
         "access_rights": "15",
-          "avatar": null,
+		"avatar": null,
         "color": 16515083,
         "customEmailMessage": null
       }

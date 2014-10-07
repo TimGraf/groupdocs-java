@@ -219,17 +219,18 @@ public class StorageApiTest extends AbstractUnitTest {
 		// sample parameters
 		String userId = "userId";
 		String path = "path";
-		Boolean isKeepBothMode = Boolean.TRUE;
 		String description = "description";
 		String callbackUrl = "callbackUrl";
+		Integer overrideMode = 0;
 		FileStream body = new FileStream(getClass().getClassLoader().getResourceAsStream("test.doc"));
 		
-		String resourcePath = "/storage/{userId}/folders/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path)).replace("{" + "isKeepBothMode" + "}", String.valueOf(isKeepBothMode));
+		String resourcePath = "/storage/{userId}/folders/{path}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "path" + "}", String.valueOf(path));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", Pattern.compile(".*"));
 		// add query parameters to expectation
 		mockRequest = mockRequest.withParam("description", description);
 		mockRequest = mockRequest.withParam("callbackUrl", callbackUrl);
+		mockRequest = mockRequest.withParam("overrideMode", overrideMode);
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("storage/Upload.json");
@@ -238,7 +239,7 @@ public class StorageApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			UploadResponse response = api.Upload(userId, path, description, callbackUrl, isKeepBothMode, body);
+			UploadResponse response = api.Upload(userId, path, description, callbackUrl,overrideMode, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

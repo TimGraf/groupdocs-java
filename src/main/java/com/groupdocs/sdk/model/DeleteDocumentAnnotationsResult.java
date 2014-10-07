@@ -15,6 +15,8 @@
  */
 package com.groupdocs.sdk.model;
 
+import java.util.*;
+import com.groupdocs.sdk.model.DeleteAnnotationResult;
 /**
  * 
  * <p>
@@ -22,28 +24,19 @@ package com.groupdocs.sdk.model;
  *
  */
 public class DeleteDocumentAnnotationsResult {
-  private Double id = null;
-  private String guid = null;
-  public Double getId() {
-    return id;
+  private List<DeleteAnnotationResult> delete_annotation_results = new ArrayList<DeleteAnnotationResult>();
+  public List<DeleteAnnotationResult> getDelete_annotation_results() {
+    return delete_annotation_results;
   }
-  public void setId(Double id) {
-    this.id = id;
-  }
-
-  public String getGuid() {
-    return guid;
-  }
-  public void setGuid(String guid) {
-    this.guid = guid;
+  public void setDelete_annotation_results(List<DeleteAnnotationResult> delete_annotation_results) {
+    this.delete_annotation_results = delete_annotation_results;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteDocumentAnnotationsResult {\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  guid: ").append(guid).append("\n");
+    sb.append("  delete_annotation_results: ").append(delete_annotation_results).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

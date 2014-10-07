@@ -24,6 +24,7 @@ package com.groupdocs.sdk.model;
 public class SignatureSignFormSettingsInfo {
   private String authData = null;
   private String comment = null;
+  private String email = null;
   public String getAuthData() {
     return authData;
   }
@@ -38,12 +39,20 @@ public class SignatureSignFormSettingsInfo {
     this.comment = comment;
   }
 
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignFormSettingsInfo {\n");
     sb.append("  authData: ").append(authData).append("\n");
     sb.append("  comment: ").append(comment).append("\n");
+    sb.append("  email: ").append(email).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

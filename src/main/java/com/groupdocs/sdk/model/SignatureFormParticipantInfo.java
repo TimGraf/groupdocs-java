@@ -30,6 +30,7 @@ public class SignatureFormParticipantInfo {
   private Integer status = null;
   private String email = null;
   private String comment = null;
+  private String name = null;
   public String getId() {
     return id;
   }
@@ -72,6 +73,13 @@ public class SignatureFormParticipantInfo {
     this.comment = comment;
   }
 
+  public String getName() {
+    return name;
+  }
+  public void setName(String name) {
+    this.name = name;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -82,6 +90,7 @@ public class SignatureFormParticipantInfo {
     sb.append("  status: ").append(status).append("\n");
     sb.append("  email: ").append(email).append("\n");
     sb.append("  comment: ").append(comment).append("\n");
+    sb.append("  name: ").append(name).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

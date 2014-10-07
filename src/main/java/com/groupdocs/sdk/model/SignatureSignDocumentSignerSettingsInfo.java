@@ -25,6 +25,7 @@ import com.groupdocs.sdk.model.SignatureFieldInfo;
  */
 public class SignatureSignDocumentSignerSettingsInfo {
   private String name = null;
+  private String email = null;
   private Double top = null;
   private Double left = null;
   private Double width = null;
@@ -37,6 +38,13 @@ public class SignatureSignDocumentSignerSettingsInfo {
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   public Double getTop() {
@@ -93,6 +101,7 @@ public class SignatureSignDocumentSignerSettingsInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class SignatureSignDocumentSignerSettingsInfo {\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  email: ").append(email).append("\n");
     sb.append("  top: ").append(top).append("\n");
     sb.append("  left: ").append(left).append("\n");
     sb.append("  width: ").append(width).append("\n");

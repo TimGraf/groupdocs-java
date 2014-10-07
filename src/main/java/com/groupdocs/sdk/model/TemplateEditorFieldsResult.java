@@ -17,6 +17,7 @@ package com.groupdocs.sdk.model;
 
 import java.util.*;
 import com.groupdocs.sdk.model.TemplateEditorField;
+import com.groupdocs.sdk.model.DocumentWord;
 /**
  * 
  * <p>
@@ -25,6 +26,8 @@ import com.groupdocs.sdk.model.TemplateEditorField;
  */
 public class TemplateEditorFieldsResult {
   private List<TemplateEditorField> fields = new ArrayList<TemplateEditorField>();
+  private List<DocumentWord> words = new ArrayList<DocumentWord>();
+  private List<String> pageSizes = new ArrayList<String>();
   public List<TemplateEditorField> getFields() {
     return fields;
   }
@@ -32,11 +35,27 @@ public class TemplateEditorFieldsResult {
     this.fields = fields;
   }
 
+  public List<DocumentWord> getWords() {
+    return words;
+  }
+  public void setWords(List<DocumentWord> words) {
+    this.words = words;
+  }
+
+  public List<String> getPageSizes() {
+    return pageSizes;
+  }
+  public void setPageSizes(List<String> pageSizes) {
+    this.pageSizes = pageSizes;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class TemplateEditorFieldsResult {\n");
     sb.append("  fields: ").append(fields).append("\n");
+    sb.append("  words: ").append(words).append("\n");
+    sb.append("  pageSizes: ").append(pageSizes).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

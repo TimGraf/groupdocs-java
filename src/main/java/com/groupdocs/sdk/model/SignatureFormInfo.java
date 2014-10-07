@@ -50,6 +50,7 @@ public class SignatureFormInfo {
   private Boolean canBeCommented = null;
   private Boolean showParticipantCommentInSignedDocument = null;
   private String tags = null;
+  private Boolean parseFields = null;
   public String getId() {
     return id;
   }
@@ -239,6 +240,13 @@ public class SignatureFormInfo {
     this.tags = tags;
   }
 
+  public Boolean getParseFields() {
+    return parseFields;
+  }
+  public void setParseFields(Boolean parseFields) {
+    this.parseFields = parseFields;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -270,6 +278,7 @@ public class SignatureFormInfo {
     sb.append("  canBeCommented: ").append(canBeCommented).append("\n");
     sb.append("  showParticipantCommentInSignedDocument: ").append(showParticipantCommentInSignedDocument).append("\n");
     sb.append("  tags: ").append(tags).append("\n");
+    sb.append("  parseFields: ").append(parseFields).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

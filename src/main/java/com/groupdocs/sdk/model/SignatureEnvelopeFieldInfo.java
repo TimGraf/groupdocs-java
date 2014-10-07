@@ -43,6 +43,7 @@ public class SignatureEnvelopeFieldInfo {
   private String guidanceText = null;
   private String groupName = null;
   private String settings = null;
+  private Boolean lockDuringSign = null;
   public String getId() {
     return id;
   }
@@ -176,6 +177,13 @@ public class SignatureEnvelopeFieldInfo {
     this.settings = settings;
   }
 
+  public Boolean getLockDuringSign() {
+    return lockDuringSign;
+  }
+  public void setLockDuringSign(Boolean lockDuringSign) {
+    this.lockDuringSign = lockDuringSign;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -199,6 +207,7 @@ public class SignatureEnvelopeFieldInfo {
     sb.append("  guidanceText: ").append(guidanceText).append("\n");
     sb.append("  groupName: ").append(groupName).append("\n");
     sb.append("  settings: ").append(settings).append("\n");
+    sb.append("  lockDuringSign: ").append(lockDuringSign).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

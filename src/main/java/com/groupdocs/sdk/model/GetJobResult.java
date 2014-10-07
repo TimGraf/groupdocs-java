@@ -37,6 +37,7 @@ public class GetJobResult {
   private String guid = null;
   private String name = null;
   private String callback_url = null;
+  private String type = null;
   public Double getId() {
     return id;
   }
@@ -128,6 +129,13 @@ public class GetJobResult {
     this.callback_url = callback_url;
   }
 
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -145,6 +153,7 @@ public class GetJobResult {
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  name: ").append(name).append("\n");
     sb.append("  callback_url: ").append(callback_url).append("\n");
+    sb.append("  type: ").append(type).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

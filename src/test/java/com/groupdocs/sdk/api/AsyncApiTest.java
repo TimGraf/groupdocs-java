@@ -73,7 +73,7 @@ public class AsyncApiTest extends AbstractUnitTest {
 		String resourcePath = "/async/{userId}/jobs/{jobId}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "jobId" + "}", String.valueOf(jobId));
 		
 		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
+		// add query parametgers to expectation
 		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
 		// read response json from file
 		String responseBody = getSampleResponse("async/GetJobJson.json");

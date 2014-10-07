@@ -10,7 +10,7 @@
       "lastName": "Strashniy",
       "access_rights": "15",
       "color": null,
-        "avatar": null,
+	  "avatar": null,
       "customEmailMessage": null
     },
     "collaborators": [
@@ -21,7 +21,7 @@
         "firstName": "John",
         "lastName": "Smith",
         "access_rights": "15",
-          "avatar": null,
+		"avatar": null,
         "color": 13828740,
         "customEmailMessage": null
       }
