@@ -23,7 +23,10 @@
       ],
       "waterMarkText": "Text",
       "waterMarkImage": "data:image/png,Text",
-      "fieldsCount": 0
+      "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
     }
   },
   "status": "Ok",

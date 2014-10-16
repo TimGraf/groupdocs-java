@@ -1,7 +1,7 @@
 {
   "result": {
     "template": {
-      "id": "98fa2df94425d2344bcb3e6d15300bf2",
+      "id": "24f515503d33b1b69702e4bb66c7ac1e",
       "name": "Template 1892367510115256",
       "ownerGuid": "ea103bbe8cb8ce07",
       "reminderTime": 1,
@@ -14,11 +14,13 @@
       "documentsCount": 0,
       "documentsPages": 0,
       "recipients": [
-
       ],
       "waterMarkText": "",
       "waterMarkImage": "",
-      "fieldsCount": 0
+      "fieldsCount": 0,
+      "enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
     }
   },
   "status": "Ok",

@@ -1,5 +1,32 @@
 {
   "result": {
+"template":{
+"id": "e171c182366b36bffe326e28ecf90733",
+      "name": "Template 585310958010442",
+      "ownerGuid": "ea103bbe8cb8ce07",
+      "reminderTime": 1,
+      "stepExpireTime": 1,
+      "templateExpireTime": 1,
+      "ownerShouldSign": true,
+      "orderedSignature": true,
+      "emailSubject": "Test",
+      "emailBody": "Test",
+      "documentsCount": 0,
+      "documentsPages": 0,
+      "recipients": [
+        {
+          "id": "25fb94322597b7ad347c458ed081aa69",
+          "nickname": "Pavel",
+          "order": 32767,
+          "roleId": 1
+        }
+      ],
+      "waterMarkText": "Text",
+      "waterMarkImage": "data:image/png,Text",
+      "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""}
   },
   "status": "Ok",
   "error_message": null,

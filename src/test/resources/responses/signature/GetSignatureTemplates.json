@@ -25,7 +25,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       },
       {
         "id": "6531ef116b0dfd21f1e6988d5ab1db3d",
@@ -45,7 +48,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       },
       {
         "id": "24f515503d33b1b69702e4bb66c7ac1e",
@@ -65,7 +71,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       },
       {
         "id": "4b7d8c2a3a2e273d0542fa36f6638a44",
@@ -85,7 +94,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       },
       {
         "id": "e80c086b46070c21cc6db7946be3de9d",
@@ -110,7 +122,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       },
       {
         "id": "e5f8efb715e9670d5d852f94b8808d40",
@@ -135,7 +150,10 @@
         ],
         "waterMarkText": "",
         "waterMarkImage": "",
-        "fieldsCount": 0
+        "fieldsCount": 0,
+"enableTypedSignature": false,
+      "enableUploadedSignature": false,
+      "tags": ""
       }
     ]
   },
