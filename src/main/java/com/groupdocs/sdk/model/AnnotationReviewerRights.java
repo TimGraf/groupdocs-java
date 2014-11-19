@@ -26,8 +26,6 @@ public class AnnotationReviewerRights {
   private Integer CanAnnotate = null;
   private Integer CanDownload = null;
   private Integer CanExport = null;
-  private Integer CanDelete = null;
-  private Integer All = null;
   public Integer getCanView() {
     return CanView;
   }
@@ -56,20 +54,6 @@ public class AnnotationReviewerRights {
     this.CanExport = CanExport;
   }
 
-  public Integer getCanDelete() {
-    return CanDelete;
-  }
-  public void setCanDelete(Integer CanDelete) {
-    this.CanDelete = CanDelete;
-  }
-
-  public Integer getAll() {
-    return All;
-  }
-  public void setAll(Integer All) {
-    this.All = All;
-  }
-
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -78,8 +62,6 @@ public class AnnotationReviewerRights {
     sb.append("  CanAnnotate: ").append(CanAnnotate).append("\n");
     sb.append("  CanDownload: ").append(CanDownload).append("\n");
     sb.append("  CanExport: ").append(CanExport).append("\n");
-    sb.append("  CanDelete: ").append(CanDelete).append("\n");
-    sb.append("  All: ").append(All).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -48,6 +48,7 @@ public class SignatureEnvelopeFieldSettingsInfo {
   private String settings = null;
   private Integer pageWidth = null;
   private Integer pageHeight = null;
+  private Boolean lockDuringSign = null;
   public String getName() {
     return name;
   }
@@ -230,6 +231,13 @@ public class SignatureEnvelopeFieldSettingsInfo {
     this.pageHeight = pageHeight;
   }
 
+  public Boolean getLockDuringSign() {
+    return lockDuringSign;
+  }
+  public void setLockDuringSign(Boolean lockDuringSign) {
+    this.lockDuringSign = lockDuringSign;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -260,6 +268,7 @@ public class SignatureEnvelopeFieldSettingsInfo {
     sb.append("  settings: ").append(settings).append("\n");
     sb.append("  pageWidth: ").append(pageWidth).append("\n");
     sb.append("  pageHeight: ").append(pageHeight).append("\n");
+    sb.append("  lockDuringSign: ").append(lockDuringSign).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

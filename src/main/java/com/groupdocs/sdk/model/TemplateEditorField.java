@@ -16,7 +16,6 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
-import com.groupdocs.sdk.model.TemplateEditorFieldOption;
 import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.TemplateEditorFieldStyle;
 /**
@@ -33,7 +32,6 @@ public class TemplateEditorField {
   private Integer selectionPosition = null;
   private Integer selectionLength = null;
   private List<String> acceptableValues = new ArrayList<String>();
-  private List<TemplateEditorFieldOption> options = new ArrayList<TemplateEditorFieldOption>();
   private TemplateEditorFieldStyle style = null;
   private Boolean isTableMarker = null;
   public String getName() {
@@ -85,13 +83,6 @@ public class TemplateEditorField {
     this.acceptableValues = acceptableValues;
   }
 
-  public List<TemplateEditorFieldOption> getOptions() {
-    return options;
-  }
-  public void setOptions(List<TemplateEditorFieldOption> options) {
-    this.options = options;
-  }
-
   public TemplateEditorFieldStyle getStyle() {
     return style;
   }
@@ -117,7 +108,6 @@ public class TemplateEditorField {
     sb.append("  selectionPosition: ").append(selectionPosition).append("\n");
     sb.append("  selectionLength: ").append(selectionLength).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
-    sb.append("  options: ").append(options).append("\n");
     sb.append("  style: ").append(style).append("\n");
     sb.append("  isTableMarker: ").append(isTableMarker).append("\n");
     sb.append("}\n");

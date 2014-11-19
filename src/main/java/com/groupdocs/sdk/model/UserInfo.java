@@ -64,6 +64,12 @@ public class UserInfo {
   private Boolean is_polyline_annotation_button_enabled = null;
   private Boolean is_typewriter_annotation_button_enabled = null;
   private Boolean is_watermark_annotation_button_enabled = null;
+  private Boolean is_text_replacement_annotation_button_enabled = null;
+  private Boolean is_arrow_annotation_button_enabled = null;
+  private Boolean is_text_redaction_annotation_button_enabled = null;
+  private Boolean is_resource_redaction_annotation_button_enabled = null;
+  private Boolean is_text_underline_annotation_button_enabled = null;
+  private Boolean is_distance_annotation_button_enabled = null;
   private Boolean is_annotation_document_name_shown = null;
   private List<Integer> annotation_navigation_icons = new ArrayList<Integer>();
   private List<Integer> annotation_tool_icons = new ArrayList<Integer>();
@@ -396,6 +402,48 @@ public class UserInfo {
   }
   public void setIs_watermark_annotation_button_enabled(Boolean is_watermark_annotation_button_enabled) {
     this.is_watermark_annotation_button_enabled = is_watermark_annotation_button_enabled;
+  }
+
+  public Boolean getIs_text_replacement_annotation_button_enabled() {
+    return is_text_replacement_annotation_button_enabled;
+  }
+  public void setIs_text_replacement_annotation_button_enabled(Boolean is_text_replacement_annotation_button_enabled) {
+    this.is_text_replacement_annotation_button_enabled = is_text_replacement_annotation_button_enabled;
+  }
+
+  public Boolean getIs_arrow_annotation_button_enabled() {
+    return is_arrow_annotation_button_enabled;
+  }
+  public void setIs_arrow_annotation_button_enabled(Boolean is_arrow_annotation_button_enabled) {
+    this.is_arrow_annotation_button_enabled = is_arrow_annotation_button_enabled;
+  }
+
+  public Boolean getIs_text_redaction_annotation_button_enabled() {
+    return is_text_redaction_annotation_button_enabled;
+  }
+  public void setIs_text_redaction_annotation_button_enabled(Boolean is_text_redaction_annotation_button_enabled) {
+    this.is_text_redaction_annotation_button_enabled = is_text_redaction_annotation_button_enabled;
+  }
+
+  public Boolean getIs_resource_redaction_annotation_button_enabled() {
+    return is_resource_redaction_annotation_button_enabled;
+  }
+  public void setIs_resource_redaction_annotation_button_enabled(Boolean is_resource_redaction_annotation_button_enabled) {
+    this.is_resource_redaction_annotation_button_enabled = is_resource_redaction_annotation_button_enabled;
+  }
+
+  public Boolean getIs_text_underline_annotation_button_enabled() {
+    return is_text_underline_annotation_button_enabled;
+  }
+  public void setIs_text_underline_annotation_button_enabled(Boolean is_text_underline_annotation_button_enabled) {
+    this.is_text_underline_annotation_button_enabled = is_text_underline_annotation_button_enabled;
+  }
+
+  public Boolean getIs_distance_annotation_button_enabled() {
+    return is_distance_annotation_button_enabled;
+  }
+  public void setIs_distance_annotation_button_enabled(Boolean is_distance_annotation_button_enabled) {
+    this.is_distance_annotation_button_enabled = is_distance_annotation_button_enabled;
   }
 
   public Boolean getIs_annotation_document_name_shown() {
@@ -820,6 +868,12 @@ public class UserInfo {
     sb.append("  is_polyline_annotation_button_enabled: ").append(is_polyline_annotation_button_enabled).append("\n");
     sb.append("  is_typewriter_annotation_button_enabled: ").append(is_typewriter_annotation_button_enabled).append("\n");
     sb.append("  is_watermark_annotation_button_enabled: ").append(is_watermark_annotation_button_enabled).append("\n");
+    sb.append("  is_text_replacement_annotation_button_enabled: ").append(is_text_replacement_annotation_button_enabled).append("\n");
+    sb.append("  is_arrow_annotation_button_enabled: ").append(is_arrow_annotation_button_enabled).append("\n");
+    sb.append("  is_text_redaction_annotation_button_enabled: ").append(is_text_redaction_annotation_button_enabled).append("\n");
+    sb.append("  is_resource_redaction_annotation_button_enabled: ").append(is_resource_redaction_annotation_button_enabled).append("\n");
+    sb.append("  is_text_underline_annotation_button_enabled: ").append(is_text_underline_annotation_button_enabled).append("\n");
+    sb.append("  is_distance_annotation_button_enabled: ").append(is_distance_annotation_button_enabled).append("\n");
     sb.append("  is_annotation_document_name_shown: ").append(is_annotation_document_name_shown).append("\n");
     sb.append("  annotation_navigation_icons: ").append(annotation_navigation_icons).append("\n");
     sb.append("  annotation_tool_icons: ").append(annotation_tool_icons).append("\n");

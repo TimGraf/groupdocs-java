@@ -33,6 +33,9 @@ public class StorageProviderInfo {
   private Boolean isPrimary = null;
   private String serviceHost = null;
   private String syncOptions = null;
+  private String altPublicKey = null;
+  private String altPrivateKey = null;
+  private Boolean interoperable = null;
   public Double getId() {
     return id;
   }
@@ -103,6 +106,27 @@ public class StorageProviderInfo {
     this.syncOptions = syncOptions;
   }
 
+  public String getAltPublicKey() {
+    return altPublicKey;
+  }
+  public void setAltPublicKey(String altPublicKey) {
+    this.altPublicKey = altPublicKey;
+  }
+
+  public String getAltPrivateKey() {
+    return altPrivateKey;
+  }
+  public void setAltPrivateKey(String altPrivateKey) {
+    this.altPrivateKey = altPrivateKey;
+  }
+
+  public Boolean getInteroperable() {
+    return interoperable;
+  }
+  public void setInteroperable(Boolean interoperable) {
+    this.interoperable = interoperable;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -117,6 +141,9 @@ public class StorageProviderInfo {
     sb.append("  isPrimary: ").append(isPrimary).append("\n");
     sb.append("  serviceHost: ").append(serviceHost).append("\n");
     sb.append("  syncOptions: ").append(syncOptions).append("\n");
+    sb.append("  altPublicKey: ").append(altPublicKey).append("\n");
+    sb.append("  altPrivateKey: ").append(altPrivateKey).append("\n");
+    sb.append("  interoperable: ").append(interoperable).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

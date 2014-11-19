@@ -79,6 +79,36 @@ public class SystemApi {
       }
     }
   }
+  public GetInvoicesResponse SimulateAssessForPaymentPlan (String userId, String discountCode, String paymentPlanId) throws ApiException {
+    // verify required params are set
+    if(userId == null || discountCode == null || paymentPlanId == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    String resourcePath = "/system/{userId}/paymentPlans/{paymentPlanId}/discounts/{discountCode}".replace("*", "");
+  	// create path and map variables
+    resourcePath = resourcePath.replace("{format}","json").replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "discountCode" + "}", String.valueOf(discountCode)).replace("{" + "paymentPlanId" + "}", String.valueOf(paymentPlanId));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, resourcePath, "GET", queryParams, null, headerParams, String.class);
+      if(response != null){
+        return (GetInvoicesResponse) ApiInvoker.deserialize(response, "", GetInvoicesResponse.class);
+      }
+      else {
+        return null;
+      }
+      } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
   public GetPlanResponse GetUserPlan (String callerId) throws ApiException {
     // verify required params are set
     if(callerId == null ) {
