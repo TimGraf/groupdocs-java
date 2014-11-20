@@ -110,40 +110,7 @@ public class DocApiTest extends AbstractUnitTest {
 		}
 	
 	}
-	
-	@Test
-	public void testViewDocumentAsHtml() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String fileId = "fileId";
-		String pageNumber = "pageNumber";
-		String pageCount = "pageCount";
-		String passwordSalt = "passwordSalt";
-		
-		String resourcePath = "/doc/{userId}/files/{fileId}/htmlRepresentations".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.POST).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("page_number", pageNumber);
-		mockRequest = mockRequest.withParam("page_count", pageCount);
-		mockRequest = mockRequest.withParam("passwordSalt", passwordSalt);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("doc/ViewDocumentAsHtml.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			ViewDocumentResponse response = api.ViewDocumentAsHtml(userId, fileId, pageNumber, pageCount, passwordSalt);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
+
 	
 	@Test
 	public void testGetDocumentViews() throws Exception {
@@ -647,67 +614,8 @@ public class DocApiTest extends AbstractUnitTest {
 		}
 	
 	}
-	
-	@Test
-	public void testGetDocumentPageHtmlFixed() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String fileId = "fileId";
-		Integer pageNumber = 0;
-		Boolean expiresOn = Boolean.TRUE;
-		
-		String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlFixed".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("expires", expiresOn);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("doc/GetDocumentPageHtmlFixed.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			FileStream response = api.GetDocumentPageHtmlFixed(userId, fileId, pageNumber, expiresOn);
-			assertThat(response.getInputStream(), not(nullValue()));
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
-	@Test
-	public void testGetDocumentPageHtml() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String fileId = "fileId";
-		Integer pageNumber = 0;
-		Boolean expiresOn = Boolean.TRUE;
-		
-		String resourcePath = "/doc/{userId}/files/{fileId}/pages/{pageNumber}/htmlRepresentations".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId)).replace("{" + "pageNumber" + "}", String.valueOf(pageNumber));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("expires", expiresOn);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("doc/GetDocumentPageHtml.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			FileStream response = api.GetDocumentPageHtml(userId, fileId, pageNumber, expiresOn);
-			assertThat(response.getInputStream(), not(nullValue()));
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
+
+
 	@Test
 	public void testGetDocumentPagesImageUrls() throws Exception {
 		// sample parameters
@@ -747,38 +655,7 @@ public class DocApiTest extends AbstractUnitTest {
 	
 	}
 	
-	@Test
-	public void testGetDocumentPagesHtmlUrls() throws Exception {
-		// sample parameters
-		String userId = "userId";
-		String fileId = "fileId";
-		Integer firstPage = 0;
-		Integer pageCount = 0;
-		
-		String resourcePath = "/doc/{userId}/files/{fileId}/pages/htmlRepresentationUrls".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "fileId" + "}", String.valueOf(fileId));
-		
-		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
-		// add query parameters to expectation
-		mockRequest = mockRequest.withParam("first_page", firstPage);
-		mockRequest = mockRequest.withParam("page_count", pageCount);
-		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
-		// read response json from file
-		String responseBody = getSampleResponse("doc/GetDocumentPagesHtmlUrls.json");
-		
-		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
-		driver.addExpectation(mockRequest, mockResponse);
-		
-		try {
-			GetImageUrlsResponse response = api.GetDocumentPagesHtmlUrls(userId, fileId, firstPage, pageCount);
-			// this ensures that json was successfully deserialized into corresponding model object
-			assertSameJson(responseBody, response);
-			
-		} catch(ApiException e){
-			log(e.getCode() + ": " + e.getMessage());
-		}
-	
-	}
-	
+
 	@Test
 	public void testGetEditLock() throws Exception {
 		// sample parameters
