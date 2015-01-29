@@ -239,7 +239,7 @@ public class StorageApiTest extends AbstractUnitTest {
 		driver.addExpectation(mockRequest, mockResponse);
 		
 		try {
-			UploadResponse response = api.Upload(userId, path, description, callbackUrl,overrideMode, body);
+			UploadResponse response = api.Upload(userId, path, description, callbackUrl, overrideMode, body);
 			// this ensures that json was successfully deserialized into corresponding model object
 			assertSameJson(responseBody, response);
 			

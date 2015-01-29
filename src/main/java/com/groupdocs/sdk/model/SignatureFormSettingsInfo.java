@@ -27,9 +27,9 @@ public class SignatureFormSettingsInfo {
   private Boolean canParticipantDownloadForm = null;
   private String waterMarkText = null;
   private String waterMarkImage = null;
-  private Boolean notifyOwnerOnSign  = null;
+  private Boolean notifyOwnerOnSign = null;
   private Boolean attachSignedDocument = null;
-  private String notifyOtherOnSign  = null;
+  private String notifyOtherOnSign = null;
   private Boolean canParticipantPrintForm = null;
   private Boolean requireUserAuthForSign = null;
   private Boolean requestUserAuthByPhoto = null;
@@ -74,11 +74,11 @@ public class SignatureFormSettingsInfo {
     this.waterMarkImage = waterMarkImage;
   }
 
-  public Boolean getNotifyOwnerOnSign () {
-    return notifyOwnerOnSign ;
+  public Boolean getNotifyOwnerOnSign() {
+    return notifyOwnerOnSign;
   }
-  public void setNotifyOwnerOnSign (Boolean notifyOwnerOnSign ) {
-    this.notifyOwnerOnSign  = notifyOwnerOnSign ;
+  public void setNotifyOwnerOnSign(Boolean notifyOwnerOnSign) {
+    this.notifyOwnerOnSign = notifyOwnerOnSign;
   }
 
   public Boolean getAttachSignedDocument() {
@@ -88,11 +88,11 @@ public class SignatureFormSettingsInfo {
     this.attachSignedDocument = attachSignedDocument;
   }
 
-  public String getNotifyOtherOnSign () {
-    return notifyOtherOnSign ;
+  public String getNotifyOtherOnSign() {
+    return notifyOtherOnSign;
   }
-  public void setNotifyOtherOnSign (String notifyOtherOnSign ) {
-    this.notifyOtherOnSign  = notifyOtherOnSign ;
+  public void setNotifyOtherOnSign(String notifyOtherOnSign) {
+    this.notifyOtherOnSign = notifyOtherOnSign;
   }
 
   public Boolean getCanParticipantPrintForm() {
@@ -167,9 +167,9 @@ public class SignatureFormSettingsInfo {
     sb.append("  canParticipantDownloadForm: ").append(canParticipantDownloadForm).append("\n");
     sb.append("  waterMarkText: ").append(waterMarkText).append("\n");
     sb.append("  waterMarkImage: ").append(waterMarkImage).append("\n");
-    sb.append("  notifyOwnerOnSign : ").append(notifyOwnerOnSign ).append("\n");
+    sb.append("  notifyOwnerOnSign: ").append(notifyOwnerOnSign).append("\n");
     sb.append("  attachSignedDocument: ").append(attachSignedDocument).append("\n");
-    sb.append("  notifyOtherOnSign : ").append(notifyOtherOnSign ).append("\n");
+    sb.append("  notifyOtherOnSign: ").append(notifyOtherOnSign).append("\n");
     sb.append("  canParticipantPrintForm: ").append(canParticipantPrintForm).append("\n");
     sb.append("  requireUserAuthForSign: ").append(requireUserAuthForSign).append("\n");
     sb.append("  requestUserAuthByPhoto: ").append(requestUserAuthByPhoto).append("\n");

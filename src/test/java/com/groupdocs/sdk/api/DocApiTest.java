@@ -110,7 +110,6 @@ public class DocApiTest extends AbstractUnitTest {
 		}
 	
 	}
-
 	
 	@Test
 	public void testGetDocumentViews() throws Exception {
@@ -614,8 +613,7 @@ public class DocApiTest extends AbstractUnitTest {
 		}
 	
 	}
-
-
+	
 	@Test
 	public void testGetDocumentPagesImageUrls() throws Exception {
 		// sample parameters
@@ -655,7 +653,6 @@ public class DocApiTest extends AbstractUnitTest {
 	
 	}
 	
-
 	@Test
 	public void testGetEditLock() throws Exception {
 		// sample parameters

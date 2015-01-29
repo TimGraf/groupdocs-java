@@ -23,11 +23,27 @@ import com.groupdocs.sdk.model.DocumentViewInfo;
  *
  */
 public class GetDocumentInfoResult {
+  private String type = null;
+  private String url = null;
   private Integer page_count = null;
   private Integer views_count = null;
   private DocumentViewInfo last_view = null;
   private Double id = null;
   private String guid = null;
+  public String getType() {
+    return type;
+  }
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getUrl() {
+    return url;
+  }
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
   public Integer getPage_count() {
     return page_count;
   }
@@ -67,6 +83,8 @@ public class GetDocumentInfoResult {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetDocumentInfoResult {\n");
+    sb.append("  type: ").append(type).append("\n");
+    sb.append("  url: ").append(url).append("\n");
     sb.append("  page_count: ").append(page_count).append("\n");
     sb.append("  views_count: ").append(views_count).append("\n");
     sb.append("  last_view: ").append(last_view).append("\n");

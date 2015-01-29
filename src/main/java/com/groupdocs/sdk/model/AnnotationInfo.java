@@ -29,6 +29,7 @@ import com.groupdocs.sdk.model.Range;
 public class AnnotationInfo {
   private String guid = null;
   private String documentGuid = null;
+  private String text = null;
   private Long layerId = null;
   private String sessionGuid = null;
   private String creatorGuid = null;
@@ -63,6 +64,13 @@ public class AnnotationInfo {
   }
   public void setDocumentGuid(String documentGuid) {
     this.documentGuid = documentGuid;
+  }
+
+  public String getText() {
+    return text;
+  }
+  public void setText(String text) {
+    this.text = text;
   }
 
   public Long getLayerId() {
@@ -225,6 +233,7 @@ public class AnnotationInfo {
     sb.append("class AnnotationInfo {\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("  documentGuid: ").append(documentGuid).append("\n");
+    sb.append("  text: ").append(text).append("\n");
     sb.append("  layerId: ").append(layerId).append("\n");
     sb.append("  sessionGuid: ").append(sessionGuid).append("\n");
     sb.append("  creatorGuid: ").append(creatorGuid).append("\n");

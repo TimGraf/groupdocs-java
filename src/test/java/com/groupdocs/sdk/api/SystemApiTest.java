@@ -95,6 +95,35 @@ public class SystemApiTest extends AbstractUnitTest {
 	}
 	
 	@Test
+	public void testSimulateAssessForPaymentPlan() throws Exception {
+		// sample parameters
+		String userId = "userId";
+		String discountCode = "discountCode";
+		String paymentPlanId = "paymentPlanId";
+		
+		String resourcePath = "/system/{userId}/paymentPlans/{paymentPlanId}/discounts/{discountCode}".replace("{" + "userId" + "}", String.valueOf(userId)).replace("{" + "discountCode" + "}", String.valueOf(discountCode)).replace("{" + "paymentPlanId" + "}", String.valueOf(paymentPlanId));
+		
+		ClientDriverRequest mockRequest = onRequestTo(resourcePath).withMethod(Method.GET).withHeader("Content-Type", MediaType.TEXT_HTML);
+		// add query parameters to expectation
+		mockRequest = mockRequest.withParam("signature", Pattern.compile(".*"));
+		// read response json from file
+		String responseBody = getSampleResponse("system/SimulateAssessForPaymentPlan.json");
+		
+		ClientDriverResponse mockResponse = giveResponse(responseBody).withStatus(200);
+		driver.addExpectation(mockRequest, mockResponse);
+		
+		try {
+			GetInvoicesResponse response = api.SimulateAssessForPaymentPlan(userId, discountCode, paymentPlanId);
+			// this ensures that json was successfully deserialized into corresponding model object
+			assertSameJson(responseBody, response);
+			
+		} catch(ApiException e){
+			log(e.getCode() + ": " + e.getMessage());
+		}
+	
+	}
+	
+	@Test
 	public void testGetUserPlan() throws Exception {
 		// sample parameters
 		String callerId = "callerId";

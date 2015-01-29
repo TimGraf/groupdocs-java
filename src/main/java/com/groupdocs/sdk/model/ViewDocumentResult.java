@@ -38,6 +38,7 @@ public class ViewDocumentResult {
   private Boolean lic = null;
   private String pdfPrintUrl = null;
   private String htmlPrintUrl = null;
+  private String documentDescription = null;
   private Double id = null;
   private String guid = null;
   public String getName() {
@@ -138,6 +139,13 @@ public class ViewDocumentResult {
     this.htmlPrintUrl = htmlPrintUrl;
   }
 
+  public String getDocumentDescription() {
+    return documentDescription;
+  }
+  public void setDocumentDescription(String documentDescription) {
+    this.documentDescription = documentDescription;
+  }
+
   public Double getId() {
     return id;
   }
@@ -170,6 +178,7 @@ public class ViewDocumentResult {
     sb.append("  lic: ").append(lic).append("\n");
     sb.append("  pdfPrintUrl: ").append(pdfPrintUrl).append("\n");
     sb.append("  htmlPrintUrl: ").append(htmlPrintUrl).append("\n");
+    sb.append("  documentDescription: ").append(documentDescription).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  guid: ").append(guid).append("\n");
     sb.append("}\n");
