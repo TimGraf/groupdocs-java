@@ -16,6 +16,7 @@
 package com.groupdocs.sdk.model;
 
 import java.util.*;
+import com.groupdocs.sdk.model.TemplateEditorFieldOption;
 import com.groupdocs.sdk.model.Rectangle;
 import com.groupdocs.sdk.model.TemplateEditorFieldStyle;
 /**
@@ -26,19 +27,32 @@ import com.groupdocs.sdk.model.TemplateEditorFieldStyle;
  */
 public class TemplateEditorField {
   private String name = null;
+  private String defaultValue = null;
   private String fieldtype = null;
   private Integer page = null;
   private Rectangle rect = null;
   private Integer selectionPosition = null;
   private Integer selectionLength = null;
   private List<String> acceptableValues = new ArrayList<String>();
+  private List<TemplateEditorFieldOption> options = new ArrayList<TemplateEditorFieldOption>();
   private TemplateEditorFieldStyle style = null;
   private Boolean isTableMarker = null;
+  private Integer tableNumber = null;
+  private Integer tableRow = null;
+  private Integer tableColumn = null;
+  private Integer tableCell = null;
   public String getName() {
     return name;
   }
   public void setName(String name) {
     this.name = name;
+  }
+
+  public String getDefaultValue() {
+    return defaultValue;
+  }
+  public void setDefaultValue(String defaultValue) {
+    this.defaultValue = defaultValue;
   }
 
   public String getFieldtype() {
@@ -83,6 +97,13 @@ public class TemplateEditorField {
     this.acceptableValues = acceptableValues;
   }
 
+  public List<TemplateEditorFieldOption> getOptions() {
+    return options;
+  }
+  public void setOptions(List<TemplateEditorFieldOption> options) {
+    this.options = options;
+  }
+
   public TemplateEditorFieldStyle getStyle() {
     return style;
   }
@@ -97,19 +118,53 @@ public class TemplateEditorField {
     this.isTableMarker = isTableMarker;
   }
 
+  public Integer getTableNumber() {
+    return tableNumber;
+  }
+  public void setTableNumber(Integer tableNumber) {
+    this.tableNumber = tableNumber;
+  }
+
+  public Integer getTableRow() {
+    return tableRow;
+  }
+  public void setTableRow(Integer tableRow) {
+    this.tableRow = tableRow;
+  }
+
+  public Integer getTableColumn() {
+    return tableColumn;
+  }
+  public void setTableColumn(Integer tableColumn) {
+    this.tableColumn = tableColumn;
+  }
+
+  public Integer getTableCell() {
+    return tableCell;
+  }
+  public void setTableCell(Integer tableCell) {
+    this.tableCell = tableCell;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class TemplateEditorField {\n");
     sb.append("  name: ").append(name).append("\n");
+    sb.append("  defaultValue: ").append(defaultValue).append("\n");
     sb.append("  fieldtype: ").append(fieldtype).append("\n");
     sb.append("  page: ").append(page).append("\n");
     sb.append("  rect: ").append(rect).append("\n");
     sb.append("  selectionPosition: ").append(selectionPosition).append("\n");
     sb.append("  selectionLength: ").append(selectionLength).append("\n");
     sb.append("  acceptableValues: ").append(acceptableValues).append("\n");
+    sb.append("  options: ").append(options).append("\n");
     sb.append("  style: ").append(style).append("\n");
     sb.append("  isTableMarker: ").append(isTableMarker).append("\n");
+    sb.append("  tableNumber: ").append(tableNumber).append("\n");
+    sb.append("  tableRow: ").append(tableRow).append("\n");
+    sb.append("  tableColumn: ").append(tableColumn).append("\n");
+    sb.append("  tableCell: ").append(tableCell).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

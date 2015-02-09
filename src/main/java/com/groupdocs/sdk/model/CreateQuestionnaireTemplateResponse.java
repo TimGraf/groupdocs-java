@@ -15,8 +15,7 @@
  */
 package com.groupdocs.sdk.model;
 
-import java.util.*;
-import com.groupdocs.sdk.model.TemplateField;
+import com.groupdocs.sdk.model.CreateQuestionnaireTemplateResult;
 /**
  * 
  * <p>
@@ -24,14 +23,14 @@ import com.groupdocs.sdk.model.TemplateField;
  *
  */
 public class CreateQuestionnaireTemplateResponse {
-  private List<TemplateField> result = new ArrayList<TemplateField>();
+  private CreateQuestionnaireTemplateResult result = null;
   private String status = null;
   private String error_message = null;
   private Long composedOn = null;
-  public List<TemplateField> getResult() {
+  public CreateQuestionnaireTemplateResult getResult() {
     return result;
   }
-  public void setResult(List<TemplateField> result) {
+  public void setResult(CreateQuestionnaireTemplateResult result) {
     this.result = result;
   }
 

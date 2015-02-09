@@ -26,6 +26,7 @@ public class TemplateInfo {
   private Integer field_count = null;
   private Long size = null;
   private String fileType = null;
+  private String docType = null;
   private Integer dependent_questionnaires_count = null;
   private Long upload_time = null;
   private Double id = null;
@@ -56,6 +57,13 @@ public class TemplateInfo {
   }
   public void setFileType(String fileType) {
     this.fileType = fileType;
+  }
+
+  public String getDocType() {
+    return docType;
+  }
+  public void setDocType(String docType) {
+    this.docType = docType;
   }
 
   public Integer getDependent_questionnaires_count() {
@@ -94,6 +102,7 @@ public class TemplateInfo {
     sb.append("  field_count: ").append(field_count).append("\n");
     sb.append("  size: ").append(size).append("\n");
     sb.append("  fileType: ").append(fileType).append("\n");
+    sb.append("  docType: ").append(docType).append("\n");
     sb.append("  dependent_questionnaires_count: ").append(dependent_questionnaires_count).append("\n");
     sb.append("  upload_time: ").append(upload_time).append("\n");
     sb.append("  id: ").append(id).append("\n");

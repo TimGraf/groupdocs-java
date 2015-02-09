@@ -1,7 +1,7 @@
 GroupDocs Java SDK [![Build Status](https://secure.travis-ci.org/groupdocs/groupdocs-java.png)](http://travis-ci.org/groupdocs/groupdocs-java)
 =============
 
-Latest SDK version 2.3.0.
+Latest SDK version 2.3.1.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ GroupDocs Java SDK is now in Maven Central. To use SDK in your own project just 
 	<dependency>
 		<groupId>com.groupdocs</groupId>
 		<artifactId>groupdocs-java-client</artifactId>
-		<version>2.3.0</version>
+		<version>2.3.1</version>
 	</dependency>
 
 ### Usage Example
